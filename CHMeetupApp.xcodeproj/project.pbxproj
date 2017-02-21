@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
+		221F4F9D1E5C0B6C0009FD07 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8A1E5C0B6C0009FD07 /* Info.plist */; };
+		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
+		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
+		221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
-		9F60489B1E5B3CCB00C414C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60489A1E5B3CCB00C414C3 /* ViewController.swift */; };
-		9F60489E1E5B3CCB00C414C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F60489C1E5B3CCB00C414C3 /* Main.storyboard */; };
-		9F6048A01E5B3CCB00C414C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F60489F1E5B3CCB00C414C3 /* Assets.xcassets */; };
-		9F6048A31E5B3CCB00C414C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6048A11E5B3CCB00C414C3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F60489A1E5B3CCB00C414C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F60489D1E5B3CCB00C414C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F60489F1E5B3CCB00C414C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F6048A21E5B3CCB00C414C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F6048A41E5B3CCB00C414C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,153 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221F4F851E5C0B6C0009FD07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F861E5C0B6C0009FD07 /* Assets */,
+				221F4F891E5C0B6C0009FD07 /* Config */,
+				221F4F8B1E5C0B6C0009FD07 /* Fonts */,
+				221F4F8C1E5C0B6C0009FD07 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		221F4F861E5C0B6C0009FD07 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F871E5C0B6C0009FD07 /* Assets.xcassets */,
+				221F4F881E5C0B6C0009FD07 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		221F4F881E5C0B6C0009FD07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		221F4F891E5C0B6C0009FD07 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F8A1E5C0B6C0009FD07 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		221F4F8B1E5C0B6C0009FD07 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		221F4F8C1E5C0B6C0009FD07 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */,
+				221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		221F4F8F1E5C0B6C0009FD07 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F901E5C0B6C0009FD07 /* Common */,
+				221F4F941E5C0B6C0009FD07 /* Controllers */,
+				221F4F951E5C0B6C0009FD07 /* Model */,
+				221F4F9A1E5C0B6C0009FD07 /* ViewControllers+Cells */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		221F4F901E5C0B6C0009FD07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F911E5C0B6C0009FD07 /* Classes */,
+				221F4F921E5C0B6C0009FD07 /* Extensions */,
+				221F4F931E5C0B6C0009FD07 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		221F4F911E5C0B6C0009FD07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		221F4F921E5C0B6C0009FD07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		221F4F931E5C0B6C0009FD07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		221F4F951E5C0B6C0009FD07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F961E5C0B6C0009FD07 /* Entities */,
+				221F4F971E5C0B6C0009FD07 /* Helpers */,
+				221F4F981E5C0B6C0009FD07 /* PO */,
+				221F4F991E5C0B6C0009FD07 /* Runtime */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		221F4F961E5C0B6C0009FD07 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		221F4F971E5C0B6C0009FD07 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		221F4F981E5C0B6C0009FD07 /* PO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PO;
+			sourceTree = "<group>";
+		};
+		221F4F991E5C0B6C0009FD07 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		221F4F9A1E5C0B6C0009FD07 /* ViewControllers+Cells */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */,
+			);
+			path = "ViewControllers+Cells";
+			sourceTree = "<group>";
+		};
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */,
-				9F60489A1E5B3CCB00C414C3 /* ViewController.swift */,
-				9F60489C1E5B3CCB00C414C3 /* Main.storyboard */,
-				9F60489F1E5B3CCB00C414C3 /* Assets.xcassets */,
-				9F6048A11E5B3CCB00C414C3 /* LaunchScreen.storyboard */,
-				9F6048A41E5B3CCB00C414C3 /* Info.plist */,
+				221F4F8F1E5C0B6C0009FD07 /* Sources */,
+				221F4F851E5C0B6C0009FD07 /* Resources */,
 			);
 			path = CHMeetupApp;
 			sourceTree = "<group>";
@@ -123,9 +268,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6048A31E5B3CCB00C414C3 /* LaunchScreen.storyboard in Resources */,
-				9F6048A01E5B3CCB00C414C3 /* Assets.xcassets in Resources */,
-				9F60489E1E5B3CCB00C414C3 /* Main.storyboard in Resources */,
+				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
+				221F4F9D1E5C0B6C0009FD07 /* Info.plist in Resources */,
+				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
+				221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F60489B1E5B3CCB00C414C3 /* ViewController.swift in Sources */,
+				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9F60489C1E5B3CCB00C414C3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F60489D1E5B3CCB00C414C3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9F6048A11E5B3CCB00C414C3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F6048A21E5B3CCB00C414C3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9F6048A51E5B3CCB00C414C3 /* Debug */ = {
@@ -258,7 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CHMeetupApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CHMeetupApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
