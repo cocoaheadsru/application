@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Create View Controller-->
+        <scene sceneID="amf-l6-QNV">
+            <objects>
+                <viewController storyboardIdentifier="ProfileCreateViewController" id="nXW-7Y-Ke7" customClass="ProfileCreateViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7qj-GV-nZn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ilb-Pz-Fca"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22N-8c-n1H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H6i-Oc-rNL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwx-63-Jfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="811"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="N1n-QU-yPZ">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="p5C-xH-cy8" customClass="ProfileViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7C-1t-umU"/>
+                        <viewControllerLayoutGuide type="bottom" id="nwW-pZ-9ia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T2c-QD-Zwl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SB8-My-djY"/>
+                    <connections>
+                        <segue destination="6F4-3B-MvC" kind="show" id="rC9-80-45T"/>
+                        <segue destination="WaT-qA-jSi" kind="show" id="mai-Ng-0sz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7US-b2-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="35"/>
+        </scene>
+        <!--Profile Edit View Controller-->
+        <scene sceneID="6xe-AS-Z5B">
+            <objects>
+                <viewController id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2OD-V0-BLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zvk-T6-twm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LUJ-lg-thX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bms-pX-iJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="35"/>
+        </scene>
+        <!--Give Speech View Controller-->
+        <scene sceneID="UYl-eR-dga">
+            <objects>
+                <viewController id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5m8-NS-nLl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZRv-Xe-9jk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="974-sJ-D3K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-q3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="812"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Yq-vQ-Mu5">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileCreateViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7aJ-hD-rjf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdg-QD-JoR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nXW-7Y-Ke7" kind="relationship" relationship="rootViewController" id="C7m-bg-qOi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fn7-jr-KUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="812"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qcx-Jt-Wmv">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="8x9-GI-9iQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SkT-lA-HEb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p5C-xH-cy8" kind="relationship" relationship="rootViewController" id="IJr-OB-PUN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tek-si-OU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="34.632683658170919"/>
+        </scene>
+    </scenes>
+</document>
