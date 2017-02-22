@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Event Preview View Controller-->
+        <!--Event Preview-->
         <scene sceneID="9Ra-2g-CmF">
             <objects>
-                <viewController storyboardIdentifier="EventPreviewViewController" id="let-Rh-7mo" customClass="EventPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventPreviewViewController" hidesBottomBarWhenPushed="YES" id="let-Rh-7mo" customClass="EventPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W69-Ef-5Xe"/>
                         <viewControllerLayoutGuide type="bottom" id="0Nx-GU-Cyr"/>
@@ -47,13 +47,13 @@
                             <constraint firstItem="tNQ-k1-i4K" firstAttribute="centerY" secondItem="AK6-Xh-59r" secondAttribute="centerY" id="zwd-Sk-3J1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3ZJ-CZ-Ntl"/>
+                    <navigationItem key="navigationItem" title="Event Preview" id="3ZJ-CZ-Ntl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKm-n1-Xfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672.79999999999995" y="125.4872563718141"/>
         </scene>
-        <!--Registration Preview View Controller-->
+        <!--Registration Preview-->
         <scene sceneID="4rC-ay-iGN">
             <objects>
                 <viewController id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,12 +79,13 @@
                             <constraint firstItem="XOB-UE-nDI" firstAttribute="centerX" secondItem="r5D-Tm-NHY" secondAttribute="centerX" id="cD0-yT-MPp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Registration Preview" id="CpT-Wp-dsl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="673" y="827"/>
         </scene>
-        <!--Registration Confirm View Controller-->
+        <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">
             <objects>
                 <viewController id="elZ-XF-SfV" customClass="RegistrationConfirmViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,12 +98,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Registration Confirm" id="mfg-qT-uCc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOf-N3-Dzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508" y="826"/>
         </scene>
-        <!--Speech View Controller-->
+        <!--Speech-->
         <scene sceneID="gb4-so-DQv">
             <objects>
                 <viewController id="p6n-SL-zh4" customClass="SpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,6 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Speech" id="lDz-fA-1XL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

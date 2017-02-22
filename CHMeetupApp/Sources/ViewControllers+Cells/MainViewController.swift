@@ -16,4 +16,8 @@ class MainViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   
+  @IBAction func showEventAction(_ sender: UIButton) {
+    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
+  }
+  
 }

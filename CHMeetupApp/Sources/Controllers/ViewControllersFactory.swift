@@ -18,4 +18,9 @@ struct ViewControllersFactory {
     // FIXME: - use https://github.com/krzyzanowskim/Natalie
     return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
   }
+  
+  static var eventPreviewViewController: UIViewController {
+    // FIXME: - use https://github.com/krzyzanowskim/Natalie
+    return UIStoryboard(name: "EventPreview", bundle: nil).instantiateViewController(withIdentifier: "EventPreviewViewController")
+  }
 }

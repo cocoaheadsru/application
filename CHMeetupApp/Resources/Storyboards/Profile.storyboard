@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile Create View Controller-->
+        <!--Create Profile-->
         <scene sceneID="amf-l6-QNV">
             <objects>
                 <viewController storyboardIdentifier="ProfileCreateViewController" id="nXW-7Y-Ke7" customClass="ProfileCreateViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,13 +35,13 @@
                             <constraint firstItem="gl9-SA-VgD" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="O6L-Zg-clw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="H6i-Oc-rNL"/>
+                    <navigationItem key="navigationItem" title="Create Profile" id="H6i-Oc-rNL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwx-63-Jfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1590" y="811"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="N1n-QU-yPZ">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="p5C-xH-cy8" customClass="ProfileViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,7 +79,7 @@
                             <constraint firstItem="qok-V4-Kb7" firstAttribute="centerX" secondItem="T2c-QD-Zwl" secondAttribute="centerX" id="rb2-IP-qeP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SB8-My-djY">
+                    <navigationItem key="navigationItem" title="Profile" id="SB8-My-djY">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="cT0-sY-VS2">
                             <connections>
                                 <action selector="logutBarButtonAction:" destination="p5C-xH-cy8" id="doW-3c-ypU"/>
@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="1591" y="35"/>
         </scene>
-        <!--Profile Edit View Controller-->
+        <!--Profile Edit-->
         <scene sceneID="6xe-AS-Z5B">
             <objects>
-                <viewController id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2OD-V0-BLJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Zvk-T6-twm"/>
@@ -104,12 +104,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile Edit" id="jua-nT-hoZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bms-pX-iJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2369" y="35"/>
         </scene>
-        <!--Give Speech View Controller-->
+        <!--Give a Speech-->
         <scene sceneID="UYl-eR-dga">
             <objects>
                 <viewController id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,6 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-q3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

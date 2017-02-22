@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Past Events View Controller-->
+        <!--Archieve-->
         <scene sceneID="xXe-KA-haW">
             <objects>
                 <viewController id="oCD-k4-2hk" customClass="PastEventsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09l-qR-0Ck">
                                 <rect key="frame" x="143" y="318.5" width="89" height="30"/>
                                 <state key="normal" title="Show Evenet"/>
+                                <connections>
+                                    <action selector="showEventAction:" destination="oCD-k4-2hk" eventType="touchUpInside" id="WrT-Hy-LKo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,13 +35,13 @@
                             <constraint firstItem="09l-qR-0Ck" firstAttribute="centerX" secondItem="FtC-VP-iXQ" secondAttribute="centerX" id="eCD-yd-5kx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9sk-IA-XNi"/>
+                    <navigationItem key="navigationItem" title="Archieve" id="9sk-IA-XNi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6y-Pz-UlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273" y="456"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main-->
         <scene sceneID="4bP-a4-tJZ">
             <objects>
                 <viewController id="du5-Fr-4Vf" customClass="MainViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,6 +56,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-FB-hRB">
                                 <rect key="frame" x="142.5" y="318" width="89" height="30"/>
                                 <state key="normal" title="Show Evenet"/>
+                                <connections>
+                                    <action selector="showEventAction:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="XHm-YB-6JF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +67,7 @@
                             <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerX" secondItem="yfu-ai-uDa" secondAttribute="centerX" id="p58-JK-whA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EB5-Bt-KNQ"/>
+                    <navigationItem key="navigationItem" title="Main" id="EB5-Bt-KNQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFV-Aw-nEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
