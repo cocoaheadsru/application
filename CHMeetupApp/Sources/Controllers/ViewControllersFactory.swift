@@ -11,6 +11,11 @@ import UIKit
 struct ViewControllersFactory {
   static var loginViewController: UIViewController {
     // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewControllerNavigation")
+    return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileCreateViewController")
+  }
+  
+  static var profileViewController: UIViewController {
+    // FIXME: - use https://github.com/krzyzanowskim/Natalie
+    return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
   }
 }

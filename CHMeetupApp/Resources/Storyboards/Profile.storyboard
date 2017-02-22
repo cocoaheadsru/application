@@ -24,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD">
                                 <rect key="frame" x="168" y="318" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="aXP-sx-DVM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +80,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SB8-My-djY">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cT0-sY-VS2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cT0-sY-VS2">
+                            <connections>
+                                <action selector="logutBarButtonAction:" destination="p5C-xH-cy8" id="doW-3c-ypU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7US-b2-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>

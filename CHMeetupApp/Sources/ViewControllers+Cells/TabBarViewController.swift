@@ -12,9 +12,6 @@ class TabBarViewController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // FIXME: - Should have better logic
-    viewControllers?.append(ViewControllersFactory.loginViewController)
   }
   
 }

@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="452" y="455.62218890554726"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Navigation View Controller-->
         <scene sceneID="nzB-PK-SUB">
             <objects>
-                <navigationController id="b0P-Mq-rOD" sceneMemberID="viewController">
+                <navigationController id="b0P-Mq-rOD" customClass="ProfileNavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

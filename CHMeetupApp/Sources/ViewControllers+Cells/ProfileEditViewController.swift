@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileEditViewController: UIViewController {
+class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
   
   override func viewDidLoad() {
     super.viewDidLoad()

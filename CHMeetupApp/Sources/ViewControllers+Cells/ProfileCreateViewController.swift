@@ -8,10 +8,15 @@
 
 import UIKit
 
-class ProfileCreateViewController: UIViewController {
+class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  @IBAction func loginButtonAction(_ sender: UIButton) {
+    LoginProcessViewController.isLogin = true
+    profileNavigationController?.updateRootViewController()
   }
   
 }
