@@ -25,6 +25,7 @@
 		9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */; };
 		9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */; };
 		9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */; };
+		9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechViewController.swift; sourceTree = "<group>"; };
 		9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
 		9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmViewController.swift; sourceTree = "<group>"; };
+		9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
+				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

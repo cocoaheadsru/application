@@ -20,7 +20,17 @@
                     <view key="view" contentMode="scaleToFill" id="FtC-VP-iXQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09l-qR-0Ck">
+                                <rect key="frame" x="143" y="318.5" width="89" height="30"/>
+                                <state key="normal" title="Show Evenet"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="09l-qR-0Ck" firstAttribute="centerY" secondItem="FtC-VP-iXQ" secondAttribute="centerY" id="KcE-Gh-uQJ"/>
+                            <constraint firstItem="09l-qR-0Ck" firstAttribute="centerX" secondItem="FtC-VP-iXQ" secondAttribute="centerX" id="eCD-yd-5kx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9sk-IA-XNi"/>
                 </viewController>
@@ -39,7 +49,17 @@
                     <view key="view" contentMode="scaleToFill" id="yfu-ai-uDa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-FB-hRB">
+                                <rect key="frame" x="142.5" y="318" width="89" height="30"/>
+                                <state key="normal" title="Show Evenet"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerY" secondItem="yfu-ai-uDa" secondAttribute="centerY" id="Hgu-ds-SAq"/>
+                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerX" secondItem="yfu-ai-uDa" secondAttribute="centerX" id="p58-JK-whA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EB5-Bt-KNQ"/>
                 </viewController>
@@ -47,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1273" y="-199"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="NPf-JB-NGd">
             <objects>
-                <tabBarController id="ifu-eV-gt1" sceneMemberID="viewController">
+                <tabBarController id="ifu-eV-gt1" customClass="TabBarViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZHN-fJ-flQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,17 +79,18 @@
                     <connections>
                         <segue destination="OrX-Cc-xgJ" kind="relationship" relationship="viewControllers" id="ogv-G9-Tza"/>
                         <segue destination="b7I-I3-rgg" kind="relationship" relationship="viewControllers" id="XyW-Pd-jfy"/>
+                        <segue destination="b0P-Mq-rOD" kind="relationship" relationship="viewControllers" id="Cjt-ju-PRJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUn-Qt-UaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-500" y="128"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="Xhb-Jd-qWS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrX-Cc-xgJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="EYz-le-H70"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3A-KA-XJg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -84,11 +105,11 @@
             </objects>
             <point key="canvasLocation" x="452" y="-199.25037481259372"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="njY-UF-XnW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7I-I3-rgg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="nq2-nd-hlH"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-77-fMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -102,6 +123,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sA-k4-d1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452" y="455.62218890554726"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nzB-PK-SUB">
+            <objects>
+                <navigationController id="b0P-Mq-rOD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dde-Ua-rjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="452" y="1178"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,17 @@
                     <view key="view" contentMode="scaleToFill" id="22N-8c-n1H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD">
+                                <rect key="frame" x="168" y="318" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" id="LZH-p9-jOD"/>
+                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="O6L-Zg-clw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H6i-Oc-rNL"/>
                 </viewController>
@@ -39,13 +49,36 @@
                     <view key="view" contentMode="scaleToFill" id="T2c-QD-Zwl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qok-V4-Kb7">
+                                <rect key="frame" x="144" y="303.5" width="87" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fek-LL-BUo">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                                        <state key="normal" title="Edit Profile"/>
+                                        <connections>
+                                            <segue destination="6F4-3B-MvC" kind="show" id="As9-Ay-h2d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPq-hH-Edx">
+                                        <rect key="frame" x="0.0" y="30" width="87" height="30"/>
+                                        <state key="normal" title="Give Speech"/>
+                                        <connections>
+                                            <segue destination="WaT-qA-jSi" kind="show" id="McA-y9-GOK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qok-V4-Kb7" firstAttribute="centerY" secondItem="T2c-QD-Zwl" secondAttribute="centerY" id="SMX-fN-J3c"/>
+                            <constraint firstItem="qok-V4-Kb7" firstAttribute="centerX" secondItem="T2c-QD-Zwl" secondAttribute="centerX" id="rb2-IP-qeP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SB8-My-djY"/>
-                    <connections>
-                        <segue destination="6F4-3B-MvC" kind="show" id="rC9-80-45T"/>
-                        <segue destination="WaT-qA-jSi" kind="show" id="mai-Ng-0sz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="SB8-My-djY">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cT0-sY-VS2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7US-b2-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,7 +13,8 @@ class TabBarViewController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    // FIXME: - Should have better logic
+    viewControllers?.append(ViewControllersFactory.loginViewController)
   }
   
 }
