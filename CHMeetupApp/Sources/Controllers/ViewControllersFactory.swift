@@ -10,20 +10,14 @@ import UIKit
 
 struct ViewControllersFactory {
   static var loginViewController: UIViewController {
-    // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-    return profileStoryboard.instantiateViewController(withIdentifier: "ProfileCreateViewController")
+    return Storyboards.Profile.instantiateProfileCreateViewController()
   }
 
   static var profileViewController: UIViewController {
-    // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-    return profileStoryboard.instantiateViewController(withIdentifier: "ProfileViewController")
+    return Storyboards.Profile.instantiateProfileViewController()
   }
 
   static var eventPreviewViewController: UIViewController {
-    // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    let eventPreview = UIStoryboard(name: "Profile", bundle: nil)
-    return eventPreview.instantiateViewController(withIdentifier: "EventPreviewViewController")
+    return Storyboards.EventPreview.instantiateEventPreviewViewController()
   }
 }
