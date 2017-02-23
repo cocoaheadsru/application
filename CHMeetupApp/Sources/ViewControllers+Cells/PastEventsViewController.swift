@@ -9,15 +9,15 @@
 import UIKit
 
 class PastEventsViewController: UIViewController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     // Do any additional setup after loading the view.
   }
-  
+
   @IBAction func showEventAction(_ sender: UIButton) {
     navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
-  
+
 }

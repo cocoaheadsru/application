@@ -9,11 +9,11 @@
 import UIKit
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     // Do any additional setup after loading the view.
   }
-  
+
 }

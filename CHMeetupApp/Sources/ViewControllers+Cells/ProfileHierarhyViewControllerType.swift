@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProfileHierarhyViewControllerType: class {
-  
+
 }
 
 extension ProfileHierarhyViewControllerType where Self: UIViewController {

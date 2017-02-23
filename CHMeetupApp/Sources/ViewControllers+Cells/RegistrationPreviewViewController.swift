@@ -9,11 +9,11 @@
 import UIKit
 
 class RegistrationPreviewViewController: UIViewController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     // Do any additional setup after loading the view.
   }
-  
+
 }

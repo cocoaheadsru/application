@@ -11,16 +11,19 @@ import UIKit
 struct ViewControllersFactory {
   static var loginViewController: UIViewController {
     // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileCreateViewController")
+    let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+    return profileStoryboard.instantiateViewController(withIdentifier: "ProfileCreateViewController")
   }
-  
+
   static var profileViewController: UIViewController {
     // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    return UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
+    let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+    return profileStoryboard.instantiateViewController(withIdentifier: "ProfileViewController")
   }
-  
+
   static var eventPreviewViewController: UIViewController {
     // FIXME: - use https://github.com/krzyzanowskim/Natalie
-    return UIStoryboard(name: "EventPreview", bundle: nil).instantiateViewController(withIdentifier: "EventPreviewViewController")
+    let eventPreview = UIStoryboard(name: "Profile", bundle: nil)
+    return eventPreview.instantiateViewController(withIdentifier: "EventPreviewViewController")
   }
 }

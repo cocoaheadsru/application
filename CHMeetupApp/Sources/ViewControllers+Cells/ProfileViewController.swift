@@ -1,4 +1,3 @@
-
 //
 //  ProfileViewController.swift
 //  CHMeetupApp
@@ -10,16 +9,16 @@
 import UIKit
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     // Do any additional setup after loading the view.
   }
-  
+
   @IBAction func logutBarButtonAction(_ sender: UIBarButtonItem) {
     LoginProcessViewController.isLogin = false
     profileNavigationController?.updateRootViewController()
   }
-  
+
 }

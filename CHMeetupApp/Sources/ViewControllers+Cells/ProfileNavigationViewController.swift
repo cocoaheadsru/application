@@ -13,14 +13,14 @@ protocol ProfileNavigationControllerType {
 }
 
 class ProfileNavigationViewController: NavigationViewController, ProfileNavigationControllerType {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     updateRootViewController()
     // Do any additional setup after loading the view.
   }
-  
+
   func updateRootViewController() {
     if LoginProcessViewController.isLogin {
       self.viewControllers = [ViewControllersFactory.profileViewController]
@@ -28,5 +28,5 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
       self.viewControllers = [ViewControllersFactory.loginViewController]
     }
   }
-  
+
 }

@@ -11,7 +11,7 @@ import Foundation
 private let loginName = "UD.key.isLogin"
 
 class LoginProcessViewController {
-  
+
   // FIXME: - Move to realm
   static var isLogin: Bool {
     set {
