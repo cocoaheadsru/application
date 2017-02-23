@@ -30,6 +30,8 @@
 		9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */; };
 		9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */; };
 		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
+		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
+		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
 		9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessViewController.swift; sourceTree = "<group>"; };
 		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
+		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
+		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 			children = (
 				9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */,
 				9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */,
+				9FD590121E5F1ADD00207199 /* Maps */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -406,6 +411,15 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		9FD590121E5F1ADD00207199 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				9FD590131E5F1AE700207199 /* MapAppType.swift */,
+				9FD590141E5F1AE700207199 /* MapsController.swift */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -527,8 +541,11 @@
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
+				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
+				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
+				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
