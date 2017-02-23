@@ -10,13 +10,12 @@ import UIKit
 import CoreLocation
 
 struct MapsController {
-  static var avalableMaps: [MapAppType] {
-    return MapAppType.allMaps.filter({
-      map in
+  static var availableMaps: [MapAppType] {
+    return MapAppType.allMaps.filter({ map in
       return UIApplication.shared.canOpenURL(map.scheme)
     })
   }
-  
+
   static func open(map: MapAppType, coordinate: CLLocationCoordinate2D) {
     let schemeURL = map.scheme(with: coordinate)
     UIApplication.shared.open(schemeURL, options: [:], completionHandler: nil)

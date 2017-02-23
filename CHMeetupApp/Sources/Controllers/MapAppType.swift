@@ -14,7 +14,7 @@ enum MapAppType {
   case googleMaps
   case yandexMaps
   case yandexNavigation
-  
+
   var title: String {
     switch self {
     case .appleMaps:
@@ -27,7 +27,7 @@ enum MapAppType {
       return "Yandex Navigation"
     }
   }
-  
+
   var scheme: URL {
     let schemeString: String
     switch self {
@@ -42,25 +42,26 @@ enum MapAppType {
     }
     return URL(string: schemeString)!
   }
-  
+
   func scheme(with coordinate: CLLocationCoordinate2D) -> URL {
-    let schemeString: String
+    let schemeSuffix: String
     switch self {
     case .appleMaps:
+      // swiftlint:disable:next line_length
       // https://developer.apple.com/library/content/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html#//apple_ref/doc/uid/TP40007899-CH5-SW1
-      schemeString = "\(scheme)?q=\(coordinate.latitude),\(coordinate.longitude)"
+      schemeSuffix = "?q=\(coordinate.latitude),\(coordinate.longitude)"
     case .googleMaps:
       // https://developers.google.com/maps/documentation/ios-sdk/urlscheme
-      schemeString = "\(scheme)?q=\(coordinate.latitude),\(coordinate.longitude)"
+      schemeSuffix = "?q=\(coordinate.latitude),\(coordinate.longitude)"
     case .yandexMaps:
       // http://stackoverflow.com/questions/22127840/ios-launch-yandexmaps-with-directions-urlscheme
-      schemeString = "\(scheme)?pt=\(coordinate.longitude),\(coordinate.latitude)&z=15"
+      schemeSuffix = "?pt=\(coordinate.longitude),\(coordinate.latitude)&z=15"
     default:
       // https://github.com/yandexmobile/yandexmapkit-ios/wiki/Интеграция-с-Яндекс.Навигатором
-      schemeString = "\(scheme)build_route_on_map?lat_to=\(coordinate.latitude)&lon_to=\(coordinate.longitude)"
+      schemeSuffix = "build_route_on_map?lat_to=\(coordinate.latitude)&lon_to=\(coordinate.longitude)"
     }
-    return URL(string: schemeString)!
+    return URL(string: scheme.absoluteString + schemeSuffix)!
   }
-  
+
   static var allMaps: [MapAppType] = [.appleMaps, .googleMaps, .yandexMaps, .yandexNavigation]
 }
