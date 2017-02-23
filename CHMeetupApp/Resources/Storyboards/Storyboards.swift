@@ -24,6 +24,34 @@ protocol Storyboard {
 
 struct Storyboards {
 
+  struct EventPreview: Storyboard {
+
+    static let identifier = "EventPreview"
+
+    static var storyboard: UIStoryboard {
+      return UIStoryboard(name: self.identifier, bundle: nil)
+    }
+
+    static func instantiateViewController(withIdentifier: String) -> UIViewController {
+      return self.storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+
+    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
+      T? where T: IdentifiableProtocol {
+        return self.storyboard.instantiateViewController(ofType: type)
+    }
+
+    static func instantiateEventPreviewViewController() -> EventPreviewViewController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewController") as?
+        EventPreviewViewController)!
+    }
+
+    static func instantiateEventPreviewViewControllerNavigation() -> UINavigationController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "EventPreviewViewControllerNavigation") as?
+        UINavigationController)!
+    }
+  }
+
   struct LaunchScreen: Storyboard {
 
     static let identifier = "LaunchScreen"
@@ -54,8 +82,8 @@ struct Storyboards {
       return UIStoryboard(name: self.identifier, bundle: nil)
     }
 
-    static func instantiateInitialViewController() -> ViewController {
-      return (self.storyboard.instantiateInitialViewController() as? ViewController)!
+    static func instantiateInitialViewController() -> TabBarViewController {
+      return (self.storyboard.instantiateInitialViewController() as? TabBarViewController)!
     }
 
     static func instantiateViewController(withIdentifier: String) -> UIViewController {
@@ -67,9 +95,48 @@ struct Storyboards {
         return self.storyboard.instantiateViewController(ofType: type)
     }
   }
+
+  struct Profile: Storyboard {
+
+    static let identifier = "Profile"
+
+    static var storyboard: UIStoryboard {
+      return UIStoryboard(name: self.identifier, bundle: nil)
+    }
+
+    static func instantiateViewController(withIdentifier: String) -> UIViewController {
+      return self.storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+
+    static func instantiateViewController<T: UIViewController>(ofType type: T.Type) ->
+      T? where T: IdentifiableProtocol {
+        return self.storyboard.instantiateViewController(ofType: type)
+    }
+
+    static func instantiateProfileCreateViewController() -> ProfileCreateViewController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewController") as?
+        ProfileCreateViewController)!
+    }
+
+    static func instantiateProfileViewController() -> ProfileViewController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as?
+        ProfileViewController)!
+    }
+
+    static func instantiateProfileCreateViewControllerNavigation() -> UINavigationController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileCreateViewControllerNavigation") as?
+        UINavigationController)!
+    }
+
+    static func instantiateProfileViewControllerNavigation() -> UINavigationController {
+      return (self.storyboard.instantiateViewController(withIdentifier: "ProfileViewControllerNavigation") as?
+        UINavigationController)!
+    }
+  }
 }
 
 // MARK: - ReusableKind
+
 enum ReusableKind: String, CustomStringConvertible {
   case TableViewCell = "tableViewCell"
   case CollectionViewCell = "collectionViewCell"
@@ -78,6 +145,7 @@ enum ReusableKind: String, CustomStringConvertible {
 }
 
 // MARK: - SegueKind
+
 enum SegueKind: String, CustomStringConvertible {
   case Relationship = "relationship"
   case Show = "show"
@@ -130,6 +198,7 @@ public func ~=<T: SegueProtocol>(lhs: String, rhs: T) -> Bool {
 }
 
 // MARK: - ReusableViewProtocol
+
 public protocol ReusableViewProtocol: IdentifiableProtocol {
   var viewType: UIView.Type? { get }
 }
@@ -139,6 +208,7 @@ public func ==<T: ReusableViewProtocol, U: ReusableViewProtocol>(lhs: T, rhs: U)
 }
 
 // MARK: - Protocol Implementation
+
 extension UIStoryboardSegue: SegueProtocol {
 }
 
@@ -153,6 +223,7 @@ extension UITableViewCell: ReusableViewProtocol {
 }
 
 // MARK: - UIViewController extension
+
 extension UIViewController {
   func perform<T: SegueProtocol>(segue: T, sender: AnyObject?) {
     if let identifier = segue.identifier {
@@ -229,4 +300,41 @@ extension UITableView {
   }
 }
 
-// MARK: - ViewController
+// MARK: - EventPreviewViewController
+
+extension EventPreviewViewController: IdentifiableProtocol {
+  var storyboardIdentifier: String? { return "EventPreviewViewController" }
+  static var storyboardIdentifier: String? { return "EventPreviewViewController" }
+}
+
+// MARK: - RegistrationPreviewViewController
+
+// MARK: - RegistrationConfirmViewController
+
+// MARK: - SpeechViewController
+
+// MARK: - PastEventsViewController
+
+// MARK: - MainViewController
+
+// MARK: - TabBarViewController
+
+// MARK: - ProfileNavigationViewController
+
+// MARK: - ProfileCreateViewController
+
+extension ProfileCreateViewController: IdentifiableProtocol {
+  var storyboardIdentifier: String? { return "ProfileCreateViewController" }
+  static var storyboardIdentifier: String? { return "ProfileCreateViewController" }
+}
+
+// MARK: - ProfileViewController
+
+extension ProfileViewController: IdentifiableProtocol {
+  var storyboardIdentifier: String? { return "ProfileViewController" }
+  static var storyboardIdentifier: String? { return "ProfileViewController" }
+}
+
+// MARK: - ProfileEditViewController
+
+// MARK: - GiveSpeechViewController
