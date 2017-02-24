@@ -9,11 +9,25 @@
 import EventKit
 import UIKit
 
+enum ImportToType {
+  case calendar
+  case reminder
+}
+
 class ImportController {
 
-  static let eventStore = EKEventStore()
+  private static let eventStore = EKEventStore()
 
-   static func toCalendar(infoAboutEvent: EventPO) {
+  static func importEventTo(infoAboutEvent: EventPO, toType: ImportToType) {
+    switch toType {
+    case .calendar:
+      ImportController.toCalendar(infoAboutEvent: infoAboutEvent)
+    case .reminder:
+      ImportController.toReminder(infoAboutEvent: infoAboutEvent)
+    }
+  }
+
+   private static func toCalendar(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
       if granted {
         let event = EKEvent(eventStore: self.eventStore)
@@ -39,11 +53,14 @@ class ImportController {
     })
   }
 
-  static func toReminder(infoAboutEvent: EventPO) {
+  private static func toReminder(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .reminder, completion: { granted, error in
       if granted {
         let reminder = EKReminder(eventStore: self.eventStore)
+        let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
+        let alarm = EKAlarm(absoluteDate: Date(timeIntervalSince1970:  intervalSince1970 - (5*60*60)))
         reminder.title = infoAboutEvent.title
+        reminder.addAlarm(alarm)
         reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
         do {
           try self.eventStore.save(reminder, commit: true)

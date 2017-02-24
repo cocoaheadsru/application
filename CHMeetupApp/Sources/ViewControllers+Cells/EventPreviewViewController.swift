@@ -12,16 +12,15 @@ class EventPreviewViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     // Do any additional setup after loading the view.
   }
 
   @IBAction func addToReminder(sender: UIButton) {
-    ImportController.toReminder(infoAboutEvent: EventPO())
+    ImportController.importEventTo(infoAboutEvent: EventPO(), toType: .reminder)
   }
 
   @IBAction func addToCalendar(sender: UIButton) {
-    ImportController.toCalendar(infoAboutEvent: EventPO())
+    ImportController.importEventTo(infoAboutEvent: EventPO(), toType: .calendar)
   }
 
 }
