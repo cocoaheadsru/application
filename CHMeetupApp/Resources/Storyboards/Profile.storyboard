@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,9 +122,67 @@
                     <view key="view" contentMode="scaleToFill" id="974-sJ-D3K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt9-6J-u5u">
+                                <rect key="frame" x="16" y="72" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="re2-pe-VGA"/>
+                                    <constraint firstAttribute="width" constant="120" id="s4F-V7-J7c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Описание..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PIQ-nz-1lm">
+                                <rect key="frame" x="16" y="110" width="343" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="n4B-IG-fGm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WaT-qA-jSi" id="C5g-uf-rcx"/>
+                                </connections>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bP4-HE-A3J">
+                                <rect key="frame" x="144" y="72" width="215" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B6Z-ea-qBP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WaT-qA-jSi" id="ER5-V5-sd8"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rt9-6J-u5u" firstAttribute="leading" secondItem="974-sJ-D3K" secondAttribute="leadingMargin" id="6aI-pT-LRr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bP4-HE-A3J" secondAttribute="trailing" id="IKo-7P-qw4"/>
+                            <constraint firstItem="bP4-HE-A3J" firstAttribute="leading" secondItem="rt9-6J-u5u" secondAttribute="trailing" constant="8" id="Ip8-D9-Rc8"/>
+                            <constraint firstItem="PIQ-nz-1lm" firstAttribute="top" secondItem="bP4-HE-A3J" secondAttribute="bottom" constant="8" id="Z6m-ta-i9G"/>
+                            <constraint firstItem="PIQ-nz-1lm" firstAttribute="leading" secondItem="974-sJ-D3K" secondAttribute="leadingMargin" id="hJd-fQ-axf"/>
+                            <constraint firstItem="rt9-6J-u5u" firstAttribute="top" secondItem="5m8-NS-nLl" secondAttribute="bottom" constant="8" id="myz-VQ-Fvb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PIQ-nz-1lm" secondAttribute="trailing" id="x6v-8y-lEo"/>
+                            <constraint firstItem="bP4-HE-A3J" firstAttribute="top" secondItem="5m8-NS-nLl" secondAttribute="bottom" constant="8" id="ypL-fB-q2D"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo"/>
+                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="9Xy-Za-5xL">
+                            <connections>
+                                <action selector="sendSpeechPressed:" destination="WaT-qA-jSi" id="xf9-lV-8yC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="PIQ-nz-1lm" id="xhP-XD-fnz"/>
+                        <outlet property="sendSpeechButton" destination="9Xy-Za-5xL" id="L5a-Ck-6Ft"/>
+                        <outlet property="titleLabel" destination="rt9-6J-u5u" id="mDP-nt-S5c"/>
+                        <outlet property="titleTextField" destination="bP4-HE-A3J" id="QyH-JY-EMF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-q3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
