@@ -1,0 +1,3 @@
+excluded: # paths to ignore during linting.
+  - Carthage
+  - CHMeetupApp/Resources/Storyboards
