@@ -17,11 +17,11 @@
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
 		2231A5311E60B9A50069A179 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5301E60B9A50069A179 /* RemoteService.swift */; };
-		2231A5331E60B9B60069A179 /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5321E60B9B60069A179 /* RemoteResource.swift */; };
 		2231A5351E60BA290069A179 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5341E60BA290069A179 /* Reachability.swift */; };
 		2231A5371E60E0D80069A179 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5361E60E0D80069A179 /* Constants.swift */; };
 		2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */; };
 		2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53C1E60E83F0069A179 /* UserPO.swift */; };
+		223DF7E61E61F9A4008A37E6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223DF7E51E61F9A4008A37E6 /* API.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -59,11 +59,11 @@
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2231A5301E60B9A50069A179 /* RemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
-		2231A5321E60B9B60069A179 /* RemoteResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
 		2231A5341E60BA290069A179 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2231A5361E60E0D80069A179 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPBody.swift"; sourceTree = "<group>"; };
 		2231A53C1E60E83F0069A179 /* UserPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPO.swift; sourceTree = "<group>"; };
+		223DF7E51E61F9A4008A37E6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				2231A5301E60B9A50069A179 /* RemoteService.swift */,
-				2231A5321E60B9B60069A179 /* RemoteResource.swift */,
+				223DF7E51E61F9A4008A37E6 /* API.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -631,6 +631,7 @@
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
+				223DF7E61E61F9A4008A37E6 /* API.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
 				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
@@ -641,7 +642,6 @@
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
-				2231A5331E60B9B60069A179 /* RemoteResource.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,

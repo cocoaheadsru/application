@@ -7,6 +7,7 @@
 //
 
 import Foundation
+typealias JSONDictionary = [String: Any]
 
 struct UserPO {
   let remoteID: Int
@@ -20,11 +21,5 @@ struct UserPO {
 
     self.remoteID = id
     self.name = name
-  }
-
-  // FIXME: Move queries consts of here
-  static let list = Resource<[UserPO]>(url: Constants.apiBase!, query: "users", params: nil) { json in
-    guard let js = json as? [JSONDictionary] else { return nil }
-    return js.flatMap(UserPO.init)
   }
 }
