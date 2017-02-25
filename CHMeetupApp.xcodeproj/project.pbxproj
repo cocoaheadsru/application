@@ -11,6 +11,12 @@
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
+		2231A5311E60B9A50069A179 /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5301E60B9A50069A179 /* RemoteService.swift */; };
+		2231A5331E60B9B60069A179 /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5321E60B9B60069A179 /* RemoteResource.swift */; };
+		2231A5351E60BA290069A179 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5341E60BA290069A179 /* Reachability.swift */; };
+		2231A5371E60E0D80069A179 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5361E60E0D80069A179 /* Constants.swift */; };
+		2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */; };
+		2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53C1E60E83F0069A179 /* UserPO.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -40,6 +46,12 @@
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2231A5301E60B9A50069A179 /* RemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
+		2231A5321E60B9B60069A179 /* RemoteResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
+		2231A5341E60BA290069A179 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2231A5361E60E0D80069A179 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPBody.swift"; sourceTree = "<group>"; };
+		2231A53C1E60E83F0069A179 /* UserPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPO.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				221F4F8A1E5C0B6C0009FD07 /* Info.plist */,
+				2231A5361E60E0D80069A179 /* Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -153,6 +166,8 @@
 		221F4F911E5C0B6C0009FD07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2231A52F1E60B9A50069A179 /* WebService */,
+				2231A5341E60BA290069A179 /* Reachability.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -160,6 +175,7 @@
 		221F4F921E5C0B6C0009FD07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2231A5381E60E5030069A179 /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +225,7 @@
 		221F4F981E5C0B6C0009FD07 /* PO */ = {
 			isa = PBXGroup;
 			children = (
+				2231A53C1E60E83F0069A179 /* UserPO.swift */,
 			);
 			path = PO;
 			sourceTree = "<group>";
@@ -229,6 +246,31 @@
 				9FD58FBB1E5E309900207199 /* Profile */,
 			);
 			path = "ViewControllers+Cells";
+			sourceTree = "<group>";
+		};
+		2231A52F1E60B9A50069A179 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				2231A5301E60B9A50069A179 /* RemoteService.swift */,
+				2231A5321E60B9B60069A179 /* RemoteResource.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		2231A5381E60E5030069A179 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2231A5391E60E5030069A179 /* Dictionary */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		2231A5391E60E5030069A179 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */,
+			);
+			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		9F60488C1E5B3CCB00C414C3 = {
@@ -525,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2231A5311E60B9A50069A179 /* RemoteService.swift in Sources */,
 				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
@@ -537,15 +580,19 @@
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
+				2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
+				2231A5331E60B9B60069A179 /* RemoteResource.swift in Sources */,
+				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
+				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
-				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
+				2231A5371E60E0D80069A179 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
