@@ -14,62 +14,78 @@ enum ImportToType {
   case reminder
 }
 
-class ImportController {
+class Importer {
 
   private static let eventStore = EKEventStore()
 
-  static func importEventTo(infoAboutEvent: EventPO, toType: ImportToType) {
-    switch toType {
+  static func `import`(event: EventPO, to type: ImportToType) {
+    switch type {
     case .calendar:
-      ImportController.toCalendar(infoAboutEvent: infoAboutEvent)
+      importToCalendar(infoAboutEvent: event)
     case .reminder:
-      ImportController.toReminder(infoAboutEvent: infoAboutEvent)
+      importToReminder(infoAboutEvent: event)
     }
   }
 
-   private static func toCalendar(infoAboutEvent: EventPO) {
+  private static func importToCalendar(infoAboutEvent: EventPO) {
     eventStore.requestAccess(to: .event, completion: { granted, error in
-      if granted {
-        let event = EKEvent(eventStore: self.eventStore)
-        let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
-        //warn the user for five hours before event 5 hours = 18000 seconds
-        let alarm = EKAlarm(relativeOffset:-18000)
-        structuredLocation.geoLocation = infoAboutEvent.location
+      guard granted else {
+        openSettings()
+        return
+      }
 
-        event.title = infoAboutEvent.title
-        event.startDate = Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970)
-        event.endDate = Date(timeIntervalSince1970: infoAboutEvent.endTime.timeIntervalFrom1970)
-        event.notes = infoAboutEvent.notes
-        event.addAlarm(alarm)
-        event.calendar = self.eventStore.defaultCalendarForNewEvents
-        do {
-          try self.eventStore.save(event, span: .thisEvent)
-        } catch {
-          print("Event Store save error: \(error), event: \(event)") }
-      } else {
-        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, completionHandler: { (success) in
-          print("Settings opened: \(success)") })
+      let event = EKEvent(eventStore: self.eventStore)
+      let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
+      //warn the user for five hours before event 5 hours = 18000 seconds
+      let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
+
+      event.title = infoAboutEvent.title
+      event.startDate = Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970)
+      event.endDate = Date(timeIntervalSince1970: infoAboutEvent.endTime.timeIntervalFrom1970)
+      event.notes = infoAboutEvent.notes
+      event.addAlarm(alarm)
+      event.calendar = self.eventStore.defaultCalendarForNewEvents
+
+      structuredLocation.geoLocation = infoAboutEvent.location
+      event.structuredLocation = structuredLocation
+
+      do {
+        try self.eventStore.save(event, span: .thisEvent)
+      } catch {
+        print("Event Store save error: \(error), event: \(event)")
+      }
+
+    })
+  }
+
+  private static func importToReminder(infoAboutEvent: EventPO) {
+    eventStore.requestAccess(to: .reminder, completion: { granted, error in
+      guard granted else {
+        openSettings()
+        return
+      }
+
+      let reminder = EKReminder(eventStore: self.eventStore)
+      let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
+      let alarmDate = Date(timeIntervalSince1970:  intervalSince1970 - (5 * 60 * 60))
+      let alarm = EKAlarm(absoluteDate: alarmDate)
+
+      reminder.title = infoAboutEvent.title
+      reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
+      reminder.addAlarm(alarm)
+
+      do {
+        try self.eventStore.save(reminder, commit: true)
+      } catch {
+        print("Event Store save error: \(error), event: \(reminder)")
       }
     })
   }
 
-  private static func toReminder(infoAboutEvent: EventPO) {
-    eventStore.requestAccess(to: .reminder, completion: { granted, error in
-      if granted {
-        let reminder = EKReminder(eventStore: self.eventStore)
-        let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
-        let alarm = EKAlarm(absoluteDate: Date(timeIntervalSince1970:  intervalSince1970 - (5*60*60)))
-        reminder.title = infoAboutEvent.title
-        reminder.addAlarm(alarm)
-        reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
-        do {
-          try self.eventStore.save(reminder, commit: true)
-        } catch {
-          print("Event Store save error: \(error), event: \(reminder)") }
-      } else {
-        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, completionHandler: { (success) in
-          print("Settings opened: \(success)") })
-      }
-    })
+  private static func openSettings() {
+    let settingsURL = URL(string: UIApplicationOpenSettingsURLString)!
+    UIApplication.shared.open(settingsURL, options: [:]) { (success) in
+      print("Settings opened: \(success)")
+    }
   }
 }

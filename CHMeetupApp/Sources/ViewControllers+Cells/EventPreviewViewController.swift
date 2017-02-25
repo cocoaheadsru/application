@@ -16,11 +16,11 @@ class EventPreviewViewController: UIViewController {
   }
 
   @IBAction func addToReminder(sender: UIButton) {
-    ImportController.importEventTo(infoAboutEvent: EventPO(), toType: .reminder)
+    Importer.import(event: EventPO(), to: .reminder)
   }
 
   @IBAction func addToCalendar(sender: UIButton) {
-    ImportController.importEventTo(infoAboutEvent: EventPO(), toType: .calendar)
+    Importer.import(event: EventPO(), to: .calendar)
   }
 
 }
