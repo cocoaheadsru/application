@@ -7,25 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
-		221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
 		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
+		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
+		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
+		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
+		9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */; };
+		9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC11E5E32E800207199 /* ProfileViewController.swift */; };
+		9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC51E5E32F900207199 /* ProfileEditViewController.swift */; };
+		9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FC81E5E331600207199 /* ProfileCreateViewController.swift */; };
+		9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FCB1E5E333C00207199 /* MainViewController.swift */; };
+		9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FCD1E5E334400207199 /* PastEventsViewController.swift */; };
+		9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */; };
+		9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD61E5E338A00207199 /* SpeechViewController.swift */; };
+		9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */; };
+		9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */; };
+		9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */; };
+		9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */; };
+		9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */; };
+		9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */; };
+		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
+		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
+		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
+		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
+		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		9FD58FC11E5E32E800207199 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9FD58FC51E5E32F900207199 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		9FD58FC81E5E331600207199 /* ProfileCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCreateViewController.swift; sourceTree = "<group>"; };
+		9FD58FCB1E5E333C00207199 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9FD58FCD1E5E334400207199 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
+		9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewViewController.swift; sourceTree = "<group>"; };
+		9FD58FD61E5E338A00207199 /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechViewController.swift; sourceTree = "<group>"; };
+		9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPreviewViewController.swift; sourceTree = "<group>"; };
+		9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmViewController.swift; sourceTree = "<group>"; };
+		9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
+		9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessViewController.swift; sourceTree = "<group>"; };
+		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
+		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
+		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +124,11 @@
 		221F4F8C1E5C0B6C0009FD07 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */,
+				035A76B31E5F230100B87501 /* Storyboards.swift */,
+				9FD58FBA1E5E307800207199 /* Launch */,
 				221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */,
+				9FD58FB61E5E304E00207199 /* EventPreview.storyboard */,
+				9FD58FB81E5E306800207199 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -137,6 +180,9 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */,
+				9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */,
+				9FD590121E5F1ADD00207199 /* Maps */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,7 +229,10 @@
 		221F4F9A1E5C0B6C0009FD07 /* ViewControllers+Cells */ = {
 			isa = PBXGroup;
 			children = (
-				221F4F9B1E5C0B6C0009FD07 /* ViewController.swift */,
+				9FD58FBC1E5E309C00207199 /* Base */,
+				9FD58FD11E5E336000207199 /* Events */,
+				9FD58FCA1E5E332B00207199 /* Feed */,
+				9FD58FBB1E5E309900207199 /* Profile */,
 			);
 			path = "ViewControllers+Cells";
 			sourceTree = "<group>";
@@ -214,6 +263,169 @@
 			path = CHMeetupApp;
 			sourceTree = "<group>";
 		};
+		9FD58FBA1E5E307800207199 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		9FD58FBB1E5E309900207199 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FEB1E5E409A00207199 /* Protocols */,
+				9FD58FE41E5E3EC500207199 /* NavigationController */,
+				9FD58FD81E5E34F500207199 /* GiveSpeech */,
+				9FD58FC71E5E330C00207199 /* Create */,
+				9FD58FC41E5E32F100207199 /* Edit */,
+				9FD58FC31E5E32EB00207199 /* Preview */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		9FD58FBC1E5E309C00207199 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */,
+				9FD58FBF1E5E30F400207199 /* NavigationViewController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9FD58FC31E5E32EB00207199 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FC11E5E32E800207199 /* ProfileViewController.swift */,
+			);
+			name = Preview;
+			sourceTree = "<group>";
+		};
+		9FD58FC41E5E32F100207199 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FC51E5E32F900207199 /* ProfileEditViewController.swift */,
+			);
+			name = Edit;
+			sourceTree = "<group>";
+		};
+		9FD58FC71E5E330C00207199 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FC81E5E331600207199 /* ProfileCreateViewController.swift */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
+		9FD58FCA1E5E332B00207199 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FCF1E5E334F00207199 /* Main */,
+				9FD58FD01E5E335400207199 /* Past Events */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		9FD58FCF1E5E334F00207199 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FCB1E5E333C00207199 /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9FD58FD01E5E335400207199 /* Past Events */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FCD1E5E334400207199 /* PastEventsViewController.swift */,
+			);
+			name = "Past Events";
+			sourceTree = "<group>";
+		};
+		9FD58FD11E5E336000207199 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FDB1E5E351100207199 /* Registration */,
+				9FD58FD51E5E337A00207199 /* Speech */,
+				9FD58FD41E5E337100207199 /* EventPreview */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		9FD58FD41E5E337100207199 /* EventPreview */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FD21E5E336E00207199 /* EventPreviewViewController.swift */,
+			);
+			name = EventPreview;
+			sourceTree = "<group>";
+		};
+		9FD58FD51E5E337A00207199 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FD61E5E338A00207199 /* SpeechViewController.swift */,
+			);
+			name = Speech;
+			sourceTree = "<group>";
+		};
+		9FD58FD81E5E34F500207199 /* GiveSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FD91E5E350300207199 /* GiveSpeechViewController.swift */,
+			);
+			name = GiveSpeech;
+			sourceTree = "<group>";
+		};
+		9FD58FDB1E5E351100207199 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FDF1E5E353C00207199 /* Confirm */,
+				9FD58FDC1E5E352500207199 /* Preview */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
+		9FD58FDC1E5E352500207199 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FDD1E5E353900207199 /* RegistrationPreviewViewController.swift */,
+			);
+			name = Preview;
+			sourceTree = "<group>";
+		};
+		9FD58FDF1E5E353C00207199 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FE01E5E359F00207199 /* RegistrationConfirmViewController.swift */,
+			);
+			name = Confirm;
+			sourceTree = "<group>";
+		};
+		9FD58FE41E5E3EC500207199 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FE51E5E3EE000207199 /* ProfileNavigationViewController.swift */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		9FD58FEB1E5E409A00207199 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9FD590121E5F1ADD00207199 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				9FD590131E5F1AE700207199 /* MapAppType.swift */,
+				9FD590141E5F1AE700207199 /* MapsController.swift */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,6 +437,7 @@
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				8A3B15DB1E5E37BE008DD430 /* ShellScript */,
+				035A76421E5EF46000B87501 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,6 +488,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
+				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 				221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */,
@@ -284,6 +499,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		035A76421E5EF46000B87501 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+		};
 		8A3B15DB1E5E37BE008DD430 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,8 +534,27 @@
 			files = (
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
 				C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */,
+				9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */,
+				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
+				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
+				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
+				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
+				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
+				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
+				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
+				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
+				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
+				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
+				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
+				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
+				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
+				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
+				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
+				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
 				221F4FA01E5C0B6C0009FD07 /* ViewController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
+				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
+				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
