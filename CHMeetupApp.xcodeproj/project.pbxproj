@@ -460,7 +460,6 @@
 				TargetAttributes = {
 					9F6048941E5B3CCB00C414C3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 474X26N2TW;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -656,7 +655,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 474X26N2TW;
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
@@ -669,7 +667,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 474X26N2TW;
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupApp;
