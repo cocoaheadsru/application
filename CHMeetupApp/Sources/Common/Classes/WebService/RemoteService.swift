@@ -8,29 +8,37 @@
 
 import Foundation
 
-protocol Remote {
-  func load<T>(resourse: Resource<T>, completion: @escaping (T?) -> (Void)) throws
-}
-
 enum RemoteError: Error {
   case emptyResponse
   case notConnection
 }
 
-final class RemoteService: Remote {
-  func load<T>(resourse: Resource<T>, completion: @escaping (T?) -> (Void)) throws {
+protocol RemoteProtocol {
+  func load(_ api: API, completion: @escaping ([JSONDictionary]) -> Void) throws
+}
+
+final class RemoteService: RemoteProtocol {
+  func load(_ api: API, completion: @escaping ([JSONDictionary]) -> Void) throws {
     if !Reachability.isInternetAvailable {
       throw RemoteError.notConnection
     }
 
-    let loadSession = URLSession.shared.dataTask(with: resourse.request!) { data, _, error in
+    var request = URLRequest(url: api.queryURL)
+    request.httpMethod = api.method
+    request.httpBody = api.parameters?.httpQuery
+
+    let loadSession = URLSession.shared.dataTask(with: request) { data, _, error in
       guard error == nil else {
-        print("Sesion request error: \(error) for resource: \(resourse)")
+        print("Sesion request error: \(error) for api resourse: \(api)")
         return
       }
-      let result = data.flatMap(resourse.parse)
-      completion(result)
+      let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: [])
+      guard let json = jsonObject as? [JSONDictionary] else { return }
+
+      completion(json)
     }
+
     loadSession.resume()
+
   }
 }
