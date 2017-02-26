@@ -10,11 +10,11 @@ import UIKit
 
 struct EventModel {
   var title: String
-  var date: Date
+  var dateTitle: String
 }
 
 class PastEventsViewController: UIViewController {
-  @IBOutlet fileprivate weak var tableView: UITableView! {
+  @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.register(PastEventsTableViewCell.nib, forCellReuseIdentifier: PastEventsTableViewCell.identifier)
       tableView.estimatedRowHeight = 100
@@ -22,10 +22,9 @@ class PastEventsViewController: UIViewController {
     }
   }
   //FIXME: Replace with real data source
-  fileprivate var groupedEvents = [EventModel]()
+  fileprivate var groupedEvents = [Date: [EventModel]]()
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     fetchEvents()
   }
 }
@@ -42,12 +41,14 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     // swiftlint:disable:next force_cast
     let cell = tableView.dequeueReusableCell(withIdentifier: PastEventsTableViewCell.identifier, for: indexPath) as! PastEventsTableViewCell
     //FIXME: Replace with reald data source
-    let event = groupedEvents[indexPath.section]
-    cell.configure(with: event)
+    let events = groupedEvents[key(for: indexPath.section)]
+    if let event = events?[indexPath.row] {
+      cell.configure(with: event)
+    }
     return cell
   }
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let date = groupedEvents[section].date
+    let date = key(for: section)
     return DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -59,14 +60,22 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 fileprivate extension PastEventsViewController {
   func fetchEvents() {
     //FIXME: Replace with real data
-    for i in 0...10 {
-      //Create event
-      let eventTime = Date().addingTimeInterval(-TimeInterval(3600 * 24 * i))
-      let event = EventModel(title: "Name of event - \(i)", date: eventTime)
-      groupedEvents.append(event)
+    let numberOfDemoEvents = 10
+    for eventIndex in 0...numberOfDemoEvents {
+      //Create past event
+      let oneDayTimeInterval = 3600 * 24
+      let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
+      let timeTitle = DateFormatter.localizedString(from: eventTime, dateStyle: .medium, timeStyle: .short)
+      let event = EventModel(title: "Name of event - \(eventIndex)", dateTitle: timeTitle)
+      groupedEvents[eventTime] = [event]
     }
     tableView.reloadData()
   }
+
+  func key(for section: Int) -> Date {
+    return groupedEvents.keys.sorted()[section]
+  }
+
   func showEvent(at indexPath: IndexPath) {
     navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }

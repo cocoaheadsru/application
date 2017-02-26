@@ -10,21 +10,21 @@ import UIKit
 
 protocol ReusableCell {
   static var identifier: String { get }
-  static var nib: UINib? {get}
+  static var nib: UINib? { get }
 }
 
 class PastEventsTableViewCell: UITableViewCell {
   
-  @IBOutlet fileprivate weak var titleLabel: UILabel!
-  @IBOutlet fileprivate weak var dateLabel: UILabel!
-  @IBOutlet fileprivate weak var placeholderImageView: UIImageView!
+  @IBOutlet fileprivate var titleLabel: UILabel!
+  @IBOutlet fileprivate var dateLabel: UILabel!
+  @IBOutlet fileprivate var placeholderImageView: UIImageView!
 }
 
 extension PastEventsTableViewCell {
   
   func configure(with event: EventModel) {
     titleLabel.text = event.title
-    dateLabel.text = DateFormatter.localizedString(from: event.date, dateStyle: .medium, timeStyle: .short)
+    dateLabel.text = event.dateTitle
   }
 }
 
