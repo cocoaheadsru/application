@@ -16,11 +16,29 @@ class EventPreviewViewController: UIViewController {
   }
 
   @IBAction func addToReminder(sender: UIButton) {
-    Importer.import(event: EventPO(), to: .reminder)
+    Importer.import(event: EventPO(), to: .reminder) { result in
+      switch result {
+      case .success:
+        print("Added")
+      case .permissionError:
+        print("Show settings alert")
+      case .saveError(let error):
+        print("Error alert: \(error)")
+      }
+    }
   }
 
   @IBAction func addToCalendar(sender: UIButton) {
-    Importer.import(event: EventPO(), to: .calendar)
+    Importer.import(event: EventPO(), to: .calendar) { result in
+      switch result {
+      case .success:
+        print("Added")
+      case .permissionError:
+        print("Show settings alert")
+      case .saveError(let error):
+        print("Error alert: \(error)")
+      }
+    }
   }
 
 }

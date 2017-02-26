@@ -16,22 +16,30 @@ enum ImportToType {
 
 class Importer {
 
+  enum Result {
+    case success
+    case permissionError
+    case saveError(error: Error)
+  }
+
   private static let calendarEventStore = EKEventStore()
   private static let remindersEventStore = EKEventStore()
 
-  static func `import`(event: EventPO, to type: ImportToType) {
+  typealias ResultParametr = (_ result: Result) -> Void
+
+  static func `import`(event: EventPO, to type: ImportToType, completion: @escaping ResultParametr) {
     switch type {
     case .calendar:
-      importToCalendar(infoAboutEvent: event)
+      importToCalendar(infoAboutEvent: event, completion: completion)
     case .reminder:
-      importToReminder(infoAboutEvent: event)
+      importToReminder(infoAboutEvent: event, completion: completion)
     }
   }
 
-  private static func importToCalendar(infoAboutEvent: EventPO) {
+  private static func importToCalendar(infoAboutEvent: EventPO, completion: @escaping ResultParametr) {
     calendarEventStore.requestAccess(to: .event, completion: { granted, error in
       guard granted else {
-        openSettings()
+        completion(.permissionError)
         return
       }
 
@@ -52,17 +60,19 @@ class Importer {
 
       do {
         try self.calendarEventStore.save(event, span: .thisEvent)
+        completion(.success)
       } catch {
         print("Event Store save error: \(error), event: \(event)")
+        completion(.saveError(error: error))
       }
 
     })
   }
 
-  private static func importToReminder(infoAboutEvent: EventPO) {
+  private static func importToReminder(infoAboutEvent: EventPO, completion: @escaping ResultParametr) {
     remindersEventStore.requestAccess(to: .reminder, completion: { granted, error in
       guard granted else {
-        openSettings()
+        completion(.permissionError)
         return
       }
 
@@ -77,16 +87,11 @@ class Importer {
 
       do {
         try self.remindersEventStore.save(reminder, commit: true)
+        completion(.success)
       } catch {
         print("Event Store save error: \(error), event: \(reminder)")
+        completion(.saveError(error: error))
       }
     })
-  }
-
-  private static func openSettings() {
-    let settingsURL = URL(string: UIApplicationOpenSettingsURLString)!
-    UIApplication.shared.open(settingsURL, options: [:]) { (success) in
-      print("Settings opened: \(success)")
-    }
   }
 }
