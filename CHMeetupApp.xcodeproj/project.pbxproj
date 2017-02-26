@@ -259,6 +259,8 @@
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+      sourceTree = "<group>";
+    };
 		78BBC8FA1E60F79A00DEC122 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
