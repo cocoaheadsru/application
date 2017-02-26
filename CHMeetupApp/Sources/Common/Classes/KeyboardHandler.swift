@@ -87,7 +87,7 @@ class KeyboardHandler {
     if prevInputView != nil && activeInputView != nil && currentState == .visible {
       if prevInputView != activeInputView {
         getInfo(from: notification) { info in
-          delegate?.keyboardActiveInputViewChanged(input: activeInputView, info: info)
+          _delegate.keyboardActiveInputViewChanged(input: activeInputView, info: info)
           prevInputView = activeInputView
           return
         }
