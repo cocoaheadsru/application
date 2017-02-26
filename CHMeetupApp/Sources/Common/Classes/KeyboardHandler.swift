@@ -81,13 +81,13 @@ class KeyboardHandler {
   }
 
   @objc func willShown(notification: Notification) {
-    guard let _delegate = delegate else {
+    guard let delegate = delegate else {
       return
     }
     if prevInputView != nil && activeInputView != nil && currentState == .visible {
       if prevInputView != activeInputView {
         getInfo(from: notification) { info in
-          _delegate.keyboardActiveInputViewChanged(input: activeInputView, info: info)
+          delegate.keyboardActiveInputViewChanged(input: activeInputView, info: info)
           prevInputView = activeInputView
           return
         }
@@ -103,7 +103,7 @@ class KeyboardHandler {
     }
     currentState = .visible
     getInfo(from: notification) { info in
-      _delegate.keyboardStateChanged(input: activeInputView, state: .opened, info: info)
+      delegate.keyboardStateChanged(input: activeInputView, state: .opened, info: info)
     }
   }
 
