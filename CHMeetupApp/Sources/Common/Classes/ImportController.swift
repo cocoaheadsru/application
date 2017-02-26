@@ -49,8 +49,8 @@ class Importer {
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
 
       event.title = infoAboutEvent.title
-      event.startDate = Date(timeIntervalSince1970: infoAboutEvent.startTime.timeIntervalFrom1970)
-      event.endDate = Date(timeIntervalSince1970: infoAboutEvent.endTime.timeIntervalFrom1970)
+      event.startDate = infoAboutEvent.startTime
+      event.endDate = infoAboutEvent.endTime
       event.notes = infoAboutEvent.notes
       event.addAlarm(alarm)
       event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
@@ -77,7 +77,7 @@ class Importer {
       }
 
       let reminder = EKReminder(eventStore: self.remindersEventStore)
-      let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
+      let intervalSince1970 = infoAboutEvent.startTime.timeIntervalSince1970
       let alarmDate = Date(timeIntervalSince1970:  intervalSince1970 - (5 * 60 * 60))
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
