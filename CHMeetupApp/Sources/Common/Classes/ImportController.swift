@@ -16,7 +16,8 @@ enum ImportToType {
 
 class Importer {
 
-  private static let eventStore = EKEventStore()
+  private static let calendarEventStore = EKEventStore()
+  private static let remindersEventStore = EKEventStore()
 
   static func `import`(event: EventPO, to type: ImportToType) {
     switch type {
@@ -28,13 +29,13 @@ class Importer {
   }
 
   private static func importToCalendar(infoAboutEvent: EventPO) {
-    eventStore.requestAccess(to: .event, completion: { granted, error in
+    calendarEventStore.requestAccess(to: .event, completion: { granted, error in
       guard granted else {
         openSettings()
         return
       }
 
-      let event = EKEvent(eventStore: self.eventStore)
+      let event = EKEvent(eventStore: self.calendarEventStore)
       let structuredLocation = EKStructuredLocation(title: infoAboutEvent.locationTitle)
       //warn the user for five hours before event 5 hours = 18000 seconds
       let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
@@ -44,13 +45,13 @@ class Importer {
       event.endDate = Date(timeIntervalSince1970: infoAboutEvent.endTime.timeIntervalFrom1970)
       event.notes = infoAboutEvent.notes
       event.addAlarm(alarm)
-      event.calendar = self.eventStore.defaultCalendarForNewEvents
+      event.calendar = self.calendarEventStore.defaultCalendarForNewEvents
 
       structuredLocation.geoLocation = infoAboutEvent.location
       event.structuredLocation = structuredLocation
 
       do {
-        try self.eventStore.save(event, span: .thisEvent)
+        try self.calendarEventStore.save(event, span: .thisEvent)
       } catch {
         print("Event Store save error: \(error), event: \(event)")
       }
@@ -59,23 +60,23 @@ class Importer {
   }
 
   private static func importToReminder(infoAboutEvent: EventPO) {
-    eventStore.requestAccess(to: .reminder, completion: { granted, error in
+    remindersEventStore.requestAccess(to: .reminder, completion: { granted, error in
       guard granted else {
         openSettings()
         return
       }
 
-      let reminder = EKReminder(eventStore: self.eventStore)
+      let reminder = EKReminder(eventStore: self.remindersEventStore)
       let intervalSince1970 = infoAboutEvent.startTime.timeIntervalFrom1970
       let alarmDate = Date(timeIntervalSince1970:  intervalSince1970 - (5 * 60 * 60))
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
       reminder.title = infoAboutEvent.title
-      reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
+      reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
       reminder.addAlarm(alarm)
 
       do {
-        try self.eventStore.save(reminder, commit: true)
+        try self.remindersEventStore.save(reminder, commit: true)
       } catch {
         print("Event Store save error: \(error), event: \(reminder)")
       }
