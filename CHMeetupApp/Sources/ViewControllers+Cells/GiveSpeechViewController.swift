@@ -13,17 +13,16 @@ class GiveSpeechViewController: UIViewController {
   @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var descriptionTextView: UITextView! {
+    didSet {
+      descriptionTextView.layer.cornerRadius  = 5
+      descriptionTextView.layer.borderWidth   = 1
+      descriptionTextView.layer.borderColor   = UIColor.lightGray.cgColor
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    configurateUI()
-  }
-
-  func configurateUI() {
-    descriptionTextView.layer.cornerRadius  = 5
-    descriptionTextView.layer.borderWidth   = 1
-    descriptionTextView.layer.borderColor   = UIColor.lightGray.cgColor
   }
 
   @IBAction func sendSpeechPressed(_ sender: UIBarButtonItem) {
@@ -32,9 +31,11 @@ class GiveSpeechViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-extension GiveSpeechViewController: UITextFieldDelegate {
-}
+//extension GiveSpeechViewController: UITextFieldDelegate {
+//  
+//}
 
 // MARK: - UITextViewDelegate
-extension GiveSpeechViewController: UITextViewDelegate {
-}
+//extension GiveSpeechViewController: UITextViewDelegate {
+//  
+//}
