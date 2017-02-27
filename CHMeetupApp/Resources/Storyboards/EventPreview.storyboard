@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-k1-i4K">
-                                <rect key="frame" x="132" y="303.5" width="110" height="60"/>
+                                <rect key="frame" x="132" y="273.5" width="110" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-tp-KiO">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -36,6 +36,20 @@
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <segue destination="CGY-Eq-4dK" kind="show" id="yex-9Q-uEJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-q1-0bd">
+                                        <rect key="frame" x="0.0" y="60" width="110" height="30"/>
+                                        <state key="normal" title="Cal"/>
+                                        <connections>
+                                            <action selector="addToCalendarWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="NQ7-v1-uFS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvw-5Z-9Mc">
+                                        <rect key="frame" x="0.0" y="90" width="110" height="30"/>
+                                        <state key="normal" title="Rem"/>
+                                        <connections>
+                                            <action selector="addToReminderWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="dHZ-Ud-AEk"/>
                                         </connections>
                                     </button>
                                 </subviews>
