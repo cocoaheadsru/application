@@ -25,9 +25,6 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-//    LoginProcessViewController.isLogin = true
-//    profileNavigationController?.updateRootViewController()
-
     if !vkAppMayExists() {
       let url = LoginType.vk.urlAuth
       showSafariVC(url: url)
@@ -35,7 +32,6 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
       let url = LoginType.vk.schemeAuth!
       UIApplication.shared.open(url, options: [:])
     }
-
   }
 
   @IBAction func fbLoginButtonAction(_ sender: Any) {
@@ -59,7 +55,8 @@ extension ProfileCreateViewController {
 //    print(url)
     if haveSafariVC! {
       safariVC!.dismiss(animated: true, completion: nil)
-      haveSafariVC = false
+      LoginProcessViewController.isLogin = true
+      profileNavigationController?.updateRootViewController()
     }
   }
 
