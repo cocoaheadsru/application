@@ -30,7 +30,17 @@ enum ProfileCells {
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView! {
+    didSet {
+      tableView.tableFooterView = UIView()
+      tableView.register(UINib.init(nibName: Cells.Profile.picture, bundle: nil),
+                         forCellReuseIdentifier: Cells.Profile.picture)
+      tableView.register(UINib.init(nibName: Cells.Profile.name, bundle: nil),
+                         forCellReuseIdentifier: Cells.Profile.name)
+      tableView.register(UINib.init(nibName: Cells.Profile.speach, bundle: nil),
+                         forCellReuseIdentifier: Cells.Profile.speach)
+    }
+  }
 
   var tableArray = [ProfileCells]()
 
@@ -38,21 +48,10 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupTableView()
     updateTableView()
   }
 
-  // MARK: - Setup & updates.
-
-  func setupTableView() {
-    tableView.tableFooterView = UIView()
-    tableView.register(UINib.init(nibName: Cells.Profile.picture, bundle: nil),
-                       forCellReuseIdentifier: Cells.Profile.picture)
-    tableView.register(UINib.init(nibName: Cells.Profile.name, bundle: nil),
-                       forCellReuseIdentifier: Cells.Profile.name)
-    tableView.register(UINib.init(nibName: Cells.Profile.speach, bundle: nil),
-                       forCellReuseIdentifier: Cells.Profile.speach)
-  }
+  // MARK: - TableView update.
 
   func updateTableView() {
     tableArray = [.picture, .name, .speach]
