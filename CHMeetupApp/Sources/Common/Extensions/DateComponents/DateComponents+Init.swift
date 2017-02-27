@@ -16,7 +16,11 @@ extension DateComponents {
     let dayComponent = Int(calendar.component(.day, from: date.startTime))
     let hourComponent = Int(calendar.component(.hour, from: date.startTime))
     let minuteComponent = Int(calendar.component(.minute, from: date.startTime))
-    // swiftlint:disable line_length
-    self.init(year: yearComponent, month: monthComponent, day: dayComponent, hour: hourComponent, minute: minuteComponent)
+
+    self.init(year: yearComponent,
+              month: monthComponent,
+              day: dayComponent,
+              hour: hourComponent,
+              minute: minuteComponent)
   }
 }
