@@ -82,6 +82,7 @@ class Importer {
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
       reminder.title = infoAboutEvent.title
+      reminder.dueDateComponents = DateComponents(date: infoAboutEvent)
       reminder.calendar = self.remindersEventStore.defaultCalendarForNewReminders()
       reminder.addAlarm(alarm)
 
