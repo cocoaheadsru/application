@@ -12,9 +12,9 @@
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		221F4F9F1E5C0B6C0009FD07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
+		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
-		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
-		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
@@ -35,6 +35,8 @@
 		9FD58FEA1E5E409500207199 /* ProfileHierarhyViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */; };
 		9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590131E5F1AE700207199 /* MapAppType.swift */; };
 		9FD590161E5F1AE700207199 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD590141E5F1AE700207199 /* MapsController.swift */; };
+		C3E466B91E5F1C4700728327 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */; };
+		C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +46,10 @@
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221F4F8E1E5C0B6C0009FD07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
-		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		9FD58FE91E5E409500207199 /* ProfileHierarhyViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHierarhyViewControllerType.swift; sourceTree = "<group>"; };
 		9FD590131E5F1AE700207199 /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		9FD590141E5F1AE700207199 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
+		C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+keyboardDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		221F4F891E5C0B6C0009FD07 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				8A6268511E64568C00D51BEB /* Constants.swift */,
 				221F4F8A1E5C0B6C0009FD07 /* Info.plist */,
 			);
 			path = Config;
@@ -185,6 +190,7 @@
 			children = (
 				9FD58FE21E5E3A8C00207199 /* ViewControllersFactory.swift */,
 				9FD58FE71E5E3F4100207199 /* LoginProcessViewController.swift */,
+				8A6268551E64639700D51BEB /* Login */,
 				9FD590121E5F1ADD00207199 /* Maps */,
 			);
 			path = Controllers;
@@ -246,6 +252,15 @@
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A6268551E64639700D51BEB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8A6268531E64638500D51BEB /* LoginType.swift */,
+			);
+			name = Login;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9F60488C1E5B3CCB00C414C3 = {
@@ -568,12 +583,14 @@
 				9FD58FCC1E5E333C00207199 /* MainViewController.swift in Sources */,
 				9FD58FE11E5E359F00207199 /* RegistrationConfirmViewController.swift in Sources */,
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
+				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
+				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,

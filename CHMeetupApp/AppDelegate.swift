@@ -51,4 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //if appropriate. See also applicationDidEnterBackground:.
   }
 
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+    NotificationCenter.default.post(name: Notification.Name(rawValue: closeSafariVCNote), object: url)
+    return true
+  }
+
 }
