@@ -22,6 +22,8 @@
 		2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */; };
 		224CA9DC1E65FB8300CD06D6 /* UserPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DB1E65FB8300CD06D6 /* UserPO.swift */; };
 		224CA9DE1E65FBA100CD06D6 /* UserPO+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DD1E65FBA100CD06D6 /* UserPO+Requests.swift */; };
+		224CA9E01E65FC7300CD06D6 /* POType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DF1E65FC7300CD06D6 /* POType.swift */; };
+		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -64,6 +66,8 @@
 		2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPBody.swift"; sourceTree = "<group>"; };
 		224CA9DB1E65FB8300CD06D6 /* UserPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPO.swift; sourceTree = "<group>"; };
 		224CA9DD1E65FBA100CD06D6 /* UserPO+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserPO+Requests.swift"; sourceTree = "<group>"; };
+		224CA9DF1E65FC7300CD06D6 /* POType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POType.swift; sourceTree = "<group>"; };
+		224CA9E11E65FCA100CD06D6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				4D99A5431E61E398009E3E0E /* EventPO.swift */,
 				2231A53C1E60E83F0069A179 /* UserPO.swift */,
 				224CA9DA1E65FB7300CD06D6 /* User */,
+				224CA9DF1E65FC7300CD06D6 /* POType.swift */,
 			);
 			path = PO;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				2231A5301E60B9A50069A179 /* RemoteService.swift */,
+				224CA9E11E65FCA100CD06D6 /* Request.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -654,11 +660,13 @@
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
+				224CA9E01E65FC7300CD06D6 /* POType.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 				224CA9DC1E65FB8300CD06D6 /* UserPO.swift in Sources */,
+				224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */,
 				2231A5371E60E0D80069A179 /* Constants.swift in Sources */,
 				224CA9DE1E65FBA100CD06D6 /* UserPO+Requests.swift in Sources */,
 			);

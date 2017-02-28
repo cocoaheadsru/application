@@ -7,7 +7,6 @@
 //
 
 import Foundation
-typealias JSONDictionary = [String: Any]
 
 struct UserPO: POType {
   let remoteID: Int

@@ -8,53 +8,6 @@
 
 import Foundation
 
-protocol POType {
-  associatedtype RequestsEnum
-  init?(json: [String: Any])
-}
-
-typealias RequestParams = [String: String]
-
-enum RequestMethod {
-  case get
-  case post
-  case head
-  case delete
-
-  var `string`: String {
-    switch self {
-    case .post:
-      return "POST"
-    default:
-      return "GET"
-    }
-  }
-}
-
-struct Request<T> {
-  let base = "http://upapi.ru/method/"
-
-  var query: String
-  var params: RequestParams?
-  var method: RequestMethod
-
-  var contentType = T.Type.self
-
-  init(query: String, params: RequestParams?, method: RequestMethod) {
-    self.query = query
-    self.params = params
-    self.method = method
-  }
-
-  init(query: String, params: RequestParams?) {
-    self.query = query
-    self.params = params
-    self.method = .get
-  }
-
-}
-
-
 enum RemoteError: Error {
   case emptyResponse
   case notConnection
