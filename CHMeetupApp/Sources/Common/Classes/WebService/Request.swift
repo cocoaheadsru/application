@@ -40,16 +40,10 @@ struct Request<T> {
 
   var contentType = T.Type.self
 
-  init(query: String, params: RequestParams?, method: RequestMethod) {
+  init(query: String, method: RequestMethod = .get, params: RequestParams? = nil) {
     self.query = query
     self.params = params
     self.method = method
-  }
-
-  init(query: String, params: RequestParams?) {
-    self.query = query
-    self.params = params
-    self.method = .get
   }
 
 }

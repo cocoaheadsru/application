@@ -14,12 +14,12 @@ extension UserPO {
   struct Requests {
     // Users list
     static var list: Request<UserPO> {
-      return Request(query: "users", params: nil)
+      return Request(query: "users")
     }
 
     // Authorization by social network
     static func auth(token: String, socialId: String) -> Request<UserPO> {
-      return Request<UserPO>(query: "users", params: nil, method: .post)
+      return Request<UserPO>(query: "users", method: .post)
     }
 
   }

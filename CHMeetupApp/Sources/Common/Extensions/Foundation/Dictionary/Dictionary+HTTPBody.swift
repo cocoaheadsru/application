@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Dictionary where Key: ExpressibleByStringLiteral & Hashable, Value: ExpressibleByStringLiteral {
+extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
 
   var httpQuery: Data {
     var httpQuery: [String] = []

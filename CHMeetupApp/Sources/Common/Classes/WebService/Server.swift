@@ -9,15 +9,18 @@
 import Foundation
 
 enum ServerError: Error {
-  case notConnection
+  case noConnection
   case requestFailed
+  case emptyResponse
 
   var desc: String {
     switch self {
     case .requestFailed:
       return "Неверно сформированный запрос"
-    case .notConnection:
+    case .noConnection:
       return "Отстутствует подключение к сети"
+    case .emptyResponse:
+      return "Пустой ответ сервера"
     }
   }
 
@@ -26,8 +29,9 @@ enum ServerError: Error {
 class Server {
   static func request<T: POType>(_ request: Request<T>, completion: @escaping (([T]?, ServerError?) -> Void)) {
 
-    if !Reachability.isInternetAvailable {
-      completion(nil, .notConnection)
+    guard Reachability.isInternetAvailable else {
+      completion(nil, .noConnection)
+      return
     }
 
     guard let query = URL(string: request.base + request.query) else {
@@ -45,7 +49,12 @@ class Server {
         return
       }
 
-      let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: [])
+      guard let data = data else {
+        completion(nil, .emptyResponse)
+        return
+      }
+      
+      let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
       guard let json = jsonObject as? [JSONDictionary] else { return }
       let objects: [T] = json.flatMap(T.init)
 
