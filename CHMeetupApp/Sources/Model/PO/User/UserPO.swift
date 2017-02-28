@@ -9,7 +9,7 @@
 import Foundation
 typealias JSONDictionary = [String: Any]
 
-struct UserPO4 {
+struct UserPO: POType {
   let remoteID: Int
   let name: String
 
@@ -17,9 +17,10 @@ struct UserPO4 {
     guard
       let id = json["id"] as? Int,
       let name = json["username"] as? String
-    else { return nil }
-
+      else { return nil }
+    
     self.remoteID = id
     self.name = name
   }
+  
 }

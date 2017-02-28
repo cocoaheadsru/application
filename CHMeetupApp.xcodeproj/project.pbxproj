@@ -20,8 +20,8 @@
 		2231A5351E60BA290069A179 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5341E60BA290069A179 /* Reachability.swift */; };
 		2231A5371E60E0D80069A179 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5361E60E0D80069A179 /* Constants.swift */; };
 		2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */; };
-		2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A53C1E60E83F0069A179 /* UserPO.swift */; };
-		223DF7E61E61F9A4008A37E6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223DF7E51E61F9A4008A37E6 /* API.swift */; };
+		224CA9DC1E65FB8300CD06D6 /* UserPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DB1E65FB8300CD06D6 /* UserPO.swift */; };
+		224CA9DE1E65FBA100CD06D6 /* UserPO+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DD1E65FBA100CD06D6 /* UserPO+Requests.swift */; };
 		9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
@@ -62,8 +62,8 @@
 		2231A5341E60BA290069A179 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2231A5361E60E0D80069A179 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPBody.swift"; sourceTree = "<group>"; };
-		2231A53C1E60E83F0069A179 /* UserPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPO.swift; sourceTree = "<group>"; };
-		223DF7E51E61F9A4008A37E6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		224CA9DB1E65FB8300CD06D6 /* UserPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPO.swift; sourceTree = "<group>"; };
+		224CA9DD1E65FBA100CD06D6 /* UserPO+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserPO+Requests.swift"; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6048981E5B3CCB00C414C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
@@ -246,6 +246,7 @@
 			children = (
 				4D99A5431E61E398009E3E0E /* EventPO.swift */,
 				2231A53C1E60E83F0069A179 /* UserPO.swift */,
+				224CA9DA1E65FB7300CD06D6 /* User */,
 			);
 			path = PO;
 			sourceTree = "<group>";
@@ -286,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				2231A5301E60B9A50069A179 /* RemoteService.swift */,
-				223DF7E51E61F9A4008A37E6 /* API.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -305,6 +305,15 @@
 				2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */,
 			);
 			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		224CA9DA1E65FB7300CD06D6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				224CA9DB1E65FB8300CD06D6 /* UserPO.swift */,
+				224CA9DD1E65FBA100CD06D6 /* UserPO+Requests.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		9F60488C1E5B3CCB00C414C3 = {
@@ -631,7 +640,6 @@
 				9FD58FC01E5E30F400207199 /* NavigationViewController.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
-				223DF7E61E61F9A4008A37E6 /* API.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
 				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
@@ -640,7 +648,6 @@
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
-				2231A53D1E60E83F0069A179 /* UserPO.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
@@ -651,7 +658,9 @@
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9FD58FE31E5E3A8C00207199 /* ViewControllersFactory.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
+				224CA9DC1E65FB8300CD06D6 /* UserPO.swift in Sources */,
 				2231A5371E60E0D80069A179 /* Constants.swift in Sources */,
+				224CA9DE1E65FBA100CD06D6 /* UserPO+Requests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

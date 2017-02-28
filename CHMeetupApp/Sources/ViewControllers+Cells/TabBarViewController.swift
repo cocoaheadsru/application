@@ -9,27 +9,17 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-  let remoteRequests: RemoteProtocol = RemoteService()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Query example
 
+    Server.request(UserPO.Requests.list) { (users) in
+      for user in users! {
+        print(user)
+      }
+    }
     
-    om
-//    
-//    do {
-//      try remoteRequests.load(.users) { json in
-//        let users = json.flatMap(UserPO.init)
-//        for user in users {
-//          print(user.name)
-//          print(user.remoteID)
-//        }
-//      }
-//    } catch {
-//      print("Remote loading error: \(error) for resourse: \(API.users)")
-//    }
-
   }
-
 }
