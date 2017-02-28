@@ -8,7 +8,6 @@
 
 import Foundation
 
-typealias RequestParams = [String: String]
 
 enum API {
   static let base: URL? = URL(string: "http://upapi.ru/method/")

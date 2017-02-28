@@ -9,7 +9,7 @@
 import Foundation
 typealias JSONDictionary = [String: Any]
 
-struct UserPO {
+struct UserPO4 {
   let remoteID: Int
   let name: String
 
