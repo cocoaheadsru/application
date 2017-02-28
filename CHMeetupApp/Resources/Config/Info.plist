@@ -6,6 +6,16 @@
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api</key>
+			<string>http://upapi.ru</string>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
