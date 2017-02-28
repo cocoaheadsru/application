@@ -16,8 +16,12 @@ class TabBarViewController: UITabBarController {
     // Query example
 
     Server.request(UserPO.Requests.list) { (users) in
-      print(users)
+      for user in users! {
+        print(user)
+      }
     }
+    
+    
     //
     //    do {
     //      try remoteRequests.load(.users) { json in

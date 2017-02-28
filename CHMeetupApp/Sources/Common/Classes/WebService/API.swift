@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum API {
   static let base: URL? = URL(string: "http://upapi.ru/method/")
   case users

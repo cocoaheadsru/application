@@ -10,6 +10,7 @@ import Foundation
 
 protocol POType {
   associatedtype RequestsEnum
+  init?(json: [String: Any])
 }
 
 typealias RequestParams = [String: String]
@@ -31,28 +32,27 @@ enum RequestMethod {
 }
 
 struct Request<T> {
-  var base = "https://upapi.ru/method/"
-  
+  var let = "http://upapi.ru/method/"
+
   var query: String
   var params: RequestParams?
   var method: RequestMethod
 
   var contentType = T.Type.self
-  
+
   init(query: String, params: RequestParams?, method: RequestMethod) {
     self.query = query
     self.params = params
     self.method = method
   }
-  
+
   init(query: String, params: RequestParams?) {
     self.query = query
     self.params = params
     self.method = .get
   }
-  
-}
 
+}
 
 struct UserPO: POType {
   typealias RequestsEnum = Requests
@@ -60,16 +60,17 @@ struct UserPO: POType {
     static var list: Request<UserPO> {
       return Request(query: "users", params: nil)
     }
-    
-    
-    static func auth(token: String, social_id: String) -> Request<UserPO> {
+
+    static func auth(token: String, socialId: String) -> Request<UserPO> {
        return Request<UserPO>(query: "users", params: nil, method: .post)
     }
-    
+
   }
-  
-  
-  
+
+  init?(json: [String : Any]) {
+
+  }
+
 }
 
 enum RemoteError: Error {
@@ -77,42 +78,38 @@ enum RemoteError: Error {
   case notConnection
 }
 
-
-
 class Server {
-  static func request<T: POType>(_ request: Request<T>, completion: (([T]) -> Void)?) {
-    
-    
+  static func request<T: POType>(_ request: Request<T>, completion: (([T]?) -> Void)?) {
+
     if !Reachability.isInternetAvailable {
       //throw RemoteError.notConnection
     }
-    
-    print(request)
-    
-//    let r = request as PORequest
-//    
-//    var request = URLRequest(url: r.base)
-// 
-//    request.httpMethod = r.
-//    request.httpBody = api.parameters?.httpQuery
-//    
-//    let loadSession = URLSession.shared.dataTask(with: request) { data, _, error in
-//      guard error == nil else {
-//        print("Sesion request error: \(error) for api resourse: \(api)")
-//        return
-//      }
-//      let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: [])
-//      guard let json = jsonObject as? [JSONDictionary] else { return }
-//      
-//      completion(json)
-//    }
-//    
-//    loadSession.resume()
-    
+
+    guard let query = URL(string: request.base + request.query) else {
+      print("Session query url faild: base \(request.base) and query \(request.query)")
+      return
+    }
+    var sessionRequest = URLRequest(url: query)
+
+    sessionRequest.httpMethod = request.method.string
+    sessionRequest.httpBody = request.params?.httpQuery
+    let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
+      guard error == nil else {
+        print("Session request error: \(error) for api resourse: \(request)")
+        return
+      }
+      let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: [])
+      guard let json = jsonObject as? [JSONDictionary] else { return }
+      let objects: [T] = json.flatMap(T.init)
+      guard let completion = completion else { return }
+      completion(objects)
+
+    }
+
+    loadSession.resume()
+
   }
 }
-
-
 
 protocol RemoteProtocol {
   func load(_ api: API, completion: @escaping ([JSONDictionary]) -> Void) throws
@@ -120,10 +117,6 @@ protocol RemoteProtocol {
 
 final class RemoteService: RemoteProtocol {
   func load(_ api: API, completion: @escaping ([JSONDictionary]) -> Void) throws {
-    
-
-
-    
 //    request.httpMethod = api.method
 //    request.httpBody = api.parameters?.httpQuery
 //
