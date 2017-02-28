@@ -22,25 +22,30 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    if !LoginType.vk.isAppExists {
-      let url = LoginType.vk.urlAuth
+    login(app: LoginType.vk)
+  }
+
+  @IBAction func fbLoginButtonAction(_ sender: Any) {
+    login(app: LoginType.fb)
+  }
+
+}
+
+// MARK: - Login actions
+extension ProfileCreateViewController {
+
+  func login(app: LoginType) {
+    if !app.isAppExists {
+      let url = app.urlAuth
       showSafariViewController(url: url)
     } else {
-      let url = LoginType.vk.schemeAuth
+      let url = app.schemeAuth
       if let url = url {
         UIApplication.shared.open(url, options: [:])
       }
     }
   }
 
-  @IBAction func fbLoginButtonAction(_ sender: Any) {
-    let url = LoginType.fb.urlAuth
-    showSafariViewController(url: url)
-  }
-}
-
-// MARK: - Login actions
-extension ProfileCreateViewController {
   func loggedIn(_ notification: Notification? = nil) {
     // get the url form the auth callback
 //    let url = (notification!.object as? URL)!
@@ -54,6 +59,7 @@ extension ProfileCreateViewController {
       }
     }
   }
+
 }
 
 // MARK: - Working with safariViewController
