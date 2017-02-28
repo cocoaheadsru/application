@@ -54,10 +54,10 @@ extension ProfileCreateViewController {
     if let safariViewController = safariViewController {
       if safariViewController.isViewLoaded {
         safariViewController.dismiss(animated: true, completion: nil)
-        LoginProcessViewController.isLogin = true
-        profileNavigationController?.updateRootViewController()
       }
     }
+    LoginProcessViewController.isLogin = true
+    profileNavigationController?.updateRootViewController()
   }
 
 }
