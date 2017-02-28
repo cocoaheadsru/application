@@ -15,22 +15,20 @@ class TabBarViewController: UITabBarController {
 
     // Query example
 
-    Server.request<UserPO>(UserPO.Requests.list, completion: nil)
-    
-    
-//    
-//    do {
-//      try remoteRequests.load(.users) { json in
-//        let users = json.flatMap(UserPO.init)
-//        for user in users {
-//          print(user.name)
-//          print(user.remoteID)
-//        }
-//      }
-//    } catch {
-//      print("Remote loading error: \(error) for resourse: \(API.users)")
-//    }
-
+    Server.request(UserPO.Requests.list) { (users) in
+      print(users)
+    }
+    //
+    //    do {
+    //      try remoteRequests.load(.users) { json in
+    //        let users = json.flatMap(UserPO.init)
+    //        for user in users {
+    //          print(user.name)
+    //          print(user.remoteID)
+    //        }
+    //      }
+    //    } catch {
+    //      print("Remote loading error: \(error) for resourse: \(API.users)")
+    //    }
   }
-
 }

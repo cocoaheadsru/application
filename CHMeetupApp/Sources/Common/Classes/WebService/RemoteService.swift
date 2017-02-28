@@ -12,33 +12,32 @@ protocol POType {
   associatedtype RequestsEnum
 }
 
-
 typealias RequestParams = [String: String]
 
-struct PORequest: POType {
-  typealias RequestsEnum = RequestMethod
+enum RequestMethod {
+  case get
+  case post
+  case head
+  case delete
 
-  var base = "https://upapi.ru/method/"
-  
-  enum RequestMethod {
-    case get
-    case post
-    case head
-    case delete
-    
-    var `string`: String {
-      switch self {
-      case .post:
-        return "POST"
-      default:
-        return "GET"
-      }
+  var `string`: String {
+    switch self {
+    case .post:
+      return "POST"
+    default:
+      return "GET"
     }
   }
+}
+
+struct Request<T> {
+  var base = "https://upapi.ru/method/"
   
   var query: String
   var params: RequestParams?
   var method: RequestMethod
+
+  var contentType = T.Type.self
   
   init(query: String, params: RequestParams?, method: RequestMethod) {
     self.query = query
@@ -58,13 +57,13 @@ struct PORequest: POType {
 struct UserPO: POType {
   typealias RequestsEnum = Requests
   struct Requests {
-    static var list: PORequest {
-      return PORequest(query: "users", params: nil)
+    static var list: Request<UserPO> {
+      return Request(query: "users", params: nil)
     }
     
     
-    static func auth(token: String, social_id: String) -> PORequest {
-       return PORequest(query: "users", params: nil, method: .post)
+    static func auth(token: String, social_id: String) -> Request<UserPO> {
+       return Request<UserPO>(query: "users", params: nil, method: .post)
     }
     
   }
@@ -81,7 +80,7 @@ enum RemoteError: Error {
 
 
 class Server {
-  static func request<T: POType>(_ request: PORequest, completion: (([T]) -> Void)?) {
+  static func request<T: POType>(_ request: Request<T>, completion: (([T]) -> Void)?) {
     
     
     if !Reachability.isInternetAvailable {
