@@ -30,7 +30,7 @@ enum ProfileCells {
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  @IBOutlet weak var tableView: UITableView! {
+  @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.tableFooterView = UIView()
       tableView.register(UINib.init(nibName: Cells.Profile.picture, bundle: nil),
@@ -95,10 +95,24 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     return cell
   }
 
+  func cellActionFor(_ indexPath: IndexPath) {
+    switch tableArray[indexPath.row] {
+    case .speach:
+      let giveSpeachViewController = Storyboards.Profile.instantiateGiveSpeechViewController()
+      if let navigationController = navigationController {
+        navigationController.pushViewController(giveSpeachViewController,
+                                                animated: true)
+      }
+    case .name, .picture:
+      return
+    }
+  }
+
 }
 
-extension ProfileViewController: UITableViewDataSource {
+// MARK: - TableView Data Source.
 
+extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableArray.count
   }
@@ -106,17 +120,17 @@ extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     return cellObjectFor(indexPath)
   }
-
 }
 
-extension ProfileViewController: UITableViewDelegate {
+// MARK: - TableView Delegate.
 
+extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return cellHeightFor(indexPath)
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    cellActionFor(indexPath)
   }
-
 }

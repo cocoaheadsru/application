@@ -79,6 +79,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
                             <connections>
                                 <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
+                                <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
