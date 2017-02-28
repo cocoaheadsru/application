@@ -64,7 +64,7 @@ enum LoginType {
     return URL(string: urlAuthString)!
   }
 
-  var mayExists: Bool {
+  var isAppExists: Bool {
     switch self {
     case .vk:
       return UIApplication.shared.canOpenURL(LoginType.vk.scheme)

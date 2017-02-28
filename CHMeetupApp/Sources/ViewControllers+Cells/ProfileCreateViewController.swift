@@ -22,7 +22,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    if !LoginType.vk.mayExists {
+    if !LoginType.vk.isAppExists {
       let url = LoginType.vk.urlAuth
       showSafariViewController(url: url)
     } else {

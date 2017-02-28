@@ -12,13 +12,13 @@ import Foundation
 final class Constants {
 
   struct Vkontakte {
-    static let clientId = "5894705"
+    static let clientId = "5895589"
     static let scope = "photos,wall,messages,friends,email,offline,nohttps,audio"
     static let redirect = "vk\(clientId)://authorize"
   }
 
   struct Facebook {
-    static let clientId = "612769202252885"
+    static let clientId = "1863830253895861"
     static let redirect = "fb\(clientId)://authorize"
   }
 

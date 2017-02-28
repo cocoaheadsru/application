@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSRemindersUsageDescription</key>
-	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,20 +22,20 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>vk5894705</string>
+			<string>vk5895589</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>vk5894705</string>
+				<string>vk5895589</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>fb612769202252885</string>
+			<string>fb1863830253895861</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb612769202252885</string>
+				<string>fb1863830253895861</string>
 			</array>
 		</dict>
 	</array>
@@ -59,6 +55,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
