@@ -11,29 +11,31 @@ import SafariServices
 
 class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  var safariVC: SFSafariViewController?
+  var safariViewController: SFSafariViewController?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(loggedIn(_:)),
-                                           name: .closeSafariVCNote,
+                                           name: .CloseSafariViewControllerNotification,
                                            object: nil)
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
     if !vkAppMayExists {
       let url = LoginType.vk.urlAuth
-      showSafariVC(url: url)
+      showSafariViewController(url: url)
     } else {
-      let url = LoginType.vk.schemeAuth!
-      UIApplication.shared.open(url, options: [:])
+      let url = LoginType.vk.schemeAuth
+      if let url = url {
+        UIApplication.shared.open(url, options: [:])
+      }
     }
   }
 
   @IBAction func fbLoginButtonAction(_ sender: Any) {
     let url = LoginType.fb.urlAuth
-    showSafariVC(url: url)
+    showSafariViewController(url: url)
   }
 }
 
@@ -49,18 +51,20 @@ extension ProfileCreateViewController {
 //    let url = (notification!.object as? URL)!
     // get the code (token) from the URL
 //    print(url)
-    if safariVC!.isViewLoaded {
-      safariVC!.dismiss(animated: true, completion: nil)
-      LoginProcessViewController.isLogin = true
-      profileNavigationController?.updateRootViewController()
+    if let safariViewController = safariViewController {
+      if safariViewController.isViewLoaded {
+        safariViewController.dismiss(animated: true, completion: nil)
+        LoginProcessViewController.isLogin = true
+        profileNavigationController?.updateRootViewController()
+      }
     }
   }
 }
 
-// MARK: - Working with safariVC
+// MARK: - Working with safariViewController
 extension ProfileCreateViewController {
-  func showSafariVC(url: URL) {
-    safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-    self.present(safariVC!, animated: true, completion: nil)
+  func showSafariViewController(url: URL) {
+    safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+    self.present(safariViewController!, animated: true, completion: nil)
   }
 }
