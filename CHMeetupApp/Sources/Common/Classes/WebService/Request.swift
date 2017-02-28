@@ -38,12 +38,18 @@ struct Request<T> {
   var params: RequestParams?
   var method: RequestMethod
 
+  var parser: RequestContentParser<T>?
+
   var contentType = T.Type.self
 
-  init(query: String, method: RequestMethod = .get, params: RequestParams? = nil) {
+  init(query: String,
+       method: RequestMethod = .get,
+       params: RequestParams? = nil,
+       parser: RequestContentParser<T>? = nil) {
     self.query = query
     self.params = params
     self.method = method
+    self.parser = parser
   }
 
 }

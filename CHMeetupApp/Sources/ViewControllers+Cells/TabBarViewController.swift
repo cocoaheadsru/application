@@ -15,11 +15,24 @@ class TabBarViewController: UITabBarController {
 
     // Query example
 
-    Server.request(UserPO.Requests.list) { (users, _) in
-      for user in users! {
+    Server.request(UserPO.Requests.list) { (users, error) in
+      if let error = error {
+        print(error)
+      }
+
+      for user in users ?? [] {
         print(user)
       }
     }
 
+    Server.request(UserPO.Requests.listOfIds) { (users, error) in
+      if let error = error {
+        print(error)
+      }
+
+      for user in users ?? [] {
+        print(user)
+      }
+    }
   }
 }

@@ -12,6 +12,7 @@ enum ServerError: Error {
   case noConnection
   case requestFailed
   case emptyResponse
+  case wrongResponse
 
   var desc: String {
     switch self {
@@ -21,14 +22,58 @@ enum ServerError: Error {
       return "Отстутствует подключение к сети"
     case .emptyResponse:
       return "Пустой ответ сервера"
+    case .wrongResponse:
+      return "Неверный ответ от сервера"
     }
   }
-
 }
 
 class Server {
-  static func request<T: POType>(_ request: Request<T>, completion: @escaping (([T]?, ServerError?) -> Void)) {
+  static func request<T: POType>(_ request: Request<[T]>, completion: @escaping (([T]?, ServerError?) -> Void)) {
+    loadRequest(request) { (jsonObject, error) in
+      guard let jsonObject = jsonObject else {
+        completion(nil, error)
+        return
+      }
 
+      if let parser = request.parser {
+        let values = parser.parseLogic(jsonObject)
+        completion(values.0, values.1)
+        return
+      }
+
+      if let json = jsonObject as? [JSONDictionary] {
+        let objects: [T] = Array(json: json)
+        completion(objects, nil)
+      } else {
+        completion(nil, .wrongResponse)
+      }
+    }
+  }
+
+  static func request<T: POType>(_ request: Request<T>, completion: @escaping ((T?, ServerError?) -> Void)) {
+    loadRequest(request) { (jsonObject, error) in
+      guard let jsonObject = jsonObject else {
+        completion(nil, error)
+        return
+      }
+
+      if let parser = request.parser {
+        let values = parser.parseLogic(jsonObject)
+        completion(values.0, values.1)
+        return
+      }
+
+      if let json = jsonObject as? JSONDictionary {
+        let value = T(json: json)
+        completion(value, nil)
+      } else {
+        completion(nil, .wrongResponse)
+      }
+    }
+  }
+
+  private static func loadRequest<T>(_ request: Request<T>, completion: @escaping ((Any?, ServerError?) -> Void)) {
     guard Reachability.isInternetAvailable else {
       completion(nil, .noConnection)
       return
@@ -53,16 +98,12 @@ class Server {
         completion(nil, .emptyResponse)
         return
       }
-      
+
       let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
-      guard let json = jsonObject as? [JSONDictionary] else { return }
-      let objects: [T] = json.flatMap(T.init)
 
-      completion(objects, nil)
-
+      completion(jsonObject, nil)
     }
 
     loadSession.resume()
-
   }
 }

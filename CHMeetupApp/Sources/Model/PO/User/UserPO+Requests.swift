@@ -13,7 +13,7 @@ extension UserPO {
   typealias RequestsEnum = Requests
   struct Requests {
     // Users list
-    static var list: Request<UserPO> {
+    static var list: Request<[UserPO]> {
       return Request(query: "users")
     }
 
@@ -22,5 +22,17 @@ extension UserPO {
       return Request<UserPO>(query: "users", method: .post)
     }
 
+    // Example of custom parser
+    static var listOfIds: Request<[UserPO]> {
+      let parser = RequestContentParser<[UserPO]> { (jsonObject: Any) -> ([UserPO]?, ServerError?) in
+        guard let json = jsonObject as? [JSONDictionary] else {
+          return (nil, .wrongResponse)
+        }
+        let objects: [UserPO] = json.flatMap(UserPO.init(justId:))
+        return (objects, nil)
+      }
+
+      return Request(query: "users", parser: parser)
+    }
   }
 }

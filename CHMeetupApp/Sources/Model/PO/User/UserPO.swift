@@ -22,4 +22,12 @@ struct UserPO: POType {
     self.name = name
   }
 
+  init?(justId json: JSONDictionary) {
+    guard
+      let id = json["id"] as? Int
+      else { return nil }
+
+    self.remoteID = id
+    self.name = ""
+  }
 }
