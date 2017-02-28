@@ -9,23 +9,20 @@
 import UIKit
 import SafariServices
 
-let closeSafariVCNote = "kSafariViewControllerCloseNotification"
-
 class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  var haveSafariVC: Bool?
   var safariVC: SFSafariViewController?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(loggedIn(_:)),
-                                           name: Notification.Name(rawValue: closeSafariVCNote),
+                                           name: .closeSafariVCNote,
                                            object: nil)
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    if !vkAppMayExists() {
+    if !vkAppMayExists {
       let url = LoginType.vk.urlAuth
       showSafariVC(url: url)
     } else {
@@ -38,14 +35,13 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
     let url = LoginType.fb.urlAuth
     showSafariVC(url: url)
   }
-
 }
 
 // MARK: - Login actions
 extension ProfileCreateViewController {
 
-  func vkAppMayExists() -> Bool {
-    return UIApplication.shared.canOpenURL(URL(string: "vkauthorize://")!)
+  var vkAppMayExists: Bool {
+    return UIApplication.shared.canOpenURL(LoginType.vk.schemeAuth!)
   }
 
   func loggedIn(_ notification: Notification? = nil) {
@@ -53,31 +49,18 @@ extension ProfileCreateViewController {
 //    let url = (notification!.object as? URL)!
     // get the code (token) from the URL
 //    print(url)
-    if haveSafariVC! {
+    if safariVC!.isViewLoaded {
       safariVC!.dismiss(animated: true, completion: nil)
       LoginProcessViewController.isLogin = true
       profileNavigationController?.updateRootViewController()
     }
   }
-
 }
 
 // MARK: - Working with safariVC
-extension ProfileCreateViewController: SFSafariViewControllerDelegate {
-
-  func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
-    haveSafariVC = true
-  }
-
-  override open func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-    super.dismiss(animated: flag, completion: completion)
-    haveSafariVC = false
-  }
-
+extension ProfileCreateViewController {
   func showSafariVC(url: URL) {
     safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-    safariVC!.delegate = self
     self.present(safariVC!, animated: true, completion: nil)
   }
-
 }

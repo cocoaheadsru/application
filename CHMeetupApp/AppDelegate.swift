@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-    NotificationCenter.default.post(name: Notification.Name(rawValue: closeSafariVCNote), object: url)
+    NotificationCenter.default.post(name: .closeSafariVCNote, object: url)
     return true
   }
 
