@@ -17,9 +17,9 @@ struct UserPO: POType {
       let id = json["id"] as? Int,
       let name = json["username"] as? String
       else { return nil }
-    
+
     self.remoteID = id
     self.name = name
   }
-  
+
 }

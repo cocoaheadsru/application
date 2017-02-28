@@ -15,7 +15,7 @@ enum RequestMethod {
   case post
   case head
   case delete
-  
+
   var `string`: String {
     switch self {
     case .post:
@@ -31,25 +31,25 @@ enum RequestMethod {
 }
 
 struct Request<T> {
-  
+
   let base = "http://upapi.ru/method/"
-  
+
   var query: String
   var params: RequestParams?
   var method: RequestMethod
-  
+
   var contentType = T.Type.self
-  
+
   init(query: String, params: RequestParams?, method: RequestMethod) {
     self.query = query
     self.params = params
     self.method = method
   }
-  
+
   init(query: String, params: RequestParams?) {
     self.query = query
     self.params = params
     self.method = .get
   }
-  
+
 }

@@ -15,11 +15,11 @@ class TabBarViewController: UITabBarController {
 
     // Query example
 
-    Server.request(UserPO.Requests.list) { (users) in
+    Server.request(UserPO.Requests.list) { (users, _) in
       for user in users! {
         print(user)
       }
     }
-    
+
   }
 }

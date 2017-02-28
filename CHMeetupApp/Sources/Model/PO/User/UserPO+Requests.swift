@@ -21,6 +21,6 @@ extension UserPO {
     static func auth(token: String, socialId: String) -> Request<UserPO> {
       return Request<UserPO>(query: "users", params: nil, method: .post)
     }
-    
+
   }
 }
