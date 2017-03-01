@@ -49,7 +49,7 @@ extension ProfileCreateViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    _ = (notification!.object as? URL)!
+    // TODO: get url and token
     if let safariViewController = safariViewController {
       if safariViewController.isViewLoaded {
         safariViewController.dismiss(animated: true, completion: nil)
