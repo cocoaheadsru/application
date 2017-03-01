@@ -26,7 +26,6 @@ class GiveSpeechViewController: UIViewController {
       descriptionTextView.placeholder         = "placeholder"
     }
   }
-  @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -70,19 +69,24 @@ extension GiveSpeechViewController {
 extension GiveSpeechViewController: KeyboardHandlerDelegate {
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
 
+    var scrollViewContnetInsets = scrollView.contentInset
+    var indicatorContentInsets = scrollView.scrollIndicatorInsets
+
     switch state {
     case .frameChanged:
-      break
+      scrollViewContnetInsets.bottom = info.endFrame.height
+      indicatorContentInsets.bottom = info.endFrame.height
     case .opened:
       scrollView.isScrollEnabled = true
-      let tabbarHeight = tabBarController?.tabBar.bounds.height ?? 0
-      scrollViewBottomConstraint.constant = info.endFrame.height - tabbarHeight
-      break
+      scrollViewContnetInsets.bottom = info.endFrame.height
+      indicatorContentInsets.bottom = info.endFrame.height
     case .hidden:
       scrollView.isScrollEnabled = false
-      scrollViewBottomConstraint.constant = 0
-      break
+      scrollViewContnetInsets.bottom = 0
+      indicatorContentInsets.bottom = 0
     }
-    view.layoutIfNeeded()
+
+    scrollView.contentInset = scrollViewContnetInsets
+    scrollView.scrollIndicatorInsets = indicatorContentInsets
   }
 }
