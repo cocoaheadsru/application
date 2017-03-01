@@ -123,7 +123,7 @@
         <!--Give a Speech-->
         <scene sceneID="UYl-eR-dga">
             <objects>
-                <viewController id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m8-NS-nLl"/>
                         <viewControllerLayoutGuide type="bottom" id="ZRv-Xe-9jk"/>
@@ -171,9 +171,12 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="yes"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="WaT-qA-jSi" id="t1d-uP-3pK"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Qi0-nn-FlH" secondAttribute="trailing" constant="20" id="4r9-lQ-1B4"/>
                                                     <constraint firstItem="cCb-tx-teu" firstAttribute="leading" secondItem="Hlt-1n-4dg" secondAttribute="leading" constant="8" id="55E-Wa-Ckt"/>
@@ -186,15 +189,16 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Hlt-1n-4dg" secondAttribute="bottom" id="22A-PF-fPJ"/>
                                             <constraint firstAttribute="trailing" secondItem="Hlt-1n-4dg" secondAttribute="trailing" id="7kt-Ye-vsG"/>
                                             <constraint firstItem="Hlt-1n-4dg" firstAttribute="leading" secondItem="x3z-bs-3OO" secondAttribute="leading" id="e1l-Zp-wGu"/>
-                                            <constraint firstItem="Hlt-1n-4dg" firstAttribute="top" secondItem="x3z-bs-3OO" secondAttribute="top" id="o8f-S8-Xox"/>
+                                            <constraint firstItem="Hlt-1n-4dg" firstAttribute="top" secondItem="x3z-bs-3OO" secondAttribute="top" id="jXE-wd-E46"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="x3z-bs-3OO" firstAttribute="top" secondItem="G8T-rY-Ygq" secondAttribute="top" id="1Xm-we-rAn"/>
                                     <constraint firstItem="Hlt-1n-4dg" firstAttribute="width" secondItem="G8T-rY-Ygq" secondAttribute="width" id="Ago-qQ-6Mr"/>
