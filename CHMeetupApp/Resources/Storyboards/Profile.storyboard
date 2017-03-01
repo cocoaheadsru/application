@@ -23,17 +23,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD">
-                                <rect key="frame" x="168" y="318" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="122.5" y="318" width="30" height="30"/>
+                                <state key="normal" title="VK"/>
                                 <connections>
-                                    <action selector="loginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="aXP-sx-DVM"/>
+                                    <action selector="vkLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="8np-rV-xBX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw">
+                                <rect key="frame" x="222" y="318" width="30" height="30"/>
+                                <state key="normal" title="FB"/>
+                                <connections>
+                                    <action selector="fbLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="3aD-yq-YgF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" id="LZH-p9-jOD"/>
+                            <constraint firstItem="gl9-SA-VgD" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" constant="-50" id="LZH-p9-jOD"/>
                             <constraint firstItem="gl9-SA-VgD" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="O6L-Zg-clw"/>
+                            <constraint firstItem="a2j-p0-rbw" firstAttribute="centerY" secondItem="22N-8c-n1H" secondAttribute="centerY" id="mtJ-gF-1TR"/>
+                            <constraint firstItem="a2j-p0-rbw" firstAttribute="centerX" secondItem="22N-8c-n1H" secondAttribute="centerX" constant="50" id="x2t-TB-mnH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Profile" id="H6i-Oc-rNL"/>
