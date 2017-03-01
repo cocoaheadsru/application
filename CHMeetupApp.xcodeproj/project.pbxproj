@@ -480,11 +480,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6048A71E5B3CCB00C414C3 /* Build configuration list for PBXNativeTarget "CHMeetupApp" */;
 			buildPhases = (
+				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				9F6048911E5B3CCB00C414C3 /* Sources */,
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
-				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 			);
 			buildRules = (
@@ -549,7 +549,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		035A76421E5EF46000B87501 /* Run Script Natalie */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
