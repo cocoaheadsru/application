@@ -10,6 +10,11 @@ import UIKit
 
 class GiveSpeechViewController: UIViewController {
 
+  @IBOutlet weak var scrollView: UIScrollView! {
+    didSet {
+      scrollView.isScrollEnabled = false
+    }
+  }
   @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
@@ -25,21 +30,28 @@ class GiveSpeechViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    keyboardDelegate = self
+    setupGestureRecognizer()
+  }
+
+  func setupGestureRecognizer() {
+    let dissmisKBTouch =
+      UITapGestureRecognizer(target: self,
+                             action: #selector(GiveSpeechViewController.dismissKeyboard))
+    view.addGestureRecognizer(dissmisKBTouch)
   }
 
   func sendSpeech() {
     // Do stuff here ...
+    dismissKeyboard()
   }
 
   @IBAction func sendSpeechButtonPressed(_ sender: UIBarButtonItem) {
     sendSpeech()
   }
 
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    if textField == titleTextField {
-      descriptionTextView.becomeFirstResponder()
-    }
-    return true
+  func dismissKeyboard() {
+    view.endEditing(true)
   }
 
 }
@@ -51,5 +63,24 @@ extension GiveSpeechViewController {
       descriptionTextView.becomeFirstResponder()
     }
     return true
+  }
+}
+
+// MARK: - KeyboardHandlerDelegate
+extension GiveSpeechViewController: KeyboardHandlerDelegate {
+  func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
+    
+    view.layoutIfNeeded()
+    scrollViewBottomConstraint.constant = info.endFrame.height
+    switch state {
+    case .frameChanged:
+      scrollViewBottomConstraint.constant = info.endFrame.height
+      view.layoutIfNeeded()
+    case .opened:
+      scrollView.isScrollEnabled = true
+    case .hidden:
+      scrollView.setContentOffset(.zero, animated: true)
+      scrollView.isScrollEnabled = false
+    }
   }
 }
