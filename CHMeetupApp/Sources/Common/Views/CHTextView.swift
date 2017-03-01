@@ -41,29 +41,28 @@ class CHTextView: UITextView {
   }
 
   private func commonInit() {
-    delegate = self
-
     placeholderTextView = UITextView(frame: self.bounds)
-    self.addSubview(placeholderTextView)
+    addSubview(placeholderTextView)
     setupConstraints()
+    setupNotifications()
   }
 
-  private func setupConstraints() {
-    placeholderTextView.translatesAutoresizingMaskIntoConstraints = false
-    placeholderTextView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-    placeholderTextView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    placeholderTextView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-    placeholderTextView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+  private func setupNotifications() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(CHTextView.textViewDidBeginEditing),
+                                           name: NSNotification.Name.UITextViewTextDidBeginEditing,
+                                           object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(CHTextView.textViewDidEndEditing),
+                                           name: NSNotification.Name.UITextViewTextDidEndEditing,
+                                           object: nil)
   }
-}
 
-extension CHTextView: UITextViewDelegate {
-  func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+  @objc private func textViewDidBeginEditing() {
     changeTheVisibilityOf(view: placeholderTextView, isHide: true)
-    return true
   }
 
-  func textViewDidEndEditing(_ textView: UITextView) {
+  @objc private func textViewDidEndEditing() {
     if self.text == nil || self.text == "" {
       changeTheVisibilityOf(view: placeholderTextView, isHide: false)
     }
@@ -75,5 +74,13 @@ extension CHTextView: UITextViewDelegate {
     }) { (_) in
       view.isHidden = isHide
     }
+  }
+
+  private func setupConstraints() {
+    placeholderTextView.translatesAutoresizingMaskIntoConstraints = false
+    placeholderTextView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+    placeholderTextView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    placeholderTextView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+    placeholderTextView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
   }
 }

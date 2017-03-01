@@ -43,7 +43,6 @@ class GiveSpeechViewController: UIViewController {
 
   func sendSpeech() {
     // Do stuff here ...
-    dismissKeyboard()
   }
 
   @IBAction func sendSpeechButtonPressed(_ sender: UIBarButtonItem) {
@@ -61,6 +60,7 @@ extension GiveSpeechViewController {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if textField == titleTextField {
       descriptionTextView.becomeFirstResponder()
+      return false
     }
     return true
   }
@@ -69,18 +69,20 @@ extension GiveSpeechViewController {
 // MARK: - KeyboardHandlerDelegate
 extension GiveSpeechViewController: KeyboardHandlerDelegate {
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
-    
-    view.layoutIfNeeded()
-    scrollViewBottomConstraint.constant = info.endFrame.height
+
     switch state {
     case .frameChanged:
-      scrollViewBottomConstraint.constant = info.endFrame.height
-      view.layoutIfNeeded()
+      break
     case .opened:
       scrollView.isScrollEnabled = true
+      let tabbarHeight = tabBarController?.tabBar.bounds.height ?? 0
+      scrollViewBottomConstraint.constant = info.endFrame.height - tabbarHeight
+      break
     case .hidden:
-      scrollView.setContentOffset(.zero, animated: true)
       scrollView.isScrollEnabled = false
+      scrollViewBottomConstraint.constant = 0
+      break
     }
+    view.layoutIfNeeded()
   }
 }
