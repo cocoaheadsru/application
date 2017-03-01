@@ -42,15 +42,14 @@ extension ProfileCreateViewController {
       let url = app.schemeAuth
       if let url = url {
         UIApplication.shared.open(url, options: [:])
+      } else {
+        assertionFailure("Error: you didn't recieve url from notification")
       }
     }
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    // get the url form the auth callback
-//    let url = (notification!.object as? URL)!
-    // get the code (token) from the URL
-//    print(url)
+    _ = (notification!.object as? URL)!
     if let safariViewController = safariViewController {
       if safariViewController.isViewLoaded {
         safariViewController.dismiss(animated: true, completion: nil)

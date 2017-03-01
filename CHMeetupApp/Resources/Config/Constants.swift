@@ -13,7 +13,7 @@ final class Constants {
 
   struct Vkontakte {
     static let clientId = "5895589"
-    static let scope = "photos,wall,messages,friends,email,offline,nohttps,audio"
+    static let scope = "wall,email,offline,nohttps"
     static let redirect = "vk\(clientId)://authorize"
   }
 
