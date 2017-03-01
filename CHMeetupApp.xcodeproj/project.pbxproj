@@ -278,6 +278,8 @@
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+      sourceTree = "<group>";
+    };
 		92D678681E626CCD0010F3E9 /* PastEvents */ = {
 			isa = PBXGroup;
 			children = (
