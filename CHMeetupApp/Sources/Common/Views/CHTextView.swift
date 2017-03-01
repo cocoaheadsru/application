@@ -9,7 +9,17 @@
 import UIKit
 
 class CHTextView: UITextView {
-  var placeholderTextView: UITextView!
+  var placeholderTextView: UITextView! {
+    didSet {
+      placeholderTextView.backgroundColor = UIColor.clear
+      placeholderTextView.font = self.font
+      placeholderTextView.textColor = self.textColor
+      placeholderTextView.isUserInteractionEnabled = false
+      placeholderTextView.alpha = 0.3
+      placeholderTextView.isEditable = false
+      placeholderTextView.isSelectable = false
+    }
+  }
 
   var placeholder: String? {
     set {
@@ -34,18 +44,16 @@ class CHTextView: UITextView {
     delegate = self
 
     placeholderTextView = UITextView(frame: self.bounds)
-    placeholderTextView.backgroundColor = UIColor.clear
-    placeholderTextView.font = self.font
-    placeholderTextView.textColor = self.textColor
-    placeholderTextView.isUserInteractionEnabled = false
-    placeholderTextView.alpha = 0.3
-    placeholderTextView.isEditable = false
     self.addSubview(placeholderTextView)
-    addConstraintForPlaceholder()
+    setupConstraints()
   }
 
-  private func addConstraintForPlaceholder() {
-// FIXME: - add constraints for placeholder in textView
+  private func setupConstraints() {
+    placeholderTextView.translatesAutoresizingMaskIntoConstraints = false
+    placeholderTextView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+    placeholderTextView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    placeholderTextView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+    placeholderTextView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
   }
 }
 

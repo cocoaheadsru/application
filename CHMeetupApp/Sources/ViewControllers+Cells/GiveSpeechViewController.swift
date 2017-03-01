@@ -18,13 +18,13 @@ class GiveSpeechViewController: UIViewController {
       descriptionTextView.layer.cornerRadius  = 5
       descriptionTextView.layer.borderWidth   = 1
       descriptionTextView.layer.borderColor   = UIColor.lightGray.withAlphaComponent(0.3).cgColor
+      descriptionTextView.placeholder = "placeholder"
     }
   }
   @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    descriptionTextView.placeholder = "placehilder"
   }
 
   func sendSpeech() {
