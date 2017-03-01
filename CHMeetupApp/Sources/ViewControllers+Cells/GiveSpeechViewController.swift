@@ -18,7 +18,7 @@ class GiveSpeechViewController: UIViewController {
       descriptionTextView.layer.cornerRadius  = 5
       descriptionTextView.layer.borderWidth   = 1
       descriptionTextView.layer.borderColor   = UIColor.lightGray.withAlphaComponent(0.3).cgColor
-      descriptionTextView.placeholder = "placeholder"
+      descriptionTextView.placeholder         = "placeholder"
     }
   }
   @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
@@ -45,16 +45,11 @@ class GiveSpeechViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-//extension GiveSpeechViewController {
-//  func textFieldShouldReturn(textField: UITextField) -> Bool {
-//    if textField == titleTextField {
-//      descriptionTextView.becomeFirstResponder()
-//    }
-//    return true
-//  }
-//}
-
-// MARK: - UITextViewDelegate
-//extension GiveSpeechViewController: UITextViewDelegate {
-//
-//}
+extension GiveSpeechViewController {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == titleTextField {
+      descriptionTextView.becomeFirstResponder()
+    }
+    return true
+  }
+}
