@@ -13,7 +13,6 @@ protocol POType {
   init?(json: JSONDictionary)
 }
 
-
 extension Array where Element: POType {
   init(json: [JSONDictionary]) {
     let value = json.flatMap(Iterator.Element.init)

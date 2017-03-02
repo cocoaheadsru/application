@@ -23,8 +23,6 @@ enum RequestMethod: String {
 
 struct Request<T> {
 
-  let base = "http://upapi.ru/method/"
-
   let query: String
   let params: RequestParams?
   let method: RequestMethod

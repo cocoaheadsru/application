@@ -79,8 +79,8 @@ class Server {
       return
     }
 
-    guard let query = URL(string: request.base + request.query) else {
-      print("Session query url faild: base \(request.base) and query \(request.query)")
+    guard let query = URL(string: Constants.apiBase + request.query) else {
+      print("Session query url faild: base \(Constants.apiBase) and query \(request.query)")
       completion(nil, .requestFailed)
       return
     }
