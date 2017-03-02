@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserPO: POType {
+struct UserPO {
   let remoteID: Int
   let name: String
 

@@ -10,23 +10,14 @@ import Foundation
 
 typealias RequestParams = [String: String]
 
-enum RequestMethod {
+enum RequestMethod: String {
   case get
   case post
   case head
   case delete
 
   var `string`: String {
-    switch self {
-    case .post:
-      return "POST"
-    case .head:
-      return "HEAD"
-    case .delete:
-      return "DELETE"
-    default:
-      return "GET"
-    }
+    return self.rawValue.uppercased()
   }
 }
 
@@ -34,13 +25,13 @@ struct Request<T> {
 
   let base = "http://upapi.ru/method/"
 
-  var query: String
-  var params: RequestParams?
-  var method: RequestMethod
+  let query: String
+  let params: RequestParams?
+  let method: RequestMethod
 
-  var parser: RequestContentParser<T>?
+  let parser: RequestContentParser<T>?
 
-  var contentType = T.Type.self
+  let contentType = T.Type.self
 
   init(query: String,
        method: RequestMethod = .get,

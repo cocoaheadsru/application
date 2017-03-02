@@ -17,13 +17,13 @@ enum ServerError: Error {
   var desc: String {
     switch self {
     case .requestFailed:
-      return "Неверно сформированный запрос"
+      return "ServerError.requestFailed".localized
     case .noConnection:
-      return "Отстутствует подключение к сети"
+      return "ServerError.noConnection".localized
     case .emptyResponse:
-      return "Пустой ответ сервера"
+      return "ServerError.emptyResponse".localized
     case .wrongResponse:
-      return "Неверный ответ от сервера"
+      return "ServerError.wrongResponse".localized
     }
   }
 }
@@ -103,7 +103,8 @@ class Server {
 
       completion(jsonObject, nil)
     }
-
+    
+    
     loadSession.resume()
   }
 }

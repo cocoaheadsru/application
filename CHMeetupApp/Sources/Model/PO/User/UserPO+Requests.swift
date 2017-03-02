@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UserPO {
+extension UserPO: POType {
 
   typealias RequestsEnum = Requests
   struct Requests {
@@ -19,7 +19,7 @@ extension UserPO {
 
     // Authorization by social network
     static func auth(token: String, socialId: String) -> Request<UserPO> {
-      return Request<UserPO>(query: "users", method: .post)
+      return Request<UserPO>(query: "users/auth", method: .post)
     }
 
     // Example of custom parser

@@ -14,7 +14,6 @@ class TabBarViewController: UITabBarController {
     super.viewDidLoad()
 
     // Query example
-
     Server.request(UserPO.Requests.list) { (users, error) in
       if let error = error {
         print(error)
@@ -24,7 +23,11 @@ class TabBarViewController: UITabBarController {
         print(user)
       }
     }
-
+    
+    Server.request(UserPO.Requests.auth(token: "", socialId: "")) { (user, error) in
+      print(user)
+    }
+    
     Server.request(UserPO.Requests.listOfIds) { (users, error) in
       if let error = error {
         print(error)
