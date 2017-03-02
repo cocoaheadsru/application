@@ -1,5 +1,5 @@
 //
-//  CHTextView.swift
+//  TextViewWithPlaceholder.swift
 //  CHMeetupApp
 //
 //  Created by Maxim Globak on 28.02.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CHTextView: UITextView {
+class TextViewWithPlaceholder: UITextView {
   var placeholderTextView: UITextView! {
     didSet {
       placeholderTextView.backgroundColor = UIColor.clear
@@ -49,11 +49,11 @@ class CHTextView: UITextView {
 
   private func setupNotifications() {
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(CHTextView.textViewDidBeginEditing),
+                                           selector: #selector(TextViewWithPlaceholder.textViewDidBeginEditing),
                                            name: NSNotification.Name.UITextViewTextDidBeginEditing,
                                            object: nil)
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(CHTextView.textViewDidEndEditing),
+                                           selector: #selector(TextViewWithPlaceholder.textViewDidEndEditing),
                                            name: NSNotification.Name.UITextViewTextDidEndEditing,
                                            object: nil)
   }

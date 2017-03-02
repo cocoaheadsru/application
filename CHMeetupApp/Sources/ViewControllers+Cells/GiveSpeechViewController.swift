@@ -18,7 +18,7 @@ class GiveSpeechViewController: UIViewController {
   @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var descriptionTextView: CHTextView! {
+  @IBOutlet weak var descriptionTextView: TextViewWithPlaceholder! {
     didSet {
       descriptionTextView.layer.cornerRadius  = 5
       descriptionTextView.layer.borderWidth   = 1

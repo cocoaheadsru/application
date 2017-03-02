@@ -163,7 +163,7 @@
                                                             <outlet property="delegate" destination="WaT-qA-jSi" id="Vao-gz-3bf"/>
                                                         </connections>
                                                     </textField>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O5G-9L-vl9" customClass="CHTextView" customModule="CHMeetupApp" customModuleProvider="target">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O5G-9L-vl9" customClass="TextViewWithPlaceholder" customModule="CHMeetupApp" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="46" width="347" height="160"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
