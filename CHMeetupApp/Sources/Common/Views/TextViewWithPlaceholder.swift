@@ -22,11 +22,8 @@ class TextViewWithPlaceholder: UITextView {
   }
 
   var placeholder: String? {
-    set {
-      placeholderTextView.text = newValue
-    }
-    get {
-      return placeholderTextView.text
+    didSet {
+      placeholderTextView.text = placeholder
     }
   }
 
@@ -49,31 +46,20 @@ class TextViewWithPlaceholder: UITextView {
 
   private func setupNotifications() {
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(TextViewWithPlaceholder.textViewDidBeginEditing),
-                                           name: NSNotification.Name.UITextViewTextDidBeginEditing,
-                                           object: nil)
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(TextViewWithPlaceholder.textViewDidEndEditing),
-                                           name: NSNotification.Name.UITextViewTextDidEndEditing,
+                                           selector: #selector(TextViewWithPlaceholder.textViewDidChange),
+                                           name: NSNotification.Name.UITextViewTextDidChange,
                                            object: nil)
   }
 
-  @objc private func textViewDidBeginEditing() {
-    changeTheVisibilityOf(view: placeholderTextView, isHide: true)
-  }
-
-  @objc private func textViewDidEndEditing() {
-    if self.text == nil || self.text == "" {
-      changeTheVisibilityOf(view: placeholderTextView, isHide: false)
-    }
+  @objc private func textViewDidChange() {
+    let isHide = !self.text.isEmpty
+    changeTheVisibilityOf(view: placeholderTextView, isHide: isHide)
   }
 
   private func changeTheVisibilityOf(view: UIView, isHide: Bool) {
-    UIView.animate(withDuration: 0.3, animations: {
+    UIView.animate(withDuration: 0.2, animations: {
       view.alpha = isHide ? 0.0 : 0.3
-    }) { (_) in
-      view.isHidden = isHide
-    }
+    })
   }
 
   private func setupConstraints() {
