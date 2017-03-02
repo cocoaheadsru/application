@@ -23,7 +23,9 @@ class TextViewWithPlaceholder: UITextView {
 
   var placeholder: String? {
     didSet {
-      placeholderTextView.text = placeholder
+      if placeholderTextView.text.isEmpty {
+        placeholderTextView.text = placeholder
+      }
     }
   }
 
