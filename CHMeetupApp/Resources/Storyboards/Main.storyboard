@@ -12,7 +12,7 @@
         <!--Archieve-->
         <scene sceneID="xXe-KA-haW">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oCD-k4-2hk" customClass="PastEventsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oCD-k4-2hk" customClass="PastEventsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r8x-qg-1h8"/>
                         <viewControllerLayoutGuide type="bottom" id="CHE-FF-RQ5"/>
@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-ia-VN9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-ia-VN9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="oCD-k4-2hk" id="uo8-az-scf"/>
@@ -32,8 +32,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CHE-FF-RQ5" firstAttribute="top" secondItem="EXr-ia-VN9" secondAttribute="bottom" id="PF8-OQ-bjz"/>
-                            <constraint firstItem="EXr-ia-VN9" firstAttribute="top" secondItem="r8x-qg-1h8" secondAttribute="bottom" id="Zcz-o1-1QQ"/>
+                            <constraint firstAttribute="bottom" secondItem="EXr-ia-VN9" secondAttribute="bottom" id="9Lv-tF-aEb"/>
+                            <constraint firstItem="EXr-ia-VN9" firstAttribute="top" secondItem="FtC-VP-iXQ" secondAttribute="top" id="DuW-Ku-GUP"/>
                             <constraint firstAttribute="trailing" secondItem="EXr-ia-VN9" secondAttribute="trailing" id="cfc-Fd-Qv4"/>
                             <constraint firstItem="EXr-ia-VN9" firstAttribute="leading" secondItem="FtC-VP-iXQ" secondAttribute="leading" id="kDL-Ca-1tO"/>
                         </constraints>

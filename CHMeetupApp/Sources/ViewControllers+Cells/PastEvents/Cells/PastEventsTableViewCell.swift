@@ -14,14 +14,12 @@ protocol ReusableCell {
 }
 
 class PastEventsTableViewCell: UITableViewCell {
-  
   @IBOutlet fileprivate var titleLabel: UILabel!
   @IBOutlet fileprivate var dateLabel: UILabel!
   @IBOutlet fileprivate var placeholderImageView: UIImageView!
 }
 
 extension PastEventsTableViewCell {
-  
   func configure(with event: EventModel) {
     titleLabel.text = event.title
     dateLabel.text = event.dateTitle
@@ -32,9 +30,7 @@ extension PastEventsTableViewCell: ReusableCell {
   static var identifier: String {
     return String(describing: self)
   }
-  
   static var nib: UINib? {
     return UINib(nibName: String(describing: self), bundle: nil)
   }
 }
-
