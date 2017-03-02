@@ -14,7 +14,7 @@ class Social: Object {
 
   dynamic var name: String = ""
 
-  let users = LinkingObjects(fromType: User.self, property: "social")
+  let user = LinkingObjects(fromType: User.self, property: "social").first
 
   override static func primaryKey() -> String? {
     return "socialID"
@@ -29,31 +29,15 @@ class User: Object {
   dynamic var secureParam: String = ""
   dynamic var photoURL: String = ""
   dynamic var isSpeaker: Bool = false
-
-  dynamic var speaker: Speaker?
-  dynamic var social: Social?
-
-  override static func primaryKey() -> String? {
-    return "userID"
-  }
-}
-
-class Speaker: Object {
-  dynamic var speakerID: Int = 0
-
-  dynamic var name: String = ""
-  dynamic var lastName: String = ""
-  dynamic var photoURL: String = ""
-  dynamic var phone: String = ""
   dynamic var email: String = ""
   dynamic var info: String = ""
   dynamic var company: String = ""
-
   let speaches = List<Speach>()
-  let users = LinkingObjects(fromType: User.self, property: "speaker")
+
+  let socials = List<Social>()
 
   override static func primaryKey() -> String? {
-    return "speakerID"
+    return "userID"
   }
 }
 
@@ -63,7 +47,7 @@ class Content: Object {
   dynamic var linkURL: String = ""
   dynamic var type: String = ""
 
-  let speaches = LinkingObjects(fromType: Speach.self, property: "content")
+  let speach = LinkingObjects(fromType: Speach.self, property: "contents").first
 
   override static func primaryKey() -> String? {
     return "contentID"
@@ -77,9 +61,9 @@ class Speach: Object {
   dynamic var descriptionText: String = ""
   dynamic var imageURL: String = ""
 
-  dynamic var content: Content?
-  let speakers = LinkingObjects(fromType: Speaker.self, property: "speaches")
-  let events = LinkingObjects(fromType: Event.self, property: "speaches")
+  let contents = List<Content>()
+  let user = LinkingObjects(fromType: User.self, property: "speaches").first
+  let event = LinkingObjects(fromType: Event.self, property: "speach").first
 
   override static func primaryKey() -> String? {
     return "speachID"
@@ -91,10 +75,8 @@ class Event: Object {
 
   dynamic var title: String = ""
   dynamic var date: Double = 0.0
-  dynamic var hazQuiz: Bool = false
 
   let speaches = List<Speach>()
-  let places = LinkingObjects(fromType: Place.self, property: "events")
 
   override static func primaryKey() -> String? {
     return "eventID"
@@ -106,22 +88,9 @@ class Place: Object {
 
   dynamic var title: String = ""
   dynamic var address: String = ""
-
-  let events = List<Event>()
-  let cities = LinkingObjects(fromType: City.self, property: "places")
+  dynamic var city: String = ""
 
   override static func primaryKey() -> String? {
     return "placeID"
-  }
-}
-
-class City: Object {
-  dynamic var cityID: Int = 0
-  dynamic var name: String = ""
-
-  let places = List<Place>()
-
-  override static func primaryKey() -> String? {
-    return "cityID"
   }
 }
