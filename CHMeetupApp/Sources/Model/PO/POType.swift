@@ -10,12 +10,8 @@ import Foundation
 typealias JSONDictionary = [String: Any]
 
 protocol POType {
-  associatedtype RequestsEnum
   init?(json: JSONDictionary)
 }
-
-protocol ArrayType {}
-extension Array: ArrayType {}
 
 
 extension Array where Element: POType {

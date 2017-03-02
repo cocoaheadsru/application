@@ -103,8 +103,7 @@ class Server {
 
       completion(jsonObject, nil)
     }
-    
-    
+
     loadSession.resume()
   }
 }

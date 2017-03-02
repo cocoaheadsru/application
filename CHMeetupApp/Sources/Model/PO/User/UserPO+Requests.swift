@@ -19,7 +19,7 @@ extension UserPO: POType {
 
     // Authorization by social network
     static func auth(token: String, socialId: String) -> Request<UserPO> {
-      return Request<UserPO>(query: "users/auth", method: .post)
+      return Request<UserPO>(query: "user/auth", method: .post)
     }
 
     // Example of custom parser
