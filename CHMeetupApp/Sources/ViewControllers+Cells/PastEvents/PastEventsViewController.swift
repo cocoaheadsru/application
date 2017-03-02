@@ -23,7 +23,6 @@ class PastEventsViewController: UIViewController {
   }
   //FIXME: Replace with real data source
   fileprivate var groupedEvents = [Date: [EventModel]]()
-  // swiftlint:disable:next trailing_whitespace
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,9 +43,9 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    // swiftlint:disable line_length
-    // swiftlint:disable:next force_cast
-    let cell = tableView.dequeueReusableCell(withIdentifier: PastEventsTableViewCell.identifier, for: indexPath) as! PastEventsTableViewCell
+    let identifier = PastEventsTableViewCell.identifier
+    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PastEventsTableViewCell
+    // swiftlint:disable:previous force_cast
 
     //FIXME: Replace with real data source
     let events = groupedEvents[key(for: indexPath.section)]
