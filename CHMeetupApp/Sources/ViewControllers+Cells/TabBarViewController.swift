@@ -24,12 +24,10 @@ class TabBarViewController: UITabBarController {
       }
     }
 
-    Server.request(UserPO.Requests.auth(token: "", socialId: "")) { (user, error) in
-      if let error = error {
-        print(error)
+    Server.request(EventPo.Requests.list) { (events, _) in
+      for event in events ?? [] {
+        print(event)
       }
-
-      print(user ?? "Nil user")
     }
 
     Server.request(UserPO.Requests.listOfIds) { (users, error) in

@@ -1,5 +1,5 @@
 //
-//  InfoAboutEventStructure.swift
+//  EventPO.swift
 //  CHMeetupApp
 //
 //  Created by Егор Петров on 24/02/2017.
@@ -7,6 +7,16 @@
 //
 
 import CoreLocation
+// FIXME: Rename it to EventPO
+struct EventPo {
+  let eventID: Int
+  let title: String
+  let desc: String
+  let place: PlacePO
+  let date: Date
+}
+
+// FIXME: Remove it
 
 struct EventPO {
   var title = "Cocoa Heads"

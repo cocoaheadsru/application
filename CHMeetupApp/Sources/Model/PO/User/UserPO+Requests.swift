@@ -10,7 +10,6 @@ import Foundation
 
 extension UserPO: POType {
 
-  typealias RequestsEnum = Requests
   struct Requests {
     // Users list
     static var list: Request<[UserPO]> {

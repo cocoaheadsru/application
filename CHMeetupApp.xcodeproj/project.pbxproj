@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
 		221A8B841E685C5A004E320D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221A8B861E685C5A004E320D /* Localizable.strings */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
-		0389AF621E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */; };
+		221A8B8E1E69692D004E320D /* EventPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B8D1E69692C004E320D /* EventPO.swift */; };
+		221A8B911E696D2F004E320D /* PlacePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B901E696D2E004E320D /* PlacePO.swift */; };
+		221A8B931E696D4C004E320D /* EventPO+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B921E696D4C004E320D /* EventPO+Requests.swift */; };
+		221A8B951E697007004E320D /* PlacePO+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B941E697007004E320D /* PlacePO+Requests.swift */; };
 		221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F871E5C0B6C0009FD07 /* Assets.xcassets */; };
 		221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */; };
 		2231A5351E60BA290069A179 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231A5341E60BA290069A179 /* Reachability.swift */; };
@@ -21,7 +25,6 @@
 		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
 		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
-		4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99A5431E61E398009E3E0E /* EventPO.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
@@ -55,9 +58,13 @@
 
 /* Begin PBXFileReference section */
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		221A8B851E685C5A004E320D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
-		0389AF611E660CFD00DCB4C7 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
+		221A8B8D1E69692C004E320D /* EventPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPO.swift; sourceTree = "<group>"; };
+		221A8B901E696D2E004E320D /* PlacePO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePO.swift; sourceTree = "<group>"; };
+		221A8B921E696D4C004E320D /* EventPO+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventPO+Requests.swift"; sourceTree = "<group>"; };
+		221A8B941E697007004E320D /* PlacePO+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlacePO+Requests.swift"; sourceTree = "<group>"; };
 		221F4F871E5C0B6C0009FD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221F4F8A1E5C0B6C0009FD07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221F4F8D1E5C0B6C0009FD07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +77,6 @@
 		224CA9E11E65FCA100CD06D6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4D08815A1E64200B004812E5 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateComponents+Init.swift"; path = "DateComponents/DateComponents+Init.swift"; sourceTree = "<group>"; };
 		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
-		4D99A5431E61E398009E3E0E /* EventPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPO.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -127,6 +133,24 @@
 				221A8B881E685EBF004E320D /* String+Localized.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		221A8B8C1E696918004E320D /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				221A8B8D1E69692C004E320D /* EventPO.swift */,
+				221A8B921E696D4C004E320D /* EventPO+Requests.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		221A8B8F1E696D18004E320D /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				221A8B901E696D2E004E320D /* PlacePO.swift */,
+				221A8B941E697007004E320D /* PlacePO+Requests.swift */,
+			);
+			path = Place;
 			sourceTree = "<group>";
 		};
 		221F4F851E5C0B6C0009FD07 /* Resources */ = {
@@ -275,7 +299,8 @@
 		221F4F981E5C0B6C0009FD07 /* PO */ = {
 			isa = PBXGroup;
 			children = (
-				4D99A5431E61E398009E3E0E /* EventPO.swift */,
+				221A8B8F1E696D18004E320D /* Place */,
+				221A8B8C1E696918004E320D /* Event */,
 				224CA9DA1E65FB7300CD06D6 /* User */,
 				224CA9DF1E65FC7300CD06D6 /* POType.swift */,
 			);
@@ -688,20 +713,23 @@
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
+				221A8B8E1E69692D004E320D /* EventPO.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
 				4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */,
-				4D99A5441E61E398009E3E0E /* EventPO.swift in Sources */,
 				9FD58FC91E5E331600207199 /* ProfileCreateViewController.swift in Sources */,
 				9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */,
+				221A8B931E696D4C004E320D /* EventPO+Requests.swift in Sources */,
 				9F2FFA201E66353100EBCAEB /* RequestContentParser.swift in Sources */,
 				9FD58FCE1E5E334400207199 /* PastEventsViewController.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
+				221A8B911E696D2F004E320D /* PlacePO.swift in Sources */,
 				9FD58FDE1E5E353900207199 /* RegistrationPreviewViewController.swift in Sources */,
 				9FD58FD71E5E338A00207199 /* SpeechViewController.swift in Sources */,
 				9FD58FE61E5E3EE000207199 /* ProfileNavigationViewController.swift in Sources */,
 				2231A5351E60BA290069A179 /* Reachability.swift in Sources */,
 				9FD58FD31E5E336E00207199 /* EventPreviewViewController.swift in Sources */,
+				221A8B951E697007004E320D /* PlacePO+Requests.swift in Sources */,
 				9FD58FDA1E5E350300207199 /* GiveSpeechViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FD58FC21E5E32E800207199 /* ProfileViewController.swift in Sources */,
