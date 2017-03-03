@@ -20,9 +20,9 @@ class PastEventsTableViewCell: UITableViewCell {
 }
 
 extension PastEventsTableViewCell {
-  func configure(with event: EventModel) {
-    titleLabel.text = event.title
-    dateLabel.text = event.dateTitle
+  func configure(with item: PastEventsDisplayCollection.Item) {
+    titleLabel.text = item.title
+    dateLabel.text = item.dateTitle
   }
 }
 
