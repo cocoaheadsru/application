@@ -16,7 +16,7 @@ class PastEventsViewController: UIViewController {
       tableView.rowHeight = UITableViewAutomaticDimension
     }
   }
-  fileprivate var viewModel = PastEventsDisplayCollection()
+  fileprivate var dataCollection = PastEventsDisplayCollection()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,11 +27,11 @@ class PastEventsViewController: UIViewController {
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return viewModel.sections.count
+    return dataCollection.sections.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let section = viewModel.sections[section]
+    let section = dataCollection.sections[section]
     return section.items.count
   }
 
@@ -40,14 +40,14 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     let identifier = PastEventsTableViewCell.identifier
     let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PastEventsTableViewCell
     // swiftlint:disable:previous force_cast
-    let item = viewModel.sections[indexPath.section].items[indexPath.row]
+    let item = dataCollection.sections[indexPath.section].items[indexPath.row]
     cell.configure(with: item)
 
     return cell
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let section = viewModel.sections[section]
+    let section = dataCollection.sections[section]
     return section.title
   }
 
@@ -75,7 +75,7 @@ fileprivate extension PastEventsViewController {
       event.title += " \(numberOfDemoEvents - eventIndex)"
       demoEvents.append(event)
     }
-    viewModel.add(demoEvents)
+    dataCollection.add(demoEvents)
     tableView.reloadData()
   }
 
