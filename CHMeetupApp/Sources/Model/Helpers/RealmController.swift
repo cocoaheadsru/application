@@ -9,8 +9,6 @@ import RealmSwift
 
 var mainRealm: Realm!
 
-let realmWriteError = "realmWriteCatchError"
-
 class RealmController {
 
   static var shared: RealmController = RealmController()
