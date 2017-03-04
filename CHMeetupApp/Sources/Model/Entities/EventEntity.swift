@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class EventEntity: Object {
-  dynamic var eventId: Int = 0
+  dynamic var id: Int = 0
 
   dynamic var title: String = ""
   dynamic var descriptionText: String = ""
@@ -20,9 +20,9 @@ class EventEntity: Object {
 
   dynamic var place: PlaceEntity?
 
-  let speaches = List<SpeechEntity>()
+  let speeches = List<SpeechEntity>()
 
   override static func primaryKey() -> String? {
-    return "eventId"
+    return "id"
   }
 }

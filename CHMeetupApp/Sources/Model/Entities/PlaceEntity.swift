@@ -10,17 +10,17 @@ import Foundation
 import RealmSwift
 
 class PlaceEntity: Object {
-  dynamic var placeId: Int = 0
+  dynamic var id: Int = 0
 
   dynamic var title: String = ""
 
   dynamic var address: String = ""
   dynamic var city: String = ""
 
-  dynamic var latitude: Float = 0
-  dynamic var longitude: Float = 0
+  dynamic var latitude: Double = 0
+  dynamic var longitude: Double = 0
 
   override static func primaryKey() -> String? {
-    return "placeId"
+    return "id"
   }
 }

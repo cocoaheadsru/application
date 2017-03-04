@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class UserEntity: Object {
-  dynamic var userId: Int = 0
+  dynamic var id: Int = 0
 
   dynamic var name: String = ""
   dynamic var lastName: String = ""
@@ -26,10 +26,10 @@ class UserEntity: Object {
   dynamic var isSpeaker: Bool = false
   dynamic var photoURL: String = ""
 
-  let speaches = List<SpeechEntity>()
+  let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()
 
   override static func primaryKey() -> String? {
-    return "userId"
+    return "id"
   }
 }

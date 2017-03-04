@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class SpeechContentEntity: Object {
-  dynamic var contentId: Int = 0
+  dynamic var id: Int = 0
 
   dynamic var title: String = ""
   dynamic var descriptionText: String = ""
@@ -18,13 +18,7 @@ class SpeechContentEntity: Object {
   dynamic var linkURL: String = ""
   dynamic var type: Int = 0
 
-  private let speeches = LinkingObjects(fromType: SpeechEntity.self, property: "contents")
-
-  var speech: SpeechEntity? {
-    return speeches.first
-  }
-
   override static func primaryKey() -> String? {
-    return "contentId"
+    return "id"
   }
 }

@@ -10,19 +10,19 @@ import Foundation
 import RealmSwift
 
 class SocialEntity: Object {
-  dynamic var socialId: Int = 0
+  dynamic var id: Int = 0
 
   dynamic var name: String = ""
   dynamic var url: String = ""
   dynamic var isPrivate: Bool = true
 
-  private let users = LinkingObjects(fromType: UserEntity.self, property: "social")
+  private let users = LinkingObjects(fromType: UserEntity.self, property: "socials")
 
   var user: UserEntity? {
     return users.first
   }
 
   override static func primaryKey() -> String? {
-    return "socialId"
+    return "id"
   }
 }
