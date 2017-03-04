@@ -22,6 +22,7 @@ extension EventPo: POType {
       let id = json["id"] as? Int,
       let title = json["title"] as? String,
       let desc = json["description"] as? String,
+      let photoUrl = json["photoUrl"] as? String,
       let date = json["date"] as? Double,
       let placeJson = json["place"] as? JSONDictionary,
       let place = PlacePO(json: placeJson)
@@ -31,6 +32,7 @@ extension EventPo: POType {
     self.title = title
     self.desc = desc
     self.place = place
-    self.date = Date.init(timeIntervalSince1970: date)
+    self.photoUrl = photoUrl
+    self.date = Date(timeIntervalSince1970: date)
   }
 }

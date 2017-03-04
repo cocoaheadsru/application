@@ -11,6 +11,7 @@ import Foundation
 struct PlacePO {
   let placeID: Int
   let title: String
+  let descriptionText: String
   let address: String
   let longitude: Double
   let latitude: Double

@@ -14,6 +14,7 @@ extension PlacePO: POType {
     guard
       let id = json["place_id"] as? Int,
       let title = json["title"] as? String,
+      let descriptionText = json["description"] as? String,
       let address = json["address"] as? String,
       let longitude = json["longitude"] as? Double,
       let latitude = json["latitude"] as? Double,
@@ -22,6 +23,7 @@ extension PlacePO: POType {
 
     self.placeID = id
     self.title = title
+    self.descriptionText = descriptionText
     self.address = address
     self.longitude = longitude
     self.latitude = latitude

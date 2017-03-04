@@ -14,6 +14,7 @@ struct EventPo {
   let desc: String
   let place: PlacePO
   let date: Date
+  let photoUrl: String
 }
 
 // FIXME: Remove it
