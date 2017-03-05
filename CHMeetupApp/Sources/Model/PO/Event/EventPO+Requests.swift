@@ -28,7 +28,7 @@ extension EventPo: POType {
       let place = PlacePO(json: placeJson)
       else { return nil }
 
-    self.eventID = id
+    self.id = id
     self.title = title
     self.desc = desc
     self.place = place

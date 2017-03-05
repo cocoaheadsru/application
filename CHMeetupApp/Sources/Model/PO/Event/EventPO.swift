@@ -9,7 +9,7 @@
 import CoreLocation
 // FIXME: Rename it to EventPO
 struct EventPo {
-  let eventID: Int
+  let id: Int
   let title: String
   let desc: String
   let place: PlacePO
