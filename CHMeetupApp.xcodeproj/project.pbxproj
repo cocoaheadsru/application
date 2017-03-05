@@ -24,7 +24,7 @@
 		224CA9E01E65FC7300CD06D6 /* PlainObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9DF1E65FC7300CD06D6 /* PlainObjectType.swift */; };
 		224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA9E11E65FCA100CD06D6 /* Request.swift */; };
 		4D08815B1E64200B004812E5 /* DateComponents+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08815A1E64200B004812E5 /* DateComponents+Init.swift */; };
-		4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* ImportController.swift */; };
+		4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784AA39C1E65BB4F0018336C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784AA39B1E65BB4F0018336C /* Utility.swift */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
@@ -115,7 +115,7 @@
 		224CA9DF1E65FC7300CD06D6 /* PlainObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainObjectType.swift; sourceTree = "<group>"; };
 		224CA9E11E65FCA100CD06D6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4D08815A1E64200B004812E5 /* DateComponents+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateComponents+Init.swift"; path = "DateComponents/DateComponents+Init.swift"; sourceTree = "<group>"; };
-		4D890B581E5EEFE00038CCC9 /* ImportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportController.swift; sourceTree = "<group>"; };
+		4D890B581E5EEFE00038CCC9 /* Importer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784AA39B1E65BB4F0018336C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				784AA39B1E65BB4F0018336C /* Utility.swift */,
-				4D890B581E5EEFE00038CCC9 /* ImportController.swift */,
+				4D890B581E5EEFE00038CCC9 /* Importer.swift */,
 				C3E466B81E5F1C4600728327 /* KeyboardHandler.swift */,
 				2231A52F1E60B9A50069A179 /* WebService */,
 				2231A5341E60BA290069A179 /* Reachability.swift */,
@@ -861,7 +861,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
-				4D890B591E5EEFE00038CCC9 /* ImportController.swift in Sources */,
+				4D890B591E5EEFE00038CCC9 /* Importer.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				C3E466BD1E5F253500728327 /* UIViewController+keyboardDelegate.swift in Sources */,
@@ -889,6 +889,7 @@
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
+				9F2FFA201E66353100EBCAEB /* RequestContentParser.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
 				92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */,
