@@ -1,5 +1,5 @@
 //
-//  PlacePO.swift
+//  PlacePlainObject.swift
 //  CHMeetupApp
 //
 //  Created by Sam Mejlumyan on 03/03/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlacePO {
+struct PlacePlainObject {
   let placeID: Int
   let title: String
   let descriptionText: String

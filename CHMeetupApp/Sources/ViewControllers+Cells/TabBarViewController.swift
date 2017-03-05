@@ -10,11 +10,19 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+  // FIXME: - Remove when would not be nesseary
+  var collection: DataModelCollection<UserEntity>!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    collection = DataModelCollection(type: UserEntity.self)
+    collection = collection.sorted(byKeyPath: "name")
+
+//    let value = collection.objectAtIndex(index: 2)
+
     // Query example
-    Server.request(UserPO.Requests.list) { (users, error) in
+    Server.request(UserPlainObject.Requests.list) { (users, error) in
       if let error = error {
         print(error)
       }
@@ -24,13 +32,7 @@ class TabBarViewController: UITabBarController {
       }
     }
 
-    Server.request(EventPlainObject.Requests.list) { (events, _) in
-      for event in events ?? [] {
-        print(event)
-      }
-    }
-
-    Server.request(UserPO.Requests.listOfIds) { (users, error) in
+    Server.request(UserPlainObject.Requests.listOfIds) { (users, error) in
       if let error = error {
         print(error)
       }

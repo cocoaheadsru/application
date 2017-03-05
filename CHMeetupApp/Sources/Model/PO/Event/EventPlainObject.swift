@@ -12,7 +12,7 @@ struct EventPlainObject {
   let id: Int
   let title: String
   let desc: String
-  let place: PlacePO
+  let place: PlacePlainObject
   let startDate: Date
   let endDate: Date
   let photoUrl: String

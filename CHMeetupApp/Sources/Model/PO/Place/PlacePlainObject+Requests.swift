@@ -1,5 +1,5 @@
 //
-//  PlacePO+Requests.swift
+//  PlacePlainObject+Requests.swift
 //  CHMeetupApp
 //
 //  Created by Sam Mejlumyan on 03/03/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension PlacePO: POType {
+extension PlacePlainObject: PlainObjectType {
 
   init?(json: JSONDictionary) {
     guard

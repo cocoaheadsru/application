@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension EventPlainObject: POType {
+extension EventPlainObject: PlainObjectType {
 
   struct Requests {
     // Events list
@@ -26,7 +26,7 @@ extension EventPlainObject: POType {
       let startDate = json["startDate"] as? Double,
       let endDate = json["endDate"] as? Double,
       let placeJson = json["place"] as? JSONDictionary,
-      let place = PlacePO(json: placeJson)
+      let place = PlacePlainObject(json: placeJson)
       else { return nil }
 
     self.id = id
