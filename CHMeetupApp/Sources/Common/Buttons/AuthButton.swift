@@ -10,22 +10,33 @@ import UIKit
 
 class AuthButton: UIButton {
 
-  let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
-
   override var isHighlighted: Bool {
     didSet {
       if oldValue != isHighlighted {
-        updateStateAppearance()
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isHighlighted ? color.darkerTap : color.lighterTap)
+        }
       }
     }
   }
 
-  func updateStateAppearance() {
-    if isHighlighted {
-      blur.frame = self.bounds
-      self.insertSubview(blur, at: 0)
-    } else {
-      blur.removeFromSuperview()
+  override var isEnabled: Bool {
+    didSet {
+      if oldValue != isEnabled {
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isEnabled ? color.lighterTap : color.darkerTap)
+        }
+      }
+    }
+  }
+
+  override var isSelected: Bool {
+    didSet {
+      if oldValue != isSelected {
+        if let color = self.backgroundColor {
+          self.backgroundColor = (isSelected ? color.darkerTap : color.lighterTap)
+        }
+      }
     }
   }
 
