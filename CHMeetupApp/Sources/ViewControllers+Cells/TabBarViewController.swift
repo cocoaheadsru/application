@@ -24,7 +24,7 @@ class TabBarViewController: UITabBarController {
       }
     }
 
-    Server.request(EventPo.Requests.list) { (events, _) in
+    Server.request(EventPlainObject.Requests.list) { (events, _) in
       for event in events ?? [] {
         print(event)
       }

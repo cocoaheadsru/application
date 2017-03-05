@@ -7,13 +7,14 @@
 //
 
 import CoreLocation
-// FIXME: Rename it to EventPO
-struct EventPo {
+
+struct EventPlainObject {
   let id: Int
   let title: String
   let desc: String
   let place: PlacePO
-  let date: Date
+  let startDate: Date
+  let endDate: Date
   let photoUrl: String
 }
 

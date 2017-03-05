@@ -8,11 +8,11 @@
 
 import Foundation
 
-extension EventPo: POType {
+extension EventPlainObject: POType {
 
   struct Requests {
     // Events list
-    static var list: Request<[EventPo]> {
+    static var list: Request<[EventPlainObject]> {
       return Request(query: "events")
     }
   }
@@ -23,7 +23,8 @@ extension EventPo: POType {
       let title = json["title"] as? String,
       let desc = json["description"] as? String,
       let photoUrl = json["photoUrl"] as? String,
-      let date = json["date"] as? Double,
+      let startDate = json["startDate"] as? Double,
+      let endDate = json["endDate"] as? Double,
       let placeJson = json["place"] as? JSONDictionary,
       let place = PlacePO(json: placeJson)
       else { return nil }
@@ -33,6 +34,7 @@ extension EventPo: POType {
     self.desc = desc
     self.place = place
     self.photoUrl = photoUrl
-    self.date = Date(timeIntervalSince1970: date)
+    self.startDate = Date(timeIntervalSince1970: startDate)
+    self.endDate = Date(timeIntervalSince1970: endDate)
   }
 }
