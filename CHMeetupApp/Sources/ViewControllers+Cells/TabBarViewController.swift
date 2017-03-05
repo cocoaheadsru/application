@@ -10,12 +10,13 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-  var collection: DataModelCollection<UserPlainObject>!
+  // FIXME: - Remove when would not be nesseary
+  var collection: DataModelCollection<UserEntity>!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    collection = DataModelCollection(type: UserPlainObject.self)
+    collection = DataModelCollection(type: UserEntity.self)
     collection = collection.sorted(byKeyPath: "name")
 
 //    let value = collection.objectAtIndex(index: 2)

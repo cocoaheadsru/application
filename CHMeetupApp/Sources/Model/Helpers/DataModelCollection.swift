@@ -9,17 +9,23 @@
 import Foundation
 import RealmSwift
 
-struct DataModelCollection<T: DataBasePlainObjectType> {
-  private var results: Results<T.DataModelType>!
+struct DataModelCollection<T: Object> {
+  private var results: Results<T>!
 
   init(type: T.Type) {
-    results = mainRealm.objects(T.DataModelType.self)
+    results = mainRealm.objects(T.self)
+  }
+
+  // MARK: - Properties
+
+  var count: Int {
+    return results.count
   }
 
   // MARK: - Functionality
 
-  func objectAtIndex(index: Int) -> T {
-    return T.mapFromObject(object: results[index])
+  private func objectAtIndex(index: Int) -> T {
+    return results[index]
   }
 
   subscript(index: Int) -> T {
@@ -30,17 +36,25 @@ struct DataModelCollection<T: DataBasePlainObjectType> {
 
   // MARK: - Filter
 
-  func filter(_ predicateFormat: String, _ args: Any...) -> DataModelCollection<T> {
+  mutating func filter(_ predicateFormat: String, _ args: Any...) {
+    results = results.filter(predicateFormat, args)
+  }
+
+  func filtered(_ predicateFormat: String, _ args: Any...) -> DataModelCollection<T> {
     var collection = self
-    collection.results = collection.results?.filter(predicateFormat, args)
+    collection.filter(predicateFormat, args)
     return collection
   }
 
   // MARK: - Sort
 
+  mutating func sort(byKeyPath keyPath: String, ascending: Bool = true) {
+    results = results.sorted(byKeyPath: keyPath, ascending: ascending)
+  }
+
   func sorted(byKeyPath keyPath: String, ascending: Bool = true) -> DataModelCollection<T> {
     var collection = self
-    collection.results = collection.results?.sorted(byKeyPath: keyPath, ascending: ascending)
+    collection.sort(byKeyPath: keyPath, ascending: ascending)
     return collection
   }
 }

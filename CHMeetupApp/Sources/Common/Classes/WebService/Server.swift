@@ -30,7 +30,7 @@ enum ServerError: Error {
 
 class Server {
   static func request<T: PlainObjectType>(_ request: Request<[T]>,
-                      completion: @escaping (([T]?, ServerError?) -> Void)) {
+                                          completion: @escaping (([T]?, ServerError?) -> Void)) {
     loadRequest(request) { (jsonObject, error) in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
@@ -53,7 +53,7 @@ class Server {
   }
 
   static func request<T: PlainObjectType>(_ request: Request<T>,
-                      completion: @escaping ((T?, ServerError?) -> Void)) {
+                                          completion: @escaping ((T?, ServerError?) -> Void)) {
     loadRequest(request) { (jsonObject, error) in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
