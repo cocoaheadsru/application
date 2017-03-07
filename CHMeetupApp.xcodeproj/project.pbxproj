@@ -38,7 +38,6 @@
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
-		8A7122FC1E6F24BB00F890E2 /* Gotham.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */; };
 		8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
 		8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */; };
 		923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */; };
@@ -60,6 +59,11 @@
 		9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */; };
 		9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */; };
 		9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */; };
+		9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848891E6F632D002E81ED /* UIColor+Hex.swift */; };
+		9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488B1E6F63EB002E81ED /* String+Range.swift */; };
+		9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */; };
+		9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */; };
+		9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
@@ -132,7 +136,6 @@
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
-		8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gotham.ttf; sourceTree = "<group>"; };
 		8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Brightness.swift"; path = "UIKit/UIColor/UIColor+Brightness.swift"; sourceTree = "<group>"; };
 		923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsDisplayCollection.swift; sourceTree = "<group>"; };
 		92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +156,11 @@
 		9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechEntity.swift; sourceTree = "<group>"; };
 		9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechContentEntity.swift; sourceTree = "<group>"; };
 		9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceEntity.swift; sourceTree = "<group>"; };
+		9FB848891E6F632D002E81ED /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9FB8488B1E6F63EB002E81ED /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
+		9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PaletteColors.swift"; sourceTree = "<group>"; };
+		9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				221A8B881E685EBF004E320D /* String+Localized.swift */,
+				9FB8488B1E6F63EB002E81ED /* String+Range.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -263,7 +272,7 @@
 		221F4F8B1E5C0B6C0009FD07 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8A7122FB1E6F24BB00F890E2 /* Gotham.ttf */,
+				9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -532,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				9FB8488F1E6F672B002E81ED /* Font */,
 				8A857D001E6CC6B7002CC4C2 /* UIColor */,
 			);
 			name = UIKit;
@@ -540,6 +550,8 @@
 		8A857D001E6CC6B7002CC4C2 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
+				9FB848891E6F632D002E81ED /* UIColor+Hex.swift */,
+				9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */,
 				8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */,
 			);
 			name = UIColor;
@@ -605,6 +617,14 @@
 				221F4F851E5C0B6C0009FD07 /* Resources */,
 			);
 			path = CHMeetupApp;
+			sourceTree = "<group>";
+		};
+		9FB8488F1E6F672B002E81ED /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		9FD58FBA1E5E307800207199 /* Launch */ = {
@@ -827,6 +847,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */,
 				78BBC9061E60FC0700DEC122 /* ProfileNameCell.xib in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				221A8B841E685C5A004E320D /* Localizable.strings in Resources */,
@@ -836,7 +857,6 @@
 				78BBC90A1E60FC2D00DEC122 /* ProfileSpeachCell.xib in Resources */,
 				78BBC9021E60FBE800DEC122 /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
-				8A7122FC1E6F24BB00F890E2 /* Gotham.ttf in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +935,7 @@
 				784AA39C1E65BB4F0018336C /* Utility.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
+				9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */,
 				8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
@@ -925,6 +946,7 @@
 				221A8B931E696D4C004E320D /* EventPlainObject+Requests.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
+				9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */,
 				78BBC9051E60FC0700DEC122 /* ProfileNameCell.swift in Sources */,
 				8A6268541E64638500D51BEB /* LoginType.swift in Sources */,
 				92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */,
@@ -945,6 +967,7 @@
 				224CA9E01E65FC7300CD06D6 /* PlainObjectType.swift in Sources */,
 				78BBC9091E60FC2D00DEC122 /* ProfileSpeachCell.swift in Sources */,
 				9FD590161E5F1AE700207199 /* MapsController.swift in Sources */,
+				9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				9F6048991E5B3CCB00C414C3 /* AppDelegate.swift in Sources */,
 				9F2638631E6B88DA0081D23B /* DataBasePlainObjectType.swift in Sources */,
@@ -954,6 +977,7 @@
 				923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */,
 				9FD590151E5F1AE700207199 /* MapAppType.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
+				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
 				224CA9DC1E65FB8300CD06D6 /* UserPlainObject.swift in Sources */,
 				224CA9E21E65FCA100CD06D6 /* Request.swift in Sources */,
 				224CA9DE1E65FBA100CD06D6 /* UserPlainObject+Requests.swift in Sources */,
