@@ -39,7 +39,7 @@
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8A6268541E64638500D51BEB /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268531E64638500D51BEB /* LoginType.swift */; };
 		8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D890B581E5EEFE00038CCC9 /* Importer.swift */; };
-		8A857CFE1E6CC692002CC4C2 /* UIColor+brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */; };
+		8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */; };
 		923CF19A1E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */; };
 		92D6786A1E626CCD0010F3E9 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */; };
 		92D6786E1E626CE80010F3E9 /* PastEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */; };
@@ -137,6 +137,7 @@
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6268531E64638500D51BEB /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginType.swift; path = Controllers/LoginType.swift; sourceTree = "<group>"; };
 		8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+brightness.swift"; path = "UIKit/UIColor/UIColor+brightness.swift"; sourceTree = "<group>"; };
+		8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Brightness.swift"; path = "UIKit/UIColor/UIColor+Brightness.swift"; sourceTree = "<group>"; };
 		923CF1991E68F0CA00EBBE0D /* PastEventsDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsDisplayCollection.swift; sourceTree = "<group>"; };
 		92D678691E626CCD0010F3E9 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
 		92D6786C1E626CE80010F3E9 /* PastEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -550,9 +551,9 @@
 		8A857D001E6CC6B7002CC4C2 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				8A857CFD1E6CC692002CC4C2 /* UIColor+brightness.swift */,
 				9FB848891E6F632D002E81ED /* UIColor+Hex.swift */,
 				9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */,
+				8A857CFD1E6CC692002CC4C2 /* UIColor+Brightness.swift */,
 			);
 			name = UIColor;
 			sourceTree = "<group>";
@@ -935,8 +936,8 @@
 				784AA39C1E65BB4F0018336C /* Utility.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FD58FC61E5E32F900207199 /* ProfileEditViewController.swift in Sources */,
-				8A857CFE1E6CC692002CC4C2 /* UIColor+brightness.swift in Sources */,
 				9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */,
+				8A857CFE1E6CC692002CC4C2 /* UIColor+Brightness.swift in Sources */,
 				9FD58FE81E5E3F4100207199 /* LoginProcessViewController.swift in Sources */,
 				221A8B8E1E69692D004E320D /* EventPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
