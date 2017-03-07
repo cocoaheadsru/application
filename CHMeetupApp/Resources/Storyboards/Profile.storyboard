@@ -68,7 +68,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WrD-rK-qrf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Войти через Twitter" image="twitterIcon">
@@ -302,7 +302,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileCreateViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7aJ-hD-rjf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdg-QD-JoR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zdg-QD-JoR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -320,7 +320,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="8x9-GI-9iQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SkT-lA-HEb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SkT-lA-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
