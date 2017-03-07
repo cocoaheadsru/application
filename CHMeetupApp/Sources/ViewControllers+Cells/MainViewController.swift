@@ -20,6 +20,6 @@ class MainViewController: UIViewController {
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
-    return TabBarItemView.loadViewFromNib()
+    return TabBarItemView.createCell(type: .main)
   }
 }

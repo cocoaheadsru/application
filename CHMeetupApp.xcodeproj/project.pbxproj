@@ -61,13 +61,14 @@
 		9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */; };
 		9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */; };
 		9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */; };
+		9FB848861E6F6069002E81ED /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848851E6F6069002E81ED /* TabBarItemView.swift */; };
+		9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848871E6F6071002E81ED /* TabBarItemView.xib */; };
 		9FB8488A1E6F632D002E81ED /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848891E6F632D002E81ED /* UIColor+Hex.swift */; };
 		9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488B1E6F63EB002E81ED /* String+Range.swift */; };
 		9FB8488E1E6F66AE002E81ED /* UIColor+PaletteColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */; };
 		9FB848911E6F674D002E81ED /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */; };
 		9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */; };
-		9FB848861E6F6069002E81ED /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848851E6F6069002E81ED /* TabBarItemView.swift */; };
-		9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB848871E6F6071002E81ED /* TabBarItemView.xib */; };
+		9FB8489A1E6F72CF002E81ED /* UIImage+RenderMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */; };
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FD58FBE1E5E30AF00207199 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */; };
@@ -162,13 +163,14 @@
 		9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechEntity.swift; sourceTree = "<group>"; };
 		9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechContentEntity.swift; sourceTree = "<group>"; };
 		9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceEntity.swift; sourceTree = "<group>"; };
+		9FB848851E6F6069002E81ED /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		9FB848871E6F6071002E81ED /* TabBarItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItemView.xib; sourceTree = "<group>"; };
 		9FB848891E6F632D002E81ED /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		9FB8488B1E6F63EB002E81ED /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
 		9FB8488D1E6F66AE002E81ED /* UIColor+PaletteColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PaletteColors.swift"; sourceTree = "<group>"; };
 		9FB848901E6F674D002E81ED /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		9FB848921E6F67C7002E81ED /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Medium.ttf"; sourceTree = "<group>"; };
-		9FB848851E6F6069002E81ED /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
-		9FB848871E6F6071002E81ED /* TabBarItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItemView.xib; sourceTree = "<group>"; };
+		9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RenderMode.swift"; sourceTree = "<group>"; };
 		9FD58FB61E5E304E00207199 /* EventPreview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPreview.storyboard; sourceTree = "<group>"; };
 		9FD58FB81E5E306800207199 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FD58FBD1E5E30AF00207199 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 			children = (
 				9F9BDABB1E6F5CBB000D9603 /* UIView+NibLoad.swift */,
 				C3E466BC1E5F253500728327 /* UIViewController+keyboardDelegate.swift */,
+				9FB848981E6F72C6002E81ED /* Image */,
 				9FB8488F1E6F672B002E81ED /* Font */,
 				8A857D001E6CC6B7002CC4C2 /* UIColor */,
 			);
@@ -629,6 +632,15 @@
 			path = CHMeetupApp;
 			sourceTree = "<group>";
 		};
+		9FB848841E6F6033002E81ED /* CustomTabBarItemView */ = {
+			isa = PBXGroup;
+			children = (
+				9FB848851E6F6069002E81ED /* TabBarItemView.swift */,
+				9FB848871E6F6071002E81ED /* TabBarItemView.xib */,
+			);
+			name = CustomTabBarItemView;
+			sourceTree = "<group>";
+		};
 		9FB8488F1E6F672B002E81ED /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,13 +649,12 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
-		9FB848841E6F6033002E81ED /* CustomTabBarItemView */ = {
+		9FB848981E6F72C6002E81ED /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				9FB848851E6F6069002E81ED /* TabBarItemView.swift */,
-				9FB848871E6F6071002E81ED /* TabBarItemView.xib */,
+				9FB848991E6F72CF002E81ED /* UIImage+RenderMode.swift */,
 			);
-			name = CustomTabBarItemView;
+			name = Image;
 			sourceTree = "<group>";
 		};
 		9FD58FBA1E5E307800207199 /* Launch */ = {
@@ -878,7 +889,6 @@
 				78BBC9021E60FBE800DEC122 /* ProfilePictureCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				9FB848881E6F6071002E81ED /* TabBarItemView.xib in Resources */,
-				8A7122FC1E6F24BB00F890E2 /* Gotham.ttf in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +949,7 @@
 			files = (
 				8A7122FD1E6F2EDA00F890E2 /* Importer.swift in Sources */,
 				8A317A801E6AE8BE00C4798C /* ActionButton.swift in Sources */,
+				9FB8489A1E6F72CF002E81ED /* UIImage+RenderMode.swift in Sources */,
 				9F2638651E6B89670081D23B /* UserPlainObject+DataBase.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,

@@ -24,7 +24,7 @@ class PastEventsViewController: UIViewController {
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
-    return TabBarItemView.loadViewFromNib()
+    return TabBarItemView.createCell(type: .past)
   }
 }
 

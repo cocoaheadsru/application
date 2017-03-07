@@ -30,7 +30,7 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
-    return TabBarItemView.loadViewFromNib()
+    return TabBarItemView.createCell(type: .profile)
   }
 
 }
