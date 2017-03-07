@@ -30,6 +30,7 @@ final class Constants {
 
   struct SystemSizes {
     static let cornerRadius: CGFloat = 5
+    static let textSize: CGFloat = 15
   }
 
 }

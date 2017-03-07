@@ -102,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Авторизация" id="H6i-Oc-rNL"/>
                     <connections>
+                        <outlet property="infoLabel" destination="jYh-rk-2cD" id="110-gP-bDD"/>
                         <outletCollection property="authButtons" destination="a2j-p0-rbw" collectionClass="NSMutableArray" id="yHh-mR-Am8"/>
                         <outletCollection property="authButtons" destination="gl9-SA-VgD" collectionClass="NSMutableArray" id="MYQ-qY-cB5"/>
                         <outletCollection property="authButtons" destination="sxo-Mt-f4Q" collectionClass="NSMutableArray" id="Kl0-HC-pMe"/>

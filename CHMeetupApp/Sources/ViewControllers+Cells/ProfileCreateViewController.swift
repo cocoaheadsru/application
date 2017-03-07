@@ -16,7 +16,13 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
       for button in authButtons {
         button.layer.cornerRadius = Constants.SystemSizes.cornerRadius
         button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont(name: button.titleLabel!.font.fontName, size: Constants.SystemSizes.textSize)
       }
+    }
+  }
+  @IBOutlet var infoLabel: UILabel! {
+    didSet {
+      infoLabel.font = UIFont(name: infoLabel.font.fontName, size: Constants.SystemSizes.textSize)
     }
   }
 
