@@ -38,12 +38,7 @@ class ActionButton: UIButton {
     } else {
       backgroundColor = nessesaryBackgroundColor
     }
-
-    if !isEnabled {
-      self.alpha = 0.8
-    } else {
-      self.alpha = 1
-    }
+    self.alpha = isEnabled ? 1 : 0.8
 
     isSetup = false
   }
