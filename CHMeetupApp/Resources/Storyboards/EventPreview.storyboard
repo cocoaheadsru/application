@@ -121,7 +121,7 @@
         <!--Speech-->
         <scene sceneID="gb4-so-DQv">
             <objects>
-                <viewController id="p6n-SL-zh4" customClass="SpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p6n-SL-zh4" customClass="SpeechPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="plA-aw-c5G"/>
                         <viewControllerLayoutGuide type="bottom" id="cEU-l5-eac"/>
