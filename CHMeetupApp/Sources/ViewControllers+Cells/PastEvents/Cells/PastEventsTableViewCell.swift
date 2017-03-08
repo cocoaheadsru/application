@@ -3,7 +3,7 @@
 //  CHMeetupApp
 //
 //  Created by Denis on 26.02.17.
-//  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit

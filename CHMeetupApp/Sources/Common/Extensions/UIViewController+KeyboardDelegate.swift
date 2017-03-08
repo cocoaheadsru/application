@@ -1,5 +1,5 @@
 //
-//  UIViewController+keyboardDelegate.swift
+//  UIViewController+KeyboardDelegate.swift
 //  CHMeetupApp
 //
 //  Created by Michael Galperin on 23.02.17.

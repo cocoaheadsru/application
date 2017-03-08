@@ -1,15 +1,15 @@
 //
-//  ProfileCreateViewController.swift
+//  AuthViewController.swift
 //  CHMeetupApp
 //
 //  Created by Alexander Zimin on 22/02/2017.
-//  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
 import SafariServices
 
-class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControllerType {
+class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
@@ -48,7 +48,7 @@ class ProfileCreateViewController: UIViewController, ProfileHierarhyViewControll
 }
 
 // MARK: - Login actions
-extension ProfileCreateViewController {
+extension AuthViewController {
 
   func login(app: LoginType) {
     if !app.isAppExists {
@@ -78,7 +78,7 @@ extension ProfileCreateViewController {
 }
 
 // MARK: - Working with safariViewController
-extension ProfileCreateViewController {
+extension AuthViewController {
   func showSafariViewController(url: URL) {
     safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
     self.present(safariViewController!, animated: true, completion: nil)

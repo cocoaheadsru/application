@@ -3,7 +3,7 @@
 //  CHMeetupApp
 //
 //  Created by Alexander Zimin on 23/02/2017.
-//  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     if LoginProcessViewController.isLogin {
       self.viewControllers = [ViewControllersFactory.profileViewController]
     } else {
-      self.viewControllers = [ViewControllersFactory.loginViewController]
+      self.viewControllers = [ViewControllersFactory.authViewController]
     }
   }
 

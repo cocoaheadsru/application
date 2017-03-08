@@ -3,7 +3,7 @@
 //  CHMeetupApp
 //
 //  Created by Егор Петров on 23/02/2017.
-//  Copyright © 2017 CocoaHeads Comunity. All rights reserved.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import EventKit
