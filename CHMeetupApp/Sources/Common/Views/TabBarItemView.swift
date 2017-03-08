@@ -73,7 +73,7 @@ class TabBarItemView: CustomTabBarItemView {
     }
   }
 
-  static func createCell(type: Type) -> TabBarItemView {
+  static func create(with type: Type) -> TabBarItemView {
     let cell = loadViewFromNib()
     cell.type = type
     return cell
