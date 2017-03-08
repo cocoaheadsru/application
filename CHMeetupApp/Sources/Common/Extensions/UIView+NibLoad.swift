@@ -10,14 +10,12 @@ import UIKit
 
 internal extension UIView {
   class func viewFromNib() -> Self {
-    return self.viewFromNib(withOwner: nil)
+    return self.viewFromNib()
   }
 
-  class func viewFromNib(withOwner owner: Any?) -> Self {
-    // FIXME: - Improve syntax
-    let name = String(describing: type(of: self)).components(separatedBy: ".").first!
-    // swiftlint:disable:this force_cast
-    let view = UINib(nibName: name, bundle: nil).instantiate(withOwner: owner, options: nil).first!
+  class func viewFromNib(withOwner owner: Any? = nil) -> Self {
+    let name = String(describing: type(of: self)).components(separatedBy: ".")[0]
+    let view = UINib(nibName: name, bundle: nil).instantiate(withOwner: owner, options: nil)[0]
     return cast(view)! // swiftlint:disable:previous force_cast
   }
 
@@ -25,7 +23,7 @@ internal extension UIView {
     // based on: http://blog.yangmeyer.de/blog/2012/07/09/an-update-on-nested-nib-loading
     let isJustAPlaceholder = self.subviews.count == 0
     if isJustAPlaceholder {
-      let theRealThing = type(of: self).viewFromNib(withOwner: nil)
+      let theRealThing = type(of: self).viewFromNib()
       theRealThing.frame = self.frame
       self.translatesAutoresizingMaskIntoConstraints = false
       theRealThing.translatesAutoresizingMaskIntoConstraints = false
