@@ -46,7 +46,7 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = dataCollection.modelForIndexPath(indexPath: indexPath)
+    let model = dataCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }

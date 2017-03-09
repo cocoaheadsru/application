@@ -11,7 +11,7 @@ import Foundation
 protocol DisplayCollection {
   var numberOfSections: Int { get }
   func numberOfRows(in section: Int) -> Int
-  func modelForIndexPath(indexPath: IndexPath) -> CellViewAnyModelType
+  func model(for indexPath: IndexPath) -> CellViewAnyModelType
 }
 
 protocol DisplayCollectionAction {

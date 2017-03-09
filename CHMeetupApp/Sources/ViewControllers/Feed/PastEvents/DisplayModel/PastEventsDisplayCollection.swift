@@ -31,7 +31,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return startTime
   }
 
-  func modelForIndexPath(indexPath: IndexPath) -> CellViewAnyModelType {
+  func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.section])
     return model
   }
