@@ -9,14 +9,7 @@
 import UIKit
 
 class PastEventsTableViewCell: UITableViewCell {
-  @IBOutlet fileprivate var titleLabel: UILabel!
-  @IBOutlet fileprivate var dateLabel: UILabel!
-  @IBOutlet fileprivate var placeholderImageView: UIImageView!
-}
-
-extension PastEventsTableViewCell {
-  func configure(with item: PastEventsDisplayCollection.Item) {
-    titleLabel.text = item.title
-    dateLabel.text = item.dateTitle
-  }
+  @IBOutlet var titleLabel: UILabel!
+  @IBOutlet var dateLabel: UILabel!
+  @IBOutlet var placeholderImageView: UIImageView!
 }
