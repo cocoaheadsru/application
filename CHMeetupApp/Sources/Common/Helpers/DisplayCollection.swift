@@ -14,6 +14,10 @@ protocol DisplayCollection {
   func modelForIndexPath(indexPath: IndexPath) -> CellViewAnyModelType
 }
 
+protocol DisplayCollectionAction {
+  func didSelect(indexPath: IndexPath)
+}
+
 extension DisplayCollection {
   var numberOfSections: Int {
     return 1

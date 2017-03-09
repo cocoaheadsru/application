@@ -8,8 +8,14 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection: DisplayCollection {
+protocol PastEventsDisplayCollectionDelegate: class {
+  func shouldPresent(viewController: UIViewController)
+}
+
+struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+
   let modelCollection = DataModelCollection(type: EventEntity.self)
+  weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {
     return modelCollection.count
@@ -28,5 +34,10 @@ struct PastEventsDisplayCollection: DisplayCollection {
   func modelForIndexPath(indexPath: IndexPath) -> CellViewAnyModelType {
     let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.section])
     return model
+  }
+
+  func didSelect(indexPath: IndexPath) {
+    let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    delegate?.shouldPresent(viewController: eventPreview)
   }
 }

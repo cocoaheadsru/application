@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController {
+class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.registerNib(for: PastEventsTableViewCell.self)
@@ -20,12 +20,18 @@ class PastEventsViewController: UIViewController {
 
   override func viewDidLoad() {
     dataCollection = PastEventsDisplayCollection()
+    dataCollection.delegate = self
+
     super.viewDidLoad()
     fetchEvents()
   }
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .past)
+  }
+
+  func shouldPresent(viewController: UIViewController) {
+    navigationController?.pushViewController(viewController, animated: true)
   }
 }
 
@@ -52,14 +58,14 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    showEvent(at: indexPath)
+    dataCollection.didSelect(indexPath: indexPath)
   }
 }
 
+// FIXME: - Remove this
 fileprivate extension PastEventsViewController {
 
   func fetchEvents() {
-    //FIXME: Replace with real data
     let numberOfDemoEvents = 10
     for eventIndex in 1...numberOfDemoEvents {
       //Create past event
@@ -79,9 +85,5 @@ fileprivate extension PastEventsViewController {
     }
 
     tableView.reloadData()
-  }
-
-  func showEvent(at indexPath: IndexPath) {
-    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
 }
