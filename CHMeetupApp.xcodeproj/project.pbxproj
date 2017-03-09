@@ -76,6 +76,8 @@
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
+		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
+		9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFC01E71E36F00EF85F5 /* UITableView+CellViewModel.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -175,6 +177,8 @@
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		9F30FFC01E71E36F00EF85F5 /* UITableView+CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CellViewModel.swift"; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -359,6 +363,7 @@
 		22323EFC1E70C0CE00522E5C /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9F30FFBF1E71E24A00EF85F5 /* UITableView */,
 				22323EFD1E70C0CE00522E5C /* UIColor */,
 				22323F011E70C0CE00522E5C /* UIFont */,
 				22323F031E70C0CE00522E5C /* UIImage */,
@@ -421,6 +426,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9F30FFBC1E71DFE400EF85F5 /* CellViewModel */,
 				22323F151E70C0E500522E5C /* Importer */,
 				22323F171E70C0E500522E5C /* KeyboardHandler */,
 				22323F191E70C0E500522E5C /* Reachability */,
@@ -818,6 +824,22 @@
 			name = Single;
 			sourceTree = "<group>";
 		};
+		9F30FFBC1E71DFE400EF85F5 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */,
+			);
+			name = CellViewModel;
+			sourceTree = "<group>";
+		};
+		9F30FFBF1E71E24A00EF85F5 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				9F30FFC01E71E36F00EF85F5 /* UITableView+CellViewModel.swift */,
+			);
+			name = UITableView;
+			sourceTree = "<group>";
+		};
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1023,7 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessViewController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
+				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
 				22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */,
@@ -1052,6 +1075,7 @@
 				22323F931E70C2BE00522E5C /* PastEventsDisplayCollection.swift in Sources */,
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
+				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,
 				22323F8D1E70C2BE00522E5C /* RegistrationConfirmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
