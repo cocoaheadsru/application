@@ -11,6 +11,8 @@ import SafariServices
 
 class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  var loggingApp: LoginType?
+
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
       for button in authButtons {
@@ -51,6 +53,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 extension AuthViewController {
 
   func login(app: LoginType) {
+    loggingApp = app
     if !app.isAppExists {
       let url = app.urlAuth
       showSafariViewController(url: url)
@@ -65,7 +68,14 @@ extension AuthViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    // TODO: get url and token
+    guard let loggingApp = loggingApp,
+      let notification = notification else {
+      return
+    }
+
+    let url = notification.object as! URL // swiftlint:disable:this force_cast
+    sendToken(token: loggingApp.token(from: url))
+
     if let safariViewController = safariViewController {
       if safariViewController.isViewLoaded {
         safariViewController.dismiss(animated: true, completion: nil)
@@ -73,6 +83,10 @@ extension AuthViewController {
     }
     LoginProcessViewController.isLogin = true
     profileNavigationController?.updateRootViewController()
+  }
+
+  func sendToken(token: String) {
+    // TODO: sendToken (@mejl should do)
   }
 
 }

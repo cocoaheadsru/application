@@ -73,4 +73,30 @@ enum LoginType {
     }
   }
 
+  func token(from url: URL) -> String {
+    let fromUrl: String = url.absoluteString
+    var firstPosition: Int
+    var lastPosition: Int
+    switch self {
+    case .vk:
+      let findStringBegin = "access_token="
+      let findStringEnd = "&expires_in"
+      let rangeBegin = fromUrl.range(of: findStringBegin)!
+      let rangeEnd = fromUrl.range(of: findStringEnd)!
+      let indexBegin = fromUrl.distance(from: fromUrl.startIndex, to: rangeBegin.lowerBound)
+      let indexEnd =  fromUrl.distance(from: fromUrl.startIndex, to: rangeEnd.lowerBound)
+      firstPosition = Int(indexBegin.toIntMax() + findStringBegin.characters.count)
+      lastPosition =  Int(indexEnd.toIntMax())
+    case .fb:
+      let findStringBegin = "code="
+      let range = fromUrl.range(of: findStringBegin)!
+      let index = fromUrl.distance(from: fromUrl.startIndex, to: range.lowerBound)
+      firstPosition = Int(index.toIntMax() + findStringBegin.characters.count)
+      lastPosition = Int(fromUrl.distance(from: fromUrl.startIndex, to: fromUrl.endIndex).toIntMax())
+    case .twitter:
+      return ""
+    }
+    return fromUrl.substring(with: Range<Int>(uncheckedBounds: (firstPosition, lastPosition)))
+  }
+
 }
