@@ -25,9 +25,9 @@ class Importer {
   private static let calendarEventStore = EKEventStore()
   private static let remindersEventStore = EKEventStore()
 
-  typealias ResultParametr = (_ result: Type) -> Void
+  typealias ResultParameter = (_ result: Type) -> Void
 
-  static func `import`(event: EventEntity, to type: ImportToType, completion: @escaping ResultParametr) {
+  static func `import`(event: EventEntity, to type: ImportToType, completion: @escaping ResultParameter) {
     switch type {
     case .calendar:
       importToCalendar(event: event, completion: completion)
@@ -36,7 +36,7 @@ class Importer {
     }
   }
 
-  private static func importToCalendar(event: EventEntity, completion: @escaping ResultParametr) {
+  private static func importToCalendar(event: EventEntity, completion: @escaping ResultParameter) {
     calendarEventStore.requestAccess(to: .event, completion: { granted, error in
       guard granted else {
         completion(.permissionError)
@@ -73,7 +73,7 @@ class Importer {
     })
   }
 
-  private static func importToReminder(event: EventEntity, completion: @escaping ResultParametr) {
+  private static func importToReminder(event: EventEntity, completion: @escaping ResultParameter) {
     remindersEventStore.requestAccess(to: .reminder, completion: { granted, error in
       guard granted else {
         completion(.permissionError)
