@@ -11,7 +11,7 @@ import UIKit
 class PastEventsViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.register(PastEventsTableViewCell.nib, forCellReuseIdentifier: PastEventsTableViewCell.identifier)
+      tableView.registerNib(for: PastEventsTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -40,10 +40,7 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-    let identifier = PastEventsTableViewCell.identifier
-    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PastEventsTableViewCell
-    // swiftlint:disable:previous force_cast
+    let cell = tableView.dequeueReusableCell(for: indexPath) as PastEventsTableViewCell
     let item = dataCollection.sections[indexPath.section].items[indexPath.row]
     cell.configure(with: item)
 

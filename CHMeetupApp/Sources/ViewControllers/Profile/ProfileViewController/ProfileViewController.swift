@@ -8,37 +8,26 @@
 
 import UIKit
 
-struct Cells {
-  struct Profile {
-    static let picture =  "ProfilePictureCell"
-    static let name =     "ProfileNameCell"
-    static let speach =   "ProfileSpeachCell"
-  }
-}
-
-struct CellHeights {
-  struct Profile {
-    static let picture =  CGFloat(104.0)
-    static let name =     CGFloat(63.0)
-    static let speach =   CGFloat(37.0)
-  }
-}
-
-enum ProfileCells {
-  case picture, name, speach
-}
-
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
+
+  struct CellHeights {
+    struct Profile {
+      static let picture =  CGFloat(104.0)
+      static let name =     CGFloat(63.0)
+      static let speach =   CGFloat(37.0)
+    }
+  }
+
+  enum ProfileCells {
+    case picture, name, speach
+  }
 
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.tableFooterView = UIView()
-      tableView.register(UINib.init(nibName: Cells.Profile.picture, bundle: nil),
-                         forCellReuseIdentifier: Cells.Profile.picture)
-      tableView.register(UINib.init(nibName: Cells.Profile.name, bundle: nil),
-                         forCellReuseIdentifier: Cells.Profile.name)
-      tableView.register(UINib.init(nibName: Cells.Profile.speach, bundle: nil),
-                         forCellReuseIdentifier: Cells.Profile.speach)
+      tableView.registerNib(for: ProfilePictureCell.self)
+      tableView.registerNib(for: ProfileNameCell.self)
+      tableView.registerNib(for: ProfileSpeachCell.self)
     }
   }
 
@@ -86,11 +75,11 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     var cell: UITableViewCell!
     switch tableArray[indexPath.row] {
     case .picture:
-      cell = tableView.dequeueReusableCell(withIdentifier: Cells.Profile.picture, for: indexPath)
+      cell = tableView.dequeueReusableCell(for: indexPath) as ProfilePictureCell
     case .name:
-      cell = tableView.dequeueReusableCell(withIdentifier: Cells.Profile.name, for: indexPath)
+      cell = tableView.dequeueReusableCell(for: indexPath) as ProfileNameCell
     case .speach:
-      cell = tableView.dequeueReusableCell(withIdentifier: Cells.Profile.speach, for: indexPath)
+      cell = tableView.dequeueReusableCell(for: indexPath) as ProfileSpeachCell
     }
     return cell
   }
