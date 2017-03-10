@@ -68,22 +68,23 @@ extension AuthViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    guard let loggingApp = loggingApp,
-      let notification = notification else {
-      return
-    }
-
-    let url = notification.object as! URL // swiftlint:disable:this force_cast
-    sendToken(token: loggingApp.token(from: url))
-
     if let safariViewController = safariViewController {
       if safariViewController.isViewLoaded {
         safariViewController.dismiss(animated: true, completion: nil)
       }
     }
+    guard let loggingApp = loggingApp,
+      let notification = notification,
+      let url = notification.object as? URL else {
+      return
+    }
+    guard let token = loggingApp.token(from: url) else {
+      return
+    }
+    sendToken(token: token)
     LoginProcessViewController.isLogin = true
     profileNavigationController?.updateRootViewController()
-  }
+}
 
   func sendToken(token: String) {
     // TODO: sendToken (@mejl should do)

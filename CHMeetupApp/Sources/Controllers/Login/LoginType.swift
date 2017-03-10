@@ -73,30 +73,26 @@ enum LoginType {
     }
   }
 
-  func token(from url: URL) -> String {
+  func token(from url: URL) -> String? {
     let fromUrl: String = url.absoluteString
-    var firstPosition: Int
-    var lastPosition: Int
-    switch self {
-    case .vk:
-      let findStringBegin = "access_token="
-      let findStringEnd = "&expires_in"
-      let rangeBegin = fromUrl.range(of: findStringBegin)!
-      let rangeEnd = fromUrl.range(of: findStringEnd)!
-      let indexBegin = fromUrl.distance(from: fromUrl.startIndex, to: rangeBegin.lowerBound)
-      let indexEnd =  fromUrl.distance(from: fromUrl.startIndex, to: rangeEnd.lowerBound)
-      firstPosition = Int(indexBegin.toIntMax() + findStringBegin.characters.count)
-      lastPosition =  Int(indexEnd.toIntMax())
-    case .fb:
-      let findStringBegin = "code="
-      let range = fromUrl.range(of: findStringBegin)!
-      let index = fromUrl.distance(from: fromUrl.startIndex, to: range.lowerBound)
-      firstPosition = Int(index.toIntMax() + findStringBegin.characters.count)
-      lastPosition = Int(fromUrl.distance(from: fromUrl.startIndex, to: fromUrl.endIndex).toIntMax())
-    case .twitter:
-      return ""
+    let components = fromUrl.components(separatedBy: "&")
+    let parts = components[0].components(separatedBy: "=")
+    guard parts.count > 1,
+      components.count > 0,
+      components[0].range(of: "error=access_denied")?.lowerBound == nil else {
+      return nil
     }
-    return fromUrl.substring(with: Range<Int>(uncheckedBounds: (firstPosition, lastPosition)))
+    switch self {
+    case .vk, .fb:
+      break
+    case .twitter:
+      return nil
+    }
+    var token = parts[1]
+    for part in 2..<parts.count {
+      token += "=" + parts[part]
+    }
+    return token
   }
 
 }
