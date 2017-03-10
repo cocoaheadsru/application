@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController {
+class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.registerNib(for: PastEventsTableViewCell.self)
@@ -16,9 +16,12 @@ class PastEventsViewController: UIViewController {
       tableView.rowHeight = UITableViewAutomaticDimension
     }
   }
-  fileprivate var dataCollection = PastEventsDisplayCollection()
+  fileprivate var dataCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
+    dataCollection = PastEventsDisplayCollection()
+    dataCollection.delegate = self
+
     super.viewDidLoad()
     fetchEvents()
   }
@@ -26,61 +29,61 @@ class PastEventsViewController: UIViewController {
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .past)
   }
+
+  func shouldPresent(viewController: UIViewController) {
+    navigationController?.pushViewController(viewController, animated: true)
+  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection.sections.count
+    return dataCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let section = dataCollection.sections[section]
-    return section.items.count
+    return dataCollection.numberOfRows(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(for: indexPath) as PastEventsTableViewCell
-    let item = dataCollection.sections[indexPath.section].items[indexPath.row]
-    cell.configure(with: item)
-
+    let model = dataCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let section = dataCollection.sections[section]
-    return section.title
+    let title = dataCollection.headerTitle(for: section)
+    return title
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    showEvent(at: indexPath)
+    dataCollection.didSelect(indexPath: indexPath)
   }
 }
 
+// FIXME: - Remove this
 fileprivate extension PastEventsViewController {
 
   func fetchEvents() {
-    //FIXME: Replace with real data
-    var demoEvents = [EventPO]()
     let numberOfDemoEvents = 10
-    for eventIndex in 0...numberOfDemoEvents {
+    for eventIndex in 1...numberOfDemoEvents {
       //Create past event
       let oneDayTimeInterval = 3600 * 24
       let eventTime = Date().addingTimeInterval(-TimeInterval(oneDayTimeInterval * eventIndex))
       let eventDuration: TimeInterval = 3600 * 4
 
-      var event = EventPO()
-      event.startTime = eventTime
-      event.endTime = eventTime.addingTimeInterval(eventDuration)
+      let event = EventEntity()
+      event.id = eventIndex
+      event.startDate = eventTime
+      event.endDate = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
-      demoEvents.append(event)
-    }
-    dataCollection.add(demoEvents)
-    tableView.reloadData()
-  }
 
-  func showEvent(at indexPath: IndexPath) {
-    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
+      realmWrite {
+        mainRealm.add(event, update: true)
+      }
+    }
+
+    tableView.reloadData()
   }
 }

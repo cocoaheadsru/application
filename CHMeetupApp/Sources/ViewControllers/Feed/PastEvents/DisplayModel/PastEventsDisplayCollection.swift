@@ -8,41 +8,36 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection {
-  fileprivate(set) var sections = [Section]()
+protocol PastEventsDisplayCollectionDelegate: class {
+  func shouldPresent(viewController: UIViewController)
 }
 
-extension PastEventsDisplayCollection {
-  //шFIXME: Need to rewrite this method after adding realm
-  mutating func add(_ events: [EventPO]?) {
-    guard let events = events else {
-      return
-    }
+struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
-    for event in events {
-      let sectionTitle = DateFormatter.localizedString(from: event.startTime, dateStyle: .short, timeStyle: .none)
-      let section = Section(title: sectionTitle, items: [Item(event)])
-      sections.append(section)
-    }
-  }
-}
+  let modelCollection = DataModelCollection(type: EventEntity.self)
+  weak var delegate: PastEventsDisplayCollectionDelegate?
 
-extension PastEventsDisplayCollection {
-  struct Item {
-    var title: String
-    var dateTitle: String
-
-    init(_ event: EventPO) {
-      self.title = event.title
-      let startTime = DateFormatter.localizedString(from: event.startTime, dateStyle: .none, timeStyle: .short)
-      let endTime = DateFormatter.localizedString(from: event.endTime, dateStyle: .none, timeStyle: .short)
-
-      self.dateTitle = "Начало: " + startTime + "\n" + "Конец: " + endTime
-    }
+  var numberOfSections: Int {
+    return modelCollection.count
   }
 
-  struct Section {
-    var title: String
-    var items: [Item]
+  func numberOfRows(in section: Int) -> Int {
+    return 1
+  }
+
+  func headerTitle(for section: Int) -> String {
+    let entity = modelCollection[section]
+    let startTime = DateFormatter.localizedString(from: entity.startDate, dateStyle: .none, timeStyle: .short)
+    return startTime
+  }
+
+  func model(for indexPath: IndexPath) -> CellViewAnyModelType {
+    let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.section])
+    return model
+  }
+
+  func didSelect(indexPath: IndexPath) {
+    let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    delegate?.shouldPresent(viewController: eventPreview)
   }
 }

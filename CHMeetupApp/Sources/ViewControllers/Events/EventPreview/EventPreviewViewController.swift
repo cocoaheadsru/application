@@ -16,7 +16,7 @@ class EventPreviewViewController: UIViewController {
   }
 
   @IBAction func addToReminder(sender: UIButton) {
-    Importer.import(event: EventPO(), to: .reminder) { result in
+    Importer.import(event: EventEntity(), to: .reminder) { result in
       switch result {
       case .success:
         print("Added")
@@ -29,7 +29,7 @@ class EventPreviewViewController: UIViewController {
   }
 
   @IBAction func addToCalendar(sender: UIButton) {
-    Importer.import(event: EventPO(), to: .calendar) { result in
+    Importer.import(event: EventEntity(), to: .calendar) { result in
       switch result {
       case .success:
         print("Added")
