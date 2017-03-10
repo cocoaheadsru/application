@@ -78,7 +78,6 @@ enum LoginType {
     let components = fromUrl.components(separatedBy: "&")
     let parts = components[0].components(separatedBy: "=")
     guard parts.count > 1,
-      components.count > 0,
       components[0].range(of: "error=access_denied")?.lowerBound == nil else {
       return nil
     }
@@ -89,8 +88,8 @@ enum LoginType {
       return nil
     }
     var token = parts[1]
-    for part in 2..<parts.count {
-      token += "=" + parts[part]
+    for partIndex in 2..<parts.count {
+      token += "=" + parts[partIndex]
     }
     return token
   }

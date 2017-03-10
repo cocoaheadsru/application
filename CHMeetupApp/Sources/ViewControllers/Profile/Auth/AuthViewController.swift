@@ -11,8 +11,6 @@ import SafariServices
 
 class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  var loggingApp: LoginType?
-
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
       for button in authButtons {
@@ -30,6 +28,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   var safariViewController: SFSafariViewController?
+  var loggingApp: LoginType?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,11 +39,11 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    login(app: LoginType.vk)
+    loginApp(at: LoginType.vk)
   }
 
   @IBAction func fbLoginButtonAction(_ sender: UIButton) {
-    login(app: LoginType.fb)
+    loginApp(at: LoginType.fb)
   }
 
 }
@@ -52,13 +51,13 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 // MARK: - Login actions
 extension AuthViewController {
 
-  func login(app: LoginType) {
-    loggingApp = app
-    if !app.isAppExists {
-      let url = app.urlAuth
+  func loginApp(at type: LoginType) {
+    loggingApp = type
+    if !type.isAppExists {
+      let url = type.urlAuth
       showSafariViewController(url: url)
     } else {
-      let url = app.schemeAuth
+      let url = type.schemeAuth
       if let url = url {
         UIApplication.shared.open(url, options: [:])
       } else {
@@ -68,11 +67,7 @@ extension AuthViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    if let safariViewController = safariViewController {
-      if safariViewController.isViewLoaded {
-        safariViewController.dismiss(animated: true, completion: nil)
-      }
-    }
+    hideSafariViewController()
     guard let loggingApp = loggingApp,
       let notification = notification,
       let url = notification.object as? URL else {
@@ -82,7 +77,7 @@ extension AuthViewController {
       return
     }
     sendToken(token: token)
-    LoginProcessViewController.isLogin = true
+    LoginProcessController.isLogin = true
     profileNavigationController?.updateRootViewController()
 }
 
@@ -97,5 +92,13 @@ extension AuthViewController {
   func showSafariViewController(url: URL) {
     safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
     self.present(safariViewController!, animated: true, completion: nil)
+  }
+
+  func hideSafariViewController() {
+    if let safariViewController = safariViewController {
+      if safariViewController.isViewLoaded {
+        safariViewController.dismiss(animated: true, completion: nil)
+      }
+    }
   }
 }
