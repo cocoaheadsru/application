@@ -12,10 +12,6 @@ import AVKit
 import EventKit
 import UserNotifications
 
-enum PermissionType: String {
-  case notifications, calendar, reminders, camera, photosLibrary
-}
-
 /**
  Allows to check and request different permissions
  
@@ -23,29 +19,21 @@ enum PermissionType: String {
  
  `if PermissionsManager.isAllowed(type: .camera) { ... }`
  
- * Request needed permission
+ * Request required permission
  
- `PermissionsManager.requestAccess(forType: .camera) { granted in }`
+ `PermissionsManager.requireAccess(forType: .camera) { granted in }`
  
- * If permission is not granted but it is required for correct workflow, 
- suggest user to change his decision and open Settings
- 
- `PermissionsManager.openSettings()`
- * You can also get default-styled `UIAlertController` for presenting while requesting rejected permission
- 
- `let alert = PermissionsManager.alertForSettingsWith(type: .camera)`
- 
- * It can be enough to use `UIViewController` extensioned function **requireAccess** 
- cause it contains final value of permission availability
- 
- `controller.requireAccess(to: .camera) { granted in }`
  */
 
 final class PermissionsManager {
 
+  enum `Type`: String {
+    case notifications, calendar, reminders, camera, photosLibrary
+  }
+
   private enum PermissionConstants {
     static let askPhrases = [
-      PermissionType.calendar: "к календарю".localized,
+      Type.calendar: "к календарю".localized,
       .camera: "к камере".localized,
       .notifications: "к отправке уведомлений".localized,
       .photosLibrary: "к библиотеке фотографий".localized,
@@ -58,13 +46,35 @@ final class PermissionsManager {
     static let settings = "Настройки".localized
   }
 
-  /** 
-   Checks if user has granted access to `PermissionType`
+  /// Helps to perform any action only if required permission is granted. 
+  /// Displays an alert with invitation to the Settings app if first request was rejected by the user
+  ///
+  /// - parameter from: `UIViewController` for alert invitation to be presented on
+  /// - parameter to: Type of required permission
+  /// - parameter completion: `Bool` value describing whether was access granted or not
+  static func requireAccess(from controller: UIViewController, to type: Type, completion: @escaping (Bool) -> Void) {
+    if !PermissionsManager.isAllowed(type: type) {
+      PermissionsManager.requestAccess(forType: type) { success in
+        completion(success)
+        if !success {
+          let alert = PermissionsManager.alertForSettingsWith(type: type)
+          DispatchQueue.main.async {
+            controller.present(alert, animated: true, completion: nil)
+          }
+        }
+      }
+    } else {
+      completion(true)
+    }
+  }
 
-  - parameter type: Type of permission to check. Check out `PermissionType` for possible values
+  /** 
+   Checks if user has granted access to `Type`
+
+  - parameter type: Type of permission to check. Check out `Type` for possible values
   - returns: `Bool` describing if access is granted
   */
-  static func isAllowed(type: PermissionType) -> Bool {
+  static func isAllowed(type: Type) -> Bool {
     switch type {
       case .photosLibrary:
         return PHPhotoLibrary.authorizationStatus() == .authorized
@@ -79,13 +89,7 @@ final class PermissionsManager {
     }
   }
 
-  /** 
-   Requests access to selected permission type.
-
-  - parameter forType: `PermissionType` to request access for
-  - parameter completion: Callback with `Bool` value describing if acess is granted by user
-   */
-  static func requestAccess(forType: PermissionType, completion: @escaping (Bool) -> Void) {
+  private static func requestAccess(forType: Type, completion: @escaping (Bool) -> Void) {
     if isAllowed(type: forType) {
       completion(true)
       return
@@ -115,15 +119,9 @@ final class PermissionsManager {
     }
   }
 
-  /**
-   Default alert for requesting rejected permission from user
-   
-   - parameter type: `PermissionType` to request access for
-   - returns: Ready to present instance of `UIAlertController`
-  */
-  static func alertForSettingsWith(type: PermissionType) -> UIAlertController {
+  private static func alertForSettingsWith(type: Type) -> UIAlertController {
     let phrase = PermissionConstants.askPhrases[type]
-    assert(phrase != nil, "[PermissionsManager] Unknown PermissionType passed")
+    assert(phrase != nil, "[PermissionsManager] Unknown Type passed")
 
     let messageFull = "\(PermissionConstants.askForAccess) \(phrase!)"
     let alert = UIAlertController(title: PermissionConstants.accessError, message: messageFull, preferredStyle: .alert)
