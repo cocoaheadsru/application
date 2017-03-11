@@ -28,6 +28,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   var safariViewController: SFSafariViewController?
+  var loggingApp: LoginType?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,11 +39,11 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    login(app: LoginType.vk)
+    loginApp(at: .vk)
   }
 
   @IBAction func fbLoginButtonAction(_ sender: UIButton) {
-    login(app: LoginType.fb)
+    loginApp(at: .fb)
   }
 
 }
@@ -50,12 +51,13 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 // MARK: - Login actions
 extension AuthViewController {
 
-  func login(app: LoginType) {
-    if !app.isAppExists {
-      let url = app.urlAuth
+  func loginApp(at type: LoginType) {
+    loggingApp = type
+    if !type.isAppExists {
+      let url = type.urlAuth
       showSafariViewController(url: url)
     } else {
-      let url = app.schemeAuth
+      let url = type.schemeAuth
       if let url = url {
         UIApplication.shared.open(url, options: [:])
       } else {
@@ -65,14 +67,23 @@ extension AuthViewController {
   }
 
   func loggedIn(_ notification: Notification? = nil) {
-    // TODO: get url and token
-    if let safariViewController = safariViewController {
-      if safariViewController.isViewLoaded {
-        safariViewController.dismiss(animated: true, completion: nil)
-      }
+    hideSafariViewController()
+    guard let loggingApp = loggingApp,
+      let notification = notification,
+      let url = notification.object as? URL else {
+      return
     }
-    LoginProcessViewController.isLogin = true
+    guard let token = loggingApp.token(from: url) else {
+      return
+    }
+    sendToken(token: token)
+    LoginProcessController.isLogin = true
     profileNavigationController?.updateRootViewController()
+}
+
+  func sendToken(token: String) {
+    print(token)
+    // TODO: sendToken (@mejl should do)
   }
 
 }
@@ -82,5 +93,13 @@ extension AuthViewController {
   func showSafariViewController(url: URL) {
     safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
     self.present(safariViewController!, animated: true, completion: nil)
+  }
+
+  func hideSafariViewController() {
+    if let safariViewController = safariViewController {
+      if safariViewController.isViewLoaded {
+        safariViewController.dismiss(animated: true, completion: nil)
+      }
+    }
   }
 }

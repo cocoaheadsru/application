@@ -22,7 +22,7 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   }
 
   func updateRootViewController() {
-    if LoginProcessViewController.isLogin {
+    if LoginProcessController.isLogin {
       self.viewControllers = [ViewControllersFactory.profileViewController]
     } else {
       self.viewControllers = [ViewControllersFactory.authViewController]
