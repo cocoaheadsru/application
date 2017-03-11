@@ -11,20 +11,36 @@ import UIKit
 // Class with our configuration
 class ShadowView: UIView {
 
+  private var shadowViewAppearanceValue: ShadowViewAppearance? {
+    didSet {
+      updateAppearance()
+    }
+  }
+
+  // For UIAppearance proxy
+  dynamic var shadowViewAppearance: ShadowViewAppearance? {
+    set {
+      shadowViewAppearanceValue = newValue
+    }
+    get {
+      return shadowViewAppearanceValue
+    }
+  }
+
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setup()
+    updateAppearance()
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    setup()
+    updateAppearance()
   }
 
-  private func setup() {
-    layer.shadowOpacity = 0.14
-    layer.shadowColor = UIColor(.black).cgColor
-    layer.shadowRadius = 2
+  private func updateAppearance() {
+    layer.shadowOpacity = shadowViewAppearanceValue?.shadowOpacity ?? 0.1
+    layer.shadowColor = shadowViewAppearanceValue?.shadowColor.cgColor ?? UIColor(.black).cgColor
+    layer.shadowRadius = shadowViewAppearanceValue?.shadowRadius ?? 2
     layer.shadowOffset = CGSize.zero
   }
 

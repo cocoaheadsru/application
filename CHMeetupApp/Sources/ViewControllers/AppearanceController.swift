@@ -11,6 +11,7 @@ import UIKit
 struct AppearanceController {
   static func setupAppearance() {
     setupNavigationBar()
+    setupShadowView()
   }
 
   private static func setupNavigationBar() {
@@ -19,5 +20,15 @@ struct AppearanceController {
                                NSKernAttributeName: 1.5] as [String : Any]
     UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
 
+  }
+
+  private static func setupPlateCell() {
+    PlateTableViewCell.appearance().plateAppearance =
+      PlateTableViewCellAppearance(cornerRadius: 8, marginValue: 8)
+  }
+
+  private static func setupShadowView() {
+    ShadowView.appearance().shadowViewAppearance =
+      ShadowViewAppearance(shadowOpacity: 0.14, shadowColor: UIColor(.black), shadowRadius: 2)
   }
 }

@@ -29,11 +29,6 @@ class PlateTableViewCell: UITableViewCell {
   private var plateCornerRadius: CGFloat = 0
   private var plateMarginValue: CGFloat = 0
 
-  struct Apperance {
-    static var defaultSpace: CGFloat = 8
-    static var defaultCornerRadius: CGFloat = 8
-  }
-
   var roundType: RoundType = .none {
     didSet {
       updateRoundShape()
@@ -56,25 +51,24 @@ class PlateTableViewCell: UITableViewCell {
     self.selectedBackgroundView?.backgroundColor = UIColor(.red)
     self.selectedBackgroundView?.layer.mask = selectionShape
 
-    self.contentView.layoutMargins.left += Apperance.defaultSpace
-    self.contentView.layoutMargins.right += Apperance.defaultSpace
+    self.contentView.layoutMargins.left += plateMarginValue
+    self.contentView.layoutMargins.right += plateMarginValue
   }
 
   private func updateRoundShape() {
-    let frame = CGRect(x: Apperance.defaultSpace,
+    let frame = CGRect(x: plateMarginValue,
                        y: 0,
-                       width: self.frame.width - Apperance.defaultSpace * 2,
+                       width: self.frame.width - plateMarginValue * 2,
                        height: self.frame.height)
 
     let path: UIBezierPath
     if let cornersType = cornersType {
       path = UIBezierPath(roundedRect: frame,
                           byRoundingCorners: cornersType,
-                          cornerRadii: CGSize(width: Apperance.defaultCornerRadius,
-                                              height: Apperance.defaultCornerRadius))
+                          cornerRadii: CGSize(width: plateCornerRadius,
+                                              height: plateCornerRadius))
     } else {
-      path = UIBezierPath(roundedRect: frame,
-                          cornerRadius: Apperance.defaultCornerRadius)
+      path = UIBezierPath(rect: frame)
     }
 
     shape.path = path.cgPath
