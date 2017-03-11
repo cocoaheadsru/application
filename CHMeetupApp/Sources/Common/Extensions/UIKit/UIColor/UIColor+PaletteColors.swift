@@ -11,25 +11,24 @@ import UIKit.UIColor
 extension UIColor {
   enum ColorType {
     case grey
+    case lightGrey
     case red
-  }
-
-  @available(*, deprecated)
-  static func appColor(_ colorType: ColorType) -> UIColor {
-    switch colorType {
-    case .grey:
-      return UIColor(hexString: "8C8C8C")
-    case .red:
-      return UIColor(hexString: "DB1D5F")
-    }
+    case white
+    case black
   }
 
   convenience init(_ colorType: ColorType) {
     switch colorType {
     case .grey:
       self.init(hexString: "8C8C8C")
+    case .lightGrey:
+      self.init(hexString: "6C6C6C")
     case .red:
       self.init(hexString: "DB1D5F")
+    case .white:
+      self.init(hexString: "FDFEFE")
+    case .black:
+      self.init(hexString: "000000")
     }
   }
 }
