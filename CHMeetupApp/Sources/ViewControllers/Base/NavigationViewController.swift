@@ -31,12 +31,8 @@ class NavigationViewController: UINavigationController {
   }
 
   override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-    self.viewControllers.last?.makeBackButtonEmpty()
+    viewControllers.last?.makeBackButtonEmpty()
     super.pushViewController(viewController, animated: animated)
-  }
-
-  func addShadow() {
-
   }
 
 }

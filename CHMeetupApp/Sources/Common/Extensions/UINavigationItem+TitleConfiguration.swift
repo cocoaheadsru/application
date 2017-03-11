@@ -9,9 +9,9 @@
 import UIKit
 
 private var swizzle: Void = {
-  swizzleMethods(objectClass: UINavigationItem.self,
-                 originalSelector: #selector(setter: UINavigationItem.title),
-                 swizzledSelector: #selector(UINavigationItem.chSetTitle(_:)))
+  MethodSwizzler.swizzleMethods(objectClass: UINavigationItem.self,
+                                originalSelector: #selector(setter: UINavigationItem.title),
+                                swizzledSelector: #selector(UINavigationItem.chSetTitle(_:)))
 }()
 
 // We need this class because default title label doesn't support NSKernAttribute

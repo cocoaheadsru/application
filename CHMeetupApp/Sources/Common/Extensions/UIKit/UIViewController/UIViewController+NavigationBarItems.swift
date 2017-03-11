@@ -10,6 +10,6 @@ import UIKit.UIViewController
 
 extension UIViewController {
   func makeBackButtonEmpty() {
-    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
   }
 }

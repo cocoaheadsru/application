@@ -174,7 +174,7 @@ public class CustomTabBarController: UITabBarController {
   }
 
   private func customSetupView(onItem item: CustomTabBarItem, index: Int) -> CustomTabBarItemView {
-    let viewContainer = customTabBarItem(forViewController: self.viewControllers![index])
+    let viewContainer = customTabBarItem(forViewController: viewControllers![index])
     viewContainer.index = index
     viewContainer._preferedHeight = self.preferedHeight
 
