@@ -30,10 +30,10 @@ extension UINavigationItem {
     let attributes = UINavigationBar.appearance().titleTextAttributes
     let attributedString = NSMutableAttributedString(string: title.uppercased(), attributes: attributes)
 
-    let titleLable = UILabel()
-    titleLable.attributedText = attributedString
-    titleLable.sizeToFit()
+    let titleLabel = UILabel()
+    titleLabel.attributedText = attributedString
+    titleLabel.sizeToFit()
 
-    titleView = titleLable
+    titleView = titleLabel
   }
 }
