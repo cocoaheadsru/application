@@ -13,6 +13,8 @@ class RegistrationConfirmViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Registration Confirm".localized
+
     // Do any additional setup after loading the view.
   }
 

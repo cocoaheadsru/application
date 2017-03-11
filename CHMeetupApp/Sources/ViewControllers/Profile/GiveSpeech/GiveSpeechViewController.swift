@@ -31,6 +31,8 @@ class GiveSpeechViewController: UIViewController {
     super.viewDidLoad()
     keyboardDelegate = self
     setupGestureRecognizer()
+
+    title = "Geve a speech".localized
   }
 
   func setupGestureRecognizer() {

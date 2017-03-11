@@ -35,6 +35,8 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
                                            selector: #selector(loggedIn(_:)),
                                            name: .CloseSafariViewControllerNotification,
                                            object: nil)
+
+    title = "Auth".localized
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
