@@ -11,11 +11,33 @@ import UIKit
 class EventPreviewTableViewCell: UITableViewCell {
 
   @IBOutlet var eventImageView: UIImageView!
-  @IBOutlet var nameAndDateLabel: UILabel!
-  @IBOutlet var placeLabel: UILabel!
+
+  @IBOutlet var nameLabel: UILabel! {
+    didSet {
+      nameLabel.font = UIFont.appFont(.gothamPro(size: 17))
+    }
+  }
+
+  @IBOutlet var dateLabel: UILabel! {
+    didSet {
+      dateLabel.font = UIFont.appFont(.gothamPro(size: 15))
+    }
+  }
+
+  @IBOutlet var placeLabel: UILabel! {
+    didSet {
+      placeLabel.font = UIFont.appFont(.gothamPro(size: 15))
+    }
+  }
 
   @IBOutlet var separationView: UIView!
   @IBOutlet var goingButton: UIButton!
+
+  var isEnableForRegistration: Bool = false {
+    didSet {
+      goingButton.isHidden = !isEnableForRegistration
+    }
+  }
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -32,6 +54,7 @@ class EventPreviewTableViewCell: UITableViewCell {
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    return CGSize(width: targetSize.width, height: 270)
+    // 270 with button and 206 without
+    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 270 : 206)
   }
 }

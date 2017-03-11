@@ -51,11 +51,6 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let title = dataCollection.headerTitle(for: section)
-    return title
-  }
-
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     dataCollection.didSelect(indexPath: indexPath)

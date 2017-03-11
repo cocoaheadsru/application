@@ -15,8 +15,11 @@ struct EventPreviewTableViewCellModel: CellViewModelType {
 
   func setup(on cell: EventPreviewTableViewCell) {
     cell.eventImageView.image = #imageLiteral(resourceName: "img_event_template")
-    cell.nameAndDateLabel.text = event.title
+    cell.nameLabel.text = event.title
+    cell.dateLabel.text = "01.02.2017"
     // FIXME: - Right date
     cell.placeLabel.text = "01.02.2017"
+
+    cell.isEnableForRegistration = true
   }
 }
