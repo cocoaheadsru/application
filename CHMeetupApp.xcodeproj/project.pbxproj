@@ -32,7 +32,7 @@
 		22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22323F271E70C0E500522E5C /* TabBarItemView.xib */; };
 		22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */; };
 		22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F381E70C14300522E5C /* ViewControllersFactory.swift */; };
-		22323F401E70C14300522E5C /* LoginProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */; };
+		22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3A1E70C14300522E5C /* LoginProcessController.swift */; };
 		22323F411E70C14300522E5C /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3B1E70C14300522E5C /* LoginType.swift */; };
 		22323F421E70C14300522E5C /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3D1E70C14300522E5C /* MapAppType.swift */; };
 		22323F431E70C14300522E5C /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3E1E70C14300522E5C /* MapsController.swift */; };
@@ -158,7 +158,7 @@
 		22323F271E70C0E500522E5C /* TabBarItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItemView.xib; sourceTree = "<group>"; };
 		22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		22323F381E70C14300522E5C /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
-		22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessViewController.swift; sourceTree = "<group>"; };
+		22323F3A1E70C14300522E5C /* LoginProcessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessController.swift; sourceTree = "<group>"; };
 		22323F3B1E70C14300522E5C /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		22323F3D1E70C14300522E5C /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		22323F3E1E70C14300522E5C /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
@@ -579,7 +579,7 @@
 		22323F391E70C14300522E5C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */,
+				22323F3A1E70C14300522E5C /* LoginProcessController.swift */,
 				22323F3B1E70C14300522E5C /* LoginType.swift */,
 			);
 			path = Login;
@@ -1135,7 +1135,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\n    isClean=\"$(bash $CLEAN_CHECK)\"\n    echo \"isClean: $isClean\"\n    if [ $isClean -eq 0 ]; then # not clean\n        exit\n    fi\nelse\n    echo Scripts/clean_check.sh not found\nfi\n\necho \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
 		8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1190,7 +1190,7 @@
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
-				22323F401E70C14300522E5C /* LoginProcessViewController.swift in Sources */,
+				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,

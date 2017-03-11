@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   // MARK: - Actions.
 
   @IBAction func logutBarButtonAction(_ sender: UIBarButtonItem) {
-    LoginProcessViewController.isLogin = false
+    LoginProcessController.isLogin = false
     profileNavigationController?.updateRootViewController()
   }
 
