@@ -11,6 +11,7 @@ import UIKit
 struct AppearanceController {
   static func setupAppearance() {
     setupNavigationBar()
+    setupPlateCell()
     setupShadowView()
   }
 
@@ -24,7 +25,7 @@ struct AppearanceController {
 
   private static func setupPlateCell() {
     PlateTableViewCell.appearance().plateAppearance =
-      PlateTableViewCellAppearance(cornerRadius: 8, marginValue: 8)
+      PlateTableViewCellAppearance(cornerRadius: 8, horizontalMarginValue: 12, verticalMarginValues: 4)
   }
 
   private static func setupShadowView() {

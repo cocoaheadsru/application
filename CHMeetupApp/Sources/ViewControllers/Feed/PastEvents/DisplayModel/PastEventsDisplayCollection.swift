@@ -18,11 +18,11 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {
-    return modelCollection.count
+    return 1
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return 1
+    return modelCollection.count
   }
 
   func headerTitle(for section: Int) -> String {
@@ -32,7 +32,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.section])
+    let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.row])
     return model
   }
 

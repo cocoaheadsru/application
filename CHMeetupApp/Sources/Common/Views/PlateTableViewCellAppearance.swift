@@ -12,10 +12,12 @@ import CoreGraphics
 @objc
 class PlateTableViewCellAppearance: NSObject {
   var cornerRadius: CGFloat
-  var marginValue: CGFloat
+  var horizontalMarginValue: CGFloat
+  var verticalMarginValues: CGFloat
 
-  init(cornerRadius: CGFloat, marginValue: CGFloat) {
+  init(cornerRadius: CGFloat, horizontalMarginValue: CGFloat, verticalMarginValues: CGFloat) {
     self.cornerRadius = cornerRadius
-    self.marginValue = marginValue
+    self.horizontalMarginValue = horizontalMarginValue
+    self.verticalMarginValues = verticalMarginValues
   }
 }

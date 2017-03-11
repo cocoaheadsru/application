@@ -51,12 +51,12 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = dataCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
-    return cell
-  }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let title = dataCollection.headerTitle(for: section)
-    return title
+    if let cell = cell as? PlateTableViewCell {
+      cell.drawCorner(in: tableView, indexPath: indexPath)
+    }
+
+    return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

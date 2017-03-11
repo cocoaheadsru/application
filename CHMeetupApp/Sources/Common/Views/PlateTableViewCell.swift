@@ -15,14 +15,19 @@ class PlateTableViewCell: UITableViewCell {
     case none, topRounded, bottomRounded, allRounded
   }
 
+  private var plateAppearanceValue: PlateTableViewCellAppearance? {
+    didSet {
+      updateAppearance()
+    }
+  }
+
   // For UIAppearance proxy
-  dynamic var plateAppearance: PlateTableViewCellAppearance {
+  dynamic var plateAppearance: PlateTableViewCellAppearance? {
     set {
-      plateCornerRadius = newValue.cornerRadius
-      plateMarginValue = newValue.marginValue
+      plateAppearanceValue = newValue
     }
     get {
-      return PlateTableViewCellAppearance(cornerRadius: plateCornerRadius, marginValue: plateMarginValue)
+      return plateAppearanceValue
     }
   }
 
@@ -31,7 +36,17 @@ class PlateTableViewCell: UITableViewCell {
 
   var roundType: RoundType = .none {
     didSet {
-      updateRoundShape()
+      if oldValue != roundType {
+        setNeedsUpdateAppearance()
+      }
+    }
+  }
+
+  var shouldHaveVerticalMargin: Bool = true {
+    didSet {
+      if oldValue != shouldHaveVerticalMargin {
+        setNeedsUpdateAppearance()
+      }
     }
   }
 
@@ -44,29 +59,71 @@ class PlateTableViewCell: UITableViewCell {
   private let shape: CAShapeLayer = CAShapeLayer()
   private let selectionShape: CAShapeLayer = CAShapeLayer()
 
+  private var defaultLayoutMargins = UIEdgeInsets.zero
+
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    self.selectedBackgroundView = UIView()
-    self.selectedBackgroundView?.backgroundColor = UIColor(.red)
-    self.selectedBackgroundView?.layer.mask = selectionShape
+    layer.addSublayer(shape)
 
-    self.contentView.layoutMargins.left += plateMarginValue
-    self.contentView.layoutMargins.right += plateMarginValue
+    selectedBackgroundView = UIView()
+    selectedBackgroundView?.backgroundColor = UIColor(.red)
+    selectedBackgroundView?.layer.mask = selectionShape
+
+    defaultLayoutMargins = contentView.layoutMargins
+
+    backgroundColor = UIColor.clear
+    contentView.backgroundColor = UIColor.clear
+  }
+
+  // Optimization part
+  private var needUpdateAppearance = false
+  private func setNeedsUpdateAppearance() {
+    if needUpdateAppearance == false {
+      OperationQueue.main.addOperation { [weak self] in
+        self?.updateAppearance()
+      }
+      needUpdateAppearance = true
+    }
+
+  }
+
+  private func updateAppearance() {
+    needUpdateAppearance = false
+
+    guard let plateAppearance = plateAppearanceValue else {
+      return
+    }
+
+    var newMargins = defaultLayoutMargins
+    newMargins.left += plateAppearance.horizontalMarginValue
+    newMargins.right += plateAppearance.horizontalMarginValue
+
+    if shouldHaveVerticalMargin {
+      newMargins.top += plateAppearance.verticalMarginValues
+      newMargins.bottom += plateAppearance.verticalMarginValues
+    }
+
+    contentView.layoutMargins = newMargins
+    updateRoundShape()
   }
 
   private func updateRoundShape() {
-    let frame = CGRect(x: plateMarginValue,
-                       y: 0,
-                       width: self.frame.width - plateMarginValue * 2,
-                       height: self.frame.height)
+    guard let plateAppearance = plateAppearanceValue else {
+      return
+    }
+
+    let frame = CGRect(x: plateAppearance.horizontalMarginValue,
+                       y: plateAppearance.verticalMarginValues,
+                       width: self.frame.width - plateAppearance.horizontalMarginValue * 2,
+                       height: self.frame.height - plateAppearance.verticalMarginValues * 2)
 
     let path: UIBezierPath
     if let cornersType = cornersType {
       path = UIBezierPath(roundedRect: frame,
                           byRoundingCorners: cornersType,
-                          cornerRadii: CGSize(width: plateCornerRadius,
-                                              height: plateCornerRadius))
+                          cornerRadii: CGSize(width: plateAppearance.cornerRadius,
+                                              height: plateAppearance.cornerRadius))
     } else {
       path = UIBezierPath(rect: frame)
     }
@@ -88,7 +145,7 @@ class PlateTableViewCell: UITableViewCell {
     case .allRounded:
       return .allCorners
     case .none:
-      return nil
+      return []
     }
   }
 
