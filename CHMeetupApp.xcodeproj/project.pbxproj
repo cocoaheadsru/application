@@ -88,6 +88,7 @@
 		9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */; };
 		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
 		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
+		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -209,6 +210,7 @@
 		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
+		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -525,6 +527,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F487A801E7417E50016CE0B /* LightButton */,
 				9F487A731E740D940016CE0B /* EventCell */,
 				22323F231E70C0E500522E5C /* ActionButton */,
 				22323F251E70C0E500522E5C /* TabBarItemView */,
@@ -921,6 +924,14 @@
 			name = EventCell;
 			sourceTree = "<group>";
 		};
+		9F487A801E7417E50016CE0B /* LightButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A811E7417F50016CE0B /* LightButton.swift */,
+			);
+			name = LightButton;
+			sourceTree = "<group>";
+		};
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1189,7 @@
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
+				9F487A821E7417F50016CE0B /* LightButton.swift in Sources */,
 				22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */,
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,

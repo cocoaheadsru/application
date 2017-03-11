@@ -70,11 +70,21 @@ fileprivate extension PastEventsViewController {
 
       let event = EventEntity()
       event.id = eventIndex
+      event.title = "CocoaHeads в апреле"
       event.startDate = eventTime
       event.endDate = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
 
+      let place = PlaceEntity()
+      place.id = eventIndex
+      place.title = "Офис Avito"
+      place.address = "ул. Лесная, д. 7 (БЦ Белые Сады, здание «А», 15 этаж)"
+      place.city = "Москва"
+
+      event.place = place
+
       realmWrite {
+        mainRealm.add(place, update: true)
         mainRealm.add(event, update: true)
       }
     }

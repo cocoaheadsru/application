@@ -28,13 +28,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-Pb-Uaf">
                         <rect key="frame" x="139" y="26" width="42" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-qS-4iF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-qS-4iF">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d41-dn-D4t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d41-dn-D4t">
                                 <rect key="frame" x="0.0" y="29" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -70,13 +70,21 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl">
                         <rect key="frame" x="8" y="134.5" width="304" height="60"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_speakers_template" translatesAutoresizingMaskIntoConstraints="NO" id="3Ak-2f-ARR">
+                                <rect key="frame" x="0.0" y="0.0" width="218" height="60"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="JII-H7-bWj"/>
+                            <constraint firstItem="3Ak-2f-ARR" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="top" id="ZBk-lM-0OY"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ak-2f-ARR" secondAttribute="bottom" id="tW5-HT-0iy"/>
+                            <constraint firstItem="3Ak-2f-ARR" firstAttribute="leading" secondItem="STc-dX-eKl" secondAttribute="leading" id="y1M-Zr-W7c"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-3W-VoY">
-                        <rect key="frame" x="8" y="202.5" width="304" height="58"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-3W-VoY" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="8" y="194.5" width="304" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="14e-JV-zkH"/>
                         </constraints>
@@ -92,7 +100,7 @@
                     <constraint firstItem="hfj-Pb-Uaf" firstAttribute="centerY" secondItem="1ug-Ek-gDp" secondAttribute="centerY" id="PEG-bC-gMh"/>
                     <constraint firstAttribute="trailing" secondItem="1ug-Ek-gDp" secondAttribute="trailing" id="U0g-9u-myL"/>
                     <constraint firstItem="STc-dX-eKl" firstAttribute="top" secondItem="yLl-lp-2fc" secondAttribute="bottom" id="a9N-bo-A2a"/>
-                    <constraint firstItem="9pO-3W-VoY" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="bottom" constant="8" id="gsE-dD-BzG"/>
+                    <constraint firstItem="9pO-3W-VoY" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="bottom" id="gsE-dD-BzG"/>
                     <constraint firstItem="S5q-5C-38R" firstAttribute="centerY" secondItem="p0Z-gF-poq" secondAttribute="centerY" id="h8U-pm-byw"/>
                     <constraint firstItem="1ug-Ek-gDp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jTe-Jm-piv"/>
                     <constraint firstItem="STc-dX-eKl" firstAttribute="trailing" secondItem="yLl-lp-2fc" secondAttribute="trailing" id="nAz-ve-94V"/>
@@ -118,5 +126,6 @@
     </objects>
     <resources>
         <image name="img_icon_pin" width="10" height="13"/>
+        <image name="img_speakers_template" width="218" height="60"/>
     </resources>
 </document>

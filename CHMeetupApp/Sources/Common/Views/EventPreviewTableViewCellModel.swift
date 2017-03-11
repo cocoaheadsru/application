@@ -9,8 +9,6 @@
 import UIKit
 
 struct EventPreviewTableViewCellModel: CellViewModelType {
-  typealias CellClass = EventPreviewTableViewCell
-
   let event: EventEntity
 
   func setup(on cell: EventPreviewTableViewCell) {
@@ -18,7 +16,10 @@ struct EventPreviewTableViewCellModel: CellViewModelType {
     cell.nameLabel.text = event.title
     cell.dateLabel.text = "01.02.2017"
     // FIXME: - Right date
-    cell.placeLabel.text = "01.02.2017"
+    if let place = event.place {
+      cell.placeLabel.text = place.city + ", " + place.title
+    }
+
 
     cell.isEnableForRegistration = true
   }

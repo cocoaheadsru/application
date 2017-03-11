@@ -30,7 +30,13 @@ class EventPreviewTableViewCell: UITableViewCell {
     }
   }
 
-  @IBOutlet var separationView: UIView!
+  @IBOutlet var separationView: UIView! {
+    didSet {
+      // FIXME: - Light grey
+      separationView.backgroundColor = UIColor(.grey)
+    }
+  }
+
   @IBOutlet var goingButton: UIButton!
 
   var isEnableForRegistration: Bool = false {
@@ -54,7 +60,7 @@ class EventPreviewTableViewCell: UITableViewCell {
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    // 270 with button and 206 without
-    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 270 : 206)
+    // 262 with button and 198 without
+    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 262 : 198)
   }
 }
