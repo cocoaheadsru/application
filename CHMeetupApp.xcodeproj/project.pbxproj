@@ -92,6 +92,8 @@
 		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
 		9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */; };
 		9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A711E73F2C60016CE0B /* AppearanceController.swift */; };
+		9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */; };
+		9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -217,6 +219,8 @@
 		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
 		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
 		9F487A711E73F2C60016CE0B /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCell.swift; sourceTree = "<group>"; };
+		9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCellAppearance.swift; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -536,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				9F487A661E73E94B0016CE0B /* Shadow */,
+				9F57D62C1E749B85006323FA /* PlateCell */,
 				22323F231E70C0E500522E5C /* ActionButton */,
 				22323F251E70C0E500522E5C /* TabBarItemView */,
 				22323F281E70C0E500522E5C /* TextViewWithPlaceholder */,
@@ -966,6 +971,15 @@
 			name = Appearance;
 			sourceTree = "<group>";
 		};
+		9F57D62C1E749B85006323FA /* PlateCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */,
+				9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */,
+			);
+			name = PlateCell;
+			sourceTree = "<group>";
+		};
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1200,7 @@
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
+				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
@@ -1226,6 +1241,7 @@
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
 				22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
+				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
