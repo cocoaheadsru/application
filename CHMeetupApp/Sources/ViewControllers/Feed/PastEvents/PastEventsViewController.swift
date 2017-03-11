@@ -11,7 +11,7 @@ import UIKit
 class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.registerNib(for: PastEventsTableViewCell.self)
+      tableView.registerNib(for: EventPreviewTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
     }

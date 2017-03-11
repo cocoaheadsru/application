@@ -32,7 +32,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.section])
+    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.section])
     return model
   }
 

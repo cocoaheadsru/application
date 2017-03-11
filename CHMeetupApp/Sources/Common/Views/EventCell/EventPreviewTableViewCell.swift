@@ -29,7 +29,9 @@ class EventPreviewTableViewCell: UITableViewCell {
   }
 
   // Now would calculate manually
-  override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+  override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                        withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                        verticalFittingPriority: UILayoutPriority) -> CGSize {
     return CGSize(width: targetSize.width, height: 270)
   }
 }
