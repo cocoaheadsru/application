@@ -38,6 +38,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   override func viewDidLoad() {
     super.viewDidLoad()
     updateTableView()
+
+    title = "Profile".localized
   }
 
   // MARK: - TableView update.

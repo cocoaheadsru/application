@@ -19,10 +19,13 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
   fileprivate var dataCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
+    super.viewDidLoad()
+
     dataCollection = PastEventsDisplayCollection()
     dataCollection.delegate = self
 
-    super.viewDidLoad()
+    title = "Past".localized
+
     fetchEvents()
   }
 

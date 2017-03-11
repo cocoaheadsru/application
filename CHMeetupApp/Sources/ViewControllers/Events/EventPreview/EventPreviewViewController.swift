@@ -12,7 +12,8 @@ class EventPreviewViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    title = "Event Preview".localized
   }
 
   @IBAction func addToReminder(sender: UIButton) {
