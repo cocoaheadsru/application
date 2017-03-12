@@ -105,6 +105,8 @@
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
+		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
+		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +235,8 @@
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +457,7 @@
 		22323F051E70C0CE00522E5C /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C30485B21E740FDE0052D632 /* UIView+Anchor.swift */,
 				22323F061E70C0CE00522E5C /* UIView+NibLoad.swift */,
 			);
 			path = UIView;
@@ -478,6 +483,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
 				9F30FFBC1E71DFE400EF85F5 /* CellViewModel */,
 				22323F151E70C0E500522E5C /* Importer */,
@@ -1010,6 +1016,14 @@
 			path = CHMeetupAppTests;
 			sourceTree = "<group>";
 		};
+		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
+			isa = PBXGroup;
+			children = (
+				C30485B01E740FC20052D632 /* PermissionsManager.swift */,
+			);
+			path = PermissionsManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1184,6 +1198,7 @@
 				9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */,
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
+				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
@@ -1238,6 +1253,7 @@
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
+				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
 				9F30FFD51E71FA8400EF85F5 /* PastEventsTableViewCellModel.swift in Sources */,
