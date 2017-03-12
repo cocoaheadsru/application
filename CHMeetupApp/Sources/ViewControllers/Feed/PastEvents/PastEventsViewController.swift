@@ -14,6 +14,8 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
       tableView.registerNib(for: PastEventsTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.backgroundColor = UIColor.clear
+      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
   }
   fileprivate var dataCollection: PastEventsDisplayCollection!
@@ -23,6 +25,8 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 
     dataCollection = PastEventsDisplayCollection()
     dataCollection.delegate = self
+
+    view.backgroundColor = UIColor(.lightGrey)
 
     title = "Past".localized
 

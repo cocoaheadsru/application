@@ -31,9 +31,6 @@ class PlateTableViewCell: UITableViewCell {
     }
   }
 
-  private var plateCornerRadius: CGFloat = 0
-  private var plateMarginValue: CGFloat = 0
-
   var roundType: RoundType = .none {
     didSet {
       if oldValue != roundType {
@@ -57,23 +54,34 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   private let shape: CAShapeLayer = CAShapeLayer()
-  private let selectionShape: CAShapeLayer = CAShapeLayer()
-
   private var defaultLayoutMargins = UIEdgeInsets.zero
 
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    layer.addSublayer(shape)
-
-    selectedBackgroundView = UIView()
-    selectedBackgroundView?.backgroundColor = UIColor(.red)
-    selectedBackgroundView?.layer.mask = selectionShape
+    layer.insertSublayer(shape, at: 0)
 
     defaultLayoutMargins = contentView.layoutMargins
 
     backgroundColor = UIColor.clear
     contentView.backgroundColor = UIColor.clear
+  }
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    updateSelection(shouldSelect: selected)
+  }
+
+  override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    updateSelection(shouldSelect: highlighted)
+  }
+
+  func updateSelection(shouldSelect: Bool) {
+    guard let plateAppearance = plateAppearanceValue else { return }
+    if isSelected || isHighlighted || shouldSelect {
+      shape.fillColor = plateAppearance.selectedBackgroundColor.cgColor
+    } else {
+      shape.fillColor = plateAppearance.backgroundColor.cgColor
+    }
   }
 
   // Optimization part
@@ -109,14 +117,17 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   private func updateRoundShape() {
-    guard let plateAppearance = plateAppearanceValue else {
-      return
+    guard let plateAppearance = plateAppearanceValue else { return }
+
+    var verticalMarginValues: CGFloat = 0
+    if shouldHaveVerticalMargin {
+      verticalMarginValues = plateAppearance.verticalMarginValues
     }
 
     let frame = CGRect(x: plateAppearance.horizontalMarginValue,
-                       y: plateAppearance.verticalMarginValues,
+                       y: verticalMarginValues,
                        width: self.frame.width - plateAppearance.horizontalMarginValue * 2,
-                       height: self.frame.height - plateAppearance.verticalMarginValues * 2)
+                       height: self.frame.height - verticalMarginValues * 2)
 
     let path: UIBezierPath
     if let cornersType = cornersType {
@@ -129,11 +140,6 @@ class PlateTableViewCell: UITableViewCell {
     }
 
     shape.path = path.cgPath
-    shape.fillColor = UIColor.clear.cgColor
-    shape.strokeColor = UIColor(.red).cgColor
-
-    selectionShape.path = path.cgPath
-    selectionShape.fillColor = UIColor(.red).cgColor
   }
 
   private var cornersType: UIRectCorner? {

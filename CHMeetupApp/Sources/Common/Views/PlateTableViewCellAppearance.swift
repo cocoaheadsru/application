@@ -6,18 +6,25 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
-import CoreGraphics
+import UIKit
 
 @objc
 class PlateTableViewCellAppearance: NSObject {
-  var cornerRadius: CGFloat
-  var horizontalMarginValue: CGFloat
-  var verticalMarginValues: CGFloat
+  let cornerRadius: CGFloat
+  let horizontalMarginValue: CGFloat
+  let verticalMarginValues: CGFloat
+  let backgroundColor: UIColor
+  let selectedBackgroundColor: UIColor
 
-  init(cornerRadius: CGFloat, horizontalMarginValue: CGFloat, verticalMarginValues: CGFloat) {
+  init(cornerRadius: CGFloat,
+       horizontalMarginValue: CGFloat,
+       verticalMarginValues: CGFloat,
+       backgroundColor: UIColor,
+       selectedBackgroundColor: UIColor) {
     self.cornerRadius = cornerRadius
     self.horizontalMarginValue = horizontalMarginValue
     self.verticalMarginValues = verticalMarginValues
+    self.backgroundColor = backgroundColor
+    self.selectedBackgroundColor = selectedBackgroundColor
   }
 }
