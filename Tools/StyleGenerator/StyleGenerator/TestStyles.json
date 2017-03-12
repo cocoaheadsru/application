@@ -1,0 +1,13 @@
+{
+ 	"colors": [{
+              "name": "gray",
+              "hex": "8C8C8C"
+              }, {
+              "name": "red",
+              "hex": "DB1D5F"
+              }],
+ 	"fonts": [{
+            "name": "gothamPro",
+            "font": "GothamPro-Medium"
+            }]
+}
