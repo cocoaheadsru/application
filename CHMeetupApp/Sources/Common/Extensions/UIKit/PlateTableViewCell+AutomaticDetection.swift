@@ -17,11 +17,11 @@ extension PlateTableViewCell {
 
     let numberOfRowsInSection = tableView.numberOfRows(inSection: indexPath.section)
     if indexPath.row == 0 && numberOfRowsInSection == 1 {
-      roundType = .allRounded
+      roundType = .all
     } else if indexPath.row == 0 {
-      roundType = .topRounded
+      roundType = .top
     } else if indexPath.row == numberOfRowsInSection - 1 {
-      roundType = .bottomRounded
+      roundType = .bottom
     } else {
       roundType = .none
     }

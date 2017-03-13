@@ -15,6 +15,6 @@ class PastEventsTableViewCell: PlateTableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    roundType = .allRounded
+    roundType = .all
   }
 }

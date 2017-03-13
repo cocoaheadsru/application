@@ -12,7 +12,20 @@ import UIKit
 class PlateTableViewCell: UITableViewCell {
 
   enum RoundType {
-    case none, topRounded, bottomRounded, allRounded
+    case none, top, bottom, all
+
+    var cornersType: UIRectCorner? {
+      switch self {
+      case .top:
+        return [.topLeft, .topRight]
+      case .bottom:
+        return [.bottomLeft, .bottomRight]
+      case .all:
+        return .allCorners
+      case .none:
+        return []
+      }
+    }
   }
 
   private var plateAppearanceValue: PlateTableViewCellAppearance? {
@@ -130,7 +143,7 @@ class PlateTableViewCell: UITableViewCell {
                        height: self.frame.height - verticalMarginValues * 2)
 
     let path: UIBezierPath
-    if let cornersType = cornersType {
+    if let cornersType = roundType.cornersType {
       path = UIBezierPath(roundedRect: frame,
                           byRoundingCorners: cornersType,
                           cornerRadii: CGSize(width: plateAppearance.cornerRadius,
@@ -141,18 +154,4 @@ class PlateTableViewCell: UITableViewCell {
 
     shape.path = path.cgPath
   }
-
-  private var cornersType: UIRectCorner? {
-    switch roundType {
-    case .topRounded:
-      return [.topLeft, .topRight]
-    case .bottomRounded:
-      return [.bottomLeft, .bottomRight]
-    case .allRounded:
-      return .allCorners
-    case .none:
-      return []
-    }
-  }
-
 }
