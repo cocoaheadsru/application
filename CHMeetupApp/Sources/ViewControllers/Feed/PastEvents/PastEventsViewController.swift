@@ -26,7 +26,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     dataCollection = PastEventsDisplayCollection()
     dataCollection.delegate = self
 
-    view.backgroundColor = UIColor(.lightGrey)
+    view.backgroundColor = UIColor(.lightGray)
 
     title = "Past".localized
 

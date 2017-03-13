@@ -20,7 +20,6 @@ struct EventPreviewTableViewCellModel: CellViewModelType {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
-
     cell.isEnableForRegistration = true
   }
 }

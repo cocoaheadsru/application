@@ -32,8 +32,7 @@ class EventPreviewTableViewCell: UITableViewCell {
 
   @IBOutlet var separationView: UIView! {
     didSet {
-      // FIXME: - Light grey
-      separationView.backgroundColor = UIColor(.grey)
+      separationView.backgroundColor = UIColor(.lightGray)
     }
   }
 

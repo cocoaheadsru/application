@@ -27,8 +27,7 @@ class LightButton: UIButton {
   }
 
   private func setup() {
-    // FIXME: - Take light grey
-    tintColor = UIColor(.grey)
+    tintColor = UIColor(.lightGray)
   }
 
   private func updateAppearance() {

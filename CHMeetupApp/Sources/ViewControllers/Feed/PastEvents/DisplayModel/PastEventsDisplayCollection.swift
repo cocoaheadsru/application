@@ -24,7 +24,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func numberOfRows(in section: Int) -> Int {
     return 1
   }
-  
+
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.section])
     return model

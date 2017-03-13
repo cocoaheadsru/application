@@ -56,7 +56,7 @@ class TabBarItemView: CustomTabBarItemView {
       case .selected:
         return UIColor(.red)
       case .unselected:
-        return UIColor(.grey)
+        return UIColor(.gray)
       }
     }
   }
