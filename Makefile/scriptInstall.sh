@@ -48,4 +48,5 @@ carthage update --platform iOS
 if [[ $? != 0 ]] ; then
 echo !!!! We cant find Cartfile, contact vk.com/kirillzzy please
 fi
+
 echo Script was ended
