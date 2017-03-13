@@ -10,7 +10,13 @@ import UIKit
 
 class LightButton: UIButton {
 
-  override var tintColor: UIColor! {
+  var borderColor = UIColor(.lightGray) {
+    didSet {
+      updateAppearance()
+    }
+  }
+
+  var titleColor = UIColor(.gray) {
     didSet {
       updateAppearance()
     }
@@ -27,13 +33,13 @@ class LightButton: UIButton {
   }
 
   private func setup() {
-    tintColor = UIColor(.lightGray)
+    updateAppearance()
   }
 
   private func updateAppearance() {
     layer.cornerRadius = 4
     layer.borderWidth = 1
-    layer.borderColor = tintColor.cgColor
-    setTitleColor(tintColor, for: .normal)
+    layer.borderColor = borderColor.cgColor
+    setTitleColor(titleColor, for: .normal)
   }
 }

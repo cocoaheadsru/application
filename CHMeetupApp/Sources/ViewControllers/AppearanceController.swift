@@ -29,7 +29,7 @@ struct AppearanceController {
                                    horizontalMarginValue: 12,
                                    verticalMarginValues: 4,
                                    backgroundColor: UIColor(.white),
-                                   selectedBackgroundColor: UIColor(.gray))
+                                   selectedBackgroundColor: UIColor(.lightGray))
   }
 
   private static func setupShadowView() {

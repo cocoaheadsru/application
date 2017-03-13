@@ -47,7 +47,7 @@ class PlateTableViewCell: UITableViewCell {
   var roundType: RoundType = .none {
     didSet {
       if oldValue != roundType {
-        setNeedsUpdateAppearance()
+        updateAppearance()
       }
     }
   }
@@ -55,7 +55,7 @@ class PlateTableViewCell: UITableViewCell {
   var shouldHaveVerticalMargin: Bool = true {
     didSet {
       if oldValue != shouldHaveVerticalMargin {
-        setNeedsUpdateAppearance()
+        updateAppearance()
       }
     }
   }
@@ -67,14 +67,11 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   private let shape: CAShapeLayer = CAShapeLayer()
-  private var defaultLayoutMargins = UIEdgeInsets.zero
 
   override func awakeFromNib() {
     super.awakeFromNib()
 
     layer.insertSublayer(shape, at: 0)
-
-    defaultLayoutMargins = contentView.layoutMargins
 
     backgroundColor = UIColor.clear
     contentView.backgroundColor = UIColor.clear
@@ -89,34 +86,17 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   func updateSelection(shouldSelect: Bool) {
-    guard let plateAppearance = plateAppearanceValue else { return }
-    if isSelected || isHighlighted || shouldSelect {
-      shape.fillColor = plateAppearance.selectedBackgroundColor.cgColor
-    } else {
-      shape.fillColor = plateAppearance.backgroundColor.cgColor
-    }
-  }
-
-  // Optimization part
-  private var needUpdateAppearance = false
-  private func setNeedsUpdateAppearance() {
-    if needUpdateAppearance == false {
-      OperationQueue.main.addOperation { [weak self] in
-        self?.updateAppearance()
-      }
-      needUpdateAppearance = true
-    }
-
+    alpha = isSelected || isHighlighted || shouldSelect ? 0.8 : 1.0
   }
 
   private func updateAppearance() {
-    needUpdateAppearance = false
-
     guard let plateAppearance = plateAppearanceValue else {
       return
     }
 
-    var newMargins = defaultLayoutMargins
+    shape.fillColor = plateAppearance.backgroundColor.cgColor
+
+    var newMargins = UIEdgeInsets.zero
     newMargins.left += plateAppearance.horizontalMarginValue
     newMargins.right += plateAppearance.horizontalMarginValue
 
@@ -152,6 +132,10 @@ class PlateTableViewCell: UITableViewCell {
       path = UIBezierPath(rect: frame)
     }
 
+    let mask = CAShapeLayer()
+    mask.path = path.cgPath
+
+    contentView.layer.mask = mask
     shape.path = path.cgPath
   }
 }

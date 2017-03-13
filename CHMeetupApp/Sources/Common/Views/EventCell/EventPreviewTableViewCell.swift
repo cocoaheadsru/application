@@ -8,7 +8,13 @@
 
 import UIKit
 
-class EventPreviewTableViewCell: UITableViewCell {
+class EventPreviewTableViewCell: PlateTableViewCell {
+
+  var isEnableForRegistration: Bool = false {
+    didSet {
+      goingButton.isHidden = !isEnableForRegistration
+    }
+  }
 
   @IBOutlet var eventImageView: UIImageView!
 
@@ -38,28 +44,16 @@ class EventPreviewTableViewCell: UITableViewCell {
 
   @IBOutlet var goingButton: UIButton!
 
-  var isEnableForRegistration: Bool = false {
-    didSet {
-      goingButton.isHidden = !isEnableForRegistration
-    }
-  }
-
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
+    roundType = .all
   }
 
   // Now would calculate manually
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    // 262 with button and 198 without
-    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 262 : 198)
+    // 266 with button and 202 without
+    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 266 : 202)
   }
 }
