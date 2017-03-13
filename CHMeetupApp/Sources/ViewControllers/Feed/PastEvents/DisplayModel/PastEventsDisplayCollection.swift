@@ -18,15 +18,15 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {
-    return modelCollection.count
-  }
-
-  func numberOfRows(in section: Int) -> Int {
     return 1
   }
 
+  func numberOfRows(in section: Int) -> Int {
+    return modelCollection.count
+  }
+
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.section])
+    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.row])
     return model
   }
 
