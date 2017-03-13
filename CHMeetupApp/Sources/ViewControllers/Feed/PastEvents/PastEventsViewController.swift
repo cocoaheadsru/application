@@ -14,15 +14,22 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
       tableView.registerNib(for: EventPreviewTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.backgroundColor = UIColor.clear
+      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
   }
   fileprivate var dataCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {
+    super.viewDidLoad()
+
     dataCollection = PastEventsDisplayCollection()
     dataCollection.delegate = self
 
-    super.viewDidLoad()
+    view.backgroundColor = UIColor(.lightGrey)
+
+    title = "Past".localized
+
     fetchEvents()
   }
 
@@ -48,6 +55,11 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = dataCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+
+    if let cell = cell as? PlateTableViewCell {
+      cell.drawCorner(in: tableView, indexPath: indexPath)
+    }
+
     return cell
   }
 

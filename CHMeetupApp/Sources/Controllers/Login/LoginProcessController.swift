@@ -10,7 +10,7 @@ import Foundation
 
 private let loginName = "UD.key.isLogin"
 
-class LoginProcessViewController {
+class LoginProcessController {
 
   static var isLogin: Bool {
     set {

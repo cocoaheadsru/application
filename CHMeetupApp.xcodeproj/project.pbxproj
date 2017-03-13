@@ -32,7 +32,7 @@
 		22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22323F271E70C0E500522E5C /* TabBarItemView.xib */; };
 		22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */; };
 		22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F381E70C14300522E5C /* ViewControllersFactory.swift */; };
-		22323F401E70C14300522E5C /* LoginProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */; };
+		22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3A1E70C14300522E5C /* LoginProcessController.swift */; };
 		22323F411E70C14300522E5C /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3B1E70C14300522E5C /* LoginType.swift */; };
 		22323F421E70C14300522E5C /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3D1E70C14300522E5C /* MapAppType.swift */; };
 		22323F431E70C14300522E5C /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3E1E70C14300522E5C /* MapsController.swift */; };
@@ -89,6 +89,15 @@
 		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
 		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
 		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
+		9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */; };
+		9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A671E73E9530016CE0B /* ShadowView.swift */; };
+		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
+		9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */; };
+		9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A711E73F2C60016CE0B /* AppearanceController.swift */; };
+		9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */; };
+		9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */; };
+		9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */; };
+		9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
 		9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */; };
@@ -102,6 +111,8 @@
 		9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB61E5E304E00207199 /* EventPreview.storyboard */; };
 		9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD58FB81E5E306800207199 /* Profile.storyboard */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
+		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
+		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,7 +166,7 @@
 		22323F271E70C0E500522E5C /* TabBarItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItemView.xib; sourceTree = "<group>"; };
 		22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		22323F381E70C14300522E5C /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
-		22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessViewController.swift; sourceTree = "<group>"; };
+		22323F3A1E70C14300522E5C /* LoginProcessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessController.swift; sourceTree = "<group>"; };
 		22323F3B1E70C14300522E5C /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		22323F3D1E70C14300522E5C /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		22323F3E1E70C14300522E5C /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
@@ -211,6 +222,15 @@
 		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
 		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
+		9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarItems.swift"; sourceTree = "<group>"; };
+		9F487A671E73E9530016CE0B /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
+		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
+		9F487A711E73F2C60016CE0B /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCell.swift; sourceTree = "<group>"; };
+		9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCellAppearance.swift; sourceTree = "<group>"; };
+		9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewAppearance.swift; sourceTree = "<group>"; };
+		9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlateTableViewCell+AutomaticDetection.swift"; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -227,6 +247,8 @@
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +428,8 @@
 		22323EFC1E70C0CE00522E5C /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9F57D6331E74B109006323FA /* PlateTableViewCell */,
+				9F487A6D1E73EFCE0016CE0B /* UINavigationItem */,
 				9F30FFC81E71E71C00EF85F5 /* UITableViewCell */,
 				9F30FFBF1E71E24A00EF85F5 /* UITableView */,
 				9F30FFCB1E71E76100EF85F5 /* UICollectionView */,
@@ -447,6 +471,7 @@
 		22323F051E70C0CE00522E5C /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C30485B21E740FDE0052D632 /* UIView+Anchor.swift */,
 				22323F061E70C0CE00522E5C /* UIView+NibLoad.swift */,
 			);
 			path = UIView;
@@ -456,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				22323F081E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift */,
+				9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -471,6 +497,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
 				9F30FFBC1E71DFE400EF85F5 /* CellViewModel */,
 				22323F151E70C0E500522E5C /* Importer */,
@@ -478,6 +505,7 @@
 				22323F191E70C0E500522E5C /* Reachability */,
 				22323F1B1E70C0E500522E5C /* Utility */,
 				22323F1D1E70C0E500522E5C /* WebService */,
+				9F487A6C1E73EE710016CE0B /* Swizzling */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -529,6 +557,8 @@
 			children = (
 				9F487A801E7417E50016CE0B /* LightButton */,
 				9F487A731E740D940016CE0B /* EventCell */,
+				9F487A661E73E94B0016CE0B /* Shadow */,
+				9F57D62C1E749B85006323FA /* PlateCell */,
 				22323F231E70C0E500522E5C /* ActionButton */,
 				22323F251E70C0E500522E5C /* TabBarItemView */,
 				22323F281E70C0E500522E5C /* TextViewWithPlaceholder */,
@@ -572,7 +602,7 @@
 		22323F391E70C14300522E5C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				22323F3A1E70C14300522E5C /* LoginProcessViewController.swift */,
+				22323F3A1E70C14300522E5C /* LoginProcessController.swift */,
 				22323F3B1E70C14300522E5C /* LoginType.swift */,
 			);
 			path = Login;
@@ -628,6 +658,7 @@
 		22323F581E70C2BE00522E5C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9F487A701E73F2A90016CE0B /* Appearance */,
 				22323F591E70C2BE00522E5C /* Base */,
 				22323F5D1E70C2BE00522E5C /* Events */,
 				22323F671E70C2BE00522E5C /* Feed */,
@@ -932,6 +963,57 @@
 			name = LightButton;
 			sourceTree = "<group>";
 		};
+		9F487A661E73E94B0016CE0B /* Shadow */ = {
+			isa = PBXGroup;
+			children = (
+				9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */,
+				9F487A671E73E9530016CE0B /* ShadowView.swift */,
+			);
+			name = Shadow;
+			sourceTree = "<group>";
+		};
+		9F487A6C1E73EE710016CE0B /* Swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */,
+			);
+			name = Swizzling;
+			sourceTree = "<group>";
+		};
+		9F487A6D1E73EFCE0016CE0B /* UINavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */,
+			);
+			name = UINavigationItem;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		9F487A701E73F2A90016CE0B /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A711E73F2C60016CE0B /* AppearanceController.swift */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
+		9F57D62C1E749B85006323FA /* PlateCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */,
+				9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */,
+			);
+			name = PlateCell;
+			sourceTree = "<group>";
+		};
+		9F57D6331E74B109006323FA /* PlateTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */,
+			);
+			name = PlateTableViewCell;
+			sourceTree = "<group>";
+		};
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +1056,14 @@
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
+			sourceTree = "<group>";
+		};
+		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
+			isa = PBXGroup;
+			children = (
+				C30485B01E740FC20052D632 /* PermissionsManager.swift */,
+			);
+			path = PermissionsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1102,7 +1192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\n    isClean=\"$(bash $CLEAN_CHECK)\"\n    echo \"isClean: $isClean\"\n    if [ $isClean -eq 0 ]; then # not clean\n        exit\n    fi\nelse\n    echo Scripts/clean_check.sh not found\nfi\n\necho \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
 		8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1152,13 +1242,15 @@
 				9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */,
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
+				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
+				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
-				22323F401E70C14300522E5C /* LoginProcessViewController.swift in Sources */,
+				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
@@ -1176,6 +1268,9 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
+				22323F911E70C2BE00522E5C /* PastEventsTableViewCell.swift in Sources */,
+				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
+				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
@@ -1184,6 +1279,7 @@
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
+				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
@@ -1193,17 +1289,21 @@
 				22323F9E1E70C2BE00522E5C /* ProfileSpeachCell.swift in Sources */,
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
+				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
+				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
+				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
+				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
@@ -1212,6 +1312,7 @@
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
+				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
@@ -1219,6 +1320,7 @@
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
+				9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */,
 				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,
 				22323F8D1E70C2BE00522E5C /* RegistrationConfirmViewController.swift in Sources */,
 			);

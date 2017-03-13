@@ -13,6 +13,8 @@ class RegistrationPreviewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Registration Preview".localized
+
     // Do any additional setup after loading the view.
   }
 

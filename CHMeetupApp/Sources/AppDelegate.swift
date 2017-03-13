@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     RealmController.shared.setup()
+    AppearanceController.setupAppearance()
 
     return true
   }

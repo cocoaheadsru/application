@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tab-bar_future" translatesAutoresizingMaskIntoConstraints="NO" id="JZV-NN-9aS">
-                    <rect key="frame" x="31" y="8" width="21" height="23"/>
+                    <rect key="frame" x="31" y="5" width="21" height="23"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRV-Ei-9jG">
-                    <rect key="frame" x="26" y="33.5" width="31" height="14.5"/>
+                    <rect key="frame" x="26" y="30.5" width="31" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="JZV-NN-9aS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="9NR-2T-HA7"/>
+                <constraint firstItem="JZV-NN-9aS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="9NR-2T-HA7"/>
                 <constraint firstItem="PRV-Ei-9jG" firstAttribute="firstBaseline" secondItem="JZV-NN-9aS" secondAttribute="bottom" constant="14" id="Luv-Ga-rWL"/>
                 <constraint firstItem="JZV-NN-9aS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X16-cn-4WL"/>
                 <constraint firstItem="PRV-Ei-9jG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pNB-4u-MFw"/>

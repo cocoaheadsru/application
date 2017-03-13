@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    title = "Main".localized
     // Do any additional setup after loading the view.
   }
 
