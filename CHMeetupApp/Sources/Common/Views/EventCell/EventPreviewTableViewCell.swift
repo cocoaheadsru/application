@@ -10,9 +10,9 @@ import UIKit
 
 class EventPreviewTableViewCell: PlateTableViewCell {
 
-  var isEnableForRegistration: Bool = false {
+  var isEnabledForRegistration = false {
     didSet {
-      goingButton.isHidden = !isEnableForRegistration
+      goingButton.isHidden = !isEnabledForRegistration
     }
   }
 
@@ -54,6 +54,6 @@ class EventPreviewTableViewCell: PlateTableViewCell {
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
     // 266 with button and 202 without
-    return CGSize(width: targetSize.width, height: isEnableForRegistration ? 266 : 202)
+    return CGSize(width: targetSize.width, height: isEnabledForRegistration ? 266 : 202)
   }
 }
