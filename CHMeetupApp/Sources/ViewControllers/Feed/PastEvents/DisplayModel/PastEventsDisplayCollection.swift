@@ -25,14 +25,8 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return modelCollection.count
   }
 
-  func headerTitle(for section: Int) -> String {
-    let entity = modelCollection[section]
-    let startTime = DateFormatter.localizedString(from: entity.startDate, dateStyle: .none, timeStyle: .short)
-    return startTime
-  }
-
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = PastEventsTableViewCellModel(event: modelCollection[indexPath.row])
+    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.row])
     return model
   }
 

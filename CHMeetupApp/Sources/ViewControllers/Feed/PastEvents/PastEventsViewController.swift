@@ -11,7 +11,7 @@ import UIKit
 class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.registerNib(for: PastEventsTableViewCell.self)
+      tableView.registerNib(for: EventPreviewTableViewCell.self)
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.backgroundColor = UIColor.clear
@@ -26,7 +26,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     dataCollection = PastEventsDisplayCollection()
     dataCollection.delegate = self
 
-    view.backgroundColor = UIColor(.lightGrey)
+    view.backgroundColor = UIColor(.lightGray)
 
     title = "Past".localized
 
@@ -55,11 +55,6 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = dataCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
-
-    if let cell = cell as? PlateTableViewCell {
-      cell.drawCorner(in: tableView, indexPath: indexPath)
-    }
-
     return cell
   }
 
@@ -82,11 +77,21 @@ fileprivate extension PastEventsViewController {
 
       let event = EventEntity()
       event.id = eventIndex
+      event.title = "CocoaHeads в апреле"
       event.startDate = eventTime
       event.endDate = eventTime.addingTimeInterval(eventDuration)
       event.title += " \(numberOfDemoEvents - eventIndex)"
 
+      let place = PlaceEntity()
+      place.id = eventIndex
+      place.title = "Офис Avito"
+      place.address = "ул. Лесная, д. 7 (БЦ Белые Сады, здание «А», 15 этаж)"
+      place.city = "Москва"
+
+      event.place = place
+
       realmWrite {
+        mainRealm.add(place, update: true)
         mainRealm.add(event, update: true)
       }
     }

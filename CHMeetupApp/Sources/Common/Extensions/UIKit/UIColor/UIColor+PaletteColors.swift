@@ -10,19 +10,19 @@ import UIKit.UIColor
 
 extension UIColor {
   enum ColorType {
-    case grey
-    case darkGrey
+    case gray
+    case darkGray
     case red
     case white
     case black
-    case lightGrey
+    case lightGray
   }
 
   convenience init(_ colorType: ColorType) {
     switch colorType {
-    case .grey:
+    case .gray:
       self.init(hexString: "8C8C8C")
-    case .darkGrey:
+    case .darkGray:
       self.init(hexString: "6C6C6C")
     case .red:
       self.init(hexString: "DB1D5F")
@@ -30,7 +30,7 @@ extension UIColor {
       self.init(hexString: "FDFEFE")
     case .black:
       self.init(hexString: "000000")
-    case .lightGrey:
+    case .lightGray:
       self.init(hexString: "E3E5E5")
     }
   }
