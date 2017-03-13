@@ -8,9 +8,11 @@
 
 import UIKit
 
-struct EventPreviewTableViewCellModel: CellViewModelType {
+struct EventPreviewTableViewCellModel {
   let event: EventEntity
+}
 
+extension EventPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: EventPreviewTableViewCell) {
     cell.eventImageView.image = #imageLiteral(resourceName: "img_event_template")
     cell.nameLabel.text = event.title
