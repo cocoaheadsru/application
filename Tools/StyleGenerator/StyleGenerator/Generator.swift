@@ -10,11 +10,10 @@ import Foundation
 
 class Generator {
 
-  //MARK: - Nested
-  
-  enum Style: String {
-    case color = "color"
-    case font = "font"
+  // MARK: - Nested
+  enum Style {
+    case color
+    case font
   }
 
   enum GeneratorError: DescribedError {
@@ -23,19 +22,19 @@ class Generator {
     var message: String {
       switch self {
       case .wrongData(let style):
-        return "It looks like json for \(style.rawValue) is wrong"
+        return "It looks like json for \(style) is wrong"
       }
     }
   }
 
-  //MARK: - Public
+  // MARK: - Public
 
   func generateSwiftColorsFile(from file: StyleFile) throws -> String {
     guard file.colors.count > 0 else {
       throw GeneratorError.wrongData(style: .color)
     }
 
-    var output = String()
+    var output = ""
 
     output += .header
     output += .line(string: "import UIKit.UIColor")
@@ -66,10 +65,15 @@ class Generator {
     let initFunc = String.CodeSymbols.function(title: initFuncTitle, body: [initFuncBody])
 
     //Create extenision
-    let colorExtension = String.CodeSymbols.extension(for: "UIColor", nestedTypes: [colorEnum, .newLine, .line(string: "@available(*, deprecated)"), appColorFunc, .newLine, initFunc])
+    let nestedTypes = [colorEnum,
+                       .newLine,
+                       .line(string: "@available(*, deprecated)"),
+                       appColorFunc,
+                       .newLine,
+                       initFunc]
+    let colorExtension = String.CodeSymbols.extension(for: "UIColor", nestedTypes: nestedTypes)
 
     output += colorExtension
-    
     return output
   }
 
@@ -78,7 +82,7 @@ class Generator {
       throw GeneratorError.wrongData(style: .font)
     }
 
-    var output = String()
+    var output = ""
 
     output += .header
     output += .line(string: "import UIKit.UIFont")
@@ -93,7 +97,9 @@ class Generator {
     let appFontFuncTitle = "static func appFont(_ fontType: FontType) -> UIFont"
     var switchCases = [SwitchCase]()
     for font in file.fonts {
-      let switchCase = ("\(font.name)(let size)", "return UIFont(name: \"\(font.font)\", size: size) ?? UIFont.systemFont(ofSize: size)")
+      let switchTitle = "\(font.name)(let size)"
+      let switchCode = "return UIFont(name: \"\(font.font)\", size: size) ?? UIFont.systemFont(ofSize: size)"
+      let switchCase = (switchTitle, switchCode)
       switchCases.append(switchCase)
     }
     switchCases.append(("systemFont(let size)", "return UIFont.systemFont(ofSize: size)"))
@@ -102,10 +108,12 @@ class Generator {
     let appFontFunc = String.CodeSymbols.function(title: appFontFuncTitle, body: [appFontFuncBody])
 
     //Create extenision
-    let fontExtension = String.CodeSymbols.extension(for: "UIFont", nestedTypes: [fontEnum, .newLine, appFontFunc])
+    let nestedTypes = [fontEnum,
+                       .newLine,
+                       appFontFunc]
+    let fontExtension = String.CodeSymbols.extension(for: "UIFont", nestedTypes: nestedTypes)
 
     output += fontExtension
-    
     return output
   }
 }

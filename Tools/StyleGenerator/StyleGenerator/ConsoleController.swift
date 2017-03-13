@@ -10,8 +10,7 @@ import Foundation
 
 class ConsoleController {
 
-  //MARK: - Nested types
-  
+  // MARK: - Nested types
   enum MessageOutputType {
     case error
     case standard
@@ -30,15 +29,16 @@ class ConsoleController {
       }
     }
   }
-  
-  //MARK: - Public
 
+  // MARK: - Public
   func pathFromInput(for file: FileType) throws -> String {
-    guard var result = getInput(), !result.isEmpty else {
+    let input = getInput()
+
+    if input.isEmpty {
       throw InputError.empty
     }
 
-    result = result.replacingOccurrences(of: String.space, with: String())
+    let result = input.replacingOccurrences(of: String.space, with: "")
     guard result.hasSuffix(file.type) else {
       throw InputError.wrongFormat
     }
@@ -46,21 +46,25 @@ class ConsoleController {
     return result
   }
 
-  func getInput() -> String? {
+  func getInput() -> String {
 
     let keyboard = FileHandle.standardInput
     let inputData = keyboard.availableData
-    let strData = String(data: inputData, encoding: String.Encoding.utf8)!
-    return strData.trimmingCharacters(in: CharacterSet.newlines)
+
+    if let strData = String(data: inputData, encoding: String.Encoding.utf8) {
+      return strData.trimmingCharacters(in: CharacterSet.newlines)
+    } else {
+      return ""
+    }
   }
 
-  func printMessage(_ message: String, to: MessageOutputType = .standard) {
-    switch to {
+  func printMessage(_ message: String, for: MessageOutputType = .standard) {
+    switch `for` {
     case .standard:
-      print("\u{001B}[;m\(message)")
+      print("\(message)")
     case .error:
-      fputs("\u{001B}[0;31m\(message)\n", stderr)
-      print("\u{001B}[;mPlease, try again")
+      fputs("\(message)\n", stderr)
+      print("Please, try again")
     }
   }
 }

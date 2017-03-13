@@ -8,7 +8,9 @@
 
 import Foundation
 
-//MARK: - Additions
+// swiftlint:disable force_cast
+
+// MARK: - Additions
 
 typealias StyleParameters = [String: Any]
 
@@ -16,46 +18,55 @@ protocol StyleItem {
   init(_ parameters: StyleParameters)
 }
 
-//MARK: - Color
+// MARK: - Color
 
-final class Color: StyleItem {
+struct Color: StyleItem {
 
-  //MARK: - Properties
+  // MARK: - Properties
 
-  fileprivate(set) var name = String()
-  fileprivate(set) var hex = String()
+  let name: String
+  let hex: String
 
-  //MARK: - Public
+  // MARK: - Public
 
-  required init(_ parameters: StyleParameters) {
-    if let name = parameters["name"] as? String {
-      self.name = name
-    }
-
-    if let hex = parameters["hex"] as? String {
-      self.hex = hex
-    }
+  init(_ parameters: StyleParameters) {
+    //TODO: Need to add handler with message
+    self.name = parameters["name"] as! String
+    self.hex = parameters["hex"] as! String
   }
 }
 
-//MARK: - Font
+// MARK: - Font
 
-final class Font: StyleItem {
+struct Font: StyleItem {
 
-  //MARK: - Properties
-  
-  fileprivate(set) var name = String()
-  fileprivate(set) var font = String()
+  // MARK: - Properties
+  let name: String
+  let font: String
 
-  //MARK: - Public
+  // MARK: - Public
 
-  required init(_ parameters: StyleParameters) {
+  init(_ parameters: StyleParameters) {
+    //TODO: Need to add handler with message
+    self.font = parameters["font"] as! String
     if let name = parameters["name"] as? String {
       self.name = name
+    } else {
+      self.name = Font.generateName(from: self.font)
+    }
+  }
+
+  // MARK: - Private
+
+  //Convert from "GothamPro-Light" -> "gothamProLight"
+  fileprivate static func generateName(from font: String) -> String {
+    if font.isEmpty {
+      return ""
     }
 
-    if let font = parameters["font"] as? String {
-      self.font = font
-    }
+    let firstChar = String(font.characters.prefix(1)).lowercased()
+    let remainChars = String(font.characters.dropFirst()).replacingOccurrences(of: "-", with: "")
+
+    return firstChar + remainChars
   }
 }

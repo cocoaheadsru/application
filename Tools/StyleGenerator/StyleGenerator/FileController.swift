@@ -10,9 +10,9 @@ import Foundation
 
 final class FileController {
 
-  //MARK: - Nested 
+  // MARK: - Nested 
 
-  enum FileReadError: DescribedError {
+  enum FileError: DescribedError {
     case notFound
     case empty
     case wrongJsonParameters
@@ -32,39 +32,27 @@ final class FileController {
     }
   }
 
-  enum FileWriteError: DescribedError {
-    case systemError(description: String)
-
-    var message: String {
-      switch self {
-      case .systemError(let description):
-        return description
-      }
-    }
-  }
-
-  //MARK: - Public
+  // MARK: - Public
 
   static func readFile(at path: String) throws -> StyleFile {
-
     guard let file = FileHandle(forUpdatingAtPath: path) else {
-      throw FileReadError.notFound
+      throw FileError.notFound
     }
 
     let data = file.readDataToEndOfFile()
-    guard !data.isEmpty else {
-      throw FileReadError.empty
+    if data.isEmpty {
+      throw FileError.empty
     }
 
     do {
       let parameters =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-      if let parameters = parameters as? Dictionary<String,[StyleParameters]> {
+      if let parameters = parameters as? [String: [StyleParameters]] {
         return StyleFile(from: parameters)
       } else {
-        throw FileReadError.wrongJsonParameters
+        throw FileError.wrongJsonParameters
       }
-    } catch let error as NSError {
-      throw FileReadError.systemError(description: error.localizedDescription)
+    } catch {
+      throw FileError.systemError(description: error.localizedDescription)
     }
   }
 
@@ -75,8 +63,8 @@ final class FileController {
       let fileDestinationUrl = URL(fileURLWithPath: file)
       try code.write(to: fileDestinationUrl, atomically: false, encoding: .utf8)
 
-    } catch let error as NSError {
-      throw FileWriteError.systemError(description: error.localizedDescription)
+    } catch {
+      throw FileError.systemError(description: error.localizedDescription)
     }
   }
 }

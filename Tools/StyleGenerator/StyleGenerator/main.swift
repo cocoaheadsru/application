@@ -2,7 +2,7 @@
 
 import Foundation
 
-//MARK: - Enums
+// MARK: - Enums
 
 enum FileType {
   case json
@@ -27,7 +27,7 @@ enum ProccesStep: Int {
   case end
 
   var next: ProccesStep {
-    guard self != .end else {
+    if self == .end {
       return self
     }
 
@@ -35,13 +35,13 @@ enum ProccesStep: Int {
   }
 }
 
-//MARK: - Protocols
+// MARK: - Protocols
 
 protocol DescribedError: Error {
   var message: String { get }
 }
 
-//MARK: - Properties
+// MARK: - Properties
 
 let consoleController = ConsoleController()
 let fileController = FileController()
@@ -49,17 +49,17 @@ var currentStep = ProccesStep.start
 let generator = Generator()
 var styleFile: StyleFile?
 
-//MARK: - Functionality
+// MARK: - Functionality
 
 func interactiveMode() {
   consoleController.printMessage("Hello, use me to generate styles from json.")
-
   var shouldExit = false
   while !shouldExit {
     switch currentStep {
 
     case .start:
       moveToNextStep()
+
     case .readJSON:
       createStyleFile()
 
@@ -95,6 +95,7 @@ func moveToNextStep() {
 func createStyleFile() {
   do {
     if styleFile == nil {
+
       let jsonFilePath = try consoleController.pathFromInput(for: .json)
       styleFile = try FileController.readFile(at: jsonFilePath)
 
@@ -104,7 +105,7 @@ func createStyleFile() {
     }
   } catch {
     if let error = error as? DescribedError {
-      consoleController.printMessage(error.message, to: .error)
+      consoleController.printMessage(error.message, for: .error)
     }
   }
 }
@@ -112,14 +113,14 @@ func createStyleFile() {
 func generateColorsFile() {
   if let styleFile = styleFile {
     do {
-        let colorsFilePath = try consoleController.pathFromInput(for: .colors)
-        let code = try generator.generateSwiftColorsFile(from: styleFile)
-        try FileController.write(code: code, in: colorsFilePath)
-        moveToNextStep()
+      let colorsFilePath = try consoleController.pathFromInput(for: .colors)
+      let code = try generator.generateSwiftColorsFile(from: styleFile)
+      try FileController.write(code: code, in: colorsFilePath)
+      moveToNextStep()
 
     } catch {
       if let error = error as? DescribedError {
-        consoleController.printMessage(error.message, to: .error)
+        consoleController.printMessage(error.message, for: .error)
       }
     }
   } else {
@@ -137,7 +138,7 @@ func generateFontsFile() {
 
     } catch {
       if let error = error as? DescribedError {
-        consoleController.printMessage(error.message, to: .error)
+        consoleController.printMessage(error.message, for: .error)
       }
     }
   } else {
@@ -148,4 +149,3 @@ func generateFontsFile() {
 // MARK: - Run process
 
 interactiveMode()
-

@@ -9,5 +9,8 @@
  	"fonts": [{
             "name": "gothamPro",
             "font": "GothamPro-Medium"
+            },
+            {
+            "font": "GothamPro-Light"
             }]
 }
