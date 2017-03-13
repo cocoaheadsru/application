@@ -8,8 +8,13 @@
 
 import UIKit
 
-class PastEventsTableViewCell: UITableViewCell {
+class PastEventsTableViewCell: PlateTableViewCell {
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var placeholderImageView: UIImageView!
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    roundType = .all
+  }
 }
