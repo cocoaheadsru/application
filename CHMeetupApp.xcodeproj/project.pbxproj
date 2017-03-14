@@ -72,6 +72,7 @@
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -84,16 +85,16 @@
 		9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */; };
 		9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */; };
 		9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */; };
-		9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */; };
-		9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */; };
-		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
-		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
-		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
 		9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */; };
 		9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A671E73E9530016CE0B /* ShadowView.swift */; };
 		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
 		9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */; };
 		9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A711E73F2C60016CE0B /* AppearanceController.swift */; };
+		9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */; };
+		9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */; };
+		9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */; };
+		9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F487A7E1E7415A10016CE0B /* GothamPro.ttf */; };
+		9F487A821E7417F50016CE0B /* LightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A811E7417F50016CE0B /* LightButton.swift */; };
 		9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */; };
 		9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */; };
 		9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */; };
@@ -208,6 +209,7 @@
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -220,16 +222,16 @@
 		9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 		9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollection.swift; sourceTree = "<group>"; };
-		9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewTableViewCell.swift; path = EventCell/EventPreviewTableViewCell.swift; sourceTree = "<group>"; };
-		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
-		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
-		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
-		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarItems.swift"; sourceTree = "<group>"; };
 		9F487A671E73E9530016CE0B /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
 		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
 		9F487A711E73F2C60016CE0B /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewTableViewCell.swift; path = EventCell/EventPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
+		9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
+		9F487A7E1E7415A10016CE0B /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
+		9F487A811E7417F50016CE0B /* LightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightButton.swift; sourceTree = "<group>"; };
 		9F57D62D1E749B94006323FA /* PlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCell.swift; sourceTree = "<group>"; };
 		9F57D62F1E749FB9006323FA /* PlateTableViewCellAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateTableViewCellAppearance.swift; sourceTree = "<group>"; };
 		9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewAppearance.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				22323F191E70C0E500522E5C /* Reachability */,
 				22323F1B1E70C0E500522E5C /* Utility */,
 				22323F1D1E70C0E500522E5C /* WebService */,
+				8AB256971E78680500B319AA /* Share */,
 				9F487A6C1E73EE710016CE0B /* Swizzling */,
 			);
 			path = Helpers;
@@ -891,6 +894,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8AB256971E78680500B319AA /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				8AB256981E78683B00B319AA /* Sharing.swift */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,24 +962,6 @@
 			name = DisplayCollection;
 			sourceTree = "<group>";
 		};
-		9F487A731E740D940016CE0B /* EventCell */ = {
-			isa = PBXGroup;
-			children = (
-				9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */,
-				9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */,
-				9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */,
-			);
-			name = EventCell;
-			sourceTree = "<group>";
-		};
-		9F487A801E7417E50016CE0B /* LightButton */ = {
-			isa = PBXGroup;
-			children = (
-				9F487A811E7417F50016CE0B /* LightButton.swift */,
-			);
-			name = LightButton;
-			sourceTree = "<group>";
-		};
 		9F487A661E73E94B0016CE0B /* Shadow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +994,24 @@
 				9F487A711E73F2C60016CE0B /* AppearanceController.swift */,
 			);
 			name = Appearance;
+			sourceTree = "<group>";
+		};
+		9F487A731E740D940016CE0B /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A7C1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift */,
+				9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */,
+				9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */,
+			);
+			name = EventCell;
+			sourceTree = "<group>";
+		};
+		9F487A801E7417E50016CE0B /* LightButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A811E7417F50016CE0B /* LightButton.swift */,
+			);
+			name = LightButton;
 			sourceTree = "<group>";
 		};
 		9F57D62C1E749B85006323FA /* PlateCell */ = {
@@ -1274,6 +1285,7 @@
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
+				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
@@ -1292,7 +1304,6 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
-				22323F911E70C2BE00522E5C /* PastEventsTableViewCell.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
