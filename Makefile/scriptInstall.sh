@@ -4,6 +4,7 @@ echo Script was run...
 # -- 1 -- Installing HomeBrew
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo HomeBrew:
+echo HomeBrew checking running...
 which -s brew
 if [[ $? != 0 ]] ; then
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -25,18 +26,16 @@ cd $DIR
 moveHook() {
 cp prepare-commit-msg ../.git/hooks/
 if [[ $? != 0 ]] ; then
-echo !!!! We cant find .git/hooks/ folder, contact vk.com/kirillzzy please
+echo !!!! We cant find .git/hooks/ folder, contact github.com/kirillzzy please
 else
 echo Hook moved
 fi
 }
 
-if [ -d "../.git/hooks" ]; then
-moveHook
-else
+if [ ! -d "../.git/hooks" ]; then
 mkdir ../.git/hooks
-moveHook
 fi
+moveHook
 # -- 6 -- carthage update
 echo Carthage:
 cd ../
@@ -46,7 +45,7 @@ if [ ! -f "Cartfile" ]; then
 fi
 carthage update --platform iOS
 if [[ $? != 0 ]] ; then
-echo !!!! We cant find Cartfile, contact vk.com/kirillzzy please
+echo !!!! We cant find Cartfile, contact github.com/kirillzzy please
 fi
 
 echo Script was ended
