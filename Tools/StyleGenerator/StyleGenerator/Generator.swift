@@ -64,7 +64,7 @@ class Generator {
     let initFuncBody = String.CodeSymbols.switch(value: "colorType", cases: initFuncColorCases)
     let initFunc = String.CodeSymbols.function(title: initFuncTitle, body: [initFuncBody])
 
-    //Create extenision
+    //Create extension
     let nestedTypes = [colorEnum,
                        .newLine,
                        .line(string: "@available(*, deprecated)"),
@@ -107,7 +107,7 @@ class Generator {
     let appFontFuncBody = String.CodeSymbols.switch(value: "fontType", cases: switchCases)
     let appFontFunc = String.CodeSymbols.function(title: appFontFuncTitle, body: [appFontFuncBody])
 
-    //Create extenision
+    //Create extension
     let nestedTypes = [fontEnum,
                        .newLine,
                        appFontFunc]

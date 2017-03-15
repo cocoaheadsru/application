@@ -59,10 +59,14 @@ final class FileController {
   static func write(code: String, in file: String) throws {
     do {
 
-      // Try to write to disk
-      let fileDestinationUrl = URL(fileURLWithPath: file)
-      try code.write(to: fileDestinationUrl, atomically: false, encoding: .utf8)
-
+      switch mode {
+      case .interactive:
+        // Try to write to disk
+        let fileDestinationUrl = URL(fileURLWithPath: file)
+        try code.write(to: fileDestinationUrl, atomically: false, encoding: .utf8)
+      case .script:
+        print("\(code)")
+      }
     } catch {
       throw FileError.systemError(description: error.localizedDescription)
     }

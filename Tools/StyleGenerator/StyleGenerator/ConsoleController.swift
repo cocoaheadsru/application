@@ -11,6 +11,12 @@ import Foundation
 class ConsoleController {
 
   // MARK: - Nested types
+  enum OptionType: String {
+    case no = ""
+    case colors = "-c"
+    case fonts = "-f"
+  }
+
   enum MessageOutputType {
     case error
     case standard
@@ -30,8 +36,15 @@ class ConsoleController {
     }
   }
 
+  var inputedOption: OptionType = .no
+
   // MARK: - Public
   func pathFromInput(for file: FileType) throws -> String {
+
+    if file != .json && mode == .script {
+      return ""
+    }
+
     let input = getInput()
 
     if input.isEmpty {
@@ -48,18 +61,27 @@ class ConsoleController {
 
   func getInput() -> String {
 
-    let keyboard = FileHandle.standardInput
-    let inputData = keyboard.availableData
+    switch mode {
+    case .interactive:
+      let keyboard = FileHandle.standardInput
 
-    if let strData = String(data: inputData, encoding: String.Encoding.utf8) {
-      return strData.trimmingCharacters(in: CharacterSet.newlines)
-    } else {
-      return ""
+      let inputData = keyboard.availableData
+      if let strData = String(data: inputData, encoding: String.Encoding.utf8) {
+        return strData.trimmingCharacters(in: CharacterSet.newlines)
+      } else {
+        return ""
+      }
+    case .script:
+      let argument = CommandLine.arguments[1]
+      let index = argument.index(argument.startIndex, offsetBy: 2)
+      let result = argument.substring(to: index)
+      inputedOption = OptionType(rawValue: result) ?? .no
+      return CommandLine.arguments[2]
     }
   }
 
-  func printMessage(_ message: String, for: MessageOutputType = .standard) {
-    switch `for` {
+  func printMessage(_ message: String, for outputType: MessageOutputType = .standard) {
+    switch outputType {
     case .standard:
       print("\(message)")
     case .error:

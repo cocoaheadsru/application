@@ -30,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		9200871A1E75AAF8009945E3 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
-		923637BF1E75F40500A69C06 /* TestStyles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestStyles.json; sourceTree = "<group>"; };
 		92E9DA551E72111600BCB658 /* StyleGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StyleGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E9DA581E72111600BCB658 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		92E9DA5F1E72117400BCB658 /* ConsoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleController.swift; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 				92E9DA631E721D2500BCB658 /* StyleFile.swift */,
 				92E9DA651E721DC700BCB658 /* StyleItems.swift */,
 				92E9DA6A1E72CFDE00BCB658 /* String+Markdown.swift */,
-				923637BF1E75F40500A69C06 /* TestStyles.json */,
 			);
 			path = StyleGenerator;
 			sourceTree = "<group>";
@@ -93,6 +91,7 @@
 				92E9DA521E72111600BCB658 /* Frameworks */,
 				92E9DA531E72111600BCB658 /* CopyFiles */,
 				923637E11E77420700A69C06 /* Swiftlint */,
+				92A4F7191E799F9D00ECA64C /* Script for Testing */,
 			);
 			buildRules = (
 			);
@@ -151,6 +150,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		92A4F7191E799F9D00ECA64C /* Script for Testing */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Script for Testing";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/TestStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles/AppFonts.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" -c \"$STYLES_JSON_PATH\" > \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" -f \"$STYLES_JSON_PATH\" > \"$FONTS_STYLE_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

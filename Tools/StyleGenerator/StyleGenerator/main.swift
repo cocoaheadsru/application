@@ -4,6 +4,11 @@ import Foundation
 
 // MARK: - Enums
 
+enum Mode {
+  case interactive
+  case script
+}
+
 enum FileType {
   case json
   case colors
@@ -48,8 +53,9 @@ let fileController = FileController()
 var currentStep = ProccesStep.start
 let generator = Generator()
 var styleFile: StyleFile?
+let mode: Mode = .script
 
-// MARK: - Functionality
+// MARK: - Modes
 
 func interactiveMode() {
   consoleController.printMessage("Hello, use me to generate styles from json.")
@@ -77,7 +83,23 @@ func interactiveMode() {
   exit(1)
 }
 
+func scriptMode() {
+  createStyleFile()
+  if consoleController.inputedOption == .colors {
+    generateColorsFile()
+  }
+  else if consoleController.inputedOption == .fonts {
+    generateFontsFile()
+  }
+}
+
+// MARK: - Functionality
+
 func moveToNextStep() {
+  guard mode == .interactive else {
+    return
+  }
+  
   switch currentStep {
   case .start:
     consoleController.printMessage("Enter full path of your .json")
@@ -148,4 +170,9 @@ func generateFontsFile() {
 
 // MARK: - Run process
 
-interactiveMode()
+switch mode {
+case .interactive:
+  interactiveMode()
+case .script:
+  scriptMode()
+}

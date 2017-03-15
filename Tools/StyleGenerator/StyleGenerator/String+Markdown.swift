@@ -8,6 +8,7 @@
 import Foundation
 
 typealias SwitchCase = (case: String, code: String)
+private let defaultIndentation = 2
 
 extension String {
 
@@ -32,7 +33,7 @@ extension String {
     return " "
   }
 
-  fileprivate func addIndentation(_ count: Int) -> String {
+  fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
     var indent = ""
     for _ in 0..<count {
       indent += String.space
@@ -83,7 +84,7 @@ extension String.CodeSymbols {
         if nestedSymbol.value == String.CodeSymbols.newLine.value {
           result += nestedSymbol
         } else {
-          result += nestedSymbol.addIndentation(2)
+          result += nestedSymbol.addIndentation()
         }
       }
       result += .line(string: "}")
@@ -98,7 +99,7 @@ extension String.CodeSymbols {
         casesString += "case \(caseName)\n"
       }
 
-      result += casesString.addIndentation(2)
+      result += casesString.addIndentation()
       result += .line(string: "}")
       return result
 
@@ -108,7 +109,7 @@ extension String.CodeSymbols {
       result += .line(string: "switch \(value) {")
       for caseValue in cases {
         result += .line(string: "case .\(caseValue.case):")
-        result += .line(string: caseValue.code.addIndentation(2))
+        result += .line(string: caseValue.code.addIndentation())
       }
       result += .line(string: "}")
       return result
@@ -118,14 +119,14 @@ extension String.CodeSymbols {
       var result = ""
       result += .line(string: title + " {")
       for item in body {
-        result += item.addIndentation(2)
+        result += item.addIndentation()
       }
       result += .line(string: "}")
       return result
     }
   }
 
-  func addIndentation(_ count: Int) -> String {
+  func addIndentation(_ count: Int = defaultIndentation) -> String {
     return self.value.addIndentation(count)
   }
 }
