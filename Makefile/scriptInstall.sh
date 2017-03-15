@@ -8,8 +8,10 @@ echo HomeBrew checking running...
 which -s brew
 if [[ $? != 0 ]] ; then
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo brew installed
 else
 brew update
+echo brew updated
 fi
 # -- 2 -- Installing swiftLint
 brew install swiftLint
@@ -40,12 +42,12 @@ moveHook
 echo Carthage:
 cd ../
 if [ ! -f "Cartfile" ]; then
-  echo 'github "realm/realm-cocoa"' >> Cartfile
+  touch Cartfile
   echo Cartfile created
 fi
 carthage update --platform iOS
-if [[ $? != 0 ]] ; then
-echo !!!! We cant find Cartfile, contact github.com/kirillzzy please
-fi
+echo carthage updated
+echo "Now you should write necessary libs in Cartfile and run command 'carthage update --platform iOS'"
 
 echo Script was ended
+echo "Questions? Ask github.com/kirillzzy"
