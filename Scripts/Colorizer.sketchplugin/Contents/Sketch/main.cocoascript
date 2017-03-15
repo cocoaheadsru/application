@@ -7,24 +7,29 @@ function onRun(context) {
   for(var i=0; i<selection.count(); i++){
     var layer = selection[i];
 
-    var colorInfo = colorsFromLayer(layer)
+    var colorInfo = colorsFromLayer(context, layer)
     colors.push(colorInfo);
   }
   showSavePanelWithColorList(colors);
 }
 
-function colorsFromLayer(layer) {
+function colorsFromLayer(context, layer) {
   var color;
   var name;
 
   if (layer.class() == MSShapeGroup) {
-      //selected layer is Shape group
-      color = layer.style().fill().color();
+    // selected layer is Shape group
+    color = layer.style().fill().color();
+    // Taking style id
+    var styleId = layer.styleGeneric().sharedObjectID();
+    // Finding style with this id and using it's name
+    if (styleId != null) {
+      name = context.document.documentData().layerStyles().sharedStyleWithID(styleId).name();
+    } else {
       name = String(layer.parentGroup().name());
-
+    }
   } else if (layer.class() == MSArtboardGroup) {
-      // selected layer is artboard
-      log(layer.layers())
+    // selected layer is artboard
     return colorsFromLayer(layer.layers()[0])
   }
 
@@ -46,21 +51,6 @@ function colorToHex(color) {
   var b = parseInt(color.blue()*255);
   return rgbToHex(r,g,b);
 }
-
-// function artboardOflayer(layer) {
-//   var artboard;
-//   if (layer.class() == MSArtboardGroup) {
-//     artboard = layer;
-//   } else {
-//     artboard = layer.parentGroup();
-//   }
-
-//   if (artboard.class() != MSArtboardGroup) {
-//     artboard = artboardOflayer(artboardOflayer);
-//   }
-
-//   return artboard;
-// }
 
 function showSavePanelWithColorList(colors) {
   var savePanel = NSSavePanel.savePanel();
