@@ -36,9 +36,7 @@ function layersFromLayer(layer) {
 }
 
 function fontFromText(context, layer) {
-  var fontName = "True";
-  var fontSize;
-  var name;
+  var name
 
   // Taking style id
   var styleId = layer.styleGeneric().sharedObjectID()
@@ -49,10 +47,8 @@ function fontFromText(context, layer) {
     name = String(layer.parentGroup().name())
   }
 
-  fontName = layer.font().displayName()
-  fontSize = layer.fontSize()
-
-  log(fontName)
+  const fontName = layer.font().displayName()
+  const fontSize = layer.fontSize()
 
   return {
     name: name,
@@ -62,10 +58,8 @@ function fontFromText(context, layer) {
 }
 
 function colorFromShape(context, layer) {
-  var color;
-  var name;
+  var name
 
-  color = layer.style().fill().color()
   // Taking style id
   var styleId = layer.styleGeneric().sharedObjectID()
   // Finding style with this id and using it's name
@@ -75,7 +69,8 @@ function colorFromShape(context, layer) {
     name = String(layer.parentGroup().name())
   }
 
-  var hexColor = colorToHex(color)
+  const color = layer.style().fill().color()
+  const hexColor = colorToHex(color)
 
   return {
     name: name,
@@ -95,7 +90,6 @@ function colorToHex(color) {
 }
 
 function showSavePanelWithColorList(colors, fonts) {
-log(fonts)
   var savePanel = NSSavePanel.savePanel()
   savePanel.setNameFieldStringValue("design.json")
   if (savePanel.runModal() == NSFileHandlingPanelOKButton) {
@@ -108,5 +102,3 @@ log(fonts)
     NSApp.displayDialog("There are no layers to export.");
   }
 }
-
-onRun(context)
