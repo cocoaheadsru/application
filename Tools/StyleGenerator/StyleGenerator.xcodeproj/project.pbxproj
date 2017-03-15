@@ -163,7 +163,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/TestStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles/AppFonts.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" -c \"$STYLES_JSON_PATH\" > \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" -f \"$STYLES_JSON_PATH\" > \"$FONTS_STYLE_PATH\"\n";
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/TestStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" -c \"$STYLES_JSON_PATH\" > \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" -f \"$STYLES_JSON_PATH\" > \"$FONTS_STYLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

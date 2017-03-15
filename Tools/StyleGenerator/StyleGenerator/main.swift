@@ -87,8 +87,7 @@ func scriptMode() {
   createStyleFile()
   if consoleController.inputedOption == .colors {
     generateColorsFile()
-  }
-  else if consoleController.inputedOption == .fonts {
+  } else if consoleController.inputedOption == .fonts {
     generateFontsFile()
   }
 }
@@ -99,7 +98,6 @@ func moveToNextStep() {
   guard mode == .interactive else {
     return
   }
-  
   switch currentStep {
   case .start:
     consoleController.printMessage("Enter full path of your .json")
