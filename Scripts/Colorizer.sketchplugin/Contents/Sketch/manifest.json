@@ -4,8 +4,8 @@
     "identifier" : "com.ch.colorizer",
     "version" : "1.0",
     "description" : "Color json generator",
-    "authorEmail" : "maxim.globak@gmail.com",
-    "author" : "Globak Maxim",
+    "authorEmail" : "cocoaheadsmsk@gmail.com",
+    "author" : "CocoaHeads App Developers",
 
     "commands" : [
     {
