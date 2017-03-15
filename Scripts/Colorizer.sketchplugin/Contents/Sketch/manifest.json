@@ -1,7 +1,7 @@
 
 {
     "name" : "Colorizer",
-    "identifier" : "com.globak.colorizer",
+    "identifier" : "com.ch.colorizer",
     "version" : "1.0",
     "description" : "Color json generator",
     "authorEmail" : "maxim.globak@gmail.com",
@@ -13,7 +13,7 @@
       "handler" : "onRun",
       "shortcut" : "command shift w",
       "name" : "Get JSON of colors",
-      "identifier" : "com.globak.colorizer.colorsjson"
+      "identifier" : "com.ch.colorizer.colorsjson"
     }
   ],
 }

@@ -6,27 +6,34 @@ function onRun(context) {
 
   for(var i=0; i<selection.count(); i++){
     var layer = selection[i];
-    var color;
-    var name;
 
-    if (layer.class() == MSShapeGroup) {
+    var colorInfo = colorsFromLayer(layer)
+    colors.push(colorInfo);
+  }
+  showSavePanelWithColorList(colors);
+}
+
+function colorsFromLayer(layer) {
+  var color;
+  var name;
+
+  if (layer.class() == MSShapeGroup) {
       //selected layer is Shape group
       color = layer.style().fill().color();
       name = String(layer.parentGroup().name());
 
-    } else if (layer.class() == MSArtboardGroup) {
+  } else if (layer.class() == MSArtboardGroup) {
       // selected layer is artboard
-      color = layer.backgroundColor();
-      name = String(layer.name());
-    }
-
-    var hexColor = colorToHex(color);
-    colors.push({
-      name: name,
-      color: hexColor
-    });
+      log(layer.layers())
+    return colorsFromLayer(layer.layers()[0])
   }
-  showSavePanelWithColorList(colors);
+
+  var hexColor = colorToHex(color);
+
+  return {
+    name: name,
+    color: hexColor
+  }
 }
 
 function rgbToHex(r, g, b) {
