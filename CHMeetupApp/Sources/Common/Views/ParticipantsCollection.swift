@@ -55,7 +55,7 @@ class ParticipantsCollection: UIView {
 
         if leadingEdgeSecondImageView > viewWidth && imagesCollection.count > index {
           imageView.layer.borderColor = UIColor.clear.cgColor
-          imageView.image = UIImage(named: "template_anonim")
+          imageView.image = UIImage(named: "img_template_unknown")
         }
 
         self.addSubview(imageView)
