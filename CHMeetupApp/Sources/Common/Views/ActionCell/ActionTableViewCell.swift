@@ -10,17 +10,28 @@ import UIKit
 
 class ActionTableViewCell: PlateTableViewCell {
 
-  @IBOutlet var actionTypeImageView: UIImageView!
-  @IBOutlet var hasActionImageView: UIImageView!
+  var isEnableForAction = false {
+    didSet {
+      enableImageView.isHidden = !isEnableForAction
+    }
+  }
+
+  @IBOutlet var actionImageView: UIImageView! {
+    didSet {
+      actionImageView.isHidden = true
+    }
+  }
+  @IBOutlet var enableImageView: UIImageView!
 
   @IBOutlet var descriptionActionLabel: UILabel! {
     didSet {
       descriptionActionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionActionLabel.textColor = UIColor(.darkGray)
     }
   }
 
-    override func awakeFromNib() {
-      super.awakeFromNib()
-      roundType = .all
-    }
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    roundType = .all
+  }
 }
