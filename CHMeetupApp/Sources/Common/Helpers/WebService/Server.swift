@@ -30,7 +30,12 @@ enum ServerError: Error {
 
 class Server {
   let apiBase: String
-  init(apiBase: String = Constants.apiBase) {
+
+  static var standard: Server {
+    return Server(apiBase: Constants.apiBase)
+  }
+
+  init(apiBase: String) {
     self.apiBase = apiBase
   }
 
