@@ -9,8 +9,7 @@
 import Foundation
 
 struct EventRegFormPlainObject {
-    let id: Int
-    let name: String
-    let fields: [EventRegFormFieldPlainObject]
-
+  let id: Int
+  let name: String
+  let fields: [EventRegFormFieldPlainObject]
 }

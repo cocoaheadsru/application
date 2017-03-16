@@ -9,18 +9,18 @@
 import Foundation
 
 struct EventRegFormFieldAnswerPlainObject {
-    let id: Int
-    let value: String
+  let id: Int
+  let value: String
 }
 
 extension EventRegFormFieldAnswerPlainObject: PlainObjectType {
-    init?(json: JSONDictionary) {
-        guard
-            let id = json["id"] as? Int,
-            let value = json["value"] as? String
-            else { return nil }
+  init?(json: JSONDictionary) {
+    guard
+      let id = json["id"] as? Int,
+      let value = json["value"] as? String
+      else { return nil }
 
-        self.id = id
-        self.value = value
-    }
+    self.id = id
+    self.value = value
+  }
 }

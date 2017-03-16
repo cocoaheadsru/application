@@ -10,21 +10,21 @@ import Foundation
 
 extension EventRegFormPlainObject: PlainObjectType {
 
-    struct Requests {
-        static func one(id: String) -> Request<EventRegFormPlainObject> {
-            return Request<EventRegFormPlainObject>(query: "event/form/\(id)", method: .get)
-        }
+  struct Requests {
+    static func form(with id: Int) -> Request<EventRegFormPlainObject> {
+      return Request<EventRegFormPlainObject>(query: "event/form/\(id)", method: .get)
     }
+  }
 
-    init?(json: JSONDictionary) {
-        guard
-            let id = json["id"] as? Int,
-            let name = json["form_name"] as? String,
-            let regFields = json["reg_fields"] as? [JSONDictionary]
-            else { return nil }
+  init?(json: JSONDictionary) {
+    guard
+      let id = json["id"] as? Int,
+      let name = json["form_name"] as? String,
+      let regFields = json["reg_fields"] as? [JSONDictionary]
+      else { return nil }
 
-        self.id = id
-        self.name = name
-        self.fields = regFields.flatMap(EventRegFormFieldPlainObject.init)
-    }
+    self.id = id
+    self.name = name
+    self.fields = regFields.flatMap(EventRegFormFieldPlainObject.init)
+  }
 }
