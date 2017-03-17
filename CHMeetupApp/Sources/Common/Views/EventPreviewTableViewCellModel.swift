@@ -16,12 +16,12 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: EventPreviewTableViewCell) {
     cell.eventImageView.image = #imageLiteral(resourceName: "img_event_template")
     cell.nameLabel.text = event.title
-    cell.dateLabel.text = "01.02.2017"
-    // FIXME: - Right date
+    cell.dateLabel.text = event.startDate.defaultFormatString
+
     if let place = event.place {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
-    cell.isEnabledForRegistration = true
+    cell.isEnabledForRegistration = (event.startDate.isPased == false)
   }
 }
