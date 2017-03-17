@@ -7,7 +7,8 @@
 //
 import Foundation
 
-typealias SwitchCase = (case: String, code: String)
+typealias SwitchCase = (name: String, code: String)
+typealias EnumCase = (name: String, value: String?)
 private let defaultIndentation = 2
 
 extension String {
@@ -19,10 +20,18 @@ extension String {
     case newLine
     case line(string: String)
     case mark(title: String)
-    case `extension`(for: String, nestedTypes: [CodeSymbols])
-    case `enum`(name: String, cases: [String])
+    case snippet(type: SnippetType, for: String, nestedTypes: [CodeSymbols])
+    case `enum`(name: String, cases: [EnumCase])
     case `switch`(value: String, cases: [SwitchCase])
     case function(title: String, body: [CodeSymbols])
+    case forCycle(nestedTypes: [CodeSymbols])
+
+    //swiftlint:disable:next: nesting
+    enum SnippetType: String {
+      case `extension`
+      case `protocol`
+      case `class`
+    }
   }
 
   static func += (lhs: inout String, rhs: CodeSymbols) {
@@ -77,9 +86,12 @@ extension String.CodeSymbols {
     case .mark(let title):
       return "// MARK: - \(title)\n\n"
 
-      //Extension symbol
-    case .extension(let type, let nested):
-      var result = "extension \(type) {\n"
+      //Snippet symbol
+    case .snippet(let type, let target, let nested):
+      guard nested.count > 0 else {
+        return "\(type.rawValue) \(target) {}"
+      }
+      var result = "\(type.rawValue) \(target) {\n"
       for nestedSymbol in nested {
         if nestedSymbol.value == String.CodeSymbols.newLine.value {
           result += nestedSymbol
@@ -95,8 +107,12 @@ extension String.CodeSymbols {
       var result = "enum \(name) {\n"
 
       var casesString = ""
-      for caseName in cases {
-        casesString += "case \(caseName)\n"
+      for enumCase in cases {
+        if let value = enumCase.value {
+          casesString += "case \(enumCase.name) = \(value)\n"
+        } else {
+          casesString += "case \(enumCase.name)\n"
+        }
       }
 
       result += casesString.addIndentation()
@@ -108,7 +124,7 @@ extension String.CodeSymbols {
       var result = ""
       result += .line(string: "switch \(value) {")
       for caseValue in cases {
-        result += .line(string: "case .\(caseValue.case):")
+        result += .line(string: "case .\(caseValue.name):")
         result += .line(string: caseValue.code.addIndentation())
       }
       result += .line(string: "}")
@@ -123,10 +139,23 @@ extension String.CodeSymbols {
       }
       result += .line(string: "}")
       return result
+
+      //For symbol
+    case .forCycle(let nestedSymbols):
+      var result = "for style in styles {\n"
+      for nestedSymbol in nestedSymbols {
+        if nestedSymbol.value == String.CodeSymbols.newLine.value {
+          result += nestedSymbol
+        } else {
+          result += nestedSymbol.addIndentation()
+        }
+      }
+      result += String.CodeSymbols.line(string: "}")
+      return result
     }
   }
 
   func addIndentation(_ count: Int = defaultIndentation) -> String {
-    return self.value.addIndentation(count)
+    return self.value.addIndentation()
   }
 }

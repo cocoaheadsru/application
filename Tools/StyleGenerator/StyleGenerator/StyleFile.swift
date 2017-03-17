@@ -29,7 +29,6 @@ fileprivate extension StyleFile {
 
   static func makeStyleItems<ItemType: StyleItem>(from parameters: [StyleParameters]?) -> [ItemType] {
     guard let parameters = parameters else {
-      //TODO: Need to handle it
       print("parameters are empty")
       return []
     }

@@ -30,9 +30,8 @@ struct Color: StyleItem {
   // MARK: - Public
 
   init(_ parameters: StyleParameters) {
-    //TODO: Need to add handler with message
     self.name = parameters["name"] as! String
-    self.hex = parameters["hex"] as! String
+    self.hex = parameters["color"] as! String
   }
 }
 
@@ -47,13 +46,8 @@ struct Font: StyleItem {
   // MARK: - Public
 
   init(_ parameters: StyleParameters) {
-    //TODO: Need to add handler with message
-    self.font = parameters["font"] as! String
-    if let name = parameters["name"] as? String {
-      self.name = name
-    } else {
-      self.name = Font.generateName(from: self.font)
-    }
+    self.font = parameters["fontName"] as! String
+    self.name = Font.generateName(from: self.font)
   }
 
   // MARK: - Private

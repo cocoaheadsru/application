@@ -15,6 +15,7 @@ class ConsoleController {
     case no = ""
     case colors = "-c"
     case fonts = "-f"
+    case styles = "-s"
   }
 
   enum MessageOutputType {

@@ -13,12 +13,13 @@ enum FileType {
   case json
   case colors
   case fonts
+  case styles
 
   var type: String {
     switch self {
     case .json:
       return ".json"
-    case .colors, .fonts:
+    case .colors, .fonts, .styles:
       return ".swift"
     }
   }
@@ -89,6 +90,8 @@ func scriptMode() {
     generateColorsFile()
   } else if consoleController.inputedOption == .fonts {
     generateFontsFile()
+  } else if consoleController.inputedOption == .styles {
+    generateStylesFile()
   }
 }
 
@@ -156,6 +159,22 @@ func generateFontsFile() {
       try FileController.write(code: code, in: fontsFilePath)
       moveToNextStep()
 
+    } catch {
+      if let error = error as? DescribedError {
+        consoleController.printMessage(error.message, for: .error)
+      }
+    }
+  } else {
+    currentStep = .readJSON
+  }
+}
+
+func generateStylesFile() {
+  if let styleFile = styleFile {
+    do {
+      let stylesFilePath = try consoleController.pathFromInput(for: .styles)
+      let code = try generator.generateSwiftStylesFile(from: styleFile)
+      try FileController.write(code: code, in: stylesFilePath)
     } catch {
       if let error = error as? DescribedError {
         consoleController.printMessage(error.message, for: .error)
