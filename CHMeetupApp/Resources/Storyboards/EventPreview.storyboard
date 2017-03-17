@@ -129,20 +129,35 @@
                     <view key="view" contentMode="scaleToFill" id="78i-kI-jBc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qde-v0-bw8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qde-v0-bw8" firstAttribute="top" secondItem="78i-kI-jBc" secondAttribute="top" id="1ga-hO-ZUK"/>
+                            <constraint firstAttribute="trailing" secondItem="Qde-v0-bw8" secondAttribute="trailing" id="3Gk-Lv-j4U"/>
+                            <constraint firstItem="Qde-v0-bw8" firstAttribute="leading" secondItem="78i-kI-jBc" secondAttribute="leading" id="N9h-kH-pdW"/>
+                            <constraint firstItem="cEU-l5-eac" firstAttribute="top" secondItem="Qde-v0-bw8" secondAttribute="bottom" id="yqb-3c-Zvm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speech" id="lDz-fA-1XL"/>
+                    <connections>
+                        <outlet property="tableView" destination="Qde-v0-bw8" id="eBv-Ry-RWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="125"/>
+            <point key="canvasLocation" x="1508" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Slm-sm-lRM">
             <objects>
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

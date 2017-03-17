@@ -16,10 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-0k-9cU">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-0k-9cU">
                         <rect key="frame" x="24" y="24" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="KWi-m9-opF"/>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah">
-                                <rect key="frame" x="0.0" y="29" width="272" height="41"/>
+                                <rect key="frame" x="0.0" y="25" width="272" height="45"/>
                                 <string key="text">«Как вложить в приложение
 минимум функций»</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,7 +70,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mEY-16-1la" firstAttribute="leading" secondItem="3ra-a3-6wB" secondAttribute="leading" id="FV7-rc-sXb"/>
-                            <constraint firstItem="QGv-Gf-1ah" firstAttribute="top" secondItem="mEY-16-1la" secondAttribute="bottom" constant="8" id="KDG-aw-7u9"/>
+                            <constraint firstItem="QGv-Gf-1ah" firstAttribute="top" secondItem="mEY-16-1la" secondAttribute="bottom" constant="4" id="KDG-aw-7u9"/>
                             <constraint firstAttribute="bottom" secondItem="QGv-Gf-1ah" secondAttribute="bottom" id="Koa-Pw-Y41"/>
                             <constraint firstAttribute="height" constant="70" id="N00-0k-k5l"/>
                             <constraint firstItem="QGv-Gf-1ah" firstAttribute="leading" secondItem="3ra-a3-6wB" secondAttribute="leading" id="ZJe-oA-qkY"/>
