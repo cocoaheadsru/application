@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpeakerTableViewCell: UITableViewCell {
+class SpeakerTableViewCell: PlateTableViewCell {
   @IBOutlet weak var backplateView: UIView! {
     didSet {
       backplateView.layer.cornerRadius = 4
@@ -57,5 +57,6 @@ class SpeakerTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    roundType = .all
   }
 }
