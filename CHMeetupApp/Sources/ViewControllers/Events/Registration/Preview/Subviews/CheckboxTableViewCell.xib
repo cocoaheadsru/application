@@ -20,36 +20,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-LS-xHm">
-                        <rect key="frame" x="16" y="11" width="100" height="21"/>
+                        <rect key="frame" x="16" y="11" width="288" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="8TR-aS-7QS"/>
-                            <constraint firstAttribute="width" constant="100" id="9Nj-DU-ojB"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsK-ZN-oIP">
-                        <rect key="frame" x="124" y="7" width="188" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Lis-Ye-D4E"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="flB-CI-xl7"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TsK-ZN-oIP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7J3-AU-G4V"/>
                     <constraint firstItem="F6M-LS-xHm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="8Pt-BH-FHq"/>
-                    <constraint firstAttribute="trailing" secondItem="TsK-ZN-oIP" secondAttribute="trailing" constant="8" id="aOL-Uz-wkg"/>
-                    <constraint firstItem="TsK-ZN-oIP" firstAttribute="leading" secondItem="F6M-LS-xHm" secondAttribute="trailing" constant="8" id="pCi-bb-ztM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="F6M-LS-xHm" secondAttribute="trailing" constant="8" id="UwC-qK-lQq"/>
                     <constraint firstItem="F6M-LS-xHm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qjo-aH-Og2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="TsK-ZN-oIP" id="clU-zO-6gT"/>
                 <outlet property="label" destination="F6M-LS-xHm" id="beO-Rs-37Q"/>
             </connections>
         </tableViewCell>

@@ -32,8 +32,8 @@ class RegistrationPreviewViewController: UIViewController {
   @IBOutlet weak var registrationButton: UIButton! {
     didSet {
       registrationButton.setTitle("registration".localized, for: .normal)
-      registrationButton.backgroundColor = UIColor(red: 0.843, green: 0.243, blue: 0.412, alpha: 1.00)
       registrationButton.setTitleColor(UIColor.white, for: .normal)
+      registrationButton.backgroundColor = UIColor(.red)
     }
   }
 

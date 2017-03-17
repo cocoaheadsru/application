@@ -20,33 +20,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcX-Xy-U9y">
-                        <rect key="frame" x="16" y="11" width="100" height="21"/>
+                        <rect key="frame" x="16" y="11" width="288" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="A5W-yG-aQW"/>
                             <constraint firstAttribute="height" constant="21" id="Vjm-h7-Dt7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW9-hp-7Oj">
-                        <rect key="frame" x="124" y="6" width="188" height="30"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="u6v-kX-RzX"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dcX-Xy-U9y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DpP-0E-2ou"/>
                     <constraint firstItem="dcX-Xy-U9y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="aFd-QT-dWu"/>
-                    <constraint firstItem="FW9-hp-7Oj" firstAttribute="leading" secondItem="dcX-Xy-U9y" secondAttribute="trailing" constant="8" id="jbr-JL-wZA"/>
-                    <constraint firstItem="FW9-hp-7Oj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mRW-MB-8Zn"/>
-                    <constraint firstAttribute="trailing" secondItem="FW9-hp-7Oj" secondAttribute="trailing" constant="8" id="nfE-fw-DPr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dcX-Xy-U9y" secondAttribute="trailing" constant="8" id="pEh-Ub-rV0"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="FW9-hp-7Oj" id="ard-me-LR6"/>
                 <outlet property="label" destination="dcX-Xy-U9y" id="QqH-3F-QAF"/>
             </connections>
         </tableViewCell>

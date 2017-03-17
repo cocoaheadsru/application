@@ -79,23 +79,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90y-M9-FTz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOB-UE-nDI">
-                                <rect key="frame" x="160" y="318.5" width="55" height="30"/>
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Yx-u6-x4R"/>
+                                </constraints>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <segue destination="elZ-XF-SfV" kind="show" id="Jfr-Nr-WbA"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90y-M9-FTz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XOB-UE-nDI" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="3LO-7F-yhs"/>
+                            <constraint firstItem="YKx-vm-lWp" firstAttribute="top" secondItem="XOB-UE-nDI" secondAttribute="bottom" id="968-Qe-upr"/>
+                            <constraint firstAttribute="trailing" secondItem="XOB-UE-nDI" secondAttribute="trailing" id="9IB-t4-0hO"/>
                             <constraint firstItem="90y-M9-FTz" firstAttribute="top" secondItem="r5D-Tm-NHY" secondAttribute="top" id="C1c-BM-Cpi"/>
-                            <constraint firstItem="XOB-UE-nDI" firstAttribute="centerY" secondItem="r5D-Tm-NHY" secondAttribute="centerY" id="XQu-lp-RDb"/>
-                            <constraint firstItem="XOB-UE-nDI" firstAttribute="centerX" secondItem="r5D-Tm-NHY" secondAttribute="centerX" id="cD0-yT-MPp"/>
                             <constraint firstItem="YKx-vm-lWp" firstAttribute="top" secondItem="90y-M9-FTz" secondAttribute="bottom" id="fM9-Bi-rIt"/>
                             <constraint firstItem="90y-M9-FTz" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="ufN-5h-3B9"/>
                             <constraint firstAttribute="trailing" secondItem="90y-M9-FTz" secondAttribute="trailing" id="xkT-RF-f4l"/>
@@ -103,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registration Preview" id="CpT-Wp-dsl"/>
                     <connections>
+                        <outlet property="registrationButton" destination="XOB-UE-nDI" id="3rv-3F-2mO"/>
                         <outlet property="tableView" destination="90y-M9-FTz" id="2J7-cp-84x"/>
                     </connections>
                 </viewController>
