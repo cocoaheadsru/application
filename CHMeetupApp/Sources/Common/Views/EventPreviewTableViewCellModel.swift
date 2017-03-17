@@ -22,6 +22,6 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
-    cell.isEnabledForRegistration = (event.startDate.isPased == false)
+    cell.isEnabledForRegistration = (event.startDate.isPassed == false)
   }
 }

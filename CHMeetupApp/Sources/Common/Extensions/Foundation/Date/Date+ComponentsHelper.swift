@@ -19,7 +19,7 @@ extension Date {
     return todayYear == dateYaar
   }
 
-  var isPased: Bool {
+  var isPassed: Bool {
     return (self.isLater(then: Date()) == false)
   }
 }
