@@ -46,17 +46,23 @@ class ParticipantsCollectionView: UIView {
       let imageView = UIImageView()
       imageView.clipsToBounds = true
       imageView.contentMode = .scaleAspectFill
-      imageView.layer.borderWidth = viewHeight * 0.05 // borderWidth = 5% of view height
       imageView.layer.cornerRadius = viewHeight / 2 // cornerRadius = 50% of view height
-      imageView.layer.borderColor = borderColor
+      imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
+
+      let border = CAShapeLayer()
+      border.frame = imageView.bounds
+      border.lineWidth = (viewHeight * 0.1).round(0.5) //borderWidth = 5% of view height x2
+      border.path = UIBezierPath(ovalIn: border.bounds).cgPath
+      border.strokeColor = UIColor.white.cgColor
+      border.fillColor = UIColor.clear.cgColor
+      imageView.layer.addSublayer(border)
 
       if (xImageView + viewHeight) <= viewWidth {
-        imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
         imageView.image = image
 
         if leadingEdgeSecondImageView > viewWidth && imagesCollection.count > index {
-          imageView.layer.borderColor = UIColor.clear.cgColor
-          imageView.image = UIImage(named: "img_template_unknown")
+          border.strokeColor = UIColor.clear.cgColor
+          imageView.image = #imageLiteral(resourceName: "img_template_unknown")
         }
 
         self.addSubview(imageView)
