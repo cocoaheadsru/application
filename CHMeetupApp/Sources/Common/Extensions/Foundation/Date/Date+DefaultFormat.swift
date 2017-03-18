@@ -19,7 +19,7 @@ extension Date {
 
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = dateFormatString
-
+    dateFormatter.locale = Bundle.main.locale
     return dateFormatter.string(from: self)
   }
 }
