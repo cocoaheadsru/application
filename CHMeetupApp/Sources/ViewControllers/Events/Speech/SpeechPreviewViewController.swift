@@ -12,30 +12,36 @@ class SpeechPreviewViewController: UIViewController, UITableViewDelegate, UITabl
 
   @IBOutlet weak var tableView: UITableView! {
     didSet {
-      tableView.delegate = self
-      tableView.dataSource = self
-      tableView.registerNib(for: SpeakerTableViewCell.self)
-      tableView.backgroundColor = UIColor(red: 0.922, green: 0.929, blue: 0.929, alpha: 1.00)
+      tableView.delegate            = self
+      tableView.dataSource          = self
+      tableView.backgroundColor     = UIColor.clear
+      tableView.rowHeight           = UITableViewAutomaticDimension
+      tableView.estimatedRowHeight  = 260
+      tableView.registerNib(for: SpeachPreviewTableViewCell.self)
     }
   }
   override func viewDidLoad() {
     super.viewDidLoad()
 
     title = "Speech".localized
-    view.backgroundColor = UIColor(red: 0.922, green: 0.929, blue: 0.929, alpha: 1.00)
+    view.backgroundColor = UIColor(.lightGray)
   }
 
   // MARK: - UITableViewDelegate
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 260
-  }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 1
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCell(for: indexPath) as SpeakerTableViewCell
+    let model = SpeachPreviewTableViewCellModel(firstName: "Александр",
+                                                lastName: "Зимин",
+                                                userPhoto: Data(),
+                                                speakerDescription: "Cоздатель печально известного проекта Motivate Me",
+                                                topic: "Как вложить в приложение минимум функций",
+                                                speachDescription: "Опыт работы с кофаундерами Активитис и прочие анальные боли")
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model) as? SpeachPreviewTableViewCell
+    return cell!
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
