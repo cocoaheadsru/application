@@ -16,16 +16,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtU-OR-Odo">
-                    <rect key="frame" x="16" y="24.5" width="42" height="21"/>
+                    <rect key="frame" x="16" y="39.5" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="GtU-OR-Odo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Hws-pt-miT"/>
                 <constraint firstItem="GtU-OR-Odo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="jzi-H1-sa2"/>
+                <constraint firstAttribute="bottom" secondItem="GtU-OR-Odo" secondAttribute="bottom" constant="10" id="qI6-7E-Lk3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

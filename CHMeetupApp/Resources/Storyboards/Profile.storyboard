@@ -196,7 +196,7 @@
         <!--Give a Speech-->
         <scene sceneID="UYl-eR-dga">
             <objects>
-                <viewController storyboardIdentifier="GiveSpeechViewController" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GiveSpeechViewController" hidesBottomBarWhenPushed="YES" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5m8-NS-nLl"/>
                         <viewControllerLayoutGuide type="bottom" id="ZRv-Xe-9jk"/>

@@ -8,11 +8,12 @@
 
 import UIKit
 
-class GiveSpeechViewController: UIViewController, UITableViewDataSource {
+class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.registerNib(for: TextFieldPlateTableViewCell.self)
+      tableView.registerNib(for: TextViewPlateTableViewCell.self)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -33,7 +34,8 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // keyboardDelegate = self
+
+    keyboardDelegate = self
     setupGestureRecognizer()
 
     displayCollection = GiveSpeechDisplayCollection()
@@ -75,6 +77,19 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource {
     return cell
   }
 
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return displayCollection.height(for: indexPath)
+  }
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return displayCollection.headerHeight(for: section)
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
+
+    return header
+  }
 }
 
 //// MARK: - UITextFieldDelegate
@@ -87,29 +102,27 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource {
 //    return true
 //  }
 //}
-//
-//// MARK: - KeyboardHandlerDelegate
-//extension GiveSpeechViewController: KeyboardHandlerDelegate {
-//  func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
-//
-//    var scrollViewContnetInsets = scrollView.contentInset
-//    var indicatorContentInsets = scrollView.scrollIndicatorInsets
-//
-//    switch state {
-//    case .frameChanged:
-//      scrollViewContnetInsets.bottom = info.endFrame.height
-//      indicatorContentInsets.bottom = info.endFrame.height
-//    case .opened:
-//      scrollView.isScrollEnabled = true
-//      scrollViewContnetInsets.bottom = info.endFrame.height
-//      indicatorContentInsets.bottom = info.endFrame.height
-//    case .hidden:
-//      scrollView.isScrollEnabled = false
-//      scrollViewContnetInsets.bottom = 0
-//      indicatorContentInsets.bottom = 0
-//    }
-//
-//    scrollView.contentInset = scrollViewContnetInsets
-//    scrollView.scrollIndicatorInsets = indicatorContentInsets
-//  }
-//}
+
+// MARK: - KeyboardHandlerDelegate
+extension GiveSpeechViewController: KeyboardHandlerDelegate {
+  func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
+
+    var scrollViewContnetInsets = tableView.contentInset
+    var indicatorContentInsets = tableView.scrollIndicatorInsets
+
+    switch state {
+    case .frameChanged:
+      scrollViewContnetInsets.bottom = info.endFrame.height
+      indicatorContentInsets.bottom = info.endFrame.height
+    case .opened:
+      scrollViewContnetInsets.bottom = info.endFrame.height
+      indicatorContentInsets.bottom = info.endFrame.height
+    case .hidden:
+      scrollViewContnetInsets.bottom = 0
+      indicatorContentInsets.bottom = 0
+    }
+
+    tableView.contentInset = scrollViewContnetInsets
+    tableView.scrollIndicatorInsets = indicatorContentInsets
+  }
+}

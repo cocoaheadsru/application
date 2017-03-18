@@ -12,11 +12,13 @@ class DefaultTableHeaderView: UITableViewHeaderFooterView {
 
   @IBOutlet var headerLabel: UILabel! {
     didSet {
-
+      headerLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
+      headerLabel.textColor = UIColor(.gray)
     }
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    contentView.backgroundColor = UIColor(.lightGray).withAlphaComponent(0.8)
   }
 }

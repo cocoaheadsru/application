@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextViewPlateTableViewCell: UITableViewCell {
+class TextViewPlateTableViewCell: PlateTableViewCell {
 
   @IBOutlet var textView: TextViewWithPlaceholder!
 
