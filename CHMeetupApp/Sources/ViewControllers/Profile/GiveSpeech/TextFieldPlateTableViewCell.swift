@@ -9,17 +9,12 @@
 import UIKit
 
 class TextFieldPlateTableViewCell: PlateTableViewCell {
-
   @IBOutlet var textField: UITextField!
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
+  var valueChanged: ((String) -> Void)?
+  var returnPressed: ((String) -> Void)?
 
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
+  @IBAction func textFieldTextChanged(_ sender: UITextField) {
+    valueChanged?(sender.text ?? "")
   }
 }

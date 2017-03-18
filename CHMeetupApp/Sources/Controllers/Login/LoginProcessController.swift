@@ -19,7 +19,6 @@ class LoginProcessController {
       }
     }
     get {
-      return true
       return UserPreferencesEntity.value.isLoggedIn
     }
   }

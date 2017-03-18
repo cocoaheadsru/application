@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GiveSpeechDisplayCollection: DisplayCollection {
+class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
   enum `Type` {
     case textField
     case textView
@@ -16,6 +16,11 @@ class GiveSpeechDisplayCollection: DisplayCollection {
 
   var sections: [Type] = [.textField,
                           .textView]
+
+  private(set) var nameText = ""
+  fileprivate(set) var descriptionText = ""
+
+  private var textView: UITextView?
 
   var numberOfSections: Int {
     return sections.count
@@ -26,11 +31,18 @@ class GiveSpeechDisplayCollection: DisplayCollection {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    switch sections[indexPath.section] {
+    let type = sections[indexPath.section]
+    switch type {
     case .textField:
-      return TextFieldPlateTableViewCellModel(placeholder: "Название".localized, textFieldDelegate: nil)
+      return TextFieldPlateTableViewCellModel(placeholder: "Название".localized) { [weak self] value in
+        self?.nameText = value
+      }
     case .textView:
-      return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized, textFieldDelegate: nil)
+      return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized,
+                                             textViewDelegate: self) { [weak self] textView in
+        // For future purpose
+        self?.textView = textView
+      }
     }
   }
 
@@ -48,5 +60,11 @@ class GiveSpeechDisplayCollection: DisplayCollection {
     case .textField, .textView:
       return 40
     }
+  }
+}
+
+extension GiveSpeechDisplayCollection: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    descriptionText = textView.text
   }
 }

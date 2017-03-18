@@ -8,10 +8,13 @@
 
 import UIKit
 
+private let bottomMargin: CGFloat = 8
+
 class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
+      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.registerNib(for: TextFieldPlateTableViewCell.self)
       tableView.registerNib(for: TextViewPlateTableViewCell.self)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
@@ -21,16 +24,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   var displayCollection: GiveSpeechDisplayCollection!
 
   @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
-//  @IBOutlet weak var titleLabel: UILabel!
-//  @IBOutlet weak var titleTextField: UITextField!
-//  @IBOutlet weak var descriptionTextView: TextViewWithPlaceholder! {
-//    didSet {
-//      descriptionTextView.layer.cornerRadius  = 5
-//      descriptionTextView.layer.borderWidth   = 1
-//      descriptionTextView.layer.borderColor   = UIColor.lightGray.withAlphaComponent(0.3).cgColor
-//      descriptionTextView.placeholder         = "placeholder"
-//    }
-//  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,6 +45,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
+    print(displayCollection.nameText, displayCollection.descriptionText)
     // Do stuff here ...
   }
 
@@ -92,17 +86,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 }
 
-//// MARK: - UITextFieldDelegate
-//extension GiveSpeechViewController {
-//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//    if textField == titleTextField {
-//      descriptionTextView.becomeFirstResponder()
-//      return false
-//    }
-//    return true
-//  }
-//}
-
 // MARK: - KeyboardHandlerDelegate
 extension GiveSpeechViewController: KeyboardHandlerDelegate {
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
@@ -111,11 +94,8 @@ extension GiveSpeechViewController: KeyboardHandlerDelegate {
     var indicatorContentInsets = tableView.scrollIndicatorInsets
 
     switch state {
-    case .frameChanged:
-      scrollViewContnetInsets.bottom = info.endFrame.height
-      indicatorContentInsets.bottom = info.endFrame.height
-    case .opened:
-      scrollViewContnetInsets.bottom = info.endFrame.height
+    case .frameChanged, .opened:
+      scrollViewContnetInsets.bottom = info.endFrame.height + bottomMargin
       indicatorContentInsets.bottom = info.endFrame.height
     case .hidden:
       scrollViewContnetInsets.bottom = 0

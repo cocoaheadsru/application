@@ -10,12 +10,12 @@ import UIKit
 
 struct TextFieldPlateTableViewCellModel {
   let placeholder: String
-  weak var textFieldDelegate: UITextFieldDelegate?
+  var valueChanged: ((String) -> Void)
 }
 
 extension TextFieldPlateTableViewCellModel: CellViewModelType {
   func setup(on cell: TextFieldPlateTableViewCell) {
     cell.textField.placeholder = placeholder
-    cell.textField.delegate = textFieldDelegate
+    cell.valueChanged = valueChanged
   }
 }

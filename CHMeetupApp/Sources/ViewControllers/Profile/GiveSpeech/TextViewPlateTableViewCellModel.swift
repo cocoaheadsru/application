@@ -10,12 +10,14 @@ import UIKit
 
 struct TextViewPlateTableViewCellModel {
   let placeholder: String
-  weak var textFieldDelegate: UITextViewDelegate?
+  weak var textViewDelegate: UITextViewDelegate?
+  var setupTextView: (UITextView) -> Void
 }
 
 extension TextViewPlateTableViewCellModel: CellViewModelType {
   func setup(on cell: TextViewPlateTableViewCell) {
     cell.textView.placeholder = placeholder
-    cell.textView.delegate = textFieldDelegate
+    cell.textView.delegate = textViewDelegate
+    setupTextView(cell.textView)
   }
 }
