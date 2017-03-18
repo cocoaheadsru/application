@@ -91,6 +91,12 @@
 		9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */; };
 		9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */; };
 		9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */; };
+		9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3767001E7D527000CC565B /* TextFieldPlateTableViewCell.swift */; };
+		9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3767011E7D527000CC565B /* TextFieldPlateTableViewCell.xib */; };
+		9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3767041E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift */; };
+		9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3767071E7D53E300CC565B /* GiveSpeechDisplayCollection.swift */; };
+		9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F37670A1E7DCC2200CC565B /* DefaultTableHeaderView.swift */; };
+		9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F37670C1E7DD8EB00CC565B /* DefaultTableHeaderView.xib */; };
 		9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */; };
 		9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A671E73E9530016CE0B /* ShadowView.swift */; };
 		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
@@ -237,6 +243,12 @@
 		9F30FFD01E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 		9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollection.swift; sourceTree = "<group>"; };
+		9F3767001E7D527000CC565B /* TextFieldPlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldPlateTableViewCell.swift; sourceTree = "<group>"; };
+		9F3767011E7D527000CC565B /* TextFieldPlateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldPlateTableViewCell.xib; sourceTree = "<group>"; };
+		9F3767041E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldPlateTableViewCellModel.swift; sourceTree = "<group>"; };
+		9F3767071E7D53E300CC565B /* GiveSpeechDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechDisplayCollection.swift; sourceTree = "<group>"; };
+		9F37670A1E7DCC2200CC565B /* DefaultTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableHeaderView.swift; sourceTree = "<group>"; };
+		9F37670C1E7DD8EB00CC565B /* DefaultTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultTableHeaderView.xib; sourceTree = "<group>"; };
 		9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarItems.swift"; sourceTree = "<group>"; };
 		9F487A671E73E9530016CE0B /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
@@ -597,6 +609,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F3767091E7D81F700CC565B /* DefaultHeader */,
 				32AA9BBC1E7A919600140413 /* ParticipantCollectionView */,
 				9F487A801E7417E50016CE0B /* LightButton */,
 				9F487A731E740D940016CE0B /* EventCell */,
@@ -838,6 +851,8 @@
 		22323F761E70C2BE00522E5C /* GiveSpeech */ = {
 			isa = PBXGroup;
 			children = (
+				9F3767061E7D53B000CC565B /* DisplayModel */,
+				9F3766FF1E7D523500CC565B /* Cells */,
 				22323F771E70C2BE00522E5C /* GiveSpeechViewController.swift */,
 			);
 			path = GiveSpeech;
@@ -1011,6 +1026,33 @@
 				9F30FFD71E71FEDB00EF85F5 /* DisplayCollection.swift */,
 			);
 			name = DisplayCollection;
+			sourceTree = "<group>";
+		};
+		9F3766FF1E7D523500CC565B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F3767001E7D527000CC565B /* TextFieldPlateTableViewCell.swift */,
+				9F3767041E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift */,
+				9F3767011E7D527000CC565B /* TextFieldPlateTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9F3767061E7D53B000CC565B /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F3767071E7D53E300CC565B /* GiveSpeechDisplayCollection.swift */,
+			);
+			name = DisplayModel;
+			sourceTree = "<group>";
+		};
+		9F3767091E7D81F700CC565B /* DefaultHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9F37670A1E7DCC2200CC565B /* DefaultTableHeaderView.swift */,
+				9F37670C1E7DD8EB00CC565B /* DefaultTableHeaderView.xib */,
+			);
+			name = DefaultHeader;
 			sourceTree = "<group>";
 		};
 		9F487A661E73E94B0016CE0B /* Shadow */ = {
@@ -1242,6 +1284,8 @@
 			files = (
 				9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */,
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
+				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
+				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				22323F9B1E70C2BE00522E5C /* ProfileNameCell.xib in Resources */,
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
@@ -1337,6 +1381,7 @@
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
+				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
@@ -1370,6 +1415,7 @@
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
+				9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
@@ -1389,7 +1435,9 @@
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
+				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
+				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
