@@ -13,6 +13,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource {
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.registerNib(for: TextFieldPlateTableViewCell.self)
+      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
 
