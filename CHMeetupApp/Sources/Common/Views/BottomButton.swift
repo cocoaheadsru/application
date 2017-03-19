@@ -16,11 +16,26 @@ class BottomButton: ActionButton {
     static var titleColor: UIColor = UIColor(.white)
   }
 
+  var bottomInsetsConstant: CGFloat = 0 {
+    didSet {
+      // Becuase it's bottom constaint, to go up it should be reversed
+      bottomConstraint.constant = -bottomInsetsConstant
+    }
+  }
+
+  private var bottomConstraint: NSLayoutConstraint!
+
   init(bindToView view: UIView) {
     super.init(frame: .zero)
 
     view.addSubview(self)
-    self.anchor(left: view.leftAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, heightConstant: Constants.height)
+    self.anchor(left: view.leftAnchor,
+                right: view.rightAnchor,
+                heightConstant: Constants.height)
+
+    bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    bottomConstraint.isActive = true
+
     setup()
   }
 
@@ -28,7 +43,7 @@ class BottomButton: ActionButton {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setup() {
+  private func setup() {
     backgroundColor = Constants.backgroundColor
     titleLabel?.font = Constants.titleFont
     setTitleColor(Constants.titleColor, for: .normal)
