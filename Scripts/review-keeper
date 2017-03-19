@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# How to use
+# Add run script with string below
+# bash Scripts/review-keeper xcode 300 100
+# Where xcode - mode, 300 - max count for insertions inside branch, 100 - inside commit
+
+# Set main variables
+# Script working mode: xcode or git hook
+MODE=$1
+MAX_RECOMMED_INSERTIONS_FOR_BRANCH=$2
+MAX_RECOMMED_INSERTIONS_FOR_COMMIT=$3
+
+# Function for parsing insertions and deletions
+PARSER() {
+  PARSET_TEXT=""
+  if [[ $1 == "COMMIT" ]]
+  then
+    COMMIT_CHANGES=$(git diff --shortstat)
+    PARSET_TEXT=$COMMIT_CHANGES
+  fi
+
+  if [[ $1 == "BRANCH" ]]
+  then
+    BRANCH_NAME=$(git symbolic-ref --short HEAD)
+    BRANCH_CHANGES=$(git diff --shortstat develop $BRANCH_NAME)
+    PARSET_TEXT=$BRANCH_CHANGES
+  fi
+
+  if [[ $PARSET_TEXT =~ (([0-9]{1,5}) insertions) ]]
+  then
+    INSERTIONS=${BASH_REMATCH[2]}
+  fi
+
+  if [[ $PARSET_TEXT =~ (([0-9]{1,5}) deletions) ]]
+  then
+    DELETIONS=${BASH_REMATCH[2]}
+  fi
+}
+
+PARSER COMMIT
+COMMIT_INSERTIONS=$INSERTIONS
+COMMIT_DELETIONS=$DELETIONS
+
+PARSER BRANCH
+BRANCH_INSERTIONS=$INSERTIONS
+BRANCH_DELETIONS=$DELETIONS
+
+if [[ $COMMIT_INSERTIONS -gt $MAX_RECOMMED_INSERTIONS_FOR_COMMIT ]]; then
+  if [[ $MODE == "xcode" ]]; then
+    echo warning: "Your uncommited changes too big: $COMMIT_INSERTIONS. Recommend value: $MAX_RECOMMED_INSERTIONS_FOR_COMMIT"
+  fi
+fi
+
+let "BRANCH_INSERTIONS=BRANCH_INSERTIONS+COMMIT_INSERTIONS"
+if [[ $BRANCH_INSERTIONS -gt $MAX_RECOMMED_INSERTIONS_FOR_BRANCH ]]; then
+  if [[ $MODE == "xcode" ]]; then
+    echo warning: "Your branch have $BRANCH_INSERTIONS insertions. Recommend value: $MAX_RECOMMED_INSERTIONS_FOR_BRANCH"
+  fi
+fi

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="440" id="KGk-i7-Jjw" customClass="SpeachPreviewTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="243.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-0k-9cU">
+                        <rect key="frame" x="24" y="24" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="8dR-0k-9cU" secondAttribute="height" id="uiW-HJ-qug"/>
+                            <constraint firstAttribute="width" constant="60" id="yg9-je-JAp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn">
+                        <rect key="frame" x="96" y="45" width="208" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah">
+                        <rect key="frame" x="24" y="100" width="272" height="41"/>
+                        <string key="text">«Как вложить в приложение
+минимум функций»</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-bd-o7k">
+                        <rect key="frame" x="24" y="157" width="272" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="xV8-fy-tO0"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3">
+                        <rect key="frame" x="24" y="174" width="272" height="54"/>
+                        <string key="text">Опыт работы с кофаундерами Активитис
+и прочие анальные боли</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="QGv-Gf-1ah" firstAttribute="top" secondItem="8dR-0k-9cU" secondAttribute="bottom" constant="16" id="1Ti-f5-n2N"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4ca-DU-4X3" secondAttribute="trailing" constant="16" id="BHd-19-DdI"/>
+                    <constraint firstItem="8dR-0k-9cU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="IPu-FA-U7k"/>
+                    <constraint firstItem="4ca-DU-4X3" firstAttribute="top" secondItem="gw9-bd-o7k" secondAttribute="bottom" constant="16" id="M4e-Lp-xuG"/>
+                    <constraint firstItem="gw9-bd-o7k" firstAttribute="top" secondItem="QGv-Gf-1ah" secondAttribute="bottom" constant="16" id="Nx5-um-rXc"/>
+                    <constraint firstItem="gw9-bd-o7k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="Oka-v0-1K1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4ca-DU-4X3" secondAttribute="bottom" priority="750" constant="16" id="Um2-Hb-YUd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="QGv-Gf-1ah" secondAttribute="trailing" constant="16" id="VcK-ak-jub"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ngV-SV-JRn" secondAttribute="trailing" constant="8" id="XSe-Fr-8G4"/>
+                    <constraint firstItem="ngV-SV-JRn" firstAttribute="leading" secondItem="8dR-0k-9cU" secondAttribute="trailing" constant="12" id="YTk-VQ-wdq"/>
+                    <constraint firstItem="ngV-SV-JRn" firstAttribute="centerY" secondItem="8dR-0k-9cU" secondAttribute="centerY" id="e8i-lC-K6h"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gw9-bd-o7k" secondAttribute="trailing" constant="16" id="gWH-S2-rQ6"/>
+                    <constraint firstItem="QGv-Gf-1ah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="idP-Nf-dwV"/>
+                    <constraint firstItem="8dR-0k-9cU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="omW-vP-XhL"/>
+                    <constraint firstItem="4ca-DU-4X3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="p7c-GD-e2a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="8dR-0k-9cU" id="lvM-Js-J5d"/>
+                <outlet property="fullNameLabel" destination="ngV-SV-JRn" id="JlF-1h-mAX"/>
+                <outlet property="seporatorLineView" destination="gw9-bd-o7k" id="PRt-nb-v0P"/>
+                <outlet property="speachDescriptionLabel" destination="4ca-DU-4X3" id="jBH-S6-Tl8"/>
+                <outlet property="topicLabel" destination="QGv-Gf-1ah" id="bln-Gf-1f7"/>
+            </connections>
+            <point key="canvasLocation" x="47" y="165"/>
+        </tableViewCell>
+    </objects>
+</document>

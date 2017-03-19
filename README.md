@@ -28,8 +28,8 @@ CocoaHeadsMeetupApp
     │   ├── Model                      # Logical structure of data
     │   │   ├── Entities               # Realm objects
     │   │   ├── Helpers
-    │   │   ├── PO                     # Plain objects ( `Struct`)
-    │   │   └── Runtime
+    │   │   └── PlainObjects           # Plain objects ( `Struct`)
+    │   │   
     │   │
     │   ├── ViewControllers
     │   │   ├── Profile                # Example: User profile stories

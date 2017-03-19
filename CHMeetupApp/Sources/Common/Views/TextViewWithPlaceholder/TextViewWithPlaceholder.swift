@@ -9,15 +9,19 @@
 import UIKit
 
 class TextViewWithPlaceholder: UITextView {
+  func updatePlacholderViewStyle() {
+    placeholderTextView.backgroundColor = UIColor.clear
+    placeholderTextView.font = self.font
+    placeholderTextView.textColor = self.textColor
+    placeholderTextView.isUserInteractionEnabled = false
+    placeholderTextView.alpha = 0.3
+    placeholderTextView.isEditable = false
+    placeholderTextView.isSelectable = false
+  }
+
   var placeholderTextView: UITextView! {
     didSet {
-      placeholderTextView.backgroundColor = UIColor.clear
-      placeholderTextView.font = self.font
-      placeholderTextView.textColor = self.textColor
-      placeholderTextView.isUserInteractionEnabled = false
-      placeholderTextView.alpha = 0.3
-      placeholderTextView.isEditable = false
-      placeholderTextView.isSelectable = false
+      updatePlacholderViewStyle()
     }
   }
 

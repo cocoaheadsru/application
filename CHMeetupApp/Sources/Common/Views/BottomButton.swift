@@ -29,8 +29,8 @@ class BottomButton: ActionButton {
     super.init(frame: .zero)
 
     view.addSubview(self)
-    anchor(leading: view.leftAnchor,
-           trailing: view.rightAnchor,
+    anchor(leading: view.leadingAnchor,
+           trailing: view.trailingAnchor,
            heightConstant: Constants.height)
 
     bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
