@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# How to use
+# Add run script with string below
+# bash Scripts/review-keeper xcode 300 100
+# Where xcode - mode, 300 - max count for insertions inside branch, 100 - inside commit
+
 # Set main variables
 # Script working mode: xcode or git hook
 MODE=$1
