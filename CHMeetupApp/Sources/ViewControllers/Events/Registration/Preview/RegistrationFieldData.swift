@@ -32,7 +32,7 @@ struct FormFieldItem {
     self.isRequired = field.required
     self.name = field.name
     self.type = field.type
-    self.fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, andType:field.type) }
+    self.fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType:field.type) }
   }
 }
 
@@ -42,10 +42,10 @@ struct FormFieldAnswer {
   var type: EventRegFormFieldType
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
-       andType type: EventRegFormFieldType) {
+         fieldType: EventRegFormFieldType) {
     self.id = answer.id
     self.value = answer.value
-    self.type = type
+    self.type = fieldType
   }
 }
 
