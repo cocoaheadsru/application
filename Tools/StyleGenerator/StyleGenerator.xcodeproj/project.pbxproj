@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9200871B1E75AAF8009945E3 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200871A1E75AAF8009945E3 /* FileController.swift */; };
+		92281BEE1E7E85A500D75135 /* StyleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92281BED1E7E85A500D75135 /* StyleAttributes.swift */; };
+		927134B61E7DF51F00F16322 /* ConsoleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AC1E7DF51F00F16322 /* ConsoleController.swift */; };
+		927134B71E7DF51F00F16322 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AD1E7DF51F00F16322 /* FileController.swift */; };
+		927134B81E7DF51F00F16322 /* String+Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134AF1E7DF51F00F16322 /* String+Markdown.swift */; };
+		927134B91E7DF51F00F16322 /* TemplateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134B11E7DF51F00F16322 /* TemplateGenerator.swift */; };
+		927134BB1E7DF51F00F16322 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134B41E7DF51F00F16322 /* Color.swift */; };
+		927134BD1E7DF69000F16322 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134BC1E7DF69000F16322 /* Font.swift */; };
+		927134BF1E7DF8AF00F16322 /* ColorsTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134BE1E7DF8AF00F16322 /* ColorsTemplate.swift */; };
+		927134C11E7DF8B900F16322 /* FontsTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C01E7DF8B900F16322 /* FontsTemplate.swift */; };
+		927134C31E7DF96100F16322 /* StylesTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C21E7DF96100F16322 /* StylesTemplate.swift */; };
+		927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */; };
 		92E9DA591E72111600BCB658 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA581E72111600BCB658 /* main.swift */; };
-		92E9DA601E72117400BCB658 /* ConsoleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA5F1E72117400BCB658 /* ConsoleController.swift */; };
-		92E9DA621E72128B00BCB658 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA611E72128B00BCB658 /* Generator.swift */; };
-		92E9DA641E721D2500BCB658 /* StyleFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA631E721D2500BCB658 /* StyleFile.swift */; };
-		92E9DA661E721DC700BCB658 /* StyleItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA651E721DC700BCB658 /* StyleItems.swift */; };
-		92E9DA6B1E72CFDE00BCB658 /* String+Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA6A1E72CFDE00BCB658 /* String+Markdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,14 +34,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9200871A1E75AAF8009945E3 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
+		92281BED1E7E85A500D75135 /* StyleAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleAttributes.swift; sourceTree = "<group>"; };
+		927134AC1E7DF51F00F16322 /* ConsoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleController.swift; sourceTree = "<group>"; };
+		927134AD1E7DF51F00F16322 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
+		927134AF1E7DF51F00F16322 /* String+Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Markdown.swift"; sourceTree = "<group>"; };
+		927134B11E7DF51F00F16322 /* TemplateGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateGenerator.swift; sourceTree = "<group>"; };
+		927134B41E7DF51F00F16322 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		927134BC1E7DF69000F16322 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		927134BE1E7DF8AF00F16322 /* ColorsTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsTemplate.swift; sourceTree = "<group>"; };
+		927134C01E7DF8B900F16322 /* FontsTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsTemplate.swift; sourceTree = "<group>"; };
+		927134C21E7DF96100F16322 /* StylesTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylesTemplate.swift; sourceTree = "<group>"; };
+		927134C41E7DFD0300F16322 /* InputParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InputParameters.json; sourceTree = "<group>"; };
+		927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelsFactory.swift; sourceTree = "<group>"; };
 		92E9DA551E72111600BCB658 /* StyleGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StyleGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E9DA581E72111600BCB658 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		92E9DA5F1E72117400BCB658 /* ConsoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleController.swift; sourceTree = "<group>"; };
-		92E9DA611E72128B00BCB658 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
-		92E9DA631E721D2500BCB658 /* StyleFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleFile.swift; sourceTree = "<group>"; };
-		92E9DA651E721DC700BCB658 /* StyleItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleItems.swift; sourceTree = "<group>"; };
-		92E9DA6A1E72CFDE00BCB658 /* String+Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Markdown.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +61,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		927134AA1E7DF51F00F16322 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				927134AB1E7DF51F00F16322 /* Controllers */,
+				927134AE1E7DF51F00F16322 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		927134AB1E7DF51F00F16322 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				927134AC1E7DF51F00F16322 /* ConsoleController.swift */,
+				927134AD1E7DF51F00F16322 /* FileController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		927134AE1E7DF51F00F16322 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				927134AF1E7DF51F00F16322 /* String+Markdown.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		927134B01E7DF51F00F16322 /* Generation */ = {
+			isa = PBXGroup;
+			children = (
+				927134B11E7DF51F00F16322 /* TemplateGenerator.swift */,
+				927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */,
+				927134B21E7DF51F00F16322 /* Models */,
+			);
+			path = Generation;
+			sourceTree = "<group>";
+		};
+		927134B21E7DF51F00F16322 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				927134B41E7DF51F00F16322 /* Color.swift */,
+				927134BC1E7DF69000F16322 /* Font.swift */,
+				92281BED1E7E85A500D75135 /* StyleAttributes.swift */,
+				927134C41E7DFD0300F16322 /* InputParameters.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		927134B51E7DF51F00F16322 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				927134BE1E7DF8AF00F16322 /* ColorsTemplate.swift */,
+				927134C01E7DF8B900F16322 /* FontsTemplate.swift */,
+				927134C21E7DF96100F16322 /* StylesTemplate.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		92E9DA4C1E72111600BCB658 = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				92E9DA581E72111600BCB658 /* main.swift */,
-				92E9DA5F1E72117400BCB658 /* ConsoleController.swift */,
-				9200871A1E75AAF8009945E3 /* FileController.swift */,
-				92E9DA611E72128B00BCB658 /* Generator.swift */,
-				92E9DA631E721D2500BCB658 /* StyleFile.swift */,
-				92E9DA651E721DC700BCB658 /* StyleItems.swift */,
-				92E9DA6A1E72CFDE00BCB658 /* String+Markdown.swift */,
+				927134B51E7DF51F00F16322 /* Templates */,
+				927134B01E7DF51F00F16322 /* Generation */,
+				927134AA1E7DF51F00F16322 /* Core */,
 			);
 			path = StyleGenerator;
 			sourceTree = "<group>";
@@ -163,7 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/NewStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" -c \"$STYLES_JSON_PATH\" > \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" -f \"$STYLES_JSON_PATH\" > \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" -s \"$STYLES_JSON_PATH\" > \"$STYLES_STYLE_PATH\"\n\n";
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/NewStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -172,13 +237,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E9DA621E72128B00BCB658 /* Generator.swift in Sources */,
+				927134BD1E7DF69000F16322 /* Font.swift in Sources */,
+				927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */,
+				927134C31E7DF96100F16322 /* StylesTemplate.swift in Sources */,
+				927134B71E7DF51F00F16322 /* FileController.swift in Sources */,
+				92281BEE1E7E85A500D75135 /* StyleAttributes.swift in Sources */,
+				927134B81E7DF51F00F16322 /* String+Markdown.swift in Sources */,
 				92E9DA591E72111600BCB658 /* main.swift in Sources */,
-				92E9DA601E72117400BCB658 /* ConsoleController.swift in Sources */,
-				9200871B1E75AAF8009945E3 /* FileController.swift in Sources */,
-				92E9DA6B1E72CFDE00BCB658 /* String+Markdown.swift in Sources */,
-				92E9DA641E721D2500BCB658 /* StyleFile.swift in Sources */,
-				92E9DA661E721DC700BCB658 /* StyleItems.swift in Sources */,
+				927134C11E7DF8B900F16322 /* FontsTemplate.swift in Sources */,
+				927134BF1E7DF8AF00F16322 /* ColorsTemplate.swift in Sources */,
+				927134B61E7DF51F00F16322 /* ConsoleController.swift in Sources */,
+				927134B91E7DF51F00F16322 /* TemplateGenerator.swift in Sources */,
+				927134BB1E7DF51F00F16322 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
