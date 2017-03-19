@@ -16,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="171.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pra-0W-9V8" customClass="TextViewWithPlaceholder" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="16" y="16" width="288" height="139.5"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pra-0W-9V8" customClass="TextViewWithPlaceholder" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="18" y="16" width="284" height="139.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="yes"/>
@@ -28,9 +28,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Pra-0W-9V8" secondAttribute="bottom" constant="8" id="Tno-ub-ig6"/>
-                    <constraint firstItem="Pra-0W-9V8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="fw0-n3-wqt"/>
+                    <constraint firstItem="Pra-0W-9V8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="fw0-n3-wqt"/>
                     <constraint firstItem="Pra-0W-9V8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="ulI-gF-qW9"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Pra-0W-9V8" secondAttribute="trailing" constant="8" id="ycU-GV-ukF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pra-0W-9V8" secondAttribute="trailing" constant="10" id="ycU-GV-ukF"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

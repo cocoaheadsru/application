@@ -9,7 +9,13 @@
 import UIKit
 
 class TextFieldPlateTableViewCell: PlateTableViewCell {
-  @IBOutlet var textField: UITextField!
+  @IBOutlet var textField: UITextField! {
+    didSet {
+      textField.textColor = UIColor(.darkGray)
+      textField.font = UIFont.appFont(.gothamPro(size: 16))
+      textField.returnKeyType = .continue
+    }
+  }
 
   var valueChanged: ((String) -> Void)?
   var returnPressed: ((String) -> Void)?

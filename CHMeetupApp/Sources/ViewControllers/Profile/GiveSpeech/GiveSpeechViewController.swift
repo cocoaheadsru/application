@@ -81,7 +81,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
-
+    header.headerLabel.text = displayCollection.headerTitle(for: section)
     return header
   }
 }

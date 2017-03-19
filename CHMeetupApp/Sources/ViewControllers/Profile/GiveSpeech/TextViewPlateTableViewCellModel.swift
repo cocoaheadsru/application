@@ -8,16 +8,16 @@
 
 import UIKit
 
-struct TextViewPlateTableViewCellModel {
+struct TextViewPlateTableViewCellModel: CellViewModelBridgeType {
   let placeholder: String
   weak var textViewDelegate: UITextViewDelegate?
-  var setupTextView: (UITextView) -> Void
+  var setupBridgeData: (UITextView) -> Void
 }
 
 extension TextViewPlateTableViewCellModel: CellViewModelType {
   func setup(on cell: TextViewPlateTableViewCell) {
     cell.textView.placeholder = placeholder
     cell.textView.delegate = textViewDelegate
-    setupTextView(cell.textView)
+    setupBridgeData(cell.textView)
   }
 }

@@ -9,5 +9,11 @@
 import UIKit
 
 class TextViewPlateTableViewCell: PlateTableViewCell {
-  @IBOutlet var textView: TextViewWithPlaceholder!
+  @IBOutlet var textView: TextViewWithPlaceholder! {
+    didSet {
+      textView.textColor = UIColor(.darkGray)
+      textView.font = UIFont.appFont(.gothamPro(size: 16))
+      textView.updatePlacholderViewStyle()
+    }
+  }
 }
