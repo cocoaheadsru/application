@@ -135,6 +135,11 @@
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */; };
+		AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */; };
+		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
+		AD4B5A801E7E6F230016187B /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7D1E7E6F230016187B /* HMAC.swift */; };
+		AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7E1E7E6F230016187B /* SHA1.swift */; };
+		AD4B5A821E7E6F230016187B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7F1E7E6F230016187B /* Utils.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -294,6 +299,11 @@
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
+		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
+		AD4B5A7D1E7E6F230016187B /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		AD4B5A7E1E7E6F230016187B /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		AD4B5A7F1E7E6F230016187B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -468,6 +478,8 @@
 		2231A5381E60E5030069A179 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				AD4B5A791E7E6CCE0016187B /* Int */,
+				AD4B5A761E7E6CAD0016187B /* Data */,
 				7DDDB7671E7D15AD002C5ECE /* Bundle */,
 				22323F101E70C0D500522E5C /* Date */,
 				221A8B871E685E72004E320D /* String */,
@@ -561,6 +573,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AD4B5A7C1E7E6F230016187B /* Encryption */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
@@ -1232,6 +1245,32 @@
 			path = CHMeetupAppTests;
 			sourceTree = "<group>";
 		};
+		AD4B5A761E7E6CAD0016187B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AD4B5A791E7E6CCE0016187B /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */,
+			);
+			path = Int;
+			sourceTree = "<group>";
+		};
+		AD4B5A7C1E7E6F230016187B /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B5A7D1E7E6F230016187B /* HMAC.swift */,
+				AD4B5A7E1E7E6F230016187B /* SHA1.swift */,
+				AD4B5A7F1E7E6F230016187B /* Utils.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1447,6 +1486,7 @@
 				9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */,
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
+				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
 				9F30FFCF1E71E87F00EF85F5 /* TemplateTableCellViewModel.swift in Sources */,
 				9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */,
@@ -1476,12 +1516,14 @@
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221CC3FC1E7B24A1004F0695 /* EventRegFormFieldPlainObject.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
+				AD4B5A801E7E6F230016187B /* HMAC.swift in Sources */,
 				9F3767121E7DDBBD00CC565B /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
+				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
@@ -1494,11 +1536,13 @@
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
+				AD4B5A821E7E6F230016187B /* Utils.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
+				AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
