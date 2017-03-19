@@ -8,16 +8,20 @@
 
 import UIKit
 
+protocol TextViewPlateTableViewCellModelDelegate: class {
+  func model(model: TextViewPlateTableViewCellModel, didLoadTextView textView: UITextView)
+}
+
 struct TextViewPlateTableViewCellModel {
   let placeholder: String
   weak var textViewDelegate: UITextViewDelegate?
-  var setupTextView: (UITextView) -> Void
+  weak var delegate: TextViewPlateTableViewCellModelDelegate?
 }
 
 extension TextViewPlateTableViewCellModel: CellViewModelType {
   func setup(on cell: TextViewPlateTableViewCell) {
     cell.textView.placeholder = placeholder
     cell.textView.delegate = textViewDelegate
-    setupTextView(cell.textView)
+    delegate?.model(model: self, didLoadTextView: cell.textView)
   }
 }
