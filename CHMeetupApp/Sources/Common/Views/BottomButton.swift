@@ -12,13 +12,15 @@ class BottomButton: ActionButton {
   private struct Constants {
     static var height: CGFloat = 50
     static var backgroundColor: UIColor = UIColor(.pink)
+    static var titleFont: UIFont = UIFont.appFont(.gothamProMedium(size: 15))
+    static var titleColor: UIColor = UIColor(.white)
   }
 
   init(bindToView view: UIView) {
     super.init(frame: .zero)
 
     view.addSubview(self)
-    self.anchor(left: view.leftAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, heightConstant: 44)
+    self.anchor(left: view.leftAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, heightConstant: Constants.height)
     setup()
   }
 
@@ -27,8 +29,8 @@ class BottomButton: ActionButton {
   }
 
   func setup() {
-    backgroundColor = UIColor(.pink)
-    titleLabel?.font = UIFont.appFont(.gothamProMedium(size: 15))
-    setTitleColor(UIColor(.white), for: .normal)
+    backgroundColor = Constants.backgroundColor
+    titleLabel?.font = Constants.titleFont
+    setTitleColor(Constants.titleColor, for: .normal)
   }
 }
