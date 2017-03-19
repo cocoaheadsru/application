@@ -105,13 +105,17 @@ class Server {
       }
 
       guard let data = data else {
-        completion(nil, .emptyResponse)
+        OperationQueue.main.addOperation {
+          completion(nil, .emptyResponse)
+        }
         return
       }
 
       let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
 
-      completion(jsonObject, nil)
+      OperationQueue.main.addOperation {
+        completion(jsonObject, nil)
+      }
     }
 
     loadSession.resume()
