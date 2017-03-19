@@ -28,22 +28,18 @@ class SpeechPreviewViewController: UIViewController, UITableViewDelegate, UITabl
   }
 
   // MARK: - UITableViewDelegate
-
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 1
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = SpeachPreviewTableViewCellModel(firstName: "Александр Александр Александр Александр Александр Александр",
+    let model = SpeachPreviewTableViewCellModel(firstName: "Александр",
                                                 lastName: "Зимин",
                                                 userPhoto: Data(),
-                                                topic: "Как вложить в приложение минимум функций Как вложить в приложение минимум функций Как вложить в приложение минимум",
-                                                speachDescription: "Опыт работы с кофаундерами Активитис и прочие анальные боли Опыт работы с кофаундерами Активитис и прочие анальные боли")
+                                                topic: "Как вложить в приложение минимум функций",
+                                                speachDescription: "Опыт работы с кофаундерами Активитис")
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model) as? SpeachPreviewTableViewCell
     return cell!
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("debug tap")
-  }
 }
