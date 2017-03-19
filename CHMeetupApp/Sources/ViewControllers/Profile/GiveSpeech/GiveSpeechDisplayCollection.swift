@@ -35,14 +35,16 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
     switch type {
     case .name:
       return TextFieldPlateTableViewCellModel(placeholder: "Название".localized,
-                                              textFieldDelegate: self) { [weak self] value in
+                                              textFieldDelegate: self,
+                                              valueChanged: { [weak self] value in
         self?.nameText = value
-      }
+      })
     case .description:
       return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized,
-                                             textViewDelegate: self) { [weak self] textView in
-                                              self?.textView = textView
-      }
+                                             textViewDelegate: self,
+                                             setupBridgeData: { [weak self] textView in
+        self?.textView = textView
+      })
     }
   }
 
@@ -80,14 +82,11 @@ extension GiveSpeechDisplayCollection: UITextViewDelegate {
 
 extension GiveSpeechDisplayCollection: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if let nameIndex = sections.index(of: .name), let descriptionIndex = sections.index(of: .description) {
-      if nameIndex < descriptionIndex {
-        textView?.becomeFirstResponder()
-        return false
-      }
-      return true
-    } else {
-      return true
+    if let nameIndex = sections.index(of: .name),
+      let descriptionIndex = sections.index(of: .description),
+      nameIndex < descriptionIndex {
+      textView?.becomeFirstResponder()
     }
+    return true
   }
 }
