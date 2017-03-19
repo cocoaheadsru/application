@@ -22,6 +22,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   var displayCollection: GiveSpeechDisplayCollection!
+  var bottomButton: BottomButton!
 
   @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
 
@@ -35,6 +36,9 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
     view.backgroundColor = UIColor(.lightGray)
     title = "Geve a speech".localized
+
+    bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
+    bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
   }
 
   func setupGestureRecognizer() {
@@ -92,17 +96,26 @@ extension GiveSpeechViewController: KeyboardHandlerDelegate {
 
     var scrollViewContnetInsets = tableView.contentInset
     var indicatorContentInsets = tableView.scrollIndicatorInsets
+    var buttonInsets: CGFloat = 0
 
     switch state {
     case .frameChanged, .opened:
-      scrollViewContnetInsets.bottom = info.endFrame.height + bottomMargin
-      indicatorContentInsets.bottom = info.endFrame.height
+      let scrollViewContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
+      scrollViewContnetInsets.bottom = scrollViewContentInsets
+      indicatorContentInsets.bottom = info.endFrame.height + bottomButton.frame.height
+      buttonInsets = info.endFrame.height
     case .hidden:
       scrollViewContnetInsets.bottom = 0
       indicatorContentInsets.bottom = 0
+      buttonInsets = 0
     }
 
     tableView.contentInset = scrollViewContnetInsets
     tableView.scrollIndicatorInsets = indicatorContentInsets
+
+    info.animate ({ [weak self] in
+      self?.bottomButton.bottomInsetsConstant = buttonInsets
+      self?.view.layoutIfNeeded()
+    })
   }
 }
