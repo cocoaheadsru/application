@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03374B071E7CBEAD00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B061E7CBEAD00CA298E /* SpeachPreviewTableViewCellModel.swift */; };
+		03374B1F1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */; };
+		03374B201E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */; };
+		03374B211E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
-		03C0313A1E7C75F800D41AB8 /* SpeachPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C031381E7C75F800D41AB8 /* SpeachPreviewTableViewCell.swift */; };
-		03C0313B1E7C75F800D41AB8 /* SpeachPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C031391E7C75F800D41AB8 /* SpeachPreviewTableViewCell.xib */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
 		221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F61E7B24A1004F0695 /* EventRegForm.swift */; };
@@ -173,10 +173,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03374B061E7CBEAD00CA298E /* SpeachPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
+		03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeachPreviewTableViewCell.xib; sourceTree = "<group>"; };
+		03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		03C031381E7C75F800D41AB8 /* SpeachPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCell.swift; sourceTree = "<group>"; };
-		03C031391E7C75F800D41AB8 /* SpeachPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeachPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
 		221CC3F61E7B24A1004F0695 /* EventRegForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegForm.swift; sourceTree = "<group>"; };
@@ -335,12 +335,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03C031371E7C75E300D41AB8 /* subviews */ = {
+		03374B1B1E7F20EA00CA298E /* subviews */ = {
 			isa = PBXGroup;
 			children = (
-				03374B061E7CBEAD00CA298E /* SpeachPreviewTableViewCellModel.swift */,
-				03C031381E7C75F800D41AB8 /* SpeachPreviewTableViewCell.swift */,
-				03C031391E7C75F800D41AB8 /* SpeachPreviewTableViewCell.xib */,
+				03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */,
+				03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */,
+				03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */,
 			);
 			path = subviews;
 			sourceTree = "<group>";
@@ -790,6 +790,7 @@
 			isa = PBXGroup;
 			children = (
 				22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */,
+				03374B1B1E7F20EA00CA298E /* subviews */,
 			);
 			path = EventPreview;
 			sourceTree = "<group>";
@@ -823,7 +824,6 @@
 			isa = PBXGroup;
 			children = (
 				22323F661E70C2BE00522E5C /* SpeechPreviewViewController.swift */,
-				03C031371E7C75E300D41AB8 /* subviews */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -1414,9 +1414,9 @@
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
+				03374B201E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
 				22323F9D1E70C2BE00522E5C /* ProfilePictureCell.xib in Resources */,
-				03C0313B1E7C75F800D41AB8 /* SpeachPreviewTableViewCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				22323FA51E70C51A00522E5C /* Localizable.strings in Resources */,
 				221F4F9C1E5C0B6C0009FD07 /* Assets.xcassets in Resources */,
@@ -1538,7 +1538,6 @@
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
-				03374B071E7CBEAD00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
@@ -1582,10 +1581,12 @@
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
 				AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
+				03374B211E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
+				03374B1F1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
@@ -1597,7 +1598,6 @@
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
 				22323F931E70C2BE00522E5C /* PastEventsDisplayCollection.swift in Sources */,
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
-				03C0313A1E7C75F800D41AB8 /* SpeachPreviewTableViewCell.swift in Sources */,
 				9F30FFD11E71E8B700EF85F5 /* TemplateCollectionCellViewModel.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
 				9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */,

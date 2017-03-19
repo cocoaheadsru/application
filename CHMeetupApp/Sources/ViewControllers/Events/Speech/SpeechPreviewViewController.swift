@@ -8,38 +8,12 @@
 
 import UIKit
 
-class SpeechPreviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SpeechPreviewViewController: UIViewController {
 
-  @IBOutlet weak var tableView: UITableView! {
-    didSet {
-      tableView.delegate            = self
-      tableView.dataSource          = self
-      tableView.backgroundColor     = UIColor.clear
-      tableView.rowHeight           = UITableViewAutomaticDimension
-      tableView.estimatedRowHeight  = 260
-      tableView.registerNib(for: SpeachPreviewTableViewCell.self)
-    }
-  }
   override func viewDidLoad() {
     super.viewDidLoad()
 
     title = "Speech".localized
-    view.backgroundColor = UIColor(.lightGray)
-  }
-
-  // MARK: - UITableViewDelegate
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = SpeachPreviewTableViewCellModel(firstName: "Александр",
-                                                lastName: "Зимин",
-                                                userPhoto: Data(),
-                                                topic: "Как вложить в приложение минимум функций",
-                                                speachDescription: "Опыт работы с кофаундерами Активитис")
-    let cell = tableView.dequeueReusableCell(for: indexPath, with: model) as? SpeachPreviewTableViewCell
-    return cell!
   }
 
 }
