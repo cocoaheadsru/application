@@ -25,16 +25,18 @@ class BottomButton: ActionButton {
 
   private var bottomConstraint: NSLayoutConstraint!
 
-  init(bindToView view: UIView) {
+  init(addingOnView view: UIView, title: String) {
     super.init(frame: .zero)
 
     view.addSubview(self)
-    self.anchor(left: view.leftAnchor,
-                right: view.rightAnchor,
-                heightConstant: Constants.height)
+    anchor(leading: view.leftAnchor,
+           trailing: view.rightAnchor,
+           heightConstant: Constants.height)
 
     bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
     bottomConstraint.isActive = true
+
+    setTitle(title, for: .normal)
 
     setup()
   }
