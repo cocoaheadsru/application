@@ -17,7 +17,6 @@ struct SpeachPreviewTableViewCellModel {
   var firstName: String
   var lastName: String
   var userPhoto: Data
-  var speakerDescription: String
   var topic: String
   var speachDescription: String
 }
@@ -27,8 +26,6 @@ extension SpeachPreviewTableViewCellModel: CellViewModelType {
 
     cell.avatarImageView.image        = UIImage(data: userPhoto)
     cell.fullNameLabel.text           = firstName + " " + lastName
-    cell.speakerDescriptionLabel.text = speakerDescription
-    cell.topicPreLabel.text           = "С темой доклада".localized
     cell.topicLabel.text              = "«" + topic + "»"
     cell.speachDescriptionLabel.text  = speachDescription
   }

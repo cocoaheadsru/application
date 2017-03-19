@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-0k-9cU">
@@ -26,59 +26,20 @@
                             <constraint firstAttribute="width" constant="60" id="yg9-je-JAp"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn">
-                        <rect key="frame" x="96" y="24" width="208" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="22" id="J2Z-bc-dJz"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn">
+                        <rect key="frame" x="96" y="24" width="208" height="60"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouJ-uh-wki">
-                        <rect key="frame" x="96" y="50" width="208" height="42"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="42" id="Mgv-tu-ZgI"/>
-                        </constraints>
-                        <string key="text">Cоздатель печально известного
-проекта Motivate Me</string>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah">
+                        <rect key="frame" x="24" y="100" width="272" height="72"/>
+                        <string key="text">«Как вложить в приложение
+минимум функций»</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ra-a3-6wB">
-                        <rect key="frame" x="24" y="108" width="272" height="70"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C темой доклада" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEY-16-1la">
-                                <rect key="frame" x="0.0" y="0.0" width="272" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hYS-q4-OoC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah">
-                                <rect key="frame" x="0.0" y="25" width="272" height="45"/>
-                                <string key="text">«Как вложить в приложение
-минимум функций»</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mEY-16-1la" firstAttribute="leading" secondItem="3ra-a3-6wB" secondAttribute="leading" id="FV7-rc-sXb"/>
-                            <constraint firstItem="QGv-Gf-1ah" firstAttribute="top" secondItem="mEY-16-1la" secondAttribute="bottom" constant="4" id="KDG-aw-7u9"/>
-                            <constraint firstAttribute="bottom" secondItem="QGv-Gf-1ah" secondAttribute="bottom" id="Koa-Pw-Y41"/>
-                            <constraint firstAttribute="height" constant="70" id="N00-0k-k5l"/>
-                            <constraint firstItem="QGv-Gf-1ah" firstAttribute="leading" secondItem="3ra-a3-6wB" secondAttribute="leading" id="ZJe-oA-qkY"/>
-                            <constraint firstItem="mEY-16-1la" firstAttribute="top" secondItem="3ra-a3-6wB" secondAttribute="top" id="bNH-ad-rOh"/>
-                            <constraint firstAttribute="trailing" secondItem="QGv-Gf-1ah" secondAttribute="trailing" id="pcR-9H-mc3"/>
-                            <constraint firstAttribute="trailing" secondItem="mEY-16-1la" secondAttribute="trailing" id="w3n-Gn-cc1"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-bd-o7k">
                         <rect key="frame" x="24" y="188" width="272" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,6 +49,9 @@
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3">
                         <rect key="frame" x="24" y="197" width="272" height="56.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="57" id="ZOR-yi-6GR"/>
+                        </constraints>
                         <string key="text">Опыт работы с кофаундерами Активитис
 и прочие анальные боли</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -97,24 +61,22 @@
                 </subviews>
                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="3ra-a3-6wB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="4Ng-4p-6fC"/>
-                    <constraint firstItem="ouJ-uh-wki" firstAttribute="top" secondItem="ngV-SV-JRn" secondAttribute="bottom" constant="4" id="5qH-lB-sYv"/>
+                    <constraint firstItem="QGv-Gf-1ah" firstAttribute="top" secondItem="8dR-0k-9cU" secondAttribute="bottom" constant="16" id="1Ti-f5-n2N"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4ca-DU-4X3" secondAttribute="trailing" constant="16" id="BHd-19-DdI"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ouJ-uh-wki" secondAttribute="trailing" constant="8" id="HVr-46-KKP"/>
                     <constraint firstItem="8dR-0k-9cU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="IPu-FA-U7k"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="3ra-a3-6wB" secondAttribute="trailing" constant="16" id="Kiz-Pk-OBU"/>
                     <constraint firstItem="4ca-DU-4X3" firstAttribute="top" secondItem="gw9-bd-o7k" secondAttribute="bottom" constant="8" id="M4e-Lp-xuG"/>
                     <constraint firstItem="ngV-SV-JRn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="Mld-sF-a4I"/>
+                    <constraint firstItem="gw9-bd-o7k" firstAttribute="top" secondItem="QGv-Gf-1ah" secondAttribute="bottom" constant="16" id="Nx5-um-rXc"/>
                     <constraint firstItem="gw9-bd-o7k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="Oka-v0-1K1"/>
-                    <constraint firstItem="3ra-a3-6wB" firstAttribute="top" secondItem="ouJ-uh-wki" secondAttribute="bottom" constant="16" id="Ttg-ZW-07U"/>
+                    <constraint firstItem="ngV-SV-JRn" firstAttribute="height" secondItem="8dR-0k-9cU" secondAttribute="height" id="Q8u-4L-BnN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="QGv-Gf-1ah" secondAttribute="trailing" constant="16" id="VcK-ak-jub"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ngV-SV-JRn" secondAttribute="trailing" constant="8" id="XSe-Fr-8G4"/>
                     <constraint firstAttribute="bottomMargin" secondItem="4ca-DU-4X3" secondAttribute="bottom" constant="8" id="YDX-pJ-PCk"/>
                     <constraint firstItem="ngV-SV-JRn" firstAttribute="leading" secondItem="8dR-0k-9cU" secondAttribute="trailing" constant="12" id="YTk-VQ-wdq"/>
-                    <constraint firstItem="gw9-bd-o7k" firstAttribute="top" secondItem="3ra-a3-6wB" secondAttribute="bottom" constant="10" id="Yn8-g7-8F8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gw9-bd-o7k" secondAttribute="trailing" constant="16" id="gWH-S2-rQ6"/>
+                    <constraint firstItem="QGv-Gf-1ah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="idP-Nf-dwV"/>
                     <constraint firstItem="8dR-0k-9cU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="omW-vP-XhL"/>
                     <constraint firstItem="4ca-DU-4X3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="p7c-GD-e2a"/>
-                    <constraint firstItem="ouJ-uh-wki" firstAttribute="leading" secondItem="8dR-0k-9cU" secondAttribute="trailing" constant="12" id="szA-Wy-i8g"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -122,9 +84,7 @@
                 <outlet property="fullNameLabel" destination="ngV-SV-JRn" id="JlF-1h-mAX"/>
                 <outlet property="seporatorLineView" destination="gw9-bd-o7k" id="PRt-nb-v0P"/>
                 <outlet property="speachDescriptionLabel" destination="4ca-DU-4X3" id="jBH-S6-Tl8"/>
-                <outlet property="speakerDescriptionLabel" destination="ouJ-uh-wki" id="q1Z-Kb-GLs"/>
                 <outlet property="topicLabel" destination="QGv-Gf-1ah" id="bln-Gf-1f7"/>
-                <outlet property="topicPreLabel" destination="mEY-16-1la" id="pG9-FO-hLS"/>
             </connections>
             <point key="canvasLocation" x="47" y="175"/>
         </tableViewCell>

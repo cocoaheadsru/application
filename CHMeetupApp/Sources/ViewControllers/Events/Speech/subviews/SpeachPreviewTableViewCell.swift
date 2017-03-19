@@ -24,20 +24,6 @@ class SpeachPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var speakerDescriptionLabel: UILabel! {
-    didSet {
-      speakerDescriptionLabel.font = UIFont.appFont(.systemFont(size: 14))
-      speakerDescriptionLabel.textColor = UIColor(.darkGray)
-    }
-  }
-
-  @IBOutlet var topicPreLabel: UILabel! {
-    didSet {
-      topicPreLabel.font = UIFont.appFont(.gothamPro(size: 15))
-      topicPreLabel.textColor = UIColor(.black)
-    }
-  }
-
   @IBOutlet var topicLabel: UILabel! {
     didSet {
       topicLabel.font = UIFont.appFont(.systemFont(size: 17))
