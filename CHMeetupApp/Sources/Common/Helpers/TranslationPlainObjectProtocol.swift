@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-protocol TranslationPlainObject {
+protocol PlainObjectTranslation {
   static func translate(of plainObjects: [PlainObjectType])
   static func addToRealm(plainObject: PlainObjectType)
 }

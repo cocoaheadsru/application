@@ -71,7 +71,7 @@ fileprivate extension PastEventsViewController {
       guard let list = list,
         error == nil else { return }
 
-      TranslationEventPlainObject.translate(of: list)
+      EventPlainObjectTranslation.translate(of: list)
       self.tableView.reloadData()
     })
   }

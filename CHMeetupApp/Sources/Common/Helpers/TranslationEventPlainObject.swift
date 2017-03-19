@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
-class TranslationEventPlainObject: TranslationPlainObject {
+class EventPlainObjectTranslation: PlainObjectTranslation {
 
   static func translate(of plainObjects: [PlainObjectType]) {
-    _ = plainObjects.map(addToRealm)
+    plainObjects.forEach(addToRealm)
   }
 
   static func addToRealm(plainObject: PlainObjectType) {
@@ -24,7 +24,6 @@ class TranslationEventPlainObject: TranslationPlainObject {
     event.title = pastEvent.title
     event.startDate = pastEvent.startDate
     event.endDate = pastEvent.endDate
-    event.photoURL = pastEvent.photoUrl
     event.descriptionText = pastEvent.description
 
     let place = PlaceEntity()
