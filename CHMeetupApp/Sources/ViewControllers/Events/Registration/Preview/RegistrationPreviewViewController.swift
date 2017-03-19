@@ -44,7 +44,7 @@ class RegistrationPreviewViewController: UIViewController {
     keyboardDelegate = self
 
     // FIXME: - Get test data from server
-    FormDataCollection.loadRegFromServer(with: 1, complitionBlock: { (form: EventRegFormPlainObject) in
+    RegistrationController.loadRegFromServer(with: 1, complitionBlock: { (form: EventRegFormPlainObject) in
       DispatchQueue.main.async {
         self.dataCollection = FormData(with: form)
         self.tableView.reloadData()

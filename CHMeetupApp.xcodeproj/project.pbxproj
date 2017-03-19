@@ -16,6 +16,7 @@
 		03374B181E7F11D100CA298E /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B0F1E7F11D100CA298E /* RadioTableViewCell.xib */; };
 		03374B191E7F11D100CA298E /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B101E7F11D100CA298E /* TextFieldTableViewCell.swift */; };
 		03374B1A1E7F11D100CA298E /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B111E7F11D100CA298E /* TextFieldTableViewCell.xib */; };
+		03374B241E7F246D00CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B231E7F246D00CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
@@ -188,6 +189,7 @@
 		03374B0F1E7F11D100CA298E /* RadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioTableViewCell.xib; sourceTree = "<group>"; };
 		03374B101E7F11D100CA298E /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		03374B111E7F11D100CA298E /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		03374B231E7F246D00CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
@@ -360,6 +362,14 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		03374B221E7F246200CA298E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				03374B231E7F246D00CA298E /* RegistrationController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		221A8B871E685E72004E320D /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +475,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				03374B221E7F246200CA298E /* Registration */,
 				22323F371E70C14300522E5C /* Factory */,
 				22323F391E70C14300522E5C /* Login */,
 				22323F3C1E70C14300522E5C /* Maps */,
@@ -829,11 +840,11 @@
 		22323F631E70C2BE00522E5C /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				22323F641E70C2BE00522E5C /* RegistrationPreviewViewController.swift */,
 				03374B081E7F11D100CA298E /* RegistrationFieldData.swift */,
 				03374B091E7F11D100CA298E /* RegistrationFormDataCollection.swift */,
 				03374B0A1E7F11D100CA298E /* RegistrationPreviewModel.swift */,
 				03374B0B1E7F11D100CA298E /* Subviews */,
-				22323F641E70C2BE00522E5C /* RegistrationPreviewViewController.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -1515,6 +1526,7 @@
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */,
+				03374B241E7F246D00CA298E /* RegistrationController.swift in Sources */,
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
