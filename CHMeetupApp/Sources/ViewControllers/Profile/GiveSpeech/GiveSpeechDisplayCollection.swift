@@ -42,9 +42,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
     case .description:
       return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized,
                                              textViewDelegate: self,
-                                             setupBridgeData: { [weak self] textView in
-        self?.textView = textView
-      })
+                                             delegate: self)
     }
   }
 
@@ -74,9 +72,13 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
   }
 }
 
-extension GiveSpeechDisplayCollection: UITextViewDelegate {
+extension GiveSpeechDisplayCollection: UITextViewDelegate, TextViewPlateTableViewCellModelDelegate {
   func textViewDidChange(_ textView: UITextView) {
     descriptionText = textView.text
+  }
+
+  func model(model: TextViewPlateTableViewCellModel, didLoadTextView textView: UITextView) {
+    self.textView = textView
   }
 }
 
@@ -86,6 +88,7 @@ extension GiveSpeechDisplayCollection: UITextFieldDelegate {
       let descriptionIndex = sections.index(of: .description),
       nameIndex < descriptionIndex {
       textView?.becomeFirstResponder()
+      return false
     }
     return true
   }

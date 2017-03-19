@@ -20,11 +20,6 @@ protocol CellViewModelType: CellViewAnyModelType {
   func setup(on cell: CellClass)
 }
 
-protocol CellViewModelBridgeType {
-  associatedtype BridgeData
-  var setupBridgeData: (BridgeData) -> Void { get set }
-}
-
 // From generic to runtime
 extension CellViewModelType {
   func cellClass() -> UIView.Type {
