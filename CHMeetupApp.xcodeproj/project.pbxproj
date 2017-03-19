@@ -10,6 +10,9 @@
 		03374B1F1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */; };
 		03374B201E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */; };
 		03374B211E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */; };
+		03374B2F1E7F2C0500CA298E /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B251E7F2C0500CA298E /* RegistrationFieldData.swift */; };
+		03374B301E7F2C0500CA298E /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B261E7F2C0500CA298E /* RegistrationFormDataCollection.swift */; };
+		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
@@ -180,6 +183,9 @@
 		03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeachPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
+		03374B251E7F2C0500CA298E /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
+		03374B261E7F2C0500CA298E /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
+		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
@@ -353,6 +359,14 @@
 			path = subviews;
 			sourceTree = "<group>";
 		};
+		03374B381E7F2C3100CA298E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				03374B391E7F2C3100CA298E /* RegistrationController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		221A8B871E685E72004E320D /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +472,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				03374B381E7F2C3100CA298E /* Registration */,
 				22323F371E70C14300522E5C /* Factory */,
 				22323F391E70C14300522E5C /* Login */,
 				22323F3C1E70C14300522E5C /* Maps */,
@@ -825,6 +840,8 @@
 		22323F631E70C2BE00522E5C /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				03374B251E7F2C0500CA298E /* RegistrationFieldData.swift */,
+				03374B261E7F2C0500CA298E /* RegistrationFormDataCollection.swift */,
 				22323F641E70C2BE00522E5C /* RegistrationPreviewViewController.swift */,
 			);
 			path = Preview;
@@ -1557,6 +1574,7 @@
 				221CC3FB1E7B24A1004F0695 /* EventRegFormFieldAnswerPlainObject.swift in Sources */,
 				221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
+				03374B301E7F2C0500CA298E /* RegistrationFormDataCollection.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
 				22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */,
@@ -1584,6 +1602,7 @@
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
+				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
@@ -1607,6 +1626,7 @@
 				4D6615981E7BE7A600EE77C4 /* ActionPlainObject.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
+				03374B2F1E7F2C0500CA298E /* RegistrationFieldData.swift in Sources */,
 				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,

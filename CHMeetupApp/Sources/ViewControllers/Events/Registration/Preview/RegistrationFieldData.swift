@@ -42,7 +42,7 @@ struct FormFieldAnswer {
   var type: EventRegFormFieldType
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
-         fieldType: EventRegFormFieldType) {
+       fieldType: EventRegFormFieldType) {
     self.id = answer.id
     self.value = answer.value
     self.type = fieldType

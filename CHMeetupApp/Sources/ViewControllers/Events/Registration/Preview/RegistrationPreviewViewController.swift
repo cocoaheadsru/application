@@ -12,20 +12,7 @@ class RegistrationPreviewViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView! {
     didSet {
-      tableView.delegate = self
       tableView.dataSource = self
-
-      let textFieldCellNib = TextFieldTableViewCell.nib
-      let textFieldCellIdentifier = TextFieldTableViewCell.identifier
-      tableView.register(textFieldCellNib, forCellReuseIdentifier: textFieldCellIdentifier)
-
-      let radioCellNib = RadioTableViewCell.nib
-      let radioCellIdentifier = RadioTableViewCell.identifier
-      tableView.register(radioCellNib, forCellReuseIdentifier: radioCellIdentifier)
-
-      let checkboxCellNib = CheckboxTableViewCell.nib
-      let checkboxCellIdentifier = CheckboxTableViewCell.identifier
-      tableView.register(checkboxCellNib, forCellReuseIdentifier: checkboxCellIdentifier)
     }
   }
 
@@ -57,12 +44,6 @@ class RegistrationPreviewViewController: UIViewController {
   }
 }
 
-// MARK: - UITableViewDelegate
-extension RegistrationPreviewViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-  }
-}
-
 // MARK: - UITableViewDataSource
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
@@ -79,10 +60,9 @@ extension RegistrationPreviewViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-    let item = dataCollection?.sections[indexPath.section].fieldAnswers[indexPath.row]
-    let cell = tableView.dequeueReusableCell(with: item!, atIndexPath: indexPath)
-
+    // FIXME: - Just for test
+    let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
+    cell.textLabel?.text = dataCollection?.sections[indexPath.section].fieldAnswers[indexPath.row].value
     return cell
   }
 
@@ -96,10 +76,7 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
     var indicatorContentInsets = tableView.scrollIndicatorInsets
 
     switch state {
-    case .frameChanged:
-      tableViewContnetInsets.bottom = info.endFrame.height
-      indicatorContentInsets.bottom = info.endFrame.height
-    case .opened:
+    case .frameChanged, .opened:
       tableViewContnetInsets.bottom = info.endFrame.height
       indicatorContentInsets.bottom = info.endFrame.height
     case .hidden:
