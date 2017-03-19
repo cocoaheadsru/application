@@ -148,9 +148,6 @@
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
 		AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
-		AD4B5A801E7E6F230016187B /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7D1E7E6F230016187B /* HMAC.swift */; };
-		AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7E1E7E6F230016187B /* SHA1.swift */; };
-		AD4B5A821E7E6F230016187B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7F1E7E6F230016187B /* Utils.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
@@ -323,9 +320,6 @@
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
-		AD4B5A7D1E7E6F230016187B /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
-		AD4B5A7E1E7E6F230016187B /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
-		AD4B5A7F1E7E6F230016187B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -605,7 +599,6 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AD4B5A7C1E7E6F230016187B /* Encryption */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
@@ -1342,16 +1335,6 @@
 			path = Int;
 			sourceTree = "<group>";
 		};
-		AD4B5A7C1E7E6F230016187B /* Encryption */ = {
-			isa = PBXGroup;
-			children = (
-				AD4B5A7D1E7E6F230016187B /* HMAC.swift */,
-				AD4B5A7E1E7E6F230016187B /* SHA1.swift */,
-				AD4B5A7F1E7E6F230016187B /* Utils.swift */,
-			);
-			path = Encryption;
-			sourceTree = "<group>";
-		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1617,7 +1600,6 @@
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221CC3FC1E7B24A1004F0695 /* EventRegFormFieldPlainObject.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
-				AD4B5A801E7E6F230016187B /* HMAC.swift in Sources */,
 				9F3767121E7DDBBD00CC565B /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */,
@@ -1638,14 +1620,12 @@
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
-				AD4B5A821E7E6F230016187B /* Utils.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
-				AD4B5A811E7E6F230016187B /* SHA1.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				03374B211E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
