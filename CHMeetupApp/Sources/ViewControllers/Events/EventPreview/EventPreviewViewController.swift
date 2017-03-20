@@ -9,37 +9,28 @@
 import UIKit
 
 class EventPreviewViewController: UIViewController {
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.estimatedRowHeight = 100
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.backgroundColor = UIColor.clear
+    }
+  }
+  var bottomButton: BottomButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     title = "Event Preview".localized
+    bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
+    bottomButton.addTarget(self, action: #selector(iWillGo), for: .touchUpInside)
   }
 
-  @IBAction func addToReminder(sender: UIButton) {
-    Importer.import(event: EventEntity(), to: .reminder) { result in
-      switch result {
-      case .success:
-        print("Added")
-      case .permissionError:
-        print("Show settings alert")
-      case .saveError(let error):
-        print("Error alert: \(error)")
-      }
-    }
+  func iWillGo() {
+    // TODO: - I will go
   }
 
-  @IBAction func addToCalendar(sender: UIButton) {
-    Importer.import(event: EventEntity(), to: .calendar) { result in
-      switch result {
-      case .success:
-        print("Added")
-      case .permissionError:
-        print("Show settings alert")
-      case .saveError(let error):
-        print("Error alert: \(error)")
-      }
-    }
-  }
+}
 
+extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource {
+  
 }
