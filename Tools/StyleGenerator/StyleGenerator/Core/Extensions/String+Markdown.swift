@@ -7,9 +7,19 @@
 //
 import Foundation
 
-typealias SwitchCase = (name: String, code: String)
-typealias EnumCase = (name: String, value: String?)
-private let defaultIndentation = 2
+private let defaultIndentation = 2 // Based on default indentation for Swift
+
+/// Used to generate code for switch/enum case
+/// Common rule: you set part of code as String,
+/// To generate example of code:
+/// ...
+/// case <your pattern>:
+///  <your code>
+/// ...
+/// create this -> SwitchCase("your pattern", "your code")
+/// the same for EnumCase
+typealias SwitchCase = (pattern: String, code: String)
+typealias EnumCase = (name: String, caseValue: String?)
 
 extension String {
 
@@ -108,7 +118,7 @@ extension String.CodeSymbols {
 
       var casesString = ""
       for enumCase in cases {
-        if let value = enumCase.value {
+        if let value = enumCase.caseValue {
           casesString += "case \(enumCase.name) = \(value)\n"
         } else {
           casesString += "case \(enumCase.name)\n"
@@ -123,9 +133,9 @@ extension String.CodeSymbols {
     case .switch(let value, let cases):
       var result = ""
       result += .line(string: "switch \(value) {")
-      for caseValue in cases {
-        result += .line(string: "case .\(caseValue.name):")
-        result += .line(string: caseValue.code.addIndentation())
+      for caseItem in cases {
+        result += .line(string: "case .\(caseItem.pattern):")
+        result += .line(string: caseItem.code.addIndentation())
       }
       result += .line(string: "}")
       return result

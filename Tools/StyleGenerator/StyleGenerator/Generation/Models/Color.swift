@@ -34,7 +34,21 @@ struct Color: TemplateModel {
   // MARK: - Public
 
   init(_ parameters: TemplateInputParameters) {
-    self.name = parameters["name"] as! String
-    self.hex = parameters["color"] as! String
+    guard let name = parameters["name"] as? String else {
+      exit(with: "'Name' parameter for Color doesn't exist as String")
+      self.name = ""
+      self.hex = ""
+      return
+    }
+
+    guard let hex = parameters["color"] as? String else {
+      exit(with: "'color' parameter for Color doesn't exist as String")
+      self.name = ""
+      self.hex = ""
+      return
+    }
+
+    self.name = name
+    self.hex = hex
   }
 }

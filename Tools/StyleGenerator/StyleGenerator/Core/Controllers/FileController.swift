@@ -29,10 +29,14 @@ final class FileController {
     }
   }
 
+  // MARK: - Properties
+
+  private static let fileManager = FileManager.default
+
   // MARK: - Public
 
-  static func readTemplateParameters(from path: String) throws -> [String: [TemplateInputParameters]] {
-    guard let file = FileHandle(forUpdatingAtPath: path) else {
+  static func readTemplateParameters(from path: String) throws -> TemplateInputParameters {
+    guard let file = FileHandle(forReadingAtPath: path) else {
       throw Error.notFound
     }
 
@@ -42,7 +46,7 @@ final class FileController {
     }
 
     let parameters =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-    if let parameters = parameters as? [String: [TemplateInputParameters]] {
+    if let parameters = parameters as? TemplateInputParameters {
       return parameters
     } else {
       throw Error.wrongJsonParameters

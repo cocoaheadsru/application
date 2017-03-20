@@ -56,31 +56,35 @@ class ConsoleController {
     }
   }
 
+  enum CommandLineArgument: Int {
+    case template = 1
+    case inputPath
+    case outputPath
+
+    static let requiredCount = 4
+  }
+
   // MARK: - Public
 
   func obtainInputParameters() throws -> ConsoleInputParameters {
     let arguments = CommandLine.arguments
 
-    let requiredCount = 4
-    guard arguments.count == requiredCount else {
+    guard arguments.count == CommandLineArgument.requiredCount else {
       throw InputError.wrongArgumentsCount
     }
 
-    let templateIndex = 1
-    guard let option = TemplateOption(rawValue: arguments[templateIndex]) else {
+    guard let option = TemplateOption(rawValue: argument(for: .template)) else {
       throw InputError.wrongArgumentsFormat
     }
 
-    let jsonPathIndex = 2
-    let jsonPath = arguments[jsonPathIndex]
+    let jsonPath = argument(for: .inputPath)
     if jsonPath.isEmpty {
       throw InputError.emptyPath
     } else if !jsonPath.hasSuffix(".json") {
       throw InputError.wrongFileFormat
     }
 
-    let outputPathIndex = 3
-    let outputPath = arguments[outputPathIndex]
+    let outputPath = argument(for: .outputPath)
     if outputPath.isEmpty {
       throw InputError.emptyPath
     } else if !outputPath.hasSuffix(".swift") {
@@ -98,5 +102,15 @@ class ConsoleController {
       fputs("\(message)\n", stderr)
       print("Please, try again")
     }
+  }
+
+  // MARK: - Private
+
+  func argument(for type: CommandLineArgument) -> String {
+    let arguments = CommandLine.arguments
+    guard arguments.count > type.rawValue else {
+      return ""
+    }
+    return arguments[type.rawValue]
   }
 }

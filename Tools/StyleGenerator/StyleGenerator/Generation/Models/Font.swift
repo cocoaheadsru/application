@@ -33,7 +33,14 @@ struct Font: TemplateModel {
   // MARK: - Public
 
   init(_ parameters: TemplateInputParameters) {
-    self.font = parameters["fontName"] as! String
+    guard let fontName = parameters["fontName"] as? String else {
+      exit(with: "'fontName' parameter for Font doesn't exist as String")
+      self.font = ""
+      self.name = ""
+      return
+    }
+
+    self.font = fontName
     self.name = type(of: self).generateName(from: self.font)
   }
 }
