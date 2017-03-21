@@ -24,3 +24,9 @@ class ProfileNameCell: UITableViewCell {
         // Configure the view for the selected state
     }
 }
+
+extension ProfileNameCell: CellViewModelType {
+  func setup(on cell: ProfileNameCell) {
+    
+  }
+}
