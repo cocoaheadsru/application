@@ -14,7 +14,9 @@ class EventPreviewViewController: UIViewController {
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.backgroundColor = UIColor.clear
-      tableView.registerNib(for: ProfileNameCell.self)
+      tableView.registerNib(for: SpeachPreviewTableViewCell.self)
+      tableView.registerNib(for: ProfileSpeachCell.self)
+      tableView.registerNib(for: ActionTableViewCell.self)
     }
   }
   var bottomButton: BottomButton!
@@ -50,7 +52,4 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
     return cell
   }
 
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return displayCollection.height(for: indexPath)
-  }
 }

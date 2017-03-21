@@ -10,14 +10,22 @@ import UIKit
 
 class ProfileSpeachCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+  @IBOutlet var speachDescriptionLabel: UILabel! {
+    didSet {
+      speachDescriptionLabel.font = UIFont.appFont(.systemFont(size: 15))
+      speachDescriptionLabel.textColor = UIColor(.darkGray)
+      speachDescriptionLabel.numberOfLines = 3
     }
+  }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
 
-        // Configure the view for the selected state
-    }
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+
+    // Configure the view for the selected state
+  }
 }

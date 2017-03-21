@@ -34,6 +34,9 @@
                     <constraint firstItem="cnI-Za-eOY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hvg-oY-6HK"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="speachDescriptionLabel" destination="cnI-Za-eOY" id="AAZ-Kv-1Um"/>
+            </connections>
             <point key="canvasLocation" x="25" y="48.5"/>
         </tableViewCell>
     </objects>

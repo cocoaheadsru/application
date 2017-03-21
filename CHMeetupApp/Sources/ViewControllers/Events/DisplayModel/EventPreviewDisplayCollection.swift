@@ -25,32 +25,24 @@ class EventPreviewDisplayCollection: DisplayCollection {
     return 4
   }
 
-  func height(for indexPath: IndexPath) -> CGFloat {
-    switch rows[indexPath.row] {
-    case .eventName:
-      return 74
-    case .eventAddress:
-      return 50
-    case .eventDescription:
-      return 221
-    case .eventSpeaker:
-      return 247
-    }
-  }
-
   let rows: [Type] = [.eventName, .eventAddress, .eventDescription, .eventSpeaker]
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
+    // FIXME: - return needed cells and real data
     let type = rows[indexPath.row]
     switch type {
     case .eventName:
-      return ProfileNameCell()
+      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
     case .eventAddress:
-      return ProfileNameCell()
+      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
     case .eventDescription:
-      return ProfileNameCell()
+      return ProfileSpeachCellModel(description: "Hello everyone")
     case .eventSpeaker:
-      return ProfileNameCell()
+      return SpeachPreviewTableViewCellModel(firstName: "Alex",
+                                             lastName: "Zimin",
+                                             userPhoto: Data(),
+                                             topic: "Hernya",
+                                             speachDescription: "Lolka")
     }
   }
 }
