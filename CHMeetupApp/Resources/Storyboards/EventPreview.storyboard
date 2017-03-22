@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UsB-oN-JJI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UsB-oN-JJI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -50,7 +50,7 @@
         <!--Registration Preview-->
         <scene sceneID="4rC-ay-iGN">
             <objects>
-                <viewController id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yA2-hd-xVz"/>
                         <viewControllerLayoutGuide type="bottom" id="YKx-vm-lWp"/>
@@ -101,7 +101,8 @@
         <!--Speech-->
         <scene sceneID="gb4-so-DQv">
             <objects>
-                <viewController id="p6n-SL-zh4" customClass="SpeechPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SpeechPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p6n-SL-zh4" customClass="SpeechPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="plA-aw-c5G"/>
                         <viewControllerLayoutGuide type="bottom" id="cEU-l5-eac"/>
@@ -113,7 +114,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Speech" id="lDz-fA-1XL"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508" y="124.58770614692655"/>
         </scene>

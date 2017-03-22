@@ -10,14 +10,6 @@ import UIKit
 
 class ProfileSpeachCell: UITableViewCell {
 
-  @IBOutlet var speachDescriptionLabel: UILabel! {
-    didSet {
-      speachDescriptionLabel.font = UIFont.appFont(.systemFont(size: 15))
-      speachDescriptionLabel.textColor = UIColor(.darkGray)
-      speachDescriptionLabel.numberOfLines = 3
-    }
-  }
-
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code

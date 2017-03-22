@@ -8,14 +8,17 @@
 
 import UIKit
 
+private let margin: CGFloat = 8
+
 class EventPreviewViewController: UIViewController {
-  @IBOutlet var tableView: UITableView! {
+  @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.estimatedRowHeight = 100
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.backgroundColor = UIColor.clear
+      tableView.contentInset = UIEdgeInsets(top: margin, left: 0,
+                                            bottom: margin + BottomButton.constantHeight, right: 0)
       tableView.registerNib(for: SpeachPreviewTableViewCell.self)
-      tableView.registerNib(for: ProfileSpeachCell.self)
       tableView.registerNib(for: ActionTableViewCell.self)
     }
   }
@@ -25,13 +28,15 @@ class EventPreviewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Event Preview".localized
+    view.backgroundColor = UIColor(.lightGray)
     bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
-    bottomButton.addTarget(self, action: #selector(iWillGo), for: .touchUpInside)
+    bottomButton.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
     displayCollection = EventPreviewDisplayCollection()
   }
 
-  func iWillGo() {
-    // TODO: - I will go
+  func acceptAction() {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    navigationController?.pushViewController(viewController, animated: true)
   }
 
 }
@@ -52,4 +57,8 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
     return cell
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.didSelect(indexPath: indexPath)
+  }
 }

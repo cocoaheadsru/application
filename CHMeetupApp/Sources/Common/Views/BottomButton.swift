@@ -16,6 +16,10 @@ class BottomButton: ActionButton {
     static var titleColor: UIColor = UIColor(.white)
   }
 
+  static var constantHeight: CGFloat {
+    return Constants.height
+  }
+
   var bottomInsetsConstant: CGFloat = 0 {
     didSet {
       // Becuase it's bottom constaint, to go up it should be reversed

@@ -55,5 +55,4 @@ class SpeachPreviewTableViewCell: PlateTableViewCell {
     // Rounded avatar image
     avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height/2
   }
-  
 }
