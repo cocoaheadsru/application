@@ -90,6 +90,8 @@
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
+		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
+		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -263,6 +265,8 @@
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
+		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
+		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -614,6 +618,8 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
+				AD4B5A7C1E7E6F230016187B /* Encryption */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
@@ -1062,6 +1068,15 @@
 				8AB256981E78683B00B319AA /* Sharing.swift */,
 			);
 			name = Share;
+			sourceTree = "<group>";
+		};
+		8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */,
+				8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */,
+			);
+			name = TranslationPlainObjects;
 			sourceTree = "<group>";
 		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
@@ -1569,6 +1584,7 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
+				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
 				221CC3FB1E7B24A1004F0695 /* EventRegFormFieldAnswerPlainObject.swift in Sources */,
@@ -1610,6 +1626,7 @@
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
 				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
+				8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
