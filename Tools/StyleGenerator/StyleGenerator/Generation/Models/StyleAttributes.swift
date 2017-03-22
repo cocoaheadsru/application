@@ -17,8 +17,14 @@ struct StyleAttributes: TemplateModel {
 
   // MARK: - Public
 
-  init(_ parameters: TemplateInputParameters) {
-    self.colors = ColorsCollection(parameters)
-    self.fonts = FontsCollection(parameters)
+  init?(_ parameters: TemplateInputParameters) {
+    guard let colors = ColorsCollection(parameters) else {
+      return nil
+    }
+    guard let fonts = FontsCollection(parameters) else {
+      return nil
+    }
+    self.colors = colors
+    self.fonts = fonts
   }
 }

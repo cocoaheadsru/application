@@ -1,0 +1,29 @@
+{
+  "colors": [{
+             "testId": "withoutHexSymbol",
+             "name": "gray",
+             "color": "8c8c8c"
+             },
+             {
+             "testId": "withHexSymbol",
+             "name": "gray",
+             "color": "#8c8c8c"
+             }, {
+             "testId": "withoutColorName",
+             "color": "b56868"
+             }, {
+             "testId": "withCorrectValues",
+             "name": "red",
+             "color": "#b56868"
+             }],
+  "fonts": [{
+            "testId": "withoutFontName",
+            "name": "header",
+            "fontSize": 13,
+            }, {
+            "testId": "withCorrectValues",
+            "name": "title",
+            "fontSize": 12,
+            "fontName": "GothamPro-Light"
+            }]
+}

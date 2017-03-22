@@ -18,8 +18,11 @@ struct FontsCollection: TemplateModel {
 
   // MARK: - Public
 
-  init(_ parameters: TemplateInputParameters) {
-    let fontsParameters = parameters["fonts"] as! [TemplateInputParameters]
+  init?(_ parameters: TemplateInputParameters) {
+    guard let fontsParameters = parameters["fonts"] as? [TemplateInputParameters] else {
+      exit(with: "you don't have parameteter 'fonts'")
+      return nil
+    }
     self.fonts = TemplateModelsFactory.makeModels(from: fontsParameters)
   }
 }
@@ -32,12 +35,10 @@ struct Font: TemplateModel {
 
   // MARK: - Public
 
-  init(_ parameters: TemplateInputParameters) {
+  init?(_ parameters: TemplateInputParameters) {
     guard let fontName = parameters["fontName"] as? String else {
       exit(with: "'fontName' parameter for Font doesn't exist as String")
-      self.font = ""
-      self.name = ""
-      return
+      return nil
     }
 
     self.font = fontName

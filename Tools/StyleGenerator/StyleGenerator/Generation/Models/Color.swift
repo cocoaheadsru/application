@@ -18,9 +18,12 @@ struct ColorsCollection: TemplateModel {
 
   // MARK: - Public
 
-  init(_ parameters: TemplateInputParameters) {
-    let fontsParameters = parameters["colors"] as! [TemplateInputParameters]
-    self.colors = TemplateModelsFactory.makeModels(from: fontsParameters)
+  init?(_ parameters: TemplateInputParameters) {
+    guard let colorsParameters = parameters["colors"] as? [TemplateInputParameters] else {
+      exit(with: "you don't have parameteter 'colors'")
+      return nil
+    }
+    self.colors = TemplateModelsFactory.makeModels(from: colorsParameters)
   }
 }
 
@@ -33,22 +36,19 @@ struct Color: TemplateModel {
 
   // MARK: - Public
 
-  init(_ parameters: TemplateInputParameters) {
+  init?(_ parameters: TemplateInputParameters) {
     guard let name = parameters["name"] as? String else {
       exit(with: "'Name' parameter for Color doesn't exist as String")
-      self.name = ""
-      self.hex = ""
-      return
+      return nil
     }
 
     guard let hex = parameters["color"] as? String else {
       exit(with: "'color' parameter for Color doesn't exist as String")
-      self.name = ""
-      self.hex = ""
-      return
+      return nil
     }
 
     self.name = name
-    self.hex = hex
+    let hexSymbol = "#"
+    self.hex = hex.hasPrefix(hexSymbol) ? hex : hexSymbol+hex
   }
 }

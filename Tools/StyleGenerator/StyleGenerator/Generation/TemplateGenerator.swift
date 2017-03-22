@@ -56,7 +56,8 @@ class TemplateGenerator {
 
   // MARK: - Private
 
-  private func makeTemplate(for option: TemplateOption, with attributes: StyleAttributes) -> GeneratedTemplate? {
+  private func makeTemplate(for option: TemplateOption, with attributes: StyleAttributes?) -> GeneratedTemplate? {
+    guard let attributes = attributes else { return nil }
     var result: GeneratedTemplate?
 
     switch option {

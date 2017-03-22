@@ -48,16 +48,11 @@ extension String {
     lhs += rhs.value
   }
 
-  static var space: String {
-    return " "
-  }
+  static let space = " "
 
   fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
-    var indent = ""
-    for _ in 0..<count {
-      indent += String.space
-    }
 
+    let indent = makeIndent(count: count)
     var result = self.replacingOccurrences(of: "\n", with: "\n" + indent)
     if result.hasSuffix(indent) {
       let startIndex = result.index(result.startIndex, offsetBy: result.characters.count - count)
@@ -65,6 +60,14 @@ extension String {
       result.replaceSubrange(startIndex..<endIndex, with: "")
     }
     result.insert(contentsOf: indent.characters, at: result.startIndex)
+    return result
+  }
+
+  fileprivate func makeIndent(count: Int) -> String {
+    var result = ""
+    for _ in 0..<count {
+      result += String.space
+    }
     return result
   }
 }

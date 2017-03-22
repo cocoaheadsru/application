@@ -19,6 +19,13 @@
 		927134C31E7DF96100F16322 /* StylesTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C21E7DF96100F16322 /* StylesTemplate.swift */; };
 		927134C81E7E03A800F16322 /* TemplateModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */; };
 		92E9DA591E72111600BCB658 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA581E72111600BCB658 /* main.swift */; };
+		92FC05971E82B10E00513584 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC05961E82B10E00513584 /* ColorTests.swift */; };
+		92FC05991E82B11F00513584 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC05981E82B11F00513584 /* FontTests.swift */; };
+		92FC059B1E82B30200513584 /* BrokenParameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FC059A1E82B30200513584 /* BrokenParameters.json */; };
+		92FC059F1E82B4C700513584 /* TestsParametersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC059E1E82B4C700513584 /* TestsParametersFactory.swift */; };
+		92FC05A01E82C30A00513584 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134BC1E7DF69000F16322 /* Font.swift */; };
+		92FC05A11E82C31F00513584 /* TemplateModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */; };
+		92FC05A61E82DE6B00513584 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927134B41E7DF51F00F16322 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,10 +55,23 @@
 		927134C71E7E03A800F16322 /* TemplateModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelsFactory.swift; sourceTree = "<group>"; };
 		92E9DA551E72111600BCB658 /* StyleGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StyleGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E9DA581E72111600BCB658 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		92FC058E1E82B07F00513584 /* StyleGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StyleGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FC05921E82B07F00513584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92FC05961E82B10E00513584 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		92FC05981E82B11F00513584 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
+		92FC059A1E82B30200513584 /* BrokenParameters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BrokenParameters.json; sourceTree = "<group>"; };
+		92FC059E1E82B4C700513584 /* TestsParametersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsParametersFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		92E9DA521E72111600BCB658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92FC058B1E82B07F00513584 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				92E9DA571E72111600BCB658 /* StyleGenerator */,
+				92FC058F1E82B07F00513584 /* StyleGeneratorTests */,
 				92E9DA561E72111600BCB658 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				92E9DA551E72111600BCB658 /* StyleGenerator */,
+				92FC058E1E82B07F00513584 /* StyleGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +165,18 @@
 				927134AA1E7DF51F00F16322 /* Core */,
 			);
 			path = StyleGenerator;
+			sourceTree = "<group>";
+		};
+		92FC058F1E82B07F00513584 /* StyleGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				92FC059A1E82B30200513584 /* BrokenParameters.json */,
+				92FC05961E82B10E00513584 /* ColorTests.swift */,
+				92FC05981E82B11F00513584 /* FontTests.swift */,
+				92FC059E1E82B4C700513584 /* TestsParametersFactory.swift */,
+				92FC05921E82B07F00513584 /* Info.plist */,
+			);
+			path = StyleGeneratorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +201,23 @@
 			productReference = 92E9DA551E72111600BCB658 /* StyleGenerator */;
 			productType = "com.apple.product-type.tool";
 		};
+		92FC058D1E82B07F00513584 /* StyleGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92FC05951E82B07F00513584 /* Build configuration list for PBXNativeTarget "StyleGeneratorTests" */;
+			buildPhases = (
+				92FC058A1E82B07F00513584 /* Sources */,
+				92FC058B1E82B07F00513584 /* Frameworks */,
+				92FC058C1E82B07F00513584 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StyleGeneratorTests;
+			productName = StyleGeneratorTests;
+			productReference = 92FC058E1E82B07F00513584 /* StyleGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,6 +231,10 @@
 					92E9DA541E72111600BCB658 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = BLXMTR8JEY;
+						ProvisioningStyle = Automatic;
+					};
+					92FC058D1E82B07F00513584 = {
+						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -197,9 +252,21 @@
 			projectRoot = "";
 			targets = (
 				92E9DA541E72111600BCB658 /* StyleGenerator */,
+				92FC058D1E82B07F00513584 /* StyleGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92FC058C1E82B07F00513584 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92FC059B1E82B30200513584 /* BrokenParameters.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		923637E11E77420700A69C06 /* Swiftlint */ = {
@@ -228,7 +295,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/NewStyles.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
+			shellScript = "STYLE_GEN_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/StyleGenerator\"\nSTYLES_JSON_PATH=\"$PROJECT_DIR/StyleGenerator/Generation/Models/InputParameters.json\"\nCOLORS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppColors.swift\"\nFONTS_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/AppFonts.swift\"\nSTYLES_STYLE_PATH=\"$PROJECT_DIR/StyleGenerator/ScriptTesting/Styles.swift\"\n\n#Generate AppColors.swift\n\"$STYLE_GEN_PATH\" colors \"$STYLES_JSON_PATH\" \"$COLORS_STYLE_PATH\"\n#Generate AppFonts.swift\n\"$STYLE_GEN_PATH\" fonts \"$STYLES_JSON_PATH\" \"$FONTS_STYLE_PATH\"\n#Generate Styles.swift\n\"$STYLE_GEN_PATH\" styles \"$STYLES_JSON_PATH\" \"$STYLES_STYLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -249,6 +316,19 @@
 				927134B61E7DF51F00F16322 /* ConsoleController.swift in Sources */,
 				927134B91E7DF51F00F16322 /* TemplateGenerator.swift in Sources */,
 				927134BB1E7DF51F00F16322 /* Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92FC058A1E82B07F00513584 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92FC05A11E82C31F00513584 /* TemplateModelsFactory.swift in Sources */,
+				92FC05A01E82C30A00513584 /* Font.swift in Sources */,
+				92FC05991E82B11F00513584 /* FontTests.swift in Sources */,
+				92FC05971E82B10E00513584 /* ColorTests.swift in Sources */,
+				92FC059F1E82B4C700513584 /* TestsParametersFactory.swift in Sources */,
+				92FC05A61E82DE6B00513584 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +441,32 @@
 			};
 			name = Release;
 		};
+		92FC05931E82B07F00513584 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = StyleGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.denree.StyleGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		92FC05941E82B07F00513584 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = StyleGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.denree.StyleGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,6 +487,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		92FC05951E82B07F00513584 /* Build configuration list for PBXNativeTarget "StyleGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92FC05931E82B07F00513584 /* Debug */,
+				92FC05941E82B07F00513584 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,7 +13,7 @@ import Foundation
 typealias TemplateInputParameters = [String: Any]
 
 protocol TemplateModel {
-  init(_ parameters: TemplateInputParameters)
+  init?(_ parameters: TemplateInputParameters)
 }
 
 // MARK: - Factory
@@ -29,7 +29,9 @@ final class TemplateModelsFactory {
     }
     var result = [ModelType]()
     for parameter in parameters {
-      result.append(ModelType(parameter))
+      if let model = ModelType(parameter) {
+        result.append(model)
+      }
     }
 
     return result
