@@ -11,15 +11,17 @@ import Foundation
 class RegistrationController {
 
   static func loadRegFromServer(with id: Int,
-                                complitionBlock: @escaping (_ form: EventRegFormPlainObject) ->
+                                complitionBlock: @escaping (_ displayCollection: FormDisplayCollection) ->
     Void) {
-    // FIXME: - just for test, delete after linking with real model
     Server.standard.request(EventRegFormPlainObject.Requests.form(with: id)) { form, error in
       if let error = error {
         print(error)
       }
+
       if form != nil {
-        complitionBlock(form!)
+        let formData = FormData(with: form!)
+        let displayCollection = FormDisplayCollection(with: formData)
+        complitionBlock(displayCollection)
       }
     }
   }

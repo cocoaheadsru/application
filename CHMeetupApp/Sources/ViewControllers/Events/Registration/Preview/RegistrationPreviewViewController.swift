@@ -17,19 +17,19 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   var bottomButton: BottomButton!
-  var dataCollection: FormData?
+  var displayCollection: FormDisplayCollection?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     keyboardDelegate = self
-    
+
     bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
     bottomButton.addTarget(self, action: #selector(registrate), for: .touchUpInside)
 
     // FIXME: - Get test data from server
-    RegistrationController.loadRegFromServer(with: 1, complitionBlock: { (form: EventRegFormPlainObject) in
+    RegistrationController.loadRegFromServer(with: 1, complitionBlock: { (displayCollection: FormDisplayCollection) in
       DispatchQueue.main.async {
-        self.dataCollection = FormData(with: form)
+        self.displayCollection = displayCollection
         self.tableView.reloadData()
       }
     })
@@ -37,30 +37,30 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrate() {
-    print("registrate pressed")
+    let confirmViewController = Storyboards.EventPreview.instantiateRegistrationConfirmViewController()
+    navigationController?.pushViewController(confirmViewController, animated: true)
   }
-  
+
 }
 
 // MARK: - UITableViewDataSource
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return dataCollection?.sections[section].name ?? ""
+    return displayCollection?.headerTitle(for: section) ?? ""
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return dataCollection?.sections.count ?? 0
+    return displayCollection?.numberOfSections ?? 0
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataCollection?.sections[section].fieldAnswers.count ?? 0
+    return displayCollection?.numberOfRows(in: section) ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    // FIXME: - Just for test
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
-    cell.textLabel?.text = dataCollection?.sections[indexPath.section].fieldAnswers[indexPath.row].value
+    let model = displayCollection?.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model!)
     return cell
   }
 
