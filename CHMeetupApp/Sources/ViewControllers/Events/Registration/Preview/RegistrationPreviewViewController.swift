@@ -27,11 +27,10 @@ class RegistrationPreviewViewController: UIViewController {
     bottomButton.addTarget(self, action: #selector(registrate), for: .touchUpInside)
 
     // FIXME: - Get test data from server
-    RegistrationController.loadRegFromServer(with: 1, complitionBlock: { (displayCollection: FormDisplayCollection) in
-      DispatchQueue.main.async {
-        self.displayCollection = displayCollection
-        self.tableView.reloadData()
-      }
+    RegistrationController.loadRegFromServer(with: 1,
+                                             complition: { [weak self] (displayCollection: FormDisplayCollection) in
+                                              self?.displayCollection = displayCollection
+                                              self?.tableView.reloadData()
     })
 
   }
