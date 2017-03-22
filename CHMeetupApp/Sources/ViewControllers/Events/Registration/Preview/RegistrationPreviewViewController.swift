@@ -16,19 +16,15 @@ class RegistrationPreviewViewController: UIViewController {
     }
   }
 
-  @IBOutlet weak var registrationButton: UIButton! {
-    didSet {
-      registrationButton.setTitle("registration".localized, for: .normal)
-      registrationButton.setTitleColor(UIColor.white, for: .normal)
-      registrationButton.backgroundColor = UIColor(.red)
-    }
-  }
-
+  var bottomButton: BottomButton!
   var dataCollection: FormData?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     keyboardDelegate = self
+    
+    bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
+    bottomButton.addTarget(self, action: #selector(registrate), for: .touchUpInside)
 
     // FIXME: - Get test data from server
     RegistrationController.loadRegFromServer(with: 1, complitionBlock: { (form: EventRegFormPlainObject) in
@@ -40,8 +36,10 @@ class RegistrationPreviewViewController: UIViewController {
 
   }
 
-  @IBAction func registrationButtonPressed(_ sender: UIButton) {
+  func registrate() {
+    print("registrate pressed")
   }
+  
 }
 
 // MARK: - UITableViewDataSource
