@@ -6,7 +6,6 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct SpeachPreviewTableViewCellModel {
