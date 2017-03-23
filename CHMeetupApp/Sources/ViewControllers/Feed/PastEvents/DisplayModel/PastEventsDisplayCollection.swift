@@ -14,7 +14,7 @@ protocol PastEventsDisplayCollectionDelegate: class {
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
-  let modelCollection = DataModelCollection(type: EventEntity.self)
+  let modelCollection = DataModelCollection(type: EventEntity.self).filtered("startDate < \(Date())")
   weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {
