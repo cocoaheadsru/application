@@ -10,20 +10,22 @@ import Foundation
 
 class RegistrationController {
 
-  static func loadRegFromServer(with id: Int,
-                                complition: @escaping (_ displayCollection: FormDisplayCollection) ->
-    Void) {
+  static func loadRegFromServer(
+    with id: Int,
+    completion: @escaping (_ displayCollection: FormDisplayCollection) -> Void) {
     Server.standard.request(EventRegFormPlainObject.Requests.form(with: id)) { form, error in
       if let error = error {
         print(error)
       }
 
-      if form != nil {
-        let formData = FormData(with: form!)
-        let displayCollection = FormDisplayCollection(with: formData)
-        DispatchQueue.main.async {
-          complition(displayCollection)
-        }
+      guard let form = form else {
+        return
+      }
+
+      let formData = FormData(with: form)
+      let displayCollection = FormDisplayCollection(with: formData)
+      DispatchQueue.main.async {
+        completion(displayCollection)
       }
     }
   }

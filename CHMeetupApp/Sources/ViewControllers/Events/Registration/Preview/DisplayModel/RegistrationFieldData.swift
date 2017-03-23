@@ -14,9 +14,9 @@ struct FormData {
   var sections: [FormFieldItem]
 
   init(with form: EventRegFormPlainObject) {
-    self.id = form.id
-    self.name = form.name
-    self.sections = form.fields.flatMap(FormFieldItem.init)
+    id = form.id
+    name = form.name
+    sections = form.fields.flatMap(FormFieldItem.init)
   }
 }
 
@@ -28,11 +28,11 @@ struct FormFieldItem {
   var fieldAnswers: [FormFieldAnswer]
 
   init(with field: EventRegFormFieldPlainObject) {
-    self.id = field.id
-    self.isRequired = field.required
-    self.name = field.name
-    self.type = field.type
-    self.fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType:field.type) }
+    id = field.id
+    isRequired = field.required
+    name = field.name
+    type = field.type
+    fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType:field.type) }
   }
 }
 
@@ -43,9 +43,9 @@ struct FormFieldAnswer {
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
        fieldType: EventRegFormFieldType) {
-    self.id = answer.id
-    self.value = answer.value
-    self.type = fieldType
+    id = answer.id
+    value = answer.value
+    type = fieldType
   }
 }
 

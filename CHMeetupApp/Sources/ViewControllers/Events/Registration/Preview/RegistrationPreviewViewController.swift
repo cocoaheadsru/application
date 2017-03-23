@@ -8,16 +8,19 @@
 
 import UIKit
 
+private let bottomMargin: CGFloat = 8
+
 class RegistrationPreviewViewController: UIViewController {
 
-  @IBOutlet weak var tableView: UITableView! {
+  @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.dataSource = self
+      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
     }
   }
 
-  var bottomButton: BottomButton!
-  var displayCollection: FormDisplayCollection?
+  fileprivate var bottomButton: BottomButton!
+  fileprivate var displayCollection: FormDisplayCollection?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,10 +30,11 @@ class RegistrationPreviewViewController: UIViewController {
     bottomButton.addTarget(self, action: #selector(registrate), for: .touchUpInside)
 
     // FIXME: - Get test data from server
-    RegistrationController.loadRegFromServer(with: 1,
-                                             complition: { [weak self] (displayCollection: FormDisplayCollection) in
-                                              self?.displayCollection = displayCollection
-                                              self?.tableView.reloadData()
+    RegistrationController.loadRegFromServer(
+      with: 1,
+      completion: { [weak self] (displayCollection: FormDisplayCollection) in
+        self?.displayCollection = displayCollection
+        self?.tableView.reloadData()
     })
 
   }
@@ -67,21 +71,26 @@ extension RegistrationPreviewViewController: UITableViewDataSource {
 
 // MARK: - KeyboardHandlerDelegate
 extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
+
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
 
-    var tableViewContnetInsets = tableView.contentInset
-    var indicatorContentInsets = tableView.scrollIndicatorInsets
+    var buttonInsets: CGFloat = 0
 
     switch state {
     case .frameChanged, .opened:
-      tableViewContnetInsets.bottom = info.endFrame.height
-      indicatorContentInsets.bottom = info.endFrame.height
+      let tableViewBottomContentInsets = info.endFrame.height + bottomMargin + bottomButton.frame.height
+      tableView.contentInset.bottom = tableViewBottomContentInsets
+      tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
+      buttonInsets = info.endFrame.height
     case .hidden:
-      tableViewContnetInsets.bottom = 0
-      indicatorContentInsets.bottom = 0
+      tableView.contentInset.bottom = 0
+      tableView.scrollIndicatorInsets.bottom = 0
+      buttonInsets = 0
     }
 
-    tableView.contentInset = tableViewContnetInsets
-    tableView.scrollIndicatorInsets = indicatorContentInsets
+    info.animate ({ [weak self] in
+      self?.bottomButton.bottomInsetsConstant = buttonInsets
+      self?.view.layoutIfNeeded()
+    })
   }
 }
