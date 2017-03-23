@@ -90,7 +90,7 @@ class Server {
     }
 
     guard let query = URL(string: apiBase + request.query) else {
-      print("Session query url faild: base \(apiBase) and query \(request.query)")
+      print("Session query url failed: base \(apiBase) and query \(request.query)")
       completion(nil, .requestFailed)
       return
     }
@@ -105,13 +105,17 @@ class Server {
       }
 
       guard let data = data else {
-        completion(nil, .emptyResponse)
+        OperationQueue.main.addOperation {
+          completion(nil, .emptyResponse)
+        }
         return
       }
 
       let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
 
-      completion(jsonObject, nil)
+      OperationQueue.main.addOperation {
+        completion(jsonObject, nil)
+      }
     }
 
     loadSession.resume()
