@@ -12,10 +12,14 @@ class RegistrationController {
 
   static func loadRegFromServer(
     with id: Int,
-    completion: @escaping (_ displayCollection: FormDisplayCollection) -> Void) {
+    completion: @escaping (_ displayCollection: FormDisplayCollection?, _ error: ServerError?) -> Void) {
     Server.standard.request(EventRegFormPlainObject.Requests.form(with: id)) { form, error in
-      if let error = error {
-        print(error)
+
+      guard error == nil else {
+        DispatchQueue.main.async {
+          completion(nil, error)
+        }
+        return
       }
 
       guard let form = form else {
@@ -23,9 +27,9 @@ class RegistrationController {
       }
 
       let formData = FormData(with: form)
-      let displayCollection = FormDisplayCollection(with: formData)
+      let displayCollection = FormDisplayCollection(formData: formData)
       DispatchQueue.main.async {
-        completion(displayCollection)
+        completion(displayCollection, nil)
       }
     }
   }

@@ -27,19 +27,40 @@ class RegistrationPreviewViewController: UIViewController {
     keyboardDelegate = self
 
     bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
-    bottomButton.addTarget(self, action: #selector(registrate), for: .touchUpInside)
+    bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
 
-    // FIXME: - Get test data from server
+    // FIXME: - Remove test data
     RegistrationController.loadRegFromServer(
       with: 1,
-      completion: { [weak self] (displayCollection: FormDisplayCollection) in
+      completion: { [weak self] displayCollection, error in
+
+        guard error == nil else {
+          print(error!)
+          return
+        }
+
+        guard let displayCollection = displayCollection else {
+          return
+        }
+
         self?.displayCollection = displayCollection
         self?.tableView.reloadData()
     })
 
   }
 
-  func registrate() {
+  func registrationButtonAction() {
+    registrate(completion: {
+      presentRegistrationConfirmViewController()
+    })
+  }
+
+  func registrate(completion:() -> Void) {
+    // Do staff here..
+    completion()
+  }
+
+  func presentRegistrationConfirmViewController() {
     let confirmViewController = Storyboards.EventPreview.instantiateRegistrationConfirmViewController()
     navigationController?.pushViewController(confirmViewController, animated: true)
   }
@@ -88,8 +109,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       buttonInsets = 0
     }
 
+    self.bottomButton.bottomInsetsConstant = buttonInsets
     info.animate ({ [weak self] in
-      self?.bottomButton.bottomInsetsConstant = buttonInsets
       self?.view.layoutIfNeeded()
     })
   }

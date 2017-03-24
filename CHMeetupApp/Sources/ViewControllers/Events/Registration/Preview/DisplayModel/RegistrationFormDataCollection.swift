@@ -10,8 +10,8 @@ import UIKit
 
 class FormDisplayCollection: NSObject, DisplayCollection {
 
-  init(with formDataStruct: FormData) {
-    formData = formDataStruct
+  init(formData: FormData) {
+    self.formData = formData
   }
 
   var formData: FormData!
