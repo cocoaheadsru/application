@@ -31,8 +31,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
-    return model
+    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
   }
 
   func didSelect(indexPath: IndexPath) {

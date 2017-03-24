@@ -39,8 +39,7 @@ struct MainViewDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
-      return model
+      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
     case .actionButtons:
       let action = ActionPlainObject(text: "Example".localized, imageName: nil, action: nil)
       let model = ActionTableViewCellModel(action: action)

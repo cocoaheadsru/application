@@ -48,6 +48,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    
+
   }
 }
