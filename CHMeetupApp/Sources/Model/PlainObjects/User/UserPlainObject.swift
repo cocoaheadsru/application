@@ -13,6 +13,6 @@ struct UserPlainObject {
   let name: String
   let lastname: String
   let photoUrl: String?
-  let company: String
+  let company: String?
 
 }

@@ -22,14 +22,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func numberOfRows(in section: Int) -> Int {
-    // FIXME: - return number of rows
     return 2
   }
 
   let sections: [Type] = [.location, .adress, .speaches, .description, .additionalCells]
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    // FIXME: - return needed cells and real data
     let type = sections[indexPath.section]
     switch type {
     case .location:
@@ -50,6 +48,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    // TODO: - didSelect
+
   }
 }

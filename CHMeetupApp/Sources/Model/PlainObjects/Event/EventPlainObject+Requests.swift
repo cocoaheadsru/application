@@ -22,7 +22,7 @@ extension EventPlainObject: PlainObjectType {
     }
 
     // Event speakers list
-    static func speakers(event id: Int) ->  Request<[UserPlainObject]> {
+    static func speakersOnEvent(with id: Int) ->  Request<[UserPlainObject]> {
       return Request(query: "event/speakers/\(id)")
     }
 
