@@ -21,47 +21,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-k1-i4K">
-                                <rect key="frame" x="132" y="273.5" width="110" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-tp-KiO">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
-                                        <state key="normal" title="Speach Preview"/>
-                                        <connections>
-                                            <segue destination="p6n-SL-zh4" kind="show" id="q4A-mS-NSZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-sc-AgV">
-                                        <rect key="frame" x="0.0" y="30" width="110" height="30"/>
-                                        <state key="normal" title="Register"/>
-                                        <connections>
-                                            <segue destination="CGY-Eq-4dK" kind="show" id="yex-9Q-uEJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-q1-0bd">
-                                        <rect key="frame" x="0.0" y="60" width="110" height="30"/>
-                                        <state key="normal" title="Cal"/>
-                                        <connections>
-                                            <action selector="addToCalendarWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="NQ7-v1-uFS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvw-5Z-9Mc">
-                                        <rect key="frame" x="0.0" y="90" width="110" height="30"/>
-                                        <state key="normal" title="Rem"/>
-                                        <connections>
-                                            <action selector="addToReminderWithSender:" destination="let-Rh-7mo" eventType="touchUpInside" id="dHZ-Ud-AEk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UsB-oN-JJI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="let-Rh-7mo" id="Ga2-fo-Xd4"/>
+                                    <outlet property="delegate" destination="let-Rh-7mo" id="gMn-lQ-p2L"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tNQ-k1-i4K" firstAttribute="centerX" secondItem="AK6-Xh-59r" secondAttribute="centerX" id="aDk-Cz-7t8"/>
-                            <constraint firstItem="tNQ-k1-i4K" firstAttribute="centerY" secondItem="AK6-Xh-59r" secondAttribute="centerY" id="zwd-Sk-3J1"/>
+                            <constraint firstAttribute="trailing" secondItem="UsB-oN-JJI" secondAttribute="trailing" id="077-6s-dga"/>
+                            <constraint firstItem="UsB-oN-JJI" firstAttribute="leading" secondItem="AK6-Xh-59r" secondAttribute="leading" id="7sP-cq-g7a"/>
+                            <constraint firstItem="UsB-oN-JJI" firstAttribute="top" secondItem="AK6-Xh-59r" secondAttribute="top" id="bOO-qM-MpY"/>
+                            <constraint firstItem="0Nx-GU-Cyr" firstAttribute="top" secondItem="UsB-oN-JJI" secondAttribute="bottom" id="eHF-2q-RYm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Preview" id="3ZJ-CZ-Ntl"/>
+                    <connections>
+                        <outlet property="tableView" destination="UsB-oN-JJI" id="7a4-3H-vSK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKm-n1-Xfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +50,7 @@
         <!--Registration Preview-->
         <scene sceneID="4rC-ay-iGN">
             <objects>
-                <viewController storyboardIdentifier="RegistrationPreviewViewController" id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CGY-Eq-4dK" customClass="RegistrationPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yA2-hd-xVz"/>
                         <viewControllerLayoutGuide type="bottom" id="YKx-vm-lWp"/>
@@ -79,19 +59,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90y-M9-FTz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-UD-cmj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UITableViewCell" textLabel="0pA-4Y-R24" style="IBUITableViewCellStyleDefault" id="3df-fS-dhq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UITableViewCell" textLabel="Lka-84-CDm" style="IBUITableViewCellStyleDefault" id="pKA-ce-8yQ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3df-fS-dhq" id="cEY-MK-dNL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pKA-ce-8yQ" id="xoj-lb-Mby">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0pA-4Y-R24">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lka-84-CDm">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -105,15 +85,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="90y-M9-FTz" firstAttribute="top" secondItem="r5D-Tm-NHY" secondAttribute="top" id="C1c-BM-Cpi"/>
-                            <constraint firstItem="YKx-vm-lWp" firstAttribute="top" secondItem="90y-M9-FTz" secondAttribute="bottom" id="fM9-Bi-rIt"/>
-                            <constraint firstItem="90y-M9-FTz" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="ufN-5h-3B9"/>
-                            <constraint firstAttribute="trailing" secondItem="90y-M9-FTz" secondAttribute="trailing" id="xkT-RF-f4l"/>
+                            <constraint firstAttribute="trailing" secondItem="1DL-UD-cmj" secondAttribute="trailing" id="AAK-4M-oq6"/>
+                            <constraint firstItem="1DL-UD-cmj" firstAttribute="leading" secondItem="r5D-Tm-NHY" secondAttribute="leading" id="Z7J-0I-bam"/>
+                            <constraint firstItem="YKx-vm-lWp" firstAttribute="top" secondItem="1DL-UD-cmj" secondAttribute="bottom" id="e1g-1h-Bi0"/>
+                            <constraint firstItem="1DL-UD-cmj" firstAttribute="top" secondItem="r5D-Tm-NHY" secondAttribute="top" id="svL-Yh-fAK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registration Preview" id="CpT-Wp-dsl"/>
                     <connections>
-                        <outlet property="tableView" destination="90y-M9-FTz" id="2J7-cp-84x"/>
+                        <outlet property="tableView" destination="1DL-UD-cmj" id="uOw-YE-fRO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hl-4s-KwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,7 +103,7 @@
         <!--Registration Confirm-->
         <scene sceneID="Lj6-GD-Guj">
             <objects>
-                <viewController storyboardIdentifier="RegistrationConfirmViewController" id="elZ-XF-SfV" customClass="RegistrationConfirmViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="elZ-XF-SfV" customClass="RegistrationConfirmViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QzK-94-EJg"/>
                         <viewControllerLayoutGuide type="bottom" id="xMM-KM-ccM"/>
@@ -142,7 +122,7 @@
         <!--Speech-->
         <scene sceneID="gb4-so-DQv">
             <objects>
-                <viewController id="p6n-SL-zh4" customClass="SpeechPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeechPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p6n-SL-zh4" customClass="SpeechPreviewViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="plA-aw-c5G"/>
                         <viewControllerLayoutGuide type="bottom" id="cEU-l5-eac"/>

@@ -1,0 +1,18 @@
+{
+  "colors": [{
+    "name": "gray",
+    "color": "#8c8c8c"
+  }, {
+    "name": "red",
+    "color": "#b56868"
+  }],
+  "fonts": [{
+    "name": "header",
+    "fontSize": 13,
+    "fontName": "GothamPro-Medium"
+  }, {
+    "name": "title",
+    "fontSize": 11,
+    "fontName": "GothamPro-Light"
+  }]
+}
