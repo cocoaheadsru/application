@@ -61,7 +61,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e3f-7U-KgH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="du5-Fr-4Vf" id="o5a-w8-oDM"/>
                                     <outlet property="delegate" destination="du5-Fr-4Vf" id="UUd-XZ-9hW"/>
@@ -110,7 +110,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrX-Cc-xgJ" customClass="NavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N3A-KA-XJg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3A-KA-XJg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -129,7 +129,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7I-I3-rgg" customClass="NavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QMh-77-fMm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-77-fMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -147,7 +147,7 @@
             <objects>
                 <navigationController id="b0P-Mq-rOD" customClass="ProfileNavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2v7-Da-U4X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

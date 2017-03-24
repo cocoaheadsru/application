@@ -14,7 +14,12 @@ protocol PastEventsDisplayCollectionDelegate: class {
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
-  let modelCollection = DataModelCollection(type: EventEntity.self).filtered("startDate < \(Date())")
+  let modelCollection: DataModelCollection<EventEntity> = {
+    let predicate = NSPredicate(format: "endDate < %@", NSDate())
+    let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    return modelCollection
+  }()
+
   weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {

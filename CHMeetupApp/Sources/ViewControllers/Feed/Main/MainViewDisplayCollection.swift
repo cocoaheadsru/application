@@ -17,7 +17,11 @@ struct MainViewDisplayCollection: DisplayCollection {
 
   var sections: [Type] = [.events, .actionButtons]
 
-  let modelCollection = DataModelCollection(type: EventEntity.self).filtered("startDate > \(Date())")
+  let modelCollection: DataModelCollection<EventEntity> = {
+    let predicate = NSPredicate(format: "endDate > %@", NSDate())
+    let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    return modelCollection
+  }()
 
   var numberOfSections: Int {
     return 2

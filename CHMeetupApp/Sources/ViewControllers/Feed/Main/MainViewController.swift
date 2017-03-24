@@ -10,7 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.registerNib(for: ActionTableViewCell.self)
+      tableView.registerNib(for: EventPreviewTableViewCell.self)
+      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+    }
+  }
+  
   fileprivate var dataCollection: MainViewDisplayCollection!
 
   override func viewDidLoad() {
@@ -19,6 +26,8 @@ class MainViewController: UIViewController {
     dataCollection = MainViewDisplayCollection()
 
     title = "Main".localized
+
+    view.backgroundColor = UIColor(.lightGray)
     // Do any additional setup after loading the view.
   }
 
