@@ -14,7 +14,12 @@ protocol PastEventsDisplayCollectionDelegate: class {
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
-  let modelCollection = DataModelCollection(type: EventEntity.self)
+  let modelCollection: DataModelCollection<EventEntity> = {
+    let predicate = NSPredicate(format: "endDate < %@", NSDate())
+    let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    return modelCollection
+  }()
+
   weak var delegate: PastEventsDisplayCollectionDelegate?
 
   var numberOfSections: Int {
@@ -26,8 +31,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let model = EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
-    return model
+    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
   }
 
   func didSelect(indexPath: IndexPath) {

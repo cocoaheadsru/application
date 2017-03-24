@@ -22,22 +22,20 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func numberOfRows(in section: Int) -> Int {
-    // FIXME: - return number of rows
     return 2
   }
 
   let sections: [Type] = [.location, .adress, .speaches, .description, .additionalCells]
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    // FIXME: - return needed cells and real data
     let type = sections[indexPath.section]
     switch type {
     case .location:
-      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
     case .adress:
-      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
     case .speaches:
-      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
     case .description:
       return SpeachPreviewTableViewCellModel(firstName: "Alex",
                                              lastName: "Zimin",
@@ -45,11 +43,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
                                              topic: "How to please Kirill",
                                              speachDescription: "Read his CV")
     case .additionalCells:
-      return ActionTableViewCellModel(action: ActionPlainObject(handler: "Handler", imageName: "Image"))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
     }
   }
 
   func didSelect(indexPath: IndexPath) {
-    // TODO: - didSelect
+
   }
 }

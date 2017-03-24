@@ -46,6 +46,16 @@ struct DataModelCollection<T: Object> {
     return collection
   }
 
+  mutating func filter(_ predicate: NSPredicate) {
+    results = results.filter(predicate)
+  }
+
+  func filtered(_ predicate: NSPredicate) -> DataModelCollection<T> {
+    var collection = self
+    collection.filter(predicate)
+    return collection
+  }
+
   // MARK: - Sort
 
   mutating func sort(byKeyPath keyPath: String, ascending: Bool = true) {

@@ -9,12 +9,7 @@
 import Foundation
 
 struct ActionPlainObject {
-  var handler: String
-  var imageName: String
-  var isEnable = true
-
-  init(handler: String, imageName: String) {
-    self.handler = handler
-    self.imageName = imageName
-  }
+  var text: String
+  var imageName: String?
+  var action: (() -> Void)?
 }

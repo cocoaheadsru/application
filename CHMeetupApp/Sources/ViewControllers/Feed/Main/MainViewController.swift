@@ -10,10 +10,26 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.registerNib(for: ActionTableViewCell.self)
+      tableView.registerNib(for: EventPreviewTableViewCell.self)
+      tableView.estimatedRowHeight = 100
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+    }
+  }
+
+  fileprivate var dataCollection: MainViewDisplayCollection!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    dataCollection = MainViewDisplayCollection()
+
     title = "Main".localized
+
+    view.backgroundColor = UIColor(.lightGray)
     // Do any additional setup after loading the view.
   }
 
@@ -23,5 +39,27 @@ class MainViewController: UIViewController {
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .main)
+  }
+}
+
+extension MainViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return dataCollection.numberOfSections
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return dataCollection.numberOfRows(in: section)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let model = dataCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    return cell
+  }
+}
+
+extension MainViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
   }
 }

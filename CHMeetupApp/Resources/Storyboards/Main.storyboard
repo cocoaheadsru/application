@@ -59,21 +59,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-FB-hRB">
-                                <rect key="frame" x="143" y="318" width="89" height="30"/>
-                                <state key="normal" title="Show Evenet"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e3f-7U-KgH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="showEventAction:" destination="du5-Fr-4Vf" eventType="touchUpInside" id="XHm-YB-6JF"/>
+                                    <outlet property="dataSource" destination="du5-Fr-4Vf" id="o5a-w8-oDM"/>
+                                    <outlet property="delegate" destination="du5-Fr-4Vf" id="UUd-XZ-9hW"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerY" secondItem="yfu-ai-uDa" secondAttribute="centerY" id="Hgu-ds-SAq"/>
-                            <constraint firstItem="Jlt-FB-hRB" firstAttribute="centerX" secondItem="yfu-ai-uDa" secondAttribute="centerX" id="p58-JK-whA"/>
+                            <constraint firstAttribute="bottom" secondItem="e3f-7U-KgH" secondAttribute="bottom" id="Zws-oQ-v3r"/>
+                            <constraint firstAttribute="trailing" secondItem="e3f-7U-KgH" secondAttribute="trailing" id="emH-mf-y8r"/>
+                            <constraint firstItem="e3f-7U-KgH" firstAttribute="top" secondItem="yfu-ai-uDa" secondAttribute="top" id="isj-VY-OWq"/>
+                            <constraint firstItem="e3f-7U-KgH" firstAttribute="leading" secondItem="yfu-ai-uDa" secondAttribute="leading" id="rP5-OG-0ae"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="EB5-Bt-KNQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="e3f-7U-KgH" id="jM9-1X-efP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFV-Aw-nEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

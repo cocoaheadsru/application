@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-Pu-5bW">
@@ -42,7 +42,7 @@
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="89" id="g9v-RT-BYV"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="g9v-RT-BYV"/>
                         </constraints>
                     </stackView>
                 </subviews>

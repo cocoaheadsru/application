@@ -14,13 +14,12 @@ struct ActionTableViewCellModel {
 
 extension ActionTableViewCellModel: CellViewModelType {
   func setup(on cell: ActionTableViewCell) {
-    cell.descriptionActionLabel.text = action.handler
+    cell.descriptionActionLabel.text = action.text
+    cell.isEnableForAction = action.action != nil
 
-    cell.isEnableForAction = action.isEnable
-
-    if action.imageName != "" {
+    if let imageName = action.imageName {
       cell.actionImageView.isHidden = false
-      cell.actionImageView.image = UIImage(named: action.imageName)
+      cell.actionImageView.image = UIImage(named: imageName)
     }
   }
 }
