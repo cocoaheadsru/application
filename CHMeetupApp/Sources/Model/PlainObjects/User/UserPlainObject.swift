@@ -9,25 +9,10 @@
 import Foundation
 
 struct UserPlainObject {
-  let remoteID: Int
+  let id: Int
   let name: String
+  let lastname: String
+  let photoUrl: String?
+  let company: String
 
-  init?(json: JSONDictionary) {
-    guard
-      let id = json["id"] as? Int,
-      let name = json["username"] as? String
-      else { return nil }
-
-    self.remoteID = id
-    self.name = name
-  }
-
-  init?(justId json: JSONDictionary) {
-    guard
-      let id = json["id"] as? Int
-      else { return nil }
-
-    self.remoteID = id
-    self.name = ""
-  }
 }

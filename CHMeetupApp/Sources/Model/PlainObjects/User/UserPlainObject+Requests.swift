@@ -36,3 +36,33 @@ extension UserPlainObject: PlainObjectType {
     }
   }
 }
+
+extension UserPlainObject {
+
+  init?(json: JSONDictionary) {
+    guard
+      let id = json["id"] as? Int,
+      let name = json["username"] as? String,
+      let lastname = json["lastname"] as? String,
+      let company = json["company"] as? String
+      else { return nil }
+
+    self.id = id
+    self.name = name
+    self.lastname = lastname
+    self.photoUrl = json["photo_url"] as? String
+    self.company = company
+  }
+
+  init?(justId json: JSONDictionary) {
+    guard
+      let id = json["id"] as? Int
+      else { return nil }
+
+    self.id = id
+    self.name = ""
+    self.lastname = ""
+    self.company = ""
+    self.photoUrl = nil
+  }
+}
