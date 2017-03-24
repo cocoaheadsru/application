@@ -12,8 +12,7 @@ struct EventPlainObject {
   let id: Int
   let title: String
   let description: String
-  // TODO: - add photoUrl value
-  // let photoUrl: String
+  let photoUrl: String
   let place: PlacePlainObject
   let startDate: Date
   let endDate: Date

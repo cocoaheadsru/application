@@ -9,12 +9,11 @@
 import Foundation
 
 extension PlacePlainObject: PlainObjectType {
-// TODO: - add description value
   init?(json: JSONDictionary) {
     guard
       let id = json["place_id"] as? Int,
       let title = json["title"] as? String,
-      // let description = json["description"] as? String,
+      let description = json["description"] as? String,
       let address = json["address"] as? String,
       let longitude = json["longitude"] as? Double,
       let latitude = json["latitude"] as? Double,
@@ -23,7 +22,7 @@ extension PlacePlainObject: PlainObjectType {
 
     self.placeID = id
     self.title = title
-    // self.description = description
+    self.description = description
     self.address = address
     self.longitude = longitude
     self.latitude = latitude
