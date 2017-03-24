@@ -9,17 +9,15 @@
 import UIKit
 
 struct ActionTableViewCellModel {
-  let text: String
-  let imageName: String?
-  let action: (() -> Void)?
+  let action: ActionPlainObject
 }
 
 extension ActionTableViewCellModel: CellViewModelType {
   func setup(on cell: ActionTableViewCell) {
-    cell.descriptionActionLabel.text = text
-    cell.isEnableForAction = action != nil
+    cell.descriptionActionLabel.text = action.text
+    cell.isEnableForAction = action.action != nil
 
-    if let imageName = imageName {
+    if let imageName = action.imageName {
       cell.actionImageView.isHidden = false
       cell.actionImageView.image = UIImage(named: imageName)
     }
