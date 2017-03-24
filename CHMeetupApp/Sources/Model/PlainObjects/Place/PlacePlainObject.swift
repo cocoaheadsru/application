@@ -11,8 +11,7 @@ import Foundation
 struct PlacePlainObject {
   let placeID: Int
   let title: String
-  // TODO: - add description value
-  // let description: String
+  let description: String
   let address: String
   let longitude: Double
   let latitude: Double
