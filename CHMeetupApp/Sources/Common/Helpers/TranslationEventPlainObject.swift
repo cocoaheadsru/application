@@ -9,29 +9,21 @@
 import Foundation
 import RealmSwift
 
-class EventPlainObjectTranslation: PlainObjectTranslation {
-
-  static func translate(of plainObjects: [PlainObjectType]) {
-    plainObjects.forEach(addToRealm)
-  }
-
-  static func addToRealm(plainObject: PlainObjectType) {
-    guard let pastEvent = plainObject as? EventPlainObject else {
-      return
-    }
+struct EventPlainObjectTranslation: PlainObjectTranslation {
+  static func addToRealm(plainObject: EventPlainObject) {
     let event = EventEntity()
-    event.id = pastEvent.id
-    event.title = pastEvent.title
-    event.startDate = pastEvent.startDate
-    event.endDate = pastEvent.endDate
-    event.descriptionText = pastEvent.description
+    event.id = plainObject.id
+    event.title = plainObject.title
+    event.startDate = plainObject.startDate
+    event.endDate = plainObject.endDate
+    event.descriptionText = plainObject.description
 
     let place = PlaceEntity()
-    place.id = pastEvent.place.placeID
-    place.title = pastEvent.place.title
-    place.address = pastEvent.place.address
-    place.latitude = pastEvent.place.latitude
-    place.longitude = pastEvent.place.longitude
+    place.id = plainObject.place.placeID
+    place.title = plainObject.place.title
+    place.address = plainObject.place.address
+    place.latitude = plainObject.place.latitude
+    place.longitude = plainObject.place.longitude
     event.place = place
 
     realmWrite {
