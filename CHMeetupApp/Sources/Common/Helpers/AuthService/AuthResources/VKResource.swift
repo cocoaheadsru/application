@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VKResource: SocialResource {
+final class VKResource: SocialResource {
 
   fileprivate var token: String?
   fileprivate var secret: String?
@@ -25,10 +25,6 @@ class VKResource: SocialResource {
       authString += "&sdk_version=1.4.6&client_id=\(Constants.Vkontakte.clientId)"
     }
     return URL(string: authString)
-  }
-
-  func login(_ completion: SocialResourceLoginCompletion) {
-    completion("", "", nil)
   }
 
   func parameters(from url: URL) -> [String: String] {

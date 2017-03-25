@@ -18,6 +18,8 @@ extension URL {
     let elements = fragment.components(separatedBy: "&")
     elements.forEach { (element) in
       let formant = element.components(separatedBy: "=")
+      guard formant.count > 1 else { return }
+
       params[formant[0]] = formant[1]
     }
 

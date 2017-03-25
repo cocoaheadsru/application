@@ -16,7 +16,6 @@ protocol SocialResource {
   var appScheme: URL? { get }
   var appExists: Bool { get }
 
-  func login(_ completion: SocialResourceLoginCompletion)
   func parameters(from url: URL) -> [String: String]
 }
 
@@ -26,5 +25,4 @@ extension SocialResource {
     guard let appScheme = self.appScheme else { return false }
     return UIApplication.shared.canOpenURL(appScheme)
   }
-
 }

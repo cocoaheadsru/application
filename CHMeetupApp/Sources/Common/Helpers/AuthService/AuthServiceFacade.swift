@@ -9,9 +9,7 @@
 import UIKit
 import SafariServices
 
-private let loginName = "UD.key.isLogin"
-
-class AuthServiceFacade {
+final class AuthServiceFacade {
   fileprivate var safari: SFSafariViewController?
   fileprivate var currentViewController: UIViewController?
   fileprivate var loginCompletion: ((UserPlainObject?, Error?) -> Void)?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FBResource: SocialResource {
+final class FBResource: SocialResource {
 
   fileprivate var token: String?
   fileprivate var secret: String?
@@ -18,10 +18,6 @@ class FBResource: SocialResource {
     var authString = "https://www.facebook.com/v2.8/dialog/oauth?client_id=\(Constants.Facebook.clientId)"
     authString += "&redirect_uri=\(Constants.Facebook.redirect)"
     return URL(string: authString)
-  }
-
-  func login(_ completion: SocialResourceLoginCompletion) {
-    completion("", "", nil)
   }
 
   func parameters(from url: URL) -> [String: String] {
