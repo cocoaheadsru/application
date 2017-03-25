@@ -9,23 +9,18 @@
 import UIKit
 
 struct SpeechPreviewTableViewCellModel {
-
-  // FIXME: - Uncomment next line with realm entity
   // let speachPreview: SpeachPreviewEntity
-
-  var firstName: String
-  var lastName: String
-  var userPhoto: Data
-  var topic: String
-  var speachDescription: String
+  let speech: SpeechEntity
 }
 
 extension SpeechPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: SpeechPreviewTableViewCell) {
+    if let user = speech.user {
+      //    cell.avatarImageView.image = UIImage(data: userPhoto)
+      cell.fullNameLabel.text = user.name + " " + user.lastName
+    }
 
-    cell.avatarImageView.image = UIImage(data: userPhoto)
-    cell.fullNameLabel.text = firstName + " " + lastName
-    cell.topicLabel.text = "«" + topic + "»"
-    cell.speachDescriptionLabel.text = speachDescription
+    cell.topicLabel.text = "«" + speech.title + "»"
+    cell.speachDescriptionLabel.text = speech.descriptionText
   }
 }

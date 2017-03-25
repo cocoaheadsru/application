@@ -21,36 +21,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-Pu-5bW">
-                        <rect key="frame" x="24" y="0.0" width="272" height="89"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-Pu-5bW">
+                        <rect key="frame" x="24" y="24" width="272" height="41.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="img_icon_notification" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-RB-5Vv">
-                                <rect key="frame" x="0.0" y="30.5" width="30" height="28"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="41.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGN-N8-jNN">
-                                <rect key="frame" x="46" y="38" width="203" height="13.5"/>
+                                <rect key="frame" x="46" y="0.0" width="203" height="41.5"/>
                                 <fontDescription key="fontDescription" name="GothamPro" family="Gotham Pro" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="img_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Iz7-hX-efg">
-                                <rect key="frame" x="265" y="39" width="7" height="11"/>
+                                <rect key="frame" x="265" y="0.0" width="7" height="41.5"/>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="g9v-RT-BYV"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5ji-Pu-5bW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="1zE-lS-aBn"/>
-                    <constraint firstAttribute="bottom" secondItem="5ji-Pu-5bW" secondAttribute="bottom" id="Cj8-K2-O7d"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5ji-Pu-5bW" secondAttribute="bottom" constant="16" id="Cj8-K2-O7d"/>
                     <constraint firstAttribute="trailingMargin" secondItem="5ji-Pu-5bW" secondAttribute="trailing" constant="16" id="bGp-zc-4C2"/>
-                    <constraint firstItem="5ji-Pu-5bW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vOK-PQ-Hmf"/>
+                    <constraint firstItem="5ji-Pu-5bW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="vOK-PQ-Hmf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

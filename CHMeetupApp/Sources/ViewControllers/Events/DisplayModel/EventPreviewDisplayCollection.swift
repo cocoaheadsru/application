@@ -19,11 +19,20 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   var event: EventEntity? {
     didSet {
+      if let place = event?.place {
+        addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: {
+          print("Show maps")
+        })
+      }
       setNeedsReloadData()
     }
   }
 
   weak var delegate: EventPreviewDisplayCollectionDelegate?
+
+  // MARK: - Adrsess Plain Object
+
+  private var addressActionObject: ActionPlainObject?
 
   // MARK: - Reload with cache engine
 
@@ -50,7 +59,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   enum `Type` {
     case location
-    case adress
+    case address
     case speaches
     case description
     case additionalCells
@@ -66,7 +75,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
     // We show adress cell only if place exist
     if event?.place != nil {
-      sections.append(.adress)
+      sections.append(.address)
     }
 
     // We always show speaches and description cell, but sometimes it's template
@@ -85,10 +94,10 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
-    case .location, .adress, .description:
+    case .location, .address, .description:
       return 1
     case .speaches:
-      return 4
+      return event?.speeches.count ?? 0
     case .additionalCells:
       return 2
     }
@@ -98,19 +107,30 @@ class EventPreviewDisplayCollection: DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .location:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
-    case .adress:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
+      if let event = event {
+        return TimePlaceTableViewCellModel(event: event)
+      } else {
+        // Template
+        return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading Adress...".localized))
+      }
+    case .address:
+      if let actionObject = addressActionObject {
+        return ActionTableViewCellModel(action: actionObject)
+      } else {
+        assertionFailure("Should not be reached")
+        return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading location...".localized))
+      }
     case .speaches:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
+      if let speech = event?.speeches[indexPath.row] {
+        return SpeechPreviewTableViewCellModel(speech: speech)
+      } else {
+        fatalError("Should not be reached")
+      }
     case .description:
-      return SpeechPreviewTableViewCellModel(firstName: "Alex",
-                                             lastName: "Zimin",
-                                             userPhoto: Data(),
-                                             topic: "How to please Kirill",
-                                             speachDescription: "Read his CV")
+      return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Should be additional cell",
+                                                                imageName: nil, action: { }))
     }
   }
 
