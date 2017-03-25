@@ -30,4 +30,13 @@ class VKResource: SocialResource {
   func login(_ completion: SocialResourceLoginCompletion) {
     completion("", "", nil)
   }
+
+  func parameters(from url: URL) -> [String: String] {
+    let parameters = url.parameters
+    guard
+      let token = parameters?["access_token"],
+      let secret = parameters?["secret"]
+    else { return [:] }
+    return ["token": token, "secret": secret]
+  }
 }

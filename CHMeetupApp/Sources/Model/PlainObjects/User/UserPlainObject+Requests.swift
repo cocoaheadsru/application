@@ -18,8 +18,9 @@ extension UserPlainObject: PlainObjectType {
     }
 
     // Authorization by social network
-    static func auth(token: String, socialId: String) -> Request<UserPlainObject> {
-      return Request<UserPlainObject>(query: "user/auth", method: .post)
+    static func auth(token: String, secret: String, socialId: String) -> Request<UserPlainObject> {
+      let params = ["token": token, "secret": secret, "social": socialId]
+      return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
     }
 
     // Example of custom parser
@@ -42,7 +43,7 @@ extension UserPlainObject {
   init?(json: JSONDictionary) {
     guard
       let id = json["id"] as? Int,
-      let name = json["username"] as? String,
+      let name = json["name"] as? String,
       let lastname = json["lastname"] as? String
       else { return nil }
 

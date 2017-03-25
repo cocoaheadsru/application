@@ -15,7 +15,7 @@ protocol SocialResource {
   func login(_ completion: SocialResourceLoginCompletion)
   var authURL: URL? { get }
   var appScheme: URL? { get }
-
+  func parameters(from url: URL) -> [String: String]  
   var appExists: Bool { get }
 }
 
