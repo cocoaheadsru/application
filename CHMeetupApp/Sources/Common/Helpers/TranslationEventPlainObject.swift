@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 struct EventPlainObjectTranslation: PlainObjectTranslation {
-  static func addToRealm(plainObject: EventPlainObject) {
+  static func addToRealm(plainObject: EventPlainObject, to parent: EventEntity? = nil) {
     let event = EventEntity()
     event.id = plainObject.id
     event.title = plainObject.title

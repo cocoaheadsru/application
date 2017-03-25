@@ -11,12 +11,16 @@ import RealmSwift
 
 protocol PlainObjectTranslation {
   associatedtype Value = PlainObjectType
-  static func translate(of plainObjects: [Value])
-  static func addToRealm(plainObject: Value)
+  associatedtype Parent = Object
+
+  static func translate(of plainObjects: [Value], to parent: Parent?)
+  static func addToRealm(plainObject: Value, to parent: Parent?)
 }
 
 extension PlainObjectTranslation {
-  static func translate(of plainObjects: [Value]) {
-    plainObjects.forEach(addToRealm)
+  static func translate(of plainObjects: [Value], to parent: Parent?) {
+    plainObjects.forEach({
+      addToRealm(plainObject: $0, to: parent)
+    })
   }
 }

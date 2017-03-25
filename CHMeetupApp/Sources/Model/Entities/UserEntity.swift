@@ -15,16 +15,16 @@ class UserEntity: Object {
   dynamic var name: String = ""
   dynamic var lastName: String = ""
 
-  dynamic var company: String = ""
-  dynamic var position: String = ""
+  dynamic var company: String?
+  dynamic var position: String?
 
   dynamic var info: String = ""
 
-  dynamic var phone: String = ""
+  dynamic var phone: String?
   dynamic var email: String = ""
 
   dynamic var isSpeaker: Bool = false
-  dynamic var photoURL: String = ""
+  dynamic var photoURL: String?
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()

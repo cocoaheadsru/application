@@ -12,7 +12,7 @@ struct SpeechContentPlainObject {
   let id: Int
 
   let title: String
-  let descriptionText: String
+  let description: String
 
   let linkURL: String
   let type: Int
