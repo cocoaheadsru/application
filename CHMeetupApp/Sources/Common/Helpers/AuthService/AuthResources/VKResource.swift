@@ -9,15 +9,25 @@
 import Foundation
 
 class VKResource: AuthResource {
-  func login(_ completion: AuthResourceLoginCompletion) {
-    completion("", "", nil)
-  }
 
   fileprivate var token: String?
   fileprivate var secret: String?
+  var appScheme = URL(string: "vk://")
 
-  //required init(with token: String, secret key: String) {
-    //self.token = token
-    //self.secret = key
-  //}
+  var authURL: URL? {
+    var authString: String
+    if appExists {
+      authString = "vkauthorize://authorize?sdk_version=1.4.6&client_id=\(Constants.Vkontakte.clientId)"
+      authString += "&scope=\(Constants.Vkontakte.scope)&revoke=1&v=5.40"
+    } else {
+      authString = "https://oauth.vk.com/authorize?revoke=1&response_type=token&display=mobile"
+      authString += "&scope=\(Constants.Vkontakte.scope)&v=5.40&redirect_uri=\(Constants.Vkontakte.redirect)"
+      authString += "&sdk_version=1.4.6&client_id=\(Constants.Vkontakte.clientId)"
+    }
+    return URL(string: authString)
+  }
+
+  func login(_ completion: AuthResourceLoginCompletion) {
+    completion("", "", nil)
+  }
 }

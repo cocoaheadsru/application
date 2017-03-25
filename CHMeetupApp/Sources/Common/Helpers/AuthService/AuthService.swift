@@ -9,11 +9,14 @@
 import UIKit
 import SafariServices
 
+private let loginName = "UD.key.isLogin"
+
 class AuthService {
   fileprivate var safari: SFSafariViewController?
   fileprivate var currentViewController: UIViewController?
+  fileprivate var loginCompletion: ((UserPlainObject?, Error?) -> Void)?
 
-  enum AuthResourceType {
+  enum AuthResourceType: String {
     case vk
     case fb
     case tw
@@ -22,6 +25,8 @@ class AuthService {
       switch self {
       case .vk:
         return VKResource()
+      case .fb:
+        return FBResource()
       default:
         return VKResource()
       }
@@ -29,30 +34,72 @@ class AuthService {
 
   }
 
-  func login(with service: AuthResourceType, from view: UIViewController) {
+  init() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(AuthService.loggedIn(_:)),
+                                           name: .CloseSafariViewControllerNotification,
+                                           object: nil)
+  }
+
+  func login(with service: AuthResourceType,
+             from view: UIViewController,
+             completion: @escaping (UserPlainObject?, Error?) -> Void) {
+    loginCompletion = completion
     currentViewController = view
-    service.resource.login { (token, secret, error) in
-      print(token)
+
+    let isLogged = LoginProcessController.isLogin
+    if isLogged {
+      completion(nil, nil)
+    } else {
+      guard let authURL = service.resource.authURL else {
+        print("Auth url error")
+        return
+      }
+
+      if service.resource.appExists {
+        UIApplication.shared.open(authURL, options: [:])
+      } else {
+        showSafari(url: authURL)
+      }
+
+    }
+  }
+
+  @objc func loggedIn(_ notification: Notification? = nil) {
+    hideSafari()
+
+    guard
+      let notification = notification,
+      let url = notification.object as? URL
+    else { return }
+
+    let parameters = url.parameters
+    if let _ = parameters?["access_token"], let loginCompletion = loginCompletion {
+      loginCompletion(nil, nil)
     }
   }
 
   /*
    *
    * Present safari view controller to current view controller
-   * @author Kirill
+   * Kirill Averyanov
    *
    */
-  func showSafariViewController(url: URL) {
+
+  fileprivate func showSafari(url: URL) {
     safari = SFSafariViewController(url: url, entersReaderIfAvailable: true)
     currentViewController?.present(safari!, animated: true, completion: nil)
   }
 
-  func hideSafariViewController() {
-    if let safari = safari {
-      if safari.isViewLoaded {
-        safari.dismiss(animated: true, completion: nil)
-      }
+  fileprivate func hideSafari() {
+    if let safari = safari, safari.isViewLoaded {
+      safari.dismiss(animated: true, completion: nil)
     }
   }
 
+}
+
+extension Notification.Name {
+  // swiftlint:disable:next line_length
+  static let CloseSafariViewControllerNotification: Notification.Name = Notification.Name(rawValue: "CloseSafariViewControllerNotification")
 }

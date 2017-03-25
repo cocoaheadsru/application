@@ -6,11 +6,24 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias AuthResourceLoginCompletion = (_ token: String, _ key: String, _ error: Error?) -> Void
 
 protocol AuthResource {
-  //init(with token: String, secret key: String)
+  //init(with app: String, secret key: String)
   func login(_ completion: AuthResourceLoginCompletion)
+  var authURL: URL? { get }
+  var appScheme: URL? { get }
+
+  var appExists: Bool { get }
+}
+
+extension AuthResource {
+
+  var appExists: Bool {
+    guard let appScheme = self.appScheme else { return false }
+    return UIApplication.shared.canOpenURL(appScheme)
+  }
+
 }
