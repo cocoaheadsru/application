@@ -10,7 +10,11 @@
 		03374B1F1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */; };
 		03374B201E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */; };
 		03374B211E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */; };
+		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
+		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
+		03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
 		221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F61E7B24A1004F0695 /* EventRegForm.swift */; };
@@ -187,7 +191,11 @@
 		03374B1C1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		03374B1D1E7F20EA00CA298E /* SpeachPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeachPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		03374B1E1E7F20EA00CA298E /* SpeachPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
+		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
+		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
+		03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPlateTableViewCellModel.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
 		221CC3F61E7B24A1004F0695 /* EventRegForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegForm.swift; sourceTree = "<group>"; };
@@ -367,6 +375,23 @@
 			path = subviews;
 			sourceTree = "<group>";
 		};
+		03374B381E7F2C3100CA298E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				03374B391E7F2C3100CA298E /* RegistrationController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		03CA501A1E8327EB00CF9613 /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */,
+				03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */,
+			);
+			path = DisplayModel;
+			sourceTree = "<group>";
+		};
 		221A8B871E685E72004E320D /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +497,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				03374B381E7F2C3100CA298E /* Registration */,
 				22323F371E70C14300522E5C /* Factory */,
 				22323F391E70C14300522E5C /* Login */,
 				22323F3C1E70C14300522E5C /* Maps */,
@@ -842,6 +868,8 @@
 		22323F631E70C2BE00522E5C /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				03CA501A1E8327EB00CF9613 /* DisplayModel */,
+				03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */,
 				22323F641E70C2BE00522E5C /* RegistrationPreviewViewController.swift */,
 			);
 			path = Preview;
@@ -1599,6 +1627,7 @@
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
+				03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
@@ -1608,6 +1637,7 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
+				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
@@ -1644,6 +1674,7 @@
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
+				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
@@ -1693,6 +1724,7 @@
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
+				03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeachPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
