@@ -41,7 +41,9 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    loginApp(at: .vk)
+    let auth = AuthService()
+    auth.login(with: .vk, from: self)
+    //loginApp(at: .vk)
   }
 
   @IBAction func fbLoginButtonAction(_ sender: UIButton) {
@@ -85,7 +87,6 @@ extension AuthViewController {
 
   func sendToken(token: String) {
     print(token)
-    // TODO: sendToken (@mejl should do)
   }
 
 }

@@ -90,12 +90,16 @@
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
+		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
+		7DE9420A1E867AB200E7E9E6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942091E867AB200E7E9E6 /* AuthService.swift */; };
+		7DE9420D1E867B8C00E7E9E6 /* AuthResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */; };
+		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
-		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
+		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -271,12 +275,16 @@
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
+		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
+		7DE942091E867AB200E7E9E6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResource.swift; sourceTree = "<group>"; };
+		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
-		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
+		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -544,6 +552,7 @@
 		2231A5381E60E5030069A179 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				7DE942051E8675F400E7E9E6 /* URL */,
 				AD4B5A791E7E6CCE0016187B /* Int */,
 				AD4B5A761E7E6CAD0016187B /* Data */,
 				7DDDB7671E7D15AD002C5ECE /* Bundle */,
@@ -639,6 +648,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
@@ -1080,6 +1090,32 @@
 			path = Bundle;
 			sourceTree = "<group>";
 		};
+		7DE942051E8675F400E7E9E6 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		7DE942081E867AA900E7E9E6 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				7DE9420B1E867B8000E7E9E6 /* AuthResources */,
+				7DE942091E867AB200E7E9E6 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		7DE9420B1E867B8000E7E9E6 /* AuthResources */ = {
+			isa = PBXGroup;
+			children = (
+				7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */,
+				7DE9420E1E867BB900E7E9E6 /* VKResource.swift */,
+			);
+			path = AuthResources;
+			sourceTree = "<group>";
+		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1096,14 +1132,6 @@
 			name = Share;
 			sourceTree = "<group>";
 		};
-		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
-			isa = PBXGroup;
-			children = (
-				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
-			);
-			name = DisplayModel;
-      sourceTree = "<group>";
-		};
 		8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -1111,6 +1139,14 @@
 				8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */,
 			);
 			name = TranslationPlainObjects;
+			sourceTree = "<group>";
+		};
+		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
+			);
+			name = DisplayModel;
 			sourceTree = "<group>";
 		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
@@ -1560,7 +1596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\n    isClean=\"$(bash $CLEAN_CHECK)\"\n    echo \"isClean: $isClean\"\n    if [ $isClean -eq 0 ]; then # not clean\n        exit\n    fi\nelse\n    echo Scripts/clean_check.sh not found\nfi\n\necho \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+			shellScript = "\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
 		7D5EC76B1E7F1F3A008A766E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1638,7 +1674,9 @@
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
+				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
+				7DE9420A1E867AB200E7E9E6 /* AuthService.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
@@ -1665,6 +1703,7 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
+				7DE9420D1E867B8C00E7E9E6 /* AuthResource.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
@@ -1698,6 +1737,7 @@
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
+				7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */,
 				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,

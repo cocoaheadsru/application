@@ -74,23 +74,19 @@ enum LoginType {
   }
 
   func token(from url: URL) -> String? {
-    let fromUrl = url.absoluteString
-    let components = fromUrl.components(separatedBy: "&")
-    guard components.count > 0,
-      components[0].range(of: "error=access_denied")?.lowerBound == nil,
-      components[0].components(separatedBy: "=").count > 1 else {
-      return nil
-    }
-    let parts = components[0].components(separatedBy: "=")
+    let urlParams = url.parameters
+
+    guard
+      let params = urlParams,
+      let token = params["access_token"],
+      let secret = params["secret"]
+    else { return nil }
+
     switch self {
     case .vk, .fb:
       break
     case .twitter:
       return nil
-    }
-    var token = parts[1]
-    for partIndex in 2..<parts.count {
-      token += "=" + parts[partIndex]
     }
     return token
   }

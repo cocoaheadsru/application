@@ -10,7 +10,6 @@ import UIKit
 
 struct SpeachPreviewTableViewCellModel {
 
-  // FIXME: - Uncomment next line with realm entity
   // let speachPreview: SpeachPreviewEntity
 
   var firstName: String
