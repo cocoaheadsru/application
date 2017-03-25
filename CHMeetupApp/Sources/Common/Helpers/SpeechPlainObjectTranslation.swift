@@ -25,7 +25,6 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
     speech.title = plainObject.title
     speech.descriptionText = plainObject.description
 
-    // TODO: - Check is it okey
     user.speeches.append(speech)
 
     for contentPlainObject in plainObject.content {
@@ -42,6 +41,10 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
     realmWrite {
       mainRealm.add(user, update: true)
       parent?.speeches.append(speech)
+
+      // Because it doesn't check dublicates by itself and we can have same objects in one lust
+      parent?.speeches.removeDublicates(rule: { $0.id })
+      speech.contents.removeDublicates(rule: { $0.id })
     }
   }
 }

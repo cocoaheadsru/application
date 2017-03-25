@@ -153,6 +153,7 @@
 		9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5948B1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift */; };
 		9FD594901E87183800BAD1B5 /* SpeechPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5948F1E87183800BAD1B5 /* SpeechPlainObject.swift */; };
 		9FD594931E87189400BAD1B5 /* SpeechContentPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD594921E87189400BAD1B5 /* SpeechContentPlainObject.swift */; };
+		9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD594941E8732F600BAD1B5 /* List+RemoveDublicates.swift */; };
 		9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */; };
 		A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
 		A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */; };
@@ -337,6 +338,7 @@
 		9FD5948B1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPlainObjectTranslation.swift; sourceTree = "<group>"; };
 		9FD5948F1E87183800BAD1B5 /* SpeechPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechPlainObject.swift; path = Speech/SpeechPlainObject.swift; sourceTree = "<group>"; };
 		9FD594921E87189400BAD1B5 /* SpeechContentPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechContentPlainObject.swift; sourceTree = "<group>"; };
+		9FD594941E8732F600BAD1B5 /* List+RemoveDublicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+RemoveDublicates.swift"; sourceTree = "<group>"; };
 		9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SocialEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A1495AE71E76CD2E003D8BE3 /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidation.swift; path = Validation/StringValidation.swift; sourceTree = "<group>"; };
 		A1495AEA1E76CD3D003D8BE3 /* StringValidationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidationTests.swift; path = Validation/StringValidationTests.swift; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 				9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */,
 				9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */,
 				9F2638601E6B83D50081D23B /* DataModelCollection.swift */,
+				9FD594941E8732F600BAD1B5 /* List+RemoveDublicates.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1667,6 +1670,7 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
+				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
