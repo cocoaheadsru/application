@@ -12,4 +12,10 @@ struct ActionPlainObject {
   var text: String
   var imageName: String?
   var action: (() -> Void)?
+
+  init(text: String, imageName: String? = nil, action: (() -> Void)? = nil) {
+    self.text = text
+    self.imageName = imageName
+    self.action = action
+  }
 }

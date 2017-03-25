@@ -9,13 +9,14 @@
 import UIKit
 
 struct TimePlaceTableViewCellModel {
-  let time: String
-  let place: String
+  let event: EventEntity
 }
 
 extension TimePlaceTableViewCellModel: CellViewModelType {
   func setup(on cell: TimePlaceTableViewCell) {
-    cell.timeLabel.text = time
-    cell.placeLabel.text = place
+    cell.timeLabel.text = event.startDate.defaultFormatString
+    if let place = event.place {
+      cell.placeLabel.text = place.city + ", " + place.title
+    }
   }
 }

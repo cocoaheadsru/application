@@ -98,7 +98,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .location:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
+      if let event = event {
+        return TimePlaceTableViewCellModel(event: event)
+      } else {
+        assertionFailure("Should not be reached")
+        return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading Adress...".localized))
+      }
     case .adress:
       return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
     case .speaches:
