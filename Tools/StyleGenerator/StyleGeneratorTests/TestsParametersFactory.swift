@@ -31,26 +31,26 @@ class TestsParametersFactory: NSObject {
   // MARK: - Properties
 
   fileprivate lazy var brokenParameters: [String: Any] = {
-    return self.makeBrokenParameters()
+    self.makeBrokenParameters()
   }()
 
   fileprivate var fontParameters: [[String: Any]] {
-    //swiftlint:disable:next force_cast
-    return brokenParameters["fonts"] as! [[String : Any]]
+    // swiftlint:disable:next force_cast
+    return brokenParameters["fonts"] as! [[String: Any]]
   }
 
   fileprivate var colorParameters: [[String: Any]] {
-    //swiftlint:disable:next force_cast
-    return brokenParameters["colors"] as! [[String : Any]]
+    // swiftlint:disable:next force_cast
+    return brokenParameters["colors"] as! [[String: Any]]
   }
 
   // MARK: - Font parameters
 
   func makeTestParameters(for testCase: TestCase) -> [String: Any] {
     switch testCase {
-    case .font(let fontCase):
+    case let .font(fontCase):
       return firstFontParameter(withTestId: fontCase.rawValue)
-    case .color(let colorCase):
+    case let .color(colorCase):
       return firstColorParameter(withTestId: colorCase.rawValue)
     }
   }

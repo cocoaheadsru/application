@@ -22,11 +22,11 @@ extension EventPlainObject: PlainObjectType {
     }
 
     // Event speakers list
-    static func speakersOnEvent(with id: Int) ->  Request<[UserPlainObject]> {
+    static func speakersOnEvent(with id: Int) -> Request<[UserPlainObject]> {
       return Request(query: "event/speakers/\(id)")
     }
-
   }
+
   init?(json: JSONDictionary) {
     guard
       let id = json["id"] as? Int,
@@ -38,7 +38,7 @@ extension EventPlainObject: PlainObjectType {
       let placeJson = json["place"] as? JSONDictionary,
       let place = PlacePlainObject(json: placeJson),
       let isRegistrationOpen = json["is_registration_open"] as? Bool
-      else { return nil }
+    else { return nil }
 
     self.id = id
     self.title = title

@@ -15,5 +15,4 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
     // Do any additional setup after loading the view.
   }
-
 }

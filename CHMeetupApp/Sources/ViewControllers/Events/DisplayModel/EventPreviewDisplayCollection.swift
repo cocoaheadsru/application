@@ -31,11 +31,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .location:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
     case .adress:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
     case .speaches:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: {}))
     case .description:
       return SpeachPreviewTableViewCellModel(firstName: "Alex",
                                              lastName: "Zimin",

@@ -45,6 +45,5 @@ struct MainViewDisplayCollection: DisplayCollection {
       let model = ActionTableViewCellModel(action: action)
       return model
     }
-
   }
 }

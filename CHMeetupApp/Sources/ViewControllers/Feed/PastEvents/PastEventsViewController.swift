@@ -18,6 +18,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
       tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
   }
+
   fileprivate var dataCollection: PastEventsDisplayCollection!
 
   override func viewDidLoad() {

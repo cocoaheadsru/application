@@ -10,7 +10,7 @@ import Foundation
 
 final class FileController {
 
-  // MARK: - Nested 
+  // MARK: - Nested
 
   enum Error: DescribedError {
     case notFound
@@ -45,7 +45,7 @@ final class FileController {
       throw Error.empty
     }
 
-    let parameters =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    let parameters = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
     if let parameters = parameters as? TemplateInputParameters {
       return parameters
     } else {

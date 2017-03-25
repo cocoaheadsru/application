@@ -14,17 +14,17 @@ extension UIView {
 
   /// By sides with constants
   func anchor(
-      leading: NSLayoutXAxisAnchor? = nil,
-      top: NSLayoutYAxisAnchor? = nil,
-      trailing: NSLayoutXAxisAnchor? = nil,
-      bottom: NSLayoutYAxisAnchor? = nil,
-      leadingConstant: CGFloat = 0,
-      topConstant: CGFloat = 0,
-      trailingConstant: CGFloat = 0,
-      bottomConstant: CGFloat = 0,
-      heightConstant: CGFloat = 0,
-      widthConstant: CGFloat = 0
-    ) {
+    leading: NSLayoutXAxisAnchor? = nil,
+    top: NSLayoutYAxisAnchor? = nil,
+    trailing: NSLayoutXAxisAnchor? = nil,
+    bottom: NSLayoutYAxisAnchor? = nil,
+    leadingConstant: CGFloat = 0,
+    topConstant: CGFloat = 0,
+    trailingConstant: CGFloat = 0,
+    bottomConstant: CGFloat = 0,
+    heightConstant: CGFloat = 0,
+    widthConstant: CGFloat = 0
+  ) {
 
     translatesAutoresizingMaskIntoConstraints = false
 
@@ -50,8 +50,8 @@ extension UIView {
 
   /// By vertical & horizontal alignment
   func anchor(
-      centerX: NSLayoutXAxisAnchor? = nil,
-      centerY: NSLayoutYAxisAnchor? = nil) {
+    centerX: NSLayoutXAxisAnchor? = nil,
+    centerY: NSLayoutYAxisAnchor? = nil) {
     translatesAutoresizingMaskIntoConstraints = false
 
     if let centerX = centerX {
@@ -64,10 +64,10 @@ extension UIView {
 
   /// By its sizes with multipliers
   func anchor(
-      widthAnchor: NSLayoutDimension? = nil,
-      heightAnchor: NSLayoutDimension? = nil,
-      widthMultiplier: CGFloat = 1,
-      heightMultiplier: CGFloat = 1) {
+    widthAnchor: NSLayoutDimension? = nil,
+    heightAnchor: NSLayoutDimension? = nil,
+    widthMultiplier: CGFloat = 1,
+    heightMultiplier: CGFloat = 1) {
     translatesAutoresizingMaskIntoConstraints = false
 
     if let width = widthAnchor {
@@ -80,12 +80,11 @@ extension UIView {
 
   /// Pin to all 4 sides
   func anchorToAllSides(of view: UIView) {
-    self.anchor(
+    anchor(
       leading: view.leftAnchor,
       top: view.topAnchor,
       trailing: view.rightAnchor,
       bottom: view.bottomAnchor
     )
   }
-
 }

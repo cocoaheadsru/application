@@ -23,7 +23,7 @@ typealias EnumCase = (name: String, caseValue: String?)
 
 extension String {
 
-  // MARK: - Nested 
+  // MARK: - Nested
 
   enum CodeSymbols {
     case header
@@ -36,7 +36,7 @@ extension String {
     case function(title: String, body: [CodeSymbols])
     case forCycle(iteratorTitle: String, nestedTypes: [CodeSymbols])
 
-    //swiftlint:disable:next nesting
+    // swiftlint:disable:next nesting
     enum SnippetType: String {
       case `extension`
       case `protocol`
@@ -53,11 +53,11 @@ extension String {
   fileprivate func addIndentation(_ count: Int = defaultIndentation) -> String {
 
     let indent = makeIndent(count: count)
-    var result = self.replacingOccurrences(of: "\n", with: "\n" + indent)
+    var result = replacingOccurrences(of: "\n", with: "\n" + indent)
     if result.hasSuffix(indent) {
       let startIndex = result.index(result.startIndex, offsetBy: result.characters.count - count)
       let endIndex = result.index(result.startIndex, offsetBy: result.characters.count)
-      result.replaceSubrange(startIndex..<endIndex, with: "")
+      result.replaceSubrange(startIndex ..< endIndex, with: "")
     }
     result.insert(contentsOf: indent.characters, at: result.startIndex)
     return result
@@ -65,7 +65,7 @@ extension String {
 
   fileprivate func makeIndent(count: Int) -> String {
     var result = ""
-    for _ in 0..<count {
+    for _ in 0 ..< count {
       result += String.space
     }
     return result
@@ -74,11 +74,11 @@ extension String {
 
 extension String.CodeSymbols {
 
-  // MARK: - Public 
+  // MARK: - Public
 
   var value: String {
     switch self {
-      //Header
+      // Header
     case .header:
       var result = ""
       result += "//\n"
@@ -87,20 +87,20 @@ extension String.CodeSymbols {
       result += "//\n\n"
       return result
 
-      //New line symbol
+      // New line symbol
     case .newLine:
       return "\n"
 
-      //Line symbol
-    case .line(let string):
+      // Line symbol
+    case let .line(string):
       return string + "\n"
 
-      //Mark symbol
-    case .mark(let title):
+      // Mark symbol
+    case let .mark(title):
       return "// MARK: - \(title)\n\n"
 
-      //Snippet symbol
-    case .snippet(let type, let target, let nested):
+      // Snippet symbol
+    case let .snippet(type, target, nested):
       guard nested.count > 0 else {
         return "\(type.rawValue) \(target) {}"
       }
@@ -115,8 +115,8 @@ extension String.CodeSymbols {
       result += .line(string: "}")
       return result
 
-      //Enum symbol
-    case .enum(let name, let cases):
+      // Enum symbol
+    case let .enum(name, cases):
       var result = "enum \(name) {\n"
 
       var casesString = ""
@@ -132,8 +132,8 @@ extension String.CodeSymbols {
       result += .line(string: "}")
       return result
 
-      //Switch symbol
-    case .switch(let value, let cases):
+      // Switch symbol
+    case let .switch(value, cases):
       var result = ""
       result += .line(string: "switch \(value) {")
       for caseItem in cases {
@@ -143,8 +143,8 @@ extension String.CodeSymbols {
       result += .line(string: "}")
       return result
 
-      //Function symbol
-    case .function(let title, let body):
+      // Function symbol
+    case let .function(title, body):
       var result = ""
       result += .line(string: title + " {")
       for item in body {
@@ -153,8 +153,8 @@ extension String.CodeSymbols {
       result += .line(string: "}")
       return result
 
-      //For symbol
-    case .forCycle(let iteratorTitle, let nestedSymbols):
+      // For symbol
+    case let .forCycle(iteratorTitle, nestedSymbols):
       var result = "for \(iteratorTitle) {\n"
       for nestedSymbol in nestedSymbols {
         if nestedSymbol.value == String.CodeSymbols.newLine.value {
@@ -168,7 +168,7 @@ extension String.CodeSymbols {
     }
   }
 
-  func addIndentation(_ count: Int = defaultIndentation) -> String {
-    return self.value.addIndentation()
+  func addIndentation(_: Int = defaultIndentation) -> String {
+    return value.addIndentation()
   }
 }

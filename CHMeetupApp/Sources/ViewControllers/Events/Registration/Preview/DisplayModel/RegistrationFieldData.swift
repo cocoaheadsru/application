@@ -32,7 +32,7 @@ struct FormFieldItem {
     isRequired = field.required
     name = field.name
     type = field.type
-    fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType:field.type) }
+    fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType: field.type) }
   }
 }
 

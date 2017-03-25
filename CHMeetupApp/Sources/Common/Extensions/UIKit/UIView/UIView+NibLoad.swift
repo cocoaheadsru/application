@@ -17,11 +17,11 @@ internal extension UIView {
 
   func loadFromNibIfEmbeddedInDifferentNib() -> Self {
     // based on: http://blog.yangmeyer.de/blog/2012/07/09/an-update-on-nested-nib-loading
-    let isJustAPlaceholder = self.subviews.count == 0
+    let isJustAPlaceholder = subviews.count == 0
     if isJustAPlaceholder {
       let theRealThing = type(of: self).viewFromNib()
-      theRealThing.frame = self.frame
-      self.translatesAutoresizingMaskIntoConstraints = false
+      theRealThing.frame = frame
+      translatesAutoresizingMaskIntoConstraints = false
       theRealThing.translatesAutoresizingMaskIntoConstraints = false
       return theRealThing
     }

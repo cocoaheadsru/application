@@ -32,14 +32,14 @@ extension UIViewController {
 /*
  Adds close toolBar for UITextField and UITextView
  Do not forget to call `super` if overriding and set `delegate` of target edit fields from code or via Storyboard
- 
+
  Overriding example:
- 
+
  override func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-   // doing whatever you want
-   return super.textFieldShouldBeginEditing(textField)
+ // doing whatever you want
+ return super.textFieldShouldBeginEditing(textField)
  }
-*/
+ */
 extension UIViewController: UITextViewDelegate, UITextFieldDelegate {
   public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
     changeWith(view: textView)
@@ -48,6 +48,7 @@ extension UIViewController: UITextViewDelegate, UITextFieldDelegate {
     }
     return true
   }
+
   public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     changeWith(view: textField)
     if textField.inputAccessoryView == nil { // if set in overriden
@@ -55,6 +56,7 @@ extension UIViewController: UITextViewDelegate, UITextFieldDelegate {
     }
     return true
   }
+
   // ----- Staff only -----
   private var doneToolBar: UIToolbar {
     let barFrame = CGRect(x: 0, y: 0, width: 0, height: 40)
@@ -64,6 +66,7 @@ extension UIViewController: UITextViewDelegate, UITextFieldDelegate {
     bar.items = [flex, btnDone]
     return bar
   }
+
   private func changeWith(view: UIView) {
     if prevInputView == nil {
       prevInputView = view
@@ -73,6 +76,7 @@ extension UIViewController: UITextViewDelegate, UITextFieldDelegate {
       activeInputView = view
     }
   }
+
   @objc private func _endEditing() {
     view.endEditing(true)
   }

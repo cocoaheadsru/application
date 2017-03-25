@@ -39,7 +39,7 @@ class StylesTemplate: GeneratedTemplate {
 
     output += .mark(title: "Stylable extensions")
 
-    //Create func tune(with styles: [LabelStyle])
+    // Create func tune(with styles: [LabelStyle])
     let labelTuneFuncTitle = "func tune(with attributes: [LabelStyleAttribute])"
     var switchCases = [SwitchCase]()
     switchCases.append(SwitchCase("font(let name, let size)", "self.font = UIFont(name, size: size)"))
@@ -50,14 +50,14 @@ class StylesTemplate: GeneratedTemplate {
     let forCycle = [String.CodeSymbols.forCycle(iteratorTitle: forCycleTitle, nestedTypes: [stylesSwitch])]
     let labelTuneFunc = String.CodeSymbols.function(title: labelTuneFuncTitle, body: forCycle)
 
-    //Create extension
+    // Create extension
     let forTypeName = "UILabel: Stylable"
     let fontExtension = String.CodeSymbols.snippet(type: .extension, for: forTypeName, nestedTypes: [labelTuneFunc])
 
     output += fontExtension
     output += .newLine
 
-    //swiftlint:disable:next line_length
+    // swiftlint:disable:next line_length
     let usage = "/** USAGE \nlet label = UILabel()\nlabel.tune(with: [\n.font(.gothamPro, size: 13),\n.color(.darkGray)\n])\n*/"
     output += usage
     return output

@@ -20,7 +20,7 @@ let consoleController = ConsoleController()
 let fileController = FileController()
 var generator = TemplateGenerator()
 
-// MARK - Exit
+// MARK: - Exit
 
 func exit(with error: Error) {
   if let error = error as? DescribedError {

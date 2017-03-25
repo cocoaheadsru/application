@@ -51,5 +51,4 @@ final class OptionTableViewCell: PlateTableViewCell {
     let imageName = isRadio ? radioImage : checkImage
     return UIImage(named: imageName)!
   }
-
 }

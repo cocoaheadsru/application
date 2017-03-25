@@ -12,7 +12,7 @@ import CoreLocation
 struct MapsController {
   static var availableMaps: [MapAppType] {
     return MapAppType.allMaps.filter({ map in
-      return UIApplication.shared.canOpenURL(map.scheme)
+      UIApplication.shared.canOpenURL(map.scheme)
     })
   }
 

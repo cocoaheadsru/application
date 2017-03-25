@@ -9,7 +9,7 @@
 import Foundation
 
 enum EventRegFormFieldType: String {
-  case `string`
+  case string
   case checkbox
   case radio
 }
@@ -20,7 +20,6 @@ struct EventRegFormFieldPlainObject {
   let name: String
   let type: EventRegFormFieldType
   let answers: [EventRegFormFieldAnswerPlainObject]
-
 }
 
 extension EventRegFormFieldPlainObject: PlainObjectType {
@@ -35,13 +34,12 @@ extension EventRegFormFieldPlainObject: PlainObjectType {
       let fieldTypeString = field["type"] as? String,
       let fieldType = EventRegFormFieldType(rawValue: fieldTypeString),
       let fieldAnswers = field["field_answers"] as? [JSONDictionary]
-      else { return nil }
+    else { return nil }
 
     self.id = id
     self.required = required
     self.name = name
-    self.type = fieldType
-    self.answers = fieldAnswers.flatMap(EventRegFormFieldAnswerPlainObject.init)
+    type = fieldType
+    answers = fieldAnswers.flatMap(EventRegFormFieldAnswerPlainObject.init)
   }
-
 }

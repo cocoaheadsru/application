@@ -24,13 +24,8 @@ final class Constants {
     static let redirect = "fb\(clientId)://authorize"
   }
 
-  struct Twitter {
-
-  }
-
   struct SystemSizes {
     static let cornerRadius: CGFloat = 5
     static let textSize: CGFloat = 15
   }
-
 }

@@ -18,13 +18,13 @@ extension UIFont {
 
   static func appFont(_ fontType: FontType) -> UIFont {
     switch fontType {
-    case .gothamProMedium(let size):
+    case let .gothamProMedium(size):
       return UIFont(name: "GothamPro-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
-    case .gothamPro(let size):
+    case let .gothamPro(size):
       return UIFont(name: "GothamPro", size: size) ?? UIFont.systemFont(ofSize: size)
-    case .systemFont(let size):
+    case let .systemFont(size):
       return UIFont.systemFont(ofSize: size)
-    case .systemMediumFont(let size):
+    case let .systemMediumFont(size):
       return UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
     }
   }

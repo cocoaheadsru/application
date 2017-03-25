@@ -11,7 +11,7 @@ import RealmSwift
 
 extension Realm {
   public func realmWrite(_ block: (() -> Void)) {
-    if self.isInWriteTransaction {
+    if isInWriteTransaction {
       block()
     } else {
       do {

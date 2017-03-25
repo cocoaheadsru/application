@@ -47,7 +47,6 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   @IBAction func fbLoginButtonAction(_ sender: UIButton) {
     loginApp(at: .fb)
   }
-
 }
 
 // MARK: - Login actions
@@ -81,20 +80,19 @@ extension AuthViewController {
     sendToken(token: token)
     LoginProcessController.isLogin = true
     profileNavigationController?.updateRootViewController()
-}
+  }
 
   func sendToken(token: String) {
     print(token)
     // TODO: sendToken (@mejl should do)
   }
-
 }
 
 // MARK: - Working with safariViewController
 extension AuthViewController {
   func showSafariViewController(url: URL) {
     safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-    self.present(safariViewController!, animated: true, completion: nil)
+    present(safariViewController!, animated: true, completion: nil)
   }
 
   func hideSafariViewController() {

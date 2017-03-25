@@ -46,7 +46,6 @@ class RegistrationPreviewViewController: UIViewController {
         self?.displayCollection = displayCollection
         self?.tableView.reloadData()
     })
-
   }
 
   func registrationButtonAction() {
@@ -55,7 +54,7 @@ class RegistrationPreviewViewController: UIViewController {
     })
   }
 
-  func registrate(completion:() -> Void) {
+  func registrate(completion: () -> Void) {
     // Do staff here..
     completion()
   }
@@ -64,7 +63,6 @@ class RegistrationPreviewViewController: UIViewController {
     let confirmViewController = Storyboards.EventPreview.instantiateRegistrationConfirmViewController()
     navigationController?.pushViewController(confirmViewController, animated: true)
   }
-
 }
 
 // MARK: - UITableViewDataSource
@@ -87,7 +85,6 @@ extension RegistrationPreviewViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model!)
     return cell
   }
-
 }
 
 // MARK: - KeyboardHandlerDelegate
@@ -109,8 +106,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       buttonInsets = 0
     }
 
-    self.bottomButton.bottomInsetsConstant = buttonInsets
-    info.animate ({ [weak self] in
+    bottomButton.bottomInsetsConstant = buttonInsets
+    info.animate({ [weak self] in
       self?.view.layoutIfNeeded()
     })
   }

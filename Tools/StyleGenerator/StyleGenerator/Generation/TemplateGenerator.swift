@@ -17,7 +17,7 @@ enum TemplateError: DescribedError {
 
   var message: String {
     switch self {
-    case .wrongData(let option):
+    case let .wrongData(option):
       return "It looks like json for \(option) is wrong"
     }
   }
@@ -45,7 +45,7 @@ class TemplateGenerator {
       let template = makeTemplate(for: parameters.option, with: styleAttributes)
       let code = try template?.generate()
       if let code = code {
-        try FileController.write(code: code, in:  parameters.outputPath)
+        try FileController.write(code: code, in: parameters.outputPath)
       } else {
         exit(with: "Something went wrong")
       }

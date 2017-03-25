@@ -32,13 +32,13 @@ class ParticipantsCollectionView: UIView {
   }
 
   private func drawParticipants() {
-    for view in self.subviews {
+    for view in subviews {
       view.removeFromSuperview()
     }
 
     for (index, image) in imagesCollection.enumerated() {
-      let viewHeight = self.bounds.height
-      let viewWidth = self.bounds.width
+      let viewHeight = bounds.height
+      let viewWidth = bounds.width
 
       let xImageView = ((CGFloat(index) * viewHeight) * 0.8).round(0.5) // each new element takes 80% of view height
       let leadingEdgeSecondImageView = ((CGFloat(index + 1) * viewHeight) * 0.8) + viewHeight
@@ -51,7 +51,7 @@ class ParticipantsCollectionView: UIView {
 
       let border = CAShapeLayer()
       border.frame = imageView.bounds
-      border.lineWidth = (viewHeight * 0.1).round(0.5) //borderWidth = 5% of view height x2
+      border.lineWidth = (viewHeight * 0.1).round(0.5) // borderWidth = 5% of view height x2
       border.path = UIBezierPath(ovalIn: border.bounds).cgPath
       border.strokeColor = UIColor.white.cgColor
       border.fillColor = UIColor.clear.cgColor
@@ -65,8 +65,8 @@ class ParticipantsCollectionView: UIView {
           imageView.image = #imageLiteral(resourceName: "img_template_unknown")
         }
 
-        self.addSubview(imageView)
-        self.sendSubview(toBack: imageView)
+        addSubview(imageView)
+        sendSubview(toBack: imageView)
       } else { break }
     }
   }
