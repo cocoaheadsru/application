@@ -34,5 +34,4 @@ class NavigationViewController: UINavigationController {
     viewControllers.last?.makeBackButtonEmpty()
     super.pushViewController(viewController, animated: animated)
   }
-
 }

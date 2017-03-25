@@ -10,14 +10,14 @@ import UIKit.UITableView
 
 extension UITableView {
   func registerNib(for cellClass: UITableViewCell.Type) {
-    self.register(cellClass.nib, forCellReuseIdentifier: cellClass.identifier)
+    register(cellClass.nib, forCellReuseIdentifier: cellClass.identifier)
   }
 
   func registerHeaderNib(for headerClass: UITableViewHeaderFooterView.Type) {
-    self.register(headerClass.nib, forHeaderFooterViewReuseIdentifier: headerClass.identifier)
+    register(headerClass.nib, forHeaderFooterViewReuseIdentifier: headerClass.identifier)
   }
 
   func registerClass(for cellClass: UITableViewCell.Type) {
-    self.register(cellClass, forCellReuseIdentifier: cellClass.identifier)
+    register(cellClass, forCellReuseIdentifier: cellClass.identifier)
   }
 }

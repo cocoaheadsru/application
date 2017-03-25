@@ -18,7 +18,7 @@ extension EventRegFormFieldAnswerPlainObject: PlainObjectType {
     guard
       let id = json["id"] as? Int,
       let value = json["value"] as? String
-      else { return nil }
+    else { return nil }
 
     self.id = id
     self.value = value

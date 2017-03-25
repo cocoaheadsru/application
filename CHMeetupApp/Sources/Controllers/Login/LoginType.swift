@@ -89,10 +89,9 @@ enum LoginType {
       return nil
     }
     var token = parts[1]
-    for partIndex in 2..<parts.count {
+    for partIndex in 2 ..< parts.count {
       token += "=" + parts[partIndex]
     }
     return token
   }
-
 }

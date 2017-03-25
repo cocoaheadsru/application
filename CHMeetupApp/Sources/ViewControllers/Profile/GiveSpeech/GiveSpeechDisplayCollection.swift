@@ -14,8 +14,10 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
     case description
   }
 
-  var sections: [Type] = [.name,
-                          .description]
+  var sections: [Type] = [
+    .name,
+    .description
+  ]
 
   private(set) var nameText = ""
   fileprivate(set) var descriptionText = ""
@@ -37,7 +39,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
       return TextFieldPlateTableViewCellModel(placeholder: "Название".localized,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak self] value in
-        self?.nameText = value
+                                                self?.nameText = value
       })
     case .description:
       return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized,

@@ -10,12 +10,12 @@ import Foundation
 
 extension String {
   func substring(from index: Int) -> String {
-    return self.substring(from: self.characters.index(self.startIndex, offsetBy: index))
+    return substring(from: characters.index(startIndex, offsetBy: index))
   }
 
   func substring(with range: Range<Int>) -> String {
-    let startIndex = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-    let endIndex = self.characters.index(self.startIndex, offsetBy: range.upperBound)
-    return self.substring(with: startIndex..<endIndex)
+    let startIndex = characters.index(self.startIndex, offsetBy: range.lowerBound)
+    let endIndex = characters.index(self.startIndex, offsetBy: range.upperBound)
+    return substring(with: startIndex ..< endIndex)
   }
 }

@@ -23,9 +23,9 @@ struct SpeachPreviewTableViewCellModel {
 extension SpeachPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: SpeachPreviewTableViewCell) {
 
-    cell.avatarImageView.image        = UIImage(data: userPhoto)
-    cell.fullNameLabel.text           = firstName + " " + lastName
-    cell.topicLabel.text              = "«" + topic + "»"
-    cell.speachDescriptionLabel.text  = speachDescription
+    cell.avatarImageView.image = UIImage(data: userPhoto)
+    cell.fullNameLabel.text = firstName + " " + lastName
+    cell.topicLabel.text = "«" + topic + "»"
+    cell.speachDescriptionLabel.text = speachDescription
   }
 }

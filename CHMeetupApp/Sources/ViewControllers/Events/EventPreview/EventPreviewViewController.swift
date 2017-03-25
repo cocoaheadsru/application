@@ -22,6 +22,7 @@ class EventPreviewViewController: UIViewController {
       tableView.registerNib(for: ActionTableViewCell.self)
     }
   }
+
   var bottomButton: BottomButton!
   var displayCollection: EventPreviewDisplayCollection!
 
@@ -38,7 +39,6 @@ class EventPreviewViewController: UIViewController {
     let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     navigationController?.pushViewController(viewController, animated: true)
   }
-
 }
 
 extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource {

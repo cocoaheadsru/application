@@ -12,8 +12,8 @@ extension UICollectionView {
   func dequeueReusableCell(for indexPath: IndexPath, with model: CellViewAnyModelType) -> UICollectionViewCell {
 
     let cellIdentifier = String(describing: model.cellClass())
-    let cell = self.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
-                                        for: indexPath)
+    let cell = dequeueReusableCell(withReuseIdentifier: cellIdentifier,
+                                   for: indexPath)
 
     model.setup(on: cell)
 

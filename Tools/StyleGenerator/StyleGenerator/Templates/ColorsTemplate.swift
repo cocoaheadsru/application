@@ -32,19 +32,21 @@ class ColorsTemplate: GeneratedModelTemplate {
     output += .newLine
     output += .mark(title: "Pallete")
 
-    //Create ColorType enum
+    // Create ColorType enum
     let colorEnumCases = model.colors.flatMap({ EnumCase($0.name, "\"\($0.hex)\"") })
     let colorEnum = String.CodeSymbols.enum(name: "ColorType", cases: colorEnumCases)
 
-    //Create init func
+    // Create init func
     let initFuncTitle = "convenience init(_ colorType: ColorType)"
     let initFuncBody = String.CodeSymbols.line(string: "self.init(hexString: colorType.rawValue)")
     let initFunc = String.CodeSymbols.function(title: initFuncTitle, body: [initFuncBody])
 
-    //Create extension
-    let nestedTypes = [colorEnum,
-                       .newLine,
-                       initFunc]
+    // Create extension
+    let nestedTypes = [
+      colorEnum,
+      .newLine,
+      initFunc
+    ]
     let colorExtension = String.CodeSymbols.snippet(type: .extension, for: "UIColor", nestedTypes: nestedTypes)
     output += colorExtension
 

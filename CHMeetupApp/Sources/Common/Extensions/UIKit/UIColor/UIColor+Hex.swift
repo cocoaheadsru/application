@@ -17,16 +17,16 @@ extension UIColor {
     }
 
     if hex.characters.count == 3 {
-      let redHex = hex.substring(with: 0..<1)
-      let greenHex = hex.substring(with: 1..<2)
-      let blueHex = hex.substring(with: 2..<3)
+      let redHex = hex.substring(with: 0 ..< 1)
+      let greenHex = hex.substring(with: 1 ..< 2)
+      let blueHex = hex.substring(with: 2 ..< 3)
 
       hex = redHex + redHex + greenHex + greenHex + blueHex + blueHex
     }
 
-    let redHex = hex.substring(with: 0..<2)
-    let greenHex = hex.substring(with: 2..<4)
-    let blueHex = hex.substring(with: 4..<6)
+    let redHex = hex.substring(with: 0 ..< 2)
+    let greenHex = hex.substring(with: 2 ..< 4)
+    let blueHex = hex.substring(with: 4 ..< 6)
 
     var redInt: CUnsignedInt = 0
     var greenInt: CUnsignedInt = 0

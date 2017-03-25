@@ -18,9 +18,9 @@ extension PlacePlainObject: PlainObjectType {
       let longitude = json["longitude"] as? Double,
       let latitude = json["latitude"] as? Double,
       let cityID = json["city_id"] as? Int
-      else { return nil }
+    else { return nil }
 
-    self.placeID = id
+    placeID = id
     self.title = title
     self.description = description
     self.address = address

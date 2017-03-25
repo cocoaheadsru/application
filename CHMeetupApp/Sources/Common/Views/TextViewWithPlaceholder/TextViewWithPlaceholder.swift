@@ -11,8 +11,8 @@ import UIKit
 class TextViewWithPlaceholder: UITextView {
   func updatePlacholderViewStyle() {
     placeholderTextView.backgroundColor = UIColor.clear
-    placeholderTextView.font = self.font
-    placeholderTextView.textColor = self.textColor
+    placeholderTextView.font = font
+    placeholderTextView.textColor = textColor
     placeholderTextView.isUserInteractionEnabled = false
     placeholderTextView.alpha = 0.3
     placeholderTextView.isEditable = false
@@ -27,7 +27,7 @@ class TextViewWithPlaceholder: UITextView {
 
   var placeholder: String? {
     didSet {
-        placeholderTextView.text = placeholder
+      placeholderTextView.text = placeholder
     }
   }
 
@@ -42,7 +42,7 @@ class TextViewWithPlaceholder: UITextView {
   }
 
   private func commonInit() {
-    placeholderTextView = UITextView(frame: self.bounds)
+    placeholderTextView = UITextView(frame: bounds)
     addSubview(placeholderTextView)
     setupConstraints()
     setupNotifications()
@@ -56,7 +56,7 @@ class TextViewWithPlaceholder: UITextView {
   }
 
   @objc private func textViewDidChange() {
-    let isHide = !self.text.isEmpty
+    let isHide = !text.isEmpty
     changeTheVisibilityOf(view: placeholderTextView, isHide: isHide)
   }
 
@@ -68,9 +68,9 @@ class TextViewWithPlaceholder: UITextView {
 
   private func setupConstraints() {
     placeholderTextView.translatesAutoresizingMaskIntoConstraints = false
-    placeholderTextView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-    placeholderTextView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    placeholderTextView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-    placeholderTextView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    placeholderTextView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    placeholderTextView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    placeholderTextView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+    placeholderTextView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
   }
 }

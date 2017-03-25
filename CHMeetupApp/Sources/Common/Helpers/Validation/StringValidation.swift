@@ -13,6 +13,7 @@ final class StringValidation {
   enum `Type` {
     case mail, url, urlWithPath
   }
+
   /// Domains to check for .urlWithPath type
   private static let domainsToCheckPath: Set<String> = Set(["github", "facebook", "vk", "twitter", "linkedin"])
 
@@ -31,7 +32,7 @@ final class StringValidation {
 
   private static func isMail(_ string: String) -> Bool {
     let format = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    let predicate = NSPredicate(format:"SELF MATCHES %@", format)
+    let predicate = NSPredicate(format: "SELF MATCHES %@", format)
     return predicate.evaluate(with: string) && !string.contains("..") // NOT contains two dots in a row
   }
 
@@ -44,12 +45,12 @@ final class StringValidation {
     guard let url = url(from: string),
       isURL(url),
       let host = url.host
-      else { return false }
+    else { return false }
     // If url domain is one of known social networks - check url pathes
     if domainsToCheckPath.contains(domainFrom(host: host)) {
       return !url.pathComponents
-                 .filter({$0.characters.count > 1})
-                 .isEmpty
+        .filter({ $0.characters.count > 1 })
+        .isEmpty
     }
     return true
   }
@@ -58,10 +59,10 @@ final class StringValidation {
 
   private static func isURL(_ url: URL) -> Bool {
     guard let host = url.host
-      else { return false }
+    else { return false }
     return host.components(separatedBy: ".")
-               .filter({!$0.isEmpty})
-               .count > 1
+      .filter({ !$0.isEmpty })
+      .count > 1
   }
 
   /// Create URL with protocol.
@@ -73,8 +74,8 @@ final class StringValidation {
     }
     // Non-ASCII characters (and many special characters) need to encoded
     guard let lowercasedString = string.localizedLowercase
-                                       .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-      else { return nil }
+      .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    else { return nil }
     // Check if string has protocol
     let hasProtocol = lowercasedString.hasPrefix("http://") || lowercasedString.hasPrefix("https://")
     // Add protocol if needed
@@ -89,8 +90,7 @@ final class StringValidation {
   /// - Returns: subdomain or empty string
   private static func domainFrom(host: String) -> String {
     return host.components(separatedBy: ".")
-               .filter({!$0.isEmpty && $0 != "www"})
-               .first ?? ""
+      .filter({ !$0.isEmpty && $0 != "www" })
+      .first ?? ""
   }
-
 }

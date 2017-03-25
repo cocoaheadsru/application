@@ -23,7 +23,7 @@ struct ColorsCollection: TemplateModel {
       exit(with: "you don't have parameteter 'colors'")
       return nil
     }
-    self.colors = TemplateModelsFactory.makeModels(from: colorsParameters)
+    colors = TemplateModelsFactory.makeModels(from: colorsParameters)
   }
 }
 
@@ -49,6 +49,6 @@ struct Color: TemplateModel {
 
     self.name = name
     let hexSymbol = "#"
-    self.hex = hex.hasPrefix(hexSymbol) ? hex : hexSymbol+hex
+    self.hex = hex.hasPrefix(hexSymbol) ? hex : hexSymbol + hex
   }
 }

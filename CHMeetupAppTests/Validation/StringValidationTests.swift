@@ -159,5 +159,4 @@ final class StringValidationTests: XCTestCase {
     let isURL = StringValidation.isValid(string: url, type: .urlWithPath)
     XCTAssertTrue(isURL)
   }
-
 }

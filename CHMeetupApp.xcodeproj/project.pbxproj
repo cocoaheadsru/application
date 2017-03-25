@@ -93,9 +93,9 @@
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
-		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
+		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -157,7 +157,6 @@
 		A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837971E7E979800A12B3B /* OptionTableViewCell.swift */; };
 		A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16837981E7E979800A12B3B /* OptionTableViewCell.xib */; };
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
-		AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
@@ -274,9 +273,9 @@
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
-		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
+		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -340,7 +339,6 @@
 		A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCellModel.swift; path = OptionCell/OptionTableViewCellModel.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
@@ -545,7 +543,6 @@
 			isa = PBXGroup;
 			children = (
 				AD4B5A791E7E6CCE0016187B /* Int */,
-				AD4B5A761E7E6CAD0016187B /* Data */,
 				7DDDB7671E7D15AD002C5ECE /* Bundle */,
 				22323F101E70C0D500522E5C /* Date */,
 				221A8B871E685E72004E320D /* String */,
@@ -1096,14 +1093,6 @@
 			name = Share;
 			sourceTree = "<group>";
 		};
-		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
-			isa = PBXGroup;
-			children = (
-				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
-			);
-			name = DisplayModel;
-      sourceTree = "<group>";
-		};
 		8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -1111,6 +1100,14 @@
 				8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */,
 			);
 			name = TranslationPlainObjects;
+			sourceTree = "<group>";
+		};
+		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
+			);
+			name = DisplayModel;
 			sourceTree = "<group>";
 		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
@@ -1399,14 +1396,6 @@
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
-			sourceTree = "<group>";
-		};
-		AD4B5A761E7E6CAD0016187B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				AD4B5A771E7E6CAD0016187B /* Data+Encryption.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		AD4B5A791E7E6CCE0016187B /* Int */ = {
@@ -1698,7 +1687,6 @@
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
-				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,

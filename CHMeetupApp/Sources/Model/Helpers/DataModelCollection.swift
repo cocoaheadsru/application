@@ -29,9 +29,7 @@ struct DataModelCollection<T: Object> {
   }
 
   subscript(index: Int) -> T {
-    get {
-      return objectAtIndex(index: index)
-    }
+    return objectAtIndex(index: index)
   }
 
   // MARK: - Filter

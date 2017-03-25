@@ -11,12 +11,12 @@ import UIKit.UITableView
 extension UITableView {
   func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
     let identifier = T.identifier
-    return self.dequeueReusableCell(withIdentifier: identifier,
-                                    for: indexPath) as! T // swiftlint:disable:this force_cast
+    return dequeueReusableCell(withIdentifier: identifier,
+                               for: indexPath) as! T // swiftlint:disable:this force_cast
   }
 
   func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T {
     let identifier = T.identifier
-    return self.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T // swiftlint:disable:this force_cast
+    return dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T // swiftlint:disable:this force_cast
   }
 }
