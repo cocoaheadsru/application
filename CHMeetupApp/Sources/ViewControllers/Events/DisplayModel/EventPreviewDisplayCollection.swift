@@ -129,7 +129,8 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Test", imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: ActionPlainObject(text: "Should be additional cell",
+                                                                imageName: nil, action: { }))
     }
   }
 
