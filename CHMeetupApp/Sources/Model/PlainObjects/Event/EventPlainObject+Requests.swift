@@ -20,6 +20,12 @@ extension EventPlainObject: PlainObjectType {
     static var pastList: Request<[EventPlainObject]> {
       return Request(query: "events/past")
     }
+
+    // Event speakers list
+    static func speakersOnEvent(with id: Int) ->  Request<[UserPlainObject]> {
+      return Request(query: "event/speakers/\(id)")
+    }
+
   }
   init?(json: JSONDictionary) {
     guard
