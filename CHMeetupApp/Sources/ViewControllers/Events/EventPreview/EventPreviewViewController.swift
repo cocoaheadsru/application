@@ -11,6 +11,9 @@ import UIKit
 private let margin: CGFloat = 8
 
 class EventPreviewViewController: UIViewController {
+
+  var selectedEventId: Int = 0
+
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.estimatedRowHeight = 100
@@ -18,8 +21,6 @@ class EventPreviewViewController: UIViewController {
       tableView.backgroundColor = UIColor.clear
       tableView.contentInset = UIEdgeInsets(top: margin, left: 0,
                                             bottom: margin + BottomButton.constantHeight, right: 0)
-      tableView.registerNib(for: SpeachPreviewTableViewCell.self)
-      tableView.registerNib(for: ActionTableViewCell.self)
     }
   }
 
@@ -33,6 +34,8 @@ class EventPreviewViewController: UIViewController {
     bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
     bottomButton.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
     displayCollection = EventPreviewDisplayCollection()
+
+    tableView.registerNibs(from: displayCollection)
   }
 
   func acceptAction() {

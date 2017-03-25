@@ -15,8 +15,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
-      tableView.registerNib(for: TextFieldPlateTableViewCell.self)
-      tableView.registerNib(for: TextViewPlateTableViewCell.self)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -33,6 +31,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     setupGestureRecognizer()
 
     displayCollection = GiveSpeechDisplayCollection()
+    tableView.registerNibs(from: displayCollection)
 
     view.backgroundColor = UIColor(.lightGray)
     title = "Geve a speech".localized
