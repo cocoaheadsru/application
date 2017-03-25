@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FBResource: AuthResource {
+class FBResource: SocialResource {
 
   fileprivate var token: String?
   fileprivate var secret: String?
@@ -20,7 +20,7 @@ class FBResource: AuthResource {
     return URL(string: authString)
   }
 
-  func login(_ completion: AuthResourceLoginCompletion) {
+  func login(_ completion: SocialResourceLoginCompletion) {
     completion("", "", nil)
   }
 }

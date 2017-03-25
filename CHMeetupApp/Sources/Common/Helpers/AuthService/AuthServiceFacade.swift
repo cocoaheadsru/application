@@ -1,5 +1,5 @@
 //
-//  AuthService.swift
+//  AuthServiceFacade.swift
 //  CHMeetupApp
 //
 //  Created by Sam Mejlumyan on 25/03/2017.
@@ -11,7 +11,7 @@ import SafariServices
 
 private let loginName = "UD.key.isLogin"
 
-class AuthService {
+class AuthServiceFacade {
   fileprivate var safari: SFSafariViewController?
   fileprivate var currentViewController: UIViewController?
   fileprivate var loginCompletion: ((UserPlainObject?, Error?) -> Void)?
@@ -21,7 +21,7 @@ class AuthService {
     case fb
     case tw
 
-    var resource: AuthResource {
+    var resource: SocialResource {
       switch self {
       case .vk:
         return VKResource()
@@ -36,7 +36,7 @@ class AuthService {
 
   init() {
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(AuthService.loggedIn(_:)),
+                                           selector: #selector(AuthServiceFacade.loggedIn(_:)),
                                            name: .CloseSafariViewControllerNotification,
                                            object: nil)
   }

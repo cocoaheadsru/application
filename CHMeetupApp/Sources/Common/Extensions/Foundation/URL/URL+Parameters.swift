@@ -16,8 +16,7 @@ extension URL {
     guard let fragment = comonents?.fragment else { return nil }
 
     let elements = fragment.components(separatedBy: "&")
-
-    for element in elements {
+    elements.forEach { (element) in
       let formant = element.components(separatedBy: "=")
       params[formant[0]] = formant[1]
     }

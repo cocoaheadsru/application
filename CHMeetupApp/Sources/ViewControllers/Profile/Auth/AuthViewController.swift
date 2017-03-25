@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
-  let auth = AuthService()
+  let auth = AuthServiceFacade()
 
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
@@ -35,15 +35,15 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
   @IBAction func loginAction(_ sender: UIButton) {
     guard let buttonId = sender.restorationIdentifier,
-          let authResourceType = AuthService.AuthResourceType(rawValue: buttonId)
+          let authResourceType = AuthServiceFacade.AuthResourceType(rawValue: buttonId)
     else {
       print("Set button restoration Identifier")
       return
     }
 
     auth.login(with: authResourceType, from: self) { [weak self] (_, error) in
-      if let _ = error {
-
+      if let error = error {
+        print("Authorization error: \(error)")
       } else {
         LoginProcessController.isLogin = true
         self?.profileNavigationController?.updateRootViewController()

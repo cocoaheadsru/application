@@ -90,8 +90,8 @@
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
-		7DE9420A1E867AB200E7E9E6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942091E867AB200E7E9E6 /* AuthService.swift */; };
-		7DE9420D1E867B8C00E7E9E6 /* AuthResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */; };
+		7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */; };
+		7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */; };
 		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
@@ -275,8 +275,8 @@
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
-		7DE942091E867AB200E7E9E6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResource.swift; sourceTree = "<group>"; };
+		7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceFacade.swift; sourceTree = "<group>"; };
+		7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResource.swift; sourceTree = "<group>"; };
 		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -1100,19 +1100,20 @@
 		7DE942081E867AA900E7E9E6 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
-				7DE9420B1E867B8000E7E9E6 /* AuthResources */,
-				7DE942091E867AB200E7E9E6 /* AuthService.swift */,
+				7DE9420B1E867B8000E7E9E6 /* SocialResource */,
+				7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */,
 			);
 			path = AuthService;
 			sourceTree = "<group>";
 		};
-		7DE9420B1E867B8000E7E9E6 /* AuthResources */ = {
+		7DE9420B1E867B8000E7E9E6 /* SocialResource */ = {
 			isa = PBXGroup;
 			children = (
-				7DE9420C1E867B8C00E7E9E6 /* AuthResource.swift */,
+				7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */,
 				7DE9420E1E867BB900E7E9E6 /* VKResource.swift */,
 				7DE942101E869A6F00E7E9E6 /* FBResource.swift */,
 			);
+			name = SocialResource;
 			path = AuthResources;
 			sourceTree = "<group>";
 		};
@@ -1676,7 +1677,7 @@
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
-				7DE9420A1E867AB200E7E9E6 /* AuthService.swift in Sources */,
+				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
@@ -1703,7 +1704,7 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
-				7DE9420D1E867B8C00E7E9E6 /* AuthResource.swift in Sources */,
+				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,

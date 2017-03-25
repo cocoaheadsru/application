@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VKResource: AuthResource {
+class VKResource: SocialResource {
 
   fileprivate var token: String?
   fileprivate var secret: String?
@@ -27,7 +27,7 @@ class VKResource: AuthResource {
     return URL(string: authString)
   }
 
-  func login(_ completion: AuthResourceLoginCompletion) {
+  func login(_ completion: SocialResourceLoginCompletion) {
     completion("", "", nil)
   }
 }
