@@ -15,20 +15,23 @@ class AuthServiceFacade {
   fileprivate var safari: SFSafariViewController?
   fileprivate var currentViewController: UIViewController?
   fileprivate var loginCompletion: ((UserPlainObject?, Error?) -> Void)?
+  fileprivate var currentService: AuthResourceType?
 
   enum AuthResourceType: String {
     case vk
     case fb
     case tw
 
+    var identifier: String {
+      return self.rawValue
+    }
+
     var resource: SocialResource {
       switch self {
       case .vk:
         return VKResource()
-      case .fb:
+      case .fb, .tw:
         return FBResource()
-      default:
-        return VKResource()
       }
     }
 
@@ -46,13 +49,14 @@ class AuthServiceFacade {
              completion: @escaping (UserPlainObject?, Error?) -> Void) {
     loginCompletion = completion
     currentViewController = view
+    currentService = service
 
     let isLogged = LoginProcessController.isLogin
     if isLogged {
       completion(nil, nil)
     } else {
       guard let authURL = service.resource.authURL else {
-        print("Auth url error")
+        assertionFailure("Auth url error")
         return
       }
 
@@ -73,9 +77,21 @@ class AuthServiceFacade {
       let url = notification.object as? URL
     else { return }
 
-    let parameters = url.parameters
-    if let _ = parameters?["access_token"], let loginCompletion = loginCompletion {
-      loginCompletion(nil, nil)
+    let parameters = currentService?.resource.parameters(from: url)
+    guard
+        let token = parameters?["token"],
+        let secret = parameters?["secret"],
+        let social = currentService?.identifier
+    else { return }
+
+    // swiftlint:disable:next line_length
+    Server.standard.request(UserPlainObject.Requests.auth(token: token, secret: secret, socialId: social)) { user, error in
+      guard let loginCompletion = self.loginCompletion else { return }
+      if let error = error {
+        loginCompletion(nil, error)
+      } else {
+        loginCompletion(user, nil)
+      }
     }
   }
 

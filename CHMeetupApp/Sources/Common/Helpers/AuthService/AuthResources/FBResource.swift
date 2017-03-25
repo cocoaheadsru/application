@@ -23,4 +23,8 @@ class FBResource: SocialResource {
   func login(_ completion: SocialResourceLoginCompletion) {
     completion("", "", nil)
   }
+
+  func parameters(from url: URL) -> [String: String] {
+    return [:]
+  }
 }

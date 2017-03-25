@@ -12,11 +12,12 @@ typealias SocialResourceLoginCompletion = (_ token: String, _ key: String, _ err
 
 protocol SocialResource {
   //init(with app: String, secret key: String)
-  func login(_ completion: SocialResourceLoginCompletion)
   var authURL: URL? { get }
   var appScheme: URL? { get }
-
   var appExists: Bool { get }
+
+  func login(_ completion: SocialResourceLoginCompletion)
+  func parameters(from url: URL) -> [String: String]
 }
 
 extension SocialResource {
