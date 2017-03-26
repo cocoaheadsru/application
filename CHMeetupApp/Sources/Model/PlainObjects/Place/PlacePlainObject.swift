@@ -16,4 +16,5 @@ struct PlacePlainObject {
   let longitude: Double
   let latitude: Double
   let cityID: Int
+  let cityName: String
 }

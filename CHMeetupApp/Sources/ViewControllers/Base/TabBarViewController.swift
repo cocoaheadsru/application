@@ -25,6 +25,16 @@ class TabBarViewController: CustomTabBarController {
       }
     }
 
+    Server.standard.request(EventPlainObject.Requests.list) { events, error in
+      if let error = error {
+        print(error)
+      }
+
+      for event in events ?? [] {
+        print(event.speakersPhotos)
+      }
+    }
+
     Server.standard.request(UserPlainObject.Requests.listOfIds) { users, error in
       if let error = error {
         print(error)
