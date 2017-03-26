@@ -71,6 +71,8 @@ class PlateTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
 
+    selectionStyle = .none
+
     layer.insertSublayer(shape, at: 0)
 
     backgroundColor = UIColor.clear
@@ -78,15 +80,17 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
-    updateSelection(shouldSelect: selected)
+    super.setSelected(selected, animated: animated)
+    updateSelection(shouldSelect: selected || isHighlighted)
   }
 
   override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-    updateSelection(shouldSelect: highlighted)
+    super.setHighlighted(highlighted, animated: animated)
+    updateSelection(shouldSelect: highlighted || isSelected)
   }
 
   func updateSelection(shouldSelect: Bool) {
-    alpha = isSelected || isHighlighted || shouldSelect ? 0.8 : 1.0
+    alpha = shouldSelect ? 0.8 : 1.0
   }
 
   private func updateAppearance() {

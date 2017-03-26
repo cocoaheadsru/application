@@ -37,9 +37,11 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     let cell = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
     switch cell.type {
     case .checkbox:
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .checkbox)
+      let result = cell.type.parse(answer: cell.answer) as! Bool // swiftlint:disable:this force_cast
+      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .checkbox, result: result)
     case .radio:
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .radio)
+      let result = cell.type.parse(answer: cell.answer) as! Bool // swiftlint:disable:this force_cast
+      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .radio, result: result)
     case .string:
       fatalError("Not implemented")
     }
