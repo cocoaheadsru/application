@@ -29,7 +29,6 @@ class RegistrationPreviewViewController: UIViewController {
     bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
     bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
 
-    // FIXME: - Remove test data
     RegistrationController.loadRegFromServer(
       with: 1,
       completion: { [weak self] displayCollection, error in
