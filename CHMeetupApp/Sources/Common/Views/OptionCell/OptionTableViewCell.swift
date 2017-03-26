@@ -25,7 +25,7 @@ final class OptionTableViewCell: PlateTableViewCell {
     super.prepareForReuse()
     updateSelection(shouldSelect: false)
   }
-  
+
   override func updateSelection(shouldSelect: Bool) {
     label.textColor = shouldSelect ? UIColor(.black) : UIColor(.gray)
     markImageView.isHighlighted = shouldSelect

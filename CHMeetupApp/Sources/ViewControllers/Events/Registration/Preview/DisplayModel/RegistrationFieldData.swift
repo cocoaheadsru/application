@@ -39,14 +39,18 @@ final class FormFieldItem {
 final class FormFieldAnswer {
   var id: Int
   var value: String
-  var type: EventRegFormFieldType
-  var answer: Any?
+  var answer: EventRegFormFieldAnswer
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
        fieldType: EventRegFormFieldType) {
     id = answer.id
     value = answer.value
-    type = fieldType
+    switch fieldType {
+    case .checkbox, .radio:
+      self.answer = EventRegFormFieldAnswer.selection(isSelected: false)
+    default:
+      self.answer = EventRegFormFieldAnswer.string(value: "")
+    }
   }
 }
 

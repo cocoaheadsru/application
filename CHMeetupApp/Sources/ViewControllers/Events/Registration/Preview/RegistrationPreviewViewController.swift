@@ -105,6 +105,10 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     displayCollection.didSelect(indexPath: indexPath)
   }
+
+  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    displayCollection.didSelect(indexPath: indexPath)
+  }
 }
 
 extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {

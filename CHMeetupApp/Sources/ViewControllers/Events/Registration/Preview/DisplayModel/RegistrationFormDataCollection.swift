@@ -34,16 +34,18 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let cell = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
-    switch cell.type {
+    let section = formData.sections[indexPath.section]
+    let answerCell = section.fieldAnswers[indexPath.row]
+
+    let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
+
+    switch section.type {
     case .checkbox:
-      let result = cell.type.parse(answer: cell.answer) as! Bool // swiftlint:disable:this force_cast
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .checkbox, result: result)
+      return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .checkbox, result: boolAnswer)
     case .radio:
-      let result = cell.type.parse(answer: cell.answer) as! Bool // swiftlint:disable:this force_cast
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .radio, result: result)
+      return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .radio, result: boolAnswer)
     case .string:
-      fatalError("Not implemented")
+      fatalError("Not implemented \(stringAnswer)")
     }
   }
 
@@ -56,18 +58,20 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
   }
 
   func didSelect(indexPath: IndexPath) {
-    let value = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
-    switch value.type {
+    let section = formData.sections[indexPath.section]
+    let answerCell = section.fieldAnswers[indexPath.row]
+
+    let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
+
+    switch section.type {
     case .checkbox:
-      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
-      value.answer = !result
-      processCheckbox(at: indexPath, with: result)
+      answerCell.answer = .selection(isSelected: !boolAnswer)
+      processCheckbox(at: indexPath, with: boolAnswer)
     case .radio:
-      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
-      value.answer = true
-      processRadio(at: indexPath, with: result)
+      answerCell.answer = .selection(isSelected: true)
+      processRadio(at: indexPath, with: boolAnswer)
     case .string:
-      fatalError("Not implemented")
+      fatalError("Not implemented \(stringAnswer)")
     }
   }
 
@@ -83,7 +87,8 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     var deselectIndex: Int?
 
     for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
-      if let result = value.answer as? Bool, result == true, index != indexPath.row {
+      let result = value.answer.pasrseAnswers().0
+      if result == true, index != indexPath.row {
         deselectIndex = index
       }
     }
