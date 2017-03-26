@@ -35,10 +35,8 @@ class RegistrationPreviewViewController: UIViewController {
     bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
 
     displayCollection = FormDisplayCollection()
-
     tableView.registerNibs(fromType: FormDisplayCollection.self)
 
-    // FIXME: - Remove test data
     RegistrationController.loadRegFromServer(
       with: 1,
       completion: { [weak self] displayCollection, error in

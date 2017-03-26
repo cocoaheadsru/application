@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let loginName = "UD.key.isLogin"
-
 class LoginProcessController {
 
   static var isLogin: Bool {
@@ -22,9 +20,4 @@ class LoginProcessController {
       return UserPreferencesEntity.value.isLoggedIn
     }
   }
-}
-
-extension Notification.Name {
-  static let CloseSafariViewControllerNotification: Notification.Name =
-    Notification.Name(rawValue: "CloseSafariViewControllerNotification")
 }

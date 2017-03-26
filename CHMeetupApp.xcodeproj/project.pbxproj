@@ -44,7 +44,6 @@
 		22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */; };
 		22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F381E70C14300522E5C /* ViewControllersFactory.swift */; };
 		22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3A1E70C14300522E5C /* LoginProcessController.swift */; };
-		22323F411E70C14300522E5C /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3B1E70C14300522E5C /* LoginType.swift */; };
 		22323F421E70C14300522E5C /* MapAppType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3D1E70C14300522E5C /* MapAppType.swift */; };
 		22323F431E70C14300522E5C /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F3E1E70C14300522E5C /* MapsController.swift */; };
 		22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F471E70C18700522E5C /* EventPlainObject+Requests.swift */; };
@@ -90,6 +89,11 @@
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
+		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
+		7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */; };
+		7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */; };
+		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
+		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
@@ -229,7 +233,6 @@
 		22323F291E70C0E500522E5C /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		22323F381E70C14300522E5C /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		22323F3A1E70C14300522E5C /* LoginProcessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProcessController.swift; sourceTree = "<group>"; };
-		22323F3B1E70C14300522E5C /* LoginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		22323F3D1E70C14300522E5C /* MapAppType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAppType.swift; sourceTree = "<group>"; };
 		22323F3E1E70C14300522E5C /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 		22323F471E70C18700522E5C /* EventPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventPlainObject+Requests.swift"; sourceTree = "<group>"; };
@@ -274,6 +277,11 @@
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
+		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
+		7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceFacade.swift; sourceTree = "<group>"; };
+		7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResource.swift; sourceTree = "<group>"; };
+		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
+		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
@@ -551,6 +559,7 @@
 		2231A5381E60E5030069A179 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				7DE942051E8675F400E7E9E6 /* URL */,
 				AD4B5A791E7E6CCE0016187B /* Int */,
 				7DDDB7671E7D15AD002C5ECE /* Bundle */,
 				22323F101E70C0D500522E5C /* Date */,
@@ -645,6 +654,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
@@ -758,7 +768,6 @@
 			isa = PBXGroup;
 			children = (
 				22323F3A1E70C14300522E5C /* LoginProcessController.swift */,
-				22323F3B1E70C14300522E5C /* LoginType.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1088,6 +1097,34 @@
 			path = Bundle;
 			sourceTree = "<group>";
 		};
+		7DE942051E8675F400E7E9E6 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		7DE942081E867AA900E7E9E6 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				7DE9420B1E867B8000E7E9E6 /* SocialResource */,
+				7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		7DE9420B1E867B8000E7E9E6 /* SocialResource */ = {
+			isa = PBXGroup;
+			children = (
+				7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */,
+				7DE9420E1E867BB900E7E9E6 /* VKResource.swift */,
+				7DE942101E869A6F00E7E9E6 /* FBResource.swift */,
+			);
+			name = SocialResource;
+			path = AuthResources;
+			sourceTree = "<group>";
+		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1112,6 +1149,14 @@
 				9FD5948A1E8716D800BAD1B5 /* Speech */,
 			);
 			name = TranslationPlainObjects;
+			sourceTree = "<group>";
+		};
+		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
+			);
+			name = DisplayModel;
 			sourceTree = "<group>";
 		};
 		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
@@ -1593,7 +1638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# По наличию/размеру CHMeetupApp.app в Derived Data определяется \"очищенность проекта\" и необходимость повторно исполнять Natalie. Возвращается Bool - является ли проект очищенным.\nCLEAN_CHECK=$PROJECT_DIR/Scripts/clean_check.sh\nif [ -e $CLEAN_CHECK ]; then\n    isClean=\"$(bash $CLEAN_CHECK)\"\n    echo \"isClean: $isClean\"\n    if [ $isClean -eq 0 ]; then # not clean\n        exit\n    fi\nelse\n    echo Scripts/clean_check.sh not found\nfi\n\necho \"Natalie Generator: Determining if generated Swift file is up-to-date.\"\n\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
+			shellScript = "\n# Adjust path to \"natalie\" binary\n# NATALIE_PATH=\"$PROJECT_DIR/natalie\"\nNATALIE_PATH=\"/usr/local/bin/natalie\"\n\nif [ -f $NATALIE_PATH ]; then\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\nOUTPUT_PATH=\"$BASE_PATH/Resources/Storyboards/Storyboards.swift\"\n\nif [ ! -e \"$OUTPUT_PATH\" ] || [ -n \"$(find \"$BASE_PATH\" -type f -name \"*.storyboard\" -newer \"$OUTPUT_PATH\" -print -quit)\" ]; then\necho \"Natalie Generator: Generated Swift is out-of-date; re-generating...\"\n\n/usr/bin/chflags nouchg \"$OUTPUT_PATH\"\n\"$NATALIE_PATH\" \"$BASE_PATH\" > \"$OUTPUT_PATH\"\n/usr/bin/chflags uchg \"$OUTPUT_PATH\"\n\necho \"Natalie Generator: Done.\"\nelse\necho \"Natalie Generator: Generated Swift is up-to-date; skipping re-generation.\"\nfi\nfi";
 		};
 		7D5EC76B1E7F1F3A008A766E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1672,7 +1717,9 @@
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
+				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
+				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
@@ -1700,6 +1747,7 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
+				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
@@ -1717,7 +1765,6 @@
 				9F3767081E7D53E300CC565B /* GiveSpeechDisplayCollection.swift in Sources */,
 				9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */,
 				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
-				22323F411E70C14300522E5C /* LoginType.swift in Sources */,
 				8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */,
 				22323F9A1E70C2BE00522E5C /* ProfileNameCell.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
@@ -1728,12 +1775,15 @@
 				9F487A7A1E740DC00016CE0B /* EventPreviewTableViewCell.swift in Sources */,
 				221CC3FC1E7B24A1004F0695 /* EventRegFormFieldPlainObject.swift in Sources */,
 				221A8B891E685EBF004E320D /* String+Localized.swift in Sources */,
+				7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */,
 				9F3767121E7DDBBD00CC565B /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
+				7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */,
+				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 import SafariServices
 
 class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
+  let auth = AuthServiceFacade()
 
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
@@ -27,78 +28,26 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     }
   }
 
-  var safariViewController: SFSafariViewController?
-  var loggingApp: LoginType?
-
   override func viewDidLoad() {
     super.viewDidLoad()
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(loggedIn(_:)),
-                                           name: .CloseSafariViewControllerNotification,
-                                           object: nil)
-
     title = "Auth".localized
   }
 
-  @IBAction func vkLoginButtonAction(_ sender: UIButton) {
-    loginApp(at: .vk)
-  }
+  @IBAction func loginAction(_ sender: UIButton) {
+    guard let buttonId = sender.restorationIdentifier,
+      let authResourceType = AuthServiceFacade.AuthResourceType(rawValue: buttonId)
+      else {
+        assertionFailure("Set button restoration Identifier")
+        return
+    }
 
-  @IBAction func fbLoginButtonAction(_ sender: UIButton) {
-    loginApp(at: .fb)
-  }
-}
-
-// MARK: - Login actions
-extension AuthViewController {
-
-  func loginApp(at type: LoginType) {
-    loggingApp = type
-    if !type.isAppExists {
-      let url = type.urlAuth
-      showSafariViewController(url: url)
-    } else {
-      let url = type.schemeAuth
-      if let url = url {
-        UIApplication.shared.open(url, options: [:])
+    auth.login(with: authResourceType, from: self) { [weak self] (user, error) in
+      if let error = error {
+        print("Authorization error: \(error)")
       } else {
-        assertionFailure("Error: you didn't recieve url from notification")
-      }
-    }
-  }
-
-  func loggedIn(_ notification: Notification? = nil) {
-    hideSafariViewController()
-    guard let loggingApp = loggingApp,
-      let notification = notification,
-      let url = notification.object as? URL else {
-      return
-    }
-    guard let token = loggingApp.token(from: url) else {
-      return
-    }
-    sendToken(token: token)
-    LoginProcessController.isLogin = true
-    profileNavigationController?.updateRootViewController()
-  }
-
-  func sendToken(token: String) {
-    print(token)
-    // TODO: sendToken (@mejl should do)
-  }
-}
-
-// MARK: - Working with safariViewController
-extension AuthViewController {
-  func showSafariViewController(url: URL) {
-    safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-    present(safariViewController!, animated: true, completion: nil)
-  }
-
-  func hideSafariViewController() {
-    if let safariViewController = safariViewController {
-      if safariViewController.isViewLoaded {
-        safariViewController.dismiss(animated: true, completion: nil)
+        print(user ?? "User not found")
+        LoginProcessController.isLogin = true
+        self?.profileNavigationController?.updateRootViewController()
       }
     }
   }

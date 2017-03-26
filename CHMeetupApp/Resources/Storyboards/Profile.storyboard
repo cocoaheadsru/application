@@ -27,7 +27,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-cw-RIa">
                                 <rect key="frame" x="24" y="150.5" width="327" height="366.5"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="326.5" width="287" height="40"/>
                                         <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -40,7 +40,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="vk" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="276.5" width="287" height="40"/>
                                         <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -53,10 +53,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="vkLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="8np-rV-xBX"/>
+                                            <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="gaN-Zn-Hsf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="226.5" width="287" height="40"/>
                                         <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -70,7 +70,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="fbLoginButtonAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="3aD-yq-YgF"/>
+                                            <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!   Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
