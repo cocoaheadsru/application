@@ -36,6 +36,7 @@ extension EventPlainObject: PlainObjectType {
       let startDate = json["start_date"] as? Double,
       let endDate = json["end_date"] as? Double,
       let placeJson = json["place"] as? JSONDictionary,
+      let speakersJson = json["speakers_photos"] as? [String],
       let place = PlacePlainObject(json: placeJson),
       let isRegistrationOpen = json["is_registration_open"] as? Bool
     else { return nil }
@@ -48,5 +49,12 @@ extension EventPlainObject: PlainObjectType {
     self.isRegistrationOpen = isRegistrationOpen
     self.startDate = Date(timeIntervalSince1970: startDate)
     self.endDate = Date(timeIntervalSince1970: endDate)
+
+    var photos: [URL] = []
+    speakersJson.forEach { (photo_url) in
+      guard let url = URL(string: photo_url) else { return }
+      photos.append(url)
+    }
+    self.speakersPhotos = photos
   }
 }

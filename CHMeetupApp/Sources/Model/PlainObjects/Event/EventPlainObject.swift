@@ -17,4 +17,5 @@ struct EventPlainObject {
   let isRegistrationOpen: Bool
   let startDate: Date
   let endDate: Date
+  let speakersPhotos: [URL]
 }

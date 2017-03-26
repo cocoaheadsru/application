@@ -24,6 +24,7 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     place.address = plainObject.place.address
     place.latitude = plainObject.place.latitude
     place.longitude = plainObject.place.longitude
+    place.city = plainObject.place.cityName
     event.place = place
 
     realmWrite {
