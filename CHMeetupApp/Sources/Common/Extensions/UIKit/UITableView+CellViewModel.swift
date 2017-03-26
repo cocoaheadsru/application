@@ -15,6 +15,7 @@ extension UITableView {
     let cell = dequeueReusableCell(withIdentifier: cellIdentifier,
                                    for: indexPath)
 
+    model.updateAppearance(of: cell, in: self, at: indexPath)
     model.setup(on: cell)
 
     return cell

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FormData {
+class FormData {
   var id: Int
   var name: String
   var sections: [FormFieldItem]
@@ -20,7 +20,7 @@ struct FormData {
   }
 }
 
-struct FormFieldItem {
+class FormFieldItem {
   var id: Int
   var isRequired: Bool
   var name: String
@@ -36,10 +36,11 @@ struct FormFieldItem {
   }
 }
 
-struct FormFieldAnswer {
+class FormFieldAnswer {
   var id: Int
   var value: String
   var type: EventRegFormFieldType
+  var answer: String?
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
        fieldType: EventRegFormFieldType) {

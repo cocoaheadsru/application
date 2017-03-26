@@ -12,6 +12,12 @@ import UIKit
 protocol CellViewAnyModelType {
   static func cellClass() -> UIView.Type
   func setup(on cell: UIView)
+
+  func updateAppearance(of view: UIView, in parentView: UIView, at indexPath: IndexPath)
+}
+
+extension CellViewAnyModelType {
+  func updateAppearance(of view: UIView, in parentView: UIView, at indexPath: IndexPath) { }
 }
 
 // This is for generic one and models itselfs
