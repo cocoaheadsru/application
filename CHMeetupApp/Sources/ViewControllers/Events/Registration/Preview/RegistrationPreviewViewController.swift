@@ -68,11 +68,14 @@ class RegistrationPreviewViewController: UIViewController {
     setupGestureRecognizer()
   }
 
+  var dissmisKeyboardTouch: UITapGestureRecognizer!
+
   func setupGestureRecognizer() {
-    let dissmisKeyboardTouch =
+    dissmisKeyboardTouch =
       UITapGestureRecognizer(target: self,
                              action: #selector(GiveSpeechViewController.dismissKeyboard))
     view.addGestureRecognizer(dissmisKeyboardTouch)
+    dissmisKeyboardTouch.isEnabled = false
   }
 
   func dismissKeyboard() {
@@ -147,8 +150,12 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
     tableView.endUpdates()
   }
 
-  func requestCell(at indexPath: IndexPath) -> UITableViewCell? {
+  func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell? {
     return tableView.cellForRow(at: indexPath)
+  }
+
+  func formDisplayRequestTouchGeuster(enable: Bool) {
+    dissmisKeyboardTouch.isEnabled = enable
   }
 }
 

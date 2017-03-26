@@ -11,7 +11,8 @@ import UIKit
 protocol FormDisplayCollectionDelegate: class {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath])
-  func requestCell(at indexPath: IndexPath) -> UITableViewCell?
+  func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell?
+  func formDisplayRequestTouchGeuster(enable: Bool)
 }
 
 final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
@@ -78,7 +79,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       processRadio(at: indexPath, with: boolAnswer)
     case .string:
       delegate?.formDisplayRequestTo(selectItemsAt: [], deselectItemsAt: [indexPath])
-      let cell = delegate?.requestCell(at: indexPath)
+      let cell = delegate?.formDisplayRequestCell(at: indexPath)
       if let cell = cell as? TextFieldPlateTableViewCell {
         cell.textField.becomeFirstResponder()
       }
@@ -116,5 +117,13 @@ extension FormDisplayCollection: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
+  }
+
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    delegate?.formDisplayRequestTouchGeuster(enable: true)
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    delegate?.formDisplayRequestTouchGeuster(enable: false)
   }
 }
