@@ -22,6 +22,14 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
 
     displayCollection = MainViewDisplayCollection()
+    displayCollection.remindersPermissionCell.action = {
+      PermissionsManager.requireAccess(from: self, to: .reminders, completion: { success in
+        if success {
+          self.displayCollection.remindersPermissionCell.successfulRequest?()
+        }
+      })
+    }
+    displayCollection.remindersPermissionCell.checkPermission()
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
@@ -57,6 +65,20 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
+    tableView.deselectRow(at: indexPath, animated: true)
+    switch displayCollection.sections[indexPath.section] {
+    case .remindersPermissionCell:
+      displayCollection.remindersPermissionCell.successfulRequest = {
+          DispatchQueue.main.async {
+            self.displayCollection.remindersPermissionCell.actionPlainObjects.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+          }
+      }
+      displayCollection.remindersPermissionCell.actionPlainObjects[indexPath.row].action?()
+    case .actionButtons:
+      navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController, animated: true)
+    case .events:
+      break
+    }
   }
 }

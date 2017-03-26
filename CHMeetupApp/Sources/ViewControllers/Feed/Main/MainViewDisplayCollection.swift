@@ -16,9 +16,10 @@ struct MainViewDisplayCollection: DisplayCollection {
   enum `Type` {
     case events
     case actionButtons
+    case remindersPermissionCell
   }
 
-  var sections: [Type] = [.events, .actionButtons]
+  var sections: [Type] = [.events, .actionButtons, .remindersPermissionCell]
 
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate > %@", NSDate())
@@ -26,8 +27,10 @@ struct MainViewDisplayCollection: DisplayCollection {
     return modelCollection
   }()
 
+  let remindersPermissionCell = ActionCellConfigurationController()
+
   var numberOfSections: Int {
-    return 2
+    return 3
   }
 
   func numberOfRows(in section: Int) -> Int {
@@ -36,6 +39,8 @@ struct MainViewDisplayCollection: DisplayCollection {
       return modelCollection.count
     case .actionButtons:
       return 1
+    case .remindersPermissionCell:
+      return remindersPermissionCell.actionPlainObjects.count
     }
   }
 
@@ -47,6 +52,8 @@ struct MainViewDisplayCollection: DisplayCollection {
       let action = ActionPlainObject(text: "Example".localized, imageName: nil, action: nil)
       let model = ActionTableViewCellModel(action: action)
       return model
+    case .remindersPermissionCell:
+      return remindersPermissionCell.modelForRemindersPermission(at: indexPath)
     }
   }
 }
