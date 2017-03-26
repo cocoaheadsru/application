@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol PlainObjectTranslation {
   associatedtype Value = PlainObjectType
+  // Would be Realm class to ref to something
   associatedtype Parent = Object
 
   static func translate(of plainObjects: [Value], to parent: Parent?)
