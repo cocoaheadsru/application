@@ -14,13 +14,14 @@ class TabBarViewController: CustomTabBarController {
     super.viewDidLoad()
 
     // Query example
-    Server.standard.request(EventPlainObject.Requests.speakersOnEvent(with: 1)) { users, error in
+
+    Server.standard.request(SpeechPlainObject.Requests.speechesOnEvent(with: 1)) { speeches, error in
       if let error = error {
         print(error)
       }
 
-      for user in users ?? [] {
-        print(user)
+      for speech in speeches ?? [] {
+        print(speech)
       }
     }
 

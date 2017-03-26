@@ -94,6 +94,7 @@
 		7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */; };
 		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
+		7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
@@ -282,6 +283,7 @@
 		7DE9420C1E867B8C00E7E9E6 /* SocialResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResource.swift; sourceTree = "<group>"; };
 		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
+		7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpeechPlainObject+Requests.swift"; path = "Speech/SpeechPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
@@ -1159,14 +1161,6 @@
 			name = DisplayModel;
 			sourceTree = "<group>";
 		};
-		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
-			isa = PBXGroup;
-			children = (
-				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
-			);
-			name = DisplayModel;
-			sourceTree = "<group>";
-		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
 			isa = PBXGroup;
 			children = (
@@ -1440,6 +1434,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD5948F1E87183800BAD1B5 /* SpeechPlainObject.swift */,
+				7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */,
 			);
 			name = Speech;
 			sourceTree = "<group>";
@@ -1783,7 +1778,6 @@
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
 				7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */,
-				AD4B5A781E7E6CAD0016187B /* Data+Encryption.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
@@ -1809,6 +1803,7 @@
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
+				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
 				03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
