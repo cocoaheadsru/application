@@ -45,6 +45,10 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     }
   }
 
+  func headerHeight(for section: Int) -> CGFloat {
+    return 40
+  }
+
   func headerTitle(for section: Int) -> String {
     return formData.sections[section].name
   }

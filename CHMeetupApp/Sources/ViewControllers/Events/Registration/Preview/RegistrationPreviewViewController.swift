@@ -19,6 +19,8 @@ class RegistrationPreviewViewController: UIViewController {
       tableView.allowsMultipleSelection = true
       tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.backgroundColor = UIColor.clear
+
+      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
 
@@ -78,8 +80,14 @@ class RegistrationPreviewViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return displayCollection.headerTitle(for: section)
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return displayCollection.headerHeight(for: section)
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
+    header.headerLabel.text = displayCollection.headerTitle(for: section)
+    return header
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
