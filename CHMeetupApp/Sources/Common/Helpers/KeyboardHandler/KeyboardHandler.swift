@@ -73,12 +73,13 @@ class KeyboardHandler {
   private enum VisibilityState {
     case hidden, visible, rotating
   }
+
   private var currentState: VisibilityState = .hidden {
     didSet {
       switch currentState {
-        case .visible: wasVisible = false
-        case .hidden: wasVisible = true
-        default: break
+      case .visible: wasVisible = false
+      case .hidden: wasVisible = true
+      default: break
       }
     }
   }
@@ -120,12 +121,12 @@ class KeyboardHandler {
       }
     }
     switch currentState {
-      case .visible:
-        return
+    case .visible:
+      return
     case .rotating:
-        currentState = .visible
-        return
-      default: break
+      currentState = .visible
+      return
+    default: break
     }
     currentState = .visible
     getInfo(from: notification) { info in
@@ -155,18 +156,18 @@ class KeyboardHandler {
   // ----- Private -----
   private func extractValues(from: [AnyHashable: Any]?) -> KeyboardInfo? {
     if let beginFrame = from?[UIKeyboardFrameBeginUserInfoKey] as? CGRect,
-       let endFrame = from?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
-       let duration = from?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
-       let curveRaw = from?[UIKeyboardAnimationCurveUserInfoKey] as? Int,
-       let curve = UIViewAnimationCurve(rawValue: curveRaw) {
+      let endFrame = from?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+      let duration = from?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
+      let curveRaw = from?[UIKeyboardAnimationCurveUserInfoKey] as? Int,
+      let curve = UIViewAnimationCurve(rawValue: curveRaw) {
       return KeyboardInfo(beginFrame: beginFrame, endFrame: endFrame, duration: duration, curve: curve)
     }
     return nil
   }
+
   private func getInfo(from notification: Notification, completion: (KeyboardInfo) -> Void) {
     if let info = extractValues(from: notification.userInfo) {
       completion(info)
     }
   }
-
 }

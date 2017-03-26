@@ -35,10 +35,10 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
   @IBAction func loginAction(_ sender: UIButton) {
     guard let buttonId = sender.restorationIdentifier,
-          let authResourceType = AuthServiceFacade.AuthResourceType(rawValue: buttonId)
-    else {
-      assertionFailure("Set button restoration Identifier")
-      return
+      let authResourceType = AuthServiceFacade.AuthResourceType(rawValue: buttonId)
+      else {
+        assertionFailure("Set button restoration Identifier")
+        return
     }
 
     auth.login(with: authResourceType, from: self) { [weak self] (user, error) in
@@ -51,5 +51,4 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       }
     }
   }
-
 }

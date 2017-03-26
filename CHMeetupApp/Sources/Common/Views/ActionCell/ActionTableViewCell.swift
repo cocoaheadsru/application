@@ -21,6 +21,7 @@ class ActionTableViewCell: PlateTableViewCell {
       actionImageView.isHidden = true
     }
   }
+
   @IBOutlet var enableImageView: UIImageView!
 
   @IBOutlet var descriptionActionLabel: UILabel! {

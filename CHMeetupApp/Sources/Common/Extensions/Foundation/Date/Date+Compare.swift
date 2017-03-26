@@ -10,6 +10,6 @@ import Foundation
 
 extension Date {
   func isLater(then date: Date) -> Bool {
-    return self.timeIntervalSince1970 > date.timeIntervalSince1970
+    return timeIntervalSince1970 > date.timeIntervalSince1970
   }
 }

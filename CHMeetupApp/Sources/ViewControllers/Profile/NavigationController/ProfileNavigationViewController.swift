@@ -32,5 +32,4 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .profile)
   }
-
 }

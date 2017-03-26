@@ -27,5 +27,4 @@ struct MethodSwizzler {
       method_exchangeImplementations(originalMethod, swizzledMethod)
     }
   }
-
 }

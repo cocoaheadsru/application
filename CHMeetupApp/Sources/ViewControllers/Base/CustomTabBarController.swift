@@ -60,7 +60,7 @@ public class CustomTabBar: UITabBar {
 
   // MARK: - Override default methods
 
-  override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+  public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
     for item in customTabBarController?.customItems ?? [] {
       if item.containerView.frame.contains(point) {
         return true
@@ -69,13 +69,13 @@ public class CustomTabBar: UITabBar {
     return super.point(inside: point, with: event)
   }
 
-  override public func sizeThatFits(_ size: CGSize) -> CGSize {
+  public override func sizeThatFits(_ size: CGSize) -> CGSize {
     var size = super.sizeThatFits(size)
     size.height = preferedHeight
     return size
   }
 
-  override public var alpha: CGFloat {
+  public override var alpha: CGFloat {
     didSet {
       for view in subviews {
         if view is CustomTabBarItemView {
@@ -87,7 +87,7 @@ public class CustomTabBar: UITabBar {
     }
   }
 
-  override public func addSubview(_ view: UIView) {
+  public override func addSubview(_ view: UIView) {
     if view is CustomTabBarItemView {
       super.addSubview(view)
     } else {
@@ -126,7 +126,7 @@ public class CustomTabBarController: UITabBarController {
     return items ?? []
   }
 
-  override public func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     assert(tabBar is CustomTabBar, "tabBar class must be `AZTabBar` class")
     customTabBar.customTabBarController = self
@@ -137,7 +137,7 @@ public class CustomTabBarController: UITabBarController {
     super.viewWillLayoutSubviews()
 
     for item in customItems {
-      item.containerView._preferedHeight = self.preferedHeight
+      item.containerView._preferedHeight = preferedHeight
       item.containerView.heightConstraint.constant = item.containerView.preferedHeight
     }
   }
@@ -176,7 +176,7 @@ public class CustomTabBarController: UITabBarController {
   private func customSetupView(onItem item: CustomTabBarItem, index: Int) -> CustomTabBarItemView {
     let viewContainer = customTabBarItem(forViewController: viewControllers![index])
     viewContainer.index = index
-    viewContainer._preferedHeight = self.preferedHeight
+    viewContainer._preferedHeight = preferedHeight
 
     let tapGesture = UILongPressGestureRecognizer(target: self,
                                                   action: #selector(CustomTabBarController.customTapHandler(_:)))
@@ -206,7 +206,7 @@ public class CustomTabBarController: UITabBarController {
     customSetSelectedIndex(currentIndex)
   }
 
-  override public var selectedIndex: Int {
+  public override var selectedIndex: Int {
     didSet {
       customSetSelectedIndex(selectedIndex)
     }

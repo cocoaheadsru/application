@@ -16,7 +16,7 @@ enum RequestMethod: String {
   case head
   case delete
 
-  var `string`: String {
+  var string: String {
     return self.rawValue.uppercased()
   }
 }
@@ -40,5 +40,4 @@ struct Request<T> {
     self.method = method
     self.parser = parser
   }
-
 }

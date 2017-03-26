@@ -9,15 +9,27 @@
 import UIKit.UITableView
 
 extension UITableView {
+  func registerNibs(from displayCollection: DisplayCollection) {
+    registerNibs(fromType: type(of: displayCollection))
+  }
+
+  func registerNibs(fromType displayCollectionType: DisplayCollection.Type) {
+    for cellModel in displayCollectionType.modelsForRegistration {
+      if let tableCellClass = cellModel.cellClass() as? UITableViewCell.Type {
+        registerNib(for: tableCellClass)
+      }
+    }
+  }
+
   func registerNib(for cellClass: UITableViewCell.Type) {
-    self.register(cellClass.nib, forCellReuseIdentifier: cellClass.identifier)
+    register(cellClass.nib, forCellReuseIdentifier: cellClass.identifier)
   }
 
   func registerHeaderNib(for headerClass: UITableViewHeaderFooterView.Type) {
-    self.register(headerClass.nib, forHeaderFooterViewReuseIdentifier: headerClass.identifier)
+    register(headerClass.nib, forHeaderFooterViewReuseIdentifier: headerClass.identifier)
   }
 
   func registerClass(for cellClass: UITableViewCell.Type) {
-    self.register(cellClass, forCellReuseIdentifier: cellClass.identifier)
+    register(cellClass, forCellReuseIdentifier: cellClass.identifier)
   }
 }

@@ -16,11 +16,12 @@ struct AppearanceController {
   }
 
   private static func setupNavigationBar() {
-    let titleTextAttributes = [NSFontAttributeName: UIFont.appFont(.gothamProMedium(size: 13)),
-                               NSForegroundColorAttributeName: UIColor(.darkGray),
-                               NSKernAttributeName: 1.5] as [String : Any]
+    let titleTextAttributes = [
+      NSFontAttributeName: UIFont.appFont(.gothamProMedium(size: 13)),
+      NSForegroundColorAttributeName: UIColor(.darkGray),
+      NSKernAttributeName: 1.5
+    ] as [String: Any]
     UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
-
   }
 
   private static func setupPlateCell() {

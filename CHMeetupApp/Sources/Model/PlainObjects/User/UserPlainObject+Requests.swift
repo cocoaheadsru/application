@@ -45,24 +45,24 @@ extension UserPlainObject {
       let id = json["id"] as? Int,
       let name = json["name"] as? String,
       let lastname = json["lastname"] as? String
-      else { return nil }
+    else { return nil }
 
     self.id = id
     self.name = name
     self.lastname = lastname
-    self.photoUrl = json["photo_url"] as? String
-    self.company = json["company"] as? String
+    photoUrl = json["photo_url"] as? String
+    company = json["company"] as? String
   }
 
   init?(justId json: JSONDictionary) {
     guard
       let id = json["id"] as? Int
-      else { return nil }
+    else { return nil }
 
     self.id = id
-    self.name = ""
-    self.lastname = ""
-    self.company = nil
-    self.photoUrl = nil
+    name = ""
+    lastname = ""
+    company = nil
+    photoUrl = nil
   }
 }

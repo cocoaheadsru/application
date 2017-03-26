@@ -12,10 +12,9 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleBy
 
   var httpQuery: Data {
     var httpQuery: [String] = []
-    self.forEach { (key, value) in
+    self.forEach { key, value in
       httpQuery.append(String("\(key)=\(value)"))
     }
     return httpQuery.joined(separator: "&").data(using: .utf8)!
   }
-
 }

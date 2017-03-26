@@ -1,5 +1,5 @@
 //
-//  SpeachPreviewTableViewCell.swift
+//  SpeechPreviewTableViewCell.swift
 //  CHMeetupApp
 //
 //  Created by Maxim Globak on 17.03.17.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SpeachPreviewTableViewCell: PlateTableViewCell {
+class SpeechPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
-      avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height/2
+      avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height / 2
       avatarImageView.backgroundColor = UIColor(.lightGray)
     }
   }
@@ -53,6 +53,6 @@ class SpeachPreviewTableViewCell: PlateTableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     // Rounded avatar image
-    avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height/2
+    avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height / 2
   }
 }

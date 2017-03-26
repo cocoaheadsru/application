@@ -15,5 +15,4 @@ class SpeechPreviewViewController: UIViewController {
 
     title = "Speech".localized
   }
-
 }

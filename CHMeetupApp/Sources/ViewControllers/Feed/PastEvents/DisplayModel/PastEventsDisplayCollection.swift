@@ -13,6 +13,9 @@ protocol PastEventsDisplayCollectionDelegate: class {
 }
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [EventPreviewTableViewCellModel.self]
+  }
 
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())
@@ -36,6 +39,8 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    eventPreview.selectedEventId = modelCollection[indexPath.row].id
+
     delegate?.shouldPresent(viewController: eventPreview)
   }
 }

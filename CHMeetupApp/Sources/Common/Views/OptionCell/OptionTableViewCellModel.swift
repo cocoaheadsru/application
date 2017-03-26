@@ -18,7 +18,6 @@ struct OptionTableViewCellModel {
   let id: String
   let text: String
   let type: Type
-
 }
 
 extension OptionTableViewCellModel: CellViewModelType {
@@ -26,5 +25,4 @@ extension OptionTableViewCellModel: CellViewModelType {
   func setup(on cell: OptionTableViewCell) {
     cell.setup(text: text, isRadio: type == .radio)
   }
-
 }

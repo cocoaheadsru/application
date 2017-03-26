@@ -21,10 +21,10 @@ extension EventRegFormPlainObject: PlainObjectType {
       let id = json["id"] as? Int,
       let name = json["form_name"] as? String,
       let regFields = json["reg_fields"] as? [JSONDictionary]
-      else { return nil }
+    else { return nil }
 
     self.id = id
     self.name = name
-    self.fields = regFields.flatMap(EventRegFormFieldPlainObject.init)
+    fields = regFields.flatMap(EventRegFormFieldPlainObject.init)
   }
 }

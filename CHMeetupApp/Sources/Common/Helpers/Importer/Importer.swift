@@ -44,8 +44,8 @@ class Importer {
       }
 
       let calendarEvent = EKEvent(eventStore: self.calendarEventStore)
-      //warn the user for five hours before event 5 hours = 18000 seconds
-      let alarm = EKAlarm(relativeOffset:-(5 * 60 * 60))
+      // warn the user for five hours before event 5 hours = 18000 seconds
+      let alarm = EKAlarm(relativeOffset: -(5 * 60 * 60))
 
       calendarEvent.title = event.title
       calendarEvent.startDate = event.startDate
@@ -82,7 +82,7 @@ class Importer {
 
       let reminder = EKReminder(eventStore: self.remindersEventStore)
       let intervalSince1970 = event.startDate.timeIntervalSince1970
-      let alarmDate = Date(timeIntervalSince1970:  intervalSince1970 - (5 * 60 * 60))
+      let alarmDate = Date(timeIntervalSince1970: intervalSince1970 - (5 * 60 * 60))
       let alarm = EKAlarm(absoluteDate: alarmDate)
 
       reminder.title = event.title

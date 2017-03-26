@@ -40,7 +40,7 @@ class Server {
   }
 
   func request<T: PlainObjectType>(_ request: Request<[T]>, completion: @escaping (([T]?, ServerError?) -> Void)) {
-    loadRequest(request) { (jsonObject, error) in
+    loadRequest(request) { jsonObject, error in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
         return
@@ -62,7 +62,7 @@ class Server {
   }
 
   func request<T: PlainObjectType>(_ request: Request<T>, completion: @escaping ((T?, ServerError?) -> Void)) {
-    loadRequest(request) { (jsonObject, error) in
+    loadRequest(request) { jsonObject, error in
       guard let jsonObject = jsonObject else {
         completion(nil, error)
         return
