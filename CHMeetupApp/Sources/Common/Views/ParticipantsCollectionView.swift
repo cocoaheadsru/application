@@ -16,14 +16,7 @@ class ParticipantsCollectionView: UIView {
     }
   }
 
-  var borderColor: CGColor {
-    get {
-      return UIColor.white.cgColor
-    }
-    set {
-      self.borderColor = newValue
-    }
-  }
+  open var borderColor: CGColor = UIColor.white.cgColor
 
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -53,7 +46,7 @@ class ParticipantsCollectionView: UIView {
       border.frame = imageView.bounds
       border.lineWidth = (viewHeight * 0.1).round(0.5) // borderWidth = 5% of view height x2
       border.path = UIBezierPath(ovalIn: border.bounds).cgPath
-      border.strokeColor = UIColor.white.cgColor
+      border.strokeColor = borderColor
       border.fillColor = UIColor.clear.cgColor
       imageView.layer.addSublayer(border)
 
