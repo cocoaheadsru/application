@@ -9,14 +9,19 @@
 import UIKit
 
 struct UserTableViewHeaderCellModel {
-  let userPhoto: UIImage
-  let position: String
-  let company: String
+  let userEntity: UserEntity
 }
 
 extension UserTableViewHeaderCellModel: CellViewModelType {
   func setup(on cell: UserTableViewHeaderCell) {
-    cell.userPhotoView.image = userPhoto
+    if let url = URL(string: userEntity.photoURL ?? "") {
+      if let data = NSData(contentsOf: url) {
+        cell.userPhotoView.image = UIImage(data: data as Data)
+      }
+    }
+
+    let position = userEntity.position ?? ""
+    let company = userEntity.company ?? ""
 
     let attributedString = NSMutableAttributedString()
     if !position.isEmpty && !company.isEmpty {
