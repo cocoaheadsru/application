@@ -11,11 +11,11 @@ import UIKit
 struct OptionTableViewCellModel {
 
   enum `Type` {
-    case check
+    case checkbox
     case radio
   }
 
-  let id: String
+  let id: Int
   let text: String
   let type: Type
 }
@@ -24,5 +24,12 @@ extension OptionTableViewCellModel: CellViewModelType {
 
   func setup(on cell: OptionTableViewCell) {
     cell.setup(text: text, isRadio: type == .radio)
+  }
+
+  func updateAppearance(of view: UIView, in parentView: UIView, at indexPath: IndexPath) {
+    if let cell = view as? OptionTableViewCell,
+      let tableView = parentView as? UITableView {
+      cell.drawCorner(in: tableView, indexPath: indexPath)
+    }
   }
 }

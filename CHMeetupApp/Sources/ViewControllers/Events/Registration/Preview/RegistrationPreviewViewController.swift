@@ -14,13 +14,16 @@ class RegistrationPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.dataSource = self
+      tableView.allowsMultipleSelection = true
       tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
+      tableView.backgroundColor = UIColor.clear
+
+      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
 
   fileprivate var bottomButton: BottomButton!
-  fileprivate var displayCollection: FormDisplayCollection?
+  fileprivate var displayCollection: FormDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +31,9 @@ class RegistrationPreviewViewController: UIViewController {
 
     bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
     bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
+
+    displayCollection = FormDisplayCollection()
+    tableView.registerNibs(fromType: FormDisplayCollection.self)
 
     RegistrationController.loadRegFromServer(
       with: 1,
@@ -43,8 +49,11 @@ class RegistrationPreviewViewController: UIViewController {
         }
 
         self?.displayCollection = displayCollection
+        self?.displayCollection.delegate = self
         self?.tableView.reloadData()
     })
+
+    view.backgroundColor = UIColor(.lightGray)
   }
 
   func registrationButtonAction() {
@@ -67,22 +76,48 @@ class RegistrationPreviewViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return displayCollection?.headerTitle(for: section) ?? ""
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return displayCollection.headerHeight(for: section)
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
+    header.headerLabel.text = displayCollection.headerTitle(for: section)
+    return header
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return displayCollection?.numberOfSections ?? 0
+    return displayCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return displayCollection?.numberOfRows(in: section) ?? 0
+    return displayCollection.numberOfRows(in: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let model = displayCollection?.model(for: indexPath)
-    let cell = tableView.dequeueReusableCell(for: indexPath, with: model!)
+    let model = displayCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
+  }
+}
+
+extension RegistrationPreviewViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
+  func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
+                            deselectItemsAt deselectIndexPaths: [IndexPath]) {
+    tableView.beginUpdates()
+    for indexPath in selectionIndexPaths {
+      tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    }
+    for indexPath in deselectIndexPaths {
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
+    tableView.endUpdates()
   }
 }
 

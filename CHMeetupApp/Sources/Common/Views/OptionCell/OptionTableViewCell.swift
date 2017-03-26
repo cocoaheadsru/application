@@ -21,11 +21,6 @@ final class OptionTableViewCell: PlateTableViewCell {
     }
   }
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    shouldHaveVerticalMargin = false
-  }
-
   override func prepareForReuse() {
     super.prepareForReuse()
     updateSelection(shouldSelect: false)

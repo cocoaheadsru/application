@@ -12,6 +12,18 @@ enum EventRegFormFieldType: String {
   case string
   case checkbox
   case radio
+
+  func parse(answer: Any?) -> Any {
+    switch self {
+    case .string:
+      return (answer as? String) ?? ""
+    case .checkbox, .radio:
+      if let result = answer as? Bool, result == true {
+        return true
+      }
+      return false
+    }
+  }
 }
 
 struct EventRegFormFieldPlainObject {
