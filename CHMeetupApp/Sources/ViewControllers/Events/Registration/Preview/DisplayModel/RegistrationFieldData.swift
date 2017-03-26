@@ -40,7 +40,7 @@ class FormFieldAnswer {
   var id: Int
   var value: String
   var type: EventRegFormFieldType
-  var answer: String?
+  var answer: Any?
 
   init(with answer: EventRegFormFieldAnswerPlainObject,
        fieldType: EventRegFormFieldType) {

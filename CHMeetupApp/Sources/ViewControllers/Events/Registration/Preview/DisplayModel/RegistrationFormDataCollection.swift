@@ -53,11 +53,13 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     let value = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
     switch value.type {
     case .checkbox:
-      let result = value.type.parse(answer: value.answer) as? Bool ?? false
+      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
+      value.answer = !result
       processCheckbox(at: indexPath, with: result)
-      value.answer = "\(!result)"
     case .radio:
-      break
+      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
+      value.answer = true
+      processRadio(at: indexPath, with: result)
     case .string:
       fatalError("Not implemented")
     }
@@ -69,5 +71,22 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     } else {
       delegate?.formDisplayRequestTo(selectItemsAt: [indexPath], deselectItemsAt: [])
     }
+  }
+
+  private func processRadio(at indexPath: IndexPath, with value: Bool) {
+    var deselectIndex: Int?
+
+    for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
+      if let result = value.answer as? Bool, result == true, index != indexPath.row {
+        deselectIndex = index
+      }
+    }
+
+    var deselectIndexPaths: [IndexPath] = []
+    if let index = deselectIndex {
+      deselectIndexPaths.append(IndexPath(row: index, section: indexPath.section))
+    }
+
+    delegate?.formDisplayRequestTo(selectItemsAt: [indexPath], deselectItemsAt: deselectIndexPaths)
   }
 }
