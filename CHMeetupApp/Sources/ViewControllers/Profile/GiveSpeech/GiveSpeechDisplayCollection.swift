@@ -40,7 +40,8 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .name:
-      return TextFieldPlateTableViewCellModel(placeholder: "Название".localized,
+      return TextFieldPlateTableViewCellModel(value: nameText,
+                                              placeholder: "Название".localized,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak self] value in
                                                 self?.nameText = value
@@ -55,7 +56,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
   func height(for indexPath: IndexPath) -> CGFloat {
     switch sections[indexPath.section] {
     case .name:
-      return 52
+      return UITableViewAutomaticDimension
     case .description:
       return 175
     }

@@ -33,6 +33,12 @@ final class FormFieldItem {
     name = field.name
     type = field.type
     fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType: field.type) }
+
+    // For string we creating template `FormFieldAnswer`
+    if type == .string {
+      let plainObject = EventRegFormFieldAnswerPlainObject(id: id, value: name)
+      fieldAnswers = [FormFieldAnswer(with: plainObject, fieldType: .string)]
+    }
   }
 }
 

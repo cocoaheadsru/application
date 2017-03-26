@@ -11,11 +11,12 @@ import UIKit
 protocol FormDisplayCollectionDelegate: class {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath])
+  func requestCell(at indexPath: IndexPath) -> UITableViewCell?
 }
 
-class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
+final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [OptionTableViewCellModel.self]
+    return [OptionTableViewCellModel.self, TextFieldPlateTableViewCellModel.self]
   }
 
   init(formData: FormData? = nil) {
@@ -45,7 +46,12 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     case .radio:
       return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .radio, result: boolAnswer)
     case .string:
-      fatalError("Not implemented \(stringAnswer)")
+      return TextFieldPlateTableViewCellModel(value: stringAnswer,
+                                              placeholder: answerCell.value,
+                                              textFieldDelegate: self,
+                                              valueChanged: { [weak answerCell] value in
+        answerCell?.answer = .string(value: value)
+      })
     }
   }
 
@@ -61,7 +67,7 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     let section = formData.sections[indexPath.section]
     let answerCell = section.fieldAnswers[indexPath.row]
 
-    let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
+    let (boolAnswer, _) = answerCell.answer.pasrseAnswers()
 
     switch section.type {
     case .checkbox:
@@ -71,7 +77,11 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
       answerCell.answer = .selection(isSelected: true)
       processRadio(at: indexPath, with: boolAnswer)
     case .string:
-      fatalError("Not implemented \(stringAnswer)")
+      delegate?.formDisplayRequestTo(selectItemsAt: [], deselectItemsAt: [indexPath])
+      let cell = delegate?.requestCell(at: indexPath)
+      if let cell = cell as? TextFieldPlateTableViewCell {
+        cell.textField.becomeFirstResponder()
+      }
     }
   }
 
@@ -99,5 +109,12 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     }
 
     delegate?.formDisplayRequestTo(selectItemsAt: [indexPath], deselectItemsAt: deselectIndexPaths)
+  }
+}
+
+extension FormDisplayCollection: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
 }

@@ -15,8 +15,19 @@ class RegistrationPreviewViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.allowsMultipleSelection = true
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.backgroundColor = UIColor.clear
+
+      tableView.contentInset = UIEdgeInsets(top: 0,
+                                            left: 0,
+                                            bottom: bottomMargin + BottomButton.constantHeight,
+                                            right: 0)
+
+      tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
+                                                     left: 0,
+                                                     bottom: BottomButton.constantHeight,
+                                                     right: 0)
+
+      tableView.estimatedRowHeight = 44.0
 
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -54,6 +65,18 @@ class RegistrationPreviewViewController: UIViewController {
     })
 
     view.backgroundColor = UIColor(.lightGray)
+    setupGestureRecognizer()
+  }
+
+  func setupGestureRecognizer() {
+    let dissmisKeyboardTouch =
+      UITapGestureRecognizer(target: self,
+                             action: #selector(GiveSpeechViewController.dismissKeyboard))
+    view.addGestureRecognizer(dissmisKeyboardTouch)
+  }
+
+  func dismissKeyboard() {
+    view.endEditing(true)
   }
 
   func registrationButtonAction() {
@@ -123,6 +146,10 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
     }
     tableView.endUpdates()
   }
+
+  func requestCell(at indexPath: IndexPath) -> UITableViewCell? {
+    return tableView.cellForRow(at: indexPath)
+  }
 }
 
 // MARK: - KeyboardHandlerDelegate
@@ -139,8 +166,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
     case .hidden:
-      tableView.contentInset.bottom = 0
-      tableView.scrollIndicatorInsets.bottom = 0
+      tableView.contentInset.bottom = bottomMargin + BottomButton.constantHeight
+      tableView.scrollIndicatorInsets.bottom = BottomButton.constantHeight
       buttonInsets = 0
     }
 
