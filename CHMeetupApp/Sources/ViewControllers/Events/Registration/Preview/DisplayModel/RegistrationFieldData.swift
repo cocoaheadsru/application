@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FormData {
+final class FormData {
   var id: Int
   var name: String
   var sections: [FormFieldItem]
@@ -20,7 +20,7 @@ class FormData {
   }
 }
 
-class FormFieldItem {
+final class FormFieldItem {
   var id: Int
   var isRequired: Bool
   var name: String
@@ -36,7 +36,7 @@ class FormFieldItem {
   }
 }
 
-class FormFieldAnswer {
+final class FormFieldAnswer {
   var id: Int
   var value: String
   var type: EventRegFormFieldType

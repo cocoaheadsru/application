@@ -14,8 +14,6 @@ class RegistrationPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      tableView.dataSource = self
-      tableView.delegate = self
       tableView.allowsMultipleSelection = true
       tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.backgroundColor = UIColor.clear
