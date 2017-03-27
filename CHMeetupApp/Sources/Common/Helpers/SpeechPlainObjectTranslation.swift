@@ -32,8 +32,8 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
       content.id = contentPlainObject.id
       content.title = contentPlainObject.title
       content.descriptionText = contentPlainObject.description
-      content.type = contentPlainObject.type
-      content.linkURL = contentPlainObject.linkURL
+      content.type = contentPlainObject.type.rawValue
+      content.linkURL = contentPlainObject.linkURL.absoluteString
 
       speech.contents.append(content)
     }

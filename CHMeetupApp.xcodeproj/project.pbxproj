@@ -88,6 +88,7 @@
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
 		7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */; };
@@ -277,6 +278,7 @@
 		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechContentPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
 		7DE942091E867AB200E7E9E6 /* AuthServiceFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceFacade.swift; sourceTree = "<group>"; };
@@ -1443,6 +1445,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD594921E87189400BAD1B5 /* SpeechContentPlainObject.swift */,
+				7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */,
 			);
 			name = SpeechContent;
 			sourceTree = "<group>";
@@ -1732,6 +1735,7 @@
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
+				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
 				9F30FFCF1E71E87F00EF85F5 /* TemplateTableCellViewModel.swift in Sources */,

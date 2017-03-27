@@ -51,8 +51,8 @@ extension EventPlainObject: PlainObjectType {
     self.endDate = Date(timeIntervalSince1970: endDate)
 
     var photos: [URL] = []
-    speakersJson.forEach { (photo_url) in
-      guard let url = URL(string: photo_url) else { return }
+    speakersJson.forEach { photoUrl in
+      guard let url = URL(string: photoUrl) else { return }
       photos.append(url)
     }
     self.speakersPhotos = photos

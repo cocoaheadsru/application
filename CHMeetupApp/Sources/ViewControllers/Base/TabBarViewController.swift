@@ -15,7 +15,17 @@ class TabBarViewController: CustomTabBarController {
 
     // Query example
 
-    Server.standard.request(SpeechPlainObject.Requests.speechesOnEvent(with: 1)) { speeches, error in
+    Server.standard.request(SpeechContentPlainObject.Requests.contentsOnSpeech(with: 3)) { (contents, error) in
+      if let error = error {
+        print(error)
+      }
+
+      for content in contents ?? [] {
+        print(content)
+      }
+    }
+
+    Server.standard.request(SpeechPlainObject.Requests.speechesOnEvent(with: 2)) { speeches, error in
       if let error = error {
         print(error)
       }
