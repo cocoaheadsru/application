@@ -100,7 +100,7 @@ class Server {
     sessionRequest.httpBody = request.params?.httpQuery
     let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
       guard error == nil else {
-        print("Session request error: \(error) for api resourse: \(request)")
+        print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         return
       }
 
