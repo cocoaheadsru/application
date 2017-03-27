@@ -16,7 +16,7 @@ private var swizzle: Void = {
 
 // We need this class because default title label doesn't support NSKernAttribute
 extension UINavigationItem {
-  open override class func initialize() {
+  static func swizzleForTitleConfugation() {
     _ = swizzle
   }
 

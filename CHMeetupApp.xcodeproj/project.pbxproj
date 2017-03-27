@@ -124,6 +124,7 @@
 		9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3767151E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift */; };
 		9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3767161E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib */; };
 		9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3767191E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift */; };
+		9F42ACCB1E89C7BA0099AB6A /* SwizzlingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F42ACCA1E89C7BA0099AB6A /* SwizzlingController.swift */; };
 		9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */; };
 		9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A671E73E9530016CE0B /* ShadowView.swift */; };
 		9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */; };
@@ -313,10 +314,11 @@
 		9F3767151E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewPlateTableViewCell.swift; sourceTree = "<group>"; };
 		9F3767161E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewPlateTableViewCell.xib; sourceTree = "<group>"; };
 		9F3767191E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewPlateTableViewCellModel.swift; sourceTree = "<group>"; };
+		9F42ACCA1E89C7BA0099AB6A /* SwizzlingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwizzlingController.swift; sourceTree = "<group>"; };
 		9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBarItems.swift"; sourceTree = "<group>"; };
 		9F487A671E73E9530016CE0B /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9F487A6A1E73EE6E0016CE0B /* MethodSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSwizzler.swift; sourceTree = "<group>"; };
-		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
+		9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+TitleConfiguration.swift"; path = "../Common/Extensions/UINavigationItem+TitleConfiguration.swift"; sourceTree = "<group>"; };
 		9F487A711E73F2C60016CE0B /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		9F487A781E740DC00016CE0B /* EventPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewTableViewCell.swift; path = EventCell/EventPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		9F487A791E740DC00016CE0B /* EventPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventPreviewTableViewCell.xib; path = EventCell/EventPreviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -513,6 +515,8 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9F487A701E73F2A90016CE0B /* Appearance */,
+				9F42ACC91E89C7540099AB6A /* Swizzling Controller */,
 				03374B381E7F2C3100CA298E /* Registration */,
 				22323F371E70C14300522E5C /* Factory */,
 				22323F391E70C14300522E5C /* Login */,
@@ -828,7 +832,6 @@
 		22323F581E70C2BE00522E5C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F487A701E73F2A90016CE0B /* Appearance */,
 				22323F591E70C2BE00522E5C /* Base */,
 				22323F5D1E70C2BE00522E5C /* Events */,
 				22323F671E70C2BE00522E5C /* Feed */,
@@ -1283,6 +1286,31 @@
 			name = TextViewPlateTableViewCell;
 			sourceTree = "<group>";
 		};
+		9F42ACC91E89C7540099AB6A /* Swizzling Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F42ACCA1E89C7BA0099AB6A /* SwizzlingController.swift */,
+				9F42ACCC1E89C8060099AB6A /* UIKit */,
+			);
+			name = "Swizzling Controller";
+			sourceTree = "<group>";
+		};
+		9F42ACCC1E89C8060099AB6A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9F42ACCD1E89C80B0099AB6A /* UINavigationItem */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		9F42ACCD1E89C80B0099AB6A /* UINavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */,
+			);
+			name = UINavigationItem;
+			sourceTree = "<group>";
+		};
 		9F487A661E73E94B0016CE0B /* Shadow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,7 +1331,6 @@
 		9F487A6D1E73EFCE0016CE0B /* UINavigationItem */ = {
 			isa = PBXGroup;
 			children = (
-				9F487A6E1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift */,
 			);
 			name = UINavigationItem;
 			path = ..;
@@ -1315,6 +1342,7 @@
 				9F487A711E73F2C60016CE0B /* AppearanceController.swift */,
 			);
 			name = Appearance;
+			path = ../ViewControllers;
 			sourceTree = "<group>";
 		};
 		9F487A731E740D940016CE0B /* EventCell */ = {
@@ -1791,6 +1819,7 @@
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F9C1E70C2BE00522E5C /* ProfilePictureCell.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
+				9F42ACCB1E89C7BA0099AB6A /* SwizzlingController.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,

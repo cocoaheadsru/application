@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
 
+    // Seems that is most optimal way now to swizzle, without adding Obj-c code into project
+    SwizzlingController.swizzleMethods()
+
     return true
   }
 
