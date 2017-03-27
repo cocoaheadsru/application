@@ -75,8 +75,8 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       answerCell.answer = .selection(isSelected: !boolAnswer)
       processCheckbox(at: indexPath, with: boolAnswer)
     case .radio:
-      answerCell.answer = .selection(isSelected: true)
-      processRadio(at: indexPath, with: boolAnswer)
+      answerCell.answer = .selection(isSelected: !boolAnswer)
+      processRadio(at: indexPath, with: !boolAnswer)
     case .string:
       delegate?.formDisplayRequestTo(selectItemsAt: [], deselectItemsAt: [indexPath])
       let cell = delegate?.formDisplayRequestCell(at: indexPath)
@@ -101,15 +101,23 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       let result = value.answer.pasrseAnswers().0
       if result == true, index != indexPath.row {
         deselectIndex = index
+        value.answer = .selection(isSelected: false)
       }
     }
 
     var deselectIndexPaths: [IndexPath] = []
+    var selectedIndexPath: [IndexPath] = []
     if let index = deselectIndex {
       deselectIndexPaths.append(IndexPath(row: index, section: indexPath.section))
     }
 
-    delegate?.formDisplayRequestTo(selectItemsAt: [indexPath], deselectItemsAt: deselectIndexPaths)
+    if value == true {
+      selectedIndexPath.append(indexPath)
+    } else {
+      deselectIndexPaths.append(indexPath)
+    }
+
+    delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
   }
 }
 
