@@ -18,12 +18,15 @@ struct OptionTableViewCellModel {
   let id: Int
   let text: String
   let type: Type
+  let result: Bool
 }
 
 extension OptionTableViewCellModel: CellViewModelType {
 
   func setup(on cell: OptionTableViewCell) {
     cell.setup(text: text, isRadio: type == .radio)
+    cell.isSelected = result
+    cell.updateSelection(shouldSelect: result)
   }
 
   func updateAppearance(of view: UIView, in parentView: UIView, at indexPath: IndexPath) {

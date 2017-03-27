@@ -14,7 +14,6 @@
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
 		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
-		03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
 		221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F61E7B24A1004F0695 /* EventRegForm.swift */; };
@@ -204,7 +203,6 @@
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
 		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
-		03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPlateTableViewCellModel.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
 		221CC3F61E7B24A1004F0695 /* EventRegForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegForm.swift; sourceTree = "<group>"; };
@@ -891,7 +889,6 @@
 			isa = PBXGroup;
 			children = (
 				03CA501A1E8327EB00CF9613 /* DisplayModel */,
-				03CA501D1E8327EB00CF9613 /* FormPlateTableViewCellModel.swift */,
 				22323F641E70C2BE00522E5C /* RegistrationPreviewViewController.swift */,
 			);
 			path = Preview;

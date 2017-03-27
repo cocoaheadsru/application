@@ -8,6 +8,20 @@
 
 import Foundation
 
+enum EventRegFormFieldAnswer {
+  case string(value: String)
+  case selection(isSelected: Bool)
+
+  func pasrseAnswers() -> (Bool, String) {
+    switch self {
+    case let .selection(isSelected):
+      return (isSelected, "")
+    case let .string(value):
+      return (false, value)
+    }
+  }
+}
+
 enum EventRegFormFieldType: String {
   case string
   case checkbox

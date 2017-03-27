@@ -14,6 +14,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   @IBOutlet var tableView: UITableView! {
     didSet {
+      tableView.estimatedRowHeight = 44.0
       tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -41,10 +42,10 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func setupGestureRecognizer() {
-    let dissmisKBTouch =
+    let dissmisKeyboardTouch =
       UITapGestureRecognizer(target: self,
                              action: #selector(GiveSpeechViewController.dismissKeyboard))
-    view.addGestureRecognizer(dissmisKBTouch)
+    view.addGestureRecognizer(dissmisKeyboardTouch)
   }
 
   func sendSpeech() {

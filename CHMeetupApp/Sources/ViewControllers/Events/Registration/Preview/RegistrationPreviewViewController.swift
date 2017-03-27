@@ -15,8 +15,19 @@ class RegistrationPreviewViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.allowsMultipleSelection = true
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomMargin, right: 0)
       tableView.backgroundColor = UIColor.clear
+
+      tableView.contentInset = UIEdgeInsets(top: 0,
+                                            left: 0,
+                                            bottom: bottomMargin + BottomButton.constantHeight,
+                                            right: 0)
+
+      tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
+                                                     left: 0,
+                                                     bottom: BottomButton.constantHeight,
+                                                     right: 0)
+
+      tableView.estimatedRowHeight = 44.0
 
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -54,6 +65,21 @@ class RegistrationPreviewViewController: UIViewController {
     })
 
     view.backgroundColor = UIColor(.lightGray)
+    setupGestureRecognizer()
+  }
+
+  var dissmisKeyboardTouch: UITapGestureRecognizer!
+
+  func setupGestureRecognizer() {
+    dissmisKeyboardTouch =
+      UITapGestureRecognizer(target: self,
+                             action: #selector(GiveSpeechViewController.dismissKeyboard))
+    view.addGestureRecognizer(dissmisKeyboardTouch)
+    dissmisKeyboardTouch.isEnabled = false
+  }
+
+  func dismissKeyboard() {
+    view.endEditing(true)
   }
 
   func registrationButtonAction() {
@@ -105,19 +131,29 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     displayCollection.didSelect(indexPath: indexPath)
   }
+
+  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    displayCollection.didSelect(indexPath: indexPath)
+  }
 }
 
 extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath]) {
-    tableView.beginUpdates()
     for indexPath in selectionIndexPaths {
       tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
     for indexPath in deselectIndexPaths {
       tableView.deselectRow(at: indexPath, animated: true)
     }
-    tableView.endUpdates()
+  }
+
+  func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell? {
+    return tableView.cellForRow(at: indexPath)
+  }
+
+  func formDisplayRequestTouchGeuster(enable: Bool) {
+    dissmisKeyboardTouch.isEnabled = enable
   }
 }
 
@@ -135,8 +171,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
     case .hidden:
-      tableView.contentInset.bottom = 0
-      tableView.scrollIndicatorInsets.bottom = 0
+      tableView.contentInset.bottom = bottomMargin + BottomButton.constantHeight
+      tableView.scrollIndicatorInsets.bottom = BottomButton.constantHeight
       buttonInsets = 0
     }
 

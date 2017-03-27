@@ -37,7 +37,7 @@ enum MapAppType {
       schemeString = "comgooglemaps://"
     case .yandexMaps:
       schemeString = "yandexmaps://maps.yandex.ru/"
-    default:
+    case .yandexNavigation:
       schemeString = "yandexnavi://"
     }
     return URL(string: schemeString)!
@@ -56,7 +56,7 @@ enum MapAppType {
     case .yandexMaps:
       // http://stackoverflow.com/questions/22127840/ios-launch-yandexmaps-with-directions-urlscheme
       schemeSuffix = "?pt=\(coordinate.longitude),\(coordinate.latitude)&z=15"
-    default:
+    case .yandexNavigation:
       // https://github.com/yandexmobile/yandexmapkit-ios/wiki/Интеграция-с-Яндекс.Навигатором
       schemeSuffix = "build_route_on_map?lat_to=\(coordinate.latitude)&lon_to=\(coordinate.longitude)"
     }

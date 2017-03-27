@@ -11,11 +11,13 @@ import UIKit
 protocol FormDisplayCollectionDelegate: class {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath])
+  func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell?
+  func formDisplayRequestTouchGeuster(enable: Bool)
 }
 
-class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
+final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [OptionTableViewCellModel.self]
+    return [OptionTableViewCellModel.self, TextFieldPlateTableViewCellModel.self]
   }
 
   init(formData: FormData? = nil) {
@@ -34,14 +36,23 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    let cell = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
-    switch cell.type {
+    let section = formData.sections[indexPath.section]
+    let answerCell = section.fieldAnswers[indexPath.row]
+
+    let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
+
+    switch section.type {
     case .checkbox:
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .checkbox)
+      return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .checkbox, result: boolAnswer)
     case .radio:
-      return OptionTableViewCellModel(id: cell.id, text: cell.value, type: .radio)
+      return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .radio, result: boolAnswer)
     case .string:
-      fatalError("Not implemented")
+      return TextFieldPlateTableViewCellModel(value: stringAnswer,
+                                              placeholder: answerCell.value,
+                                              textFieldDelegate: self,
+                                              valueChanged: { [weak answerCell] value in
+        answerCell?.answer = .string(value: value)
+      })
     }
   }
 
@@ -54,18 +65,24 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
   }
 
   func didSelect(indexPath: IndexPath) {
-    let value = formData.sections[indexPath.section].fieldAnswers[indexPath.row]
-    switch value.type {
+    let section = formData.sections[indexPath.section]
+    let answerCell = section.fieldAnswers[indexPath.row]
+
+    let (boolAnswer, _) = answerCell.answer.pasrseAnswers()
+
+    switch section.type {
     case .checkbox:
-      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
-      value.answer = !result
-      processCheckbox(at: indexPath, with: result)
+      answerCell.answer = .selection(isSelected: !boolAnswer)
+      processCheckbox(at: indexPath, with: boolAnswer)
     case .radio:
-      let result = value.type.parse(answer: value.answer) as! Bool // swiftlint:disable:this force_cast
-      value.answer = true
-      processRadio(at: indexPath, with: result)
+      answerCell.answer = .selection(isSelected: !boolAnswer)
+      processRadio(at: indexPath, with: !boolAnswer)
     case .string:
-      fatalError("Not implemented")
+      delegate?.formDisplayRequestTo(selectItemsAt: [], deselectItemsAt: [indexPath])
+      let cell = delegate?.formDisplayRequestCell(at: indexPath)
+      if let cell = cell as? TextFieldPlateTableViewCell {
+        cell.textField.becomeFirstResponder()
+      }
     }
   }
 
@@ -81,16 +98,40 @@ class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionActio
     var deselectIndex: Int?
 
     for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
-      if let result = value.answer as? Bool, result == true, index != indexPath.row {
+      let result = value.answer.pasrseAnswers().0
+      if result == true, index != indexPath.row {
         deselectIndex = index
+        value.answer = .selection(isSelected: false)
       }
     }
 
     var deselectIndexPaths: [IndexPath] = []
+    var selectedIndexPath: [IndexPath] = []
     if let index = deselectIndex {
       deselectIndexPaths.append(IndexPath(row: index, section: indexPath.section))
     }
 
-    delegate?.formDisplayRequestTo(selectItemsAt: [indexPath], deselectItemsAt: deselectIndexPaths)
+    if value == true {
+      selectedIndexPath.append(indexPath)
+    } else {
+      deselectIndexPaths.append(indexPath)
+    }
+
+    delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
+  }
+}
+
+extension FormDisplayCollection: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    delegate?.formDisplayRequestTouchGeuster(enable: true)
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    delegate?.formDisplayRequestTouchGeuster(enable: false)
   }
 }
