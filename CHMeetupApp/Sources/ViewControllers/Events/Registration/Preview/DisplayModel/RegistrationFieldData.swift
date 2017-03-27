@@ -54,7 +54,7 @@ final class FormFieldAnswer {
     switch fieldType {
     case .checkbox, .radio:
       self.answer = EventRegFormFieldAnswer.selection(isSelected: false)
-    default:
+    case .string:
       self.answer = EventRegFormFieldAnswer.string(value: "")
     }
   }

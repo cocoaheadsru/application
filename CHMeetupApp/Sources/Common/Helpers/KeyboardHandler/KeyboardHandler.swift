@@ -77,9 +77,12 @@ class KeyboardHandler {
   private var currentState: VisibilityState = .hidden {
     didSet {
       switch currentState {
-      case .visible: wasVisible = false
-      case .hidden: wasVisible = true
-      default: break
+      case .visible:
+        wasVisible = false
+      case .hidden:
+        wasVisible = true
+      case .rotating:
+        break
       }
     }
   }
@@ -126,7 +129,8 @@ class KeyboardHandler {
     case .rotating:
       currentState = .visible
       return
-    default: break
+    case .hidden:
+      break
     }
     currentState = .visible
     getInfo(from: notification) { info in
