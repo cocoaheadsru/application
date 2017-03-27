@@ -140,14 +140,12 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath]) {
-    tableView.beginUpdates()
     for indexPath in selectionIndexPaths {
       tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
     for indexPath in deselectIndexPaths {
       tableView.deselectRow(at: indexPath, animated: true)
     }
-    tableView.endUpdates()
   }
 
   func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell? {
