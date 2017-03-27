@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="330" height="222"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="330" height="221"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="221.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzx-8M-7Yn">
@@ -25,7 +25,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-0I-Kbz">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-0I-Kbz">
                         <rect key="frame" x="120" y="37" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="948-Ek-rkT"/>
@@ -45,7 +45,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="positionAtCompanyLabel" destination="Fzx-8M-7Yn" id="bOO-wI-UuO"/>
-                <outlet property="userPhotoView" destination="DuV-0I-Kbz" id="1NU-KG-PJa"/>
+                <outlet property="userImageView" destination="DuV-0I-Kbz" id="Drz-bb-sqk"/>
             </connections>
             <point key="canvasLocation" x="39" y="143"/>
         </tableViewCell>
