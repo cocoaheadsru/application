@@ -44,7 +44,8 @@ struct MainViewDisplayCollection: DisplayCollection {
     case .events:
       return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
     case .actionButtons:
-      let action = ActionPlainObject(text: "Example".localized, imageName: nil, action: nil)
+//      let action = ActionPlainObject(text: "Example".localized, imageName: nil, action: nil)
+      let action = ActionPlainObject(text: Date().eventFormatDateString, imageName: nil, action: nil)
       let model = ActionTableViewCellModel(action: action)
       return model
     }
