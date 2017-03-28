@@ -10,25 +10,53 @@ import UIKit
 
 class ActionCellConfigurationController {
 
-  var actionPlainObjects: [ActionPlainObject] = []
-
-  // instantiate action block before checking permisson
-  var action: (() -> Void)?
-
-  // write what will be happen if will be successful request.
-  var successfulRequest: (() -> Void)?
-
-  // use it in ViewDidLoad after instantiation action
-  func checkPermission() {
-    if !PermissionsManager.isAllowed(type: .reminders) {
-      let actionPlainObject = ActionPlainObject(text: "Включите оповещения чтобы не пропустить события".localized,
-                                                imageName: "img_icon_notification",
-                                                action:  action )
-      actionPlainObjects.append(actionPlainObject)
-    }
+  enum `Type` {
+    case reminders
+    case calendar
   }
 
-  func modelForRemindersPermission(at indexPath: IndexPath) -> ActionTableViewCellModel {
-    return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
+  typealias Action = () -> Void
+
+  func checkAccess(on viewController: UIViewController, for type: Type, with action: Action?) -> ActionPlainObject? {
+    var actionPlainObject: ActionPlainObject?
+    switch  type {
+    case .reminders:
+      if !PermissionsManager.isAllowed(type: .reminders) {
+        actionPlainObject = ActionPlainObject(text: "Включите оповещения, чтобы не пропустить событие",
+                                              imageName: "img_icon_notification", action: {
+                                              PermissionsManager.requireAccess(from: viewController,
+                                                                               to: .reminders,
+                                                                               completion: { success in
+                                                                                if success {
+                                                                                  DispatchQueue.main.async {
+                                                                                    action?()
+                                                                                  }
+                                                                                }
+                                                })
+        })
+        return actionPlainObject
+      }
+    case .calendar:
+      if !PermissionsManager.isAllowed(type: .calendar) {
+        actionPlainObject = ActionPlainObject(text: "Включите календарь, чтобы добавить мероприятие в ваш календарь",
+                                              imageName: "img_icon_notification", action: {
+                                                PermissionsManager.requireAccess(from: viewController,
+                                                                                 to: .calendar,
+                                                                                 completion: { success in
+                                                                                  if success {
+                                                                                    DispatchQueue.main.async {
+                                                                                      action?()
+                                                                                    }
+                                                                                  }
+                                                })
+        })
+        return actionPlainObject
+      }
+    }
+    return nil
+  }
+
+  func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
+    return ActionTableViewCellModel(action: actionPlainObject)
   }
 }
