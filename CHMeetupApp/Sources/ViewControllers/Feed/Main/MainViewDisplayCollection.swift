@@ -22,17 +22,18 @@ struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   var actionPlainObjects: [ActionPlainObject] = []
 
-  var successfullRequestAction: (() -> Void)?
+  var successfulRequestAction: (() -> Void)?
 
   mutating func configureActionCellsSection(on viewController: UIViewController) {
 
     let actionCell = ActionCellConfigurationController()
 
     let remindersPermissionCell = actionCell.checkAccess(on: viewController,
-                                                             for: .reminders, with: successfullRequestAction)
+                                                             for: .reminders,
+                                                             with: successfulRequestAction)
     let calendarPermissionCell = actionCell.checkAccess(on: viewController,
                                                         for: .calendar,
-                                                        with: successfullRequestAction)
+                                                        with: successfulRequestAction)
 
     if let remindersCell = remindersPermissionCell {
       actionPlainObjects.append(remindersCell)
@@ -41,6 +42,7 @@ struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       actionPlainObjects.append(calendarCell)
     }
 
+    // FIXME: Setup with real case
     actionPlainObjects.append(ActionPlainObject(text: "Example", imageName: nil, action: {
       viewController.navigationController?.pushViewController(ViewControllersFactory.eventPreviewViewController,
                                                               animated: true)

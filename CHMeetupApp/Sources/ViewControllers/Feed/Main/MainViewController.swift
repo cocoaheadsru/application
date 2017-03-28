@@ -57,7 +57,7 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    displayCollection.successfullRequestAction = {
+    displayCollection.successfulRequestAction = {
       self.displayCollection.actionPlainObjects.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .automatic)
     }
