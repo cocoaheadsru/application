@@ -9,11 +9,18 @@
 import Foundation
 
 struct SpeechContentPlainObject {
+
+  enum SpeechContentType: String {
+    case video
+    case slide
+    case unknown
+  }
+
   let id: Int
 
   let title: String
   let description: String
 
-  let linkURL: String
-  let type: Int
+  let linkURL: URL
+  let type: SpeechContentType
 }

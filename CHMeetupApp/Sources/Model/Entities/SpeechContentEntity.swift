@@ -16,7 +16,7 @@ class SpeechContentEntity: Object {
   dynamic var descriptionText: String = ""
 
   dynamic var linkURL: String = ""
-  dynamic var type: Int = 0
+  dynamic var type: String = ""
 
   override static func primaryKey() -> String? {
     return "id"

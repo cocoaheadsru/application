@@ -24,6 +24,7 @@ extension SpeechPlainObject: PlainObjectType {
       let title = json["title"] as? String,
       let description = json["description"] as? String,
       let speakerJson = json["speaker"] as? JSONDictionary,
+      let contentsJson = json["contents"] as? [JSONDictionary],
       let speaker = UserPlainObject(json: speakerJson)
       else { return nil }
 
@@ -31,6 +32,7 @@ extension SpeechPlainObject: PlainObjectType {
     self.title = title
     self.description = description
     self.speaker = speaker
-    self.content = []
+    self.content = contentsJson.flatMap(SpeechContentPlainObject.init)
+
   }
 }
