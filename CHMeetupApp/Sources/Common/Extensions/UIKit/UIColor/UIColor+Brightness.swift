@@ -11,9 +11,10 @@ import UIKit
 extension UIColor {
 
   var tapButtonChangeColor: UIColor {
-    var brightness: CGFloat = 0
-    if self.getHue(nil, saturation: nil, brightness: &brightness, alpha: nil) {
-      if brightness < 0.3 {
+    var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+    if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+      // Special formula
+      if (red * 300 + green * 590 + blue * 115) / 1000 < 0.3 {
         return lighterColorForColor()
       }
     }
