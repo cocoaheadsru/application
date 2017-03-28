@@ -13,10 +13,12 @@ class UserTableViewHeaderCell: UITableViewCell {
   @IBOutlet var positionAtCompanyLabel: UILabel!
   @IBOutlet var userImageView: UIImageView!
 
-  override func layoutSubviews() {
-    userImageView.layer.cornerRadius = userImageView.bounds.height / 2 // cornerRadius = 50% of view height
+  private let border = CAShapeLayer()
 
-    let border = CAShapeLayer()
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    userImageView.layer.cornerRadius = userImageView.bounds.height / 2 // cornerRadius = 50% of view height
     border.frame = userImageView.bounds
     border.lineWidth = (userImageView.bounds.height * 0.08).round(0.5) // borderWidth = 4% of view height x2
     border.path = UIBezierPath(ovalIn: border.bounds).cgPath
