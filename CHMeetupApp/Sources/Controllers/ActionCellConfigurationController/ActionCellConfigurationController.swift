@@ -31,6 +31,7 @@ class ActionCellConfigurationController {
         return actionPlainObject
       }
     case .calendar:
+      // FIXME: insert the real image
       if !PermissionsManager.isAllowed(type: .calendar) {
         actionPlainObject = ActionPlainObject(text: "Включите календарь, чтобы не пропустить событие".localized,
                                               imageName: "img_icon_notification", action: {

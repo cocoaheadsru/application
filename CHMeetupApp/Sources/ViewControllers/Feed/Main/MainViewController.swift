@@ -21,7 +21,14 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     displayCollection = MainViewDisplayCollection()
-    displayCollection.configureActionCellsSection(on: self)
+    displayCollection.configureActionCellsSection(on: self, with: {
+
+      guard let indexPath = self.displayCollection.indexPath else {
+        return
+      }
+      self.displayCollection.actionPlainObjects.remove(at: indexPath.row)
+      self.tableView.deleteRows(at: [indexPath], with: .left)
+    })
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
@@ -57,11 +64,8 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    displayCollection.successfulRequestAction = {
-      self.displayCollection.actionPlainObjects.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .automatic)
-    }
     tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.indexPath = indexPath
     displayCollection.didSelect(indexPath: indexPath)
   }
 }

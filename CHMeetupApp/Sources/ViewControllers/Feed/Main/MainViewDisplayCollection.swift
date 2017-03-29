@@ -22,18 +22,16 @@ struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   var actionPlainObjects: [ActionPlainObject] = []
 
-  var successfulRequestAction: (() -> Void)?
+  var indexPath: IndexPath?
 
-  mutating func configureActionCellsSection(on viewController: UIViewController) {
-
+  mutating func configureActionCellsSection(on viewController: UIViewController, with action: (() -> Void)?) {
     let actionCell = ActionCellConfigurationController()
-
     let remindersPermissionCell = actionCell.checkAccess(on: viewController,
                                                              for: .reminders,
-                                                             with: successfulRequestAction)
+                                                             with: action)
     let calendarPermissionCell = actionCell.checkAccess(on: viewController,
                                                         for: .calendar,
-                                                        with: successfulRequestAction)
+                                                        with:  action)
 
     if let remindersCell = remindersPermissionCell {
       actionPlainObjects.append(remindersCell)
