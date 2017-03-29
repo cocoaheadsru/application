@@ -9,16 +9,20 @@
 import Foundation
 
 extension Date {
+
+  private static let dateFormatter = DateFormatter()
+
   var eventFormatDateString: String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = eventDateFormat
-    return dateFormatter.string(from: self)
+    Date.dateFormatter.dateFormat = eventDateFormat
+    return Date.dateFormatter.string(from: self)
   }
 
   var eventDateFormat: String {
     let template = "MMMM dd, HH:mm"
+    let localeCode = Bundle.main.preferredLocalizations.first! as String
+    let locale = Locale(identifier: localeCode)
     return DateFormatter.dateFormat(fromTemplate: template,
                                     options: 0,
-                                    locale: .current)!
+                                    locale: locale)!
   }
 }
