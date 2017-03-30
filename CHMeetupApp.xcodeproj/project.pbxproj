@@ -13,6 +13,8 @@
 		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */; };
+		036794991E8D9E0500997D29 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */; };
+		0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */; };
 		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
 		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
@@ -207,6 +209,8 @@
 		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedFormat.swift"; sourceTree = "<group>"; };
+		036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTableViewCell.swift; sourceTree = "<group>"; };
+		036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerTableViewCell.xib; sourceTree = "<group>"; };
 		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
 		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -407,6 +411,15 @@
 				03374B391E7F2C3100CA298E /* RegistrationController.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		036794961E8D9CC400997D29 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */,
+				036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */,
+			);
+			path = subviews;
 			sourceTree = "<group>";
 		};
 		03CA501A1E8327EB00CF9613 /* DisplayModel */ = {
@@ -909,6 +922,7 @@
 		22323F651E70C2BE00522E5C /* Speech */ = {
 			isa = PBXGroup;
 			children = (
+				036794961E8D9CC400997D29 /* subviews */,
 				22323F661E70C2BE00522E5C /* SpeechPreviewViewController.swift */,
 			);
 			path = Speech;
@@ -1647,6 +1661,7 @@
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				320FA5781E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib in Resources */,
+				0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
@@ -1774,6 +1789,7 @@
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
 				22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */,
 				22323F091E70C0CE00522E5C /* UIColor+Brightness.swift in Sources */,
+				036794991E8D9E0500997D29 /* SpeakerTableViewCell.swift in Sources */,
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
