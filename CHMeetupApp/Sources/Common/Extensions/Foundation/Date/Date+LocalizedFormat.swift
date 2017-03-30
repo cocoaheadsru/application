@@ -10,15 +10,19 @@ import Foundation
 
 extension Date {
 
+  enum DateTemplate: String {
+    case event = "MMMM dd, HH:mm"
+  }
+
   private static let dateFormatter = DateFormatter()
 
-  var eventFormatDateString: String {
-    Date.dateFormatter.dateFormat = eventDateFormat
+  func dateString(with dateTemplate: DateTemplate) -> String {
+    Date.dateFormatter.dateFormat = Date.dateFormat(for: dateTemplate)
     return Date.dateFormatter.string(from: self)
   }
 
-  var eventDateFormat: String {
-    let template = "MMMM dd, HH:mm"
+  static func dateFormat(for dateTemplate: DateTemplate) -> String {
+    let template = dateTemplate.rawValue
     let localeCode = Bundle.main.preferredLocalizations.first! as String
     let locale = Locale(identifier: localeCode)
     return DateFormatter.dateFormat(fromTemplate: template,
