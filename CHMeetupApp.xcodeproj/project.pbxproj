@@ -12,6 +12,7 @@
 		03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */; };
 		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */; };
 		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
 		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
@@ -205,6 +206,7 @@
 		03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedFormat.swift"; sourceTree = "<group>"; };
 		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
 		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -659,6 +661,7 @@
 				9FB84AEB1E7B696000FEEC8E /* Date+DefaultFormat.swift */,
 				9FB84AED1E7B69D600FEEC8E /* Date+ComponentsHelper.swift */,
 				9FB84AEF1E7B6B5E00FEEC8E /* Date+Compare.swift */,
+				036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -1851,10 +1854,10 @@
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
+				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
-				03CA50201E8327EB00CF9613 /* FormPlateTableViewCellModel.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
