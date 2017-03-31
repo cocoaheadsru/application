@@ -73,7 +73,11 @@
                                             <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!   Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям 
+доступно больше функций! 
+
+Авторизируйтесь и регистрируйтесь 
+на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
                                         <rect key="frame" x="0.0" y="97" width="272" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.55310022830000005" green="0.67898041009999999" blue="0.67554408310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,12 +139,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="p5C-xH-cy8" id="ghq-tf-FJm"/>
-                                    <outlet property="delegate" destination="p5C-xH-cy8" id="Ll3-H9-Ptl"/>
+                                    <outlet property="dataSource" destination="p5C-xH-cy8" id="JrQ-I2-Qcu"/>
+                                    <outlet property="delegate" destination="p5C-xH-cy8" id="jb6-ph-2dn"/>
                                 </connections>
                             </tableView>
                         </subviews>
