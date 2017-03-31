@@ -28,10 +28,5 @@ class AboutSpeechTableViewCell: PlateTableViewCell {
       descriptionLabel.textColor = .black
     }
   }
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    roundType = .all
-  }
-
+  
 }
