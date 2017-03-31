@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
+class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
   }
@@ -22,16 +22,26 @@ struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   var actionPlainObjects: [ActionPlainObject] = []
 
-  var indexPath: IndexPath?
+  private var indexPath: IndexPath?
 
-  mutating func configureActionCellsSection(on viewController: UIViewController, with action: (() -> Void)?) {
+  func configureActionCellsSection(on viewController: UIViewController,
+                                   with tableView: UITableView) {
     let actionCell = ActionCellConfigurationController()
+
+    let action = {
+      guard let index = self.indexPath else {
+        return
+      }
+      self.actionPlainObjects.remove(at: index.row)
+      tableView.deleteRows(at: [index], with: .left)
+    }
+
     let remindersPermissionCell = actionCell.checkAccess(on: viewController,
                                                              for: .reminders,
                                                              with: action)
     let calendarPermissionCell = actionCell.checkAccess(on: viewController,
                                                         for: .calendar,
-                                                        with:  action)
+                                                        with: action)
 
     if let remindersCell = remindersPermissionCell {
       actionPlainObjects.append(remindersCell)
@@ -80,6 +90,7 @@ struct MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       break
     case .actionButtons:
+      self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
   }
