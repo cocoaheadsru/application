@@ -99,6 +99,9 @@
 		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
 		7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */; };
+		8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */; };
+		8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */; };
+		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
@@ -294,6 +297,9 @@
 		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
 		7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpeechPlainObject+Requests.swift"; path = "Speech/SpeechPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCell.swift; path = AboutSpeechCell/AboutSpeechTableViewCell.swift; sourceTree = "<group>"; };
+		8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutSpeechTableViewCell.xib; path = AboutSpeechCell/AboutSpeechTableViewCell.xib; sourceTree = "<group>"; };
+		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
@@ -733,6 +739,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A3699821E8C471800B37528 /* AboutSpeechCell */,
 				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
 				3284674E1E7FEF8400028431 /* TimePlaceCell */,
 				A1A072F21E79EF6800FB83F1 /* OptionCell */,
@@ -1149,6 +1156,16 @@
 			);
 			name = SocialResource;
 			path = AuthResources;
+			sourceTree = "<group>";
+		};
+		8A3699821E8C471800B37528 /* AboutSpeechCell */ = {
+			isa = PBXGroup;
+			children = (
+				8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */,
+				8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */,
+				8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */,
+			);
+			name = AboutSpeechCell;
 			sourceTree = "<group>";
 		};
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
@@ -1640,6 +1657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB848931E6F6848002E81ED /* GothamPro-Medium.ttf in Resources */,
+				8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */,
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
 				A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */,
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
@@ -1784,6 +1802,7 @@
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
+				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
@@ -1871,6 +1890,7 @@
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
+				8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */,
 				22323F361E70C0E500522E5C /* TextViewWithPlaceholder.swift in Sources */,
 				9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */,
 				22323F931E70C2BE00522E5C /* PastEventsDisplayCollection.swift in Sources */,
