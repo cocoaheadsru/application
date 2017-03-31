@@ -6,7 +6,6 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct ProfileViewDisplayCollection: DisplayCollection {
@@ -18,13 +17,14 @@ struct ProfileViewDisplayCollection: DisplayCollection {
     static let userHeader: CGFloat = 195.0
   }
 
-  enum `CellType` {
+  enum `Type` {
     case userHeader
   }
 
-  var sections: [CellType] = [.userHeader]
+  var sections: [Type] = [.userHeader]
 
   let user: UserEntity = {
+    // Tamplate data
     let userEntity = UserEntity()
     userEntity.name = "Dmitriy"
     userEntity.lastName = "Lis"
