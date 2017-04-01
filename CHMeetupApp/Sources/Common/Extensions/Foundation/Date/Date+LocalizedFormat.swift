@@ -17,16 +17,15 @@ extension Date {
   private static let dateFormatter = DateFormatter()
 
   func dateString(with dateTemplate: DateTemplate) -> String {
-    Date.dateFormatter.dateFormat = Date.dateFormat(for: dateTemplate)
-    return Date.dateFormatter.string(from: self)
+    let dateFormatter = Date.dateFormatter
+
+    dateFormatter.dateFormat = Date.dateFormat(for: dateTemplate)
+    return dateFormatter.string(from: self)
   }
 
   static func dateFormat(for dateTemplate: DateTemplate) -> String {
     let template = dateTemplate.rawValue
-    let localeCode = Bundle.main.preferredLocalizations.first! as String
-    let locale = Locale(identifier: localeCode)
-    return DateFormatter.dateFormat(fromTemplate: template,
-                                    options: 0,
-                                    locale: locale)!
+    let local = Bundle.main.locale
+    return DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: local) ?? template
   }
 }
