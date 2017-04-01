@@ -12,8 +12,14 @@ class LoginProcessController {
 
   static func setCurrentUser(_ user: UserPlainObject) {
     realmWrite {
+      var currentUser: UserEntity
       UserPreferencesEntity.value.isLoggedIn = true
-      let currentUser = UserEntity()
+
+      if UserPreferencesEntity.value.currentUser == nil {
+        currentUser = UserEntity()
+      } else {
+        currentUser = UserPreferencesEntity.value.currentUser!
+      }
 
       currentUser.name = user.name
       currentUser.lastName = user.lastname
@@ -24,15 +30,13 @@ class LoginProcessController {
     }
   }
 
-  static var currentUser: UserPreferencesEntity {
-    return UserPreferencesEntity.value
-  }
-
   static var isLogin: Bool {
     return UserPreferencesEntity.value.isLoggedIn
   }
 
   static func logout() {
-    UserPreferencesEntity.value.isLoggedIn = false
+    realmWrite {
+      UserPreferencesEntity.value.isLoggedIn = false
+    }
   }
 }

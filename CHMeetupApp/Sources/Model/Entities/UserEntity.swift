@@ -33,7 +33,7 @@ class UserEntity: Object {
     return "id"
   }
 
-  var fullName: String {
+  dynamic var fullName: String {
     return name + " " + lastName
   }
 }
