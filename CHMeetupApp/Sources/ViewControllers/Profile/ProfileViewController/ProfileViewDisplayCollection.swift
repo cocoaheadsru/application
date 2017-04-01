@@ -23,18 +23,11 @@ struct ProfileViewDisplayCollection: DisplayCollection {
 
   var sections: [Type] = [.userHeader]
 
-  let user: UserEntity = {
-    // Tamplate data
-    let userEntity = UserEntity()
-    userEntity.name = "Dmitriy"
-    userEntity.lastName = "Lis"
-    userEntity.company = "Nowhere"
-    userEntity.position = "iOS Developer"
-    return userEntity
-  }()
-
-  var fullUserName: String {
-    return user.name + " " + user.lastName
+  var user: UserEntity {
+    guard let user = UserPreferencesEntity.value.currentUser else {
+      fatalError("Authorization error")
+    }
+    return user
   }
 
   var numberOfSections: Int {

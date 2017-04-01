@@ -21,14 +21,14 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     displayCollection = ProfileViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
-    title = displayCollection.fullUserName
+    title = displayCollection.user.fullName
     view.backgroundColor = UIColor(.lightGray)
   }
 
   // MARK: - Actions.
 
-  @IBAction func logutBarButtonAction(_ sender: UIBarButtonItem) {
-    LoginProcessController.isLogin = false
+  @IBAction func logoutBarButtonAction(_ sender: UIBarButtonItem) {
+    LoginProcessController.logout()
     profileNavigationController?.updateRootViewController()
   }
 
@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   }
 }
 
-  // MARK: - TableView Data Source.
+// MARK: - TableView Data Source.
 
 extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +51,7 @@ extension ProfileViewController: UITableViewDataSource {
   }
 }
 
-  // MARK: - TableView Delegate.
+// MARK: - TableView Delegate.
 
 extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
