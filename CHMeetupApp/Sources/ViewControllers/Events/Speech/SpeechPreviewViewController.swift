@@ -10,9 +10,43 @@ import UIKit
 
 class SpeechPreviewViewController: UIViewController {
 
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.delegate = self
+      tableView.dataSource = self
+      tableView.registerNibs(from: displayCollection)
+      tableView.estimatedRowHeight = 150
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.backgroundColor = UIColor.clear
+    }
+  }
+
+  var displayCollection = SpeechPreviewDisplayCollection()
+
   override func viewDidLoad() {
     super.viewDidLoad()
-
     title = "Speech".localized
+  }
+}
+
+extension SpeechPreviewViewController: UITableViewDelegate, UITableViewDataSource {
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return displayCollection.numberOfSections
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return displayCollection.numberOfRows(in: section)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let model = displayCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    return cell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.didSelect(indexPath: indexPath)
   }
 }

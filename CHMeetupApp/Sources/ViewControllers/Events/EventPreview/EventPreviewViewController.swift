@@ -67,6 +67,8 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
+    let vc = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 }
 

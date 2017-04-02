@@ -17,8 +17,12 @@ class SpeakerTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var avatarImageView: UIImageView!
-  
+  @IBOutlet var avatarImageView: UIImageView! {
+    didSet {
+      avatarImageView.backgroundColor = UIColor(.darkGray)
+    }
+  }
+
   @IBOutlet var fullNameLabel: UILabel! {
     didSet {
       fullNameLabel.font = UIFont.appFont(.gothamProMedium(size: 17))
@@ -32,12 +36,12 @@ class SpeakerTableViewCell: PlateTableViewCell {
       descriptionLabel.textColor = UIColor(.darkGray)
     }
   }
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     roundType = .all
   }
-  
+
   override func layoutSubviews() {
     super.layoutSubviews()
     // Rounded avatar image

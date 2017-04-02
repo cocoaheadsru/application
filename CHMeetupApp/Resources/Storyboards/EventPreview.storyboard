@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,9 +115,24 @@
                     <view key="view" contentMode="scaleToFill" id="78i-kI-jBc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bvD-K0-j6J">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bvD-K0-j6J" firstAttribute="leading" secondItem="78i-kI-jBc" secondAttribute="leading" id="1uy-4c-Qj0"/>
+                            <constraint firstItem="cEU-l5-eac" firstAttribute="top" secondItem="bvD-K0-j6J" secondAttribute="bottom" id="20h-GG-VLJ"/>
+                            <constraint firstItem="bvD-K0-j6J" firstAttribute="top" secondItem="78i-kI-jBc" secondAttribute="top" id="2ir-53-ehp"/>
+                            <constraint firstAttribute="trailing" secondItem="bvD-K0-j6J" secondAttribute="trailing" id="X5K-iN-2bo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speech" id="lDz-fA-1XL"/>
+                    <connections>
+                        <outlet property="tableView" destination="bvD-K0-j6J" id="ipP-uy-Crd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfW-Ii-abk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +143,7 @@
             <objects>
                 <navigationController storyboardIdentifier="EventPreviewViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="smh-qd-feH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvB-MX-NTM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uvB-MX-NTM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -26,7 +26,13 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return SpeakerTableViewCellModel(speaker: UserEntity()) as CellViewAnyModelType
+    let speaker = UserEntity()
+    speaker.name = "Maxim"
+    speaker.lastName = "Globak"
+    speaker.company = "icnx.ru"
+    speaker.position = "iOS Developer"
+
+    return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
   }
 
   func didSelect(indexPath: IndexPath) {
