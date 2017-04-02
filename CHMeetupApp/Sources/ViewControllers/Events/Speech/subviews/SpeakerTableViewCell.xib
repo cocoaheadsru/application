@@ -76,6 +76,12 @@
                     <constraint firstItem="7bl-4Y-59Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="zZa-4A-gVh"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="Q35-8Q-iv0" id="75M-Bc-CUQ"/>
+                <outlet property="descriptionLabel" destination="bQb-8H-oa2" id="CbE-WC-Qcj"/>
+                <outlet property="fullNameLabel" destination="opn-17-8JT" id="8bb-gJ-nOU"/>
+                <outlet property="titleLabel" destination="7bl-4Y-59Y" id="DHE-VT-Afe"/>
+            </connections>
             <point key="canvasLocation" x="45" y="105.5"/>
         </tableViewCell>
     </objects>
