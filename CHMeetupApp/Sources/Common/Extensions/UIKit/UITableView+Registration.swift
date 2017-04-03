@@ -13,7 +13,7 @@ extension UITableView {
     registerNibs(fromType: type(of: displayCollection))
   }
 
-  func registerNibs(fromType displayCollectionType: DisplayCollection.Type) {
+  private func registerNibs(fromType displayCollectionType: DisplayCollection.Type) {
     for cellModel in displayCollectionType.modelsForRegistration {
       if let tableCellClass = cellModel.cellClass() as? UITableViewCell.Type {
         registerNib(for: tableCellClass)

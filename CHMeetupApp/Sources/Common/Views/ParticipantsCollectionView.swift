@@ -37,10 +37,8 @@ class ParticipantsCollectionView: UIView {
       let leadingEdgeSecondImageView = ((CGFloat(index + 1) * viewHeight) * 0.8) + viewHeight
 
       let imageView = UIImageView()
-      imageView.clipsToBounds = true
-      imageView.contentMode = .scaleAspectFill
-      imageView.layer.cornerRadius = viewHeight / 2 // cornerRadius = 50% of view height
       imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
+      imageView.roundCorners()
 
       let border = CAShapeLayer()
       border.frame = imageView.bounds

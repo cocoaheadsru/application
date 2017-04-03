@@ -11,14 +11,32 @@ import RealmSwift
 
 class SpeechContentEntity: Object {
   dynamic var id: Int = 0
-
   dynamic var title: String = ""
-  dynamic var descriptionText: String = ""
 
   dynamic var linkURL: String = ""
-  dynamic var type: String = ""
+  dynamic var type: String = SpeechContentPlainObject.SpeechContentType.unknown.rawValue
+
+  var typeValue: SpeechContentPlainObject.SpeechContentType {
+    get {
+      return SpeechContentPlainObject.SpeechContentType(rawValue: type) ?? .unknown
+    }
+    set {
+      type = newValue.rawValue
+    }
+  }
 
   override static func primaryKey() -> String? {
     return "id"
+  }
+}
+
+extension SpeechContentEntity {
+  static var templateEntity: SpeechContentEntity {
+
+    let entity = SpeechContentEntity()
+    entity.title = "UIViewController, откройся!"
+    entity.linkURL = "https://youtu.be/4FNyV_4my1U"
+    entity.typeValue = .video
+    return entity
   }
 }

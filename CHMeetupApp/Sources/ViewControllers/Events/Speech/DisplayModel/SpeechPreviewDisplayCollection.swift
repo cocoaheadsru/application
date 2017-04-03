@@ -8,21 +8,33 @@
 
 import UIKit
 
-protocol SpeechPreviewDisplayCollectionDelegate: class {
-  func displayCollectionRequestingUIUpdate()
-}
-
 class SpeechPreviewDisplayCollection: DisplayCollection {
+
+  enum `Type` {
+    case speaker
+    case speech
+    case contentCells
+  }
+
+  // Uncomment with real data
+  //  var sections: [Type] = [.speaker, .speech, .contentCells]
+  var sections: [Type] = [.speaker]
+
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [SpeakerTableViewCellModel.self]
   }
 
   var numberOfSections: Int {
-    return 1
+    return sections.count
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return 1
+    switch sections[section] {
+    case .speaker, .speech:
+      return 1
+    case .contentCells:
+      return 2
+    }
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
@@ -37,6 +49,6 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-
+    // Do stuff here ...
   }
 }

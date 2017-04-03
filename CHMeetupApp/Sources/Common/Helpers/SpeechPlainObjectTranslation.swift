@@ -14,6 +14,7 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
 
     let speakerPlainObject = plainObject.speaker
 
+    //TODO: Move out this translation of here
     let user = UserEntity()
     user.id = speakerPlainObject.id
     user.name = speakerPlainObject.name
@@ -31,7 +32,6 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
       let content = SpeechContentEntity()
       content.id = contentPlainObject.id
       content.title = contentPlainObject.title
-      content.descriptionText = contentPlainObject.description
       content.type = contentPlainObject.type.rawValue
       content.linkURL = contentPlainObject.linkURL.absoluteString
 

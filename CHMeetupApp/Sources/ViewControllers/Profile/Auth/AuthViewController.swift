@@ -42,13 +42,12 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     }
 
     auth.login(with: authResourceType, from: self) { [weak self] (user, error) in
-      if let error = error {
-        print("Authorization error: \(error)")
-      } else {
-        print(user ?? "User not found")
-        LoginProcessController.isLogin = true
-        self?.profileNavigationController?.updateRootViewController()
+      guard let user = user, error == nil else {
+        self?.showMessageAlert(title: "Error".localized, message: "Error with login has occured".localized)
+        return
       }
+      LoginProcessController.setCurrentUser(user)
+      self?.profileNavigationController?.updateRootViewController()
     }
   }
 }

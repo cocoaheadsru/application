@@ -12,12 +12,8 @@ class SpeechPreviewViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.delegate = self
-      tableView.dataSource = self
       tableView.registerNibs(from: displayCollection)
-      tableView.estimatedRowHeight = 150
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.backgroundColor = UIColor.clear
+      tableView.configure(with: .defaultConfiguration)
     }
   }
 
@@ -26,6 +22,7 @@ class SpeechPreviewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Speech".localized
+    view.backgroundColor = UIColor(.lightGray)
   }
 }
 
