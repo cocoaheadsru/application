@@ -21,6 +21,11 @@ final class FBResource: SocialResource {
   }
 
   func parameters(from url: URL) -> [String: String] {
+    let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+
+    if let code = components?.queryItems?.first?.value {
+      return ["token": code, "secret": ""]
+    }
     return [:]
   }
 }
