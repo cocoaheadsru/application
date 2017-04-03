@@ -13,16 +13,32 @@ protocol SpeechPreviewDisplayCollectionDelegate: class {
 }
 
 class SpeechPreviewDisplayCollection: DisplayCollection {
+
+  enum `Type` {
+    case speaker
+    case speech
+    case additionalCells
+  }
+
+  // Uncomment with all cells
+  //  var sections: [Type] = [.speaker, .speech, .additionalCells]
+  var sections: [Type] = [.speaker]
+
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [SpeakerTableViewCellModel.self]
   }
 
   var numberOfSections: Int {
-    return 1
+    return sections.count
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return 1
+    switch sections[section] {
+    case .speaker, .speech:
+      return 1
+    case .additionalCells:
+      return 2
+    }
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
@@ -34,9 +50,5 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     speaker.photoURL = "https://pp.userapi.com/c628416/v628416674/3eb5e/cg35L651Jz8.jpg"
 
     return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
-  }
-
-  func didSelect(indexPath: IndexPath) {
-
   }
 }

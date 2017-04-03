@@ -24,6 +24,7 @@ class SpeechPreviewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Speech".localized
+    view.backgroundColor = UIColor(.lightGray)
   }
 }
 
@@ -45,6 +46,5 @@ extension SpeechPreviewViewController: UITableViewDelegate, UITableViewDataSourc
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    displayCollection.didSelect(indexPath: indexPath)
   }
 }

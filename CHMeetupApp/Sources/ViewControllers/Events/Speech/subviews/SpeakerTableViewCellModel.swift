@@ -6,7 +6,6 @@
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct SpeakerTableViewCellModel {
@@ -28,13 +27,15 @@ extension SpeakerTableViewCellModel: CellViewModelType {
       }
     }
 
-    if let position = speaker.position, let company = speaker.company {
-      let at = "at".localized
-      let description =  position + " " + at + " " + company
+    let company = speaker.company ?? ""
+    let position = speaker.position ?? ""
+
+    if !company.isEmpty && !position.isEmpty {
+      let description =  company + " " + "at".localized + " " + position
       let attributedDescription = configureAttrebutedDescription(description)
       cell.descriptionLabel.attributedText = attributedDescription
     } else {
-      cell.descriptionLabel.text = speaker.position ?? speaker.company
+      cell.descriptionLabel.text = company.isEmpty ? position : company
     }
   }
 
