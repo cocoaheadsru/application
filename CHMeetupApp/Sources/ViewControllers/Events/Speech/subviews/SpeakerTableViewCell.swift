@@ -20,6 +20,7 @@ class SpeakerTableViewCell: PlateTableViewCell {
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
       avatarImageView.backgroundColor = UIColor(.darkGray)
+      avatarImageView.clipsToBounds = true
     }
   }
 

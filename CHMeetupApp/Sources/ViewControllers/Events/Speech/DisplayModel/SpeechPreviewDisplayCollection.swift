@@ -31,6 +31,7 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     speaker.lastName = "Globak"
     speaker.company = "icnx.ru"
     speaker.position = "iOS Developer"
+    speaker.photoURL = "https://pp.userapi.com/c628416/v628416674/3eb5e/cg35L651Jz8.jpg"
 
     return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
   }
