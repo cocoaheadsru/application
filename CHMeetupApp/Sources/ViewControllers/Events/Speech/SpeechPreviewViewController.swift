@@ -15,9 +15,7 @@ class SpeechPreviewViewController: UIViewController {
       tableView.delegate = self
       tableView.dataSource = self
       tableView.registerNibs(from: displayCollection)
-      tableView.estimatedRowHeight = 150
-      tableView.rowHeight = UITableViewAutomaticDimension
-      tableView.backgroundColor = UIColor.clear
+      tableView.configure(with: .defaultConfiguration)
     }
   }
 

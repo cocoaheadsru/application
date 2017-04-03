@@ -15,7 +15,7 @@ struct SpeakerTableViewCellModel {
 
 extension SpeakerTableViewCellModel: CellViewModelType {
   func setup(on cell: SpeakerTableViewCell) {
-    cell.fullNameLabel.text = speaker.name + " " + speaker.lastName
+    cell.fullNameLabel.text = speaker.fullName
 
     // Replace with kingfisher or image loading wrapper 
     if let photoURL = speaker.photoURL {
