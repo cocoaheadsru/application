@@ -2,7 +2,7 @@ excluded: # paths to ignore during linting.
   - Carthage
   - CHMeetupApp/Resources/Storyboards
 
-variable_name:
+identifier_name:
   min_length: 2
 
 disabled_rules:
