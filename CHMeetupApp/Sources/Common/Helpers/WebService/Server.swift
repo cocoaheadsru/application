@@ -89,6 +89,10 @@ class Server {
       return
     }
 
+    if request.method == .get, let _ = request.params {
+      fatalError("Get query should not have params. Use request url for sending any parameters.")
+    }
+
     guard let query = URL(string: apiBase + request.query) else {
       print("Session query url failed: base \(apiBase) and query \(request.query)")
       completion(nil, .requestFailed)
