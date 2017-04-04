@@ -48,7 +48,7 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
 
     return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
   }
-  
+
   func didSelect(indexPath: IndexPath) {
   }
 }
