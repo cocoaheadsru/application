@@ -9,7 +9,6 @@
 import UIKit
 
 final class LabelTableViewCell: PlateTableViewCell {
-
   @IBOutlet var titleLabel: UILabel! {
     didSet {
       titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
@@ -28,5 +27,4 @@ final class LabelTableViewCell: PlateTableViewCell {
     super.awakeFromNib()
     roundType = .all
   }
-
 }
