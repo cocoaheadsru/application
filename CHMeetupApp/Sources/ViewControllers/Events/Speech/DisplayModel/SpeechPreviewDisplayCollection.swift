@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SpeechPreviewDisplayCollectionDelegate: class {
-  func displayCollectionRequestingUIUpdate()
-}
-
 class SpeechPreviewDisplayCollection: DisplayCollection {
 
   enum `Type` {
@@ -42,6 +38,7 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
+    // FIXME: - Fill with another models
     let speaker = UserEntity()
     speaker.name = "Maxim"
     speaker.lastName = "Globak"
@@ -50,5 +47,8 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     speaker.photoURL = "https://pp.userapi.com/c628416/v628416674/3eb5e/cg35L651Jz8.jpg"
 
     return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
+  }
+  
+  func didSelect(indexPath: IndexPath) {
   }
 }

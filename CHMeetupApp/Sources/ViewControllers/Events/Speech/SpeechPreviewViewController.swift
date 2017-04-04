@@ -12,8 +12,6 @@ class SpeechPreviewViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.delegate = self
-      tableView.dataSource = self
       tableView.registerNibs(from: displayCollection)
       tableView.configure(with: .defaultConfiguration)
     }
@@ -46,5 +44,6 @@ extension SpeechPreviewViewController: UITableViewDelegate, UITableViewDataSourc
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.didSelect(indexPath: indexPath)
   }
 }
