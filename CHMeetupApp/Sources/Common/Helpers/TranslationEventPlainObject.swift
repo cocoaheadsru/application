@@ -18,6 +18,12 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     event.endDate = plainObject.endDate
     event.descriptionText = plainObject.description
 
+    for speakerURLs in plainObject.speakersPhotos {
+      let containerEntity = StringContainerEntity()
+      containerEntity.value = speakerURLs.absoluteString
+      event.speakerPhotosURLs.append(containerEntity)
+    }
+
     let place = PlaceEntity()
     place.id = plainObject.place.placeID
     place.title = plainObject.place.title

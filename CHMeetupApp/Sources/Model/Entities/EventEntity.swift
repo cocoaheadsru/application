@@ -23,6 +23,7 @@ class EventEntity: Object {
   dynamic var place: PlaceEntity?
 
   let speeches = List<SpeechEntity>()
+  let speakerPhotosURLs = List<StringContainerEntity>()
 
   override static func primaryKey() -> String? {
     return "id"
