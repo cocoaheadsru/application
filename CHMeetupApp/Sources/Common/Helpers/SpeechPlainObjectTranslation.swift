@@ -32,7 +32,6 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
       let content = SpeechContentEntity()
       content.id = contentPlainObject.id
       content.title = contentPlainObject.title
-      content.descriptionText = contentPlainObject.description
       content.type = contentPlainObject.type.rawValue
       content.linkURL = contentPlainObject.linkURL.absoluteString
 

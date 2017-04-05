@@ -11,9 +11,7 @@ import RealmSwift
 
 class SpeechContentEntity: Object {
   dynamic var id: Int = 0
-
   dynamic var title: String = ""
-  dynamic var descriptionText: String = ""
 
   dynamic var linkURL: String = ""
   dynamic var type: String = SpeechContentPlainObject.SpeechContentType.unknown.rawValue
