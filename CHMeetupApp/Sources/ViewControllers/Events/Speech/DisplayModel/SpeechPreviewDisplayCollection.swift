@@ -13,11 +13,11 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   enum `Type` {
     case speaker
     case speech
-    case additionalCells
+    case contentCells
   }
 
-  // Uncomment with all cells
-  //  var sections: [Type] = [.speaker, .speech, .additionalCells]
+  // Uncomment with real data
+  //  var sections: [Type] = [.speaker, .speech, .contentCells]
   var sections: [Type] = [.speaker]
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -32,13 +32,12 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     switch sections[section] {
     case .speaker, .speech:
       return 1
-    case .additionalCells:
+    case .contentCells:
       return 2
     }
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    // FIXME: - Fill with another models
     let speaker = UserEntity()
     speaker.name = "Maxim"
     speaker.lastName = "Globak"
@@ -50,5 +49,6 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
+    // Do stuff here ...
   }
 }

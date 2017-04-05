@@ -14,6 +14,7 @@ class SpeakerTableViewCell: PlateTableViewCell {
     didSet {
       titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
       titleLabel.textColor = UIColor(.gray)
+      titleLabel.text = "Докладчик".localized + ":"
     }
   }
 
@@ -36,11 +37,6 @@ class SpeakerTableViewCell: PlateTableViewCell {
       descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
       descriptionLabel.textColor = UIColor(.darkGray)
     }
-  }
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    roundType = .all
   }
 
   override func layoutSubviews() {

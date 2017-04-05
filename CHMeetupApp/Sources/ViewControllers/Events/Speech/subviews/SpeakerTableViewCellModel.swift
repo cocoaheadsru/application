@@ -27,25 +27,9 @@ extension SpeakerTableViewCellModel: CellViewModelType {
       }
     }
 
-    let company = speaker.company ?? ""
-    let position = speaker.position ?? ""
-
-    if !company.isEmpty && !position.isEmpty {
-      let description =  company + " " + "at".localized + " " + position
-      let attributedDescription = configureAttrebutedDescription(description)
-      cell.descriptionLabel.attributedText = attributedDescription
-    } else {
-      cell.descriptionLabel.text = company.isEmpty ? position : company
-    }
-  }
-
-  private func configureAttrebutedDescription(_ string: String) -> NSAttributedString {
-    let nsString = string as NSString
-    let atRange = nsString.range(of: "at".localized)
-    let attributtedString = NSMutableAttributedString(string: string)
-    attributtedString.addAttribute(NSForegroundColorAttributeName,
-                                   value: UIColor(.gray),
-                                   range: atRange)
-    return attributtedString
+    cell.descriptionLabel.attributedText =
+      AttributedSentenceHelper.concatStringWith(preposition: .at,
+                                                optionalFirst: speaker.position,
+                                                optionalSecond: speaker.company)
   }
 }

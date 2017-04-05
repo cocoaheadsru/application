@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030764A91E95663C00743690 /* AttributedSentenceHelper.swift */; };
 		03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */; };
 		03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */; };
 		03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */; };
@@ -205,6 +206,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		030764A91E95663C00743690 /* AttributedSentenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedSentenceHelper.swift; sourceTree = "<group>"; };
 		03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -399,6 +401,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030764A81E95658800743690 /* AttributedStringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				030764A91E95663C00743690 /* AttributedSentenceHelper.swift */,
+			);
+			path = AttributedStringHelper;
+			sourceTree = "<group>";
+		};
 		03374B1B1E7F20EA00CA298E /* subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +714,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				030764A81E95658800743690 /* AttributedStringHelper */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
@@ -1868,6 +1879,7 @@
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
+				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
