@@ -20,13 +20,13 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
     displayCollection = MainViewDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
 
-    view.backgroundColor = UIColor(.lightGray)
     // Do any additional setup after loading the view.
   }
 

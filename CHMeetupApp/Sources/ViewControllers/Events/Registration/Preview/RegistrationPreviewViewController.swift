@@ -15,8 +15,7 @@ class RegistrationPreviewViewController: UIViewController {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
                                       bottomInset: 8 + BottomButton.constantHeight,
-                                      estimatedRowHeight: 44,
-                                      backgroundColor: .clear)
+                                      estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
       tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
                                                      left: 0,
@@ -37,7 +36,7 @@ class RegistrationPreviewViewController: UIViewController {
     bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
 
     displayCollection = FormDisplayCollection()
-    tableView.registerNibs(fromType: FormDisplayCollection.self)
+    tableView.registerNibs(from: displayCollection)
 
     RegistrationController.loadRegFromServer(
       with: 1,
@@ -57,7 +56,6 @@ class RegistrationPreviewViewController: UIViewController {
         self?.tableView.reloadData()
     })
 
-    view.backgroundColor = UIColor(.lightGray)
     setupGestureRecognizer()
   }
 

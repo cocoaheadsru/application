@@ -10,7 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
 
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet var tableView: UITableView! {
+    didSet {
+      tableView.configure(with: .defaultConfiguration)
+    }
+  }
 
   fileprivate var displayCollection: ProfileViewDisplayCollection!
 
@@ -22,7 +26,6 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     tableView.registerNibs(from: displayCollection)
 
     title = displayCollection.user.fullName
-    view.backgroundColor = UIColor(.lightGray)
   }
 
   // MARK: - Actions.
