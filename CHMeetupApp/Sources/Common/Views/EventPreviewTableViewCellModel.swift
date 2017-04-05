@@ -35,7 +35,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.isEnabledForRegistration = (event.startDate.isPassed == false)
 
     var images: [UIImage] = []
-    for index in 0 ..< min((index + 1), participantsImageNames.count) {
+    for index in 0 ..< min(event.speackerPhotosURLs.count, participantsImageNames.count) {
       images.append(UIImage(named: participantsImageNames[index])!)
     }
     cell.participantsCollectionView.imagesCollection = images
