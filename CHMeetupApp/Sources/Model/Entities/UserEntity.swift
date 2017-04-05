@@ -51,15 +51,15 @@ extension UserEntity {
     let photos = ["http://yandex.ru/logo.png", nil]
 
     let entity = UserEntity()
-    entity.name = names.rand!
-    entity.lastName = lastNames.rand!
-    entity.company = company.rand!
-    entity.position = positions.rand!
-    entity.info = info.rand!
-    entity.phone = phone.rand!
-    entity.email = email.rand!
+    entity.name <= names.rand
+    entity.lastName <= lastNames.rand
+    entity.company <= company.rand
+    entity.position <= positions.rand
+    entity.info <= info.rand
+    entity.phone <= phone.rand
+    entity.email <= email.rand
     entity.isSpeaker = Bool.rand
-    entity.photoURL = photos.rand!
+    entity.photoURL <= photos.rand
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.socials.append(SocialEntity.templateEntity)
     return entity

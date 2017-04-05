@@ -178,12 +178,9 @@
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
-<<<<<<< HEAD
 		F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */; };
 		F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */; };
-=======
 		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
->>>>>>> develop
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,12 +381,9 @@
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Random.swift"; sourceTree = "<group>"; };
 		F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Random.swift"; sourceTree = "<group>"; };
-=======
 		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
->>>>>>> develop
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1565,7 +1559,6 @@
 			path = PermissionsManager;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		F718BFA81E93BF7A008B3C0B /* Bool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1580,14 +1573,14 @@
 				F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */,
 			);
 			name = RandomAccessCollection;
-=======
+            sourceTree = "<group>";
+		};
 		F718BFB51E942C0A008B3C0B /* Optional */ = {
 			isa = PBXGroup;
 			children = (
 				F718BFB61E942C27008B3C0B /* OptionalOperator.swift */,
 			);
 			name = Optional;
->>>>>>> develop
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
