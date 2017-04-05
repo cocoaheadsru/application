@@ -737,11 +737,8 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				030764A81E95658800743690 /* AttributedStringHelper */,
-=======
 				F718BFB51E942C0A008B3C0B /* Optional */,
->>>>>>> develop
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
