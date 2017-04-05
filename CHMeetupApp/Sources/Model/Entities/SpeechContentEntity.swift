@@ -35,8 +35,6 @@ extension SpeechContentEntity {
 
     let entity = SpeechContentEntity()
     entity.title = "UIViewController, откройся!"
-    // swiftlint:disable:next line_length
-    entity.descriptionText = "Речь пойдёт о презентации UIViewController и о творящейся за кулисами магии: создании собственной анимации перехода и протоколе UIViewControllerAnimatedTransitioning. Докладчик поделится собственными приёмами, помогающими в нестандартных ситуациях — например, если ориентация экрана меняется в самый неподходящий момент."
     entity.linkURL = "https://youtu.be/4FNyV_4my1U"
     entity.typeValue = .video
     return entity
