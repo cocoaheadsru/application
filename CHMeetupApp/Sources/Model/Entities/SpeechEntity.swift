@@ -32,3 +32,13 @@ class SpeechEntity: Object {
     return "id"
   }
 }
+
+extension SpeechEntity {
+  static var templateEntity: SpeechEntity {
+    let entity = SpeechEntity()
+    entity.title = "UIViewController, откройся!"
+    entity.descriptionText = "Речь пойдёт о презентации UIViewController и о творящейся за кулисами магии"
+    entity.contents.append(SpeechContentEntity.templateEntity)
+    return entity
+  }
+}
