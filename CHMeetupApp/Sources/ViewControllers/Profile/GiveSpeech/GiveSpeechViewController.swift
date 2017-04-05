@@ -12,8 +12,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44,
-                                                 backgroundColor: UIColor(.lightGray))
+      let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }

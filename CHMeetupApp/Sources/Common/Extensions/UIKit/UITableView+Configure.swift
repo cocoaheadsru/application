@@ -16,7 +16,7 @@ struct TableViewConfiguration {
   var bottomInset: CGFloat?
   var estimatedRowHeight: CGFloat?
   var rowHeight: CGFloat?
-  var backgroundColor: UIColor?
+  var backgroundColor: UIColor
 
   /// Tricky necessity of struct initializer.
   /// Without it when initializing you have to pass all existing parameters for correct type matching
@@ -25,7 +25,7 @@ struct TableViewConfiguration {
     bottomInset: CGFloat? = nil,
     estimatedRowHeight: CGFloat? = nil,
     rowHeight: CGFloat? = nil,
-    backgroundColor: UIColor? = nil
+    backgroundColor: UIColor = UIColor(.lightGray)
   ) {
     self.topInset = topInset
     self.bottomInset = bottomInset
@@ -42,8 +42,7 @@ private var defaultConfiguration: TableViewConfiguration {
     topInset: 8,
     bottomInset: 8,
     estimatedRowHeight: 100,
-    rowHeight: UITableViewAutomaticDimension,
-    backgroundColor: UIColor(.lightGray)
+    rowHeight: UITableViewAutomaticDimension
   )
 }
 
@@ -86,9 +85,7 @@ extension UITableView {
     if let rowHeight = configuration.rowHeight {
       self.rowHeight = rowHeight
     }
-    if let backColor = configuration.backgroundColor {
-      self.backgroundColor = backColor
-    }
+    self.backgroundColor = configuration.backgroundColor
   }
 
 }

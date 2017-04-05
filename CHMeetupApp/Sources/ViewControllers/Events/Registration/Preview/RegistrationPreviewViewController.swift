@@ -15,8 +15,7 @@ class RegistrationPreviewViewController: UIViewController {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
                                       bottomInset: 8 + BottomButton.constantHeight,
-                                      estimatedRowHeight: 44,
-                                      backgroundColor: UIColor(.lightGray))
+                                      estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
       tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
                                                      left: 0,
