@@ -43,7 +43,7 @@ private var defaultConfiguration: TableViewConfiguration {
     bottomInset: 8,
     estimatedRowHeight: 100,
     rowHeight: UITableViewAutomaticDimension,
-    backgroundColor: .clear
+    backgroundColor: UIColor(.lightGray)
   )
 }
 

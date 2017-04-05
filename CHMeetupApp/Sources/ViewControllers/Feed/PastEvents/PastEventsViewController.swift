@@ -22,10 +22,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
 
     displayCollection = PastEventsDisplayCollection()
     displayCollection.delegate = self
-
     tableView.registerNibs(from: displayCollection)
-
-    view.backgroundColor = UIColor(.lightGray)
 
     title = "Past".localized
 
