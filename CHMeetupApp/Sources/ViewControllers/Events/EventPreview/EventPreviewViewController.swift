@@ -14,21 +14,29 @@ class EventPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      var configuration = TableViewConfiguration.default
-      configuration.bottomInset = 8 + BottomButton.constantHeight
-      tableView.configure(with: .custom(configuration))
+      updateBottomButton(isEnable: false)
     }
   }
 
-  var bottomButton: BottomButton!
+  var bottomButton: BottomButton?
   var displayCollection: EventPreviewDisplayCollection!
+
+  func updateBottomButton(isEnable: Bool) {
+    bottomButton?.removeFromSuperview()
+
+    var configuration = TableViewConfiguration.default
+    configuration.bottomInset = 8 + (isEnable ? BottomButton.constantHeight : 0)
+    tableView.configure(with: .custom(configuration))
+
+    if isEnable {
+      bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
+      bottomButton?.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Event Preview".localized
-
-    bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
-    bottomButton.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
@@ -37,6 +45,8 @@ class EventPreviewViewController: UIViewController {
     displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
     if let event = displayCollection.event {
       fetchEvents(on: event)
+      // FIXME: - Check on registation open
+      updateBottomButton(isEnable: true)
     }
   }
 
