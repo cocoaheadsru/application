@@ -1762,7 +1762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "// Скрипт дополнительно копирует вместе с ресурсами еще один пустой файлик, который служит маяком, что операция прошла успешно. В следующий раз, когда скрипт будет запущен, он сначала проверит наличие этого файла, и если файл есть, то операция автоматически завершится без лишних телодвижений.\nFILE=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Carthage-Installation-Flag\"\nif [ -f \"$FILE\" ]; then\nexit 0\nfi\ntouch \"$FILE\"\n/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
