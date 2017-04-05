@@ -35,7 +35,7 @@ class EventPreviewViewController: UIViewController {
 
     tableView.registerNibs(from: displayCollection)
 
-    displayCollection.event = mainRealm.objects(EventEntity.self).first(where: { $0.id == selectedEventId })
+    displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
   }
 
   func acceptAction() {
