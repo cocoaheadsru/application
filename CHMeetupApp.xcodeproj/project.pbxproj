@@ -178,6 +178,7 @@
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
+		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +379,7 @@
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
+		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -679,6 +681,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
@@ -1550,6 +1553,14 @@
 			path = PermissionsManager;
 			sourceTree = "<group>";
 		};
+		F718BFB51E942C0A008B3C0B /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				F718BFB61E942C27008B3C0B /* OptionalOperator.swift */,
+			);
+			name = Optional;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1767,6 +1778,7 @@
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
+				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
