@@ -71,6 +71,7 @@
 		<string>comgooglemaps</string>
 		<string>yandexmaps</string>
 		<string>yandexnavi</string>
+		<string>yandexmaps://maps.yandex.ru/</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

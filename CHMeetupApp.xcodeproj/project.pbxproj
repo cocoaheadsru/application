@@ -145,6 +145,7 @@
 		9F57D6321E74A7EA006323FA /* ShadowViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6311E74A7EA006323FA /* ShadowViewAppearance.swift */; };
 		9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */; };
 		9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */; };
+		9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */; };
 		9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */; };
 		9FAFF7FF1E6AD40300B687CB /* Object+Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */; };
 		9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */; };
@@ -349,6 +350,7 @@
 		9F57D6341E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlateTableViewCell+AutomaticDetection.swift"; sourceTree = "<group>"; };
 		9F6048951E5B3CCB00C414C3 /* CHMeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHMeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionPlainObject.swift; sourceTree = "<group>"; };
+		9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsActionSheetHelper.swift; sourceTree = "<group>"; };
 		9F8881791E7E9EE300CEFEA4 /* BottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		9FAFF7FE1E6AD40300B687CB /* Object+Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Singletone.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF8001E6AD4A700B687CB /* Realm+WriteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Realm+WriteFunctions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -820,6 +822,7 @@
 			children = (
 				22323F3D1E70C14300522E5C /* MapAppType.swift */,
 				22323F3E1E70C14300522E5C /* MapsController.swift */,
+				9F6E1A231E95B62D0027416B /* MapsActionSheetHelper.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -1924,6 +1927,7 @@
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
+				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,

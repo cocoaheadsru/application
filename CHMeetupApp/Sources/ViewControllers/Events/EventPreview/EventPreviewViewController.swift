@@ -35,6 +35,9 @@ class EventPreviewViewController: UIViewController {
     tableView.registerNibs(from: displayCollection)
 
     displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
+    if let event = displayCollection.event {
+      fetchEvents(on: event)
+    }
   }
 
   func acceptAction() {
@@ -68,5 +71,24 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
 extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
   func displayCollectionRequestingUIUpdate() {
     tableView.reloadData()
+  }
+
+  func shouldPresentModalViewController(_ viewController: UIViewController) {
+    present(viewController, animated: true, completion: nil)
+  }
+}
+
+// FIXME: - Move into personal structure,
+// When https://trello.com/c/XQgNIbD5/194-fetchevents-pasteventsviewcontroller would be done
+extension EventPreviewViewController {
+  func fetchEvents(on eventEntity: EventEntity) {
+    let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)
+    Server.standard.request(speechesRequest, completion: { list, error in
+      guard let list = list,
+        error == nil else { return }
+
+      SpeechPlainObjectTranslation.translate(of: list, to: eventEntity)
+      self.tableView.reloadData()
+    })
   }
 }
