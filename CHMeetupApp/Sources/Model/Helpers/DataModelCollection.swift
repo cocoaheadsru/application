@@ -65,4 +65,10 @@ struct DataModelCollection<T: Object> {
     collection.sort(byKeyPath: keyPath, ascending: ascending)
     return collection
   }
+
+  // MARK: - Search
+
+  func first(where predicate: (T) -> Bool) -> T? {
+    return results.first(where: predicate)
+  }
 }

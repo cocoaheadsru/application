@@ -26,3 +26,13 @@ class SocialEntity: Object {
     return "id"
   }
 }
+
+extension SocialEntity {
+  static var templateEntity: SocialEntity {
+    let entity = SocialEntity()
+    entity.name = "vk"
+    entity.url = "https://vk.com/cocoaheadsrussia?w=wall-119039957_40"
+    entity.isPrivate = false
+    return entity
+  }
+}

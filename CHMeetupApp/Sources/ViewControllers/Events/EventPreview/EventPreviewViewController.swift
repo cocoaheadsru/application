@@ -26,16 +26,15 @@ class EventPreviewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Event Preview".localized
-    view.backgroundColor = UIColor(.lightGray)
+
     bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
     bottomButton.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
-
     tableView.registerNibs(from: displayCollection)
 
-    displayCollection.event = mainRealm.objects(EventEntity.self).first(where: { $0.id == selectedEventId })
+    displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
   }
 
   func acceptAction() {

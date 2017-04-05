@@ -32,7 +32,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     displayCollection = GiveSpeechDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
-    view.backgroundColor = UIColor(.lightGray)
     title = "Give a speech".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
