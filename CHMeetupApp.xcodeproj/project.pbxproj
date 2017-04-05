@@ -95,6 +95,7 @@
 		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
 		7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */; };
+		8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */; };
 		8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */; };
 		8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */; };
 		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
@@ -177,8 +178,12 @@
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
+<<<<<<< HEAD
 		F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */; };
 		F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */; };
+=======
+		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
+>>>>>>> develop
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +299,7 @@
 		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
 		7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpeechPlainObject+Requests.swift"; path = "Speech/SpeechPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCell.swift; path = AboutSpeechCell/AboutSpeechTableViewCell.swift; sourceTree = "<group>"; };
 		8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutSpeechTableViewCell.xib; path = AboutSpeechCell/AboutSpeechTableViewCell.xib; sourceTree = "<group>"; };
 		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -378,8 +384,12 @@
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Random.swift"; sourceTree = "<group>"; };
 		F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Random.swift"; sourceTree = "<group>"; };
+=======
+		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
+>>>>>>> develop
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -663,6 +673,7 @@
 			children = (
 				22323F081E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift */,
 				9F487A641E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift */,
+				8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -682,6 +693,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
@@ -1553,6 +1565,7 @@
 			path = PermissionsManager;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		F718BFA81E93BF7A008B3C0B /* Bool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,6 +1580,14 @@
 				F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */,
 			);
 			name = RandomAccessCollection;
+=======
+		F718BFB51E942C0A008B3C0B /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				F718BFB61E942C27008B3C0B /* OptionalOperator.swift */,
+			);
+			name = Optional;
+>>>>>>> develop
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1731,7 +1752,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "# Проверяются только измененные файлы .swift, которые определили с помощью git\nif which swiftlint >/dev/null; then\ncount=0\nfor file_path in $(git ls-files -om --exclude-from=.gitignore | grep \".swift$\"); do\nexport SCRIPT_INPUT_FILE_$count=$file_path\ncount=$((count + 1))\ndone\nfor file_path in $(git diff --cached --name-only | grep \".swift$\"); do\nexport SCRIPT_INPUT_FILE_$count=$file_path\ncount=$((count + 1))\ndone\nexport SCRIPT_INPUT_FILE_COUNT=$count\nif [ \"$count\" -ne 0 ]; then\necho \"Found lintable files! Linting...\"\nswiftlint lint --use-script-input-files --config .swiftlint.yml\nelse\necho \"No files to lint!\"\nexit 0\nfi\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		8A62682A1E60744D00D51BEB /* Run Script Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1777,6 +1798,7 @@
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
+				8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
@@ -1785,6 +1807,7 @@
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
+				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,

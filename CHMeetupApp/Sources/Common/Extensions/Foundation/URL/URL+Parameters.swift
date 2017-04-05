@@ -11,9 +11,9 @@ import Foundation
 extension URL {
   var parameters: [String: String]? {
     var params: [String: String] = [:]
-    let comonents = URLComponents(url: self, resolvingAgainstBaseURL: false)
+    let components = URLComponents(url: self, resolvingAgainstBaseURL: false)
 
-    guard let fragment = comonents?.fragment else { return nil }
+    guard let fragment = components?.fragment else { return nil }
 
     let elements = fragment.components(separatedBy: "&")
     elements.forEach { (element) in
