@@ -1,5 +1,5 @@
 //
-//  UIImageView+Setup.swift
+//  UIImageView+RoundCorners.swift
 //  CHMeetupApp
 //
 //  Created by Егор Петров on 05/04/2017.
@@ -9,9 +9,9 @@
 import UIKit.UIImageView
 
 extension UIImageView {
-  func setup() {
+  func roundCorners() {
     contentMode = .scaleAspectFill
     clipsToBounds = true
-    layer.cornerRadius = frame.height/2
+    layer.cornerRadius = frame.height / 2
   }
 }

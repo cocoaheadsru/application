@@ -38,7 +38,7 @@ class ParticipantsCollectionView: UIView {
 
       let imageView = UIImageView()
       imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
-      imageView.setup()
+      imageView.roundCorners()
 
       let border = CAShapeLayer()
       border.frame = imageView.bounds
