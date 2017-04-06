@@ -46,7 +46,7 @@ struct ProfileViewDisplayCollection: DisplayCollection {
     case .userHeader:
       return UserTableViewHeaderCellModel(userEntity: user)
     case .userContacts:
-      let key =  Array(user.contacts.keys)[indexPath.row]
+      let key = Array(user.contacts.keys)[indexPath.row]
       let value = Array(user.contacts.values)[indexPath.row]
       return LabelTableViewCellModel(title: key, description: value)
     }
