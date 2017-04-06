@@ -11,6 +11,10 @@ import Kingfisher
 
 class KingfisherImageLoader: ImageLoader {
 
+  static var standard: ImageLoader {
+    return KingfisherImageLoader()
+  }
+
   func load(_ imageView: UIImageView, imageURL url: URL) {
     load(imageView, imageURL: url, placeholder: nil, progressBlock: nil, completionHandler: nil)
   }

@@ -12,6 +12,7 @@ protocol ImageLoader: class {
   typealias ProgressBlock = (_ receivedSize: Int, _ totalSize: Int) -> Void
   typealias CompletionBlock = (_ image: UIImage?, _ error: Error?) -> Void
 
+  static var standard: ImageLoader { get }
   func load(_ imageView: UIImageView,
             imageURL url: URL)
 
