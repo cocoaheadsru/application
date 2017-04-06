@@ -9,16 +9,18 @@
 import UIKit
 
 extension UIImageView {
-  func loadImage(loader: ImageLoader,
-                 imageURL url: URL,
+  func loadImage(from url: URL,
+                 loader: AnyImageLoader = KingfisherImageLoader.standard,
                  placeholder: UIImage? = nil,
                  progressBlock: ImageLoader.ProgressBlock? = nil,
-                 completionHandler: ImageLoader.CompletionBlock? = nil) {
+                 completionHandler: ImageLoader.CompletionBlock? = nil
+    ) {
 
-    loader.load(self, imageURL: url,
+    loader.load(into: self, from: url,
                 placeholder: placeholder, progressBlock: progressBlock, completionHandler: completionHandler)
   }
-  func cancelLoadImage(loader: ImageLoader) {
+
+  func cancelLoadImage(_ loader: AnyImageLoader = KingfisherImageLoader.standard) {
     loader.cancel(self)
   }
 }

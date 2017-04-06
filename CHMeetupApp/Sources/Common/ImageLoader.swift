@@ -8,21 +8,108 @@
 
 import UIKit
 
-protocol ImageLoader: class {
-  typealias ProgressBlock = (_ receivedSize: Int, _ totalSize: Int) -> Void
-  typealias CompletionBlock = (_ image: UIImage?, _ error: Error?) -> Void
+protocol ImageLoaderTask {}
 
-  static var standard: ImageLoader { get }
-  func load(_ imageView: UIImageView,
-            imageURL url: URL)
+protocol AnyImageLoader: class {
 
-  func load(_ imageView: UIImageView,
-            imageURL url: URL,
+  func load(into imageView: UIImageView,
+            from url: URL,
             placeholder: UIImage?,
             progressBlock: ImageLoader.ProgressBlock?,
             completionHandler: ImageLoader.CompletionBlock?)
 
   func cancel(_ imageView: UIImageView)
 
+  func loadImage(from url: URL,
+                 progressBlock: ImageLoader.ProgressBlock?,
+                 completionHandler: ImageLoader.CompletionBlock?) -> ImageLoaderTask
+
+  func cancel(_ task: ImageLoaderTask)
+
   func clearCache()
+
+}
+
+extension AnyImageLoader {
+
+  func load(into imageView: UIImageView,
+            from url: URL,
+            placeholder: UIImage? = nil,
+            progressBlock: ImageLoader.ProgressBlock? = nil,
+            completionHandler: ImageLoader.CompletionBlock? = nil) {
+    load(into: imageView,
+         from: url,
+         placeholder: placeholder,
+         progressBlock: progressBlock,
+         completionHandler: completionHandler)
+  }
+
+  func loadImage(from url: URL,
+                 progressBlock: ImageLoader.ProgressBlock? = nil,
+                 completionHandler: ImageLoader.CompletionBlock? = nil) -> ImageLoaderTask {
+    return loadImage(from: url,
+                     progressBlock: progressBlock,
+                     completionHandler: completionHandler)
+  }
+}
+
+protocol ImageLoader: AnyImageLoader {
+
+  static var standard: Self { get }
+
+  associatedtype Task: ImageLoaderTask
+
+  typealias ProgressBlock = (_ receivedSize: Int, _ totalSize: Int) -> Void
+  typealias CompletionBlock = (_ image: UIImage?, _ error: Error?) -> Void
+
+  func specificLoad(into imageView: UIImageView,
+                    from url: URL,
+                    placeholder: UIImage?,
+                    progressBlock: ImageLoader.ProgressBlock?,
+                    completionHandler: ImageLoader.CompletionBlock?)
+
+  func specificCancel(_ imageView: UIImageView)
+
+  func specificLoadImage(from url: URL,
+                         progressBlock: ImageLoader.ProgressBlock?,
+                         completionHandler: ImageLoader.CompletionBlock?) -> Task
+
+  func specificCancel(_ task: Task)
+
+  func specificClearCache()
+}
+
+extension ImageLoader {
+
+  func load(into imageView: UIImageView,
+            from url: URL,
+            placeholder: UIImage?,
+            progressBlock: ImageLoader.ProgressBlock?,
+            completionHandler: ImageLoader.CompletionBlock?) {
+    specificLoad(into: imageView,
+                 from: url,
+                 placeholder: placeholder,
+                 progressBlock: progressBlock,
+                 completionHandler: completionHandler)
+  }
+
+  func cancel(_ imageView: UIImageView) {
+    specificCancel(imageView)
+  }
+
+  func loadImage(from url: URL,
+                 progressBlock: ImageLoader.ProgressBlock?,
+                 completionHandler: ImageLoader.CompletionBlock?) -> ImageLoaderTask {
+    return specificLoadImage(from: url,
+                             progressBlock: progressBlock,
+                             completionHandler: completionHandler)
+  }
+
+  func cancel(_ task: ImageLoaderTask) {
+    specificCancel(task as! Task) // swiftlint:disable:this force_cast
+  }
+
+  func clearCache() {
+    specificClearCache()
+  }
 }
