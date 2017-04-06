@@ -17,19 +17,13 @@ extension SpeakerTableViewCellModel: CellViewModelType {
     cell.fullNameLabel.text = speaker.fullName
 
     // Replace with kingfisher or image loading wrapper 
-    if let photoURL = speaker.photoURL {
-      if let url = URL(string: photoURL) {
-        if let photoData = try? Data(contentsOf: url) {
-          cell.avatarImageView.image = UIImage(data: photoData)
-        } else {
-          print("Image not loaded")
-        }
-      }
+    if let photoURL = speaker.photoURL, let url = URL(string: photoURL), let photoData = try? Data(contentsOf: url) {
+        cell.avatarImageView.image = UIImage(data: photoData)
     }
 
     cell.descriptionLabel.attributedText =
-      AttributedSentenceHelper.concatStringWith(preposition: .at,
-                                                optionalFirst: speaker.position,
-                                                optionalSecond: speaker.company)
+    AttributedSentenceHelper.concatStringWith(preposition: .at,
+                                              firstPartString: speaker.position,
+                                              secondPartString: speaker.company)
   }
 }

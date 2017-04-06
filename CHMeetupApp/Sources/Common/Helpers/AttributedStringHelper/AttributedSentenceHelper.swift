@@ -26,7 +26,7 @@ class AttributedSentenceHelper {
 
     if !firstString.isEmpty && !secondString.isEmpty {
       let concatString = firstString + " " + preposition.localizedValue + " " + secondString
-      return AttributedSentenceHelper.configureAttrebutedString(concatString,
+      return AttributedSentenceHelper.configureAttributedString(concatString,
                                                                 with: preposition.localizedValue)
     } else {
       let string = firstString.isEmpty ? secondString : firstString
@@ -35,7 +35,7 @@ class AttributedSentenceHelper {
     }
   }
 
-  private static func configureAttrebutedString(_ string: String, with preposition: String) -> NSAttributedString {
+  private static func configureAttributedString(_ string: String, with preposition: String) -> NSAttributedString {
     let nsString = string as NSString
     let atRange = nsString.range(of: preposition)
     let attributtedString = NSMutableAttributedString(string: string)
