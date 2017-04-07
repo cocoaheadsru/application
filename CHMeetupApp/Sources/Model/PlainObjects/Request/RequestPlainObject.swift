@@ -10,8 +10,9 @@ import Foundation
 
 struct RequestPlainObject {
 
+  let success: Bool
   let answer: String
   let code: Int
 
-  let error: String?
+  let error: RequestError?
 }

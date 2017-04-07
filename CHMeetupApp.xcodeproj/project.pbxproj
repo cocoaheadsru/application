@@ -88,8 +88,8 @@
 		4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA530241E5FCDB900CD74EB /* Main.storyboard */; };
 		784EFF931E637EA500F2E31A /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EFF921E637EA500F2E31A /* RealmController.swift */; };
 		784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D1E27551E957BE90005B861 /* RequestPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E27541E957BE90005B861 /* RequestPlainObject.swift */; };
-		7D1E27571E957CE60005B861 /* RequestPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E27561E957CE60005B861 /* RequestPlainObject+Requests.swift */; };
+		7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E275E1E958C2D0005B861 /* RequestPlainObject+Requests.swift */; };
+		7D1E27611E958C2D0005B861 /* RequestPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E275F1E958C2D0005B861 /* RequestPlainObject.swift */; };
 		7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
@@ -293,8 +293,8 @@
 		4D9F0D6F1E79CD2E006443ED /* ActionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionTableViewCell.xib; path = ActionCell/ActionTableViewCell.xib; sourceTree = "<group>"; };
 		4DA530241E5FCDB900CD74EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		784EFF921E637EA500F2E31A /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
-		7D1E27541E957BE90005B861 /* RequestPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPlainObject.swift; sourceTree = "<group>"; };
-		7D1E27561E957CE60005B861 /* RequestPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		7D1E275E1E958C2D0005B861 /* RequestPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		7D1E275F1E958C2D0005B861 /* RequestPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPlainObject.swift; sourceTree = "<group>"; };
 		7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechContentPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
@@ -831,8 +831,8 @@
 		22323F441E70C18700522E5C /* PlainObjects */ = {
 			isa = PBXGroup;
 			children = (
+				7D1E275D1E958C2D0005B861 /* Request */,
 				22323F4C1E70C18700522E5C /* PlainObjectType.swift */,
-				7D1E27531E957BA40005B861 /* Request */,
 				9FD594911E87188600BAD1B5 /* SpeechContent */,
 				9FD5948E1E87182800BAD1B5 /* Speech */,
 				9F68E50B1E850D6D00C6C931 /* Action */,
@@ -1124,14 +1124,13 @@
 			name = ActionCell;
 			sourceTree = "<group>";
 		};
-		7D1E27531E957BA40005B861 /* Request */ = {
+		7D1E275D1E958C2D0005B861 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				7D1E27541E957BE90005B861 /* RequestPlainObject.swift */,
-				7D1E27561E957CE60005B861 /* RequestPlainObject+Requests.swift */,
+				7D1E275E1E958C2D0005B861 /* RequestPlainObject+Requests.swift */,
+				7D1E275F1E958C2D0005B861 /* RequestPlainObject.swift */,
 			);
-			name = Request;
-			path = GiveASpeech;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
@@ -1821,7 +1820,6 @@
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
-				7D1E27571E957CE60005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
@@ -1908,6 +1906,7 @@
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
+				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
@@ -1935,12 +1934,12 @@
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
+				7D1E27611E958C2D0005B861 /* RequestPlainObject.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */,
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
-				7D1E27551E957BE90005B861 /* RequestPlainObject.swift in Sources */,
 				22323F8E1E70C2BE00522E5C /* RegistrationPreviewViewController.swift in Sources */,
 				9F487A721E73F2C60016CE0B /* AppearanceController.swift in Sources */,
 				22323F0A1E70C0CE00522E5C /* UIColor+Hex.swift in Sources */,
