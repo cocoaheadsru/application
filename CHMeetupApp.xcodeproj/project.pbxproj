@@ -1668,7 +1668,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				ru,
 				Base,
 			);
 			mainGroup = 9F60488C1E5B3CCB00C414C3;
