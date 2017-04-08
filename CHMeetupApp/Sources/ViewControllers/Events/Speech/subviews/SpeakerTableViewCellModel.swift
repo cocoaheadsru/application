@@ -22,8 +22,8 @@ extension SpeakerTableViewCellModel: CellViewModelType {
     }
 
     cell.descriptionLabel.attributedText =
-    AttributedSentenceHelper.concatStringWith(preposition: .at,
-                                              firstPartString: speaker.position,
-                                              secondPartString: speaker.company)
+    AttributedSentenceHelper.concatString(with: .at,
+                                          firstPartString: speaker.position,
+                                          secondPartString: speaker.company)
   }
 }
