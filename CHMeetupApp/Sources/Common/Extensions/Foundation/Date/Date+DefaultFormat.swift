@@ -15,7 +15,7 @@ extension Date {
     let template = self.isThisYear ? "MMMMd" : "yMMMMd"
     let dateFormatString = DateFormatter.dateFormat(fromTemplate: template,
                                                     options: 0,
-                                                    locale: .current)
+                                                    locale: Bundle.main.locale)
 
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = dateFormatString
