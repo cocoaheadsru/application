@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol EventPreviewDisplayCollectionDelegate: class {
   func displayCollectionRequestingUIUpdate()
+  func shouldPresentModalViewController(_ viewController: UIViewController)
 }
 
 class EventPreviewDisplayCollection: DisplayCollection {
@@ -20,8 +22,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
   var event: EventEntity? {
     didSet {
       if let place = event?.place {
-        addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: {
-          print("Show maps")
+        addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: { [weak self] in
+          let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+          let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
+          if let actionSheet = actionSheet {
+            self?.delegate?.shouldPresentModalViewController(actionSheet)
+          }
         })
       }
       setNeedsReloadData()
@@ -99,7 +105,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .speaches:
       return event?.speeches.count ?? 0
     case .additionalCells:
-      return 2
+      return 0
     }
   }
 
@@ -135,6 +141,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-
+    let type = sections[indexPath.section]
+    switch type {
+    case .address:
+      addressActionObject?.action?()
+    case .additionalCells, .description, .location, .speaches:
+      break
+    }
   }
 }
