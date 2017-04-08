@@ -21,8 +21,7 @@ extension UserTableViewHeaderCellModel: CellViewModelType {
     }
 
     cell.positionAtCompanyLabel.attributedText =
-    AttributedSentenceHelper.concatString(with: .at,
-                                          firstPartString: userEntity.position,
-                                          secondPartString: userEntity.company)
+    AttributedSentenceHelper.Preposition.at.concatString(firstPartString: userEntity.position,
+                                                         secondPartString: userEntity.company)
   }
 }

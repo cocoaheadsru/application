@@ -17,30 +17,33 @@ class AttributedSentenceHelper {
       return self.rawValue.localized
     }
 
-    func configureAttributedString(_ string: String) -> NSAttributedString {
-      let nsString = string as NSString
-      let atRange = nsString.range(of: self.localizedValue)
-      let attributtedString = NSMutableAttributedString(string: string)
-      attributtedString.addAttribute(NSForegroundColorAttributeName,
-                                     value: UIColor(.gray),
-                                     range: atRange)
-      return attributtedString
-    }
-  }
+    func concatString(firstPartString: String?, secondPartString: String?)
+      -> NSAttributedString {
 
-  static func concatString(with preposition: Preposition, firstPartString: String?, secondPartString: String?)
-    -> NSAttributedString {
+        let firstString = firstPartString ?? ""
+        let secondString = secondPartString ?? ""
 
-    let firstString = firstPartString ?? ""
-    let secondString = secondPartString ?? ""
+        let mainAttributes = [NSForegroundColorAttributeName: UIColor(.darkGray)]
 
-    if !firstString.isEmpty && !secondString.isEmpty {
-      let concatString = firstString + " " + preposition.localizedValue + " " + secondString
-      return preposition.configureAttributedString(concatString)
-    } else {
-      let string = firstString.isEmpty ? secondString : firstString
-      let attributes = [NSForegroundColorAttributeName: UIColor(.darkGray)]
-      return NSAttributedString(string: string, attributes: attributes)
+        if !firstString.isEmpty && !secondString.isEmpty {
+          let result = NSMutableAttributedString()
+
+          let firstAttributedString = NSAttributedString(string: firstString, attributes: mainAttributes)
+          result.append(firstAttributedString)
+
+          let prepositionAttributes = [NSForegroundColorAttributeName: UIColor(.gray)]
+          let prepositionAttributedString = NSAttributedString(string: " " + self.localizedValue + " ",
+                                                               attributes: prepositionAttributes)
+          result.append(prepositionAttributedString)
+
+          let secondAttributedString = NSAttributedString(string: secondString, attributes: mainAttributes)
+          result.append(secondAttributedString)
+
+          return result
+        } else {
+          let string = firstString.isEmpty ? secondString : firstString
+          return NSAttributedString(string: string, attributes: mainAttributes)
+        }
     }
   }
 

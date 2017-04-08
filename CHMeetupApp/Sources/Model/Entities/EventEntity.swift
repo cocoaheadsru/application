@@ -30,7 +30,7 @@ class EventEntity: Object {
     return "id"
   }
 }
-
+#if DEBUG
 extension EventEntity {
   static var templateEntity: EventEntity {
 
@@ -49,3 +49,4 @@ extension EventEntity {
     return entity
   }
 }
+#endif
