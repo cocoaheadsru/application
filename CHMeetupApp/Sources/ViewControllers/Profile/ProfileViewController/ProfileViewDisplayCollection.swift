@@ -10,18 +10,16 @@ import UIKit
 
 struct ProfileViewDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [UserTableViewHeaderCellModel.self]
-  }
-
-  struct CellHeights {
-    static let userHeader: CGFloat = 195.0
+    return [UserTableViewHeaderCellModel.self,
+            LabelTableViewCellModel.self]
   }
 
   enum `Type` {
     case userHeader
+    case userContacts
   }
 
-  var sections: [Type] = [.userHeader]
+  var sections: [Type] = [.userHeader, .userContacts]
 
   var user: UserEntity {
     guard let user = UserPreferencesEntity.value.currentUser else {
@@ -38,13 +36,8 @@ struct ProfileViewDisplayCollection: DisplayCollection {
     switch sections[section] {
     case .userHeader:
       return 1
-    }
-  }
-
-  func cellHeightFor(_ indexPath: IndexPath) -> CGFloat {
-    switch sections[indexPath.section] {
-    case .userHeader:
-      return CellHeights.userHeader
+    case .userContacts:
+      return user.contacts.count
     }
   }
 
@@ -52,6 +45,10 @@ struct ProfileViewDisplayCollection: DisplayCollection {
     switch sections[indexPath.section] {
     case .userHeader:
       return UserTableViewHeaderCellModel(userEntity: user)
+    case .userContacts:
+      let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
+      let value = user.contacts[key] ?? ""
+      return LabelTableViewCellModel(title: key, description: value)
     }
   }
 }

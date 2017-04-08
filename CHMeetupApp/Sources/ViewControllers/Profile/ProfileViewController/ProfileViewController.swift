@@ -43,6 +43,11 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 // MARK: - TableView Data Source.
 
 extension ProfileViewController: UITableViewDataSource {
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return displayCollection.sections.count
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return displayCollection.numberOfRows(in: section)
   }
@@ -57,9 +62,6 @@ extension ProfileViewController: UITableViewDataSource {
 // MARK: - TableView Delegate.
 
 extension ProfileViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return displayCollection.cellHeightFor(indexPath)
-  }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
