@@ -36,17 +36,6 @@ class UserEntity: Object {
   dynamic var fullName: String {
     return name + " " + lastName
   }
-
-  dynamic var contacts: [String: String] {
-    var userContacts = [String: String]()
-    if let phone: String = self.phone, !phone.isEmpty {
-      userContacts["Телефон".localized] = phone
-    }
-    if !email.isEmpty {
-      userContacts["Email".localized] = email
-    }
-    return userContacts
-  }
 }
 
 extension UserEntity {
@@ -74,5 +63,12 @@ extension UserEntity {
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.socials.append(SocialEntity.templateEntity)
     return entity
+  }
+
+  var contacts: [String: String] {
+    var userContacts = [String: String]()
+    userContacts["Телефон".localized] <= phone.ifNotEmpty
+    userContacts["Email".localized] <= email.ifNotEmpty
+    return userContacts
   }
 }

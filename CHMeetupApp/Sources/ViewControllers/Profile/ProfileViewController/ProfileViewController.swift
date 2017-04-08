@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   }
 }
 
-  // MARK: - TableView Data Source.
+// MARK: - TableView Data Source.
 
 extension ProfileViewController: UITableViewDataSource {
 
@@ -59,7 +59,7 @@ extension ProfileViewController: UITableViewDataSource {
   }
 }
 
-  // MARK: - TableView Delegate.
+// MARK: - TableView Delegate.
 
 extension ProfileViewController: UITableViewDelegate {
 
