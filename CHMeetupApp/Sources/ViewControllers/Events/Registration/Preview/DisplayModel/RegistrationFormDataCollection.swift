@@ -63,9 +63,10 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     let attributtedString = NSMutableAttributedString(string: cell.name)
     let char = "*"
     if cell.isRequired {
-      attributtedString.append(NSAttributedString(string: char))
-      let attribute = ((cell.name + char) as NSString).range(of: char)
-      attributtedString.addAttribute(NSForegroundColorAttributeName, value: UIColor(.red), range: attribute)
+      let mutableAttributedString = NSMutableAttributedString(string: char)
+      mutableAttributedString.addAttribute(NSForegroundColorAttributeName,
+                                           value: UIColor(.red), range: NSRange(location: 0, length: 1))
+      attributtedString.append(mutableAttributedString)
     }
     return attributtedString
   }
