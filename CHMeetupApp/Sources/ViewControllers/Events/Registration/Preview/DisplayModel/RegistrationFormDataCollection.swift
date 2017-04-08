@@ -86,6 +86,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       let cell = delegate?.formDisplayRequestCell(at: indexPath)
       if let cell = cell as? TextFieldPlateTableViewCell {
         cell.textField.becomeFirstResponder()
+        cell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       }
     }
   }
@@ -150,5 +151,9 @@ extension FormDisplayCollection: UITextFieldDelegate {
 
   func textFieldDidEndEditing(_ textField: UITextField) {
     delegate?.formDisplayRequestTouchGeuster(enable: false)
+  }
+
+  func textFieldDidChange(_ textField: UITextField) {
+    delegate?.formDisplayRequestTouchGeuster(enable: true)
   }
 }
