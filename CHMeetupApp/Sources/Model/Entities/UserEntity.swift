@@ -37,7 +37,7 @@ class UserEntity: Object {
     return name + " " + lastName
   }
 }
-
+#if DEBUG
 extension UserEntity {
   static var templateEntity: UserEntity {
 
@@ -65,3 +65,4 @@ extension UserEntity {
     return entity
   }
 }
+#endif
