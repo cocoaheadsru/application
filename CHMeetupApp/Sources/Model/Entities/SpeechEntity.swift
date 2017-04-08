@@ -32,7 +32,7 @@ class SpeechEntity: Object {
     return "id"
   }
 }
-
+#if DEBUG
 extension SpeechEntity {
   static var templateEntity: SpeechEntity {
     let entity = SpeechEntity()
@@ -42,3 +42,4 @@ extension SpeechEntity {
     return entity
   }
 }
+#endif

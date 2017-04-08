@@ -24,7 +24,7 @@ class PlaceEntity: Object {
     return "id"
   }
 }
-
+#if DEBUG
 extension PlaceEntity {
   static var templateEntity: PlaceEntity {
 
@@ -58,3 +58,4 @@ extension PlaceEntity {
     return entity
   }
 }
+#endif
