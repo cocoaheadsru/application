@@ -14,21 +14,27 @@ class EventPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      updateBottomButton(isEnable: false)
+      updateBottomButton()
+    }
+  }
+
+  var isRegistrationEnabled: Bool = false {
+    didSet {
+      updateBottomButton()
     }
   }
 
   var bottomButton: BottomButton?
   var displayCollection: EventPreviewDisplayCollection!
 
-  func updateBottomButton(isEnable: Bool) {
+  func updateBottomButton() {
     bottomButton?.removeFromSuperview()
 
     var configuration = TableViewConfiguration.default
-    configuration.bottomInset = 8 + (isEnable ? BottomButton.constantHeight : 0)
+    configuration.bottomInset = 8 + (isRegistrationEnabled ? BottomButton.constantHeight : 0)
     tableView.configure(with: .custom(configuration))
 
-    if isEnable {
+    if isRegistrationEnabled {
       bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
       bottomButton?.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
     }
@@ -42,11 +48,13 @@ class EventPreviewViewController: UIViewController {
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
-    displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
+    let dataModel = DataModelCollection(type: EventEntity.self)
+    displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
+
     if let event = displayCollection.event {
       fetchEvents(on: event)
       // FIXME: - Check on registation open
-      updateBottomButton(isEnable: true)
+      isRegistrationEnabled = true
     }
   }
 
