@@ -112,6 +112,9 @@
 		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */; };
+		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
+		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
@@ -325,6 +328,9 @@
 		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchingElementsProtocol.swift; sourceTree = "<group>"; };
+		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
+		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
@@ -753,6 +759,7 @@
 				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
+				8A6A84421E99AA1300C3A9E7 /* Fetching */,
 				A1495AE51E76CD0B003D8BE3 /* Validation */,
 				C30485AF1E740FC20052D632 /* PermissionsManager */,
 				9F30FFD61E71FECF00EF85F5 /* DisplayCollection */,
@@ -1249,6 +1256,32 @@
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A6A84421E99AA1300C3A9E7 /* Fetching */ = {
+			isa = PBXGroup;
+			children = (
+				8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */,
+				8A6A84461E99AA5800C3A9E7 /* Event */,
+				8A6A84451E99AA5500C3A9E7 /* Speech */,
+			);
+			name = Fetching;
+			sourceTree = "<group>";
+		};
+		8A6A84451E99AA5500C3A9E7 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */,
+			);
+			name = Speech;
+			sourceTree = "<group>";
+		};
+		8A6A84461E99AA5800C3A9E7 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */,
+			);
+			name = Event;
 			sourceTree = "<group>";
 		};
 		8AB256971E78680500B319AA /* Share */ = {
@@ -1937,6 +1970,8 @@
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift in Sources */,
+				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
+				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
 				22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */,
 				9F30FFCA1E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift in Sources */,
@@ -1956,6 +1991,7 @@
 				7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */,
 				9F3767121E7DDBBD00CC565B /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
+				8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,

@@ -25,7 +25,12 @@ class RegistrationPreviewViewController: UIViewController {
     }
   }
 
-  fileprivate var bottomButton: BottomButton!
+  fileprivate var bottomButton: BottomButton! {
+    didSet {
+      bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
+      bottomButton.isEnabled = false
+    }
+  }
   fileprivate var displayCollection: FormDisplayCollection!
 
   override func viewDidLoad() {
@@ -33,7 +38,6 @@ class RegistrationPreviewViewController: UIViewController {
     keyboardDelegate = self
 
     bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
-    bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
 
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
@@ -99,7 +103,7 @@ extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = tableView.dequeueReusableHeaderFooterView() as DefaultTableHeaderView
-    header.headerLabel.text = displayCollection.headerTitle(for: section)
+    header.headerLabel.attributedText = displayCollection.headerTitle(for: section)
     return header
   }
 
@@ -131,6 +135,7 @@ extension RegistrationPreviewViewController: UITableViewDelegate {
 extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   func formDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
                             deselectItemsAt deselectIndexPaths: [IndexPath]) {
+    checkBottomButton()
     for indexPath in selectionIndexPaths {
       tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
@@ -144,7 +149,12 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   }
 
   func formDisplayRequestTouchGeuster(enable: Bool) {
+    checkBottomButton()
     dissmisKeyboardTouch.isEnabled = enable
+  }
+
+  func checkBottomButton() {
+    bottomButton.isEnabled = displayCollection.checkRequired()
   }
 }
 
