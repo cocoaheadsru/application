@@ -145,7 +145,10 @@ class EventPreviewDisplayCollection: DisplayCollection {
     switch type {
     case .address:
       addressActionObject?.action?()
-    case .additionalCells, .description, .location, .speaches:
+    case .speaches:
+      let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+      delegate?.shouldPresentModalViewController(viewController)
+    case .additionalCells, .description, .location:
       break
     }
   }

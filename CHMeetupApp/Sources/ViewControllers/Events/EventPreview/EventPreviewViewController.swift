@@ -92,7 +92,7 @@ extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
   }
 
   func shouldPresentModalViewController(_ viewController: UIViewController) {
-    present(viewController, animated: true, completion: nil)
+    navigationController?.pushViewController(viewController, animated: true)
   }
 }
 
