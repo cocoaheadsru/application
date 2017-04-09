@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030764A91E95663C00743690 /* AttributedSentenceHelper.swift */; };
 		03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */; };
 		03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */; };
 		03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */; };
 		03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B391E7F2C3100CA298E /* RegistrationController.swift */; };
 		035A76B41E5F230100B87501 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
 		036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */; };
+		036794991E8D9E0500997D29 /* SpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */; };
+		0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */; };
 		03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */; };
 		03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */; };
+		03FB4F2E1E906880006DDC2C /* SpeakerTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB4F2D1E906880006DDC2C /* SpeakerTableViewCellModel.swift */; };
+		03FB4F311E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB4F301E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift */; };
+		03FB4F341E9092CF006DDC2C /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB4F331E9092CF006DDC2C /* EventPreviewDisplayCollection.swift */; };
 		221A8B891E685EBF004E320D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A8B881E685EBF004E320D /* String+Localized.swift */; };
 		221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */; };
 		221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CC3F61E7B24A1004F0695 /* EventRegForm.swift */; };
@@ -112,7 +118,6 @@
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
-		8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -218,14 +223,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		030764A91E95663C00743690 /* AttributedSentenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedSentenceHelper.swift; sourceTree = "<group>"; };
 		03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
 		03374B391E7F2C3100CA298E /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		035A76B31E5F230100B87501 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		036794941E8AF69000997D29 /* Date+LocalizedFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+LocalizedFormat.swift"; sourceTree = "<group>"; };
+		036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTableViewCell.swift; sourceTree = "<group>"; };
+		036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerTableViewCell.xib; sourceTree = "<group>"; };
 		03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFieldData.swift; sourceTree = "<group>"; };
 		03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormDataCollection.swift; sourceTree = "<group>"; };
+		03FB4F2D1E906880006DDC2C /* SpeakerTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTableViewCellModel.swift; sourceTree = "<group>"; };
+		03FB4F301E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewDisplayCollection.swift; sourceTree = "<group>"; };
+		03FB4F331E9092CF006DDC2C /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewDisplayCollection.swift; sourceTree = "<group>"; };
 		221A8B881E685EBF004E320D /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Localized.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		221CC3F51E7B24A1004F0695 /* EventRegForm+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventRegForm+Requests.swift"; sourceTree = "<group>"; };
 		221CC3F61E7B24A1004F0695 /* EventRegForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegForm.swift; sourceTree = "<group>"; };
@@ -323,7 +334,6 @@
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
-		8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPreviewDisplayCollection.swift; path = CHMeetupApp/Sources/ViewControllers/Events/DisplayModel/EventPreviewDisplayCollection.swift; sourceTree = SOURCE_ROOT; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -425,6 +435,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030764A81E95658800743690 /* AttributedStringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				030764A91E95663C00743690 /* AttributedSentenceHelper.swift */,
+			);
+			path = AttributedStringHelper;
+			sourceTree = "<group>";
+		};
 		03374B1B1E7F20EA00CA298E /* subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,11 +461,37 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		036794961E8D9CC400997D29 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */,
+				036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */,
+				03FB4F2D1E906880006DDC2C /* SpeakerTableViewCellModel.swift */,
+			);
+			path = subviews;
+			sourceTree = "<group>";
+		};
 		03CA501A1E8327EB00CF9613 /* DisplayModel */ = {
 			isa = PBXGroup;
 			children = (
 				03CA501B1E8327EB00CF9613 /* RegistrationFieldData.swift */,
 				03CA501C1E8327EB00CF9613 /* RegistrationFormDataCollection.swift */,
+			);
+			path = DisplayModel;
+			sourceTree = "<group>";
+		};
+		03FB4F2F1E9092B7006DDC2C /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				03FB4F301E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift */,
+			);
+			path = DisplayModel;
+			sourceTree = "<group>";
+		};
+		03FB4F321E9092CF006DDC2C /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				03FB4F331E9092CF006DDC2C /* EventPreviewDisplayCollection.swift */,
 			);
 			path = DisplayModel;
 			sourceTree = "<group>";
@@ -711,6 +755,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				030764A81E95658800743690 /* AttributedStringHelper */,
 				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
 				8ACCB3CD1E7EC58A00D62E5D /* TranslationPlainObjects */,
@@ -921,7 +966,7 @@
 		22323F5E1E70C2BE00522E5C /* EventPreview */ = {
 			isa = PBXGroup;
 			children = (
-				8ACCB3D21E808CBF00D62E5D /* DisplayModel */,
+				03FB4F321E9092CF006DDC2C /* DisplayModel */,
 				22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */,
 				03374B1B1E7F20EA00CA298E /* subviews */,
 			);
@@ -957,6 +1002,8 @@
 		22323F651E70C2BE00522E5C /* Speech */ = {
 			isa = PBXGroup;
 			children = (
+				03FB4F2F1E9092B7006DDC2C /* DisplayModel */,
+				036794961E8D9CC400997D29 /* subviews */,
 				22323F661E70C2BE00522E5C /* SpeechPreviewViewController.swift */,
 			);
 			path = Speech;
@@ -1253,14 +1300,6 @@
 				9FD5948A1E8716D800BAD1B5 /* Speech */,
 			);
 			name = TranslationPlainObjects;
-			sourceTree = "<group>";
-		};
-		8ACCB3D21E808CBF00D62E5D /* DisplayModel */ = {
-			isa = PBXGroup;
-			children = (
-				8ACCB3D31E808CFE00D62E5D /* EventPreviewDisplayCollection.swift */,
-			);
-			name = DisplayModel;
 			sourceTree = "<group>";
 		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
@@ -1763,6 +1802,7 @@
 				9F487A7F1E7415A10016CE0B /* GothamPro.ttf in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				320FA5781E87A8A800DAC7E1 /* UserTableViewHeaderCell.xib in Resources */,
+				0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
@@ -1853,7 +1893,6 @@
 				22323F431E70C14300522E5C /* MapsController.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */,
-				8ACCB3D41E808CFE00D62E5D /* EventPreviewDisplayCollection.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
@@ -1893,6 +1932,8 @@
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
 				22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */,
 				22323F091E70C0CE00522E5C /* UIColor+Brightness.swift in Sources */,
+				036794991E8D9E0500997D29 /* SpeakerTableViewCell.swift in Sources */,
+				03FB4F341E9092CF006DDC2C /* EventPreviewDisplayCollection.swift in Sources */,
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
@@ -1910,8 +1951,10 @@
 				9F30FFCF1E71E87F00EF85F5 /* TemplateTableCellViewModel.swift in Sources */,
 				9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */,
 				9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */,
+				03FB4F311E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift in Sources */,
 				9FD594901E87183800BAD1B5 /* SpeechPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
+				03FB4F2E1E906880006DDC2C /* SpeakerTableViewCellModel.swift in Sources */,
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
@@ -1979,6 +2022,7 @@
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
+				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
