@@ -42,20 +42,50 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
+  @IBOutlet var participantsCollectionViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet var participantsCollectionViewTopConstraint: NSLayoutConstraint!
+  
   @IBOutlet var participantsCollectionView: ParticipantsCollectionView!
 
   @IBOutlet var goingButton: UIButton!
 
   override func awakeFromNib() {
     super.awakeFromNib()
+
+    participantsCollectionView.delegate = self
+
     roundType = .all
+  }
+
+  var parcicipantsHeight: CGFloat {
+    return 36 + 12
+  }
+
+  var goingButtonHeight: CGFloat {
+    return 64
   }
 
   // Now would calculate manually
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    // 266 with button and 202 without
-    return CGSize(width: targetSize.width, height: isEnabledForRegistration ? 266 : 202)
+    var height: CGFloat = 266
+
+    if isEnabledForRegistration == false {
+      height -= goingButtonHeight
+    }
+
+    if participantsCollectionView.imagesCollection.count == 0 {
+      height -= parcicipantsHeight
+    }
+
+    return CGSize(width: targetSize.width, height: height)
+  }
+}
+
+extension EventPreviewTableViewCell: ParticipantsCollectionViewDelegate {
+  func participantsCollectionViewWillUpdateData(view: ParticipantsCollectionView) {
+    participantsCollectionViewHeightConstraint.constant = view.imagesCollection.count == 0 ? 0 : 36
+    participantsCollectionViewTopConstraint.constant = view.imagesCollection.count == 0 ? 0 : 12
   }
 }

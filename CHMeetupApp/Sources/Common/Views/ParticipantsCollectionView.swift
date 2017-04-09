@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol ParticipantsCollectionViewDelegate: class {
+  func participantsCollectionViewWillUpdateData(view: ParticipantsCollectionView)
+}
+
 class ParticipantsCollectionView: UIView {
+
+  weak var delegate: ParticipantsCollectionViewDelegate?
 
   var imagesCollection: [UIImage] = [] {
     didSet {
       drawParticipants()
+      delegate?.participantsCollectionViewWillUpdateData(view: self)
     }
   }
 
