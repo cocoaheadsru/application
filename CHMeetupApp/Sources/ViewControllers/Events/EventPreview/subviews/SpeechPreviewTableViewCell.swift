@@ -12,7 +12,7 @@ class SpeechPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
-      avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height / 2
+      avatarImageView.roundCorners()
       avatarImageView.backgroundColor = UIColor(.lightGray)
     }
   }
@@ -52,7 +52,6 @@ class SpeechPreviewTableViewCell: PlateTableViewCell {
 
   override func layoutSubviews() {
     super.layoutSubviews()
-    // Rounded avatar image
-    avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height / 2
+    avatarImageView.roundCorners()
   }
 }

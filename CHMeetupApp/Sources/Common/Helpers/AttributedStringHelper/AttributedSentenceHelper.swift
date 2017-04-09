@@ -19,15 +19,12 @@ class AttributedSentenceHelper {
 
     func concatString(firstPartString: String?, secondPartString: String?)
       -> NSAttributedString {
-
         let firstString = firstPartString ?? ""
         let secondString = secondPartString ?? ""
-
         let mainAttributes = [NSForegroundColorAttributeName: UIColor(.darkGray)]
 
         if !firstString.isEmpty && !secondString.isEmpty {
           let result = NSMutableAttributedString()
-
           let firstAttributedString = NSAttributedString(string: firstString, attributes: mainAttributes)
           result.append(firstAttributedString)
 
@@ -38,7 +35,6 @@ class AttributedSentenceHelper {
 
           let secondAttributedString = NSAttributedString(string: secondString, attributes: mainAttributes)
           result.append(secondAttributedString)
-
           return result
         } else {
           let string = firstString.isEmpty ? secondString : firstString
