@@ -154,12 +154,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="5yg-zd-3yO">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="D0b-if-5RI">
+                        <barButtonItem key="leftBarButtonItem" image="img_log_out" id="D0b-if-5RI">
                             <connections>
                                 <action selector="logoutBarButtonAction:" destination="p5C-xH-cy8" id="1Pf-GJ-dF4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
+                        <barButtonItem key="rightBarButtonItem" image="img_edit_button" id="9Vg-65-3KU">
                             <connections>
                                 <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
                                 <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
@@ -281,6 +281,8 @@
         <image name="img_auth_fb" width="25" height="25"/>
         <image name="img_auth_twitter" width="25" height="25"/>
         <image name="img_auth_vk" width="25" height="25"/>
+        <image name="img_edit_button" width="25" height="25"/>
+        <image name="img_log_out" width="25" height="25"/>
         <image name="img_profile_man" width="60" height="69"/>
     </resources>
 </document>
