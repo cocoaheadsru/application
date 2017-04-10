@@ -91,7 +91,11 @@ extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
     tableView.reloadData()
   }
 
-  func shouldPresentModalViewController(_ viewController: UIViewController) {
+  func shouldPresentModal(viewController: UIViewController) {
+    present(viewController, animated: true, completion: nil)
+  }
+
+  func shouldPresent(viewController: UIViewController) {
     navigationController?.pushViewController(viewController, animated: true)
   }
 }

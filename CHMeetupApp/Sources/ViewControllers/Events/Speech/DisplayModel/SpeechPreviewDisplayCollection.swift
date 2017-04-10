@@ -16,6 +16,8 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     case contentCells
   }
 
+  var speech: SpeechEntity?
+
   var sections: [Type] = [.speaker, .speech, .contentCells]
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -31,7 +33,7 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     case .speaker, .speech:
       return 1
     case .contentCells:
-      return 2
+      return speech?.contents.count ?? 0
     }
   }
 
@@ -39,25 +41,21 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .speaker:
-      let speaker = UserEntity()
-      speaker.name = "Maxim"
-      speaker.lastName = "Globak"
-      speaker.company = "icnx.ru"
-      speaker.position = "iOS Developer"
-      speaker.photoURL = "https://pp.userapi.com/c628416/v628416674/3eb5e/cg35L651Jz8.jpg"
-      return SpeakerTableViewCellModel(speaker: speaker) as CellViewAnyModelType
+      return SpeakerTableViewCellModel(speaker: speech?.user ?? UserEntity())
     case .speech:
-      let speech = SpeechContentEntity()
-      speech.id = 0
-      speech.title = "Speech is great"
-      return AboutSpeechTableViewCellModel(speech: speech)
+      return AboutSpeechTableViewCellModel(speech: speech ?? SpeechEntity())
     case .contentCells:
-      let action = ActionPlainObject(text: "Goto nextline")
-      return ActionTableViewCellModel(action: action)
+      let actionPlainObject = ActionPlainObject(text: speech?.contents[indexPath.row].title ?? "",
+                                                imageName: nil, action: { /* to do smth */ })
+      return ActionTableViewCellModel(action: actionPlainObject)
     }
   }
 
   func didSelect(indexPath: IndexPath) {
-    // Do stuff here ...
+    let type = sections[indexPath.section]
+    switch type {
+    case .speaker, .speech, .contentCells:
+      break
+    }
   }
 }

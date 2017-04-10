@@ -892,8 +892,8 @@
 		22323F441E70C18700522E5C /* PlainObjects */ = {
 			isa = PBXGroup;
 			children = (
-				7D1E275D1E958C2D0005B861 /* Request */,
 				22323F4C1E70C18700522E5C /* PlainObjectType.swift */,
+				7D1E275D1E958C2D0005B861 /* Request */,
 				9FD594911E87188600BAD1B5 /* SpeechContent */,
 				9FD5948E1E87182800BAD1B5 /* Speech */,
 				9F68E50B1E850D6D00C6C931 /* Action */,

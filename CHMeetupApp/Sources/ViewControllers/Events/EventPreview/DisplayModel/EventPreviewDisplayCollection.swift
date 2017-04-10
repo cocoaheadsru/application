@@ -11,7 +11,8 @@ import CoreLocation
 
 protocol EventPreviewDisplayCollectionDelegate: class {
   func displayCollectionRequestingUIUpdate()
-  func shouldPresentModalViewController(_ viewController: UIViewController)
+  func shouldPresentModal(viewController: UIViewController)
+  func shouldPresent(viewController: UIViewController)
 }
 
 class EventPreviewDisplayCollection: DisplayCollection {
@@ -26,7 +27,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
           let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
           let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
           if let actionSheet = actionSheet {
-            self?.delegate?.shouldPresentModalViewController(actionSheet)
+            self?.delegate?.shouldPresentModal(viewController: actionSheet)
           }
         })
       }
@@ -146,8 +147,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .address:
       addressActionObject?.action?()
     case .speaches:
-      let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
-      delegate?.shouldPresentModalViewController(viewController)
+      if let event = event {
+        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+        viewController.selectedSpeechId = event.speeches[indexPath.row].id
+        delegate?.shouldPresent(viewController: viewController)
+      }
     case .additionalCells, .description, .location:
       break
     }
