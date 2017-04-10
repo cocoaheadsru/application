@@ -45,7 +45,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   @IBOutlet var participantsCollectionViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet var participantsCollectionViewTopConstraint: NSLayoutConstraint!
 
-  @IBOutlet var participantsCollectionView: ParticipantsCollectionView!
+  @IBOutlet var participantsCollectionView: PhotosPresentationView!
 
   @IBOutlet var goingButton: UIButton!
 
@@ -59,7 +59,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   var parcicipantsHeight: CGFloat {
     // 36 paricipant view height, 12 is space from top
-    return 36 + 12
+    return 48
   }
 
   var goingButtonHeight: CGFloat {
@@ -85,9 +85,14 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   }
 }
 
-extension EventPreviewTableViewCell: ParticipantsCollectionViewDelegate {
-  func participantsCollectionViewWillUpdateData(view: ParticipantsCollectionView) {
-    participantsCollectionViewHeightConstraint.constant = view.imagesCollection.count == 0 ? 0 : 36
-    participantsCollectionViewTopConstraint.constant = view.imagesCollection.count == 0 ? 0 : 12
+extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
+  func participantsCollectionViewWillUpdateData(view: PhotosPresentationView) {
+    if view.imagesCollection.count == 0 {
+      participantsCollectionViewHeightConstraint.constant = 0
+      participantsCollectionViewTopConstraint.constant = 0
+    } else {
+      participantsCollectionViewHeightConstraint.constant = 36
+      participantsCollectionViewTopConstraint.constant = 12
+    }
   }
 }

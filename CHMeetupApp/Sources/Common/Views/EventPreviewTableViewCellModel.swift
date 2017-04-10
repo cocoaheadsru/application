@@ -32,7 +32,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
-    cell.isEnabledForRegistration = (event.startDate.isPassed == false)
+    cell.isEnabledForRegistration = event.isRegistrationOpen
 
     var images: [UIImage] = []
     for index in 0 ..< min(event.speakerPhotosURLs.count, participantsImageNames.count) {

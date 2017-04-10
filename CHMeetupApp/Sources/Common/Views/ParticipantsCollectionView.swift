@@ -1,5 +1,5 @@
 //
-//  ParticipantCollection.swift
+//  PhotosPresentationView.swift
 //  CHMeetupApp
 //
 //  Created by Dima on 16/03/2017.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ParticipantsCollectionViewDelegate: class {
-  func participantsCollectionViewWillUpdateData(view: ParticipantsCollectionView)
+protocol PhotosPresentationViewDelegate: class {
+  func participantsCollectionViewWillUpdateData(view: PhotosPresentationView)
 }
 
-class ParticipantsCollectionView: UIView {
+class PhotosPresentationView: UIView {
 
-  weak var delegate: ParticipantsCollectionViewDelegate?
+  weak var delegate: PhotosPresentationViewDelegate?
 
   var imagesCollection: [UIImage] = [] {
     didSet {

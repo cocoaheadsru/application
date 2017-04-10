@@ -68,7 +68,7 @@
                             <constraint firstAttribute="height" constant="1" id="TST-80-ZqF"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="ParticipantsCollectionView" customModule="CHMeetupApp" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="PhotosPresentationView" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="16" y="154.5" width="288" height="36"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
