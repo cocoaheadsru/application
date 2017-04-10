@@ -44,7 +44,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var participantsCollectionViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet var participantsCollectionViewTopConstraint: NSLayoutConstraint!
-  
+
   @IBOutlet var participantsCollectionView: ParticipantsCollectionView!
 
   @IBOutlet var goingButton: UIButton!
@@ -58,10 +58,12 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   }
 
   var parcicipantsHeight: CGFloat {
+    // 36 paricipant view height, 12 is space from top
     return 36 + 12
   }
 
   var goingButtonHeight: CGFloat {
+    // Button with spaces height
     return 64
   }
 
