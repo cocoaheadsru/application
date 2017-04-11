@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainViewDisplayCollectionDelegate: class {
-  func shouldPresent(viewController: UIViewController)
+  func present(viewController: UIViewController)
 }
 
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
@@ -89,7 +89,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.shouldPresent(viewController: eventPreview)
+      delegate?.present(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()

@@ -49,7 +49,8 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
                                               placeholder: answerCell.value,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak answerCell] value in
-        answerCell?.answer = .string(value: value)
+                                                answerCell?.answer = .string(value: value)
+                                                self.delegate?.formDisplayRequestTouchGeuster(enable: true)
       })
     }
   }
@@ -87,7 +88,6 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
       let cell = delegate?.formDisplayRequestCell(at: indexPath)
       if let cell = cell as? TextFieldPlateTableViewCell {
         cell.textField.becomeFirstResponder()
-        cell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       }
     }
   }
@@ -152,9 +152,5 @@ extension FormDisplayCollection: UITextFieldDelegate {
 
   func textFieldDidEndEditing(_ textField: UITextField) {
     delegate?.formDisplayRequestTouchGeuster(enable: false)
-  }
-
-  func textFieldDidChange(_ textField: UITextField) {
-    delegate?.formDisplayRequestTouchGeuster(enable: true)
   }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PastEventsDisplayCollectionDelegate: class {
-  func shouldPresent(viewController: UIViewController)
+  func present(viewController: UIViewController)
 }
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
@@ -40,6 +40,6 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.shouldPresent(viewController: eventPreview)
+    delegate?.present(viewController: eventPreview)
   }
 }

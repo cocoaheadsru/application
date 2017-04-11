@@ -32,7 +32,7 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     return TabBarItemView.create(with: .past)
   }
 
-  func shouldPresent(viewController: UIViewController) {
+  func present(viewController: UIViewController) {
     navigationController?.pushViewController(viewController, animated: true)
   }
 }

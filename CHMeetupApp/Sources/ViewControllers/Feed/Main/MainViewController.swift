@@ -61,7 +61,7 @@ extension MainViewController: UITableViewDelegate {
 }
 
 extension MainViewController: MainViewDisplayCollectionDelegate {
-  func shouldPresent(viewController: UIViewController) {
+  func present(viewController: UIViewController) {
     navigationController?.pushViewController(viewController, animated: true)
   }
 }
