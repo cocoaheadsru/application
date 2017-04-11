@@ -27,7 +27,9 @@ class EventPreviewDisplayCollection: DisplayCollection {
           let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
           let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
           if let actionSheet = actionSheet {
-            self?.delegate?.presentModal(viewController: actionSheet)
+            DispatchQueue.main.async {
+              self?.delegate?.presentModal(viewController: actionSheet)
+            }
           }
         })
       }
