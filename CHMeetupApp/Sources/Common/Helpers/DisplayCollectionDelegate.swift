@@ -10,12 +10,12 @@ import UIKit
 
 protocol DisplayCollectionDelegate: class {
   func updateUI()
-  func presentModal(viewController: UIViewController)
+  func present(viewController: UIViewController)
   func push(viewController: UIViewController)
 }
 
 extension UIViewController: DisplayCollectionDelegate {
-  func presentModal(viewController: UIViewController) {
+  func present(viewController: UIViewController) {
     present(viewController, animated: true, completion: nil)
   }
 

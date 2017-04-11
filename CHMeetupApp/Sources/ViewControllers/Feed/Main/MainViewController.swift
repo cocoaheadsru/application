@@ -60,9 +60,6 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
-extension MainViewController: MainViewDisplayCollectionDelegate {
-}
-
 fileprivate extension MainViewController {
   func fetchEvents() {
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in

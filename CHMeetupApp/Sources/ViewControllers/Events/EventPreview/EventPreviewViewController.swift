@@ -44,6 +44,8 @@ class EventPreviewViewController: UIViewController {
     super.viewDidLoad()
     title = "Event Preview".localized
 
+    view.backgroundColor = UIColor(.lightGray)
+
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
@@ -53,8 +55,7 @@ class EventPreviewViewController: UIViewController {
 
     if let event = displayCollection.event {
       fetchEvents(on: event)
-      // FIXME: - Check on registation open
-      isRegistrationEnabled = true
+      isRegistrationEnabled = event.isRegistrationOpen
     }
   }
 

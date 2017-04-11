@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
+class PastEventsViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)

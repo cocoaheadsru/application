@@ -21,7 +21,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
           let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
           let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
           if let actionSheet = actionSheet {
-            self?.delegate?.presentModal(viewController: actionSheet)
+            self?.delegate?.present(viewController: actionSheet)
           }
         })
       }
@@ -140,7 +140,13 @@ class EventPreviewDisplayCollection: DisplayCollection {
     switch type {
     case .address:
       addressActionObject?.action?()
-    case .additionalCells, .description, .location, .speaches:
+    case .speaches:
+      if let event = event {
+        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+        viewController.selectedSpeechId = event.speeches[indexPath.row].id
+        delegate?.push(viewController: viewController)
+      }
+    case .additionalCells, .description, .location:
       break
     }
   }
