@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol MainViewDisplayCollectionDelegate: class {
-  func present(viewController: UIViewController)
-}
-
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
@@ -22,7 +18,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case actionButtons
   }
 
-  weak var delegate: MainViewDisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionDelegate?
 
   private var sections: [Type] = [.events, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
@@ -89,7 +85,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.present(viewController: eventPreview)
+      delegate?.push(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()

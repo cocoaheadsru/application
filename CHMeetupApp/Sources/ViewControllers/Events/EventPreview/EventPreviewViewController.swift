@@ -87,20 +87,6 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
   }
 }
 
-extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
-  func displayCollectionRequestingUIUpdate() {
-    tableView.reloadData()
-  }
-
-  func presentModal(viewController: UIViewController) {
-    present(viewController, animated: true, completion: nil)
-  }
-
-  func push(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
-  }
-}
-
 extension EventPreviewViewController {
   func fetchEvents(on eventEntity: EventEntity) {
     let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)

@@ -9,12 +9,6 @@
 import UIKit
 import CoreLocation
 
-protocol EventPreviewDisplayCollectionDelegate: class {
-  func displayCollectionRequestingUIUpdate()
-  func presentModal(viewController: UIViewController)
-  func push(viewController: UIViewController)
-}
-
 class EventPreviewDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ActionTableViewCellModel.self, TimePlaceTableViewCellModel.self, SpeechPreviewTableViewCellModel.self]
@@ -28,7 +22,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
           let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
           if let actionSheet = actionSheet {
             DispatchQueue.main.async {
-              self?.delegate?.presentModal(viewController: actionSheet)
+              self?.delegate?.present(viewController: actionSheet)
             }
           }
         })
@@ -37,7 +31,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     }
   }
 
-  weak var delegate: EventPreviewDisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionDelegate?
 
   // MARK: - Adrsess Plain Object
 
@@ -61,7 +55,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   private func reloadData() {
     updateSections()
-    delegate?.displayCollectionRequestingUIUpdate()
+    delegate?.updateUI()
   }
 
   // MARK: - Sections

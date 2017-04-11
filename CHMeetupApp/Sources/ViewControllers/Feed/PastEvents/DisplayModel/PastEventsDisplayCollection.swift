@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PastEventsDisplayCollectionDelegate: class {
-  func present(viewController: UIViewController)
-}
-
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self]
@@ -23,7 +19,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return modelCollection
   }()
 
-  weak var delegate: PastEventsDisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionDelegate?
 
   var numberOfSections: Int {
     return 1
@@ -40,6 +36,6 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.present(viewController: eventPreview)
+    delegate?.push(viewController: eventPreview)
   }
 }
