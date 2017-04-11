@@ -38,6 +38,6 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.pushViewController(eventPreview)
+    delegate?.push(viewController: eventPreview)
   }
 }

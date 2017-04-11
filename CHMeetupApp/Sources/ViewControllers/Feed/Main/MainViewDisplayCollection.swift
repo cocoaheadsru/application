@@ -87,7 +87,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.pushViewController(eventPreview)
+      delegate?.push(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
