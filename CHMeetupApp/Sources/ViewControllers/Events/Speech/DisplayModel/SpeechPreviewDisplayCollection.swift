@@ -38,14 +38,17 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
+    guard let speech = speech, let user = speech.user else {
+      fatalError("Speech should be set before using it")
+    }
     let type = sections[indexPath.section]
     switch type {
     case .speaker:
-      return SpeakerTableViewCellModel(speaker: speech?.user ?? UserEntity())
+      return SpeakerTableViewCellModel(speaker: user)
     case .speech:
-      return AboutSpeechTableViewCellModel(speech: speech ?? SpeechEntity())
+      return AboutSpeechTableViewCellModel(speech: speech)
     case .contentCells:
-      let actionPlainObject = ActionPlainObject(text: speech?.contents[indexPath.row].title ?? "",
+      let actionPlainObject = ActionPlainObject(text: speech.contents[indexPath.row].title,
                                                 imageName: nil, action: { /* to do smth */ })
       return ActionTableViewCellModel(action: actionPlainObject)
     }
