@@ -167,7 +167,8 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
     switch state {
     case .frameChanged, .opened:
-      let tableViewBottomContentInsets = info.endFrame.height + tableView.defaultBottomInset
+      // 15 is necessary offset due to the feature of the projected cell
+      let tableViewBottomContentInsets = info.endFrame.height + 15 + tableView.defaultBottomInset
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
       buttonInsets = info.endFrame.height
