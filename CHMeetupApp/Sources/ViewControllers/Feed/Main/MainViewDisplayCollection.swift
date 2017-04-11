@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol MainViewDisplayCollectionDelegate: class {
-  func shouldPresent(viewController: UIViewController)
-}
+protocol MainViewDisplayCollectionDelegate: DisplayCollectionDelegate { }
 
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -89,7 +87,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.shouldPresent(viewController: eventPreview)
+      delegate?.pushViewController(eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()

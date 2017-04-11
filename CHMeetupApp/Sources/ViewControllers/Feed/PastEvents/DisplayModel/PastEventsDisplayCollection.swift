@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol PastEventsDisplayCollectionDelegate: class {
-  func shouldPresent(viewController: UIViewController)
-}
+protocol PastEventsDisplayCollectionDelegate: DisplayCollectionDelegate { }
 
 struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -40,6 +38,6 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
-    delegate?.shouldPresent(viewController: eventPreview)
+    delegate?.pushViewController(eventPreview)
   }
 }

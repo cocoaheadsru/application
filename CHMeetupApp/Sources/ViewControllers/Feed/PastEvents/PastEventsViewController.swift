@@ -32,9 +32,6 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     return TabBarItemView.create(with: .past)
   }
 
-  func shouldPresent(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
-  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {

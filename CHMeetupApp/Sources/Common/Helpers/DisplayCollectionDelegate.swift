@@ -11,11 +11,16 @@ import UIKit
 protocol DisplayCollectionDelegate: class {
   func updateUI()
   func presentModalViewController(_ viewController: UIViewController)
+  func pushViewController(_ viewController: UIViewController)
 }
 
 extension UIViewController: DisplayCollectionDelegate {
   func presentModalViewController(_ viewController: UIViewController) {
     present(viewController, animated: true, completion: nil)
+  }
+
+  func pushViewController(_ viewController: UIViewController) {
+    navigationController?.pushViewController(viewController, animated: true)
   }
 
   func updateUI() {
