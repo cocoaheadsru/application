@@ -9,7 +9,14 @@
 import UIKit
 import Kingfisher
 
-extension RetrieveImageTask: ImageLoaderTask {}
+extension RetrieveImageTask: ImageLoaderTask, Hashable {
+  public var hashValue: Int {
+    return downloadTask.debugDescription.hashValue
+  }
+  public static func == (lhs: RetrieveImageTask, rhs: RetrieveImageTask) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+  }
+}
 
 final class KingfisherImageLoader: ImageLoader {
 

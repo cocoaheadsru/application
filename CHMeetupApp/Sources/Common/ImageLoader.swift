@@ -8,7 +8,15 @@
 
 import UIKit
 
-protocol ImageLoaderTask {}
+protocol ImageLoaderTask {
+  var identifier: Int { get }
+}
+
+extension ImageLoaderTask where Self: Hashable {
+  var identifier: Int {
+    return hashValue
+  }
+}
 
 protocol AnyImageLoader: class {
 
@@ -57,10 +65,7 @@ protocol ImageLoader: AnyImageLoader {
 
   static var standard: Self { get }
 
-  associatedtype Task: ImageLoaderTask
-
-  typealias ProgressBlock = (_ receivedSize: Int, _ totalSize: Int) -> Void
-  typealias CompletionBlock = (_ image: UIImage?, _ error: Error?) -> Void
+  associatedtype Task: ImageLoaderTask, Hashable
 
   func specificLoad(into imageView: UIImageView,
                     from url: URL,
@@ -80,6 +85,9 @@ protocol ImageLoader: AnyImageLoader {
 }
 
 extension ImageLoader {
+
+  typealias ProgressBlock = (_ receivedSize: Int, _ totalSize: Int) -> Void
+  typealias CompletionBlock = (_ image: UIImage?, _ error: Error?) -> Void
 
   func load(into imageView: UIImageView,
             from url: URL,
