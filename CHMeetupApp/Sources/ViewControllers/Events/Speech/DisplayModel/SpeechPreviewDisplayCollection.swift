@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SpeechPreviewDisplayCollection: DisplayCollection {
 
@@ -17,6 +18,8 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   var speech: SpeechEntity?
+
+  weak var delegate: DisplayCollectionDelegate?
 
   var sections: [Type] = [.speaker, .speech, .contentCells]
 
@@ -55,9 +58,16 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
+    guard let speech = speech else {
+      fatalError("Speech should be set before using it")
+    }
     let type = sections[indexPath.section]
     switch type {
-    case .speaker, .speech, .contentCells:
+    case .contentCells:
+      let content = URL(string: speech.contents[indexPath.row].linkURL)!
+      let safari = SFSafariViewController(url: content, entersReaderIfAvailable: true)
+      delegate?.present(viewController: safari)
+    case .speaker, .speech:
       break
     }
   }

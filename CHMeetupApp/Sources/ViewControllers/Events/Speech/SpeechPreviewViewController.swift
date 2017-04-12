@@ -26,6 +26,7 @@ class SpeechPreviewViewController: UIViewController {
     view.backgroundColor = UIColor(.lightGray)
 
     displayCollection = SpeechPreviewDisplayCollection()
+    displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
     let dataModel = DataModelCollection(type: SpeechEntity.self)
