@@ -197,6 +197,9 @@
 		F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */; };
 		F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */; };
 		F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718BFB61E942C27008B3C0B /* OptionalOperator.swift */; };
+		F718C0331E966B58008B3C0B /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */; };
+		F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0341E966B6A008B3C0B /* ImageLoader.swift */; };
+		F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -416,6 +419,9 @@
 		F718BFA91E93BF8D008B3C0B /* Bool+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Random.swift"; sourceTree = "<group>"; };
 		F718BFB11E93C940008B3C0B /* RandomAccessCollection+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Random.swift"; sourceTree = "<group>"; };
 		F718BFB61E942C27008B3C0B /* OptionalOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperator.swift; sourceTree = "<group>"; };
+		F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
+		F718C0341E966B6A008B3C0B /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -757,6 +763,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F718C0311E966B01008B3C0B /* ImageLoader */,
 				030764A81E95658800743690 /* AttributedStringHelper */,
 				F718BFB51E942C0A008B3C0B /* Optional */,
 				7DE942081E867AA900E7E9E6 /* AuthService */,
@@ -1183,6 +1190,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */,
+				F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */,
 			);
 			name = UIImageView;
 			sourceTree = "<group>";
@@ -1337,6 +1345,7 @@
 			isa = PBXGroup;
 			children = (
 				9F30FFC61E71E6FE00EF85F5 /* ReusableCell.swift */,
+				F718C0341E966B6A008B3C0B /* ImageLoader.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -1703,6 +1712,14 @@
 			name = Optional;
 			sourceTree = "<group>";
 		};
+		F718C0311E966B01008B3C0B /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */,
+			);
+			name = ImageLoader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1900,6 +1917,7 @@
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
+				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				3284F2551E992E270033437F /* String+Empty.swift in Sources */,
@@ -1962,6 +1980,7 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
+				F718C0331E966B58008B3C0B /* KingfisherImageLoader.swift in Sources */,
 				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
@@ -2026,6 +2045,7 @@
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
 				22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */,
+				F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */,
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
