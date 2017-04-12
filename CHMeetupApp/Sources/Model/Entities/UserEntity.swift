@@ -37,7 +37,7 @@ class UserEntity: Object {
     return name + " " + lastName
   }
 }
-
+#if DEBUG
 extension UserEntity {
   static var templateEntity: UserEntity {
 
@@ -64,4 +64,12 @@ extension UserEntity {
     entity.socials.append(SocialEntity.templateEntity)
     return entity
   }
+
+  var contacts: [String: String] {
+    var userContacts = [String: String]()
+    userContacts["Телефон".localized] <= phone.ifNotEmpty
+    userContacts["Email".localized] <= email.ifNotEmpty
+    return userContacts
+  }
 }
+#endif

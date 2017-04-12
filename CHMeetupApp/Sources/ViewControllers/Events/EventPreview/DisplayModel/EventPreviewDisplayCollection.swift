@@ -7,10 +7,7 @@
 //
 
 import UIKit
-
-protocol EventPreviewDisplayCollectionDelegate: class {
-  func displayCollectionRequestingUIUpdate()
-}
+import CoreLocation
 
 class EventPreviewDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
@@ -20,15 +17,21 @@ class EventPreviewDisplayCollection: DisplayCollection {
   var event: EventEntity? {
     didSet {
       if let place = event?.place {
-        addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: {
-          print("Show maps")
+        addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: { [weak self] in
+          let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+          let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
+          if let actionSheet = actionSheet {
+            DispatchQueue.main.async {
+              self?.delegate?.present(viewController: actionSheet)
+            }
+          }
         })
       }
       setNeedsReloadData()
     }
   }
 
-  weak var delegate: EventPreviewDisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionDelegate?
 
   // MARK: - Adrsess Plain Object
 
@@ -52,7 +55,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   private func reloadData() {
     updateSections()
-    delegate?.displayCollectionRequestingUIUpdate()
+    delegate?.updateUI()
   }
 
   // MARK: - Sections
@@ -99,7 +102,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .speaches:
       return event?.speeches.count ?? 0
     case .additionalCells:
-      return 2
+      return 0
     }
   }
 
@@ -135,6 +138,18 @@ class EventPreviewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-
+    let type = sections[indexPath.section]
+    switch type {
+    case .address:
+      addressActionObject?.action?()
+    case .speaches:
+      if let event = event {
+        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+        viewController.selectedSpeechId = event.speeches[indexPath.row].id
+        delegate?.push(viewController: viewController)
+      }
+    case .additionalCells, .description, .location:
+      break
+    }
   }
 }

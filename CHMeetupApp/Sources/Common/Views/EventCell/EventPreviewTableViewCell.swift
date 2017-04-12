@@ -42,20 +42,57 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var participantsCollectionView: ParticipantsCollectionView!
+  @IBOutlet var participantsCollectionViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet var participantsCollectionViewTopConstraint: NSLayoutConstraint!
+
+  @IBOutlet var participantsCollectionView: PhotosPresentationView!
 
   @IBOutlet var goingButton: UIButton!
 
   override func awakeFromNib() {
     super.awakeFromNib()
+
+    participantsCollectionView.delegate = self
+
     roundType = .all
+  }
+
+  var parcicipantsHeight: CGFloat {
+    // 36 paricipant view height, 12 is space from top
+    return 48
+  }
+
+  var goingButtonHeight: CGFloat {
+    // Button with spaces height
+    return 64
   }
 
   // Now would calculate manually
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    // 266 with button and 202 without
-    return CGSize(width: targetSize.width, height: isEnabledForRegistration ? 266 : 202)
+    var height: CGFloat = 266
+
+    if isEnabledForRegistration == false {
+      height -= goingButtonHeight
+    }
+
+    if participantsCollectionView.imagesCollection.count == 0 {
+      height -= parcicipantsHeight
+    }
+
+    return CGSize(width: targetSize.width, height: height)
+  }
+}
+
+extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
+  func participantsCollectionViewWillUpdateData(view: PhotosPresentationView) {
+    if view.imagesCollection.count == 0 {
+      participantsCollectionViewHeightConstraint.constant = 0
+      participantsCollectionViewTopConstraint.constant = 0
+    } else {
+      participantsCollectionViewHeightConstraint.constant = 36
+      participantsCollectionViewTopConstraint.constant = 12
+    }
   }
 }

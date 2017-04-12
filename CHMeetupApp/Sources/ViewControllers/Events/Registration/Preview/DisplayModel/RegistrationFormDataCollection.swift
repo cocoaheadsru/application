@@ -38,9 +38,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     let section = formData.sections[indexPath.section]
     let answerCell = section.fieldAnswers[indexPath.row]
-
     let (boolAnswer, stringAnswer) = answerCell.answer.pasrseAnswers()
-
     switch section.type {
     case .checkbox:
       return OptionTableViewCellModel(id: answerCell.id, text: answerCell.value, type: .checkbox, result: boolAnswer)
@@ -51,7 +49,8 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
                                               placeholder: answerCell.value,
                                               textFieldDelegate: self,
                                               valueChanged: { [weak answerCell] value in
-        answerCell?.answer = .string(value: value)
+                                                answerCell?.answer = .string(value: value)
+                                                self.delegate?.formDisplayRequestTouchGeuster(enable: true)
       })
     }
   }
@@ -60,16 +59,23 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     return 40
   }
 
-  func headerTitle(for section: Int) -> String {
-    return formData.sections[section].name
+  func headerTitle(for section: Int) -> NSAttributedString {
+    let cell = formData.sections[section]
+    let attributtedString = NSMutableAttributedString(string: cell.name)
+    let char = "*"
+    if cell.isRequired {
+      let mutableAttributedString = NSMutableAttributedString(string: char)
+      mutableAttributedString.addAttribute(NSForegroundColorAttributeName,
+                                           value: UIColor(.red), range: NSRange(location: 0, length: 1))
+      attributtedString.append(mutableAttributedString)
+    }
+    return attributtedString
   }
 
   func didSelect(indexPath: IndexPath) {
     let section = formData.sections[indexPath.section]
     let answerCell = section.fieldAnswers[indexPath.row]
-
     let (boolAnswer, _) = answerCell.answer.pasrseAnswers()
-
     switch section.type {
     case .checkbox:
       answerCell.answer = .selection(isSelected: !boolAnswer)
@@ -119,6 +125,19 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
     delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
   }
+
+  func checkRequired() -> Bool {
+    for section in formData.sections where section.isRequired {
+      var checked = false
+      for row in section.fieldAnswers {
+        checked = row.answer.pasrseAnswers().0 || row.answer.pasrseAnswers().1.characters.count > 0
+        if checked { break }
+      }
+      if !checked { return false }
+    }
+    return true
+  }
+
 }
 
 extension FormDisplayCollection: UITextFieldDelegate {

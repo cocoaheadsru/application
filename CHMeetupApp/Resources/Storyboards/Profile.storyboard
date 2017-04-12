@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbP-cw-RIa">
-                                <rect key="frame" x="24" y="100.5" width="272" height="367"/>
+                                <rect key="frame" x="24" y="101" width="272" height="366"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="327" width="256" height="40"/>
+                                        <rect key="frame" x="8" y="326" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="WrD-rK-qrf"/>
@@ -41,7 +41,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="vk" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-SA-VgD" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="277" width="256" height="40"/>
+                                        <rect key="frame" x="8" y="276" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.32803952693939209" green="0.46409446001052856" blue="0.60960102081298828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5WJ-ID-2dF"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="fb" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-p0-rbw" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="227" width="256" height="40"/>
+                                        <rect key="frame" x="8" y="226" width="256" height="40"/>
                                         <color key="backgroundColor" red="0.22943970561027527" green="0.34702008962631226" blue="0.59602290391921997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zzw-4h-5Ik"/>
@@ -73,8 +73,8 @@
                                             <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="B5k-h1-N0K"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!  Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
-                                        <rect key="frame" x="0.0" y="97" width="272" height="90"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зарегистрированным пользователям  доступно больше функций!  Авторизируйтесь и регистрируйтесь  на встречи в одно касание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rk-2cD">
+                                        <rect key="frame" x="0.0" y="96" width="272" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.55310022830000005" green="0.67898041009999999" blue="0.67554408310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -154,12 +154,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="5yg-zd-3yO">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="D0b-if-5RI">
+                        <barButtonItem key="leftBarButtonItem" image="img_log_out" id="D0b-if-5RI">
                             <connections>
                                 <action selector="logoutBarButtonAction:" destination="p5C-xH-cy8" id="1Pf-GJ-dF4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9Vg-65-3KU">
+                        <barButtonItem key="rightBarButtonItem" image="img_edit_button" id="9Vg-65-3KU">
                             <connections>
                                 <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
                                 <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
@@ -281,6 +281,8 @@
         <image name="img_auth_fb" width="25" height="25"/>
         <image name="img_auth_twitter" width="25" height="25"/>
         <image name="img_auth_vk" width="25" height="25"/>
+        <image name="img_edit_button" width="25" height="25"/>
+        <image name="img_log_out" width="25" height="25"/>
         <image name="img_profile_man" width="60" height="69"/>
     </resources>
 </document>

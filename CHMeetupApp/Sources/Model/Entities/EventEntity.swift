@@ -21,6 +21,7 @@ class EventEntity: Object {
   dynamic var photoURL: String = ""
 
   dynamic var place: PlaceEntity?
+  dynamic var isRegistrationOpen: Bool = false
 
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
@@ -29,7 +30,7 @@ class EventEntity: Object {
     return "id"
   }
 }
-
+#if DEBUG
 extension EventEntity {
   static var templateEntity: EventEntity {
 
@@ -43,7 +44,9 @@ extension EventEntity {
     entity.endDate <= formatter.date(from: "20161111")
     entity.photoURL = "https://avatars.mds.yandex.net/get-yaevents/194464/552b2574b7b911e6afd30025909419be/320x240"
     entity.place = PlaceEntity.templateEntity
+    entity.isRegistrationOpen = false
     entity.speeches.append(SpeechEntity.templateEntity)
     return entity
   }
 }
+#endif

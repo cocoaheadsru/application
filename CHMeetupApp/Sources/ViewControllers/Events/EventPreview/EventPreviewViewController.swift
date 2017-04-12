@@ -14,27 +14,49 @@ class EventPreviewViewController: UIViewController {
 
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
-      var configuration = TableViewConfiguration.default
-      configuration.bottomInset = 8 + BottomButton.constantHeight
-      tableView.configure(with: .custom(configuration))
+      updateBottomButton()
     }
   }
 
-  var bottomButton: BottomButton!
+  var isRegistrationEnabled: Bool = false {
+    didSet {
+      updateBottomButton()
+    }
+  }
+
+  var bottomButton: BottomButton?
   var displayCollection: EventPreviewDisplayCollection!
+
+  func updateBottomButton() {
+    bottomButton?.removeFromSuperview()
+
+    var configuration = TableViewConfiguration.default
+    configuration.bottomInset = 8 + (isRegistrationEnabled ? BottomButton.constantHeight : 0)
+    tableView.configure(with: .custom(configuration))
+
+    if isRegistrationEnabled {
+      bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
+      bottomButton?.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Event Preview".localized
 
-    bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
-    bottomButton.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
+    view.backgroundColor = UIColor(.lightGray)
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
-    displayCollection.event = DataModelCollection(type: EventEntity.self).first(where: { $0.id == selectedEventId })
+    let dataModel = DataModelCollection(type: EventEntity.self)
+    displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
+
+    if let event = displayCollection.event {
+      fetchEvents(on: event)
+      isRegistrationEnabled = event.isRegistrationOpen
+    }
   }
 
   func acceptAction() {
@@ -65,8 +87,11 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
   }
 }
 
-extension EventPreviewViewController: EventPreviewDisplayCollectionDelegate {
-  func displayCollectionRequestingUIUpdate() {
-    tableView.reloadData()
+extension EventPreviewViewController {
+  func fetchEvents(on eventEntity: EventEntity) {
+    let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)
+    SpeechFetching.fetchElements(request: speechesRequest, to: eventEntity, completion: { [weak self] in
+      self?.tableView.reloadData()
+    })
   }
 }

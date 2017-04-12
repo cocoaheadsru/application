@@ -20,23 +20,8 @@ extension UserTableViewHeaderCellModel: CellViewModelType {
       }
     }
 
-    let position = userEntity.position ?? ""
-    let company = userEntity.company ?? ""
-
-    let normalAttributes =
-      [NSFontAttributeName: UIFont.appFont(.gothamPro(size: 17)),
-       NSForegroundColorAttributeName: UIColor(.darkGray)]
-    let atAttributes =
-      [NSFontAttributeName: UIFont.appFont(.gothamPro(size: 17)),
-       NSForegroundColorAttributeName: UIColor(.gray)]
-
-    let attributedString = NSMutableAttributedString()
-    attributedString.append(NSAttributedString(string: position, attributes: normalAttributes))
-    if !position.isEmpty && !company.isEmpty {
-      attributedString.append(NSAttributedString(string: " " + "at".localized + " ", attributes: atAttributes))
-    }
-    attributedString.append(NSAttributedString(string: company, attributes: normalAttributes))
-
-    cell.positionAtCompanyLabel.attributedText = attributedString
+    cell.positionAtCompanyLabel.attributedText =
+    AttributedSentenceHelper.Preposition.at.concatString(firstPartString: userEntity.position,
+                                                         secondPartString: userEntity.company)
   }
 }

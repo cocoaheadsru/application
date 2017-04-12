@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDelegate {
+class PastEventsViewController: UIViewController {
   @IBOutlet fileprivate var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -25,7 +25,6 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     tableView.registerNibs(from: displayCollection)
 
     title = "Past".localized
-
     fetchEvents()
   }
 
@@ -33,9 +32,6 @@ class PastEventsViewController: UIViewController, PastEventsDisplayCollectionDel
     return TabBarItemView.create(with: .past)
   }
 
-  func shouldPresent(viewController: UIViewController) {
-    navigationController?.pushViewController(viewController, animated: true)
-  }
 }
 
 extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -61,14 +57,9 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 fileprivate extension PastEventsViewController {
-
   func fetchEvents() {
-    Server.standard.request(EventPlainObject.Requests.pastList, completion: { list, error in
-      guard let list = list,
-        error == nil else { return }
-
-      EventPlainObjectTranslation.translate(of: list, to: nil)
-      self.tableView.reloadData()
+    EventFetching.fetchElements(request: EventPlainObject.Requests.pastList, completion: { [weak self] in
+      self?.tableView.reloadData()
     })
   }
 }

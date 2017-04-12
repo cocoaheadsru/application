@@ -23,9 +23,11 @@ class MainViewController: UIViewController {
 
     displayCollection = MainViewDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
+    displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
+    fetchEvents()
 
     // Do any additional setup after loading the view.
   }
@@ -55,5 +57,13 @@ extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+fileprivate extension MainViewController {
+  func fetchEvents() {
+    EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in
+      self?.tableView.reloadData()
+    })
   }
 }
