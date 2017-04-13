@@ -19,7 +19,7 @@ class ActionCellConfigurationController {
     switch  type {
     case .reminders:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Включите оповещения, чтобы не пропустить событие".localized,
+        actionPlainObject = ActionPlainObject(text: "Включите напоминания, чтобы не пропустить событие".localized,
                                               imageName: "img_icon_notification", action: {
                                               self.requireAccess(from: viewController, to: type,
                                                                  with: action)
@@ -36,7 +36,16 @@ class ActionCellConfigurationController {
         })
         return actionPlainObject
       }
-    case .camera, .photosLibrary, .notifications:
+    case .notifications:
+      if !PermissionsManager.isAllowed(type: type) {
+        actionPlainObject = ActionPlainObject(text: "Включите оповещения, чтобы не пропустить анонсы".localized,
+                                              imageName: "img_icon_notification", action: {
+                                                self.requireAccess(from: viewController, to: type,
+                                                                   with: action)
+        })
+        return actionPlainObject
+      }
+    case .photosLibrary, .camera:
       break
     }
     return nil

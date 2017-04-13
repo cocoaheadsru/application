@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Seems that is most optimal way now to swizzle, without adding Obj-c code into project
     SwizzlingController.swizzleMethods()
 
+    UNUserNotificationCenter.current().delegate = self
+    if PermissionsManager.isAllowed(type: .notifications) {
+      PushNotificationController.configureNotification()
+    }
     return true
   }
 
@@ -30,4 +34,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler([.alert])
+  }
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.makeKeyAndVisible()
+
+    PushNotificationController.getAction(from: response, on: self.window)
+    completionHandler()
+  }
 }
