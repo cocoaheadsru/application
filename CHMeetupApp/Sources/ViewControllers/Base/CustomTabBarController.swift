@@ -84,6 +84,7 @@ public class CustomTabBar: UITabBar {
           view.alpha = 0.0
         }
       }
+      subviews.first?.alpha = alpha
     }
   }
 
@@ -169,7 +170,7 @@ public class CustomTabBarController: UITabBarController {
     }
 
     tabBar.alpha = 1
-    tabBar.shadowImage = UIImage()
+    tabBar.shadowImage = #imageLiteral(resourceName: "img_tab-bar_border")
     tabBar.backgroundImage = UIImage()
   }
 
