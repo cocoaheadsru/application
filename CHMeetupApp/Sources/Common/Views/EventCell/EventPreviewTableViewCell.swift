@@ -77,17 +77,20 @@ class EventPreviewTableViewCell: PlateTableViewCell {
       height -= goingButtonHeight
     }
 
-    if participantsCollectionView.imagesCollection.count == 0 {
+    if participantsCollectionView.emptyImagesCollection {
       height -= parcicipantsHeight
+      height -= separationView.frame.height
     }
 
     return CGSize(width: targetSize.width, height: height)
   }
+
 }
 
 extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
   func participantsCollectionViewWillUpdateData(view: PhotosPresentationView) {
-    if view.imagesCollection.count == 0 {
+    if view.emptyImagesCollection {
+      separationView.isHidden = true
       participantsCollectionViewHeightConstraint.constant = 0
       participantsCollectionViewTopConstraint.constant = 0
     } else {
