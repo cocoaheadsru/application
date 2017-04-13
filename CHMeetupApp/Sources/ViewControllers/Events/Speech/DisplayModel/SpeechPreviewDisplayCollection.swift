@@ -64,9 +64,10 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     let type = sections[indexPath.section]
     switch type {
     case .contentCells:
-      let content = URL(string: speech.contents[indexPath.row].linkURL)!
-      let safari = SFSafariViewController(url: content, entersReaderIfAvailable: true)
-      delegate?.present(viewController: safari)
+      if let url = URL(string: speech.contents[indexPath.row].linkURL) {
+        let safari = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        delegate?.present(viewController: safari)
+      }
     case .speaker, .speech:
       break
     }
