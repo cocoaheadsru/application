@@ -89,6 +89,7 @@
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
+		4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */; };
 		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
 		4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */; };
 		4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */; };
@@ -315,6 +316,7 @@
 		328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounding.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
+		4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationController.swift; path = PushNotification/PushNotificationController.swift; sourceTree = "<group>"; };
 		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+RoundCorners.swift"; path = "UIImageView/UIImageView+RoundCorners.swift"; sourceTree = "<group>"; };
 		4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCell.swift; path = ActionCell/ActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D8851001E9F8F6900A49ADD /* PushNotifications */,
 				9F487A701E73F2A90016CE0B /* Appearance */,
 				9F42ACC91E89C7540099AB6A /* Swizzling Controller */,
 				4D0E6B541E86E0D100C44DC0 /* ActionCellConfigurationController */,
@@ -1189,6 +1192,14 @@
 				4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */,
 			);
 			name = ActionCellConfigurationController;
+			sourceTree = "<group>";
+		};
+		4D8851001E9F8F6900A49ADD /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */,
+			);
+			name = PushNotifications;
 			sourceTree = "<group>";
 		};
 		4D9DEA291E9543C800260264 /* UIImageView */ = {
@@ -2053,6 +2064,7 @@
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
+				4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
