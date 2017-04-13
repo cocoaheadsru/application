@@ -23,6 +23,11 @@ class PhotosPresentationView: UIView {
     }
   }
 
+  // If participants collection view is empty
+  var emptyImagesCollection: Bool {
+    return self.imagesCollection.count == 0
+  }
+
   open var borderColor: CGColor = UIColor.white.cgColor
 
   override func layoutSubviews() {
