@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EventPreviewTableViewCellDelegate: class {
+  func acceptAction()
+}
+
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int

@@ -71,6 +71,11 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     }
   }
 
+  func acceptAction() {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    delegate?.push(viewController: viewController)
+  }
+
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:

@@ -49,6 +49,9 @@ extension MainViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    if let cell = cell as? EventPreviewTableViewCell {
+      cell.delegate = self
+    }
     return cell
   }
 }
@@ -57,6 +60,12 @@ extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+extension MainViewController: EventPreviewTableViewCellDelegate {
+  func acceptAction() {
+    displayCollection.acceptAction()
   }
 }
 

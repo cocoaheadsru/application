@@ -29,6 +29,11 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return modelCollection.count
   }
 
+  func acceptAction() {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    delegate?.push(viewController: viewController)
+  }
+
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
   }

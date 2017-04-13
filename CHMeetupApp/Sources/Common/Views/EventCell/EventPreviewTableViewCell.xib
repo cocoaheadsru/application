@@ -81,6 +81,9 @@
                             <constraint firstAttribute="height" constant="58" id="14e-JV-zkH"/>
                         </constraints>
                         <state key="normal" title="Я пойду"/>
+                        <connections>
+                            <action selector="goingButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vYs-QG-dyb"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -108,7 +111,7 @@
             <connections>
                 <outlet property="dateLabel" destination="d41-dn-D4t" id="kAx-NB-3Jg"/>
                 <outlet property="eventImageView" destination="1ug-Ek-gDp" id="O1y-Zi-Bbf"/>
-                <outlet property="goingButton" destination="9pO-3W-VoY" id="e8I-IJ-Kxi"/>
+                <outlet property="goingButton" destination="9pO-3W-VoY" id="r0q-QI-YZb"/>
                 <outlet property="nameLabel" destination="jhq-qS-4iF" id="3xG-EL-SxK"/>
                 <outlet property="participantsCollectionView" destination="STc-dX-eKl" id="fPA-jy-BWH"/>
                 <outlet property="participantsCollectionViewHeightConstraint" destination="JII-H7-bWj" id="7e8-s0-xou"/>
