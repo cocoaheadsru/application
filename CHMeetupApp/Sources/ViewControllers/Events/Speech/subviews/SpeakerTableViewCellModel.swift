@@ -16,9 +16,8 @@ extension SpeakerTableViewCellModel: CellViewModelType {
   func setup(on cell: SpeakerTableViewCell) {
     cell.fullNameLabel.text = speaker.fullName
 
-    // FIXME: - Replace with kingfisher or image loading wrapper
-    if let photoURL = speaker.photoURL, let url = URL(string: photoURL), let photoData = try? Data(contentsOf: url) {
-        cell.avatarImageView.image = UIImage(data: photoData)
+    if let photoURL = speaker.photoURL, let url = URL(string: photoURL) {
+      cell.avatarImageView.loadImage(from: url)
     }
 
     cell.descriptionLabel.attributedText =
