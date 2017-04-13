@@ -11,15 +11,6 @@ import UIKit
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
-  let participantsImageNames: [String] = [
-    "img_photo_participant-alex",
-    "img_photo_participant-sam",
-    "img_photo_participant-misha",
-    "img_photo_participant-max",
-    "img_photo_participant-kirill",
-    "img_photo_participant-egor",
-    "img_photo_participant-dima"
-  ]
 }
 
 extension EventPreviewTableViewCellModel: CellViewModelType {
@@ -34,10 +25,15 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
 
     cell.isEnabledForRegistration = event.isRegistrationOpen
 
-    var images: [UIImage] = []
-    for index in 0 ..< min(event.speakerPhotosURLs.count, participantsImageNames.count) {
-      images.append(UIImage(named: participantsImageNames[index])!)
+    cell.participantsCollectionView.imagesCollection.removeAll()
+    let loader = KingfisherImageLoader()
+    for photoURL in event.speakerPhotosURLs.map({ $0.value }) {
+      guard let url = URL(string: photoURL) else { continue }
+      _ = loader.loadImage(from: url, completionHandler: { image, _ in
+        if let image = image {
+          cell.participantsCollectionView.imagesCollection.append(image)
+        }
+      })
     }
-    cell.participantsCollectionView.imagesCollection = images
   }
 }
