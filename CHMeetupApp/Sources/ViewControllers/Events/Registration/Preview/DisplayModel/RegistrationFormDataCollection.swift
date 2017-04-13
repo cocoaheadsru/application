@@ -13,6 +13,7 @@ protocol FormDisplayCollectionDelegate: class {
                             deselectItemsAt deselectIndexPaths: [IndexPath])
   func formDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell?
   func formDisplayRequestTouchGeuster(enable: Bool)
+  func scrollTo(section id: Int)
 }
 
 final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
@@ -127,13 +128,16 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   }
 
   func checkRequired() -> Bool {
-    for section in formData.sections where section.isRequired {
+    for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {
         checked = row.answer.pasrseAnswers().0 || row.answer.pasrseAnswers().1.characters.count > 0
         if checked { break }
       }
-      if !checked { return false }
+      if !checked {
+        delegate?.scrollTo(section: index)
+        return false
+      }
     }
     return true
   }
