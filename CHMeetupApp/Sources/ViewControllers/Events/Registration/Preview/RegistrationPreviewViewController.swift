@@ -81,6 +81,8 @@ class RegistrationPreviewViewController: UIViewController {
       registrate(completion: {
         presentRegistrationConfirmViewController()
       })
+    } else {
+      self.showMessageAlert(title: "Заполните необходимые поля".localized)
     }
   }
 
@@ -150,10 +152,6 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
 
   func formDisplayRequestTouchGeuster(enable: Bool) {
     dissmisKeyboardTouch.isEnabled = enable
-  }
-
-  func checkBottomButton() {
-    bottomButton.isEnabled = displayCollection.checkRequired()
   }
 
   func scrollTo(section id: Int) {
