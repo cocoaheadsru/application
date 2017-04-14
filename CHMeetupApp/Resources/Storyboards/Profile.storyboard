@@ -62,7 +62,7 @@
                                                     <action selector="loginAction:" destination="nXW-7Y-Ke7" eventType="touchUpInside" id="gaN-Zn-Hsf"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tw" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Mt-f4Q" customClass="ActionButton" customModule="CHMeetupApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="96" width="256" height="40"/>
                                                 <color key="backgroundColor" red="0.30612394213676453" green="0.7424468994140625" blue="0.93023401498794556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
