@@ -11,6 +11,8 @@ import UIKit
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
+
+  let imageLoaderCell = ImageLoaderCellImpl.shared
 }
 
 extension EventPreviewTableViewCellModel: CellViewModelType {
@@ -26,14 +28,10 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.isEnabledForRegistration = event.isRegistrationOpen
 
     cell.participantsCollectionView.imagesCollection.removeAll()
-    let loader = KingfisherImageLoader()
-    for photoURL in event.speakerPhotosURLs.map({ $0.value }) {
-      guard let url = URL(string: photoURL) else { continue }
-      _ = loader.loadImage(from: url, completionHandler: { image, _ in
-        if let image = image {
-          cell.participantsCollectionView.imagesCollection.append(image)
-        }
-      })
-    }
+    imageLoaderCell.loadImagesCell(cell.hashValue,
+                                    urls: event.speakerPhotosURLs.map({ URL(string: $0.value) }).flatMap({ $0 }),
+                                    completionHandler: { images in
+      cell.participantsCollectionView.imagesCollection = images
+    })
   }
 }
