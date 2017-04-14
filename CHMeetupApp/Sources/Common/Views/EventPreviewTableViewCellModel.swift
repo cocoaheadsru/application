@@ -9,12 +9,13 @@
 import UIKit
 
 protocol EventPreviewTableViewCellDelegate: class {
-  func acceptAction()
+  func acceptButtonDidPressed(on eventCell: EventPreviewTableViewCell)
 }
 
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
+  weak var delegate: EventPreviewTableViewCellDelegate?
   let participantsImageNames: [String] = [
     "img_photo_participant-alex",
     "img_photo_participant-sam",
@@ -43,5 +44,6 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
       images.append(UIImage(named: participantsImageNames[index])!)
     }
     cell.participantsCollectionView.imagesCollection = images
+    cell.delegate = delegate
   }
 }

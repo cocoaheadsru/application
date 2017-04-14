@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     displayCollection = MainViewDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
+    displayCollection.getTableViewDelegate = self
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
@@ -49,9 +50,6 @@ extension MainViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
-    if let cell = cell as? EventPreviewTableViewCell {
-      cell.delegate = self
-    }
     return cell
   }
 }
@@ -63,9 +61,9 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
-extension MainViewController: EventPreviewTableViewCellDelegate {
-  func acceptAction() {
-    displayCollection.acceptAction()
+extension MainViewController: TableViewGetDelegate {
+  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
+    return tableView.indexPath(for: cell)
   }
 }
 

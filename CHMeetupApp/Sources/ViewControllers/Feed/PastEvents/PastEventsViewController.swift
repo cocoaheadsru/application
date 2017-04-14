@@ -22,6 +22,7 @@ class PastEventsViewController: UIViewController {
 
     displayCollection = PastEventsDisplayCollection()
     displayCollection.delegate = self
+    displayCollection.getTableViewDelegate = self
     tableView.registerNibs(from: displayCollection)
 
     title = "Past".localized
@@ -47,9 +48,6 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
-    if let cell = cell as? EventPreviewTableViewCell {
-      cell.delegate = self
-    }
     return cell
   }
 
@@ -59,9 +57,9 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   }
 }
 
-extension PastEventsViewController: EventPreviewTableViewCellDelegate {
-  func acceptAction() {
-    displayCollection.acceptAction()
+extension PastEventsViewController: TableViewGetDelegate {
+  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
+    return tableView.indexPath(for: cell)
   }
 }
 

@@ -19,6 +19,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   weak var delegate: DisplayCollectionDelegate?
+  weak var getTableViewDelegate: TableViewGetDelegate?
 
   private var sections: [Type] = [.events, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
@@ -71,15 +72,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     }
   }
 
-  func acceptAction() {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-    delegate?.push(viewController: viewController)
-  }
-
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row, delegate: self)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
@@ -95,5 +91,18 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
+  }
+}
+
+extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
+  func acceptButtonDidPressed(on eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = getTableViewDelegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    _ = modelCollection[indexPath.row] // event
+    // TODO: - send model
+    delegate?.push(viewController: viewController)
   }
 }

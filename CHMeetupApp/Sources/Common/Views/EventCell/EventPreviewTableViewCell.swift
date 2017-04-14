@@ -69,8 +69,8 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     return 64
   }
 
-  @IBAction func goingButtonAction(_ sender: Any) {
-    delegate?.acceptAction()
+  @IBAction fileprivate func goingButtonAction(_ sender: Any) {
+    delegate?.acceptButtonDidPressed(on: self)
   }
 
   // Now would calculate manually

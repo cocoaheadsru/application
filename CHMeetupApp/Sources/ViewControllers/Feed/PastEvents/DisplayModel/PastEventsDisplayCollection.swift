@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self]
   }
@@ -20,6 +20,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }()
 
   weak var delegate: DisplayCollectionDelegate?
+  weak var getTableViewDelegate: TableViewGetDelegate?
 
   var numberOfSections: Int {
     return 1
@@ -29,18 +30,26 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return modelCollection.count
   }
 
-  func acceptAction() {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-    delegate?.push(viewController: viewController)
-  }
-
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row, delegate: self)
   }
 
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
+  }
+}
+
+extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
+  func acceptButtonDidPressed(on eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = getTableViewDelegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    _ = modelCollection[indexPath.row] // event
+    // TODO: - send model
+    delegate?.push(viewController: viewController)
   }
 }
