@@ -89,6 +89,7 @@
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
+		4D1CD1DB1EA4F7D6002E5811 /* GetPushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */; };
 		4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */; };
 		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
 		4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */; };
@@ -316,6 +317,7 @@
 		328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounding.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
+		4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPushNotificationController.swift; path = PushNotification/GetPushNotification/GetPushNotificationController.swift; sourceTree = "<group>"; };
 		4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationController.swift; path = PushNotification/PushNotificationController.swift; sourceTree = "<group>"; };
 		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+RoundCorners.swift"; path = "UIImageView/UIImageView+RoundCorners.swift"; sourceTree = "<group>"; };
@@ -1194,9 +1196,18 @@
 			name = ActionCellConfigurationController;
 			sourceTree = "<group>";
 		};
+		4D1CD1D91EA4F7AD002E5811 /* GetPushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */,
+			);
+			name = GetPushNotification;
+			sourceTree = "<group>";
+		};
 		4D8851001E9F8F6900A49ADD /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
+				4D1CD1D91EA4F7AD002E5811 /* GetPushNotification */,
 				4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */,
 			);
 			name = PushNotifications;
@@ -2027,6 +2038,7 @@
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
+				4D1CD1DB1EA4F7D6002E5811 /* GetPushNotificationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* UserTableViewHeaderModel.swift in Sources */,
 				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
 				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
