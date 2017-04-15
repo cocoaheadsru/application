@@ -39,13 +39,21 @@ final class ProfileViewDisplayCollection: DisplayCollection {
 
   init(with delegate: DisplayCollectionDelegate?) {
     self.delegate = delegate
+
     let giveSpeechObject = ActionPlainObject(text: "Give a speech".localized, imageName: nil) {
       let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
       delegate?.push(viewController: giveSpeech)
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
 
+    let creatorsObject = ActionPlainObject(text: "Creators".localized, imageName: nil) {
+      let creators = Storyboards.Profile.instantiateCreatorsViewController()
+      delegate?.push(viewController: creators)
+    }
+    let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
+
     userActions.append(giveSpeechAction)
+    userActions.append(creatorsAction)
   }
 
   func numberOfRows(in section: Int) -> Int {
