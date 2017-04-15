@@ -77,7 +77,9 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrationButtonAction() {
-    if displayCollection.checkRequired() {
+    if let failedSection = displayCollection.failedSection {
+      showFailed(for: failedSection)
+    } else {
       registrate(completion: {
         presentRegistrationConfirmViewController()
       })
@@ -152,15 +154,12 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
     dissmisKeyboardTouch.isEnabled = enable
   }
 
-  func scrollTo(section id: Int) {
-    let indexPath = IndexPath(row: 0, section: id)
+  func showFailed(for section: Int) {
+    let indexPath = IndexPath(row: 0, section: section)
     tableView.scrollToRow(at: indexPath, at: .top, animated: true)
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-      let sectionHeaderView = self.tableView.headerView(forSection: id)
-      if let headerView = sectionHeaderView {
-        headerView.failedShake()
-      }
+      self.tableView.failedShakeSection(section)
     }
   }
 }
