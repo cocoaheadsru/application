@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayCollection = ProfileViewDisplayCollection()
+    displayCollection = ProfileViewDisplayCollection(with: self)
     tableView.registerNibs(from: displayCollection)
 
     title = displayCollection.user.fullName
@@ -65,5 +65,6 @@ extension ProfileViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    displayCollection.didSelect(indexPath: indexPath)
   }
 }
