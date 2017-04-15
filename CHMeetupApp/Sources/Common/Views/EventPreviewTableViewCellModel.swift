@@ -11,8 +11,7 @@ import UIKit
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
-
-  let imageLoaderCell = ImageLoaderCellImpl.shared
+  let groupImageLoader: GroupImageLoader
 }
 
 extension EventPreviewTableViewCellModel: CellViewModelType {
@@ -28,9 +27,11 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.isEnabledForRegistration = event.isRegistrationOpen
 
     cell.participantsCollectionView.imagesCollection.removeAll()
-    imageLoaderCell.loadImagesCell(cell.hashValue,
-                                    urls: event.speakerPhotosURLs.map({ URL(string: $0.value) }).flatMap({ $0 }),
-                                    completionHandler: { images in
+    groupImageLoader.loadImages(groupId: cell.hashValue,
+                                urls: event.speakerPhotosURLs
+                                  .map({ URL(string: $0.value) })
+                                  .flatMap({ $0 }),
+                                completionHandler: { images in
       cell.participantsCollectionView.imagesCollection = images
     })
   }
