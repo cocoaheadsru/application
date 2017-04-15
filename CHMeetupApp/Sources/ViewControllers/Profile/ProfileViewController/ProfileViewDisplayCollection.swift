@@ -52,8 +52,15 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     }
     let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
 
+    let askQuestionObject = ActionPlainObject(text: "Ask a question".localized, imageName: nil) {
+      let askQuestion = Storyboards.Profile.instantiateAskQuestionViewController()
+      delegate?.push(viewController: askQuestion)
+    }
+    let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
+
     userActions.append(giveSpeechAction)
     userActions.append(creatorsAction)
+    userActions.append(askQuestionAction)
   }
 
   func numberOfRows(in section: Int) -> Int {

@@ -271,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="34.632683658170919"/>
         </scene>
-        <!--Creators-->
+        <!--CREATORS-->
         <scene sceneID="KUp-f3-TqP">
             <objects>
                 <viewController storyboardIdentifier="CreatorsViewController" hidesBottomBarWhenPushed="YES" id="Sx5-x1-FwB" customClass="CreatorsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -297,11 +297,43 @@
                             <constraint firstItem="sPX-sI-7bs" firstAttribute="top" secondItem="433-3g-IEQ" secondAttribute="top" id="vCJ-6S-x2e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Creators" id="fS4-bv-CG3"/>
+                    <navigationItem key="navigationItem" title="CREATORS" id="fS4-bv-CG3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVc-HU-3DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3161" y="810"/>
+        </scene>
+        <!--Ask a question-->
+        <scene sceneID="8Ly-94-gai">
+            <objects>
+                <viewController storyboardIdentifier="AskQuestionViewController" hidesBottomBarWhenPushed="YES" id="bFo-pD-aJt" customClass="AskQuestionViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gZ-EQ-KvR"/>
+                        <viewControllerLayoutGuide type="bottom" id="s5p-go-A6e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Im6-lr-7GF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-8N-fC0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s5p-go-A6e" firstAttribute="top" secondItem="yKq-8N-fC0" secondAttribute="bottom" id="7lU-Bk-9o1"/>
+                            <constraint firstItem="yKq-8N-fC0" firstAttribute="leading" secondItem="Im6-lr-7GF" secondAttribute="leading" id="Obt-ca-yPs"/>
+                            <constraint firstItem="yKq-8N-fC0" firstAttribute="top" secondItem="Im6-lr-7GF" secondAttribute="top" id="k6e-SJ-JfW"/>
+                            <constraint firstAttribute="trailing" secondItem="yKq-8N-fC0" secondAttribute="trailing" id="lSt-5r-u6s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ask a question" id="8Nm-Iz-E0v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAb-ki-7gH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3908" y="811"/>
         </scene>
     </scenes>
     <resources>
