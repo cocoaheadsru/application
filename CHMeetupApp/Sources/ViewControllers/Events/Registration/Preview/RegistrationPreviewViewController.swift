@@ -81,8 +81,6 @@ class RegistrationPreviewViewController: UIViewController {
       registrate(completion: {
         presentRegistrationConfirmViewController()
       })
-    } else {
-      self.showMessageAlert(title: "Заполните необходимые поля".localized)
     }
   }
 
@@ -157,6 +155,13 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
   func scrollTo(section id: Int) {
     let indexPath = IndexPath(row: 0, section: id)
     tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+      let sectionHeaderView = self.tableView.headerView(forSection: id)
+      if let headerView = sectionHeaderView {
+        headerView.failedShake()
+      }
+    }
   }
 }
 
