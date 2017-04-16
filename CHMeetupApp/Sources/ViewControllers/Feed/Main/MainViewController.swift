@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
-    title = "Main".localized
+    title = "CocoaHeads Russia".localized
     fetchEvents()
 
     // Do any additional setup after loading the view.

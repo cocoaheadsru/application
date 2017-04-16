@@ -30,7 +30,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Auth".localized
+    title = "Авторизация".localized
     // FIXME: delete it when implement twitter auth
     authButtons[2].isHidden = true
   }
@@ -45,7 +45,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
 
     auth.login(with: authResourceType, from: self) { [weak self] (user, error) in
       guard let user = user, error == nil else {
-        self?.showMessageAlert(title: "Error".localized, message: "Error with login has occured".localized)
+        self?.showMessageAlert(title: "Ошибка".localized, message: "Не удалось авторизоваться".localized)
         return
       }
       LoginProcessController.setCurrentUser(user)

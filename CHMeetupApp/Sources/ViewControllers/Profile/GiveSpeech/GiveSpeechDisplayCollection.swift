@@ -47,7 +47,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
                                                 self?.nameText = value
       })
     case .description:
-      return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваша речь?".localized,
+      return TextViewPlateTableViewCellModel(placeholder: "О чем будет Ваш доклад?".localized,
                                              textViewDelegate: self,
                                              delegate: self)
     }

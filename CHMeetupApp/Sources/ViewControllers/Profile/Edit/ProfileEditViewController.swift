@@ -13,6 +13,6 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
+    title = "Изменение профиля".localized
   }
 }
