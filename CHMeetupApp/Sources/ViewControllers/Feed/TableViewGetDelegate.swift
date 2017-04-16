@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol TableViewGetDelegate: class {
+protocol DisplayCollectionWithTableViewDelegate: DisplayCollectionDelegate {
   func getIndexPath(from cell: UITableViewCell) -> IndexPath?
 }

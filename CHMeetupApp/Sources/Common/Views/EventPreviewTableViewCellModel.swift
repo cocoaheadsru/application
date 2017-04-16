@@ -9,22 +9,13 @@
 import UIKit
 
 protocol EventPreviewTableViewCellDelegate: class {
-  func acceptButtonDidPressed(on eventCell: EventPreviewTableViewCell)
+  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell)
 }
 
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
   weak var delegate: EventPreviewTableViewCellDelegate?
-  let participantsImageNames: [String] = [
-    "img_photo_participant-alex",
-    "img_photo_participant-sam",
-    "img_photo_participant-misha",
-    "img_photo_participant-max",
-    "img_photo_participant-kirill",
-    "img_photo_participant-egor",
-    "img_photo_participant-dima"
-  ]
   let groupImageLoader: GroupImageLoader
 }
 
@@ -39,12 +30,6 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     }
 
     cell.isEnabledForRegistration = event.isRegistrationOpen
-
-    var images: [UIImage] = []
-    for index in 0 ..< min(event.speakerPhotosURLs.count, participantsImageNames.count) {
-      images.append(UIImage(named: participantsImageNames[index])!)
-    }
-    cell.participantsCollectionView.imagesCollection = images
     cell.delegate = delegate
     cell.participantsCollectionView.imagesCollection.removeAll()
     let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]

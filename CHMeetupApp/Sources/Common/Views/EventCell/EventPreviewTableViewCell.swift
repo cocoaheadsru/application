@@ -70,7 +70,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   }
 
   @IBAction fileprivate func goingButtonAction(_ sender: Any) {
-    delegate?.acceptButtonDidPressed(on: self)
+    delegate?.acceptButtonPressed(on: self)
   }
 
   // Now would calculate manually

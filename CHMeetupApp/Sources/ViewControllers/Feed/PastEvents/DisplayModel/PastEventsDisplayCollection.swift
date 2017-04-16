@@ -19,8 +19,7 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
     return modelCollection
   }()
 
-  weak var delegate: DisplayCollectionDelegate?
-  weak var getTableViewDelegate: TableViewGetDelegate?
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
 
   let groupImageLoader = GroupImageLoader.standard
 
@@ -47,14 +46,13 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
 }
 
 extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
-  func acceptButtonDidPressed(on eventCell: EventPreviewTableViewCell) {
+  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell) {
     let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-    guard let indexPath = getTableViewDelegate?.getIndexPath(from: eventCell) else {
+    guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
       assertionFailure("IndexPath is unknown")
       return
     }
-    _ = modelCollection[indexPath.row] // event
-    // TODO: - send model
+    viewController.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: viewController)
   }
 }

@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
     displayCollection = MainViewDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
-    displayCollection.getTableViewDelegate = self
     tableView.registerNibs(from: displayCollection)
 
     title = "Main".localized
@@ -61,7 +60,7 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
-extension MainViewController: TableViewGetDelegate {
+extension MainViewController: DisplayCollectionWithTableViewDelegate {
   func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
     return tableView.indexPath(for: cell)
   }
