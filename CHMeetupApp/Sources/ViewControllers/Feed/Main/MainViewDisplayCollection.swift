@@ -26,6 +26,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   private var indexPath: IndexPath?
 
+  let groupImageLoader = GroupImageLoader.standard
+
   func configureActionCellsSection(on viewController: UIViewController,
                                    with tableView: UITableView) {
     let actionCell = ActionCellConfigurationController()
@@ -75,7 +77,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row, delegate: self)
+      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+                                            index: indexPath.row,
+                                            delegate: self,
+                                            groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
