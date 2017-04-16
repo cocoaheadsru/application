@@ -24,7 +24,7 @@ class PastEventsViewController: UIViewController {
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
-    title = "Past".localized
+    title = "Прошедшие встречи".localized
     fetchEvents()
   }
 

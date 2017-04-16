@@ -42,7 +42,7 @@ class EventPreviewViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Event Preview".localized
+    title = "Встреча".localized
 
     view.backgroundColor = UIColor(.lightGray)
 
