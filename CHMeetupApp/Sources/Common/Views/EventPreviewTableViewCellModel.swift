@@ -27,10 +27,9 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.isEnabledForRegistration = event.isRegistrationOpen
 
     cell.participantsCollectionView.imagesCollection.removeAll()
+    let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
     groupImageLoader.loadImages(groupId: cell.hashValue,
-                                urls: event.speakerPhotosURLs
-                                  .map({ URL(string: $0.value) })
-                                  .flatMap({ $0 }),
+                                urls: urls,
                                 completionHandler: { images in
       cell.participantsCollectionView.imagesCollection = images
     })

@@ -25,37 +25,41 @@ class GroupImageLoader {
     let loaderTask: ImageLoaderTask
   }
 
-  typealias GroupTasks = [Int: [Task]]
   typealias CompletionBlock = (_ images: [UIImage]) -> Void
 
-  private var groupTasks = GroupTasks()
+  private var groupTasks = [Int: [Task]]()
 
   func loadImages(groupId id: Int, urls: [URL], completionHandler: CompletionBlock? = nil) {
 
-    if let tasks = groupTasks[id] { // get tasks for id
-      if urls != tasks.map { $0.url } { // if url list has changed
-        _ = tasks.map { loader.cancel($0.loaderTask) } // cancel all loader tasks
-        groupTasks[id] = nil // removed id
+    if let tasks = groupTasks[id] {
+      if urls != tasks.map { $0.url } {
+        for task in tasks {
+          loader.cancel(task.loaderTask)
+        }
+        groupTasks.removeValue(forKey: id)
       } else {
         return
       }
     }
 
-    var images = [UIImage](repeating: UIImage(), count: urls.count) // for save order
+    var images = [UIImage](repeating: UIImage(), count: urls.count)
     var tasks = [Task]()
     let group = DispatchGroup()
     for (index, url) in urls.enumerated() {
       group.enter()
-      let task = Task(url: url, loaderTask: loader.loadImage(from: url, completionHandler: { image, _ in
-        if let image = image { images[index] = image } // by index for save order
+      let loaderImage = loader.loadImage(from: url, completionHandler: { image, _ in
+        if let image = image {
+          images[index] = image
+        }
         group.leave()
-      }))
+      })
+      let task = Task(url: url, loaderTask: loaderImage)
       tasks.append(task)
     }
     groupTasks[id] = tasks
 
     group.notify(queue: DispatchQueue.main) {
-      self.groupTasks[id] = nil // clean tasks for cell
+      self.groupTasks.removeValue(forKey: id)
       if let completionHandler = completionHandler {
         completionHandler(images)
       }
