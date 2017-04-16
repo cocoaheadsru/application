@@ -56,6 +56,12 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   }
 }
 
+extension PastEventsViewController: DisplayCollectionWithTableViewDelegate {
+  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
+    return tableView.indexPath(for: cell)
+  }
+}
+
 fileprivate extension PastEventsViewController {
   func fetchEvents() {
     EventFetching.fetchElements(request: EventPlainObject.Requests.pastList, completion: { [weak self] in

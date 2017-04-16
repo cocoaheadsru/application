@@ -18,7 +18,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case actionButtons
   }
 
-  weak var delegate: DisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
 
   private var sections: [Type] = [.events, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
@@ -78,6 +78,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .events:
       return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
                                             index: indexPath.row,
+                                            delegate: self,
                                             groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
@@ -94,5 +95,17 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
+  }
+}
+
+extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
+  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    viewController.selectedEventId = modelCollection[indexPath.row].id
+    delegate?.push(viewController: viewController)
   }
 }

@@ -63,6 +63,7 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   var dissmisKeyboardTouch: UITapGestureRecognizer!
+  var selectedEventId: Int!
 
   func setupGestureRecognizer() {
     dissmisKeyboardTouch =

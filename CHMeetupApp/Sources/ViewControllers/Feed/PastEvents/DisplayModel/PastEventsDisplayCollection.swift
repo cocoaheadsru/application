@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self]
   }
@@ -19,7 +19,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return modelCollection
   }()
 
-  weak var delegate: DisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
 
   let groupImageLoader = GroupImageLoader.standard
 
@@ -34,6 +34,7 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
                                           index: indexPath.row,
+                                          delegate: self,
                                           groupImageLoader: groupImageLoader)
   }
 
@@ -41,5 +42,17 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
+  }
+}
+
+extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
+  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    viewController.selectedEventId = modelCollection[indexPath.row].id
+    delegate?.push(viewController: viewController)
   }
 }

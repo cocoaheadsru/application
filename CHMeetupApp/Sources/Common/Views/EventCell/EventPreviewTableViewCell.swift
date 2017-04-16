@@ -57,6 +57,8 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     roundType = .all
   }
 
+  weak var delegate: EventPreviewTableViewCellDelegate?
+
   var parcicipantsHeight: CGFloat {
     // 36 paricipant view height, 12 is space from top
     return 48
@@ -65,6 +67,10 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   var goingButtonHeight: CGFloat {
     // Button with spaces height
     return 64
+  }
+
+  @IBAction fileprivate func goingButtonAction(_ sender: Any) {
+    delegate?.acceptButtonPressed(on: self)
   }
 
   // Now would calculate manually

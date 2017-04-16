@@ -14,7 +14,7 @@ class SpeakerTableViewCell: PlateTableViewCell {
     didSet {
       titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
       titleLabel.textColor = UIColor(.gray)
-      titleLabel.text = "Докладчик".localized + ":"
+      titleLabel.text = "Докладчик".localized
     }
   }
 

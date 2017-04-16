@@ -60,6 +60,12 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
+extension MainViewController: DisplayCollectionWithTableViewDelegate {
+  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
+    return tableView.indexPath(for: cell)
+  }
+}
+
 fileprivate extension MainViewController {
   func fetchEvents() {
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in

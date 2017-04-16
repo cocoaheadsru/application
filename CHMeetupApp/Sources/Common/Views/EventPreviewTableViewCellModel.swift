@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol EventPreviewTableViewCellDelegate: class {
+  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell)
+}
+
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
+  weak var delegate: EventPreviewTableViewCellDelegate?
   let groupImageLoader: GroupImageLoader
 }
 
@@ -25,7 +30,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     }
 
     cell.isEnabledForRegistration = event.isRegistrationOpen
-
+    cell.delegate = delegate
     cell.participantsCollectionView.imagesCollection.removeAll()
     let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
     groupImageLoader.loadImages(groupId: cell.hashValue,
