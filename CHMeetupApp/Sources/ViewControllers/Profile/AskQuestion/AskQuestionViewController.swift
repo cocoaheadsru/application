@@ -10,4 +10,9 @@ import UIKit
 
 class AskQuestionViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Задать вопрос".localized.uppercased()
+    }
 }

@@ -126,11 +126,11 @@
                         <viewControllerLayoutGuide type="top" id="O7C-1t-umU"/>
                         <viewControllerLayoutGuide type="bottom" id="nwW-pZ-9ia"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T2c-QD-Zwl">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="T2c-QD-Zwl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -189,7 +189,7 @@
             </objects>
             <point key="canvasLocation" x="2369" y="35"/>
         </scene>
-        <!--Give a Speech-->
+        <!--Give Speech View Controller-->
         <scene sceneID="UYl-eR-dga">
             <objects>
                 <viewController storyboardIdentifier="GiveSpeechViewController" hidesBottomBarWhenPushed="YES" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,15 +219,7 @@
                             <constraint firstItem="ZRv-Xe-9jk" firstAttribute="top" secondItem="dY2-b6-Nvf" secondAttribute="bottom" id="vu7-qj-jQq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo">
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="9Xy-Za-5xL">
-                            <connections>
-                                <action selector="sendSpeechButtonPressed:" destination="WaT-qA-jSi" id="E8c-Tx-hO8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="sendSpeechButton" destination="9Xy-Za-5xL" id="L5a-Ck-6Ft"/>
                         <outlet property="tableView" destination="dY2-b6-Nvf" id="DOA-5s-Dky"/>
                     </connections>
                 </viewController>
@@ -271,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="34.632683658170919"/>
         </scene>
-        <!--CREATORS-->
+        <!--Creators View Controller-->
         <scene sceneID="KUp-f3-TqP">
             <objects>
                 <viewController storyboardIdentifier="CreatorsViewController" hidesBottomBarWhenPushed="YES" id="Sx5-x1-FwB" customClass="CreatorsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -297,13 +289,12 @@
                             <constraint firstItem="sPX-sI-7bs" firstAttribute="top" secondItem="433-3g-IEQ" secondAttribute="top" id="vCJ-6S-x2e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CREATORS" id="fS4-bv-CG3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVc-HU-3DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3161" y="810"/>
         </scene>
-        <!--Ask a question-->
+        <!--Ask Question View Controller-->
         <scene sceneID="8Ly-94-gai">
             <objects>
                 <viewController storyboardIdentifier="AskQuestionViewController" hidesBottomBarWhenPushed="YES" id="bFo-pD-aJt" customClass="AskQuestionViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -329,7 +320,6 @@
                             <constraint firstAttribute="trailing" secondItem="yKq-8N-fC0" secondAttribute="trailing" id="lSt-5r-u6s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ask a question" id="8Nm-Iz-E0v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAb-ki-7gH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

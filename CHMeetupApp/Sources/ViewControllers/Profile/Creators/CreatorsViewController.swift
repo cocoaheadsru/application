@@ -10,4 +10,9 @@ import UIKit
 
 class CreatorsViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Создатели".localized.uppercased()
+    }
 }
