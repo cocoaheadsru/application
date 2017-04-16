@@ -202,6 +202,7 @@
 		F718C0331E966B58008B3C0B /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */; };
 		F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0341E966B6A008B3C0B /* ImageLoader.swift */; };
 		F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */; };
+		F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C4AAA1EA11CA000E7943C /* GroupImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +427,7 @@
 		F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
 		F718C0341E966B6A008B3C0B /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		F73C4AAA1EA11CA000E7943C /* GroupImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1722,6 +1724,7 @@
 			isa = PBXGroup;
 			children = (
 				F718C0321E966B58008B3C0B /* KingfisherImageLoader.swift */,
+				F73C4AAA1EA11CA000E7943C /* GroupImageLoader.swift */,
 			);
 			name = ImageLoader;
 			sourceTree = "<group>";
@@ -2045,6 +2048,7 @@
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
+				F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */,
 				4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */,
 				A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,

@@ -21,6 +21,8 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   weak var delegate: DisplayCollectionDelegate?
 
+  let groupImageLoader = GroupImageLoader.standard
+
   var numberOfSections: Int {
     return 1
   }
@@ -30,7 +32,9 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+                                          index: indexPath.row,
+                                          groupImageLoader: groupImageLoader)
   }
 
   func didSelect(indexPath: IndexPath) {
