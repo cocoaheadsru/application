@@ -104,7 +104,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     var deselectIndex: Int?
 
     for (index, value) in formData.sections[indexPath.section].fieldAnswers.enumerated() {
-      let result = value.answer.parseAnswers().0
+      let result = value.answer.parseAnswers().boolValue
       if result == true, index != indexPath.row {
         deselectIndex = index
         value.answer = .selection(isSelected: false)
@@ -130,7 +130,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {
-        checked = row.answer.parseAnswers().0 || row.answer.parseAnswers().1.characters.count > 0
+        checked = row.answer.parseAnswers().boolValue || row.answer.parseAnswers().stringValue.characters.count > 0
         if checked { break }
       }
       if !checked {
