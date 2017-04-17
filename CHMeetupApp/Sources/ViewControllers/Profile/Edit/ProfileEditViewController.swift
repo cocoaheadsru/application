@@ -20,7 +20,13 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    guard let user = UserPreferencesEntity.value.currentUser else {
+      fatalError("Authorization error")
+    }
     displayCollection = ProfileEditDisplayCollection()
+    displayCollection.user = user
+
     tableView.registerNibs(from: displayCollection)
 
     title = "Изменение профиля".localized
@@ -28,11 +34,10 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
 }
 
-// MARK: - TableView Data Source.
-
+// MARK: - UITableViewDelegate & UITableViewDataSource
 extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return displayCollection.sections.count
+    return displayCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

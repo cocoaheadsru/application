@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewDisplayCollection: DisplayCollection {
+struct ProfileViewDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [UserTableViewHeaderCellModel.self,
             LabelTableViewCellModel.self]

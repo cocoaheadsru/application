@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileEditDisplayCollection: DisplayCollection {
+struct ProfileEditDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [UserTableViewHeaderCellModel.self,
             LabelTableViewCellModel.self]
@@ -19,14 +19,9 @@ class ProfileEditDisplayCollection: DisplayCollection {
     case userContacts
   }
 
-  var sections: [Type] = [.userHeader, .userContacts]
+  fileprivate var sections: [Type] = [.userHeader, .userContacts]
 
-  var user: UserEntity {
-    guard let user = UserPreferencesEntity.value.currentUser else {
-      fatalError("Authorization error")
-    }
-    return user
-  }
+  var user: UserEntity!
 
   var numberOfSections: Int {
     return sections.count
