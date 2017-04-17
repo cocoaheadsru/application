@@ -94,17 +94,10 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
     return CGSize(width: targetSize.width, height: height)
   }
-
-  var isCollectionEmpty = false
 }
 
 extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
   func participantsCollectionViewWillUpdateData(view: PhotosPresentationView) {
-    if isCollectionEmpty == view.emptyImagesCollection {
-      return
-    }
-    isCollectionEmpty = view.emptyImagesCollection
-
     if view.emptyImagesCollection {
       separationView.isHidden = true
       participantsCollectionViewHeightConstraint.constant = 0
