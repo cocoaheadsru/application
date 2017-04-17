@@ -12,11 +12,13 @@ struct EventFetching: FetchingElements {
   static func fetchElements(request: Request<[EventPlainObject]>,
                             to parent: EventEntity? = nil, completion: (() -> Void)? = nil) {
     Server.standard.request(request, completion: { list, error in
+      defer {
+        DispatchQueue.main.async { completion?() }
+      }
+
       guard let list = list,
         error == nil else { return }
-
       EventPlainObjectTranslation.translate(of: list, to: parent)
-      completion?()
     })
   }
 }
