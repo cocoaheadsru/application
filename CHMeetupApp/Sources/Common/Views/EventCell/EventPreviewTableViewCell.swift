@@ -24,19 +24,19 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var nameLabel: UILabel! {
     didSet {
-      nameLabel.font = UIFont.appFont(.gothamPro(size: 17))
+      nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
     }
   }
 
   @IBOutlet var dateLabel: UILabel! {
     didSet {
-      dateLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
     }
   }
 
   @IBOutlet var placeLabel: UILabel! {
     didSet {
-      placeLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
     }
   }
 
@@ -81,7 +81,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    var height: CGFloat = 266
+    var height: CGFloat = 270
 
     if isEnabledForRegistration == false {
       height -= goingButtonHeight

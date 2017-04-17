@@ -12,7 +12,7 @@ class TextFieldPlateTableViewCell: PlateTableViewCell {
   @IBOutlet var textField: UITextField! {
     didSet {
       textField.textColor = UIColor(.darkGray)
-      textField.font = UIFont.appFont(.gothamPro(size: 16))
+      textField.font = UIFont.appFont(.avenirNextMedium(size: 17))
       textField.returnKeyType = .continue
     }
   }

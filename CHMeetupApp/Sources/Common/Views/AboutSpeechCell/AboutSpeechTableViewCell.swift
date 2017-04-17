@@ -12,19 +12,19 @@ class AboutSpeechTableViewCell: PlateTableViewCell {
 
   @IBOutlet var infoLabel: UILabel! {
     didSet {
-      infoLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
+      infoLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       infoLabel.textColor = .lightGray
     }
   }
   @IBOutlet var titleLabel: UILabel! {
     didSet {
-      titleLabel.font = UIFont.appFont(.gothamProMedium(size: 17))
+      titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
       titleLabel.textColor = .black
     }
   }
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       descriptionLabel.textColor = .black
     }
   }

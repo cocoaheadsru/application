@@ -26,7 +26,7 @@ class ActionTableViewCell: PlateTableViewCell {
 
   @IBOutlet var descriptionActionLabel: UILabel! {
     didSet {
-      descriptionActionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionActionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       descriptionActionLabel.textColor = UIColor(.darkGray)
     }
   }

@@ -12,7 +12,7 @@ class TextViewPlateTableViewCell: PlateTableViewCell {
   @IBOutlet var textView: TextViewWithPlaceholder! {
     didSet {
       textView.textColor = UIColor(.darkGray)
-      textView.font = UIFont.appFont(.gothamPro(size: 16))
+      textView.font = UIFont.appFont(.avenirNextMedium(size: 17))
       textView.updatePlacholderViewStyle()
     }
   }
