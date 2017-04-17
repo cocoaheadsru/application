@@ -16,7 +16,7 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())
     let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    return modelCollection
+    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
   }()
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
@@ -46,7 +46,7 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
 }
 
 extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
-  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell) {
+  func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
     let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
       assertionFailure("IndexPath is unknown")
