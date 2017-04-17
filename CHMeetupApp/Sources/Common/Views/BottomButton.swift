@@ -12,7 +12,7 @@ class BottomButton: ActionButton {
   private struct Constants {
     static var height: CGFloat = 50
     static var backgroundColor: UIColor = UIColor(.pink)
-    static var titleFont: UIFont = UIFont.appFont(.gothamProMedium(size: 15))
+    static var titleFont: UIFont = UIFont.appFont(.avenirNextDemiBold(size: 16))
     static var titleColor: UIColor = UIColor(.white)
   }
 

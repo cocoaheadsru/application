@@ -19,7 +19,7 @@ class SpeechPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var fullNameLabel: UILabel! {
     didSet {
-      fullNameLabel.font = UIFont.appFont(.gothamProMedium(size: 16))
+      fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 17))
       fullNameLabel.textColor = UIColor(.black)
     }
   }

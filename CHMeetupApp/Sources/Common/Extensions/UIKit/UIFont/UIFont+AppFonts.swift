@@ -10,18 +10,18 @@ import UIKit.UIFont
 
 extension UIFont {
   enum FontType {
-    case gothamProMedium(size: CGFloat)
-    case gothamPro(size: CGFloat)
+    case avenirNextDemiBold(size: CGFloat)
+    case avenirNextMedium(size: CGFloat)
     case systemFont(size: CGFloat)
     case systemMediumFont(size: CGFloat)
   }
 
   static func appFont(_ fontType: FontType) -> UIFont {
     switch fontType {
-    case let .gothamProMedium(size):
-      return UIFont(name: "GothamPro-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
-    case let .gothamPro(size):
-      return UIFont(name: "GothamPro", size: size) ?? UIFont.systemFont(ofSize: size)
+    case let .avenirNextDemiBold(size):
+      return UIFont(name: "AvenirNext-DemiBold", size: size) ?? UIFont.systemFont(ofSize: size)
+    case let .avenirNextMedium(size):
+      return UIFont(name: "AvenirNext-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
     case let .systemFont(size):
       return UIFont.systemFont(ofSize: size)
     case let .systemMediumFont(size):

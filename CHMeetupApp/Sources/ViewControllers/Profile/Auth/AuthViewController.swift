@@ -17,7 +17,7 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       for button in authButtons {
         button.layer.cornerRadius = Constants.SystemSizes.cornerRadius
         button.layer.masksToBounds = true
-        button.titleLabel?.font = UIFont.appFont(.gothamProMedium(size: 15))
+        button.titleLabel?.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       }
     }
   }

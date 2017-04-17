@@ -55,11 +55,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>GothamPro-Medium.ttf</string>
-		<string>GothamPro.ttf</string>
-	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbshareextension</string>

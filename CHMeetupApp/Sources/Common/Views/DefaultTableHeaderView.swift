@@ -12,7 +12,7 @@ class DefaultTableHeaderView: UITableViewHeaderFooterView {
 
   @IBOutlet var headerLabel: UILabel! {
     didSet {
-      headerLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
+      headerLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       headerLabel.textColor = UIColor(.gray)
     }
   }
