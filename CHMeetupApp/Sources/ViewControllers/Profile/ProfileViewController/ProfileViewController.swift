@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayCollection = ProfileViewDisplayCollection(with: self)
+    displayCollection = ProfileViewDisplayCollection(delegate: self)
     tableView.registerNibs(from: displayCollection)
 
     title = displayCollection.user.fullName

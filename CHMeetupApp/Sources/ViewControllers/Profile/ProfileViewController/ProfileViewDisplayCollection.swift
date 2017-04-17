@@ -37,22 +37,22 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     return sections.count
   }
 
-  init(with delegate: DisplayCollectionDelegate?) {
+  init(delegate: DisplayCollectionDelegate?) {
     self.delegate = delegate
 
-    let giveSpeechObject = ActionPlainObject(text: "Стать спикером".localized, imageName: nil) {
+    let giveSpeechObject = ActionPlainObject(text: "Стать спикером".localized, imageName: nil) { [weak delegate] in
       let giveSpeech = Storyboards.Profile.instantiateGiveSpeechViewController()
       delegate?.push(viewController: giveSpeech)
     }
     let giveSpeechAction = ActionTableViewCellModel(action: giveSpeechObject)
 
-    let creatorsObject = ActionPlainObject(text: "Создатели".localized, imageName: nil) {
+    let creatorsObject = ActionPlainObject(text: "Создатели".localized, imageName: nil) { [weak delegate] in
       let creators = Storyboards.Profile.instantiateCreatorsViewController()
       delegate?.push(viewController: creators)
     }
     let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
 
-    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
+    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) { [weak delegate] in
       let askQuestion = Storyboards.Profile.instantiateAskQuestionViewController()
       delegate?.push(viewController: askQuestion)
     }
@@ -88,7 +88,7 @@ final class ProfileViewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    if sections.count >= indexPath.section, sections[indexPath.section] == .userActions {
+    if sections[indexPath.section] == .userActions {
       if let action = userActions[indexPath.row].action.action {
         action()
       }
