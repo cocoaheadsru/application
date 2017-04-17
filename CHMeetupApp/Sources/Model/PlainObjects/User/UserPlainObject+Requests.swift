@@ -52,6 +52,7 @@ extension UserPlainObject {
     self.lastname = lastname
     photoUrl = json["photo_url"] as? String
     company = json["company"] as? String
+    token = json["token"] as? String
   }
 
   init?(justId json: JSONDictionary) {
@@ -64,5 +65,6 @@ extension UserPlainObject {
     lastname = ""
     company = nil
     photoUrl = nil
+    token = nil
   }
 }
