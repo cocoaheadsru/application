@@ -25,6 +25,7 @@ class UserEntity: Object {
 
   dynamic var isSpeaker: Bool = false
   dynamic var photoURL: String?
+  dynamic var token: String?
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()
