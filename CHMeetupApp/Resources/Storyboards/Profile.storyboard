@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,15 +219,8 @@
                             <constraint firstItem="ZRv-Xe-9jk" firstAttribute="top" secondItem="dY2-b6-Nvf" secondAttribute="bottom" id="vu7-qj-jQq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo">
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="9Xy-Za-5xL">
-                            <connections>
-                                <action selector="sendSpeechButtonPressed:" destination="WaT-qA-jSi" id="E8c-Tx-hO8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo"/>
                     <connections>
-                        <outlet property="sendSpeechButton" destination="9Xy-Za-5xL" id="L5a-Ck-6Ft"/>
                         <outlet property="tableView" destination="dY2-b6-Nvf" id="DOA-5s-Dky"/>
                     </connections>
                 </viewController>
