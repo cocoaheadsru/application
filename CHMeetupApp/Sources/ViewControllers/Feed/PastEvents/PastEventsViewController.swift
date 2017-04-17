@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController {
-  @IBOutlet fileprivate var tableView: UITableView! {
+class PastEventsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
+  @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
     }
@@ -53,12 +53,6 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
-  }
-}
-
-extension PastEventsViewController: DisplayCollectionWithTableViewDelegate {
-  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
-    return tableView.indexPath(for: cell)
   }
 }
 

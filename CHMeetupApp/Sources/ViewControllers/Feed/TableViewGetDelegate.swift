@@ -8,6 +8,12 @@
 
 import UIKit
 
-protocol DisplayCollectionWithTableViewDelegate: DisplayCollectionDelegate {
+protocol DisplayCollectionWithTableViewDelegate: DisplayCollectionDelegate, UIViewControllerWithTableView {
   func getIndexPath(from cell: UITableViewCell) -> IndexPath?
+}
+
+extension DisplayCollectionWithTableViewDelegate {
+  func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
+    return tableView.indexPath(for: cell)
+  }
 }

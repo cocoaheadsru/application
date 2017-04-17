@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol EventPreviewTableViewCellDelegate: class {
-  func acceptButtonPressed(on eventCell: EventPreviewTableViewCell)
-}
-
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
@@ -33,10 +29,15 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.delegate = delegate
     cell.participantsCollectionView.imagesCollection.removeAll()
     let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
+
+    cell.participantsCollectionView.imagesCollection = urls.map({ _ in
+      return UIImage(named: "img_template_unknown")!
+    })
+
     groupImageLoader.loadImages(groupId: cell.hashValue,
                                 urls: urls,
-                                completionHandler: { images in
-      cell.participantsCollectionView.imagesCollection = images
+                                completionHandler: { [weak cell] images in
+      cell?.participantsCollectionView.imagesCollection = images
     })
   }
 }

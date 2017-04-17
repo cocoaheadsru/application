@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EventPreviewTableViewCellDelegate: class {
+  func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell)
+}
+
 class EventPreviewTableViewCell: PlateTableViewCell {
 
   var isEnabledForRegistration = false {
@@ -70,7 +74,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   }
 
   @IBAction fileprivate func goingButtonAction(_ sender: Any) {
-    delegate?.acceptButtonPressed(on: self)
+    delegate?.eventCellAcceptButtonPressed(self)
   }
 
   // Now would calculate manually
@@ -90,7 +94,6 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
     return CGSize(width: targetSize.width, height: height)
   }
-
 }
 
 extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
