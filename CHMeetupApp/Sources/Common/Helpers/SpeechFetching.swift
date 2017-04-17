@@ -12,11 +12,13 @@ struct SpeechFetching: FetchingElements {
   static func fetchElements(request: Request<[SpeechPlainObject]>,
                             to parent: EventEntity?, completion: (() -> Void)? = nil) {
     Server.standard.request(request, completion: { list, error in
+      defer {
+        DispatchQueue.main.async { completion?() }
+      }
+
       guard let list = list,
         error == nil else { return }
-
       SpeechPlainObjectTranslation.translate(of: list, to: parent)
-      completion?()
     })
 
   }
