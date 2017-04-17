@@ -1,14 +1,14 @@
 //
-//  ProfileViewDisplayCollection.swift
+//  ProfileEditDisplayCollection.swift
 //  CHMeetupApp
 //
-//  Created by Dmitriy Lis on 29/03/2017.
+//  Created by Kirill Averyanov on 18/04/2017.
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewDisplayCollection: DisplayCollection {
+class ProfileEditDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [UserTableViewHeaderCellModel.self,
             LabelTableViewCellModel.self]

@@ -119,6 +119,7 @@
 		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
 		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
 		8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAAA04B1EA39B4800934D8F /* TableViewGetDelegate.swift */; };
+		8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
@@ -342,6 +343,7 @@
 		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
 		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
 		8AAAA04B1EA39B4800934D8F /* TableViewGetDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewGetDelegate.swift; sourceTree = "<group>"; };
+		8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditDisplayCollection.swift; sourceTree = "<group>"; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
@@ -1076,6 +1078,7 @@
 		22323F741E70C2BE00522E5C /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				8AAC26621EA56E5D00F8CF58 /* DispayCollection */,
 				22323F751E70C2BE00522E5C /* ProfileEditViewController.swift */,
 			);
 			path = Edit;
@@ -1290,6 +1293,14 @@
 				8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */,
 			);
 			name = Event;
+			sourceTree = "<group>";
+		};
+		8AAC26621EA56E5D00F8CF58 /* DispayCollection */ = {
+			isa = PBXGroup;
+			children = (
+				8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */,
+			);
+			name = DispayCollection;
 			sourceTree = "<group>";
 		};
 		8AB256971E78680500B319AA /* Share */ = {
@@ -1937,6 +1948,7 @@
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
+				8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
