@@ -11,14 +11,14 @@ import UIKit
 final class LabelTableViewCell: PlateTableViewCell {
   @IBOutlet var titleLabel: UILabel! {
     didSet {
-      titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
+      titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       titleLabel.textColor = UIColor(.gray)
     }
   }
 
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       descriptionLabel.textColor = UIColor(.black)
     }
   }

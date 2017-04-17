@@ -12,14 +12,14 @@ class TimePlaceTableViewCell: PlateTableViewCell {
 
   @IBOutlet var timeLabel: UILabel! {
     didSet {
-      timeLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      timeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       timeLabel.textColor = UIColor(.darkGray)
     }
   }
 
   @IBOutlet var placeLabel: UILabel! {
     didSet {
-      placeLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       placeLabel.textColor = UIColor(.darkGray)
     }
   }

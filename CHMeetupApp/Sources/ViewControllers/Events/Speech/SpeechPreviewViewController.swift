@@ -22,7 +22,7 @@ class SpeechPreviewViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Speech".localized
+    title = "Доклад".localized
     view.backgroundColor = UIColor(.lightGray)
 
     displayCollection = SpeechPreviewDisplayCollection()

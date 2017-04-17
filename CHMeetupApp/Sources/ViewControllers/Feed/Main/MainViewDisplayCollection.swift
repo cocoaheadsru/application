@@ -18,12 +18,14 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case actionButtons
   }
 
-  weak var delegate: DisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
 
   private var sections: [Type] = [.events, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
 
   private var indexPath: IndexPath?
+
+  let groupImageLoader = GroupImageLoader.standard
 
   func configureActionCellsSection(on viewController: UIViewController,
                                    with tableView: UITableView) {
@@ -55,7 +57,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate > %@", NSDate())
     let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    return modelCollection
+    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
   }()
 
   var numberOfSections: Int {
@@ -74,7 +76,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+                                            index: indexPath.row,
+                                            delegate: self,
+                                            groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
@@ -90,5 +95,17 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
+  }
+}
+
+extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
+  func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    viewController.selectedEventId = modelCollection[indexPath.row].id
+    delegate?.push(viewController: viewController)
   }
 }

@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="1590" y="35"/>
         </scene>
-        <!--Profile Edit-->
+        <!--Изменение профиля-->
         <scene sceneID="6xe-AS-Z5B">
             <objects>
                 <viewController storyboardIdentifier="ProfileEditViewController" hidesBottomBarWhenPushed="YES" id="6F4-3B-MvC" customClass="ProfileEditViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile Edit" id="jua-nT-hoZ"/>
+                    <navigationItem key="navigationItem" title="Изменение профиля" id="jua-nT-hoZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bms-pX-iJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

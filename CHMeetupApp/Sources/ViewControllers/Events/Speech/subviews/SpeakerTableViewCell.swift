@@ -12,9 +12,9 @@ class SpeakerTableViewCell: PlateTableViewCell {
 
   @IBOutlet var titleLabel: UILabel! {
     didSet {
-      titleLabel.font = UIFont.appFont(.gothamProMedium(size: 15))
+      titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       titleLabel.textColor = UIColor(.gray)
-      titleLabel.text = "Докладчик".localized + ":"
+      titleLabel.text = "Докладчик".localized
     }
   }
 
@@ -27,14 +27,14 @@ class SpeakerTableViewCell: PlateTableViewCell {
 
   @IBOutlet var fullNameLabel: UILabel! {
     didSet {
-      fullNameLabel.font = UIFont.appFont(.gothamProMedium(size: 17))
+      fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
       fullNameLabel.textColor = UIColor(.darkGray)
     }
   }
 
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
-      descriptionLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       descriptionLabel.textColor = UIColor(.darkGray)
     }
   }

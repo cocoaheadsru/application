@@ -21,8 +21,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   var displayCollection: GiveSpeechDisplayCollection!
   var bottomButton: BottomButton!
 
-  @IBOutlet weak var sendSpeechButton: UIBarButtonItem!
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -48,10 +46,6 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   func sendSpeech() {
     print(displayCollection.nameText, displayCollection.descriptionText)
     // Do stuff here ...
-  }
-
-  @IBAction func sendSpeechButtonPressed(_ sender: UIBarButtonItem) {
-    sendSpeech()
   }
 
   func dismissKeyboard() {

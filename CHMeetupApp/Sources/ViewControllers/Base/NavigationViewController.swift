@@ -21,7 +21,7 @@ class NavigationViewController: UINavigationController {
     navigationBar.barTintColor = UIColor(.white)
     navigationBar.isTranslucent = false
     navigationBar.tintColor = UIColor(.black)
-    
+
     shadowView = ShadowView()
     view.insertSubview(shadowView, belowSubview: navigationBar)
   }

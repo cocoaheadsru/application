@@ -11,15 +11,8 @@ import UIKit
 struct EventPreviewTableViewCellModel {
   let event: EventEntity
   let index: Int
-  let participantsImageNames: [String] = [
-    "img_photo_participant-alex",
-    "img_photo_participant-sam",
-    "img_photo_participant-misha",
-    "img_photo_participant-max",
-    "img_photo_participant-kirill",
-    "img_photo_participant-egor",
-    "img_photo_participant-dima"
-  ]
+  weak var delegate: EventPreviewTableViewCellDelegate?
+  let groupImageLoader: GroupImageLoader
 }
 
 extension EventPreviewTableViewCellModel: CellViewModelType {
@@ -33,11 +26,18 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     }
 
     cell.isEnabledForRegistration = event.isRegistrationOpen
+    cell.delegate = delegate
+    cell.participantsCollectionView.imagesCollection.removeAll()
+    let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
 
-    var images: [UIImage] = []
-    for index in 0 ..< min(event.speakerPhotosURLs.count, participantsImageNames.count) {
-      images.append(UIImage(named: participantsImageNames[index])!)
-    }
-    cell.participantsCollectionView.imagesCollection = images
+    cell.participantsCollectionView.imagesCollection = urls.map({ _ in
+      return UIImage(named: "img_template_unknown")!
+    })
+
+    groupImageLoader.loadImages(groupId: cell.hashValue,
+                                urls: urls,
+                                completionHandler: { [weak cell] images in
+      cell?.participantsCollectionView.imagesCollection = images
+    })
   }
 }

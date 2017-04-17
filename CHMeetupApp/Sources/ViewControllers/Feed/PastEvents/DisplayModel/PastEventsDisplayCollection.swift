@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
+final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [EventPreviewTableViewCellModel.self]
   }
@@ -16,10 +16,12 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   let modelCollection: DataModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())
     let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    return modelCollection
+    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
   }()
 
-  weak var delegate: DisplayCollectionDelegate?
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
+
+  let groupImageLoader = GroupImageLoader.standard
 
   var numberOfSections: Int {
     return 1
@@ -30,12 +32,27 @@ struct PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAction {
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row], index: indexPath.row)
+    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+                                          index: indexPath.row,
+                                          delegate: self,
+                                          groupImageLoader: groupImageLoader)
   }
 
   func didSelect(indexPath: IndexPath) {
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
+  }
+}
+
+extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
+  func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
+    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    viewController.selectedEventId = modelCollection[indexPath.row].id
+    delegate?.push(viewController: viewController)
   }
 }

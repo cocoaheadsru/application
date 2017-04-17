@@ -36,7 +36,9 @@ class RegistrationPreviewViewController: UIViewController {
     super.viewDidLoad()
     keyboardDelegate = self
 
-    bottomButton = BottomButton(addingOnView: view, title: "Регистрация".localized)
+    title = "Регистрация".localized
+
+    bottomButton = BottomButton(addingOnView: view, title: "Зарегистрироваться".localized)
 
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
@@ -63,6 +65,7 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   var dissmisKeyboardTouch: UITapGestureRecognizer!
+  var selectedEventId: Int!
 
   func setupGestureRecognizer() {
     dissmisKeyboardTouch =

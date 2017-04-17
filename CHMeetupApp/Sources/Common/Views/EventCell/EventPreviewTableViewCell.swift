@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EventPreviewTableViewCellDelegate: class {
+  func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell)
+}
+
 class EventPreviewTableViewCell: PlateTableViewCell {
 
   var isEnabledForRegistration = false {
@@ -20,19 +24,19 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var nameLabel: UILabel! {
     didSet {
-      nameLabel.font = UIFont.appFont(.gothamPro(size: 17))
+      nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
     }
   }
 
   @IBOutlet var dateLabel: UILabel! {
     didSet {
-      dateLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
     }
   }
 
   @IBOutlet var placeLabel: UILabel! {
     didSet {
-      placeLabel.font = UIFont.appFont(.gothamPro(size: 15))
+      placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
     }
   }
 
@@ -57,6 +61,8 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     roundType = .all
   }
 
+  weak var delegate: EventPreviewTableViewCellDelegate?
+
   var parcicipantsHeight: CGFloat {
     // 36 paricipant view height, 12 is space from top
     return 48
@@ -67,11 +73,15 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     return 64
   }
 
+  @IBAction fileprivate func goingButtonAction(_ sender: Any) {
+    delegate?.eventCellAcceptButtonPressed(self)
+  }
+
   // Now would calculate manually
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    var height: CGFloat = 266
+    var height: CGFloat = 270
 
     if isEnabledForRegistration == false {
       height -= goingButtonHeight
@@ -84,7 +94,6 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
     return CGSize(width: targetSize.width, height: height)
   }
-
 }
 
 extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {

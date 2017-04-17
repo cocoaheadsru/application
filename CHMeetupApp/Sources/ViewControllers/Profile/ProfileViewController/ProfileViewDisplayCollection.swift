@@ -88,10 +88,13 @@ final class ProfileViewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    if sections[indexPath.section] == .userActions {
+    switch sections[indexPath.section] {
+    case .userActions:
       if let action = userActions[indexPath.row].action.action {
         action()
       }
+    case .userHeader, .userContacts:
+      break
     }
   }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PastEventsViewController: UIViewController {
-  @IBOutlet fileprivate var tableView: UITableView! {
+class PastEventsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
+  @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
     }
@@ -24,7 +24,7 @@ class PastEventsViewController: UIViewController {
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
-    title = "Past".localized
+    title = "Прошедшие встречи".localized
     fetchEvents()
   }
 
