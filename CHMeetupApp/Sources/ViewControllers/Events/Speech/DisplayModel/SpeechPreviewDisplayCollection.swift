@@ -51,7 +51,8 @@ class SpeechPreviewDisplayCollection: DisplayCollection {
     case .speech:
       return AboutSpeechTableViewCellModel(speech: speech)
     case .contentCells:
-      let actionPlainObject = ActionPlainObject(text: speech.contents[indexPath.row].title,
+      let content = speech.contents[indexPath.row]
+      let actionPlainObject = ActionPlainObject(text: content.typeValue.name ?? content.title,
                                                 imageName: nil, action: { /* to do smth */ })
       return ActionTableViewCellModel(action: actionPlainObject)
     }

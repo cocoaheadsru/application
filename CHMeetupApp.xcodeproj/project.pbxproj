@@ -479,13 +479,14 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
-		036794961E8D9CC400997D29 /* subviews */ = {
+		036794961E8D9CC400997D29 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				03FB4F2D1E906880006DDC2C /* SpeakerTableViewCellModel.swift */,
 				036794971E8D9E0500997D29 /* SpeakerTableViewCell.swift */,
 				036794981E8D9E0500997D29 /* SpeakerTableViewCell.xib */,
-				03FB4F2D1E906880006DDC2C /* SpeakerTableViewCellModel.swift */,
 			);
+			name = Cells;
 			path = subviews;
 			sourceTree = "<group>";
 		};
@@ -1022,7 +1023,7 @@
 		22323F651E70C2BE00522E5C /* Speech */ = {
 			isa = PBXGroup;
 			children = (
-				036794961E8D9CC400997D29 /* subviews */,
+				036794961E8D9CC400997D29 /* Cells */,
 				03FB4F2F1E9092B7006DDC2C /* DisplayModel */,
 				22323F661E70C2BE00522E5C /* SpeechPreviewViewController.swift */,
 			);

@@ -14,6 +14,17 @@ struct SpeechContentPlainObject {
     case video
     case slide
     case unknown
+
+    var name: String? {
+      switch self {
+      case .video:
+        return "Видео"
+      case .slide:
+        return "Слайды"
+      case .unknown:
+        return nil
+      }
+    }
   }
 
   let id: Int
