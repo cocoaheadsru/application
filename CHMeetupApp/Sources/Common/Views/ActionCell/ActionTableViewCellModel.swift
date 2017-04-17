@@ -22,4 +22,5 @@ extension ActionTableViewCellModel: CellViewModelType {
       cell.actionImageView.image = UIImage(named: imageName)
     }
   }
+
 }
