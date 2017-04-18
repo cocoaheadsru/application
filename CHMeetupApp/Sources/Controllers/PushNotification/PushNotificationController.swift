@@ -34,7 +34,7 @@ class PushNotificationController {
                                                title: "Описание встречи".localized,
                                                options: .foreground)
     let registerToEventAction = UNNotificationAction(identifier: Actions.registerAction.rawValue,
-                                                     title: "Зарегестрироваться".localized,
+                                                     title: "Зарегистрироваться".localized,
                                               options: .foreground)
 
     let newEventCategory = UNNotificationCategory(identifier: Categories.newEventCategory.rawValue,
@@ -84,31 +84,29 @@ class PushNotificationController {
     })
   }
 
-  private static let modelCollection: DataModelCollection<EventEntity> = {
-      let predicate = NSPredicate(format: "endDate > %@", NSDate())
-      let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-      return modelCollection
-  }()
-
   static func getAction(from response: UNNotificationResponse, on window: UIWindow?) {
     let rootViewController = Storyboards.Main.instantiateInitialViewController()
     window?.rootViewController = rootViewController
     guard let navigationController = rootViewController.viewControllers?.first as? NavigationViewController else {
-      fatalError()
+      assertionFailure("No navigation controller")
+      return
+    }
+
+    guard let action = Actions(rawValue: response.actionIdentifier) else {
+      assertionFailure("No such action")
+      return
     }
 
     let eventPreviewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
-    // We sort events by date and take newest
-    eventPreviewController.selectedEventId = modelCollection[0].id
-    switch response.actionIdentifier {
-    case Actions.viewEventAction.rawValue:
+    // FIXME: - Replace with real id
+    eventPreviewController.selectedEventId = 5
+    switch action {
+    case .viewEventAction:
       navigationController.viewControllers.append(eventPreviewController)
-    case Actions.registerAction.rawValue:
+    case .registerAction:
       navigationController.viewControllers.append(eventPreviewController)
       let registrationPreviewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
       eventPreviewController.navigationController?.pushViewController(registrationPreviewController, animated: true)
-    default:
-      break
     }
   }
 }

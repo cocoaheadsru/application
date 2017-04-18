@@ -175,6 +175,7 @@
 		9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */; };
 		9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */; };
 		9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */; };
+		9FB0FE0F1EA6869700383E1D /* ActiveWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */; };
 		9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8488B1E6F63EB002E81ED /* String+Range.swift */; };
 		9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB84AEB1E7B696000FEEC8E /* Date+DefaultFormat.swift */; };
 		9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB84AEF1E7B6B5E00FEEC8E /* Date+Compare.swift */; };
@@ -403,6 +404,7 @@
 		9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SpeechEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SpeechContentEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PlaceEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWindowManager.swift; sourceTree = "<group>"; };
 		9FB8488B1E6F63EB002E81ED /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "String+Range.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9FB84AEB1E7B696000FEEC8E /* Date+DefaultFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+DefaultFormat.swift"; sourceTree = "<group>"; };
 		9FB84AED1E7B69D600FEEC8E /* Date+ComponentsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ComponentsHelper.swift"; sourceTree = "<group>"; };
@@ -1391,6 +1393,7 @@
 				9F30FFC61E71E6FE00EF85F5 /* ReusableCell.swift */,
 				F718C0341E966B6A008B3C0B /* ImageLoader.swift */,
 				9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */,
+				9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -2051,6 +2054,7 @@
 				4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */,
 				8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */,
 				22323F341E70C0E500522E5C /* TabBarItemView.swift in Sources */,
+				9FB0FE0F1EA6869700383E1D /* ActiveWindowManager.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				9FD42F6B1E95385000EA6EE7 /* StringContainerEntity.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,

@@ -10,16 +10,17 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
   var window: UIWindow?
+  var pushNotificationsController: GetPushNotificationController!
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
-    GetPushNotificationController.shared.setup(with: self)
+    pushNotificationsController = GetPushNotificationController(with: self)
     // Seems that is most optimal way now to swizzle, without adding Obj-c code into project
     SwizzlingController.swizzleMethods()
 
