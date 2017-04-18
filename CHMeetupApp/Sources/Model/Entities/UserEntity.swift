@@ -11,6 +11,7 @@ import RealmSwift
 
 class UserEntity: Object {
   dynamic var id: Int = 0
+  dynamic var remoteId: Int = 0
 
   dynamic var name: String = ""
   dynamic var lastName: String = ""

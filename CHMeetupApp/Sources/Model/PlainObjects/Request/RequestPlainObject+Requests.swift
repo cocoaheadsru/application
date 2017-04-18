@@ -43,8 +43,7 @@ extension RequestPlainObject {
     let params = ["title": title,
                   "description": description,
                   "token": token,
-                  "userId": "\(userId)"]
-
+                  "user_id": "\(userId)"]
 
     return Request<RequestPlainObject>(query: "user/givespeech",
                                        method: .post,
