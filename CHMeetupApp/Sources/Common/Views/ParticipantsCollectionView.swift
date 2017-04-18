@@ -49,6 +49,7 @@ class PhotosPresentationView: UIView {
       let leadingEdgeSecondImageView = ((CGFloat(index + 1) * viewHeight) * 0.8) + viewHeight
 
       let imageView = UIImageView()
+      imageView.backgroundColor = UIColor.white
       imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
       imageView.roundCorners()
 
