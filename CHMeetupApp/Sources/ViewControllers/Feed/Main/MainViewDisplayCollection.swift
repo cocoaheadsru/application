@@ -39,12 +39,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       tableView.deleteRows(at: [index], with: .left)
     }
 
-    let remindersPermissionCell = actionCell.checkAccess(on: viewController,
-                                                             for: .reminders,
-                                                             with: action)
-    let calendarPermissionCell = actionCell.checkAccess(on: viewController,
-                                                        for: .calendar,
-                                                        with: action)
     let notificationPermissionCell = actionCell.checkAccess(on: viewController,
                                                             for: .notifications,
                                                             with: {
@@ -52,12 +46,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
                                                               action()
     })
 
-    if let remindersCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersCell)
-    }
-    if let calendarCell = calendarPermissionCell {
-      actionPlainObjects.append(calendarCell)
-    }
     if let notificationCell = notificationPermissionCell {
       actionPlainObjects.append(notificationCell)
     }
