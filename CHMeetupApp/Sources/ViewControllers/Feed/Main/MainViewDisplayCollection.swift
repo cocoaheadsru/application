@@ -45,12 +45,21 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     let calendarPermissionCell = actionCell.checkAccess(on: viewController,
                                                         for: .calendar,
                                                         with: action)
+    let notificationPermissionCell = actionCell.checkAccess(on: viewController,
+                                                            for: .notifications,
+                                                            with: {
+                                                              PushNotificationController.configureNotification()
+                                                              action()
+    })
 
     if let remindersCell = remindersPermissionCell {
       actionPlainObjects.append(remindersCell)
     }
     if let calendarCell = calendarPermissionCell {
       actionPlainObjects.append(calendarCell)
+    }
+    if let notificationCell = notificationPermissionCell {
+      actionPlainObjects.append(notificationCell)
     }
   }
 
