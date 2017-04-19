@@ -18,8 +18,8 @@ class NotificationController {
     notification.titleText = title
     notification.descriptionText = text
     notification.completionBlock = block
-    notification.modalPresentationStyle = .overCurrentContext
-    
+    notification.modalPresentationStyle = .overFullScreen
+
     viewController.present(notification, animated: true, completion: nil)
   }
 }

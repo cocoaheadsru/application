@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -165,65 +166,51 @@
                         <viewControllerLayoutGuide type="top" id="Koj-wm-AkK"/>
                         <viewControllerLayoutGuide type="bottom" id="Je5-Jn-H99"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" id="sod-hb-2Dr">
+                    <view key="view" contentMode="scaleToFill" id="sod-hb-2Dr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NE-Ub-AbR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Красавчик!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-aV-SPy">
-                                        <rect key="frame" x="16" y="273.5" width="343" height="26.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS5-yO-RjP">
-                                        <rect key="frame" x="0.0" y="612" width="375" height="55"/>
-                                        <color key="backgroundColor" red="0.0" green="0.31992655990000002" blue="0.4475278258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="8Vj-QJ-nGx"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Закрыть">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="Ifu-5U-peF"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спасибо. Операция успешно выполнена." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-jU-tMJ">
-                                        <rect key="frame" x="16" y="308" width="343" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спасибо. Операция успешно выполнена." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX1-ki-AHJ">
+                                <rect key="frame" x="16" y="313" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Красавчик!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IW-cH-Clj">
+                                <rect key="frame" x="16" y="278.5" width="343" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-P9-wtf" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
+                                <rect key="frame" x="44" y="347" width="287" height="58"/>
                                 <constraints>
-                                    <constraint firstItem="4ft-jU-tMJ" firstAttribute="leading" secondItem="qoW-aV-SPy" secondAttribute="leading" id="10r-AY-X5r"/>
-                                    <constraint firstItem="qoW-aV-SPy" firstAttribute="leading" secondItem="6NE-Ub-AbR" secondAttribute="leading" constant="16" id="Bht-dd-vNq"/>
-                                    <constraint firstItem="qoW-aV-SPy" firstAttribute="centerY" secondItem="6NE-Ub-AbR" secondAttribute="centerY" multiplier="6:7" constant="1" id="DYX-qU-hD9"/>
-                                    <constraint firstAttribute="trailing" secondItem="qoW-aV-SPy" secondAttribute="trailing" constant="16" id="Fnn-L2-CDw"/>
-                                    <constraint firstItem="aS5-yO-RjP" firstAttribute="leading" secondItem="6NE-Ub-AbR" secondAttribute="leading" id="G2r-vs-qPQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="aS5-yO-RjP" secondAttribute="bottom" id="K2s-lu-ry3"/>
-                                    <constraint firstAttribute="trailing" secondItem="aS5-yO-RjP" secondAttribute="trailing" id="qkO-OR-j9a"/>
-                                    <constraint firstItem="4ft-jU-tMJ" firstAttribute="top" secondItem="qoW-aV-SPy" secondAttribute="bottom" constant="8" id="qws-FA-ffh"/>
-                                    <constraint firstItem="4ft-jU-tMJ" firstAttribute="trailing" secondItem="qoW-aV-SPy" secondAttribute="trailing" id="wuC-h4-X8h"/>
+                                    <constraint firstAttribute="height" constant="58" id="Y6y-Qo-NPl"/>
                                 </constraints>
-                            </view>
+                                <state key="normal" title="Закрыть"/>
+                                <connections>
+                                    <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="aaY-yU-aa9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6NE-Ub-AbR" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leading" id="9Of-pP-iWj"/>
-                            <constraint firstAttribute="trailing" secondItem="6NE-Ub-AbR" secondAttribute="trailing" id="Kwl-CM-scl"/>
-                            <constraint firstItem="6NE-Ub-AbR" firstAttribute="top" secondItem="sod-hb-2Dr" secondAttribute="top" id="Qlr-9E-Zjz"/>
-                            <constraint firstItem="Je5-Jn-H99" firstAttribute="top" secondItem="6NE-Ub-AbR" secondAttribute="bottom" id="gBT-h2-Tod"/>
+                            <constraint firstItem="5IW-cH-Clj" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leadingMargin" id="4KR-ke-XOQ"/>
+                            <constraint firstItem="UPC-P9-wtf" firstAttribute="top" secondItem="jX1-ki-AHJ" secondAttribute="bottom" constant="16" id="GVK-Fh-5so"/>
+                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="trailing" secondItem="5IW-cH-Clj" secondAttribute="trailing" id="L1X-4b-gIQ"/>
+                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="top" secondItem="5IW-cH-Clj" secondAttribute="bottom" constant="8" id="cEi-Ht-Jmv"/>
+                            <constraint firstItem="5IW-cH-Clj" firstAttribute="trailing" secondItem="sod-hb-2Dr" secondAttribute="trailingMargin" id="fdU-JV-xF4"/>
+                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="leading" secondItem="5IW-cH-Clj" secondAttribute="leading" id="hc9-5r-rAc"/>
+                            <constraint firstItem="UPC-P9-wtf" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leading" constant="44" id="hu2-eq-6Uc"/>
+                            <constraint firstItem="5IW-cH-Clj" firstAttribute="centerY" secondItem="sod-hb-2Dr" secondAttribute="centerY" multiplier="7:8" id="u1J-W1-f1K"/>
+                            <constraint firstAttribute="trailing" secondItem="UPC-P9-wtf" secondAttribute="trailing" constant="44" id="xGy-6T-XOZ"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="textLabel" destination="4ft-jU-tMJ" id="nDH-HM-DYi"/>
-                        <outlet property="titleLabel" destination="qoW-aV-SPy" id="uqW-3n-yKv"/>
+                        <outlet property="closeButton" destination="UPC-P9-wtf" id="3qx-jI-QMh"/>
+                        <outlet property="textLabel" destination="jX1-ki-AHJ" id="pvb-RF-yBW"/>
+                        <outlet property="titleLabel" destination="5IW-cH-Clj" id="FGi-Pv-Ork"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGX-US-bzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
