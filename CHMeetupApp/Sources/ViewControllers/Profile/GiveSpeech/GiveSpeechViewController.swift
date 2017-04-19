@@ -44,9 +44,8 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
-
-    if let userId = UserPreferencesEntity.value.currentUser?.remoteId,
-      let token = UserPreferencesEntity.value.currentUser?.token {
+    let currentUser = UserPreferencesEntity.value.currentUser
+    if let userId = currentUser?.remoteId, let token = currentUser?.token {
       let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
                                                   description: displayCollection.descriptionText,
                                                   userId: userId,
