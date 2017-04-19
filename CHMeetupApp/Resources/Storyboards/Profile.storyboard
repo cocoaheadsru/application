@@ -279,6 +279,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sx5-x1-FwB" id="5fd-AW-vKV"/>
+                                    <outlet property="delegate" destination="Sx5-x1-FwB" id="gBc-X1-hcw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,6 +293,9 @@
                             <constraint firstItem="sPX-sI-7bs" firstAttribute="top" secondItem="433-3g-IEQ" secondAttribute="top" id="vCJ-6S-x2e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sPX-sI-7bs" id="EFy-OH-NJz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVc-HU-3DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,13 +14,13 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   }
 
   weak var delegate: DisplayCollectionDelegate?
-  private var userActions: [ActionTableViewCellModel] = []
+  private var creators: [CreatorTableViewCellModel] = []
 
   enum `Type` {
-    case creator
+    case creators
   }
 
-  var sections: [Type] = [.creator]
+  var sections: [Type] = [.creators]
 
   var numberOfSections: Int {
     return sections.count
@@ -32,17 +32,16 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
-    case .creator:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Creator"))
+    case .creators:
+      let user = UserEntity.templateEntity
+      return CreatorTableViewCellModel(creator: user)
     }
   }
 
   func didSelect(indexPath: IndexPath) {
     switch sections[indexPath.section] {
-    case .creator:
-      if let action = userActions[indexPath.row].action.action {
-        action()
-      }
+    case .creators:
+      break
     }
   }
 }
