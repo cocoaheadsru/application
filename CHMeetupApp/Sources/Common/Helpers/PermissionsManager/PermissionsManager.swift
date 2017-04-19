@@ -139,6 +139,6 @@ final class PermissionsManager {
       UIApplication.shared.canOpenURL(url) else {
       return
     }
-    UIApplication.shared.open(url, options: [:])
+    UIApplication.shared.open(url)
   }
 }

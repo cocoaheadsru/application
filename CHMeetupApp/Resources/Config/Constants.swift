@@ -12,6 +12,7 @@ import UIKit
 final class Constants {
 
   static let apiBase = "http://upapi.ru/method/"
+  static let supportEmail = "support@cocoaheads.ru"
 
   struct Vkontakte {
     static let clientId = "5895589"
