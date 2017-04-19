@@ -15,9 +15,11 @@ class NotificationController {
                       description text: String? = nil,
                       completion block: @escaping (Void) -> (Void)) {
     let notification = Storyboards.Main.instantiateNotificationViewController()
-    notification.titleLabel.text = title
-    notification.textLabel.text = text
+    notification.titleText = title
+    notification.descriptionText = text
     notification.completionBlock = block
+    notification.modalPresentationStyle = .overCurrentContext
+    
     viewController.present(notification, animated: true, completion: nil)
   }
 }
