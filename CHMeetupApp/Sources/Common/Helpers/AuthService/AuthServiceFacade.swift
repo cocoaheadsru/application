@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import SVProgressHUD
 
 final class AuthServiceFacade {
   fileprivate var safari: SFSafariViewController?
@@ -69,7 +70,6 @@ final class AuthServiceFacade {
 
   @objc func loggedIn(_ notification: Notification? = nil) {
     hideSafari()
-
     guard
       let notification = notification,
       let url = notification.object as? URL
@@ -82,9 +82,16 @@ final class AuthServiceFacade {
         let social = currentService?.identifier
     else { return }
 
+    SVProgressHUD.show()
+    UIApplication.shared.beginIgnoringInteractionEvents()
+
     // swiftlint:disable:next line_length
     Server.standard.request(UserPlainObject.Requests.auth(token: token, secret: secret, socialId: social)) { user, error in
       guard let loginCompletion = self.loginCompletion else { return }
+      SVProgressHUD.dismiss(completion: {
+        UIApplication.shared.endIgnoringInteractionEvents()
+      })
+
       if let error = error {
         loginCompletion(nil, error)
       } else {

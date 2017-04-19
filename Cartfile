@@ -1,2 +1,3 @@
 github "realm/realm-cocoa"
 github "onevcat/Kingfisher"
+github "SVProgressHUD/SVProgressHUD"
