@@ -48,6 +48,12 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     if let failed = displayCollection.failedSection {
       tableView.failedShakeSection(failed)
     } else {
+      NotificationController.present(to: self,
+                                     with: "Заявка отправлена".localized,
+                                     description: "Спасибо. Ваша заявка успешно отправлена.".localized,
+                                     completion: {
+                                      self.dismiss(animated: true, completion: nil)
+      })
       let currentUser = UserPreferencesEntity.value.currentUser
       if let userId = currentUser?.remoteId, let token = currentUser?.token {
         let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
