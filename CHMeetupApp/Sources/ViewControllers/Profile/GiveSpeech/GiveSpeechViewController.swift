@@ -44,15 +44,20 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
-    let currentUser = UserPreferencesEntity.value.currentUser
-    if let userId = currentUser?.remoteId, let token = currentUser?.token {
-      let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
-                                                  description: displayCollection.descriptionText,
-                                                  userId: userId,
-                                                  token: token)
-      Server.standard.request(request) { answer, error in
-        print(error ?? "")
-        print(answer ?? "")
+
+    if let failed = displayCollection.failedSection {
+      tableView.failedShakeSection(failed)
+    } else {
+      let currentUser = UserPreferencesEntity.value.currentUser
+      if let userId = currentUser?.remoteId, let token = currentUser?.token {
+        let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
+                                                    description: displayCollection.descriptionText,
+                                                    userId: userId,
+                                                    token: token)
+        Server.standard.request(request) { answer, error in
+          print(error ?? "")
+          print(answer ?? "")
+        }
       }
     }
   }
