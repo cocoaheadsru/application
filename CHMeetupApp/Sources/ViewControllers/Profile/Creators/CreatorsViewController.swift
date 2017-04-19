@@ -9,6 +9,7 @@
 import UIKit
 
 class CreatorsViewController: UIViewController {
+
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -24,6 +25,7 @@ class CreatorsViewController: UIViewController {
     displayCollection = CreatorsViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
   }
+
 }
 
 extension CreatorsViewController: UITableViewDelegate, UITableViewDataSource {

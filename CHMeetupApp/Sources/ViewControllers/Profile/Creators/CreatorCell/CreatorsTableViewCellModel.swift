@@ -13,6 +13,7 @@ struct CreatorTableViewCellModel {
 }
 
 extension CreatorTableViewCellModel: CellViewModelType {
+
   func setup(on cell: CreatorTableViewCell) {
     cell.creatorNameLabel.text = creator.fullName
     /*
@@ -20,4 +21,5 @@ extension CreatorTableViewCellModel: CellViewModelType {
       cell.creatorImage.loadImage(from: url)
     }*/
   }
+
 }
