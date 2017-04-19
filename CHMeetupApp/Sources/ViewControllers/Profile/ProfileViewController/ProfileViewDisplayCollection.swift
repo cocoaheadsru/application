@@ -52,9 +52,10 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     }
     let creatorsAction = ActionTableViewCellModel(action: creatorsObject)
 
-    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) { [weak delegate] in
-      let askQuestion = Storyboards.Profile.instantiateAskQuestionViewController()
-      delegate?.push(viewController: askQuestion)
+    let askQuestionObject = ActionPlainObject(text: "Задать вопрос".localized, imageName: nil) {
+      if let url = URL(string: "mailto:\(Constants.supportEmail)"), UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url)
+      }
     }
     let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
 

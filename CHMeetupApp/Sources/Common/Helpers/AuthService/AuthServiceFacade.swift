@@ -59,7 +59,7 @@ final class AuthServiceFacade {
       }
 
       if service.resource.appExists {
-        UIApplication.shared.open(authURL, options: [:])
+        UIApplication.shared.open(authURL)
       } else {
         showSafari(url: authURL)
       }
