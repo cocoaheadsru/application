@@ -11,6 +11,15 @@ import UIKit
 class NotificationViewController: UIViewController {
   var titleText: String?
   var descriptionText: String?
+  var emjoi: String?
+
+  @IBOutlet var emotionLabel: UILabel! {
+    didSet {
+      emotionLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 65))
+      emotionLabel.text = emjoi
+    }
+  }
+
   @IBOutlet var closeButton: LightButton! {
     didSet {
       closeButton.titleColor = UIColor(.darkGray)
@@ -32,7 +41,7 @@ class NotificationViewController: UIViewController {
     }
   }
 
-  var completionBlock: (Void) -> (Void) = { }
+  var completionBlock: () -> (Void) = {}
 
   override func viewDidLoad() {
     super.viewDidLoad()

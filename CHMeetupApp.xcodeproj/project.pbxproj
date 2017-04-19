@@ -107,6 +107,7 @@
 		7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */; };
 		7D667FD71EA7FADA00D06979 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D667FD61EA7FADA00D06979 /* NotificationController.swift */; };
 		7D667FDC1EA7FD1B00D06979 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D667FDB1EA7FD1B00D06979 /* NotificationViewController.swift */; };
+		7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86321EA8168A00437283 /* GiveSpeechController.swift */; };
 		7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
@@ -337,6 +338,7 @@
 		7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechContentPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		7D667FD61EA7FADA00D06979 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		7D667FDB1EA7FD1B00D06979 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		7DAC86321EA8168A00437283 /* GiveSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechController.swift; sourceTree = "<group>"; };
 		7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7DAC86311EA8168000437283 /* GiveSpeechController */,
 				7D667FD51EA7FAC800D06979 /* NotificationController */,
 				4D8851001E9F8F6900A49ADD /* PushNotifications */,
 				9F487A701E73F2A90016CE0B /* Appearance */,
@@ -1271,6 +1274,14 @@
 				7D667FD61EA7FADA00D06979 /* NotificationController.swift */,
 			);
 			path = NotificationController;
+			sourceTree = "<group>";
+		};
+		7DAC86311EA8168000437283 /* GiveSpeechController */ = {
+			isa = PBXGroup;
+			children = (
+				7DAC86321EA8168A00437283 /* GiveSpeechController.swift */,
+			);
+			path = GiveSpeechController;
 			sourceTree = "<group>";
 		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
@@ -1987,6 +1998,7 @@
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */,
+				7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */,
 				22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */,
 				03CA501F1E8327EB00CF9613 /* RegistrationFormDataCollection.swift in Sources */,
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
