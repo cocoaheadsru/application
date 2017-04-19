@@ -160,19 +160,19 @@
         <!--Notification View Controller-->
         <scene sceneID="Xrm-tU-8S4">
             <objects>
-                <viewController storyboardIdentifier="NotificationViewController" id="iwX-25-Yha" customClass="NotificationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iwX-25-Yha" customClass="NotificationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Koj-wm-AkK"/>
                         <viewControllerLayoutGuide type="bottom" id="Je5-Jn-H99"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="sod-hb-2Dr">
+                    <view key="view" opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" id="sod-hb-2Dr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NE-Ub-AbR">
+                            <view opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NE-Ub-AbR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-aV-SPy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Красавчик!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-aV-SPy">
                                         <rect key="frame" x="16" y="273.5" width="343" height="26.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,10 +190,9 @@
                                         </state>
                                         <connections>
                                             <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="Ifu-5U-peF"/>
-                                            <action selector="closeAction:" destination="6NE-Ub-AbR" eventType="touchUpInside" id="fN1-im-12R"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Успех" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-jU-tMJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спасибо. Операция успешно выполнена." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-jU-tMJ">
                                         <rect key="frame" x="16" y="308" width="343" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -212,13 +211,9 @@
                                     <constraint firstItem="4ft-jU-tMJ" firstAttribute="top" secondItem="qoW-aV-SPy" secondAttribute="bottom" constant="8" id="qws-FA-ffh"/>
                                     <constraint firstItem="4ft-jU-tMJ" firstAttribute="trailing" secondItem="qoW-aV-SPy" secondAttribute="trailing" id="wuC-h4-X8h"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="textLabel" destination="4ft-jU-tMJ" id="Jv8-zl-azP"/>
-                                    <outlet property="titleLabel" destination="qoW-aV-SPy" id="yov-5M-d3F"/>
-                                </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6NE-Ub-AbR" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leading" id="9Of-pP-iWj"/>
                             <constraint firstAttribute="trailing" secondItem="6NE-Ub-AbR" secondAttribute="trailing" id="Kwl-CM-scl"/>
@@ -227,8 +222,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textLabel" destination="4ft-jU-tMJ" id="eAf-vb-DHQ"/>
-                        <outlet property="titleLabel" destination="qoW-aV-SPy" id="m3v-Vl-Uwa"/>
+                        <outlet property="textLabel" destination="4ft-jU-tMJ" id="nDH-HM-DYi"/>
+                        <outlet property="titleLabel" destination="qoW-aV-SPy" id="uqW-3n-yKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGX-US-bzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
