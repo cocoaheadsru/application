@@ -44,8 +44,17 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
-    print(displayCollection.nameText, displayCollection.descriptionText)
-    // Do stuff here ...
+    let currentUser = UserPreferencesEntity.value.currentUser
+    if let userId = currentUser?.remoteId, let token = currentUser?.token {
+      let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
+                                                  description: displayCollection.descriptionText,
+                                                  userId: userId,
+                                                  token: token)
+      Server.standard.request(request) { answer, error in
+        print(error ?? "")
+        print(answer ?? "")
+      }
+    }
   }
 
   func dismissKeyboard() {

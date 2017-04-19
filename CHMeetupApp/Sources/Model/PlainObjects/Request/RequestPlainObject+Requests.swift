@@ -34,3 +34,19 @@ extension RequestPlainObject: PlainObjectType {
     }
   }
 }
+
+extension RequestPlainObject {
+  static func giveSpeech(title: String,
+                         description: String,
+                         userId: Int,
+                         token: String) -> Request<RequestPlainObject> {
+    let params = ["title": title,
+                  "description": description,
+                  "token": token,
+                  "user_id": "\(userId)"]
+
+    return Request<RequestPlainObject>(query: "user/givespeech",
+                                       method: .post,
+                                       params: params)
+  }
+}
