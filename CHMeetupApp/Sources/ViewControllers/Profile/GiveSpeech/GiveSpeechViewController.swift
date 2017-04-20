@@ -56,6 +56,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
         NotificationController.present(to: self,
                                        with: "Прекрасно!".localized,
                                        description: "Ваша великолепная заявка отправлена.".localized,
+                                       emjoi: "📦",
                                        completion: {
                                          self.navigationController?.popToRootViewController(animated: true)
         })

@@ -103,11 +103,9 @@ extension GiveSpeechDisplayCollection: UITextFieldDelegate {
 
 extension GiveSpeechDisplayCollection {
   var failedSection: Int? {
-
     if nameText.isEmpty {
       return 0
     }
-
     if descriptionText.isEmpty {
       return 1
     }

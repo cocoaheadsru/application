@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -192,6 +193,16 @@
                                     <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="aaY-yU-aa9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S2-Op-FCm">
+                                <rect key="frame" x="147" y="190.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8AA-Oi-J5e"/>
+                                    <constraint firstAttribute="width" secondItem="8S2-Op-FCm" secondAttribute="height" multiplier="1:1" id="K4J-Qs-CBn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -199,9 +210,11 @@
                             <constraint firstItem="UPC-P9-wtf" firstAttribute="top" secondItem="jX1-ki-AHJ" secondAttribute="bottom" constant="16" id="GVK-Fh-5so"/>
                             <constraint firstItem="jX1-ki-AHJ" firstAttribute="trailing" secondItem="5IW-cH-Clj" secondAttribute="trailing" id="L1X-4b-gIQ"/>
                             <constraint firstItem="jX1-ki-AHJ" firstAttribute="top" secondItem="5IW-cH-Clj" secondAttribute="bottom" constant="8" id="cEi-Ht-Jmv"/>
+                            <constraint firstItem="5IW-cH-Clj" firstAttribute="top" secondItem="8S2-Op-FCm" secondAttribute="bottom" constant="8" id="f5a-gq-PgG"/>
                             <constraint firstItem="5IW-cH-Clj" firstAttribute="trailing" secondItem="sod-hb-2Dr" secondAttribute="trailingMargin" id="fdU-JV-xF4"/>
                             <constraint firstItem="jX1-ki-AHJ" firstAttribute="leading" secondItem="5IW-cH-Clj" secondAttribute="leading" id="hc9-5r-rAc"/>
                             <constraint firstItem="UPC-P9-wtf" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leading" constant="44" id="hu2-eq-6Uc"/>
+                            <constraint firstItem="8S2-Op-FCm" firstAttribute="centerX" secondItem="sod-hb-2Dr" secondAttribute="centerX" id="j1B-6N-quS"/>
                             <constraint firstItem="5IW-cH-Clj" firstAttribute="centerY" secondItem="sod-hb-2Dr" secondAttribute="centerY" multiplier="7:8" id="u1J-W1-f1K"/>
                             <constraint firstAttribute="trailing" secondItem="UPC-P9-wtf" secondAttribute="trailing" constant="44" id="xGy-6T-XOZ"/>
                         </constraints>
@@ -209,6 +222,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="closeButton" destination="UPC-P9-wtf" id="3qx-jI-QMh"/>
+                        <outlet property="emotionLabel" destination="8S2-Op-FCm" id="Z1T-d2-7Pz"/>
                         <outlet property="textLabel" destination="jX1-ki-AHJ" id="pvb-RF-yBW"/>
                         <outlet property="titleLabel" destination="5IW-cH-Clj" id="FGi-Pv-Ork"/>
                     </connections>
