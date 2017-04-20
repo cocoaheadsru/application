@@ -44,17 +44,27 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
-    let currentUser = UserPreferencesEntity.value.currentUser
-    if let userId = currentUser?.remoteId, let token = currentUser?.token {
-      let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
-                                                  description: displayCollection.descriptionText,
-                                                  userId: userId,
-                                                  token: token)
-      Server.standard.request(request) { answer, error in
-        print(error ?? "")
-        print(answer ?? "")
+
+    if let failed = displayCollection.failedSection {
+      return tableView.failedShakeSection(failed)
+    }
+
+    GiveSpeechController.sendRequest(title: displayCollection.nameText,
+                                     description: displayCollection.descriptionText) { success in
+      if success {
+        self.tableView.endEditing(true)
+        NotificationController.present(to: self,
+                                       with: "Упс!".localized,
+                                       description: "Что-то упало. Надеемся, это не телефон.".localized,
+                                       emoji: "😞",
+                                       completion: {
+                                         self.navigationController?.popToRootViewController(animated: true)
+        })
+      } else {
+        self.showMessageAlert(title: "Возникла ошибка".localized)
       }
     }
+
   }
 
   func dismissKeyboard() {
