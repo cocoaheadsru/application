@@ -12,13 +12,13 @@ class NotificationController {
   static func present(to viewController: UIViewController,
                       with title: String? = nil,
                       description text: String? = nil,
-                      emjoi: String? = nil,
+                      emoji: String? = nil,
                       completion block: @escaping () -> (Void)) {
     let notification = Storyboards.Main.instantiateNotificationViewController()
     notification.titleText = title
     notification.descriptionText = text
     notification.completionBlock = block
-    notification.emjoi = emjoi
+    notification.emoji = emoji
     notification.modalPresentationStyle = .overFullScreen
 
     viewController.present(notification, animated: true, completion: nil)
