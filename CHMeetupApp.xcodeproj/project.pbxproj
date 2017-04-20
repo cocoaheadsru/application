@@ -840,7 +840,7 @@
 			children = (
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
-				320FA5721E87A80700DAC7E1 /* UserHeaderCell */,
+				320FA5721E87A80700DAC7E1 /* ProfilePhotoCell */,
 				3284674E1E7FEF8400028431 /* TimePlaceCell */,
 				A1A072F21E79EF6800FB83F1 /* OptionCell */,
 				9F88817B1E7EA1A700CEFEA4 /* Buttons */,
@@ -1138,14 +1138,14 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
-		320FA5721E87A80700DAC7E1 /* UserHeaderCell */ = {
+		320FA5721E87A80700DAC7E1 /* ProfilePhotoCell */ = {
 			isa = PBXGroup;
 			children = (
 				320FA57D1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift */,
 				320FA5791E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift */,
 				320FA5761E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib */,
 			);
-			name = UserHeaderCell;
+			name = ProfilePhotoCell;
 			sourceTree = "<group>";
 		};
 		3284674E1E7FEF8400028431 /* TimePlaceCell */ = {
