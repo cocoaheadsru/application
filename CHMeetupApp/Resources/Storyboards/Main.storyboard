@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ifu-eV-gt1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -113,7 +110,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrX-Cc-xgJ" customClass="NavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="EYz-le-H70" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3A-KA-XJg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N3A-KA-XJg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -132,7 +129,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7I-I3-rgg" customClass="NavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="featured" id="nq2-nd-hlH" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-77-fMm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QMh-77-fMm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -150,7 +147,7 @@
             <objects>
                 <navigationController id="b0P-Mq-rOD" customClass="ProfileNavigationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="pqo-Bx-yIv" customClass="CustomTabBarItem" customModule="CHMeetupApp" customModuleProvider="target"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2v7-Da-U4X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2v7-Da-U4X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -158,78 +155,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dde-Ua-rjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452" y="1178"/>
-        </scene>
-        <!--Notification View Controller-->
-        <scene sceneID="Xrm-tU-8S4">
-            <objects>
-                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iwX-25-Yha" customClass="NotificationViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Koj-wm-AkK"/>
-                        <viewControllerLayoutGuide type="bottom" id="Je5-Jn-H99"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sod-hb-2Dr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спасибо. Операция успешно выполнена." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX1-ki-AHJ">
-                                <rect key="frame" x="16" y="313" width="343" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Красавчик!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IW-cH-Clj">
-                                <rect key="frame" x="16" y="278.5" width="343" height="26.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-P9-wtf" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
-                                <rect key="frame" x="44" y="347" width="287" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="Y6y-Qo-NPl"/>
-                                </constraints>
-                                <state key="normal" title="Закрыть"/>
-                                <connections>
-                                    <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="aaY-yU-aa9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S2-Op-FCm">
-                                <rect key="frame" x="147" y="190.5" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8AA-Oi-J5e"/>
-                                    <constraint firstAttribute="width" secondItem="8S2-Op-FCm" secondAttribute="height" multiplier="1:1" id="K4J-Qs-CBn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5IW-cH-Clj" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leadingMargin" id="4KR-ke-XOQ"/>
-                            <constraint firstItem="UPC-P9-wtf" firstAttribute="top" secondItem="jX1-ki-AHJ" secondAttribute="bottom" constant="16" id="GVK-Fh-5so"/>
-                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="trailing" secondItem="5IW-cH-Clj" secondAttribute="trailing" id="L1X-4b-gIQ"/>
-                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="top" secondItem="5IW-cH-Clj" secondAttribute="bottom" constant="8" id="cEi-Ht-Jmv"/>
-                            <constraint firstItem="5IW-cH-Clj" firstAttribute="top" secondItem="8S2-Op-FCm" secondAttribute="bottom" constant="8" id="f5a-gq-PgG"/>
-                            <constraint firstItem="5IW-cH-Clj" firstAttribute="trailing" secondItem="sod-hb-2Dr" secondAttribute="trailingMargin" id="fdU-JV-xF4"/>
-                            <constraint firstItem="jX1-ki-AHJ" firstAttribute="leading" secondItem="5IW-cH-Clj" secondAttribute="leading" id="hc9-5r-rAc"/>
-                            <constraint firstItem="UPC-P9-wtf" firstAttribute="leading" secondItem="sod-hb-2Dr" secondAttribute="leading" constant="44" id="hu2-eq-6Uc"/>
-                            <constraint firstItem="8S2-Op-FCm" firstAttribute="centerX" secondItem="sod-hb-2Dr" secondAttribute="centerX" id="j1B-6N-quS"/>
-                            <constraint firstItem="5IW-cH-Clj" firstAttribute="centerY" secondItem="sod-hb-2Dr" secondAttribute="centerY" multiplier="7:8" id="u1J-W1-f1K"/>
-                            <constraint firstAttribute="trailing" secondItem="UPC-P9-wtf" secondAttribute="trailing" constant="44" id="xGy-6T-XOZ"/>
-                        </constraints>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="closeButton" destination="UPC-P9-wtf" id="3qx-jI-QMh"/>
-                        <outlet property="emotionLabel" destination="8S2-Op-FCm" id="Z1T-d2-7Pz"/>
-                        <outlet property="textLabel" destination="jX1-ki-AHJ" id="pvb-RF-yBW"/>
-                        <outlet property="titleLabel" destination="5IW-cH-Clj" id="FGi-Pv-Ork"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tGX-US-bzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1273" y="1178"/>
         </scene>
     </scenes>
 </document>
