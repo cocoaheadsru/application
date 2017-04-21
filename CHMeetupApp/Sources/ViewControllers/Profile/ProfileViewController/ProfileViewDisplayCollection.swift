@@ -10,7 +10,7 @@ import UIKit
 
 final class ProfileViewDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [UserTableViewHeaderCellModel.self,
+    return [ProfilePhotoTableViewCellModel.self,
             LabelTableViewCellModel.self,
             ActionTableViewCellModel.self]
   }
@@ -78,7 +78,7 @@ final class ProfileViewDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .userHeader:
-      return UserTableViewHeaderCellModel(userEntity: user)
+      return ProfilePhotoTableViewCellModel(userEntity: user)
     case .userContacts:
       let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
       let value = user.contacts[key] ?? ""

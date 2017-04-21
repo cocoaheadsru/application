@@ -1,5 +1,5 @@
 //
-//  UserTableViewHeaderCell.swift
+//  ProfilePhotoTableViewCell.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 26/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserTableViewHeaderCell: UITableViewCell {
+class ProfilePhotoTableViewCell: UITableViewCell {
 
   @IBOutlet var positionAtCompanyLabel: UILabel!
   @IBOutlet var userImageView: UIImageView!
