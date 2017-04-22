@@ -12,6 +12,7 @@ extension UIColor {
   enum ColorType {
     case gray
     case darkGray
+    case strongGray
     case red
     case white
     case black
@@ -23,6 +24,8 @@ extension UIColor {
     switch colorType {
     case .gray:
       self.init(hexString: "8C8C8C")
+    case .strongGray:
+      self.init(hexString: "555555")
     case .darkGray:
       self.init(hexString: "6C6C6C")
     case .red:
