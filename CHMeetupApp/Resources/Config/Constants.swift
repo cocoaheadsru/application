@@ -28,5 +28,7 @@ final class Constants {
   struct SystemSizes {
     static let cornerRadius: CGFloat = 5
     static let textSize: CGFloat = 15
+    //Used for getting border width
+    static let imageViewBorderWidthPercentage: CGFloat = 0.04
   }
 }
