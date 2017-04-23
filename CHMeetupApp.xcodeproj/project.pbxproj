@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030764A91E95663C00743690 /* AttributedSentenceHelper.swift */; };
+		03153BC41EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03153BC31EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift */; };
+		03153BC81EAD46070011FF5F /* RegistrationConfirmTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03153BC71EAD46070011FF5F /* RegistrationConfirmTableViewHeader.swift */; };
+		03153BCA1EAD46160011FF5F /* RegistrationConfirmTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03153BC91EAD46160011FF5F /* RegistrationConfirmTableViewHeader.xib */; };
 		03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */; };
 		03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */; };
 		03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */; };
@@ -240,6 +243,9 @@
 
 /* Begin PBXFileReference section */
 		030764A91E95663C00743690 /* AttributedSentenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedSentenceHelper.swift; sourceTree = "<group>"; };
+		03153BC31EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmDisplayCollection.swift; sourceTree = "<group>"; };
+		03153BC71EAD46070011FF5F /* RegistrationConfirmTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmTableViewHeader.swift; sourceTree = "<group>"; };
+		03153BC91EAD46160011FF5F /* RegistrationConfirmTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationConfirmTableViewHeader.xib; sourceTree = "<group>"; };
 		03374B1C1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		03374B1D1E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		03374B1E1E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechPreviewTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -473,6 +479,23 @@
 				030764A91E95663C00743690 /* AttributedSentenceHelper.swift */,
 			);
 			path = AttributedStringHelper;
+			sourceTree = "<group>";
+		};
+		03153BC11EAD413C0011FF5F /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				03153BC71EAD46070011FF5F /* RegistrationConfirmTableViewHeader.swift */,
+				03153BC91EAD46160011FF5F /* RegistrationConfirmTableViewHeader.xib */,
+			);
+			path = subviews;
+			sourceTree = "<group>";
+		};
+		03153BC21EAD413C0011FF5F /* DisplayModel */ = {
+			isa = PBXGroup;
+			children = (
+				03153BC31EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift */,
+			);
+			path = DisplayModel;
 			sourceTree = "<group>";
 		};
 		03374B1B1E7F20EA00CA298E /* subviews */ = {
@@ -1011,6 +1034,8 @@
 		22323F611E70C2BE00522E5C /* Confirm */ = {
 			isa = PBXGroup;
 			children = (
+				03153BC11EAD413C0011FF5F /* subviews */,
+				03153BC21EAD413C0011FF5F /* DisplayModel */,
 				22323F621E70C2BE00522E5C /* RegistrationConfirmViewController.swift */,
 			);
 			path = Confirm;
@@ -1892,6 +1917,7 @@
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
 				A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */,
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
+				03153BCA1EAD46160011FF5F /* RegistrationConfirmTableViewHeader.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
 				328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */,
@@ -2032,6 +2058,7 @@
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
 				9FAFF8071E6AD84000B687CB /* EventEntity.swift in Sources */,
 				9FAFF8011E6AD4A700B687CB /* Realm+WriteFunctions.swift in Sources */,
+				03153BC81EAD46070011FF5F /* RegistrationConfirmTableViewHeader.swift in Sources */,
 				22323F511E70C18700522E5C /* EventPlainObject+Requests.swift in Sources */,
 				22323F091E70C0CE00522E5C /* UIColor+Brightness.swift in Sources */,
 				036794991E8D9E0500997D29 /* SpeakerTableViewCell.swift in Sources */,
@@ -2039,6 +2066,7 @@
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
+				03153BC41EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift in Sources */,
 				9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */,
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
