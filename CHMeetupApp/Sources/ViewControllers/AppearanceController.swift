@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 struct AppearanceController {
   static func setupAppearance() {
     setupNavigationBar()
     setupPlateCell()
     setupShadowView()
+    setupHUD()
   }
 
   private static func setupNavigationBar() {
@@ -38,5 +40,9 @@ struct AppearanceController {
       ShadowViewAppearance(shadowOpacity: 0.14,
                            shadowColor: UIColor(.black),
                            shadowRadius: 2)
+  }
+
+  private static func setupHUD() {
+    SVProgressHUD.appearance().defaultMaskType = .black
   }
 }
