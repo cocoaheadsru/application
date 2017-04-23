@@ -25,11 +25,10 @@ class CreatorsViewController: UIViewController {
     displayCollection = CreatorsViewDisplayCollection(with: [])
     tableView.registerNibs(from: displayCollection)
 
-    CreatorsController.loadList { [weak self] displayCollection, _ in
-      guard let displayCollection = displayCollection else { return }
-      self?.displayCollection = displayCollection
-      self?.displayCollection.delegate = self
+    CreatorsController.loadList { [weak self] users, _ in
       SVProgressHUD.dismiss()
+      guard let users = users else { return }
+      self?.displayCollection = CreatorsViewDisplayCollection(with: users)
       self?.tableView.reloadData()
     }
   }

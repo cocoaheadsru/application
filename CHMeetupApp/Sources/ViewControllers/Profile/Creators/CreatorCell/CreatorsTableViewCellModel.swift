@@ -10,9 +10,6 @@ import Foundation
 
 struct CreatorTableViewCellModel {
   let creator: UserPlainObject
-  init(creator: UserPlainObject) {
-    self.creator = creator
-  }
 }
 
 extension CreatorTableViewCellModel: CellViewModelType {

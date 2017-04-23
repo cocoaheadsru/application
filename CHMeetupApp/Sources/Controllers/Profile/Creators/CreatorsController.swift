@@ -9,7 +9,7 @@
 import Foundation
 
 class CreatorsController {
-  static func loadList(completion: @escaping (_ users: CreatorsViewDisplayCollection?, _ error: ServerError?) -> Void) {
+  static func loadList(completion: @escaping (_ users: [UserPlainObject]?, _ error: ServerError?) -> Void) {
     Server.standard.request(UserPlainObject.Requests.listOfCreators) { users, error in
 
       guard error == nil, let users = users else {
@@ -19,9 +19,8 @@ class CreatorsController {
         return
       }
 
-      let displayCollection = CreatorsViewDisplayCollection(with: users)
       DispatchQueue.main.async {
-        completion(displayCollection, nil)
+        completion(users, nil)
       }
     }
   }

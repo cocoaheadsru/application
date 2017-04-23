@@ -20,7 +20,6 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     return [CreatorTableViewCellModel.self]
   }
 
-  weak var delegate: DisplayCollectionDelegate?
   private var creators: [CreatorTableViewCellModel] = []
 
   enum `Type` {
