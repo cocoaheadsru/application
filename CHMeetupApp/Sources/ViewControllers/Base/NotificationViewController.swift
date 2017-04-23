@@ -9,47 +9,46 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
+  var completionBlock: () -> (Void) = {}
   var titleText: String?
   var descriptionText: String?
   var emjoi: String?
 
-  @IBOutlet var emotionLabel: UILabel! {
+  @IBOutlet private var emotionLabel: UILabel! {
     didSet {
       emotionLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 65))
       emotionLabel.text = emjoi
     }
   }
 
-  @IBOutlet var closeButton: LightButton! {
+  @IBOutlet private var closeButton: LightButton! {
     didSet {
       closeButton.titleColor = UIColor(.darkGray)
       closeButton.borderColor = UIColor(.darkGray)
     }
   }
 
-  @IBOutlet var titleLabel: UILabel! {
+  @IBOutlet private var titleLabel: UILabel! {
     didSet {
       titleLabel.text = titleText
       titleLabel.textColor = UIColor(.darkGray)
     }
   }
 
-  @IBOutlet var textLabel: UILabel! {
+  @IBOutlet private var textLabel: UILabel! {
     didSet {
       textLabel.text = descriptionText
       textLabel.textColor = UIColor(.darkGray)
     }
   }
 
-  var completionBlock: () -> (Void) = {}
+  @IBAction private func close() {
+    dismiss(animated: true, completion: nil)
+    completionBlock()
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor(.lightGray)
-  }
-
-  @IBAction func close() {
-    self.dismiss(animated: true, completion: nil)
-    completionBlock()
+    view.backgroundColor = UIColor(.lightGray)
   }
 }
