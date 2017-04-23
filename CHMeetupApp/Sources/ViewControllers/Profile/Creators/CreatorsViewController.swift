@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CreatorsViewController: UIViewController {
   @IBOutlet var tableView: UITableView! {
@@ -19,10 +20,18 @@ class CreatorsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    SVProgressHUD.show()
     navigationItem.title = "Создатели".localized
-
-    displayCollection = CreatorsViewDisplayCollection()
+    displayCollection = CreatorsViewDisplayCollection(with: [])
     tableView.registerNibs(from: displayCollection)
+
+    CreatorsController.loadList { [weak self] displayCollection, _ in
+      guard let displayCollection = displayCollection else { return }
+      self?.displayCollection = displayCollection
+      self?.displayCollection.delegate = self
+      SVProgressHUD.dismiss()
+      self?.tableView.reloadData()
+    }
   }
 }
 

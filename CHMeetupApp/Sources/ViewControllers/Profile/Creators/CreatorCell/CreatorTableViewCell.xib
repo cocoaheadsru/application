@@ -23,11 +23,12 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-Pu-5bW">
                         <rect key="frame" x="24" y="16.5" width="272" height="60"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="img_profile_man" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-RB-5Vv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-RB-5Vv">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lrb-RB-5Vv" secondAttribute="height" id="1Br-yb-9sk"/>
-                                    <constraint firstAttribute="width" constant="50" id="RuK-lP-9T7"/>
+                                    <constraint firstAttribute="width" constant="60" id="RuK-lP-9T7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGN-N8-jNN">
@@ -59,6 +60,5 @@
     </objects>
     <resources>
         <image name="img_arrow" width="7" height="11"/>
-        <image name="img_profile_man" width="60" height="69"/>
     </resources>
 </document>

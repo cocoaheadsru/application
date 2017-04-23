@@ -9,17 +9,20 @@
 import Foundation
 
 struct CreatorTableViewCellModel {
-  let creator: UserEntity
+  let creator: UserPlainObject
+  init(creator: UserPlainObject) {
+    self.creator = creator
+  }
 }
 
 extension CreatorTableViewCellModel: CellViewModelType {
 
   func setup(on cell: CreatorTableViewCell) {
-    cell.creatorNameLabel.text = creator.fullName
-    /*
-    if let photoURL = creator.photoURL, let url = URL(string: photoURL) {
+    cell.creatorNameLabel.text = creator.name
+
+    if let photoURL = creator.photoUrl, let url = URL(string: photoURL) {
       cell.creatorImage.loadImage(from: url)
-    }*/
+    }
   }
 
 }
