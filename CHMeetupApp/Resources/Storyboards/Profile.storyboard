@@ -266,7 +266,7 @@
         <!--Creators View Controller-->
         <scene sceneID="KUp-f3-TqP">
             <objects>
-                <viewController storyboardIdentifier="CreatorsViewController" hidesBottomBarWhenPushed="YES" id="Sx5-x1-FwB" customClass="CreatorsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatorsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sx5-x1-FwB" customClass="CreatorsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jbn-mm-ZEr"/>
                         <viewControllerLayoutGuide type="bottom" id="UG3-eS-8MV"/>
@@ -304,7 +304,7 @@
         <!--Ask Question View Controller-->
         <scene sceneID="8Ly-94-gai">
             <objects>
-                <viewController storyboardIdentifier="AskQuestionViewController" hidesBottomBarWhenPushed="YES" id="bFo-pD-aJt" customClass="AskQuestionViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AskQuestionViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bFo-pD-aJt" customClass="AskQuestionViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9gZ-EQ-KvR"/>
                         <viewControllerLayoutGuide type="bottom" id="s5p-go-A6e"/>

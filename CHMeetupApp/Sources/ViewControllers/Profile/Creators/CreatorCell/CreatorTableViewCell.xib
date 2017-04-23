@@ -50,9 +50,6 @@
                     <constraint firstItem="5ji-Pu-5bW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="vOK-PQ-Hmf"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="Lrb-RB-5Vv" firstAttribute="leading" secondItem="KGk-i7-Jjw" secondAttribute="leading" constant="24" id="KoX-H8-O8s"/>
-            </constraints>
             <connections>
                 <outlet property="creatorImage" destination="Lrb-RB-5Vv" id="CV7-w6-XNj"/>
                 <outlet property="creatorNameLabel" destination="kGN-N8-jNN" id="R7C-xs-CJz"/>
