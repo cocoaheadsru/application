@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ChooseProfilePhotoTableViewCellDelegate: class {
-  func chooseProfilePhotoCelldidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell)
+  func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell)
 }
 
 class ChooseProfilePhotoTableViewCell: UITableViewCell {
@@ -20,15 +20,15 @@ class ChooseProfilePhotoTableViewCell: UITableViewCell {
   weak var delegate: ChooseProfilePhotoTableViewCellDelegate?
 
   @IBAction func chooseButtonAction(_ sender: Any) {
-     delegate?.chooseProfilePhotoCelldidPressOnPhoto(self)
+     delegate?.chooseProfilePhotoCellDidPressOnPhoto(self)
   }
 
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.percentageOfView
-    addImageView.withWhiteRoundBorder(borderWidth)
-    photoImageView.withWhiteRoundBorder(borderWidth)
+    let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
+    addImageView.roundWithWhiteBorder(borderWidth)
+    photoImageView.roundWithWhiteBorder(borderWidth)
   }
 
   override func awakeFromNib() {

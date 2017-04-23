@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="163.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-te-fAv">
@@ -25,14 +25,13 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-4e-D9v">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1LJ-4e-D9v" secondAttribute="height" multiplier="1:1" id="H8c-g4-vYW"/>
-                                    <constraint firstAttribute="height" constant="90" id="MXa-PQ-rsl"/>
-                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icon_add" translatesAutoresizingMaskIntoConstraints="NO" id="JEw-u2-uRS">
-                                <rect key="frame" x="58.5" y="58.5" width="31.5" height="31.5"/>
+                                <rect key="frame" x="58" y="58" width="32" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JEw-u2-uRS" secondAttribute="height" multiplier="1:1" id="9ZZ-QX-dEe"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-ls-bY2">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -47,10 +46,9 @@
                             <constraint firstAttribute="trailing" secondItem="daZ-ls-bY2" secondAttribute="trailing" id="BUW-D4-x42"/>
                             <constraint firstAttribute="trailing" secondItem="1LJ-4e-D9v" secondAttribute="trailing" id="D5x-3W-Df9"/>
                             <constraint firstAttribute="trailing" secondItem="JEw-u2-uRS" secondAttribute="trailing" id="EyN-nT-Sqh"/>
-                            <constraint firstItem="JEw-u2-uRS" firstAttribute="width" secondItem="1LJ-4e-D9v" secondAttribute="width" multiplier="0.35" id="H7x-fw-zad"/>
                             <constraint firstAttribute="bottom" secondItem="1LJ-4e-D9v" secondAttribute="bottom" id="Kce-3c-qzX"/>
                             <constraint firstItem="JEw-u2-uRS" firstAttribute="height" secondItem="1LJ-4e-D9v" secondAttribute="height" multiplier="0.35" id="esd-rr-I3Y"/>
-                            <constraint firstAttribute="height" constant="90" id="hOF-lb-OWU"/>
+                            <constraint firstAttribute="width" secondItem="wbW-te-fAv" secondAttribute="height" multiplier="1:1" id="hOj-b5-dOp"/>
                             <constraint firstAttribute="width" constant="90" id="muH-5u-Ggu"/>
                             <constraint firstAttribute="bottom" secondItem="JEw-u2-uRS" secondAttribute="bottom" id="oGj-6k-hF4"/>
                             <constraint firstItem="1LJ-4e-D9v" firstAttribute="top" secondItem="wbW-te-fAv" secondAttribute="top" id="qiX-Z5-bzh"/>
