@@ -13,26 +13,16 @@ class ProfilePhotoTableViewCell: UITableViewCell {
   @IBOutlet var positionAtCompanyLabel: UILabel!
   @IBOutlet var userImageView: UIImageView!
 
-  private let border: CAShapeLayer = {
-    let border = CAShapeLayer()
-    border.strokeColor = UIColor.white.cgColor
-    border.fillColor = UIColor.clear.cgColor
-    return border
-  }()
-
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    userImageView.roundCorners()
-    border.frame = userImageView.bounds
-    border.lineWidth = (userImageView.bounds.height * 0.08).round(0.5) // borderWidth = 4% of view height x2
-    border.path = UIBezierPath(ovalIn: border.bounds).cgPath
+    let borderWidth = userImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
+    userImageView.roundWithWhiteBorder(borderWidth)
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    userImageView.layer.addSublayer(border)
     contentView.backgroundColor = UIColor(.lightGray)
     selectionStyle = .none
   }
