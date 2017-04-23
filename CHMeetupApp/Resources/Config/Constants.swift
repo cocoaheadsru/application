@@ -28,5 +28,6 @@ final class Constants {
   struct SystemSizes {
     static let cornerRadius: CGFloat = 5
     static let textSize: CGFloat = 15
+    static let percentageOfView: CGFloat = 0.04
   }
 }

@@ -26,7 +26,7 @@ class ChooseProfilePhotoTableViewCell: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    let borderWidth = photoImageView.bounds.height * 0.04
+    let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.percentageOfView
     addImageView.withWhiteRoundBorder(borderWidth)
     photoImageView.withWhiteRoundBorder(borderWidth)
   }
