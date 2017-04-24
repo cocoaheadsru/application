@@ -181,13 +181,33 @@
                     <view key="view" contentMode="scaleToFill" id="LUJ-lg-thX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fws-Bx-arK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6F4-3B-MvC" id="dZf-Pr-SNw"/>
+                                    <outlet property="delegate" destination="6F4-3B-MvC" id="5CK-3N-SCf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zvk-T6-twm" firstAttribute="top" secondItem="Fws-Bx-arK" secondAttribute="bottom" id="NTo-vg-JEW"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="top" secondItem="LUJ-lg-thX" secondAttribute="top" id="XiI-nQ-Yc4"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="leading" secondItem="LUJ-lg-thX" secondAttribute="leading" id="jke-2S-eA5"/>
+                            <constraint firstAttribute="trailing" secondItem="Fws-Bx-arK" secondAttribute="trailing" id="vHf-EM-VDx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Изменение профиля" id="jua-nT-hoZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="Fws-Bx-arK" id="bGF-xe-fAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bms-pX-iJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2369" y="35"/>
+            <point key="canvasLocation" x="2368.125" y="34.859154929577464"/>
         </scene>
         <!--Give Speech View Controller-->
         <scene sceneID="UYl-eR-dga">
