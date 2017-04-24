@@ -9,14 +9,14 @@
 import UIKit
 
 class NotificationController {
-  static func present(to viewController: UIViewController,
-                      with title: String? = nil,
-                      description text: String? = nil,
+  static func present(from viewController: UIViewController,
+                      title: String? = nil,
+                      description: String? = nil,
                       emjoi: String? = nil,
                       completion block: @escaping () -> (Void)) {
     let notification = Storyboards.Main.instantiateNotificationViewController()
     notification.titleText = title
-    notification.descriptionText = text
+    notification.descriptionText = description
     notification.completionBlock = block
     notification.emjoi = emjoi
     notification.modalPresentationStyle = .overFullScreen

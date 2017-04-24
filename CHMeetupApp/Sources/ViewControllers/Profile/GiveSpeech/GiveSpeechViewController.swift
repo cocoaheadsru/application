@@ -46,15 +46,16 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   func sendSpeech() {
 
     if let failed = displayCollection.failedSection {
-      return tableView.failedShakeSection(failed)
+      tableView.failedShakeSection(failed)
+      return
     }
 
     GiveSpeechController.sendRequest(title: displayCollection.nameText,
                                      description: displayCollection.descriptionText) { success in
       if success {
         self.tableView.endEditing(true)
-        NotificationController.present(to: self,
-                                       with: "Прекрасно!".localized,
+        NotificationController.present(from: self,
+                                       title: "Прекрасно!".localized,
                                        description: "Ваша великолепная заявка отправлена.".localized,
                                        emjoi: "📦",
                                        completion: {

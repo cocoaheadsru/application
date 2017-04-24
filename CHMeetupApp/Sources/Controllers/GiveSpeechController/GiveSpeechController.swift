@@ -9,7 +9,7 @@
 import Foundation
 
 class GiveSpeechController {
-  static func sendRequest(title: String, description: String, completion: @escaping (Bool) -> Void) {
+  static func sendRequest(title: String, description: String, completion: @escaping (_ success: Bool) -> Void) {
     let currentUser = UserPreferencesEntity.value.currentUser
     guard let userId = currentUser?.remoteId,
           let token = currentUser?.token
@@ -17,7 +17,7 @@ class GiveSpeechController {
         return
     }
 
-    let request = RequestPlainObject.giveSpeech(title: title,
+    let request = RequestPlainObject.Requests.giveSpeech(title: title,
                                                 description: description,
                                                 userId: userId,
                                                 token: token)

@@ -190,11 +190,11 @@
                                 </constraints>
                                 <state key="normal" title="Закрыть"/>
                                 <connections>
-                                    <action selector="close" destination="iwX-25-Yha" eventType="touchUpInside" id="aaY-yU-aa9"/>
+                                    <action selector="closeAction:" destination="iwX-25-Yha" eventType="touchUpInside" id="pHr-Cm-1RD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S2-Op-FCm">
-                                <rect key="frame" x="147" y="190.5" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="190.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="8AA-Oi-J5e"/>
                                     <constraint firstAttribute="width" secondItem="8S2-Op-FCm" secondAttribute="height" multiplier="1:1" id="K4J-Qs-CBn"/>
@@ -221,7 +221,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="closeButton" destination="UPC-P9-wtf" id="3qx-jI-QMh"/>
+                        <outlet property="closeButton" destination="UPC-P9-wtf" id="MHP-ci-IQj"/>
                         <outlet property="emotionLabel" destination="8S2-Op-FCm" id="Z1T-d2-7Pz"/>
                         <outlet property="textLabel" destination="jX1-ki-AHJ" id="pvb-RF-yBW"/>
                         <outlet property="titleLabel" destination="5IW-cH-Clj" id="FGi-Pv-Ork"/>

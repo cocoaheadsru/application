@@ -23,6 +23,7 @@ class NotificationViewController: UIViewController {
 
   @IBOutlet private var closeButton: LightButton! {
     didSet {
+      closeButton.titleLabel?.font = UIFont.appFont(.avenirNextMedium(size: 16))
       closeButton.titleColor = UIColor(.darkGray)
       closeButton.borderColor = UIColor(.darkGray)
     }
@@ -30,6 +31,7 @@ class NotificationViewController: UIViewController {
 
   @IBOutlet private var titleLabel: UILabel! {
     didSet {
+      titleLabel.font = UIFont.appFont(.avenirNextMedium(size: 21))
       titleLabel.text = titleText
       titleLabel.textColor = UIColor(.darkGray)
     }
@@ -37,12 +39,13 @@ class NotificationViewController: UIViewController {
 
   @IBOutlet private var textLabel: UILabel! {
     didSet {
+      textLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       textLabel.text = descriptionText
       textLabel.textColor = UIColor(.darkGray)
     }
   }
 
-  @IBAction private func close() {
+  @IBAction private func closeAction(_ sender: UIButton) {
     dismiss(animated: true, completion: nil)
     completionBlock()
   }
