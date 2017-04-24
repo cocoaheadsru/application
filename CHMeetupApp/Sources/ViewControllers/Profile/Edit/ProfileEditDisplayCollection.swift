@@ -10,7 +10,7 @@ import UIKit
 
 struct ProfileEditDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [UserTableViewHeaderCellModel.self,
+    return [ProfilePhotoTableViewCellModel.self,
             LabelTableViewCellModel.self]
   }
 
@@ -39,7 +39,7 @@ struct ProfileEditDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .userHeader:
-      return UserTableViewHeaderCellModel(userEntity: user)
+      return ProfilePhotoTableViewCellModel(userEntity: user)
     case .userContacts:
       let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
       let value = user.contacts[key] ?? ""
