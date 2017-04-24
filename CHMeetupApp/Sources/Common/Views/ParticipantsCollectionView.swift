@@ -47,7 +47,7 @@ class PhotosPresentationView: UIView {
 
       let xImageView = ((CGFloat(index) * viewHeight) * 0.8).round(0.5) // each new element takes 80% of view height
       let leadingEdgeSecondImageView = ((CGFloat(index + 1) * viewHeight) * 0.8) + viewHeight
-      let borderWidth = viewHeight * 0.05 // borderWidth = 5% of view height
+      let borderWidth = viewHeight * Constants.SystemSizes.imageViewBorderWidthPercentage
 
       let imageView = UIImageView()
       imageView.backgroundColor = UIColor.white
