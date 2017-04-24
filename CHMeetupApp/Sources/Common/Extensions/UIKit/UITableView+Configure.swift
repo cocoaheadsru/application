@@ -14,6 +14,7 @@ private var associationKey = "tableView_bottom_inset"
 struct TableViewConfiguration {
   var topInset: CGFloat?
   var bottomInset: CGFloat?
+  var bottomIndicatorInset: CGFloat?
   var estimatedRowHeight: CGFloat?
   var rowHeight: CGFloat?
   var backgroundColor: UIColor
@@ -23,6 +24,7 @@ struct TableViewConfiguration {
   init(
     topInset: CGFloat? = nil,
     bottomInset: CGFloat? = nil,
+    bottomIndicatorInset: CGFloat? = nil,
     estimatedRowHeight: CGFloat? = nil,
     rowHeight: CGFloat? = nil,
     backgroundColor: UIColor = UIColor(.lightGray)
@@ -30,6 +32,7 @@ struct TableViewConfiguration {
     self.topInset = topInset
     self.bottomInset = bottomInset
     self.estimatedRowHeight = estimatedRowHeight
+    self.bottomIndicatorInset = bottomIndicatorInset
     self.rowHeight = rowHeight
     self.backgroundColor = backgroundColor
   }
@@ -78,6 +81,9 @@ extension UITableView {
     if let bottomInset = configuration.bottomInset {
       self.contentInset.bottom = bottomInset
       defaultBottomInset = bottomInset
+    }
+    if let bottomIndicatorInset = configuration.bottomIndicatorInset {
+      self.scrollIndicatorInsets.bottom = bottomIndicatorInset
     }
     if let estimated = configuration.estimatedRowHeight {
       self.estimatedRowHeight = estimated
