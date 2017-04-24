@@ -131,6 +131,10 @@
 		8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */; };
 		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
 		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
+		8A7B878C1EAE818500200A99 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */; };
+		8A7B878D1EAE818500200A99 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A7B878F1EAE819900200A99 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7B878E1EAE819900200A99 /* Kingfisher.framework */; };
+		8A7B87901EAE819900200A99 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7B878E1EAE819900200A99 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAAA04B1EA39B4800934D8F /* TableViewGetDelegate.swift */; };
 		8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */; };
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
@@ -237,6 +241,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8A7B878D1EAE818500200A99 /* SVProgressHUD.framework in Embed Frameworks */,
+				8A7B87901EAE819900200A99 /* Kingfisher.framework in Embed Frameworks */,
 				784EFF951E637EAE00F2E31A /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -369,6 +375,8 @@
 		8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchingElementsProtocol.swift; sourceTree = "<group>"; };
 		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
 		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
+		8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		8A7B878E1EAE819900200A99 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		8AAAA04B1EA39B4800934D8F /* TableViewGetDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewGetDelegate.swift; sourceTree = "<group>"; };
 		8AAC26631EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditDisplayCollection.swift; sourceTree = "<group>"; };
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
@@ -465,6 +473,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7B878C1EAE818500200A99 /* SVProgressHUD.framework in Frameworks */,
+				8A7B878F1EAE819900200A99 /* Kingfisher.framework in Frameworks */,
 				8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1661,6 +1671,8 @@
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
+				8A7B878E1EAE819900200A99 /* Kingfisher.framework */,
+				8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */,
 				9F6048971E5B3CCB00C414C3 /* CHMeetupApp */,
 				A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */,
 				9F6048961E5B3CCB00C414C3 /* Products */,
