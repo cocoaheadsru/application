@@ -21,10 +21,12 @@ class LoginProcessController {
         currentUser = UserPreferencesEntity.value.currentUser!
       }
 
+      currentUser.remoteId = user.id
       currentUser.name = user.name
       currentUser.lastName = user.lastname
       currentUser.photoURL = user.photoUrl ?? ""
       currentUser.company = user.company ?? ""
+      currentUser.token = user.token ?? ""
 
       UserPreferencesEntity.value.currentUser = currentUser
     }

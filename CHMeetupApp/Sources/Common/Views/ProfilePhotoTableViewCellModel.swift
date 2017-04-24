@@ -1,5 +1,5 @@
 //
-//  UserTableViewHeaderCellModel.swift
+//  ProfilePhotoTableViewCellModel.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 26/03/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct UserTableViewHeaderCellModel {
+struct ProfilePhotoTableViewCellModel {
   let userEntity: UserEntity
 }
 
-extension UserTableViewHeaderCellModel: CellViewModelType {
-  func setup(on cell: UserTableViewHeaderCell) {
+extension ProfilePhotoTableViewCellModel: CellViewModelType {
+  func setup(on cell: ProfilePhotoTableViewCell) {
     if let photoURL = userEntity.photoURL, let url = URL(string: photoURL) {
       cell.userImageView.loadImage(from: url)
     }

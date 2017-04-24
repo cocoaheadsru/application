@@ -1,49 +1,34 @@
 //
-//  ProfileViewController.swift
+//  CreatorsViewController.swift
 //  CHMeetupApp
 //
-//  Created by Alexander Zimin on 22/02/2017.
+//  Created by Sam Mejlumyan on 16/04/2017.
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
-
+class CreatorsViewController: UIViewController {
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
     }
   }
 
-  fileprivate var displayCollection: ProfileViewDisplayCollection!
-
-  // MARK: - View Lifecycle.
+  fileprivate var displayCollection: CreatorsViewDisplayCollection!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayCollection = ProfileViewDisplayCollection(delegate: self)
+    navigationItem.title = "Создатели".localized
+
+    displayCollection = CreatorsViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
-
-    title = displayCollection.user.fullName
-  }
-
-  // MARK: - Actions.
-
-  @IBAction func logoutBarButtonAction(_ sender: UIBarButtonItem) {
-    LoginProcessController.logout()
-    profileNavigationController?.updateRootViewController()
-  }
-
-  @IBAction func editBarButtonAction(_ sender: UIBarButtonItem) {
-
   }
 }
 
-// MARK: - TableView Data Source.
+// MARK: - UITableViewDataSource
 
-extension ProfileViewController: UITableViewDataSource {
-
+extension CreatorsViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     return displayCollection.numberOfSections
   }
@@ -59,10 +44,9 @@ extension ProfileViewController: UITableViewDataSource {
   }
 }
 
-// MARK: - TableView Delegate.
+// MARK: - UITableViewDelegate
 
-extension ProfileViewController: UITableViewDelegate {
-
+extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)

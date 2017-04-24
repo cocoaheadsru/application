@@ -30,7 +30,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     displayCollection = GiveSpeechDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
-    title = "Выступить с докладом".localized
+    navigationItem.title = "Стать спикером".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
     bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
@@ -44,8 +44,17 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
   }
 
   func sendSpeech() {
-    print(displayCollection.nameText, displayCollection.descriptionText)
-    // Do stuff here ...
+    let currentUser = UserPreferencesEntity.value.currentUser
+    if let userId = currentUser?.remoteId, let token = currentUser?.token {
+      let request = RequestPlainObject.giveSpeech(title: displayCollection.nameText,
+                                                  description: displayCollection.descriptionText,
+                                                  userId: userId,
+                                                  token: token)
+      Server.standard.request(request) { answer, error in
+        print(error ?? "")
+        print(answer ?? "")
+      }
+    }
   }
 
   func dismissKeyboard() {

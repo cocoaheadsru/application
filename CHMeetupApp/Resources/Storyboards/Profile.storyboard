@@ -126,11 +126,11 @@
                         <viewControllerLayoutGuide type="top" id="O7C-1t-umU"/>
                         <viewControllerLayoutGuide type="bottom" id="nwW-pZ-9ia"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T2c-QD-Zwl">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="T2c-QD-Zwl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-wy-4Yc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -143,7 +143,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5gD-wy-4Yc" firstAttribute="leading" secondItem="T2c-QD-Zwl" secondAttribute="leading" id="8RX-4j-llF"/>
-                            <constraint firstItem="nwW-pZ-9ia" firstAttribute="top" secondItem="5gD-wy-4Yc" secondAttribute="bottom" id="REW-51-4wE"/>
+                            <constraint firstAttribute="bottom" secondItem="5gD-wy-4Yc" secondAttribute="bottom" id="dCK-gp-hAo"/>
                             <constraint firstAttribute="trailing" secondItem="5gD-wy-4Yc" secondAttribute="trailing" id="ewC-a0-0TU"/>
                             <constraint firstItem="5gD-wy-4Yc" firstAttribute="top" secondItem="T2c-QD-Zwl" secondAttribute="top" id="lqS-Xn-aAh"/>
                         </constraints>
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7US-b2-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="35"/>
+            <point key="canvasLocation" x="1590" y="34.859154929577464"/>
         </scene>
         <!--Изменение профиля-->
         <scene sceneID="6xe-AS-Z5B">
@@ -209,7 +209,7 @@
             </objects>
             <point key="canvasLocation" x="2368.125" y="34.859154929577464"/>
         </scene>
-        <!--Give a Speech-->
+        <!--Give Speech View Controller-->
         <scene sceneID="UYl-eR-dga">
             <objects>
                 <viewController storyboardIdentifier="GiveSpeechViewController" hidesBottomBarWhenPushed="YES" id="WaT-qA-jSi" customClass="GiveSpeechViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,17 +236,16 @@
                             <constraint firstItem="dY2-b6-Nvf" firstAttribute="top" secondItem="974-sJ-D3K" secondAttribute="top" id="2GV-CK-oTp"/>
                             <constraint firstItem="dY2-b6-Nvf" firstAttribute="leading" secondItem="974-sJ-D3K" secondAttribute="leading" id="9Wq-ol-Bcb"/>
                             <constraint firstAttribute="trailing" secondItem="dY2-b6-Nvf" secondAttribute="trailing" id="iId-52-H5S"/>
-                            <constraint firstItem="ZRv-Xe-9jk" firstAttribute="top" secondItem="dY2-b6-Nvf" secondAttribute="bottom" id="vu7-qj-jQq"/>
+                            <constraint firstAttribute="bottom" secondItem="dY2-b6-Nvf" secondAttribute="bottom" id="twZ-MJ-OkZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Give a Speech" id="lGo-xn-iJo"/>
                     <connections>
                         <outlet property="tableView" destination="dY2-b6-Nvf" id="DOA-5s-Dky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-q3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367.1999999999998" y="810.94452773613204"/>
+            <point key="canvasLocation" x="2366.25" y="810.21126760563379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Yq-vQ-Mu5">
@@ -283,6 +282,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tek-si-OU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="34.632683658170919"/>
+        </scene>
+        <!--Creators View Controller-->
+        <scene sceneID="KUp-f3-TqP">
+            <objects>
+                <viewController storyboardIdentifier="CreatorsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sx5-x1-FwB" customClass="CreatorsViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jbn-mm-ZEr"/>
+                        <viewControllerLayoutGuide type="bottom" id="UG3-eS-8MV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="433-3g-IEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPX-sI-7bs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sx5-x1-FwB" id="5fd-AW-vKV"/>
+                                    <outlet property="delegate" destination="Sx5-x1-FwB" id="gBc-X1-hcw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sPX-sI-7bs" firstAttribute="leading" secondItem="433-3g-IEQ" secondAttribute="leading" id="2tZ-1R-AjF"/>
+                            <constraint firstAttribute="trailing" secondItem="sPX-sI-7bs" secondAttribute="trailing" id="IDu-1j-QoX"/>
+                            <constraint firstAttribute="bottom" secondItem="sPX-sI-7bs" secondAttribute="bottom" id="IRs-Vp-QWj"/>
+                            <constraint firstItem="sPX-sI-7bs" firstAttribute="top" secondItem="433-3g-IEQ" secondAttribute="top" id="vCJ-6S-x2e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="sPX-sI-7bs" id="EFy-OH-NJz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVc-HU-3DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3159.375" y="809.15492957746483"/>
+        </scene>
+        <!--Ask Question View Controller-->
+        <scene sceneID="8Ly-94-gai">
+            <objects>
+                <viewController storyboardIdentifier="AskQuestionViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bFo-pD-aJt" customClass="AskQuestionViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gZ-EQ-KvR"/>
+                        <viewControllerLayoutGuide type="bottom" id="s5p-go-A6e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Im6-lr-7GF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-8N-fC0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yKq-8N-fC0" firstAttribute="leading" secondItem="Im6-lr-7GF" secondAttribute="leading" id="Obt-ca-yPs"/>
+                            <constraint firstAttribute="bottom" secondItem="yKq-8N-fC0" secondAttribute="bottom" id="gr7-l2-9Q2"/>
+                            <constraint firstItem="yKq-8N-fC0" firstAttribute="top" secondItem="Im6-lr-7GF" secondAttribute="top" id="k6e-SJ-JfW"/>
+                            <constraint firstAttribute="trailing" secondItem="yKq-8N-fC0" secondAttribute="trailing" id="lSt-5r-u6s"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAb-ki-7gH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3907.5" y="810.21126760563379"/>
         </scene>
     </scenes>
     <resources>

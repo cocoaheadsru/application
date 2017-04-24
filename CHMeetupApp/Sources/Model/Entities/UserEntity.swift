@@ -11,6 +11,7 @@ import RealmSwift
 
 class UserEntity: Object {
   dynamic var id: Int = 0
+  dynamic var remoteId: Int = 0
 
   dynamic var name: String = ""
   dynamic var lastName: String = ""
@@ -25,6 +26,7 @@ class UserEntity: Object {
 
   dynamic var isSpeaker: Bool = false
   dynamic var photoURL: String?
+  dynamic var token: String?
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()

@@ -42,7 +42,7 @@ class GroupImageLoader {
       }
     }
 
-    var images = [UIImage](repeating: UIImage(), count: urls.count)
+    var images = [UIImage](repeating: UIImage(named: "img_template_unknown")!, count: urls.count)
     var tasks = [Task]()
     let group = DispatchGroup()
     for (index, url) in urls.enumerated() {

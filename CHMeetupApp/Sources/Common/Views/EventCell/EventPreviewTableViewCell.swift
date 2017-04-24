@@ -25,18 +25,21 @@ class EventPreviewTableViewCell: PlateTableViewCell {
   @IBOutlet var nameLabel: UILabel! {
     didSet {
       nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
+      nameLabel.textColor = UIColor(.strongGray)
     }
   }
 
   @IBOutlet var dateLabel: UILabel! {
     didSet {
       dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
+      dateLabel.textColor = UIColor(.strongGray)
     }
   }
 
   @IBOutlet var placeLabel: UILabel! {
     didSet {
       placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
+      placeLabel.textColor = UIColor(.strongGray)
     }
   }
 

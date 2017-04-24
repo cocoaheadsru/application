@@ -107,7 +107,6 @@ class Server {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         return
       }
-
       guard let data = data else {
         OperationQueue.main.addOperation {
           completion(nil, .emptyResponse)
