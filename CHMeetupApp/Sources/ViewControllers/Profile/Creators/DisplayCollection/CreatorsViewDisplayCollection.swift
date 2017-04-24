@@ -9,11 +9,17 @@
 import Foundation
 
 final class CreatorsViewDisplayCollection: DisplayCollection {
+
+  var creatorsModels: [CreatorTableViewCellModel] = []
+
+  init(with users: [UserPlainObject]) {
+    creatorsModels = users.flatMap(CreatorTableViewCellModel.init(creator:))
+  }
+
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [CreatorTableViewCellModel.self]
   }
 
-  weak var delegate: DisplayCollectionDelegate?
   private var creators: [CreatorTableViewCellModel] = []
 
   enum `Type` {
@@ -27,14 +33,13 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return 10
+    return creatorsModels.count
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .creators:
-      let user = UserEntity.templateEntity
-      return CreatorTableViewCellModel(creator: user)
+      return creatorsModels[indexPath.row]
     }
   }
 
