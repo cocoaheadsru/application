@@ -8,54 +8,71 @@
 
 import UIKit
 
-//protocol RegistrationConfirmDisplayCollectionDelegate: class {
-//  func RegistrationConfirmDisplayRequestTo(selectItemsAt selectionIndexPaths: [IndexPath],
-//                                           deselectItemsAt deselectIndexPaths: [IndexPath])
-//  func RegistrationConfirmDisplayRequestCell(at indexPath: IndexPath) -> UITableViewCell?
-//  func RegistrationConfirmDisplayRequestTouchGeuster(enable: Bool)
-//}
-
 final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
 
-  static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [ActionTableViewCellModel.self]
+  enum `Type` {
+    case header
+    case actionButtons
   }
 
-//  weak var delegate: RegistrationConfirmDisplayCollectionDelegate?
+  static var modelsForRegistration: [CellViewAnyModelType.Type] {
+    return [RegConfirmHeaderTableViewCellModel.self, ActionTableViewCellModel.self]
+  }
+
+  private var sections: [Type] = [.header, .actionButtons]
+  private var actionPlainObjects: [ActionPlainObject] = []
+  private var indexPath: IndexPath?
+
+  func configureActionCellsSection(on viewController: UIViewController,
+                                   with tableView: UITableView) {
+    let actionCell = ActionCellConfigurationController()
+
+    let action = {
+      guard let index = self.indexPath else {
+        return
+      }
+      self.actionPlainObjects.remove(at: index.row)
+      tableView.deleteRows(at: [index], with: .left)
+    }
+
+    let notificationPermissionCell = actionCell.checkAccess(
+      on: viewController,
+      for: .notifications,
+      with: {
+        PushNotificationController.configureNotification()
+        action()
+    })
+
+    if let notificationCell = notificationPermissionCell {
+      actionPlainObjects.append(notificationCell)
+    }
+  }
 
   var numberOfSections: Int {
-    return 1
+    return sections.count
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return 2
+    switch sections[section] {
+    case .header:
+      return 1
+    case .actionButtons:
+      return actionPlainObjects.count
+    }
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return ActionTableViewCellModel(action: ActionPlainObject(text: "Добавить"))
-  }
-
-  func headerHeight(for section: Int) -> CGFloat {
-    return 300
+    let type = sections[indexPath.section]
+    switch type {
+    case .header:
+      return RegConfirmHeaderTableViewCellModel()
+    case .actionButtons:
+      return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
+    }
   }
 
   func didSelect(indexPath: IndexPath) {
 
   }
 
-}
-
-extension RegistrationConfirmDisplayCollection: UITextFieldDelegate {
-//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//    textField.resignFirstResponder()
-//    return true
-//  }
-//  
-//  func textFieldDidBeginEditing(_ textField: UITextField) {
-//    delegate?.formDisplayRequestTouchGeuster(enable: true)
-//  }
-//  
-//  func textFieldDidEndEditing(_ textField: UITextField) {
-//    delegate?.formDisplayRequestTouchGeuster(enable: false)
-//  }
 }

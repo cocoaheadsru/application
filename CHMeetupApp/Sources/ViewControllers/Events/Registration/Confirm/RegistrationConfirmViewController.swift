@@ -9,10 +9,9 @@
 import UIKit
 
 class RegistrationConfirmViewController: UIViewController {
-  
+
   @IBOutlet var tableView: UITableView! {
     didSet {
-//      tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
         bottomInset: 8 + BottomButton.constantHeight,
         estimatedRowHeight: 44)
@@ -21,7 +20,6 @@ class RegistrationConfirmViewController: UIViewController {
                                                      left: 0,
                                                      bottom: BottomButton.constantHeight,
                                                      right: 0)
-      tableView.registerHeaderNib(for: RegistrationConfirmTableViewHeader.self)
     }
   }
 
@@ -36,17 +34,44 @@ class RegistrationConfirmViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    navigationController?.setNavigationBarHidden(true, animated: false)
     title = "Подтверждение".localized
-    
-    bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
-    
-    displayCollection = RegistrationConfirmDisplayCollection()
-    tableView.registerNibs(from: displayCollection)
 
+    bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
+
+    displayCollection = RegistrationConfirmDisplayCollection()
+    displayCollection.configureActionCellsSection(on: self, with: tableView)
+    tableView.registerNibs(from: displayCollection)
   }
-  
+
   func closeButtonAction() {
-//    Storyboards.Main.
+    // Do stuff here
+    // Go to main screen
   }
-  
+
+}
+
+// MARK: - UITableViewDataSource
+extension RegistrationConfirmViewController: UITableViewDataSource, UITableViewDelegate {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return displayCollection.numberOfSections
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return displayCollection.numberOfRows(in: section)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let model = displayCollection.model(for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
+    return cell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    displayCollection.didSelect(indexPath: indexPath)
+  }
+
+  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    displayCollection.didSelect(indexPath: indexPath)
+  }
 }
