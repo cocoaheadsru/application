@@ -26,6 +26,18 @@ protocol CellViewModelType: CellViewAnyModelType {
   func setup(on cell: CellClass)
 }
 
+protocol TemplatableCellViewModelType: CellViewModelType {
+  associatedtype TemplateValue: TemplateEntity
+  var entity: TemplateValue { get }
+}
+
+extension TemplatableCellViewModelType {
+  func setupDefault(on cell: UIView) {
+    cell.apply(template: entity.isTemplate)
+    setup(on: cell as! Self.CellClass) // swiftlint:disable:this force_cast
+  }
+}
+
 // From generic to runtime
 extension CellViewModelType {
   static func cellClass() -> UIView.Type {

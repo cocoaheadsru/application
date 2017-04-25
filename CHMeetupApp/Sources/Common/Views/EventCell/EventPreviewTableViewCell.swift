@@ -22,21 +22,21 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var eventImageView: UIImageView!
 
-  @IBOutlet var nameLabel: UILabel! {
+  @IBOutlet var nameLabel: LoadingLabel! {
     didSet {
       nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
       nameLabel.textColor = UIColor(.strongGray)
     }
   }
 
-  @IBOutlet var dateLabel: UILabel! {
+  @IBOutlet var dateLabel: LoadingLabel! {
     didSet {
       dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       dateLabel.textColor = UIColor(.strongGray)
     }
   }
 
-  @IBOutlet var placeLabel: UILabel! {
+  @IBOutlet var placeLabel: LoadingLabel! {
     didSet {
       placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       placeLabel.textColor = UIColor(.strongGray)

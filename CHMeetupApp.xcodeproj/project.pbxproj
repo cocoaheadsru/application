@@ -88,6 +88,11 @@
 		328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E9E691E8BDFEF008B409F /* ProfileViewDisplayCollection.swift */; };
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
 		32AA9BBE1E7A91C000140413 /* ParticipantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */; };
+		32AFE5981EAF5B29004904FB /* TemplateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5971EAF5B29004904FB /* TemplateEntity.swift */; };
+		32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5991EAF5B3D004904FB /* TemplateView.swift */; };
+		32AFE59C1EAF5B4C004904FB /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */; };
+		32AFE59F1EAF5BEF004904FB /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */; };
+		32AFE5A11EAF5C8E004904FB /* DisplayModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */; };
 		32B031E91EABA62800FC1F89 /* UIImageView+RoundBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */; };
 		32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */; };
 		32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */; };
@@ -333,6 +338,11 @@
 		328E9E691E8BDFEF008B409F /* ProfileViewDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewDisplayCollection.swift; sourceTree = "<group>"; };
 		328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounding.swift"; sourceTree = "<group>"; };
 		32AA9BBD1E7A91C000140413 /* ParticipantsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionView.swift; sourceTree = "<group>"; };
+		32AFE5971EAF5B29004904FB /* TemplateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateEntity.swift; sourceTree = "<group>"; };
+		32AFE5991EAF5B3D004904FB /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
+		32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
+		32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayModelCollection.swift; sourceTree = "<group>"; };
 		32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundBorder.swift"; sourceTree = "<group>"; };
 		32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
@@ -694,6 +704,7 @@
 				9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */,
 				9F2638601E6B83D50081D23B /* DataModelCollection.swift */,
 				9FD594941E8732F600BAD1B5 /* List+RemoveDublicates.swift */,
+				32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -771,6 +782,7 @@
 		22323F051E70C0CE00522E5C /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */,
 				C30485B21E740FDE0052D632 /* UIView+Anchor.swift */,
 				22323F061E70C0CE00522E5C /* UIView+NibLoad.swift */,
 				7D1CB6CF1EA27ADC003136FA /* UIView+Shake.swift */,
@@ -869,6 +881,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32AFE59D1EAF5BDF004904FB /* LoadingLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
 				32DD62FD1EA8C8D1005B565E /* ChooseProfilePhotoCell */,
@@ -1223,6 +1236,14 @@
 			name = ParticipantCollectionView;
 			sourceTree = "<group>";
 		};
+		32AFE59D1EAF5BDF004904FB /* LoadingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */,
+			);
+			name = LoadingLabel;
+			sourceTree = "<group>";
+		};
 		32DD62FD1EA8C8D1005B565E /* ChooseProfilePhotoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1389,6 +1410,8 @@
 		8A6268271E60742B00D51BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A7B878E1EAE819900200A99 /* Kingfisher.framework */,
+				8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */,
 				8A6268281E60742B00D51BEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
@@ -1483,6 +1506,8 @@
 				F718C0341E966B6A008B3C0B /* ImageLoader.swift */,
 				9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */,
 				9FB0FE0E1EA6869700383E1D /* ActiveWindowManager.swift */,
+				32AFE5971EAF5B29004904FB /* TemplateEntity.swift */,
+				32AFE5991EAF5B3D004904FB /* TemplateView.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -1671,8 +1696,6 @@
 		9F60488C1E5B3CCB00C414C3 = {
 			isa = PBXGroup;
 			children = (
-				8A7B878E1EAE819900200A99 /* Kingfisher.framework */,
-				8A7B878B1EAE818500200A99 /* SVProgressHUD.framework */,
 				9F6048971E5B3CCB00C414C3 /* CHMeetupApp */,
 				A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */,
 				9F6048961E5B3CCB00C414C3 /* Products */,
@@ -2052,12 +2075,14 @@
 			files = (
 				22323FA01E70C2BE00522E5C /* ProfileHierarhyViewControllerType.swift in Sources */,
 				22323F431E70C14300522E5C /* MapsController.swift in Sources */,
+				32AFE59C1EAF5B4C004904FB /* UIView+Template.swift in Sources */,
 				9FAFF80B1E6ADA0200B687CB /* SpeechContentEntity.swift in Sources */,
 				7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */,
 				22323F3F1E70C14300522E5C /* ViewControllersFactory.swift in Sources */,
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
+				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
@@ -2071,6 +2096,7 @@
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
+				32AFE59F1EAF5BEF004904FB /* LoadingLabel.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
@@ -2122,6 +2148,7 @@
 				03FB4F311E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift in Sources */,
 				9FD594901E87183800BAD1B5 /* SpeechPlainObject.swift in Sources */,
 				035A76B41E5F230100B87501 /* Storyboards.swift in Sources */,
+				32AFE5981EAF5B29004904FB /* TemplateEntity.swift in Sources */,
 				03FB4F2E1E906880006DDC2C /* SpeakerTableViewCellModel.swift in Sources */,
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
@@ -2177,6 +2204,7 @@
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
+				32AFE5A11EAF5C8E004904FB /* DisplayModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,

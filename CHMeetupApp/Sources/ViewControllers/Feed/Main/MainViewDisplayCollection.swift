@@ -73,7 +73,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .events:
-      return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+      return EventPreviewTableViewCellModel(entity: modelCollection[indexPath.row],
                                             index: indexPath.row,
                                             delegate: self,
                                             groupImageLoader: groupImageLoader)
