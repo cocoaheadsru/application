@@ -9,10 +9,15 @@
 import UIKit
 
 protocol ProfileHierarhyViewControllerType: class {
+  func getViewController() -> UIViewController?
 }
 
 extension ProfileHierarhyViewControllerType where Self: UIViewController {
   var profileNavigationController: ProfileNavigationControllerType? {
     return navigationController as? ProfileNavigationControllerType
+  }
+
+  func getViewController() -> UIViewController? {
+    return self
   }
 }

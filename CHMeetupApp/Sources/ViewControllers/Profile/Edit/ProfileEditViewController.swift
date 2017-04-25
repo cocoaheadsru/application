@@ -27,8 +27,8 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     displayCollection = ProfileEditDisplayCollection()
     displayCollection.user = user
 
+    displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
-
     title = "Изменение профиля".localized
   }
 

@@ -23,6 +23,8 @@ class ProfileEditDisplayCollection: DisplayCollection {
 
   var user: UserEntity!
 
+  weak var delegate: ProfileHierarhyViewControllerType?
+
   var numberOfSections: Int {
     return sections.count
   }
@@ -50,6 +52,15 @@ class ProfileEditDisplayCollection: DisplayCollection {
 
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
-    print("Tapped")
+    let viewController = delegate?.getViewController()
+    if let viewController = viewController {
+      PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
+                                       completion: { _ in self.changeImageCompetion() })
+    }
+  }
+
+  func changeImageCompetion() {
+    print("Change Image")
+    // TODO: - change Image
   }
 }
