@@ -30,7 +30,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     displayCollection = GiveSpeechDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
-    title = "Стать спикером".localized.uppercased()
+    navigationItem.title = "Стать спикером".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
     bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)

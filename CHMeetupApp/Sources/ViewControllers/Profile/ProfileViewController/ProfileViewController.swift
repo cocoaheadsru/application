@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 extension ProfileViewController: UITableViewDataSource {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return displayCollection.sections.count
+    return displayCollection.numberOfSections
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

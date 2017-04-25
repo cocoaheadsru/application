@@ -112,7 +112,7 @@ final class AuthServiceFacade {
 
   fileprivate func hideSafari() {
     if let safari = safari, safari.isViewLoaded {
-      safari.dismiss(animated: true, completion: nil)
+      safari.dismiss(animated: false, completion: nil)
     }
   }
 
