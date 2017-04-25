@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct ProfileEditDisplayCollection: DisplayCollection {
+class ProfileEditDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [ProfilePhotoTableViewCellModel.self,
+    return [ChooseProfilePhotoTableViewModel.self,
             LabelTableViewCellModel.self]
   }
 
@@ -39,11 +39,17 @@ struct ProfileEditDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .userHeader:
-      return ProfilePhotoTableViewCellModel(userEntity: user)
+      return ChooseProfilePhotoTableViewModel(userEntity: user, delegate: self)
     case .userContacts:
       let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
       let value = user.contacts[key] ?? ""
       return LabelTableViewCellModel(title: key, description: value)
     }
+  }
+}
+
+extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
+  func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
+    print("Tapped")
   }
 }
