@@ -20,7 +20,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    view.backgroundColor = UIColor(.lightGray)
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
