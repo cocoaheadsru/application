@@ -9,7 +9,7 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
-  var completionBlock: () -> (Void) = {}
+  var completionBlock: ActionCompletionBlock = {}
   var titleText: String?
   var descriptionText: String?
   var emjoi: String?

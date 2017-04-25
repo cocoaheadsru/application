@@ -54,13 +54,13 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
                                      description: displayCollection.descriptionText) { success in
       if success {
         self.tableView.endEditing(true)
-        NotificationController.present(from: self,
-                                       title: "Прекрасно!".localized,
-                                       description: "Ваша великолепная заявка отправлена.".localized,
-                                       emjoi: "📦",
-                                       completion: {
-                                         self.navigationController?.popToRootViewController(animated: true)
+        let notification = NotificationHelper.viewController(title: "Прекрасно!".localized,
+                                          description: "Ваша великолепная заявка отправлена.".localized,
+                                          emjoi: "📦",
+                                          completion: {
+                                            self.navigationController?.popToRootViewController(animated: true)
         })
+        self.present(viewController: notification)
       } else {
         self.showMessageAlert(title: "Возникла ошибка".localized)
       }

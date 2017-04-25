@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias ActionCompletionBlock = () -> (Void)
+
 // MARK: - Constants for project
 final class Constants {
 

@@ -105,8 +105,6 @@
 		7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E275E1E958C2D0005B861 /* RequestPlainObject+Requests.swift */; };
 		7D1E27611E958C2D0005B861 /* RequestPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E275F1E958C2D0005B861 /* RequestPlainObject.swift */; };
 		7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */; };
-		7D667FD71EA7FADA00D06979 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D667FD61EA7FADA00D06979 /* NotificationController.swift */; };
-		7D667FDC1EA7FD1B00D06979 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D667FDB1EA7FD1B00D06979 /* NotificationViewController.swift */; };
 		7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86321EA8168A00437283 /* GiveSpeechController.swift */; };
 		7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
@@ -116,6 +114,8 @@
 		7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9420E1E867BB900E7E9E6 /* VKResource.swift */; };
 		7DE942111E869A6F00E7E9E6 /* FBResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942101E869A6F00E7E9E6 /* FBResource.swift */; };
 		7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */; };
+		7DF04D1A1EAF670300E2D98C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF04D181EAF670300E2D98C /* NotificationHelper.swift */; };
+		7DF04D1B1EAF670300E2D98C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF04D191EAF670300E2D98C /* NotificationViewController.swift */; };
 		8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */; };
 		8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */; };
 		8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */; };
@@ -336,8 +336,6 @@
 		7D1E275E1E958C2D0005B861 /* RequestPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		7D1E275F1E958C2D0005B861 /* RequestPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPlainObject.swift; sourceTree = "<group>"; };
 		7D1EC7021E898E5300713E6D /* SpeechContentPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechContentPlainObject+Requests.swift"; sourceTree = "<group>"; };
-		7D667FD61EA7FADA00D06979 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		7D667FDB1EA7FD1B00D06979 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7DAC86321EA8168A00437283 /* GiveSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechController.swift; sourceTree = "<group>"; };
 		7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
@@ -347,6 +345,8 @@
 		7DE9420E1E867BB900E7E9E6 /* VKResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResource.swift; sourceTree = "<group>"; };
 		7DE942101E869A6F00E7E9E6 /* FBResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResource.swift; sourceTree = "<group>"; };
 		7DE942131E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpeechPlainObject+Requests.swift"; path = "Speech/SpeechPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		7DF04D181EAF670300E2D98C /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		7DF04D191EAF670300E2D98C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8A0244B01E93011D008AFFE6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		8A3699891E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCell.swift; path = AboutSpeechCell/AboutSpeechTableViewCell.swift; sourceTree = "<group>"; };
 		8A36998A1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutSpeechTableViewCell.xib; path = AboutSpeechCell/AboutSpeechTableViewCell.xib; sourceTree = "<group>"; };
@@ -624,7 +624,6 @@
 			isa = PBXGroup;
 			children = (
 				7DAC86311EA8168000437283 /* GiveSpeechController */,
-				7D667FD51EA7FAC800D06979 /* NotificationController */,
 				4D8851001E9F8F6900A49ADD /* PushNotifications */,
 				9F487A701E73F2A90016CE0B /* Appearance */,
 				9F42ACC91E89C7540099AB6A /* Swizzling Controller */,
@@ -780,6 +779,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7DF04D171EAF670300E2D98C /* NotificationHelper */,
 				F718C0311E966B01008B3C0B /* ImageLoader */,
 				030764A81E95658800743690 /* AttributedStringHelper */,
 				F718BFB51E942C0A008B3C0B /* Optional */,
@@ -975,7 +975,6 @@
 				22323F5A1E70C2BE00522E5C /* CustomTabBarController.swift */,
 				22323F5B1E70C2BE00522E5C /* NavigationViewController.swift */,
 				22323F5C1E70C2BE00522E5C /* TabBarViewController.swift */,
-				7D667FDB1EA7FD1B00D06979 /* NotificationViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1268,14 +1267,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		7D667FD51EA7FAC800D06979 /* NotificationController */ = {
-			isa = PBXGroup;
-			children = (
-				7D667FD61EA7FADA00D06979 /* NotificationController.swift */,
-			);
-			path = NotificationController;
-			sourceTree = "<group>";
-		};
 		7DAC86311EA8168000437283 /* GiveSpeechController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,6 +1309,15 @@
 			);
 			name = SocialResource;
 			path = AuthResources;
+			sourceTree = "<group>";
+		};
+		7DF04D171EAF670300E2D98C /* NotificationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7DF04D181EAF670300E2D98C /* NotificationHelper.swift */,
+				7DF04D191EAF670300E2D98C /* NotificationViewController.swift */,
+			);
+			path = NotificationHelper;
 			sourceTree = "<group>";
 		};
 		8A3699821E8C471800B37528 /* AboutSpeechCell */ = {
@@ -2048,6 +2048,7 @@
 				7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */,
 				320FA57A1E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift in Sources */,
 				9F30FFCF1E71E87F00EF85F5 /* TemplateTableCellViewModel.swift in Sources */,
+				7DF04D1A1EAF670300E2D98C /* NotificationHelper.swift in Sources */,
 				9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */,
 				9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */,
 				03FB4F311E9092B7006DDC2C /* SpeechPreviewDisplayCollection.swift in Sources */,
@@ -2122,8 +2123,8 @@
 				4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */,
 				A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */,
 				22323F121E70C0D500522E5C /* DateComponents+Init.swift in Sources */,
+				7DF04D1B1EAF670300E2D98C /* NotificationViewController.swift in Sources */,
 				9F1167C51EA4E20D008D3A1B /* UIViewControllerWithTableView.swift in Sources */,
-				7D667FDC1EA7FD1B00D06979 /* NotificationViewController.swift in Sources */,
 				22323F311E70C0E500522E5C /* Server.swift in Sources */,
 				9FAFF8031E6AD5A000B687CB /* Realm+Notifications.swift in Sources */,
 				03374B211E7F20EA00CA298E /* SpeechPreviewTableViewCellModel.swift in Sources */,
@@ -2133,7 +2134,6 @@
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
-				7D667FD71EA7FADA00D06979 /* NotificationController.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
 				F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */,
 				C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */,
