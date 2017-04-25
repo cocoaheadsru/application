@@ -10,5 +10,6 @@ import UIKit
 
 struct RegConfirmHeaderTableViewCellModel: CellViewModelType {
   func setup(on cell: RegConfirmHeaderTableViewCell) {
+    // The cell already configurated and not needed in this
   }
 }

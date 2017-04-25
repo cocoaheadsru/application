@@ -55,7 +55,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
     case .header:
-      return 1
+      return 1 // Only one header cell
     case .actionButtons:
       return actionPlainObjects.count
     }
@@ -72,7 +72,13 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   }
 
   func didSelect(indexPath: IndexPath) {
-
+    switch sections[indexPath.section] {
+    case .header:
+      // Do nothing
+      break
+    case .actionButtons:
+      self.indexPath = indexPath
+      actionPlainObjects[indexPath.row].action?()
+    }
   }
-
 }

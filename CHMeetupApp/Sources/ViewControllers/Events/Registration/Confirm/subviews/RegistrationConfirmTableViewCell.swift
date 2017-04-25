@@ -10,7 +10,14 @@ import UIKit
 
 class RegConfirmHeaderTableViewCell: UITableViewCell {
 
-  @IBOutlet var headerImageView: UIImageView!
+  @IBOutlet var headerImageView: UIImageView! {
+    didSet {
+      headerImageView.layer.masksToBounds =  false
+      headerImageView.layer.shadowColor = UIColor(.black).cgColor
+      headerImageView.layer.shadowRadius = 40
+      headerImageView.layer.shadowOpacity = 0.05
+    }
+  }
 
   @IBOutlet var label: UILabel! {
     didSet {

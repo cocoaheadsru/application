@@ -33,22 +33,20 @@ class RegistrationConfirmViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    navigationController?.setNavigationBarHidden(true, animated: false)
-    title = "Подтверждение".localized
-
+    
+    navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
-
     displayCollection = RegistrationConfirmDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
   }
 
   func closeButtonAction() {
-    // Do stuff here
+    // Setup default (previus) visibility for navigation bar
+    navigationController?.setNavigationBarHidden(false, animated: false)
     // Go to main screen
+    navigationController?.popToRootViewController(animated: true)
   }
-
 }
 
 // MARK: - UITableViewDataSource
@@ -68,10 +66,6 @@ extension RegistrationConfirmViewController: UITableViewDataSource, UITableViewD
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    displayCollection.didSelect(indexPath: indexPath)
-  }
-
-  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     displayCollection.didSelect(indexPath: indexPath)
   }
 }
