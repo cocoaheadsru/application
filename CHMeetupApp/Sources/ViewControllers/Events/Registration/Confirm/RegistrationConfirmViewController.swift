@@ -14,12 +14,9 @@ class RegistrationConfirmViewController: UIViewController {
     didSet {
       let configuration = TableViewConfiguration(
         bottomInset: 8 + BottomButton.constantHeight,
-        estimatedRowHeight: 44)
+        bottomIndicatorInset: BottomButton.constantHeight
+      )
       tableView.configure(with: .custom(configuration))
-      tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
-                                                     left: 0,
-                                                     bottom: BottomButton.constantHeight,
-                                                     right: 0)
     }
   }
 
@@ -33,7 +30,7 @@ class RegistrationConfirmViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
     displayCollection = RegistrationConfirmDisplayCollection()
