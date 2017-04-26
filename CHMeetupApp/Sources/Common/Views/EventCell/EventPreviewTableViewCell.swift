@@ -49,17 +49,18 @@ class EventPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var participantsCollectionViewHeightConstraint: NSLayoutConstraint!
-  @IBOutlet var participantsCollectionViewTopConstraint: NSLayoutConstraint!
+  @IBOutlet var photosPresentationViewHeightConstraint: NSLayoutConstraint!
 
-  @IBOutlet var participantsCollectionView: PhotosPresentationView!
+  @IBOutlet var photosPresentationViewTopConstraint: NSLayoutConstraint!
+
+  @IBOutlet var photosPresentationView: PhotosPresentationView!
 
   @IBOutlet var goingButton: UIButton!
 
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    participantsCollectionView.delegate = self
+    photosPresentationView.delegate = self
 
     roundType = .all
   }
@@ -90,7 +91,7 @@ class EventPreviewTableViewCell: PlateTableViewCell {
       height -= goingButtonHeight
     }
 
-    if participantsCollectionView.emptyImagesCollection {
+    if photosPresentationView.photos.isEmpty {
       height -= parcicipantsHeight
       height -= separationView.frame.height
     }
@@ -100,14 +101,14 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 }
 
 extension EventPreviewTableViewCell: PhotosPresentationViewDelegate {
-  func participantsCollectionViewWillUpdateData(view: PhotosPresentationView) {
-    if view.emptyImagesCollection {
+  func photosPresentationViewWillUpdateData(view: PhotosPresentationView) {
+    if view.photos.isEmpty {
       separationView.isHidden = true
-      participantsCollectionViewHeightConstraint.constant = 0
-      participantsCollectionViewTopConstraint.constant = 0
+      photosPresentationViewHeightConstraint.constant = 0
+      photosPresentationViewTopConstraint.constant = 0
     } else {
-      participantsCollectionViewHeightConstraint.constant = 36
-      participantsCollectionViewTopConstraint.constant = 12
+      photosPresentationViewHeightConstraint.constant = 36
+      photosPresentationViewTopConstraint.constant = 12
     }
   }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,9 +113,9 @@
                 <outlet property="eventImageView" destination="1ug-Ek-gDp" id="O1y-Zi-Bbf"/>
                 <outlet property="goingButton" destination="9pO-3W-VoY" id="r0q-QI-YZb"/>
                 <outlet property="nameLabel" destination="jhq-qS-4iF" id="3xG-EL-SxK"/>
-                <outlet property="participantsCollectionView" destination="STc-dX-eKl" id="fPA-jy-BWH"/>
-                <outlet property="participantsCollectionViewHeightConstraint" destination="JII-H7-bWj" id="7e8-s0-xou"/>
-                <outlet property="participantsCollectionViewTopConstraint" destination="a9N-bo-A2a" id="qgs-hU-gaY"/>
+                <outlet property="photosPresentationView" destination="STc-dX-eKl" id="BSm-Ga-F56"/>
+                <outlet property="photosPresentationViewHeightConstraint" destination="JII-H7-bWj" id="G14-Fy-hWe"/>
+                <outlet property="photosPresentationViewTopConstraint" destination="a9N-bo-A2a" id="qxH-qq-ftY"/>
                 <outlet property="placeLabel" destination="p0Z-gF-poq" id="5ku-q3-8yP"/>
                 <outlet property="separationView" destination="yLl-lp-2fc" id="yxg-PO-1Ox"/>
             </connections>
