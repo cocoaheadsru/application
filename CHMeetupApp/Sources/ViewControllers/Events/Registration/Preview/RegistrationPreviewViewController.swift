@@ -15,12 +15,9 @@ class RegistrationPreviewViewController: UIViewController {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
                                       bottomInset: 8 + BottomButton.constantHeight,
+                                      bottomIndicatorInset: BottomButton.constantHeight,
                                       estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
-      tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0,
-                                                     left: 0,
-                                                     bottom: BottomButton.constantHeight,
-                                                     right: 0)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }

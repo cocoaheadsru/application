@@ -32,6 +32,7 @@ class EventPreviewViewController: UIViewController {
 
     var configuration = TableViewConfiguration.default
     configuration.bottomInset = 8 + (isRegistrationEnabled ? BottomButton.constantHeight : 0)
+    configuration.bottomIndicatorInset = (isRegistrationEnabled ? BottomButton.constantHeight : 0)
     tableView.configure(with: .custom(configuration))
 
     if isRegistrationEnabled {

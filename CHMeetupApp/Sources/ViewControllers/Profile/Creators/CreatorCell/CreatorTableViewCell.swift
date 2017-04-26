@@ -10,10 +10,11 @@ import UIKit
 
 class CreatorTableViewCell: PlateTableViewCell {
 
-  @IBOutlet var creatorImage: UIImageView! {
-    didSet {
-      creatorImage.clipsToBounds = true
-    }
+  @IBOutlet var creatorImage: UIImageView!
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    creatorImage.roundCorners()
   }
 
   @IBOutlet var creatorNameLabel: UILabel! {
