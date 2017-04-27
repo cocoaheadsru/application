@@ -53,14 +53,32 @@ class ProfileEditDisplayCollection: DisplayCollection {
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
     let viewController = delegate?.getViewController()
+    var permissions = 0 {
+      didSet { if permissions >= 2 { changeImageCompetion() } } // Full access to camera and photo library
+    }
     if let viewController = viewController {
       PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
-                                       completion: { _ in self.changeImageCompetion() })
+                                       completion: { _ in permissions += 1 })
+      PermissionsManager.requireAccess(from: viewController, to: .camera,
+                                       completion: { _ in permissions += 1 })
     }
   }
 
   func changeImageCompetion() {
-    print("Change Image")
-    // TODO: - change Image
+    let viewController = delegate?.getViewController()
+    if let viewController = viewController as? ProfileEditViewController {
+      ImagePicker.checkImage(on: viewController)
+    }
+  }
+
+  func didFinishMediaWithInfo(_ picker: UIImagePickerController, info: [String : Any]) {
+    if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+      changeCheckedImage(image: image)
+    }
+    picker.dismiss(animated: true, completion: nil)
+  }
+
+  func changeCheckedImage(image: UIImage) {
+    // TODO: - Load image
   }
 }

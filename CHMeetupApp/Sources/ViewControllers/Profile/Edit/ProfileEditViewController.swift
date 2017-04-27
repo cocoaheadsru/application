@@ -54,3 +54,9 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
     tableView.deselectRow(at: indexPath, animated: true)
   }
 }
+
+extension ProfileEditViewController: ImagePickerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    displayCollection.didFinishMediaWithInfo(picker, info: info)
+  }
+}
