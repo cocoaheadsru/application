@@ -28,19 +28,19 @@ class EventPreviewDisplayCollection: DisplayCollection {
         })
       }
       if let event = event {
-        speechesModelCollection.content = TemplateModelCollection.Content.list(list: event.speeches)
+        speeches.content = TemplateModelCollection.Content.list(event.speeches)
       }
 
       setNeedsReloadData()
     }
   }
 
-  var speechesModelCollection: TemplateModelCollection<SpeechEntity> = {
-    return TemplateModelCollection(fakeEntityCount: 3)
+  var speeches: TemplateModelCollection<SpeechEntity> = {
+    return TemplateModelCollection(templatesCount: 3)
   }()
 
   init() {
-    speechesModelCollection.delegate = self
+    speeches.delegate = self
   }
 
   weak var delegate: DisplayCollectionDelegate?
@@ -112,7 +112,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .location, .address, .description:
       return 1
     case .speaches:
-      return speechesModelCollection.count
+      return speeches.count
     case .additionalCells:
       return 0
     }
@@ -136,7 +136,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
         return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading location...".localized))
       }
     case .speaches:
-      return SpeechPreviewTableViewCellModel(entity: speechesModelCollection[indexPath.row])
+      return SpeechPreviewTableViewCellModel(entity: speeches[indexPath.row])
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
@@ -152,9 +152,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
       addressActionObject?.action?()
     case .speaches:
       if let event = event {
-        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
-        viewController.selectedSpeechId = event.speeches[indexPath.row].id
-        delegate?.push(viewController: viewController)
+        if !event.isTemplate {
+          let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+          viewController.selectedSpeechId = event.speeches[indexPath.row].id
+          delegate?.push(viewController: viewController)
+        }
       }
     case .additionalCells, .description, .location:
       break
@@ -163,7 +165,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
 }
 
 extension EventPreviewDisplayCollection: TemplateModelCollectionDelegate {
-  func templateModelCollectionReqestedVisualUpdate() {
+  func templateModelCollectionDidUpdateData() {
     delegate?.updateUI()
   }
 }

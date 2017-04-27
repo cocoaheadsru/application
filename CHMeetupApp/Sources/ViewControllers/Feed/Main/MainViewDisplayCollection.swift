@@ -90,9 +90,11 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     switch sections[indexPath.section] {
     case .events:
-      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-      eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.push(viewController: eventPreview)
+      if !modelCollection[indexPath.row].isTemplate {
+        let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+        eventPreview.selectedEventId = modelCollection[indexPath.row].id
+        delegate?.push(viewController: eventPreview)
+      }
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
@@ -101,7 +103,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 }
 
 extension MainViewDisplayCollection: TemplateModelCollectionDelegate {
-  func templateModelCollectionReqestedVisualUpdate() {
+  func templateModelCollectionDidUpdateData() {
     delegate?.updateUI()
   }
 }

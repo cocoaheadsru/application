@@ -1,5 +1,5 @@
 //
-//  LoadingLabel.swift
+//  TemplatableLabel.swift
 //  CHMeetupApp
 //
 //  Created by Dmitriy Lis on 25/04/2017.
@@ -13,7 +13,7 @@ class ShineLayer: CALayer {
     let gradient = CAGradientLayer()
     gradient.startPoint = CGPoint(x: 0, y: 0)
     gradient.endPoint = CGPoint(x: 1, y: -0.02)
-    gradient.frame = CGRect(x: 0, y: 0, width: bounds.size.width*2, height: bounds.size.height)
+    gradient.frame = CGRect(x: 0, y: 0, width: bounds.size.width * 2, height: bounds.size.height)
 
     let solid = UIColor(white: 1, alpha: 0.7).cgColor
     let clear = UIColor(white: 1, alpha: 0.0).cgColor
@@ -32,7 +32,7 @@ class ShineLayer: CALayer {
   }
 }
 
-class LoadingLabel: UILabel, TempalteView {
+class TemplatableLabel: UILabel, TempalateView {
 
   var isTemplate: Bool = true {
     didSet {

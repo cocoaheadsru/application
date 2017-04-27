@@ -17,21 +17,21 @@ class SpeechPreviewTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBOutlet var fullNameLabel: UILabel! {
+  @IBOutlet var fullNameLabel: TemplatableLabel! {
     didSet {
       fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 17))
       fullNameLabel.textColor = UIColor(.black)
     }
   }
 
-  @IBOutlet var topicLabel: UILabel! {
+  @IBOutlet var topicLabel: TemplatableLabel! {
     didSet {
       topicLabel.font = UIFont.appFont(.systemFont(size: 17))
       topicLabel.textColor = UIColor(.black)
     }
   }
 
-  @IBOutlet var seporatorLineView: UIView! {
+  @IBOutlet var seporatorLineView: TemplatableLabel! {
     didSet {
       seporatorLineView.backgroundColor = UIColor(.lightGray)
     }

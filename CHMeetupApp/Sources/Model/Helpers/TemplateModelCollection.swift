@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 protocol TemplateModelCollectionDelegate: class {
-  func templateModelCollectionReqestedVisualUpdate()
+  func templateModelCollectionDidUpdateData()
 }
 
 struct TemplateModelCollection<T: TemplateEntity> where T: Object {
 
   enum Content {
-    case dataCollection(model: DataModelCollection<T>)
-    case list(list: List<T>)
+    case dataCollection(DataModelCollection<T>)
+    case list(List<T>)
     case empty
 
     var count: Int {
@@ -45,7 +45,7 @@ struct TemplateModelCollection<T: TemplateEntity> where T: Object {
 
   var content: Content {
     didSet {
-      delegate?.templateModelCollectionReqestedVisualUpdate()
+      delegate?.templateModelCollectionDidUpdateData()
     }
   }
 
@@ -53,26 +53,26 @@ struct TemplateModelCollection<T: TemplateEntity> where T: Object {
 
   weak var delegate: TemplateModelCollectionDelegate?
 
-  init(fakeEntityCount: Int = 5) {
+  init(templatesCount: Int = 5) {
     content = Content.empty
     values = List<T>()
-    generateFakeData(fakeEntityCount: fakeEntityCount)
+    generateFakeData(templatesCount: templatesCount)
   }
 
-  init(dataCollection: DataModelCollection<T>, fakeEntityCount: Int = 5) {
-    content = Content.dataCollection(model: dataCollection)
+  init(dataCollection: DataModelCollection<T>, templatesCount: Int = 5) {
+    content = Content.dataCollection(dataCollection)
     values = List<T>()
-    generateFakeData(fakeEntityCount: fakeEntityCount)
+    generateFakeData(templatesCount: templatesCount)
   }
 
-  init(list: List<T>, fakeEntityCount: Int = 5) {
-    content = Content.list(list: list)
+  init(list: List<T>, templatesCount: Int = 5) {
+    content = Content.list(list)
     values = List<T>()
-    generateFakeData(fakeEntityCount: fakeEntityCount)
+    generateFakeData(templatesCount: templatesCount)
   }
 
-  private func generateFakeData(fakeEntityCount: Int) {
-    Array(repeating: T.templateEntity, count: fakeEntityCount).forEach({
+  private func generateFakeData(templatesCount: Int) {
+    Array(repeating: T.templateEntity, count: templatesCount).forEach({
       values.append($0)
     })
   }
@@ -89,7 +89,7 @@ struct TemplateModelCollection<T: TemplateEntity> where T: Object {
 
   var isLoading: Bool = false {
     didSet {
-      delegate?.templateModelCollectionReqestedVisualUpdate()
+      delegate?.templateModelCollectionDidUpdateData()
     }
   }
 

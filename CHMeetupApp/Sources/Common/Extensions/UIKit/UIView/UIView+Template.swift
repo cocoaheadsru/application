@@ -10,7 +10,14 @@ import UIKit.UIView
 
 extension UIView {
   func apply(template: Bool) {
-    if let templateView = self as? TempalteView {
+    if let cell = self as? UITableViewCell {
+      cell.alpha = 0.0
+      UIView.animate(withDuration: 0.2, animations: {
+        cell.alpha = 1.0
+      })
+    }
+
+    if let templateView = self as? TempalateView {
       templateView.isTemplate = template
     }
 

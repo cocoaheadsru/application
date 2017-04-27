@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TempalteView: class {
+protocol TempalateView: class {
   var isTemplate: Bool { get set }
 }

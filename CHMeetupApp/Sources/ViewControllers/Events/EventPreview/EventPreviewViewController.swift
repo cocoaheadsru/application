@@ -90,10 +90,10 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
 
 extension EventPreviewViewController {
   func fetchSpeeches(on eventEntity: EventEntity) {
-    displayCollection.speechesModelCollection.isLoading = true
+    displayCollection.speeches.isLoading = true
     let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)
     SpeechFetching.fetchElements(request: speechesRequest, to: eventEntity, completion: { [weak self] in
-      self?.displayCollection.speechesModelCollection.isLoading = false
+      self?.displayCollection.speeches.isLoading = false
       self?.tableView.reloadData()
     })
   }

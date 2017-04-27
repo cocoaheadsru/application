@@ -27,13 +27,13 @@
                             <constraint firstAttribute="width" constant="60" id="yg9-je-JAp"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="96" y="45" width="208" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="24" y="100" width="272" height="41"/>
                         <string key="text">«Как вложить в приложение
 минимум функций»</string>
@@ -48,7 +48,7 @@
                             <constraint firstAttribute="height" constant="1" id="xV8-fy-tO0"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3" customClass="LoadingLabel" customModule="CHMeetupApp" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
                         <rect key="frame" x="24" y="174" width="272" height="54"/>
                         <string key="text">Опыт работы с кофаундерами Активитис
 и прочие анальные боли</string>

@@ -95,7 +95,7 @@
 		32AFE5981EAF5B29004904FB /* TemplateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5971EAF5B29004904FB /* TemplateEntity.swift */; };
 		32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5991EAF5B3D004904FB /* TemplateView.swift */; };
 		32AFE59C1EAF5B4C004904FB /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */; };
-		32AFE59F1EAF5BEF004904FB /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */; };
+		32AFE59F1EAF5BEF004904FB /* TemplatableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59E1EAF5BEF004904FB /* TemplatableLabel.swift */; };
 		32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */; };
 		32B031E91EABA62800FC1F89 /* UIImageView+RoundBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */; };
 		32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */; };
@@ -351,7 +351,7 @@
 		32AFE5971EAF5B29004904FB /* TemplateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateEntity.swift; sourceTree = "<group>"; };
 		32AFE5991EAF5B3D004904FB /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
-		32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
+		32AFE59E1EAF5BEF004904FB /* TemplatableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatableLabel.swift; sourceTree = "<group>"; };
 		32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelCollection.swift; sourceTree = "<group>"; };
 		32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundBorder.swift"; sourceTree = "<group>"; };
 		32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
@@ -915,7 +915,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32AFE59D1EAF5BDF004904FB /* LoadingLabel */,
+				32AFE59D1EAF5BDF004904FB /* TemplatableLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
 				32DD62FD1EA8C8D1005B565E /* ChooseProfilePhotoCell */,
@@ -1272,12 +1272,12 @@
 			name = PhotosPresentationView;
 			sourceTree = "<group>";
 		};
-		32AFE59D1EAF5BDF004904FB /* LoadingLabel */ = {
+		32AFE59D1EAF5BDF004904FB /* TemplatableLabel */ = {
 			isa = PBXGroup;
 			children = (
-				32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */,
+				32AFE59E1EAF5BEF004904FB /* TemplatableLabel.swift */,
 			);
-			name = LoadingLabel;
+			name = TemplatableLabel;
 			sourceTree = "<group>";
 		};
 		32DD62FD1EA8C8D1005B565E /* ChooseProfilePhotoCell */ = {
@@ -2149,7 +2149,7 @@
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
-				32AFE59F1EAF5BEF004904FB /* LoadingLabel.swift in Sources */,
+				32AFE59F1EAF5BEF004904FB /* TemplatableLabel.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
