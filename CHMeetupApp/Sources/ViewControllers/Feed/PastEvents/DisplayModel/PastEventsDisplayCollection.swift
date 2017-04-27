@@ -44,11 +44,12 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
   }
 
   func didSelect(indexPath: IndexPath) {
-    if !modelCollection[indexPath.row].isTemplate {
-      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-      eventPreview.selectedEventId = modelCollection[indexPath.row].id
-      delegate?.push(viewController: eventPreview)
+    if modelCollection[indexPath.row].isTemplate {
+      return
     }
+    let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    eventPreview.selectedEventId = modelCollection[indexPath.row].id
+    delegate?.push(viewController: eventPreview)
   }
 }
 

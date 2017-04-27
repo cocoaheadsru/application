@@ -90,11 +90,12 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func didSelect(indexPath: IndexPath) {
     switch sections[indexPath.section] {
     case .events:
-      if !modelCollection[indexPath.row].isTemplate {
-        let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
-        eventPreview.selectedEventId = modelCollection[indexPath.row].id
-        delegate?.push(viewController: eventPreview)
+      if modelCollection[indexPath.row].isTemplate {
+        break
       }
+      let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreview.selectedEventId = modelCollection[indexPath.row].id
+      delegate?.push(viewController: eventPreview)
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
