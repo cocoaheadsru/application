@@ -113,9 +113,9 @@
                 <outlet property="eventImageView" destination="1ug-Ek-gDp" id="O1y-Zi-Bbf"/>
                 <outlet property="goingButton" destination="9pO-3W-VoY" id="r0q-QI-YZb"/>
                 <outlet property="nameLabel" destination="jhq-qS-4iF" id="3xG-EL-SxK"/>
-                <outlet property="participantsCollectionView" destination="STc-dX-eKl" id="fPA-jy-BWH"/>
-                <outlet property="participantsCollectionViewHeightConstraint" destination="JII-H7-bWj" id="7e8-s0-xou"/>
-                <outlet property="participantsCollectionViewTopConstraint" destination="a9N-bo-A2a" id="qgs-hU-gaY"/>
+                <outlet property="photosPresentationView" destination="STc-dX-eKl" id="BSm-Ga-F56"/>
+                <outlet property="photosPresentationViewHeightConstraint" destination="JII-H7-bWj" id="G14-Fy-hWe"/>
+                <outlet property="photosPresentationViewTopConstraint" destination="a9N-bo-A2a" id="qxH-qq-ftY"/>
                 <outlet property="placeLabel" destination="p0Z-gF-poq" id="5ku-q3-8yP"/>
                 <outlet property="separationView" destination="yLl-lp-2fc" id="yxg-PO-1Ox"/>
             </connections>

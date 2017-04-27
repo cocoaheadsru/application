@@ -2,30 +2,25 @@
 //  PhotosPresentationView.swift
 //  CHMeetupApp
 //
-//  Created by Dima on 16/03/2017.
+//  Created by Dmitriy Lis on 16/03/2017.
 //  Copyright © 2017 CocoaHeads Community. All rights reserved.
 //
 
 import UIKit
 
 protocol PhotosPresentationViewDelegate: class {
-  func participantsCollectionViewWillUpdateData(view: PhotosPresentationView)
+  func photosPresentationViewWillUpdateData(view: PhotosPresentationView)
 }
 
 class PhotosPresentationView: UIView {
 
   weak var delegate: PhotosPresentationViewDelegate?
 
-  var imagesCollection: [UIImage] = [] {
+  var photos: [UIImage] = [] {
     didSet {
-      drawParticipants()
-      delegate?.participantsCollectionViewWillUpdateData(view: self)
+      drawPhotos()
+      delegate?.photosPresentationViewWillUpdateData(view: self)
     }
-  }
-
-  // If participants collection view is empty
-  var emptyImagesCollection: Bool {
-    return self.imagesCollection.count == 0
   }
 
   open var borderColor: CGColor = UIColor.white.cgColor
@@ -33,15 +28,15 @@ class PhotosPresentationView: UIView {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    drawParticipants()
+    drawPhotos()
   }
 
-  private func drawParticipants() {
+  private func drawPhotos() {
     for view in subviews {
       view.removeFromSuperview()
     }
 
-    for (index, image) in imagesCollection.enumerated() {
+    for (index, image) in photos.enumerated() {
       let viewHeight = bounds.height
       let viewWidth = bounds.width
 
@@ -56,7 +51,7 @@ class PhotosPresentationView: UIView {
       if (xImageView + viewHeight) <= viewWidth {
         imageView.image = image
 
-        if leadingEdgeSecondImageView > viewWidth && imagesCollection.count > index {
+        if leadingEdgeSecondImageView > viewWidth && photos.count > index {
           imageView.image = #imageLiteral(resourceName: "img_template_unknown")
         } else {
           imageView.roundWithWhiteBorder(borderWidth)

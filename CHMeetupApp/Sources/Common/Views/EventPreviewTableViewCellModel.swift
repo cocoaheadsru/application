@@ -27,17 +27,17 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
 
     cell.isEnabledForRegistration = entity.isRegistrationOpen
     cell.delegate = delegate
-    cell.participantsCollectionView.imagesCollection.removeAll()
-    let urls = entity.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
+    cell.photosPresentationView.photos.removeAll()
+    let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
 
-    cell.participantsCollectionView.imagesCollection = urls.map({ _ in
+    cell.photosPresentationView.photos = urls.map({ _ in
       return UIImage(named: "img_template_unknown")!
     })
 
     groupImageLoader.loadImages(groupId: cell.hashValue,
                                 urls: urls,
                                 completionHandler: { [weak cell] images in
-                                  cell?.participantsCollectionView.imagesCollection = images
+      cell?.photosPresentationView.photos = images
     })
   }
 }
