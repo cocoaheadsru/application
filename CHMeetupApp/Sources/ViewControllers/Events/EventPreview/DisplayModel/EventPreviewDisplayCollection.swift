@@ -27,8 +27,20 @@ class EventPreviewDisplayCollection: DisplayCollection {
           }
         })
       }
+      if let event = event {
+        speechesModelCollection.content = TemplateModelCollection.Content.list(list: event.speeches)
+      }
+
       setNeedsReloadData()
     }
+  }
+
+  var speechesModelCollection: TemplateModelCollection<SpeechEntity> = {
+    return TemplateModelCollection(fakeEntityCount: 3)
+  }()
+
+  init() {
+    speechesModelCollection.delegate = self
   }
 
   weak var delegate: DisplayCollectionDelegate?
@@ -100,7 +112,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .location, .address, .description:
       return 1
     case .speaches:
-      return event?.speeches.count ?? 0
+      return speechesModelCollection.count
     case .additionalCells:
       return 0
     }
@@ -124,11 +136,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
         return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading location...".localized))
       }
     case .speaches:
-      if let speech = event?.speeches[indexPath.row] {
-        return SpeechPreviewTableViewCellModel(speech: speech)
-      } else {
-        fatalError("Should not be reached")
-      }
+      return SpeechPreviewTableViewCellModel(entity: speechesModelCollection[indexPath.row])
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
@@ -151,5 +159,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .additionalCells, .description, .location:
       break
     }
+  }
+}
+
+extension EventPreviewDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionReqestedVisualUpdate() {
+    delegate?.updateUI()
   }
 }

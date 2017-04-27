@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SpeechEntity: Object {
+final class SpeechEntity: TemplatableObject, TemplateEntity {
   dynamic var id: Int = 0
 
   dynamic var title: String = ""
@@ -32,14 +32,14 @@ class SpeechEntity: Object {
     return "id"
   }
 }
-#if DEBUG
+
 extension SpeechEntity {
   static var templateEntity: SpeechEntity {
     let entity = SpeechEntity()
     entity.title = "UIViewController, откройся!"
     entity.descriptionText = "Речь пойдёт о презентации UIViewController и о творящейся за кулисами магии"
     entity.contents.append(SpeechContentEntity.templateEntity)
+    entity.isTemplate = true
     return entity
   }
 }
-#endif

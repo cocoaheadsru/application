@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class EventEntity: Object {
+final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var id: Int = 0
 
   dynamic var title: String = ""
@@ -29,14 +29,9 @@ final class EventEntity: Object {
   override static func primaryKey() -> String? {
     return "id"
   }
-
-  override static func ignoredProperties() -> [String] {
-    return ["isTemplate"]
-  }
-  dynamic var isTemplate: Bool = false
 }
 
-extension EventEntity: TemplateEntity {
+extension EventEntity {
   static var templateEntity: EventEntity {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyyMMdd"
