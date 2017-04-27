@@ -12,7 +12,15 @@ protocol EventPreviewTableViewCellDelegate: class {
   func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell)
 }
 
-class EventPreviewTableViewCell: PlateTableViewCell {
+class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
+
+  var isTemplate: Bool = false {
+    didSet {
+      if oldValue == false && isTemplate == true {
+        animateWithFade()
+      }
+    }
+  }
 
   var isEnabledForRegistration = false {
     didSet {

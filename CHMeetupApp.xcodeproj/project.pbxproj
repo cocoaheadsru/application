@@ -97,6 +97,7 @@
 		32AFE59C1EAF5B4C004904FB /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */; };
 		32AFE59F1EAF5BEF004904FB /* TemplatableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59E1EAF5BEF004904FB /* TemplatableLabel.swift */; };
 		32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */; };
+		32AFE5A31EB28A2A004904FB /* UITableViewCell+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A21EB28A2A004904FB /* UITableViewCell+Fade.swift */; };
 		32B031E91EABA62800FC1F89 /* UIImageView+RoundBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */; };
 		32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */; };
 		32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */; };
@@ -353,6 +354,7 @@
 		32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
 		32AFE59E1EAF5BEF004904FB /* TemplatableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatableLabel.swift; sourceTree = "<group>"; };
 		32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelCollection.swift; sourceTree = "<group>"; };
+		32AFE5A21EB28A2A004904FB /* UITableViewCell+Fade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Fade.swift"; sourceTree = "<group>"; };
 		32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundBorder.swift"; sourceTree = "<group>"; };
 		32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
@@ -1567,6 +1569,7 @@
 			isa = PBXGroup;
 			children = (
 				9F30FFC91E71E72B00EF85F5 /* UITableViewCell+ReusableCell.swift */,
+				32AFE5A21EB28A2A004904FB /* UITableViewCell+Fade.swift */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -2149,6 +2152,7 @@
 				4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */,
 				22323F971E70C2BE00522E5C /* GiveSpeechViewController.swift in Sources */,
 				9F57D62E1E749B94006323FA /* PlateTableViewCell.swift in Sources */,
+				32AFE5A31EB28A2A004904FB /* UITableViewCell+Fade.swift in Sources */,
 				32AFE59F1EAF5BEF004904FB /* TemplatableLabel.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */,

@@ -152,11 +152,12 @@ class EventPreviewDisplayCollection: DisplayCollection {
       addressActionObject?.action?()
     case .speaches:
       if let event = event {
-        if !event.isTemplate {
-          let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
-          viewController.selectedSpeechId = event.speeches[indexPath.row].id
-          delegate?.push(viewController: viewController)
+        if speeches[indexPath.row].isTemplate {
+          return
         }
+        let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
+        viewController.selectedSpeechId = event.speeches[indexPath.row].id
+        delegate?.push(viewController: viewController)
       }
     case .additionalCells, .description, .location:
       break
