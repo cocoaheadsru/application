@@ -51,11 +51,16 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     }
   }
 
-  let modelCollection: DataModelCollection<EventEntity> = {
+  var modelCollection: TemplateModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate > %@", NSDate())
-    let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    var dataCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    return TemplateModelCollection(dataCollection: dataCollection)
   }()
+
+  init() {
+    modelCollection.delegate = self
+  }
 
   var numberOfSections: Int {
     return sections.count
@@ -92,6 +97,12 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     }
+  }
+}
+
+extension MainViewDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionReqestedVisualUpdate() {
+    delegate?.updateUI()
   }
 }
 

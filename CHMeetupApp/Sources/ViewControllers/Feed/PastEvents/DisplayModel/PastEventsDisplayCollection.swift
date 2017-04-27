@@ -13,12 +13,16 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
     return [EventPreviewTableViewCellModel.self]
   }
 
-  var modelCollection: DisplayModelCollection<EventEntity> = {
-    //    let predicate = NSPredicate(format: "endDate < %@", NSDate())
-    //    let modelCollection = DisplayModelCollection(type: EventEntity.self).filtered(predicate)
-    //    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
-    return DisplayModelCollection(type: EventEntity.self)
+  var modelCollection: TemplateModelCollection<EventEntity> = {
+    let predicate = NSPredicate(format: "endDate < %@", NSDate())
+    var dataCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    return TemplateModelCollection(dataCollection: dataCollection)
   }()
+
+  init() {
+    modelCollection.delegate = self
+  }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
@@ -43,6 +47,12 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
+  }
+}
+
+extension PastEventsDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionReqestedVisualUpdate() {
+    delegate?.updateUI()
   }
 }
 

@@ -15,7 +15,7 @@ class ShineLayer: CALayer {
     gradient.endPoint = CGPoint(x: 1, y: -0.02)
     gradient.frame = CGRect(x: 0, y: 0, width: bounds.size.width*2, height: bounds.size.height)
 
-    let solid = UIColor(white: 1, alpha: 0.15).cgColor
+    let solid = UIColor(white: 1, alpha: 0.7).cgColor
     let clear = UIColor(white: 1, alpha: 0.0).cgColor
     gradient.colors = [clear, solid, clear]
 

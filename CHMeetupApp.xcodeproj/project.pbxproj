@@ -91,12 +91,12 @@
 		3284F2581E992EF90033437F /* Optional+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284F2571E992EF90033437F /* Optional+Empty.swift */; };
 		328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E9E691E8BDFEF008B409F /* ProfileViewDisplayCollection.swift */; };
 		328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FF7551E7C05B300D9D43F /* CGFloat+Rounding.swift */; };
-    32AA9BBE1E7A91C000140413 /* PhotosPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* PhotosPresentationView.swift */; };
+		32AA9BBE1E7A91C000140413 /* PhotosPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA9BBD1E7A91C000140413 /* PhotosPresentationView.swift */; };
 		32AFE5981EAF5B29004904FB /* TemplateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5971EAF5B29004904FB /* TemplateEntity.swift */; };
 		32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5991EAF5B3D004904FB /* TemplateView.swift */; };
 		32AFE59C1EAF5B4C004904FB /* UIView+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */; };
 		32AFE59F1EAF5BEF004904FB /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */; };
-		32AFE5A11EAF5C8E004904FB /* DisplayModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */; };
+		32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */; };
 		32B031E91EABA62800FC1F89 /* UIImageView+RoundBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */; };
 		32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */; };
 		32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */; };
@@ -353,7 +353,7 @@
 		32AFE5991EAF5B3D004904FB /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		32AFE59B1EAF5B4C004904FB /* UIView+Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Template.swift"; sourceTree = "<group>"; };
 		32AFE59E1EAF5BEF004904FB /* LoadingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
-		32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayModelCollection.swift; sourceTree = "<group>"; };
+		32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateModelCollection.swift; sourceTree = "<group>"; };
 		32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundBorder.swift"; sourceTree = "<group>"; };
 		32DD63001EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
@@ -737,7 +737,7 @@
 				9FAFF8021E6AD5A000B687CB /* Realm+Notifications.swift */,
 				9F2638601E6B83D50081D23B /* DataModelCollection.swift */,
 				9FD594941E8732F600BAD1B5 /* List+RemoveDublicates.swift */,
-				32AFE5A01EAF5C8E004904FB /* DisplayModelCollection.swift */,
+				32AFE5A01EAF5C8E004904FB /* TemplateModelCollection.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2263,7 +2263,7 @@
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
-				32AFE5A11EAF5C8E004904FB /* DisplayModelCollection.swift in Sources */,
+				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,

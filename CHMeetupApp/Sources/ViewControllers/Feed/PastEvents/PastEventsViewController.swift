@@ -58,8 +58,9 @@ extension PastEventsViewController: UITableViewDataSource, UITableViewDelegate {
 
 fileprivate extension PastEventsViewController {
   func fetchEvents() {
+    displayCollection.modelCollection.isLoading = true
     EventFetching.fetchElements(request: EventPlainObject.Requests.pastList, completion: { [weak self] in
-      self?.displayCollection.modelCollection.isTemplate = false
+      self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
   }

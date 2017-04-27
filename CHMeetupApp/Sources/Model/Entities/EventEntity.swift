@@ -35,23 +35,22 @@ final class EventEntity: Object {
   }
   dynamic var isTemplate: Bool = false
 }
-#if DEBUG
-  extension EventEntity: TemplateEntity {
-    static var templateEntity: EventEntity {
-      let formatter = DateFormatter()
-      formatter.dateFormat = "yyyyMMdd"
 
-      let entity = EventEntity()
-      entity.title = "CocoaHeads Meetup"
-      entity.descriptionText = "Совсем скоро в петербургском офисе Яндекса первая встреча сообщества CocoaHeads Russia."
-      entity.startDate <= formatter.date(from: "20161111")
-      entity.endDate <= formatter.date(from: "20161111")
-      entity.photoURL = "https://avatars.mds.yandex.net/get-yaevents/194464/552b2574b7b911e6afd30025909419be/320x240"
-      entity.place = PlaceEntity.templateEntity
-      entity.isRegistrationOpen = false
-      entity.speeches.append(SpeechEntity.templateEntity)
-      entity.isTemplate = true
-      return entity
-    }
+extension EventEntity: TemplateEntity {
+  static var templateEntity: EventEntity {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyyMMdd"
+
+    let entity = EventEntity()
+    entity.title = "CocoaHeads Meetup"
+    entity.descriptionText = "Совсем скоро в петербургском офисе Яндекса первая встреча сообщества CocoaHeads Russia."
+    entity.startDate <= formatter.date(from: "20161111")
+    entity.endDate <= formatter.date(from: "20161111")
+    entity.photoURL = "https://avatars.mds.yandex.net/get-yaevents/194464/552b2574b7b911e6afd30025909419be/320x240"
+    entity.place = PlaceEntity.templateEntity
+    entity.isRegistrationOpen = false
+    entity.speeches.append(SpeechEntity.templateEntity)
+    entity.isTemplate = true
+    return entity
   }
-#endif
+}

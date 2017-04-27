@@ -10,10 +10,11 @@ import UIKit.UIView
 
 extension UIView {
   func apply(template: Bool) {
+    if let templateView = self as? TempalteView {
+      templateView.isTemplate = template
+    }
+
     for view in subviews {
-      if let templateView = view as? TempalteView {
-        templateView.isTemplate = template
-      }
       view.apply(template: template)
     }
   }
