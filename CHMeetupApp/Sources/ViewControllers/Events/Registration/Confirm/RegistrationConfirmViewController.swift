@@ -14,7 +14,8 @@ class RegistrationConfirmViewController: UIViewController {
     didSet {
       let configuration = TableViewConfiguration(
         bottomInset: 8 + BottomButton.constantHeight,
-        bottomIndicatorInset: BottomButton.constantHeight
+        bottomIndicatorInset: BottomButton.constantHeight,
+        estimatedRowHeight: 100
       )
       tableView.configure(with: .custom(configuration))
     }

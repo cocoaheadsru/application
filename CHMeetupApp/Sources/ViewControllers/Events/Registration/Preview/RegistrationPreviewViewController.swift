@@ -93,7 +93,7 @@ class RegistrationPreviewViewController: UIViewController {
 
   func presentRegistrationConfirmViewController() {
     let confirmViewController = Storyboards.EventPreview.instantiateRegistrationConfirmViewController()
-    navigationController?.pushViewController(confirmViewController, animated: true)
+    self.push(viewController: confirmViewController)
   }
 }
 

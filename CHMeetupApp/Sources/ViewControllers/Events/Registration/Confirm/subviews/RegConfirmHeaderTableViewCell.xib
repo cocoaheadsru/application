@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,8 +15,8 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="RegConfirmHeaderTableViewCell" customModule="CHMeetupApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_reg_confirm_header" translatesAutoresizingMaskIntoConstraints="NO" id="lim-gw-ZOf">
@@ -37,11 +36,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lim-gw-ZOf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="NjS-jK-9QH"/>
-                    <constraint firstItem="nNS-sg-PF0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VUE-kn-Efx"/>
-                    <constraint firstItem="lim-gw-ZOf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="62" id="Vnr-Lv-x8o"/>
-                    <constraint firstItem="nNS-sg-PF0" firstAttribute="top" secondItem="lim-gw-ZOf" secondAttribute="bottom" constant="32" id="ZYC-lo-tw8"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nNS-sg-PF0" secondAttribute="bottom" constant="29" id="bAz-Dy-Dkh"/>
+                    <constraint firstItem="lim-gw-ZOf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="70" id="1Xo-NP-gJj"/>
+                    <constraint firstItem="nNS-sg-PF0" firstAttribute="centerX" secondItem="lim-gw-ZOf" secondAttribute="centerX" id="6Ib-Ww-yjl"/>
+                    <constraint firstItem="lim-gw-ZOf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="R9w-r8-BVD"/>
+                    <constraint firstItem="nNS-sg-PF0" firstAttribute="top" secondItem="lim-gw-ZOf" secondAttribute="bottom" constant="32" id="dsn-N2-695"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -51,6 +49,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_reg_confirm_header" width="196" height="198"/>
+        <image name="img_reg_confirm_header" width="120" height="120"/>
     </resources>
 </document>
