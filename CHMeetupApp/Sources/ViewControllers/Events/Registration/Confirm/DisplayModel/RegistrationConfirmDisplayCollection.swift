@@ -52,6 +52,15 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
     return sections.count
   }
 
+  func height(for indexPath: IndexPath) -> CGFloat {
+    switch sections[indexPath.section] {
+    case .header:
+      return 300.0
+    case .actionButtons:
+      return UITableViewAutomaticDimension
+    }
+  }
+
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
     case .header:
