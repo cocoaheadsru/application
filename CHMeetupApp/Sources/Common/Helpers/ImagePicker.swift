@@ -23,32 +23,26 @@ final class ImagePicker {
     self.delegate = delegate
   }
 
-  func getPhotoLibrary(on viewController: UIViewController, canEdit: Bool = true) {
+  func getPhotoLibrary(on viewController: UIViewController) {
     if !isPhotoLibraryAvailable { return }
-    let type = kUTTypeImage as String
-
-    imagePicker.sourceType = .photoLibrary
-    imagePicker.allowsEditing = canEdit
-    imagePicker.delegate = delegate
-    if let availableTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary),
-      availableTypes.contains(type) {
-      imagePicker.mediaTypes = [type]
-    }
-    viewController.present(imagePicker, animated: true, completion: nil)
+    getSource(on: viewController, component: .photoLibrary)
   }
 
-  func getCamera(on viewController: UIViewController, canEdit: Bool = true) {
+  func getCamera(on viewController: UIViewController) {
     if !isCameraAvailable { return }
+    getSource(on: viewController, component: .camera)
+  }
+
+  private func getSource(on viewController: UIViewController, component: UIImagePickerControllerSourceType) {
     let type = kUTTypeImage as String
 
-    imagePicker.sourceType = .camera
-    imagePicker.allowsEditing = canEdit
+    imagePicker.sourceType = component
+    imagePicker.allowsEditing = true
     imagePicker.delegate = delegate
-    if let availableTypes = UIImagePickerController.availableMediaTypes(for: .camera),
+    if let availableTypes = UIImagePickerController.availableMediaTypes(for: component),
       availableTypes.contains(type) {
       imagePicker.mediaTypes = [type]
     }
-    imagePicker.showsCameraControls = true
     viewController.present(imagePicker, animated: true, completion: nil)
   }
 
@@ -75,5 +69,4 @@ final class ImagePicker {
       viewController.present(actionSheet, animated: true, completion: nil)
     }
   }
-  
 }

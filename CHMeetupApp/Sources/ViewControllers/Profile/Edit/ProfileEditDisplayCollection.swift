@@ -54,7 +54,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
     let viewController = delegate?.getViewController()
     var permissions = 0 {
-      didSet { if permissions >= 2 { changeImageCompetion() } } // Full access to camera and photo library
+      didSet { if permissions >= 2 { changeImageCompletion() } } // Full access to camera and photo library
     }
     if let viewController = viewController {
       PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
@@ -64,7 +64,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     }
   }
 
-  func changeImageCompetion() {
+  func changeImageCompletion() {
     let viewController = delegate?.getViewController()
     if let viewController = viewController as? ProfileEditViewController {
       ImagePicker.checkImage(on: viewController)
