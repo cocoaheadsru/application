@@ -127,9 +127,6 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   }
 
   var failedSection: Int? {
-    #if DEBUG
-        return nil
-    #endif
     for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {

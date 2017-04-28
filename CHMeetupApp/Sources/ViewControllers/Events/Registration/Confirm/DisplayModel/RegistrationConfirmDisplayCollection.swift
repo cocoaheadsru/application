@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
 final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, DisplayCollectionAction {
+  private let regConfirmHeaderTableViewCellHeight: CGFloat = 300.0
 
   enum `Type` {
     case header
@@ -55,7 +55,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   func height(for indexPath: IndexPath) -> CGFloat {
     switch sections[indexPath.section] {
     case .header:
-      return 300.0
+      return regConfirmHeaderTableViewCellHeight
     case .actionButtons:
       return UITableViewAutomaticDimension
     }
