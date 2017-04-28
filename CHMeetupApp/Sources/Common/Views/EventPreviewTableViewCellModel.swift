@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct EventPreviewTableViewCellModel {
-  let event: EventEntity
+struct EventPreviewTableViewCellModel: TemplatableCellViewModelType {
+  let entity: EventEntity
   let index: Int
   weak var delegate: EventPreviewTableViewCellDelegate?
   let groupImageLoader: GroupImageLoader
@@ -17,18 +17,18 @@ struct EventPreviewTableViewCellModel {
 
 extension EventPreviewTableViewCellModel: CellViewModelType {
   func setup(on cell: EventPreviewTableViewCell) {
-    cell.eventImageView.image = #imageLiteral(resourceName: "img_event_template")
-    cell.nameLabel.text = event.title
-    cell.dateLabel.text = event.startDate.defaultFormatString
+    cell.eventImageView.image = entity.isTemplate ? #imageLiteral(resourceName: "img_event_template_b&w") : #imageLiteral(resourceName: "img_event_template")
+    cell.nameLabel.text = entity.title
+    cell.dateLabel.text = entity.startDate.defaultFormatString
 
-    if let place = event.place {
+    if let place = entity.place {
       cell.placeLabel.text = place.city + ", " + place.title
     }
 
-    cell.isEnabledForRegistration = event.isRegistrationOpen
+    cell.isEnabledForRegistration = entity.isRegistrationOpen
     cell.delegate = delegate
     cell.photosPresentationView.photos.removeAll()
-    let urls = event.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
+    let urls = entity.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
 
     cell.photosPresentationView.photos = urls.map({ _ in
       return UIImage(named: "img_template_unknown")!

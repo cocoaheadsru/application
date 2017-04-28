@@ -62,7 +62,9 @@ extension MainViewController: UITableViewDelegate {
 
 fileprivate extension MainViewController {
   func fetchEvents() {
+    displayCollection.modelCollection.isLoading = true
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in
+      self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
   }
