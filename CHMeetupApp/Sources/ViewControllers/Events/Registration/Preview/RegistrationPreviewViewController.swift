@@ -87,7 +87,7 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrate(completion: () -> Void) {
-    // Do staff here..
+    RegistrationController.sendFormData(displayCollection.formData)
     completion()
   }
 

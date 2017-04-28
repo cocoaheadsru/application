@@ -14,6 +14,10 @@ extension EventRegFormPlainObject: PlainObjectType {
     static func form(with id: Int) -> Request<EventRegFormPlainObject> {
       return Request<EventRegFormPlainObject>(query: "event/form/\(id)", method: .get)
     }
+
+    static func registration(with formData: FormData) -> Request<RequestPlainObject> {
+      return Request<RequestPlainObject>(query: "event/registration/")
+    }
   }
 
   init?(json: JSONDictionary) {

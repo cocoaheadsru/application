@@ -33,4 +33,8 @@ class RegistrationController {
       }
     }
   }
+
+  static func sendFormData(_ data: FormData) {
+    let request = EventRegFormPlainObject.Requests.registration(with: data)
+  }
 }
