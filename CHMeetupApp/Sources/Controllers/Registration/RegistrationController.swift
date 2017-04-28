@@ -39,9 +39,9 @@ class RegistrationController {
     Server.standard.request(request) { request, error in
       if let answer = request {
         completion(answer.success)
+      } else {
+        completion(false)
       }
-
-      completion(false)
     }
   }
 }

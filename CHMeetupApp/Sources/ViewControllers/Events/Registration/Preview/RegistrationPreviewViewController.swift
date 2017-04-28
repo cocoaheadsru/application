@@ -27,6 +27,7 @@ class RegistrationPreviewViewController: UIViewController {
       bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
     }
   }
+
   fileprivate var displayCollection: FormDisplayCollection!
 
   override func viewDidLoad() {
@@ -168,6 +169,7 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
 }
 
 // MARK: - KeyboardHandlerDelegate
+
 extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
