@@ -12,10 +12,8 @@ import MobileCoreServices
 typealias ImagePickerDelegate = UINavigationControllerDelegate & UIImagePickerControllerDelegate
 
 final class ImagePicker {
-
   private let imagePicker = UIImagePickerController()
   private let isPhotoLibraryAvailable = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
-  private let isCameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
 
   weak var delegate: ImagePickerDelegate?
 
@@ -26,11 +24,6 @@ final class ImagePicker {
   func getPhotoLibrary(on viewController: UIViewController) {
     if !isPhotoLibraryAvailable { return }
     getSource(on: viewController, component: .photoLibrary)
-  }
-
-  func getCamera(on viewController: UIViewController) {
-    if !isCameraAvailable { return }
-    getSource(on: viewController, component: .camera)
   }
 
   private func getSource(on viewController: UIViewController, component: UIImagePickerControllerSourceType) {
@@ -52,21 +45,6 @@ final class ImagePicker {
       return
     }
     let source = ImagePicker(delegate: delegate)
-    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-    let takePhoto = UIAlertAction(title: "Сделать снимок".localized, style: .default) { _ in
-      source.getCamera(on: viewController)
-    }
-    let sharePhoto = UIAlertAction(title: "Выбрать из библиотеки".localized, style: .default) { _ in
-      source.getPhotoLibrary(on: viewController)
-    }
-    let cancelAction = UIAlertAction(title: "Отмена".localized, style: .cancel)
-
-    actionSheet.addAction(takePhoto)
-    actionSheet.addAction(sharePhoto)
-    actionSheet.addAction(cancelAction)
-    DispatchQueue.main.async {
-      viewController.present(actionSheet, animated: true, completion: nil)
-    }
+    source.getPhotoLibrary(on: viewController)
   }
 }

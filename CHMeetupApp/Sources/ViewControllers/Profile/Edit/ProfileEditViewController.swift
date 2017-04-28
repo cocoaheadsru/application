@@ -20,7 +20,6 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(.lightGray)
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
@@ -55,6 +54,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
   }
 }
 
+// MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     displayCollection.didFinishMediaWithInfo(picker, info: info)

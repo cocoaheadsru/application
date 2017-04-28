@@ -53,21 +53,9 @@ class ProfileEditDisplayCollection: DisplayCollection {
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
     let viewController = delegate?.getViewController()
-    var permissions = 0 {
-      didSet { if permissions >= 2 { changeImageCompletion() } } // Full access to camera and photo library
-    }
     if let viewController = viewController {
       PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
-                                       completion: { _ in permissions += 1 })
-      PermissionsManager.requireAccess(from: viewController, to: .camera,
-                                       completion: { _ in permissions += 1 })
-    }
-  }
-
-  func changeImageCompletion() {
-    let viewController = delegate?.getViewController()
-    if let viewController = viewController as? ProfileEditViewController {
-      ImagePicker.checkImage(on: viewController)
+                                       completion: { _ in ImagePicker.checkImage(on: viewController) })
     }
   }
 

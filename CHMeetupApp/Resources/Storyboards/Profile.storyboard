@@ -193,10 +193,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zvk-T6-twm" firstAttribute="top" secondItem="Fws-Bx-arK" secondAttribute="bottom" id="NTo-vg-JEW"/>
-                            <constraint firstItem="Fws-Bx-arK" firstAttribute="top" secondItem="LUJ-lg-thX" secondAttribute="top" id="XiI-nQ-Yc4"/>
-                            <constraint firstItem="Fws-Bx-arK" firstAttribute="leading" secondItem="LUJ-lg-thX" secondAttribute="leading" id="jke-2S-eA5"/>
-                            <constraint firstAttribute="trailing" secondItem="Fws-Bx-arK" secondAttribute="trailing" id="vHf-EM-VDx"/>
+                            <constraint firstAttribute="bottom" secondItem="Fws-Bx-arK" secondAttribute="bottom" id="Hxd-UX-NND"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="leading" secondItem="LUJ-lg-thX" secondAttribute="leading" id="T8G-hR-XoS"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="top" secondItem="LUJ-lg-thX" secondAttribute="top" id="eLL-ke-fTL"/>
+                            <constraint firstAttribute="trailing" secondItem="Fws-Bx-arK" secondAttribute="trailing" id="qhK-68-Ba5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Изменение профиля" id="jua-nT-hoZ"/>
