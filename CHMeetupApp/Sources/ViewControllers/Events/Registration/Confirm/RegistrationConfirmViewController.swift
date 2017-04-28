@@ -12,9 +12,11 @@ class RegistrationConfirmViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView! {
     didSet {
+      tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
         bottomInset: 8 + BottomButton.constantHeight,
-        bottomIndicatorInset: BottomButton.constantHeight
+        bottomIndicatorInset: BottomButton.constantHeight,
+        estimatedRowHeight: 44
       )
       tableView.configure(with: .custom(configuration))
     }
@@ -60,6 +62,10 @@ extension RegistrationConfirmViewController: UITableViewDataSource, UITableViewD
     let model = displayCollection.model(for: indexPath)
     let cell = tableView.dequeueReusableCell(for: indexPath, with: model)
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return displayCollection.height(for: indexPath)
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

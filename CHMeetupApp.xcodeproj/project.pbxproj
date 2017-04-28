@@ -511,13 +511,14 @@
 			path = AttributedStringHelper;
 			sourceTree = "<group>";
 		};
-		03153BC11EAD413C0011FF5F /* subviews */ = {
+		03153BC11EAD413C0011FF5F /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				03153BCB1EAE90890011FF5F /* RegistrationConfirmTableViewCell.swift */,
 				03153BCC1EAE90890011FF5F /* RegConfirmHeaderTableViewCell.xib */,
 				03153BCF1EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift */,
 			);
+			name = Subviews;
 			path = subviews;
 			sourceTree = "<group>";
 		};
@@ -1069,7 +1070,7 @@
 		22323F611E70C2BE00522E5C /* Confirm */ = {
 			isa = PBXGroup;
 			children = (
-				03153BC11EAD413C0011FF5F /* subviews */,
+				03153BC11EAD413C0011FF5F /* Subviews */,
 				03153BC21EAD413C0011FF5F /* DisplayModel */,
 				22323F621E70C2BE00522E5C /* RegistrationConfirmViewController.swift */,
 			);
