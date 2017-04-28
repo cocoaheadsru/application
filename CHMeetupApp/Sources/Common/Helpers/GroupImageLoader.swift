@@ -27,13 +27,14 @@ class GroupImageLoader {
 
   typealias CompletionBlock = (_ images: [UIImage]) -> Void
 
-  private var groupTasks = [Int: [Task]]()
+  private var groupTasks = [Int: (tasks: [Task], flag: Bool)]()
 
   func loadImages(groupId id: Int, urls: [URL], completionHandler: CompletionBlock? = nil) {
 
-    if let tasks = groupTasks[id] {
-      if urls != tasks.map { $0.url } {
-        for task in tasks {
+    if let tasksInfo = groupTasks[id] {
+      groupTasks[id]?.flag = false
+      if urls != tasksInfo.tasks.map { $0.url } {
+        for task in tasksInfo.tasks {
           loader.cancel(task.loaderTask)
         }
         groupTasks.removeValue(forKey: id)
@@ -56,9 +57,12 @@ class GroupImageLoader {
       let task = Task(url: url, loaderTask: loaderImage)
       tasks.append(task)
     }
-    groupTasks[id] = tasks
+    groupTasks[id] = (tasks, true)
 
     group.notify(queue: DispatchQueue.main) {
+      if self.groupTasks[id]?.flag == false {
+        return
+      }
       self.groupTasks.removeValue(forKey: id)
       if let completionHandler = completionHandler {
         completionHandler(images)
