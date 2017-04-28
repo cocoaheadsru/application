@@ -40,6 +40,21 @@ final class FormFieldItem {
       fieldAnswers = [FormFieldAnswer(with: plainObject, fieldType: .string)]
     }
   }
+
+  var selectedAnswer: String? {
+    if type == .string {
+      return fieldAnswers.first?.answer.parseAnswers().stringValue
+    }
+    var answers: [String] = []
+    for answer in fieldAnswers {
+      let parsedAnswer = answer.answer.parseAnswers()
+      if parsedAnswer.boolValue {
+        answers.append("\(answer.id)")
+      }
+    }
+    return answers.joined(separator: ",")
+  }
+
 }
 
 final class FormFieldAnswer {

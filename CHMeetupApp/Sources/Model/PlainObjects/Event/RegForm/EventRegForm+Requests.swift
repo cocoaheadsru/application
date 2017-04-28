@@ -16,7 +16,17 @@ extension EventRegFormPlainObject: PlainObjectType {
     }
 
     static func registration(with formData: FormData) -> Request<RequestPlainObject> {
-      return Request<RequestPlainObject>(query: "event/registration/")
+      var registration: [String: String] = ["form": "\(formData.id)"]
+
+      for section in formData.sections {
+        if let selectedAnswer = section.selectedAnswer, !selectedAnswer.isEmpty {
+          registration["\(section.id)"] = selectedAnswer
+        }
+      }
+
+      registration["token"] = UserPreferencesEntity.value.currentUser?.token
+
+      return Request<RequestPlainObject>(query: "event/registration", method: .post, params: registration)
     }
   }
 

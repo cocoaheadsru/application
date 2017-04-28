@@ -80,15 +80,18 @@ class RegistrationPreviewViewController: UIViewController {
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
     } else {
-      registrate(completion: {
-        presentRegistrationConfirmViewController()
-      })
+      registrate()
     }
   }
 
-  func registrate(completion: () -> Void) {
-    RegistrationController.sendFormData(displayCollection.formData)
-    completion()
+  func registrate() {
+    RegistrationController.sendFormData(displayCollection.formData, completion: { success in
+      if success {
+        self.presentRegistrationConfirmViewController()
+      } else {
+        self.showMessageAlert(title: "Возникла ошибка".localized)
+      }
+    })
   }
 
   func presentRegistrationConfirmViewController() {
