@@ -20,21 +20,28 @@ class GroupImageLoader {
     return GroupImageLoader(loader: KingfisherImageLoader.standard)
   }
 
-  struct Task {
+  class Task {
     let url: URL
     let loaderTask: ImageLoaderTask
+    var isCanceled: Bool
+
+    init(url: URL, loaderTask: ImageLoaderTask, isCanceled: Bool = false) {
+      self.url = url
+      self.loaderTask = loaderTask
+      self.isCanceled = isCanceled
+    }
   }
 
   typealias CompletionBlock = (_ images: [UIImage]) -> Void
 
-  private var groupTasks = [Int: (tasks: [Task], flag: Bool)]()
+  private var groupTasks = [Int: [Task]]()
 
   func loadImages(groupId id: Int, urls: [URL], completionHandler: CompletionBlock? = nil) {
 
-    if let tasksInfo = groupTasks[id] {
-      groupTasks[id]?.flag = false
-      if urls != tasksInfo.tasks.map { $0.url } {
-        for task in tasksInfo.tasks {
+    if let tasks = groupTasks[id] {
+      if urls != tasks.map { $0.url } {
+        for task in tasks {
+          task.isCanceled = true
           loader.cancel(task.loaderTask)
         }
         groupTasks.removeValue(forKey: id)
@@ -57,12 +64,13 @@ class GroupImageLoader {
       let task = Task(url: url, loaderTask: loaderImage)
       tasks.append(task)
     }
-    groupTasks[id] = (tasks, true)
+    groupTasks[id] = tasks
 
     group.notify(queue: DispatchQueue.main) {
-      if self.groupTasks[id]?.flag == false {
+      for task in tasks where task.isCanceled {
         return
       }
+
       self.groupTasks.removeValue(forKey: id)
       if let completionHandler = completionHandler {
         completionHandler(images)
