@@ -77,12 +77,16 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrationButtonAction() {
+    guard displayCollection.isFormLoaded else {
+      print("\(#function): form is not loaded")
+      return
+    }
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
     } else {
-      registrate(completion: {
+      registrate {
         presentRegistrationConfirmViewController()
-      })
+      }
     }
   }
 
