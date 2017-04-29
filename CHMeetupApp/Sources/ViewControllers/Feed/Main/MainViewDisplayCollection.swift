@@ -111,12 +111,13 @@ extension MainViewDisplayCollection: TemplateModelCollectionDelegate {
 
 extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
   func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell) {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
     guard let indexPath = delegate?.getIndexPath(from: eventCell) else {
       assertionFailure("IndexPath is unknown")
       return
     }
-    viewController.selectedEventId = modelCollection[indexPath.row].id
+    let viewController = ViewControllersFactory.eventRegistrationOrAuthViewController(
+      eventId: modelCollection[indexPath.row].id
+    )
     delegate?.push(viewController: viewController)
   }
 }
