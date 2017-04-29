@@ -36,7 +36,7 @@ class RegistrationPreviewViewController: UIViewController {
     title = "Регистрация".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Зарегистрироваться".localized)
-    bottomButton.isHidden = true
+    bottomButton.isEnabled = false
 
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
@@ -58,7 +58,7 @@ class RegistrationPreviewViewController: UIViewController {
         self?.displayCollection.delegate = self
 
         DispatchQueue.main.async {
-          self?.bottomButton.isHidden = false
+          self?.bottomButton.isEnabled = true
           self?.tableView.reloadData()
         }
 
