@@ -10,14 +10,14 @@ import UIKit.UIImageView
 
 extension UIImageView {
   func roundWithBorder(_ approximateBorderWidth: CGFloat, color: UIColor = .white) {
-    _ = makeRoundBourder(approximateBorderWidth, color: color)
+    _ = makeRoundBorder(approximateBorderWidth, color: color)
   }
 
   func getRoundWithBorder(_ approximateBorderWidth: CGFloat, color: UIColor = .white) -> CAShapeLayer {
-    return makeRoundBourder(approximateBorderWidth, color: color)
+    return makeRoundBorder(approximateBorderWidth, color: color)
   }
 
-  fileprivate func makeRoundBourder(_ approximateBorderWidth: CGFloat, color: UIColor) -> CAShapeLayer {
+  fileprivate func makeRoundBorder(_ approximateBorderWidth: CGFloat, color: UIColor) -> CAShapeLayer {
     roundCorners()
 
     let border = CAShapeLayer()

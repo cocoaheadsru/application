@@ -16,7 +16,7 @@ class ChooseProfilePhotoButton: UIButton {
 
   var borderPhotoImageView: CAShapeLayer!
   var borderAddImageView: CAShapeLayer!
-  var borderColor: UIColor = .white
+  var borderColor: UIColor!
 
   override func awakeAfter(using aDecoder: NSCoder) -> Any? {
     return self.loadFromNibIfEmbeddedInDifferentNib()
@@ -31,15 +31,21 @@ class ChooseProfilePhotoButton: UIButton {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    borderColor = .white
   }
 
   @IBAction func backgroundButtonPressedInside(_ sender: Any) {
-    borderPhotoImageView.strokeColor = borderColor.tapButtonChangeColor.cgColor
-    borderAddImageView.strokeColor = borderColor.tapButtonChangeColor.cgColor
+    let newColor = borderColor.tapButtonChangeColor
+    borderPhotoImageView.strokeColor = newColor.cgColor
+    borderAddImageView.strokeColor = newColor.cgColor
+    photoImageView.backgroundColor = newColor
+    addImageView.backgroundColor = newColor
   }
 
   @IBAction func backgroundButtonPressedOutside(_ sender: Any) {
     borderPhotoImageView.strokeColor = borderColor.cgColor
     borderAddImageView.strokeColor = borderColor.cgColor
+    photoImageView.backgroundColor = .clear
+    addImageView.backgroundColor = borderColor
   }
 }
