@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class CreatorsViewController: UIViewController {
   @IBOutlet var tableView: UITableView! {
@@ -20,17 +19,11 @@ class CreatorsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    SVProgressHUD.show()
+
     navigationItem.title = "Создатели".localized
     displayCollection = CreatorsViewDisplayCollection(with: [])
     tableView.registerNibs(from: displayCollection)
-
-    CreatorsController.loadList { [weak self] users, _ in
-      SVProgressHUD.dismiss()
-      guard let users = users else { return }
-      self?.displayCollection = CreatorsViewDisplayCollection(with: users)
-      self?.tableView.reloadData()
-    }
+    fetchCreators()
   }
 }
 
@@ -58,5 +51,15 @@ extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+fileprivate extension CreatorsViewController {
+  func fetchCreators() {
+    CreatorsController.loadList { [weak self] users, _ in
+      guard let users = users else { return }
+      self?.displayCollection = CreatorsViewDisplayCollection(with: users)
+      self?.tableView.reloadData()
+    }
   }
 }
