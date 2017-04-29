@@ -16,26 +16,30 @@ class ChooseProfilePhotoButton: UIButton {
 
   var borderPhotoImageView: CAShapeLayer!
   var borderAddImageView: CAShapeLayer!
+  var borderColor: UIColor = .white
 
   override func awakeAfter(using aDecoder: NSCoder) -> Any? {
     return self.loadFromNibIfEmbeddedInDifferentNib()
   }
 
   override func layoutSubviews() {
-    print("Layout")
     super.layoutSubviews()
     let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
-    borderPhotoImageView = photoImageView.getRoundWithWhiteBorder(borderWidth)
-    borderAddImageView = addImageView.getRoundWithWhiteBorder(borderWidth)
+    borderPhotoImageView = photoImageView.getRoundWithBorder(borderWidth, color: borderColor)
+    borderAddImageView = addImageView.getRoundWithBorder(borderWidth, color: borderColor)
   }
 
   override func awakeFromNib() {
-    print("Awakefromnib")
     super.awakeFromNib()
   }
 
-  @IBAction func backgroundButtonPressed(_ sender: Any) {
-    borderPhotoImageView.strokeColor = UIColor.black.cgColor
-    borderAddImageView.strokeColor = UIColor.black.cgColor
+  @IBAction func backgroundButtonPressedInside(_ sender: Any) {
+    borderPhotoImageView.strokeColor = borderColor.tapButtonChangeColor.cgColor
+    borderAddImageView.strokeColor = borderColor.tapButtonChangeColor.cgColor
+  }
+
+  @IBAction func backgroundButtonPressedOutside(_ sender: Any) {
+    borderPhotoImageView.strokeColor = borderColor.cgColor
+    borderAddImageView.strokeColor = borderColor.cgColor
   }
 }

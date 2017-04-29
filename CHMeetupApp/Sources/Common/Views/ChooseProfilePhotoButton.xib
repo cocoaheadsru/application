@@ -20,7 +20,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABl-6M-QFG">
                     <rect key="frame" x="0.0" y="0.0" width="162" height="150"/>
                     <connections>
-                        <action selector="backgroundButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="SK8-3b-bhi"/>
+                        <action selector="backgroundButtonPressedInside:" destination="iN0-l3-epB" eventType="touchDown" id="Prc-So-jvH"/>
+                        <action selector="backgroundButtonPressedOutside:" destination="iN0-l3-epB" eventType="touchUpInside" id="UPC-6v-ehq"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-Hi-BXz">
@@ -28,12 +29,12 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icon_add" translatesAutoresizingMaskIntoConstraints="NO" id="7Sa-1h-O7m">
                     <rect key="frame" x="109.5" y="97.5" width="52.5" height="52.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="7Sa-1h-O7m" secondAttribute="height" multiplier="1:1" id="yAn-FO-Vbn"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tCg-Hi-BXz" secondAttribute="bottom" id="5Xw-L3-aAg"/>
                 <constraint firstItem="tCg-Hi-BXz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ex-Gz-W27"/>
