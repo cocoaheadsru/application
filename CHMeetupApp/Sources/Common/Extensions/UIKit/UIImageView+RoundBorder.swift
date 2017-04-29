@@ -10,6 +10,14 @@ import UIKit.UIImageView
 
 extension UIImageView {
   func roundWithWhiteBorder(_ approximateBorderWidth: CGFloat) {
+    _ = makeRoundBourder(approximateBorderWidth)
+  }
+
+  func getRoundWithWhiteBorder(_ approximateBorderWidth: CGFloat) -> CAShapeLayer {
+    return makeRoundBourder(approximateBorderWidth)
+  }
+
+  fileprivate func makeRoundBourder(_ approximateBorderWidth: CGFloat) -> CAShapeLayer {
     roundCorners()
 
     let border = CAShapeLayer()
@@ -19,5 +27,6 @@ extension UIImageView {
     border.lineWidth = (approximateBorderWidth * 2).round(0.5)
     border.path = UIBezierPath(ovalIn: border.bounds).cgPath
     layer.addSublayer(border)
+    return border
   }
 }

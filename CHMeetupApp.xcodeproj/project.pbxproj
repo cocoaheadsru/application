@@ -153,6 +153,8 @@
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
+		8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */; };
+		8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */; };
 		9F1167C51EA4E20D008D3A1B /* UIViewControllerWithTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
@@ -407,6 +409,8 @@
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
+		8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoButton.swift; sourceTree = "<group>"; };
+		8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoButton.xib; sourceTree = "<group>"; };
 		9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerWithTableView.swift; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1525,6 +1529,15 @@
 			name = TranslationPlainObjects;
 			sourceTree = "<group>";
 		};
+		8AE5BCB91EB4E88E007047CE /* ChooseProfilePhotoButton */ = {
+			isa = PBXGroup;
+			children = (
+				8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */,
+				8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */,
+			);
+			name = ChooseProfilePhotoButton;
+			sourceTree = "<group>";
+		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
 			isa = PBXGroup;
 			children = (
@@ -1798,6 +1811,7 @@
 				9F8881781E7E9ECF00CEFEA4 /* BottomButton */,
 				22323F231E70C0E500522E5C /* ActionButton */,
 				9F487A801E7417E50016CE0B /* LightButton */,
+				8AE5BCB91EB4E88E007047CE /* ChooseProfilePhotoButton */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -2043,6 +2057,7 @@
 				32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
+				8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */,
 				03153BCE1EAE90890011FF5F /* RegConfirmHeaderTableViewCell.xib in Resources */,
@@ -2138,6 +2153,7 @@
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
+				8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */,
 				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
