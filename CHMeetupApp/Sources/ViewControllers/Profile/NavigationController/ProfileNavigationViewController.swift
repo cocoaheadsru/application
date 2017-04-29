@@ -14,14 +14,24 @@ protocol ProfileNavigationControllerType {
 
 class ProfileNavigationViewController: NavigationViewController, ProfileNavigationControllerType {
 
+  var preveousState: Bool?
+
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    updateRootViewController()
     // Do any additional setup after loading the view.
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateRootViewController()
+  }
+
   func updateRootViewController() {
+    if LoginProcessController.isLogin == preveousState {
+      return
+    }
+    preveousState = LoginProcessController.isLogin
+
     if LoginProcessController.isLogin {
       viewControllers = [ViewControllersFactory.profileViewController]
     } else {
