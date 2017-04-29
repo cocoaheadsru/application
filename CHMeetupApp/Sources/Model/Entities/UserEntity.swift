@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class UserEntity: Object {
+final class UserEntity: TemplatableObject, TemplateEntity {
   dynamic var id: Int = 0
   dynamic var remoteId: Int = 0
 

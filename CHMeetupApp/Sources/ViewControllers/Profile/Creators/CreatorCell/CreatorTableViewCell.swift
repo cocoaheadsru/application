@@ -17,7 +17,7 @@ class CreatorTableViewCell: PlateTableViewCell {
     creatorImage.roundCorners()
   }
 
-  @IBOutlet var creatorNameLabel: UILabel! {
+  @IBOutlet var creatorNameLabel: TemplatableLabel! {
     didSet {
       creatorNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
       creatorNameLabel.textColor = UIColor(.darkGray)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatorsViewController: UIViewController {
+class CreatorsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -21,7 +21,7 @@ class CreatorsViewController: UIViewController {
     super.viewDidLoad()
 
     navigationItem.title = "Создатели".localized
-    displayCollection = CreatorsViewDisplayCollection(with: [])
+    displayCollection = CreatorsViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
     fetchCreators()
   }
@@ -56,10 +56,10 @@ extension CreatorsViewController: UITableViewDelegate {
 
 fileprivate extension CreatorsViewController {
   func fetchCreators() {
-    CreatorsController.loadList { [weak self] users, _ in
-      guard let users = users else { return }
-      self?.displayCollection = CreatorsViewDisplayCollection(with: users)
+    displayCollection.creators.isLoading = true
+    CreatorsFetching.fetchElements(request: UserPlainObject.Requests.listOfCreators, completion: { [weak self] in
+      self?.displayCollection.creators.isLoading = false
       self?.tableView.reloadData()
-    }
+    })
   }
 }
