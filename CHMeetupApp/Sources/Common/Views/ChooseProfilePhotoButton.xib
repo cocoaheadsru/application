@@ -17,13 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="162" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABl-6M-QFG">
-                    <rect key="frame" x="0.0" y="0.0" width="162" height="150"/>
-                    <connections>
-                        <action selector="backgroundButtonPressedInside:" destination="iN0-l3-epB" eventType="touchDown" id="Prc-So-jvH"/>
-                        <action selector="backgroundButtonPressedOutside:" destination="iN0-l3-epB" eventType="touchUpInside" id="UPC-6v-ehq"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-Hi-BXz">
                     <rect key="frame" x="0.0" y="0.0" width="162" height="150"/>
                 </imageView>
@@ -38,20 +31,15 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tCg-Hi-BXz" secondAttribute="bottom" id="5Xw-L3-aAg"/>
                 <constraint firstItem="tCg-Hi-BXz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ex-Gz-W27"/>
-                <constraint firstItem="ABl-6M-QFG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ALX-Tz-rN0"/>
-                <constraint firstItem="ABl-6M-QFG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BY7-nE-vfH"/>
                 <constraint firstItem="tCg-Hi-BXz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cer-c1-al3"/>
                 <constraint firstItem="7Sa-1h-O7m" firstAttribute="height" secondItem="tCg-Hi-BXz" secondAttribute="height" multiplier="0.35" id="D9e-GK-InP"/>
                 <constraint firstAttribute="trailing" secondItem="tCg-Hi-BXz" secondAttribute="trailing" id="Fc5-C9-2nO"/>
                 <constraint firstAttribute="trailing" secondItem="7Sa-1h-O7m" secondAttribute="trailing" id="Uxu-Pv-dd3"/>
-                <constraint firstAttribute="bottom" secondItem="ABl-6M-QFG" secondAttribute="bottom" id="kdw-p2-9BP"/>
-                <constraint firstAttribute="trailing" secondItem="ABl-6M-QFG" secondAttribute="trailing" id="mIj-aV-nAL"/>
                 <constraint firstAttribute="bottom" secondItem="7Sa-1h-O7m" secondAttribute="bottom" id="xUN-WJ-Q2g"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addImageView" destination="7Sa-1h-O7m" id="Ada-0M-JJu"/>
-                <outlet property="backgroundButton" destination="ABl-6M-QFG" id="rrK-cS-dG1"/>
                 <outlet property="photoImageView" destination="tCg-Hi-BXz" id="0Js-Hl-5nZ"/>
             </connections>
             <point key="canvasLocation" x="150" y="-144"/>

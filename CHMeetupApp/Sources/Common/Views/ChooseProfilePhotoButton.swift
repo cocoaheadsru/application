@@ -10,13 +10,17 @@ import UIKit
 
 class ChooseProfilePhotoButton: UIButton {
 
-  @IBOutlet var backgroundButton: UIButton!
   @IBOutlet var photoImageView: UIImageView!
-  @IBOutlet var addImageView: UIImageView!
+  @IBOutlet private var addImageView: UIImageView!
 
-  var borderPhotoImageView: CAShapeLayer!
-  var borderAddImageView: CAShapeLayer!
   var borderColor: UIColor!
+  private var tappedColor: UIColor {
+    return borderColor.tapButtonChangeColor
+  }
+  private var borderWidth: CGFloat {
+    return photoImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
+  }
+  private var isFirstSetup: Bool!
 
   override func awakeAfter(using aDecoder: NSCoder) -> Any? {
     return self.loadFromNibIfEmbeddedInDifferentNib()
@@ -24,28 +28,32 @@ class ChooseProfilePhotoButton: UIButton {
 
   override func layoutSubviews() {
     super.layoutSubviews()
-    let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
-    borderPhotoImageView = photoImageView.getRoundWithBorder(borderWidth, color: borderColor)
-    borderAddImageView = addImageView.getRoundWithBorder(borderWidth, color: borderColor)
+    if isFirstSetup {
+      photoImageView.roundWithBorder(borderWidth, color: borderColor)
+      addImageView.roundWithBorder(borderWidth, color: borderColor)
+      isFirstSetup = false
+    }
+    isHighlighted ? buttonTappedState() : buttonDefaultState()
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
     borderColor = .white
+    isFirstSetup = true
   }
 
-  @IBAction func backgroundButtonPressedInside(_ sender: Any) {
-    let newColor = borderColor.tapButtonChangeColor
-    borderPhotoImageView.strokeColor = newColor.cgColor
-    borderAddImageView.strokeColor = newColor.cgColor
-    photoImageView.backgroundColor = newColor
-    addImageView.backgroundColor = newColor
+  private func buttonTappedState() {
+    photoImageView.roundWithBorder(borderWidth, color: tappedColor)
+    addImageView.roundWithBorder(borderWidth, color: tappedColor)
+    photoImageView.backgroundColor = tappedColor
+    addImageView.backgroundColor = tappedColor
   }
 
-  @IBAction func backgroundButtonPressedOutside(_ sender: Any) {
-    borderPhotoImageView.strokeColor = borderColor.cgColor
-    borderAddImageView.strokeColor = borderColor.cgColor
+  private func buttonDefaultState() {
+    photoImageView.removeRoundWithBorder(borderWidth, color: tappedColor)
+    addImageView.removeRoundWithBorder(borderWidth, color: tappedColor)
     photoImageView.backgroundColor = .clear
     addImageView.backgroundColor = borderColor
   }
+
 }

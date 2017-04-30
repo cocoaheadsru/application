@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct ChooseProfilePhotoTableViewModel {
+struct ChooseProfilePhotoTableViewCellModel {
   let userEntity: UserEntity
 }
 
-extension ChooseProfilePhotoTableViewModel: CellViewModelType {
+extension ChooseProfilePhotoTableViewCellModel: CellViewModelType {
   func setup(on cell: ChooseProfilePhotoTableViewCell) {
     if let photoURL = userEntity.photoURL, let url = URL(string: photoURL) {
       cell.mainButton.photoImageView.loadImage(from: url)
