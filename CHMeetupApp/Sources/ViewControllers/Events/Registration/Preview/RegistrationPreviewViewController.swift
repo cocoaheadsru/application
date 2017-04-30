@@ -84,8 +84,7 @@ class RegistrationPreviewViewController: UIViewController {
 
   func registrationButtonAction() {
     guard displayCollection.isFormLoaded else {
-      print("\(#function): form is not loaded")
-      return
+      fatalError("\(#function): form is not loaded")
     }
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
