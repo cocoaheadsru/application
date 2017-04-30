@@ -35,10 +35,10 @@ class RegistrationController {
   }
 
   static func sendFormData(_ data: FormData, completion: @escaping (_ success: Bool) -> Void) {
-    let request = EventRegFormPlainObject.Requests.registration(with: data)
-    Server.standard.request(request) { request, error in
-      if let answer = request {
-        completion(answer.success)
+    let regFormRequest = EventRegFormPlainObject.Requests.registration(with: data)
+    Server.standard.request(regFormRequest) { response, error in
+      if let response = response {
+        completion(response.success)
       } else {
         completion(false)
       }

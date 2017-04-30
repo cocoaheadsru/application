@@ -24,8 +24,11 @@ extension EventRegFormPlainObject: PlainObjectType {
         }
       }
 
-      registration["token"] = UserPreferencesEntity.value.currentUser?.token
+      guard let token = UserPreferencesEntity.value.currentUser?.token else {
+        fatalError("Token not found. You have to login")
+      }
 
+      registration["token"] = token
       return Request<RequestPlainObject>(query: "event/registration", method: .post, params: registration)
     }
   }
