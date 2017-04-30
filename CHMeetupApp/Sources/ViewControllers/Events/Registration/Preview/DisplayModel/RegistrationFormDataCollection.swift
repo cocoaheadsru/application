@@ -24,7 +24,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     self.formData = formData
   }
 
-  var formData: FormData!
+  private var formData: FormData!
   weak var delegate: FormDisplayCollectionDelegate?
 
   var numberOfSections: Int {
@@ -124,6 +124,10 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     }
 
     delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
+  }
+
+  var isFormLoaded: Bool {
+    return formData != nil
   }
 
   var failedSection: Int? {
