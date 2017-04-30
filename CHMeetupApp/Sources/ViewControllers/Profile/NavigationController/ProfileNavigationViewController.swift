@@ -14,7 +14,7 @@ protocol ProfileNavigationControllerType {
 
 class ProfileNavigationViewController: NavigationViewController, ProfileNavigationControllerType {
 
-  var preveousState: Bool?
+  var previousState: Bool?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,10 +27,10 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   }
 
   func updateRootViewController() {
-    if LoginProcessController.isLogin == preveousState {
+    if LoginProcessController.isLogin == previousState {
       return
     }
-    preveousState = LoginProcessController.isLogin
+    previousState = LoginProcessController.isLogin
 
     if LoginProcessController.isLogin {
       viewControllers = [ViewControllersFactory.profileViewController]
