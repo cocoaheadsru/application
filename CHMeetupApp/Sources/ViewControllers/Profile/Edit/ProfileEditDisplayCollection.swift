@@ -53,13 +53,15 @@ class ProfileEditDisplayCollection: DisplayCollection {
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
     let viewController = delegate?.getViewController()
-    if let viewController = viewController {
+    if let viewController = viewController as? ProfileEditViewController {
       PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
-                                       completion: { _ in ImagePicker.checkImage(on: viewController) })
+                                       completion: { _ in
+                                        ImagePickerController.showImagePicker(on: viewController)
+      })
     }
   }
 
-  func didFinishMediaWithInfo(_ picker: UIImagePickerController, info: [String : Any]) {
+  func didReciveMedia(_ picker: UIImagePickerController, info: [String : Any]) {
     if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
       changeCheckedImage(image: image)
     }
