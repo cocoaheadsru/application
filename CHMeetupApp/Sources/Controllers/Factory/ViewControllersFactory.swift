@@ -20,4 +20,15 @@ struct ViewControllersFactory {
   static var eventPreviewViewController: UIViewController {
     return Storyboards.EventPreview.instantiateEventPreviewViewController()
   }
+
+  static func eventRegistrationOrAuthViewController(eventId: Int) -> UIViewController {
+    if LoginProcessController.isLogin {
+      let eventPreviewViewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+      eventPreviewViewController.selectedEventId = eventId
+      return eventPreviewViewController
+    } else {
+      return Storyboards.Profile.instantiateAuthViewController()
+    }
+
+  }
 }
