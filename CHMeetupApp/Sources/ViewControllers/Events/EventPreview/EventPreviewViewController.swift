@@ -53,10 +53,10 @@ class EventPreviewViewController: UIViewController {
 
     let dataModel = DataModelCollection(type: EventEntity.self)
     displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
-
     if let event = displayCollection.event {
       fetchSpeeches(on: event)
-      isRegistrationEnabled = event.isRegistrationOpen
+      bottomButton?.setTitle(event.registrationStatus.statusText, for: .normal)
+      isRegistrationEnabled = event.isRegistrationOpen && event.registrationStatus.allowRegister
     }
   }
 

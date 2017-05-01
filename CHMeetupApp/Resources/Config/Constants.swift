@@ -15,7 +15,9 @@ final class Constants {
 
   static let apiBase = "http://upapi.ru/method/"
   static let supportEmail = "support@cocoaheads.ru"
-  static let baseParams = ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+  static var baseParams: [String: String] {
+    return ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+  }
 
   struct Vkontakte {
     static let clientId = "5895589"

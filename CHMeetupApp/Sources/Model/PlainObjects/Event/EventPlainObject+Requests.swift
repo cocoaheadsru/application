@@ -18,6 +18,7 @@ extension EventPlainObject: PlainObjectType {
 
     // Past events list
     static var pastList: Request<[EventPlainObject]> {
+
       return Request(query: "events/past", method: .post, params: Constants.baseParams)
     }
 

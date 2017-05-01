@@ -25,6 +25,19 @@ final class EventEntity: TemplatableObject, TemplateEntity {
         return false
       }
     }
+
+    var statusText: String {
+      switch self {
+      case .waiting:
+        return "Ожидайте подтверждения".localized
+      case .rejected:
+        return "Жаль, заявка отклонена".localized
+      case .approved:
+        return "Заявка одобрена. Ждём вас!".localized
+      case .unknown:
+        return "Я пойду".localized
+      }
+    }
   }
 
   dynamic var id: Int = 0
@@ -36,15 +49,17 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var endDate: Date = Date()
 
   dynamic var photoURL: String = ""
+
   dynamic var status: String = "unknown"
+  var registrationStatus: EventRegistrationStatus {
+    return EventRegistrationStatus(rawValue: status) ?? .unknown
+  }
+
   dynamic var place: PlaceEntity?
   dynamic var isRegistrationOpen: Bool = false
 
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
-  var registrationStatus: EventRegistrationStatus {
-    return EventRegistrationStatus(rawValue: status) ?? .unknown
-  }
   override static func primaryKey() -> String? {
     return "id"
   }
