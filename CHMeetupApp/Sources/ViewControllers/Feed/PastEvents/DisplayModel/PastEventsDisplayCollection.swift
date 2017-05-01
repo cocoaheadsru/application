@@ -13,11 +13,16 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
     return [EventPreviewTableViewCellModel.self]
   }
 
-  let modelCollection: DataModelCollection<EventEntity> = {
+  var modelCollection: TemplateModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate < %@", NSDate())
-    let modelCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    return modelCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    var dataCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
+    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    return TemplateModelCollection(dataCollection: dataCollection)
   }()
+
+  init() {
+    modelCollection.delegate = self
+  }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
@@ -32,16 +37,25 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    return EventPreviewTableViewCellModel(event: modelCollection[indexPath.row],
+    return EventPreviewTableViewCellModel(entity: modelCollection[indexPath.row],
                                           index: indexPath.row,
                                           delegate: self,
                                           groupImageLoader: groupImageLoader)
   }
 
   func didSelect(indexPath: IndexPath) {
+    if modelCollection[indexPath.row].isTemplate {
+      return
+    }
     let eventPreview = Storyboards.EventPreview.instantiateEventPreviewViewController()
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
+  }
+}
+
+extension PastEventsDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionDidUpdateData() {
+    delegate?.updateUI()
   }
 }
 

@@ -36,7 +36,8 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
   }
 
   @IBAction func editBarButtonAction(_ sender: UIBarButtonItem) {
-
+    let viewController = Storyboards.Profile.instantiateProfileEditViewController()
+    push(viewController: viewController)
   }
 }
 

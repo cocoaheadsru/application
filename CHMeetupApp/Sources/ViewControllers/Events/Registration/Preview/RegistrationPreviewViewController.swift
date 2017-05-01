@@ -37,6 +37,7 @@ class RegistrationPreviewViewController: UIViewController {
     title = "Регистрация".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Зарегистрироваться".localized)
+    bottomButton.isEnabled = false
 
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
@@ -56,7 +57,12 @@ class RegistrationPreviewViewController: UIViewController {
 
         self?.displayCollection = displayCollection
         self?.displayCollection.delegate = self
-        self?.tableView.reloadData()
+
+        DispatchQueue.main.async {
+          self?.bottomButton.isEnabled = true
+          self?.tableView.reloadData()
+        }
+
     })
 
     setupGestureRecognizer()
@@ -78,6 +84,9 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrationButtonAction() {
+    guard displayCollection.isFormLoaded else {
+      fatalError("\(#function): form is not loaded")
+    }
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
     } else {

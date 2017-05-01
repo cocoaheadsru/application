@@ -20,9 +20,16 @@ class GroupImageLoader {
     return GroupImageLoader(loader: KingfisherImageLoader.standard)
   }
 
-  struct Task {
+  class Task {
     let url: URL
     let loaderTask: ImageLoaderTask
+    var isCanceled: Bool
+
+    init(url: URL, loaderTask: ImageLoaderTask, isCanceled: Bool = false) {
+      self.url = url
+      self.loaderTask = loaderTask
+      self.isCanceled = isCanceled
+    }
   }
 
   typealias CompletionBlock = (_ images: [UIImage]) -> Void
@@ -34,6 +41,7 @@ class GroupImageLoader {
     if let tasks = groupTasks[id] {
       if urls != tasks.map { $0.url } {
         for task in tasks {
+          task.isCanceled = true
           loader.cancel(task.loaderTask)
         }
         groupTasks.removeValue(forKey: id)
@@ -59,6 +67,10 @@ class GroupImageLoader {
     groupTasks[id] = tasks
 
     group.notify(queue: DispatchQueue.main) {
+      for task in tasks where task.isCanceled {
+        return
+      }
+
       self.groupTasks.removeValue(forKey: id)
       if let completionHandler = completionHandler {
         completionHandler(images)

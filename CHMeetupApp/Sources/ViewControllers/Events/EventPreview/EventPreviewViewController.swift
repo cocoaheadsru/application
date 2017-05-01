@@ -55,7 +55,7 @@ class EventPreviewViewController: UIViewController {
     displayCollection.event = dataModel.first(where: { $0.id == selectedEventId })
 
     if let event = displayCollection.event {
-      fetchEvents(on: event)
+      fetchSpeeches(on: event)
       isRegistrationEnabled = event.isRegistrationOpen
     }
   }
@@ -89,9 +89,11 @@ extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension EventPreviewViewController {
-  func fetchEvents(on eventEntity: EventEntity) {
+  func fetchSpeeches(on eventEntity: EventEntity) {
+    displayCollection.speeches.isLoading = true
     let speechesRequest = SpeechPlainObject.Requests.speechesOnEvent(with: selectedEventId)
     SpeechFetching.fetchElements(request: speechesRequest, to: eventEntity, completion: { [weak self] in
+      self?.displayCollection.speeches.isLoading = false
       self?.tableView.reloadData()
     })
   }

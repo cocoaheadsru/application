@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct ProfileEditDisplayCollection: DisplayCollection {
+class ProfileEditDisplayCollection: DisplayCollection {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [ProfilePhotoTableViewCellModel.self,
+    return [ChooseProfilePhotoTableViewModel.self,
             LabelTableViewCellModel.self]
   }
 
@@ -22,6 +22,8 @@ struct ProfileEditDisplayCollection: DisplayCollection {
   fileprivate var sections: [Type] = [.userHeader, .userContacts]
 
   var user: UserEntity!
+
+  weak var delegate: ProfileHierarhyViewControllerType?
 
   var numberOfSections: Int {
     return sections.count
@@ -39,11 +41,34 @@ struct ProfileEditDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .userHeader:
-      return ProfilePhotoTableViewCellModel(userEntity: user)
+      return ChooseProfilePhotoTableViewModel(userEntity: user, delegate: self)
     case .userContacts:
       let key = Array(user.contacts.keys).sorted(by: > )[indexPath.row]
       let value = user.contacts[key] ?? ""
       return LabelTableViewCellModel(title: key, description: value)
     }
+  }
+}
+
+extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
+  func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
+    let viewController = delegate?.getViewController()
+    if let viewController = viewController as? ProfileEditViewController {
+      PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
+                                       completion: { _ in
+                                        ImagePickerController.showImagePicker(on: viewController)
+      })
+    }
+  }
+
+  func didReciveMedia(_ picker: UIImagePickerController, info: [String : Any]) {
+    if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+      changeCheckedImage(image: image)
+    }
+    picker.dismiss(animated: true, completion: nil)
+  }
+
+  func changeCheckedImage(image: UIImage) {
+    // TODO: - Load image
   }
 }

@@ -12,7 +12,15 @@ protocol EventPreviewTableViewCellDelegate: class {
   func eventCellAcceptButtonPressed(_ eventCell: EventPreviewTableViewCell)
 }
 
-class EventPreviewTableViewCell: PlateTableViewCell {
+class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
+
+  var isTemplate: Bool = false {
+    didSet {
+      if oldValue == false && isTemplate == true {
+        animateWithFade()
+      }
+    }
+  }
 
   var isEnabledForRegistration = false {
     didSet {
@@ -22,21 +30,21 @@ class EventPreviewTableViewCell: PlateTableViewCell {
 
   @IBOutlet var eventImageView: UIImageView!
 
-  @IBOutlet var nameLabel: UILabel! {
+  @IBOutlet var nameLabel: TemplatableLabel! {
     didSet {
       nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
       nameLabel.textColor = UIColor(.strongGray)
     }
   }
 
-  @IBOutlet var dateLabel: UILabel! {
+  @IBOutlet var dateLabel: TemplatableLabel! {
     didSet {
       dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       dateLabel.textColor = UIColor(.strongGray)
     }
   }
 
-  @IBOutlet var placeLabel: UILabel! {
+  @IBOutlet var placeLabel: TemplatableLabel! {
     didSet {
       placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
       placeLabel.textColor = UIColor(.strongGray)

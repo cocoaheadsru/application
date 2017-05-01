@@ -27,8 +27,20 @@ class EventPreviewDisplayCollection: DisplayCollection {
           }
         })
       }
+      if let event = event {
+        speeches.content = TemplateModelCollection.Content.list(event.speeches)
+      }
+
       setNeedsReloadData()
     }
+  }
+
+  var speeches: TemplateModelCollection<SpeechEntity> = {
+    return TemplateModelCollection(templatesCount: 3)
+  }()
+
+  init() {
+    speeches.delegate = self
   }
 
   weak var delegate: DisplayCollectionDelegate?
@@ -100,7 +112,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .location, .address, .description:
       return 1
     case .speaches:
-      return event?.speeches.count ?? 0
+      return speeches.count
     case .additionalCells:
       return 0
     }
@@ -124,11 +136,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
         return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading location...".localized))
       }
     case .speaches:
-      if let speech = event?.speeches[indexPath.row] {
-        return SpeechPreviewTableViewCellModel(speech: speech)
-      } else {
-        fatalError("Should not be reached")
-      }
+      return SpeechPreviewTableViewCellModel(entity: speeches[indexPath.row])
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
@@ -144,6 +152,9 @@ class EventPreviewDisplayCollection: DisplayCollection {
       addressActionObject?.action?()
     case .speaches:
       if let event = event {
+        if speeches[indexPath.row].isTemplate {
+          return
+        }
         let viewController = Storyboards.EventPreview.instantiateSpeechPreviewViewController()
         viewController.selectedSpeechId = event.speeches[indexPath.row].id
         delegate?.push(viewController: viewController)
@@ -151,5 +162,11 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .additionalCells, .description, .location:
       break
     }
+  }
+}
+
+extension EventPreviewDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionDidUpdateData() {
+    delegate?.updateUI()
   }
 }
