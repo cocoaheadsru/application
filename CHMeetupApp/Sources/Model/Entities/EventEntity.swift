@@ -10,6 +10,23 @@ import Foundation
 import RealmSwift
 
 final class EventEntity: TemplatableObject, TemplateEntity {
+
+  enum EventRegistrationStatus: String {
+    case waiting
+    case rejected
+    case approved
+    case unknown
+
+    var allowRegister: Bool {
+      switch self {
+      case .unknown:
+        return true
+      case .waiting, .rejected, .approved:
+        return false
+      }
+    }
+  }
+
   dynamic var id: Int = 0
 
   dynamic var title: String = ""
@@ -21,6 +38,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var photoURL: String = ""
 
   dynamic var place: PlaceEntity?
+  var registrationStatus: EventRegistrationStatus = .unknown
   dynamic var isRegistrationOpen: Bool = false
 
   let speeches = List<SpeechEntity>()
@@ -43,6 +61,7 @@ extension EventEntity {
     entity.endDate <= formatter.date(from: "20161111")
     entity.photoURL = "https://avatars.mds.yandex.net/get-yaevents/194464/552b2574b7b911e6afd30025909419be/320x240"
     entity.place = PlaceEntity.templateEntity
+    entity.registrationStatus = .unknown
     entity.isRegistrationOpen = false
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.isTemplate = true
