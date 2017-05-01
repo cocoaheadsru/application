@@ -30,13 +30,13 @@ class Importer {
   static func `import`(event: EventEntity, to type: ImportType, completion: @escaping ResultParameter) {
     switch type {
     case .calendar:
-      tryToImportToCalendar(event: event, completion: completion)
+      tryImportToCalendar(event: event, completion: completion)
     case .reminder:
-      tryToImportToReminder(event: event, completion: completion)
+      tryImportToReminder(event: event, completion: completion)
     }
   }
 
-  private static func tryToImportToCalendar(event: EventEntity, completion: @escaping ResultParameter) {
+  private static func tryImportToCalendar(event: EventEntity, completion: @escaping ResultParameter) {
     calendarEventStore.requestAccess(to: .event, completion: { granted, _ in
       guard granted else {
         OperationQueue.main.addOperation {
@@ -79,7 +79,7 @@ class Importer {
     }
   }
 
-  private static func tryToImportToReminder(event: EventEntity, completion: @escaping ResultParameter) {
+  private static func tryImportToReminder(event: EventEntity, completion: @escaping ResultParameter) {
     remindersEventStore.requestAccess(to: .reminder, completion: { granted, _ in
       guard granted else {
         OperationQueue.main.addOperation {
