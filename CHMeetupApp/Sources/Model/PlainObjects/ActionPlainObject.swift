@@ -12,10 +12,12 @@ struct ActionPlainObject {
   var text: String
   var imageName: String?
   var action: (() -> Void)?
+  var isColorized: Bool
 
-  init(text: String, imageName: String? = nil, action: (() -> Void)? = nil) {
+  init(text: String, imageName: String? = nil, isColorized: Bool = false, action: (() -> Void)? = nil) {
     self.text = text
     self.imageName = imageName
     self.action = action
+    self.isColorized = isColorized
   }
 }

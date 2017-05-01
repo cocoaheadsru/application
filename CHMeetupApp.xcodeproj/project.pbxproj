@@ -528,9 +528,9 @@
 		03153BC11EAD413C0011FF5F /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				03153BCF1EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift */,
 				03153BCB1EAE90890011FF5F /* RegistrationConfirmTableViewCell.swift */,
 				03153BCC1EAE90890011FF5F /* RegConfirmHeaderTableViewCell.xib */,
-				03153BCF1EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift */,
 			);
 			name = Subviews;
 			path = subviews;

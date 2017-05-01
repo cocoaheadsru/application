@@ -13,35 +13,40 @@ class ActionCellConfigurationController {
   typealias Action = () -> Void
 
   func checkAccess(on viewController: UIViewController,
-                   for type: PermissionsManager.`Type`, with action: Action?) -> ActionPlainObject? {
+                   for type: PermissionsManager.`Type`, with additionalAction: Action?) -> ActionPlainObject? {
     var actionPlainObject: ActionPlainObject?
 
     switch  type {
     case .reminders:
       if !PermissionsManager.isAllowed(type: type) {
         actionPlainObject = ActionPlainObject(text: "Включите напоминания, чтобы не пропустить событие".localized,
-                                              imageName: "img_icon_notification", action: {
+                                              imageName: "img_icon_reminders", action: {
                                               self.requireAccess(from: viewController, to: type,
-                                                                 with: action)
+                                                                 with: {
+                                                                  additionalAction?()
+                                              })
         })
         return actionPlainObject
       }
     case .calendar:
-      // FIXME: insert the real image
       if !PermissionsManager.isAllowed(type: type) {
         actionPlainObject = ActionPlainObject(text: "Включите календарь, чтобы не пропустить событие".localized,
-                                              imageName: "img_icon_notification", action: {
+                                              imageName: "img_icon_calendar", action: {
                                                 self.requireAccess(from: viewController, to: type,
-                                                                   with: action)
+                                                                   with: {
+                                                                    additionalAction?()
+                                                })
         })
         return actionPlainObject
       }
     case .notifications:
       if !PermissionsManager.isAllowed(type: type) {
         actionPlainObject = ActionPlainObject(text: "Включите оповещения, чтобы не пропустить анонсы".localized,
-                                              imageName: "img_icon_notification", action: {
+                                              imageName: "img_icon_notifications", action: {
                                                 self.requireAccess(from: viewController, to: type,
-                                                                   with: action)
+                                                                   with: {
+                                                                    additionalAction?()
+                                                })
         })
         return actionPlainObject
       }
