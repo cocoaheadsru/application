@@ -33,4 +33,8 @@ final class Constants {
     //Used for getting border width
     static let imageViewBorderWidthPercentage: CGFloat = 0.04
   }
+
+  struct TemplatesCounts {
+    static let creators: Int = 10
+  }
 }

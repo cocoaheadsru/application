@@ -35,10 +35,6 @@ extension UserPlainObject: PlainObjectType {
 
       return Request(query: "users", parser: parser)
     }
-
-    static var listOfCreators: Request<[UserPlainObject]> {
-      return Request<[UserPlainObject]>(query: "users/creators")
-    }
   }
 }
 

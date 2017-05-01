@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SVProgressHUD
 
-class CreatorsViewController: UIViewController {
+class CreatorsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -20,17 +19,11 @@ class CreatorsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    SVProgressHUD.show()
-    navigationItem.title = "Создатели".localized
-    displayCollection = CreatorsViewDisplayCollection(with: [])
-    tableView.registerNibs(from: displayCollection)
 
-    CreatorsController.loadList { [weak self] users, _ in
-      SVProgressHUD.dismiss()
-      guard let users = users else { return }
-      self?.displayCollection = CreatorsViewDisplayCollection(with: users)
-      self?.tableView.reloadData()
-    }
+    navigationItem.title = "Создатели".localized
+    displayCollection = CreatorsViewDisplayCollection()
+    tableView.registerNibs(from: displayCollection)
+    fetchCreators()
   }
 }
 
@@ -57,6 +50,15 @@ extension CreatorsViewController: UITableViewDataSource {
 extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    displayCollection.didSelect(indexPath: indexPath)
+  }
+}
+
+fileprivate extension CreatorsViewController {
+  func fetchCreators() {
+    displayCollection.creators.isLoading = true
+    CreatorsController.fetchElements(request: CreatorPlainObject.Requests.list, completion: { [weak self] in
+      self?.displayCollection.creators.isLoading = false
+      self?.tableView.reloadData()
+    })
   }
 }
