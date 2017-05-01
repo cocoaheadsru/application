@@ -25,15 +25,14 @@ import UserNotifications
 
  */
 
+enum PermissionsType: String {
+  case notifications, calendar, reminders, camera, photosLibrary
+}
+
 final class PermissionsManager {
-
-  enum `Type`: String {
-    case notifications, calendar, reminders, camera, photosLibrary
-  }
-
   private enum PermissionConstants {
     static let askPhrases = [
-      Type.calendar: "к календарю".localized,
+      PermissionsType.calendar: "к календарю".localized,
       .camera: "к камере".localized,
       .notifications: "к отправке уведомлений".localized,
       .photosLibrary: "к библиотеке фотографий".localized,
@@ -52,7 +51,9 @@ final class PermissionsManager {
   /// - parameter from: `UIViewController` for alert invitation to be presented on
   /// - parameter to: Type of required permission
   /// - parameter completion: `Bool` value describing whether was access granted or not
-  static func requireAccess(from controller: UIViewController, to type: Type, completion: @escaping (Bool) -> Void) {
+  static func requireAccess(from controller: UIViewController,
+                            to type: PermissionsType,
+                            completion: @escaping (Bool) -> Void) {
     if !PermissionsManager.isAllowed(type: type) {
       PermissionsManager.requestAccess(forType: type) { success in
         completion(success)
@@ -73,7 +74,7 @@ final class PermissionsManager {
    - parameter type: Type of permission to check. Check out `Type` for possible values
    - returns: `Bool` describing if access is granted
    */
-  static func isAllowed(type: Type) -> Bool {
+  static func isAllowed(type: PermissionsType) -> Bool {
     switch type {
     case .photosLibrary:
       return PHPhotoLibrary.authorizationStatus() == .authorized
@@ -88,7 +89,7 @@ final class PermissionsManager {
     }
   }
 
-  private static func requestAccess(forType: Type, completion: @escaping (Bool) -> Void) {
+  private static func requestAccess(forType: PermissionsType, completion: @escaping (Bool) -> Void) {
     if isAllowed(type: forType) {
       completion(true)
       return
@@ -118,7 +119,7 @@ final class PermissionsManager {
     }
   }
 
-  private static func alertForSettingsWith(type: Type, on viewController: UIViewController) {
+  private static func alertForSettingsWith(type: PermissionsType, on viewController: UIViewController) {
     let phrase = PermissionConstants.askPhrases[type]
     assert(phrase != nil, "[PermissionsManager] Unknown Type passed")
     let messageFull = "\(PermissionConstants.askForAccess) \(phrase!)"

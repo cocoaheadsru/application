@@ -12,8 +12,32 @@ class ActionCellConfigurationController {
 
   typealias Action = () -> Void
 
+  func addActionCell(on viewController: UIViewController,
+                     for type: PermissionsType,
+                     with additionalAction: Action?) -> ActionPlainObject? {
+    var actionPlainObject: ActionPlainObject? = nil
+
+    let texts: [PermissionsType: String] = [.calendar: "Добавить в календарь".localized,
+                                            .reminders: "Добавить в напоминания".localized]
+    let imagesNames: [PermissionsType: String] = [.calendar: "img_icon_calendar",
+                                                  .reminders: "img_icon_reminders"]
+
+    if let text = texts[type] {
+      let imageName = imagesNames[type]
+      actionPlainObject = ActionPlainObject(text: text,
+                                            imageName: imageName, action: {
+                                              self.requireAccess(from: viewController, to: type,
+                                                                 with: {
+                                                                  additionalAction?()
+                                              })
+      })
+    }
+
+    return actionPlainObject
+  }
+
   func checkAccess(on viewController: UIViewController,
-                   for type: PermissionsManager.`Type`, with additionalAction: Action?) -> ActionPlainObject? {
+                   for type: PermissionsType, with additionalAction: Action?) -> ActionPlainObject? {
     var actionPlainObject: ActionPlainObject?
 
     switch  type {
@@ -57,7 +81,7 @@ class ActionCellConfigurationController {
   }
 
   private func requireAccess(from viewController: UIViewController,
-                             to type: PermissionsManager.`Type`, with action: Action?) {
+                             to type: PermissionsType, with action: Action?) {
       PermissionsManager.requireAccess(from: viewController,
                                        to: type, completion: { success in
                                         if success {
