@@ -27,6 +27,7 @@ class RegistrationPreviewViewController: UIViewController {
       bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
     }
   }
+
   fileprivate var displayCollection: FormDisplayCollection!
 
   override func viewDidLoad() {
@@ -36,6 +37,7 @@ class RegistrationPreviewViewController: UIViewController {
     title = "Регистрация".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Зарегистрироваться".localized)
+    bottomButton.isEnabled = false
 
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
@@ -55,7 +57,12 @@ class RegistrationPreviewViewController: UIViewController {
 
         self?.displayCollection = displayCollection
         self?.displayCollection.delegate = self
-        self?.tableView.reloadData()
+
+        DispatchQueue.main.async {
+          self?.bottomButton.isEnabled = true
+          self?.tableView.reloadData()
+        }
+
     })
 
     setupGestureRecognizer()
@@ -77,18 +84,24 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrationButtonAction() {
+    guard displayCollection.isFormLoaded else {
+      fatalError("\(#function): form is not loaded")
+    }
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
     } else {
-      registrate(completion: {
-        presentRegistrationConfirmViewController()
-      })
+      registrate()
     }
   }
 
-  func registrate(completion: () -> Void) {
-    // Do staff here..
-    completion()
+  func registrate() {
+    RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
+      if success {
+        self?.presentRegistrationConfirmViewController()
+      } else {
+        self?.showMessageAlert(title: "Возникла ошибка".localized)
+      }
+    })
   }
 
   func presentRegistrationConfirmViewController() {
@@ -165,6 +178,7 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
 }
 
 // MARK: - KeyboardHandlerDelegate
+
 extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {

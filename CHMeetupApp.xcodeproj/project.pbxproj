@@ -89,6 +89,9 @@
 		32424A0A1EB76C95002EED9B /* CreatorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A091EB76C95002EED9B /* CreatorEntity.swift */; };
 		32424A0E1EB79001002EED9B /* CreatorPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A0D1EB79001002EED9B /* CreatorPlainObject.swift */; };
 		32424A121EB7940C002EED9B /* CreatorPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A111EB7940C002EED9B /* CreatorPlainObject+Requests.swift */; };
+		32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */; };
+		32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */; };
+		32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */; };
 		328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */; };
 		328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */; };
 		328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */; };
@@ -145,6 +148,7 @@
 		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */; };
 		8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */; };
 		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
 		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
@@ -157,7 +161,11 @@
 		8AB256991E78683B00B319AA /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB256981E78683B00B319AA /* Sharing.swift */; };
 		8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */; };
 		8ACCB3D11E7EC5CD00D62E5D /* TranslationEventPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */; };
+		8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */; };
+		8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */; };
+		8ADF1EDF1EB28C2900B5E561 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF1EDE1EB28C2900B5E561 /* ImagePickerController.swift */; };
 		9F1167C51EA4E20D008D3A1B /* UIViewControllerWithTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */; };
+		9F1B1FCE1EB3FD32009840A1 /* UITableView+LazyReload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B1FCD1EB3FD32009840A1 /* UITableView+LazyReload.swift */; };
 		9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */; };
 		9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2638601E6B83D50081D23B /* DataModelCollection.swift */; };
 		9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */; };
@@ -350,6 +358,9 @@
 		32424A091EB76C95002EED9B /* CreatorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorEntity.swift; sourceTree = "<group>"; };
 		32424A0D1EB79001002EED9B /* CreatorPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorPlainObject.swift; sourceTree = "<group>"; };
 		32424A111EB7940C002EED9B /* CreatorPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreatorPlainObject+Requests.swift"; sourceTree = "<group>"; };
+		32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewCell.swift; sourceTree = "<group>"; };
+		32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableLabelTableViewCell.xib; sourceTree = "<group>"; };
+		32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewModel.swift; sourceTree = "<group>"; };
 		328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlaceTableViewCell.xib; sourceTree = "<group>"; };
 		328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -405,6 +416,7 @@
 		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CAShapeLayer.swift"; sourceTree = "<group>"; };
 		8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchingElementsProtocol.swift; sourceTree = "<group>"; };
 		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
 		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
@@ -415,7 +427,11 @@
 		8AB256981E78683B00B319AA /* Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		8ACCB3CE1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationPlainObjectProtocol.swift; sourceTree = "<group>"; };
 		8ACCB3D01E7EC5CD00D62E5D /* TranslationEventPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEventPlainObject.swift; sourceTree = "<group>"; };
+		8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoButton.swift; sourceTree = "<group>"; };
+		8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoButton.xib; sourceTree = "<group>"; };
+		8ADF1EDE1EB28C2900B5E561 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		9F1167C41EA4E20D008D3A1B /* UIViewControllerWithTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerWithTableView.swift; sourceTree = "<group>"; };
+		9F1B1FCD1EB3FD32009840A1 /* UITableView+LazyReload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+LazyReload.swift"; sourceTree = "<group>"; };
 		9F26385E1E6B838B0081D23B /* UserPreferencesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = UserPreferencesEntity.swift; path = Single/UserPreferencesEntity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F2638601E6B83D50081D23B /* DataModelCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataModelCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F30FFBD1E71E1EA00EF85F5 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
@@ -874,6 +890,7 @@
 				22323F151E70C0E500522E5C /* Importer */,
 				22323F171E70C0E500522E5C /* KeyboardHandler */,
 				22323F191E70C0E500522E5C /* Reachability */,
+				8ADF1EDD1EB28BCE00B5E561 /* ImagePicker */,
 				22323F1B1E70C0E500522E5C /* Utility */,
 				22323F1D1E70C0E500522E5C /* WebService */,
 				8AB256971E78680500B319AA /* Share */,
@@ -1184,6 +1201,7 @@
 		22323F741E70C2BE00522E5C /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				32424A141EB7D5B1002EED9B /* Cell */,
 				8AAC26621EA56E5D00F8CF58 /* DispayCollection */,
 				22323F751E70C2BE00522E5C /* ProfileEditViewController.swift */,
 			);
@@ -1259,6 +1277,16 @@
 				32424A111EB7940C002EED9B /* CreatorPlainObject+Requests.swift */,
 			);
 			name = Creator;
+      sourceTree = "<group>";
+		};
+		32424A141EB7D5B1002EED9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */,
+				32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */,
+				32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		3284674E1E7FEF8400028431 /* TimePlaceCell */ = {
@@ -1352,6 +1380,7 @@
 				4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */,
 				F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */,
 				32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */,
+				8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */,
 			);
 			name = UIImageView;
 			sourceTree = "<group>";
@@ -1537,6 +1566,23 @@
 			name = TranslationPlainObjects;
 			sourceTree = "<group>";
 		};
+		8AE5BCB91EB4E88E007047CE /* ChooseProfilePhotoButton */ = {
+			isa = PBXGroup;
+			children = (
+				8AE5BCB71EB4E885007047CE /* ChooseProfilePhotoButton.swift */,
+				8AE5BCBA1EB4E98E007047CE /* ChooseProfilePhotoButton.xib */,
+			);
+			name = ChooseProfilePhotoButton;
+      sourceTree = "<group>";
+		};
+		8ADF1EDD1EB28BCE00B5E561 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				8ADF1EDE1EB28C2900B5E561 /* ImagePickerController.swift */,
+			);
+			name = ImagePicker;
+			sourceTree = "<group>";
+		};
 		9F26385B1E6B82F50081D23B /* Single */ = {
 			isa = PBXGroup;
 			children = (
@@ -1561,6 +1607,7 @@
 				9F30FFD21E71EB2100EF85F5 /* UITableView+Reuse.swift */,
 				C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */,
 				7D1CB6D11EA2B8E9003136FA /* UITableView+ShakeSection.swift */,
+				9F1B1FCD1EB3FD32009840A1 /* UITableView+LazyReload.swift */,
 			);
 			name = UITableView;
 			sourceTree = "<group>";
@@ -1810,6 +1857,7 @@
 				9F8881781E7E9ECF00CEFEA4 /* BottomButton */,
 				22323F231E70C0E500522E5C /* ActionButton */,
 				9F487A801E7417E50016CE0B /* LightButton */,
+				8AE5BCB91EB4E88E007047CE /* ChooseProfilePhotoButton */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -2055,9 +2103,11 @@
 				32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
+				8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */,
 				03153BCE1EAE90890011FF5F /* RegConfirmHeaderTableViewCell.xib in Resources */,
+				32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				22323FA51E70C51A00522E5C /* Localizable.strings in Resources */,
@@ -2150,6 +2200,7 @@
 				9F487A7D1E74118E0016CE0B /* EventPreviewTableViewCellModel.swift in Sources */,
 				22323F8F1E70C2BE00522E5C /* SpeechPreviewViewController.swift in Sources */,
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
+				8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */,
 				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
@@ -2178,11 +2229,13 @@
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
 				03153BCD1EAE90890011FF5F /* RegistrationConfirmTableViewCell.swift in Sources */,
 				9F3767051E7D52E700CC565B /* TextFieldPlateTableViewCellModel.swift in Sources */,
+				9F1B1FCE1EB3FD32009840A1 /* UITableView+LazyReload.swift in Sources */,
 				8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
+				8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */,
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
@@ -2279,12 +2332,14 @@
 				03153BD01EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
+				32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
+				32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */,
 				4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
@@ -2293,6 +2348,7 @@
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
 				9F42ACCB1E89C7BA0099AB6A /* SwizzlingController.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
+				8ADF1EDF1EB28C2900B5E561 /* ImagePickerController.swift in Sources */,
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				9FAFDACF1EB1FA75001ED7DB /* TemplateObject.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,

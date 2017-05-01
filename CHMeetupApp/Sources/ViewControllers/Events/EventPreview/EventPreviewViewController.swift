@@ -61,7 +61,9 @@ class EventPreviewViewController: UIViewController {
   }
 
   func acceptAction() {
-    let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+    let viewController = ViewControllersFactory.eventRegistrationOrAuthViewController(
+      eventId: selectedEventId
+    )
     navigationController?.pushViewController(viewController, animated: true)
   }
 }

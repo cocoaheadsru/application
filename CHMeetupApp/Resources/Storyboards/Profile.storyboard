@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -157,7 +157,6 @@
                         <barButtonItem key="rightBarButtonItem" image="img_edit_button" id="9Vg-65-3KU">
                             <connections>
                                 <action selector="editBarButtonAction:" destination="p5C-xH-cy8" id="zDC-FV-TEg"/>
-                                <segue destination="6F4-3B-MvC" kind="show" id="Z83-8i-De7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,10 +193,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zvk-T6-twm" firstAttribute="top" secondItem="Fws-Bx-arK" secondAttribute="bottom" id="NTo-vg-JEW"/>
-                            <constraint firstItem="Fws-Bx-arK" firstAttribute="top" secondItem="LUJ-lg-thX" secondAttribute="top" id="XiI-nQ-Yc4"/>
-                            <constraint firstItem="Fws-Bx-arK" firstAttribute="leading" secondItem="LUJ-lg-thX" secondAttribute="leading" id="jke-2S-eA5"/>
-                            <constraint firstAttribute="trailing" secondItem="Fws-Bx-arK" secondAttribute="trailing" id="vHf-EM-VDx"/>
+                            <constraint firstAttribute="bottom" secondItem="Fws-Bx-arK" secondAttribute="bottom" id="Hxd-UX-NND"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="leading" secondItem="LUJ-lg-thX" secondAttribute="leading" id="T8G-hR-XoS"/>
+                            <constraint firstItem="Fws-Bx-arK" firstAttribute="top" secondItem="LUJ-lg-thX" secondAttribute="top" id="eLL-ke-fTL"/>
+                            <constraint firstAttribute="trailing" secondItem="Fws-Bx-arK" secondAttribute="trailing" id="qhK-68-Ba5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Изменение профиля" id="jua-nT-hoZ"/>

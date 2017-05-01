@@ -12,7 +12,7 @@ import SVProgressHUD
 
 final class AuthServiceFacade {
   fileprivate var safari: SFSafariViewController?
-  fileprivate var currentViewController: UIViewController?
+  fileprivate weak var currentViewController: UIViewController?
   fileprivate var loginCompletion: ((UserPlainObject?, Error?) -> Void)?
   fileprivate var currentService: AuthResourceType?
 

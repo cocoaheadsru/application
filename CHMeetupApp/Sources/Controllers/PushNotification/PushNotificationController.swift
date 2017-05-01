@@ -105,8 +105,11 @@ class PushNotificationController {
       navigationController.viewControllers.append(eventPreviewController)
     case .registerAction:
       navigationController.viewControllers.append(eventPreviewController)
-      let registrationPreviewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-      eventPreviewController.navigationController?.pushViewController(registrationPreviewController, animated: true)
+      // FIXME: - Replace with real id
+      let viewController = ViewControllersFactory.eventRegistrationOrAuthViewController(
+        eventId: 0
+      )
+      eventPreviewController.navigationController?.pushViewController(viewController, animated: true)
     }
   }
 }

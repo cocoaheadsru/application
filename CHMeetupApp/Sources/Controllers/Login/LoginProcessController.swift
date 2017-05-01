@@ -38,6 +38,10 @@ class LoginProcessController {
 
   static func logout() {
     realmWrite {
+      if let currentUser = UserPreferencesEntity.value.currentUser {
+        mainRealm.delete(currentUser)
+      }
+      UserPreferencesEntity.value.currentUser = nil
       UserPreferencesEntity.value.isLoggedIn = false
     }
   }

@@ -54,7 +54,7 @@ class PhotosPresentationView: UIView {
         if leadingEdgeSecondImageView > viewWidth && photos.count > index {
           imageView.image = #imageLiteral(resourceName: "img_template_unknown")
         } else {
-          imageView.roundWithWhiteBorder(borderWidth)
+          imageView.roundWithBorder(borderWidth)
         }
 
         addSubview(imageView)
