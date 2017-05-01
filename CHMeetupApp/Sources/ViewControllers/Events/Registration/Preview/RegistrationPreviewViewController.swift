@@ -86,11 +86,11 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   func registrate() {
-    RegistrationController.sendFormData(displayCollection.formData, completion: { success in
+    RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
       if success {
-        self.presentRegistrationConfirmViewController()
+        self?.presentRegistrationConfirmViewController()
       } else {
-        self.showMessageAlert(title: "Возникла ошибка".localized)
+        self?.showMessageAlert(title: "Возникла ошибка".localized)
       }
     })
   }
