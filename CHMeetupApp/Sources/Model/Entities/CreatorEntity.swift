@@ -11,7 +11,6 @@ import RealmSwift
 
 final class CreatorEntity: TemplatableObject, TemplateEntity {
   dynamic var id: Int = 0
-  dynamic var remoteId: Int = 0
 
   dynamic var name: String = ""
   dynamic var info: String?
