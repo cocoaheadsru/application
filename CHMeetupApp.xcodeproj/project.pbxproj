@@ -84,6 +84,9 @@
 		320FA5781E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320FA5761E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib */; };
 		320FA57A1E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FA5791E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift */; };
 		320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FA57D1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift */; };
+		32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */; };
+		32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */; };
+		32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */; };
 		328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */; };
 		328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */; };
 		328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */; };
@@ -346,6 +349,9 @@
 		320FA5761E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
 		320FA5791E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		320FA57D1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoTableViewCellModel.swift; sourceTree = "<group>"; };
+		32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewCell.swift; sourceTree = "<group>"; };
+		32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableLabelTableViewCell.xib; sourceTree = "<group>"; };
+		32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableLabelTableViewModel.swift; sourceTree = "<group>"; };
 		328467531E7FF18400028431 /* TimePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		328467541E7FF18400028431 /* TimePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePlaceTableViewCell.xib; sourceTree = "<group>"; };
 		328467571E7FF1B200028431 /* TimePlaceTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePlaceTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -1185,6 +1191,7 @@
 		22323F741E70C2BE00522E5C /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				32424A141EB7D5B1002EED9B /* Cell */,
 				8AAC26621EA56E5D00F8CF58 /* DispayCollection */,
 				22323F751E70C2BE00522E5C /* ProfileEditViewController.swift */,
 			);
@@ -1242,6 +1249,16 @@
 				320FA5761E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib */,
 			);
 			name = ProfilePhotoCell;
+			sourceTree = "<group>";
+		};
+		32424A141EB7D5B1002EED9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32424A191EB7DDDE002EED9B /* EditableLabelTableViewModel.swift */,
+				32424A151EB7DA39002EED9B /* EditableLabelTableViewCell.swift */,
+				32424A161EB7DA39002EED9B /* EditableLabelTableViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		3284674E1E7FEF8400028431 /* TimePlaceCell */ = {
@@ -2078,6 +2095,7 @@
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
 				03374B201E7F20EA00CA298E /* SpeechPreviewTableViewCell.xib in Resources */,
 				03153BCE1EAE90890011FF5F /* RegConfirmHeaderTableViewCell.xib in Resources */,
+				32424A181EB7DA39002EED9B /* EditableLabelTableViewCell.xib in Resources */,
 				9F487A7B1E740DC00016CE0B /* EventPreviewTableViewCell.xib in Resources */,
 				221F4F9E1E5C0B6C0009FD07 /* LaunchScreen.storyboard in Resources */,
 				22323FA51E70C51A00522E5C /* Localizable.strings in Resources */,
@@ -2299,12 +2317,14 @@
 				03153BD01EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
+				32424A171EB7DA39002EED9B /* EditableLabelTableViewCell.swift in Sources */,
 				9F3767021E7D527000CC565B /* TextFieldPlateTableViewCell.swift in Sources */,
 				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
+				32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */,
 				4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
