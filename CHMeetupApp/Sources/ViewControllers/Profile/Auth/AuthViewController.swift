@@ -49,7 +49,12 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
         return
       }
       LoginProcessController.setCurrentUser(user)
-      self?.profileNavigationController?.updateRootViewController()
+
+      if let profileNavigationController = self?.profileNavigationController {
+        profileNavigationController.updateRootViewController()
+      } else {
+        self?.navigationController?.popViewController(animated: true)
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 struct ChooseProfilePhotoTableViewCellModel {
   let userEntity: UserEntity
+  weak var delegate: ChooseProfilePhotoTableViewCellDelegate?
 }
 
 extension ChooseProfilePhotoTableViewCellModel: CellViewModelType {
@@ -17,5 +18,6 @@ extension ChooseProfilePhotoTableViewCellModel: CellViewModelType {
     if let photoURL = userEntity.photoURL, let url = URL(string: photoURL) {
       cell.mainButton.photoImageView.loadImage(from: url)
     }
+    cell.delegate = delegate
   }
 }

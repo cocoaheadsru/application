@@ -20,15 +20,14 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
     displayCollection = ProfileEditDisplayCollection()
     displayCollection.user = user
 
+    displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
-
     title = "Изменение профиля".localized
   }
 
@@ -52,5 +51,12 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+}
+
+// MARK: - ImagePicker
+extension ProfileEditViewController: ImagePickerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    displayCollection.didReciveMedia(picker, info: info)
   }
 }

@@ -126,6 +126,10 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     delegate?.formDisplayRequestTo(selectItemsAt: selectedIndexPath, deselectItemsAt: deselectIndexPaths)
   }
 
+  var isFormLoaded: Bool {
+    return formData != nil
+  }
+
   var failedSection: Int? {
     for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false

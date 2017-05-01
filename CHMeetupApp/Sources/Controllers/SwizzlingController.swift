@@ -11,5 +11,6 @@ import UIKit
 struct SwizzlingController {
   static func swizzleMethods() {
     UINavigationItem.swizzleForTitleConfugation()
+    UITableView.swizzleForLazyReload()
   }
 }
