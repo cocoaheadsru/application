@@ -35,6 +35,8 @@ final class CreatorEntity: TemplatableObject, TemplateEntity {
       entity.info <= info.rand
       entity.url <= urls.rand
       entity.photoURL <= urls.rand
+      entity.isTemplate = true
+
       return entity
     }
   }

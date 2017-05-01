@@ -10,8 +10,6 @@ import Foundation
 
 struct CreatorPlainObjectTranslation: PlainObjectTranslation {
   static func addToRealm(plainObject: CreatorPlainObject, to parent: CreatorEntity? = nil) {
-    assert(parent != nil, "Parent should exist")
-
     let creator = CreatorEntity()
     creator.id = plainObject.id
     creator.name = plainObject.name
