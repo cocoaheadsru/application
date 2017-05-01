@@ -24,7 +24,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     if let place = entity.place {
       cell.placeLabel.text = place.city + ", " + place.title
     }
-
+    cell.goingButton.titleLabel?.text = statusText
     cell.isEnabledForRegistration = entity.isRegistrationOpen
     cell.delegate = delegate
     cell.photosPresentationView.photos.removeAll()
@@ -39,5 +39,20 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
                                 completionHandler: { [weak cell] images in
       cell?.photosPresentationView.photos = images
     })
+  }
+}
+
+extension EventPreviewTableViewCellModel {
+  var statusText: String {
+    switch entity.registrationStatus {
+    case .waiting:
+      return "Ожидайте подтверждения".localized
+    case .rejected:
+      return "Жаль, заявка отклонена".localized
+    case .approved:
+      return "Заявка одобрена. Ждём вас!".localized
+    case .unknown:
+      return "Я пойду".localized
+    }
   }
 }
