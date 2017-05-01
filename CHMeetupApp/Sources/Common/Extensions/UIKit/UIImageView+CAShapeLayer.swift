@@ -15,17 +15,10 @@ private var associationKey = "cashapelayer_border"
 extension UIImageView {
   var shapeLayerBorder: CAShapeLayer? {
     get {
-      if let border = objc_getAssociatedObject(self, &associationKey) as? CAShapeLayer {
-        return border
-      }
-      return nil
+      return objc_getAssociatedObject(self, &associationKey) as? CAShapeLayer
     }
     set {
-      guard let border = newValue, shapeLayerBorder == nil else {
-        return
-      }
-      objc_setAssociatedObject(self, &associationKey, border, .OBJC_ASSOCIATION_RETAIN)
-      layer.addSublayer(border)
+      objc_setAssociatedObject(self, &associationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
     }
   }
 }

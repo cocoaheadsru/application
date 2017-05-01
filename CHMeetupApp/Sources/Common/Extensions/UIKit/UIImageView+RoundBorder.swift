@@ -12,7 +12,9 @@ extension UIImageView {
   func roundWithBorder(_ approximateBorderWidth: CGFloat, color: UIColor = .white) {
     let border = makeRoundBorder(approximateBorderWidth, color: color)
     roundCorners()
+    shapeLayerBorder?.removeFromSuperlayer()
     shapeLayerBorder = border
+    layer.addSublayer(border)
   }
 
   fileprivate func makeRoundBorder(_ approximateBorderWidth: CGFloat, color: UIColor) -> CAShapeLayer {
