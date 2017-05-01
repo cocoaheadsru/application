@@ -55,8 +55,11 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     }
   }
 
-  func headerHeight(for section: Int) -> CGFloat {
-    return 40
+  func headerHeight(for section: Int, with text: String) -> CGFloat {
+    let textSize = NSString(string: text).size(attributes:
+      [NSFontAttributeName: DefaultTableHeaderView.font]).width
+    let amountOfTextSizesOnScreen = Int(textSize / UIScreen.main.bounds.width)
+    return CGFloat((amountOfTextSizesOnScreen + 1) * 40) // `+1` for default value
   }
 
   func headerTitle(for section: Int) -> NSAttributedString {

@@ -114,7 +114,8 @@ class RegistrationPreviewViewController: UIViewController {
 extension RegistrationPreviewViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return displayCollection.headerHeight(for: section)
+    return displayCollection.headerHeight(for: section,
+                                          with: displayCollection.headerTitle(for: section).string)
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -10,9 +10,11 @@ import UIKit
 
 class DefaultTableHeaderView: UITableViewHeaderFooterView {
 
+  static let font = UIFont.appFont(.avenirNextDemiBold(size: 16))
+
   @IBOutlet var headerLabel: UILabel! {
     didSet {
-      headerLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
+      headerLabel.font = DefaultTableHeaderView.font
       headerLabel.textColor = UIColor(.gray)
     }
   }
