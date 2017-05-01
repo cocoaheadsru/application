@@ -17,7 +17,7 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     event.startDate = plainObject.startDate
     event.endDate = plainObject.endDate
     event.descriptionText = plainObject.description
-    event.registrationStatus = EventEntity.EventRegistrationStatus(rawValue: plainObject.registrationStatus) ?? .unknown
+    event.status = plainObject.registrationStatus
     event.isRegistrationOpen = plainObject.isRegistrationOpen
 
     for speakerURLs in plainObject.speakersPhotos {
@@ -34,7 +34,7 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     place.longitude = plainObject.place.longitude
     place.city = plainObject.place.cityName
     event.place = place
-
+    print(event)
     realmWrite {
       mainRealm.add(event, update: true)
       mainRealm.add(place, update: true)

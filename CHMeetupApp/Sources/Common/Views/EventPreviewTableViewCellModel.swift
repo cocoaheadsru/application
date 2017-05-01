@@ -24,7 +24,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     if let place = entity.place {
       cell.placeLabel.text = place.city + ", " + place.title
     }
-    cell.goingButton.titleLabel?.text = statusText
+    cell.goingButton.setTitle(statusText, for: .normal)
     cell.isEnabledForRegistration = entity.isRegistrationOpen
     cell.delegate = delegate
     cell.photosPresentationView.photos.removeAll()
