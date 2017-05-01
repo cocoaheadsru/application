@@ -39,7 +39,6 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
       on: viewController,
       for: .notifications,
       with: {
-        PushNotificationController.configureNotification()
         action()
     })
 

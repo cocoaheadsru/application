@@ -42,7 +42,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     let notificationPermissionCell = actionCell.checkAccess(on: viewController,
                                                             for: .notifications,
                                                             with: {
-                                                              PushNotificationController.configureNotification()
                                                               action()
     })
 

@@ -13,20 +13,16 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
   var window: UIWindow?
-  var pushNotificationsController: GetPushNotificationController!
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
-    pushNotificationsController = GetPushNotificationController(with: self)
-    // Seems that is most optimal way now to swizzle, without adding Obj-c code into project
+    // Seems that it's the most optimal way to swizzle, without adding Obj-c code into project
     SwizzlingController.swizzleMethods()
 
-    if PermissionsManager.isAllowed(type: .notifications) {
-      PushNotificationController.configureNotification()
-    }
+    UIApplication.shared.registerForRemoteNotifications()
     return true
   }
 
@@ -34,5 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     NotificationCenter.default.post(name: .CloseSafariViewControllerNotification, object: url)
     return true
   }
+}
 
+// MARK: - Push notifications
+
+extension AppDelegate {
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    PushNotificationsController.registerNotification(token: deviceToken)
+  }
+
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    // Print the error to console (you should alert the user that registration failed)
+    print("APNs registration failed: \(error)")
+  }
+
+  func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
+    // Print notification payload data
+    print("Push notification received: \(data)")
+  }
 }

@@ -103,8 +103,7 @@
 		32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */; };
 		32DD63051EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD63041EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift */; };
 		4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */; };
-		4D1CD1DB1EA4F7D6002E5811 /* GetPushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */; };
-		4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */; };
+		4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8851011E9F8FC400A49ADD /* PushNotificationsController.swift */; };
 		4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */; };
 		4D9DEA2B1E9543DC00260264 /* UIImageView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */; };
 		4D9F0D701E79CD2E006443ED /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */; };
@@ -362,8 +361,7 @@
 		32DD63011EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProfilePhotoTableViewCell.xib; sourceTree = "<group>"; };
 		32DD63041EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfilePhotoTableViewModel.swift; sourceTree = "<group>"; };
 		4D0E6B551E86E11100C44DC0 /* ActionCellConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCellConfigurationController.swift; path = ActionCellConfigurationController/ActionCellConfigurationController.swift; sourceTree = "<group>"; };
-		4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPushNotificationController.swift; path = PushNotification/GetPushNotification/GetPushNotificationController.swift; sourceTree = "<group>"; };
-		4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationController.swift; path = PushNotification/PushNotificationController.swift; sourceTree = "<group>"; };
+		4D8851011E9F8FC400A49ADD /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushNotificationsController.swift; path = PushNotification/PushNotificationsController.swift; sourceTree = "<group>"; };
 		4D9D24231E7B2FE300FA5E93 /* ActionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCellModel.swift; path = ActionCell/ActionTableViewCellModel.swift; sourceTree = "<group>"; };
 		4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+RoundCorners.swift"; path = "UIImageView/UIImageView+RoundCorners.swift"; sourceTree = "<group>"; };
 		4D9F0D6E1E79CD2E006443ED /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionTableViewCell.swift; path = ActionCell/ActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -1306,19 +1304,10 @@
 			name = ActionCellConfigurationController;
 			sourceTree = "<group>";
 		};
-		4D1CD1D91EA4F7AD002E5811 /* GetPushNotification */ = {
-			isa = PBXGroup;
-			children = (
-				4D1CD1DA1EA4F7D6002E5811 /* GetPushNotificationController.swift */,
-			);
-			name = GetPushNotification;
-			sourceTree = "<group>";
-		};
 		4D8851001E9F8F6900A49ADD /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				4D1CD1D91EA4F7AD002E5811 /* GetPushNotification */,
-				4D8851011E9F8FC400A49ADD /* PushNotificationController.swift */,
+				4D8851011E9F8FC400A49ADD /* PushNotificationsController.swift */,
 			);
 			name = PushNotifications;
 			sourceTree = "<group>";
@@ -2242,7 +2231,6 @@
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
-				4D1CD1DB1EA4F7D6002E5811 /* GetPushNotificationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */,
 				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
 				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
@@ -2285,7 +2273,7 @@
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
-				4D8851021E9F8FC400A49ADD /* PushNotificationController.swift in Sources */,
+				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
