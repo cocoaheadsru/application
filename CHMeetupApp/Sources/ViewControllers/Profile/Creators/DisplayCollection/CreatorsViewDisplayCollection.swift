@@ -14,9 +14,10 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     return [CreatorTableViewCellModel.self]
   }
 
-  var creators: TemplateModelCollection<UserEntity> = {
-    let dataCollection = DataModelCollection(type: UserEntity.self)
-    return TemplateModelCollection(dataCollection: dataCollection, templatesCount: 10)
+  var creators: TemplateModelCollection<CreatorEntity> = {
+    let dataCollection = DataModelCollection(type: CreatorEntity.self)
+    return TemplateModelCollection(dataCollection: dataCollection,
+                                   templatesCount: Constants.TemplatesCounts.creators)
   }()
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
@@ -39,6 +40,8 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     }
   }
 }
+
+// MARK: - TemplateModelCollectionDelegate
 
 extension CreatorsViewDisplayCollection: TemplateModelCollectionDelegate {
   func templateModelCollectionDidUpdateData() {

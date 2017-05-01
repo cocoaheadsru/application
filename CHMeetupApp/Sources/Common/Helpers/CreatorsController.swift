@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct CreatorsFetching: FetchingElements {
-  static func fetchElements(request: Request<[UserPlainObject]>,
-                            to parent: UserEntity? = nil, completion: (() -> Void)? = nil) {
+struct CreatorsController: FetchingElements {
+  static func fetchElements(request: Request<[CreatorPlainObject]>,
+                            to parent: CreatorEntity? = nil, completion: (() -> Void)? = nil) {
     Server.standard.request(request, completion: { list, error in
       defer {
         DispatchQueue.main.async { completion?() }
@@ -18,7 +18,7 @@ struct CreatorsFetching: FetchingElements {
 
       guard let list = list,
         error == nil else { return }
-      UserPlainObjectTranslation.translate(of: list, to: parent)
+      CreatorPlainObjectTranslation.translate(of: list, to: parent)
     })
   }
 }

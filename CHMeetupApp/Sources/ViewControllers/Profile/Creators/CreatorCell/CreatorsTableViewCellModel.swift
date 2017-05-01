@@ -9,7 +9,7 @@
 import Foundation
 
 struct CreatorTableViewCellModel: TemplatableCellViewModelType {
-  let entity: UserEntity
+  let entity: CreatorEntity
 }
 
 extension CreatorTableViewCellModel: CellViewModelType {

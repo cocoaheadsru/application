@@ -57,7 +57,7 @@ extension CreatorsViewController: UITableViewDelegate {
 fileprivate extension CreatorsViewController {
   func fetchCreators() {
     displayCollection.creators.isLoading = true
-    CreatorsFetching.fetchElements(request: UserPlainObject.Requests.listOfCreators, completion: { [weak self] in
+    CreatorsController.fetchElements(request: CreatorPlainObject.Requests.list, completion: { [weak self] in
       self?.displayCollection.creators.isLoading = false
       self?.tableView.reloadData()
     })

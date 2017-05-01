@@ -23,5 +23,4 @@ class CreatorTableViewCell: PlateTableViewCell {
       creatorNameLabel.textColor = UIColor(.darkGray)
     }
   }
-
 }
