@@ -33,12 +33,6 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     return CreatorTableViewCellModel(entity: creators[indexPath.row])
   }
-
-  func didSelect(indexPath: IndexPath) {
-    if creators[indexPath.row].isTemplate {
-      return
-    }
-  }
 }
 
 // MARK: - TemplateModelCollectionDelegate

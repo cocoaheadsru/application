@@ -19,7 +19,6 @@ final class CreatorEntity: TemplatableObject, TemplateEntity {
   dynamic var url: String?
   dynamic var photoURL: String?
 
-
   override static func primaryKey() -> String? {
     return "id"
   }

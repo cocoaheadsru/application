@@ -50,7 +50,6 @@ extension CreatorsViewController: UITableViewDataSource {
 extension CreatorsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    displayCollection.didSelect(indexPath: indexPath)
   }
 }
 
