@@ -27,6 +27,7 @@ class RegistrationPreviewViewController: UIViewController {
       bottomButton.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
     }
   }
+
   fileprivate var displayCollection: FormDisplayCollection!
 
   override func viewDidLoad() {
@@ -89,15 +90,18 @@ class RegistrationPreviewViewController: UIViewController {
     if let failedSection = displayCollection.failedSection {
       showFailed(for: failedSection)
     } else {
-      registrate {
-        presentRegistrationConfirmViewController()
-      }
+      registrate()
     }
   }
 
-  func registrate(completion: () -> Void) {
-    // Do staff here..
-    completion()
+  func registrate() {
+    RegistrationController.sendFormData(displayCollection.formData, completion: { [weak self] success in
+      if success {
+        self?.presentRegistrationConfirmViewController()
+      } else {
+        self?.showMessageAlert(title: "Возникла ошибка".localized)
+      }
+    })
   }
 
   func presentRegistrationConfirmViewController() {
@@ -174,6 +178,7 @@ extension RegistrationPreviewViewController: FormDisplayCollectionDelegate {
 }
 
 // MARK: - KeyboardHandlerDelegate
+
 extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
 
   func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {

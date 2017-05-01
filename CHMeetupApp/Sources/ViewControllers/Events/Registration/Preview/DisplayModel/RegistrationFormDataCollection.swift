@@ -24,7 +24,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     self.formData = formData
   }
 
-  private var formData: FormData!
+  var formData: FormData!
   weak var delegate: FormDisplayCollectionDelegate?
 
   var numberOfSections: Int {
