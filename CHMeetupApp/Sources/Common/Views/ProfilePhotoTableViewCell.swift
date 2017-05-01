@@ -17,7 +17,7 @@ class ProfilePhotoTableViewCell: UITableViewCell {
     super.layoutSubviews()
 
     let borderWidth = userImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
-    userImageView.roundWithWhiteBorder(borderWidth)
+    userImageView.roundWithBorder(borderWidth)
   }
 
   override func awakeFromNib() {
