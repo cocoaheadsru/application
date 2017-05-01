@@ -11,34 +11,8 @@ import UIKit.UIImageView
 extension UIImageView {
   func roundWithBorder(_ approximateBorderWidth: CGFloat, color: UIColor = .white) {
     let border = makeRoundBorder(approximateBorderWidth, color: color)
-
-    removeRoundWithBorder(approximateBorderWidth, color: color)
     roundCorners()
-    layer.addSublayer(border)
-  }
-
-  func removeRoundWithBorder(_ approximateBorderWidth: CGFloat, color: UIColor) {
-    let border = makeRoundBorder(approximateBorderWidth, color: color)
-
-    if let sublayers = layer.sublayers {
-      sublayers.forEach({ sublayer in
-        if let sublayer = sublayer as? CAShapeLayer,
-          areEqualLayers(layer1: sublayer, layer2: border) {
-          sublayer.removeFromSuperlayer()
-        }
-      })
-    }
-  }
-
-  fileprivate func areEqualLayers(layer1: CAShapeLayer, layer2: CAShapeLayer) -> Bool {
-    if layer1.strokeColor == layer2.strokeColor,
-      layer1.fillColor == layer2.fillColor,
-      layer1.lineWidth == layer2.lineWidth,
-      layer1.path == layer2.path,
-      layer1.frame == layer2.frame {
-      return true
-    }
-    return false
+    shapeLayerBorder = border
   }
 
   fileprivate func makeRoundBorder(_ approximateBorderWidth: CGFloat, color: UIColor) -> CAShapeLayer {

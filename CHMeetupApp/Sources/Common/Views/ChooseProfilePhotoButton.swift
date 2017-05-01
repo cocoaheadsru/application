@@ -43,15 +43,18 @@ class ChooseProfilePhotoButton: UIButton {
   }
 
   private func buttonTappedState() {
-    photoImageView.roundWithBorder(borderWidth, color: tappedColor)
-    addImageView.roundWithBorder(borderWidth, color: tappedColor)
+    if let photoBorder = photoImageView.shapeLayerBorder,
+      let addBorder = addImageView.shapeLayerBorder {
+      photoBorder.strokeColor = tappedColor.cgColor
+      addBorder.strokeColor = tappedColor.cgColor
+    }
     photoImageView.backgroundColor = tappedColor
     addImageView.backgroundColor = tappedColor
   }
 
   private func buttonDefaultState() {
-    photoImageView.removeRoundWithBorder(borderWidth, color: tappedColor)
-    addImageView.removeRoundWithBorder(borderWidth, color: tappedColor)
+    photoImageView.shapeLayerBorder?.strokeColor = borderColor.cgColor
+    addImageView.shapeLayerBorder?.strokeColor = borderColor.cgColor
     photoImageView.backgroundColor = .clear
     addImageView.backgroundColor = borderColor
   }

@@ -141,6 +141,7 @@
 		8A36998E1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */; };
 		8A6268291E60742B00D51BEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		8A6268521E64568C00D51BEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6268511E64568C00D51BEB /* Constants.swift */; };
+		8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */; };
 		8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */; };
 		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
 		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
@@ -399,6 +400,7 @@
 		8A36998B1E8D2EDD00B37528 /* AboutSpeechTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutSpeechTableViewCellModel.swift; path = AboutSpeechCell/AboutSpeechTableViewCellModel.swift; sourceTree = "<group>"; };
 		8A6268281E60742B00D51BEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		8A6268511E64568C00D51BEB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CAShapeLayer.swift"; sourceTree = "<group>"; };
 		8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchingElementsProtocol.swift; sourceTree = "<group>"; };
 		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
 		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
@@ -1328,6 +1330,7 @@
 				4D9DEA2A1E9543DC00260264 /* UIImageView+RoundCorners.swift */,
 				F718C0361E966BA6008B3C0B /* UIImageView+ImageLoader.swift */,
 				32B031E81EABA62800FC1F89 /* UIImageView+RoundBorder.swift */,
+				8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */,
 			);
 			name = UIImageView;
 			sourceTree = "<group>";
@@ -2186,6 +2189,7 @@
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
+				8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */,
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
