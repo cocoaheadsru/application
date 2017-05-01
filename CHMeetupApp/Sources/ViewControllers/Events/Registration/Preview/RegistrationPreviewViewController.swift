@@ -32,6 +32,9 @@ class RegistrationPreviewViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    assert(selectedEventId > 0, "Event id must be setup")
+
     keyboardDelegate = self
 
     title = "Регистрация".localized
@@ -69,7 +72,7 @@ class RegistrationPreviewViewController: UIViewController {
   }
 
   var dissmisKeyboardTouch: UITapGestureRecognizer!
-  var selectedEventId: Int!
+  var selectedEventId: Int = 0
 
   func setupGestureRecognizer() {
     dissmisKeyboardTouch =
@@ -106,6 +109,7 @@ class RegistrationPreviewViewController: UIViewController {
 
   func presentRegistrationConfirmViewController() {
     let confirmViewController = Storyboards.EventPreview.instantiateRegistrationConfirmViewController()
+    confirmViewController.selectedEventId = selectedEventId
     self.push(viewController: confirmViewController)
   }
 }
