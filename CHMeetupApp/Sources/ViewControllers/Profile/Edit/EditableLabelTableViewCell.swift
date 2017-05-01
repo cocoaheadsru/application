@@ -20,13 +20,12 @@ class EditableLabelTableViewCell: PlateTableViewCell {
   @IBOutlet var descriptionTextField: UITextField! {
     didSet {
       descriptionTextField.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      descriptionTextField.textColor = UIColor(.gray)
+      descriptionTextField.textColor = UIColor(.black)
       descriptionTextField.returnKeyType = .done
     }
   }
 
   var valueChanged: ((String) -> Void)?
-  var returnPressed: ((String) -> Void)?
   
   override func awakeFromNib() {
     super.awakeFromNib()
