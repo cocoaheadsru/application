@@ -82,7 +82,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
   private var sections: [Type] = []
   private var actionPlainObjects: [ActionPlainObject] = []
-  private var indexPath: IndexPath?
 
   func updateSections() {
     sections = []
@@ -113,14 +112,14 @@ class EventPreviewDisplayCollection: DisplayCollection {
       on: viewController,
       for: .calendar,
       with: {
-        self.import(event: self.event, to: .calendar, from: viewController)
+        ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
     })
 
     let remindersPermissionCell = actionCell.addActionCell(
       on: viewController,
       for: .reminders,
       with: {
-        self.import(event: self.event, to: .reminder, from: viewController)
+        ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
     })
 
     if let calendarPermissionCell = calendarPermissionCell {
@@ -129,23 +128,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
     if let remindersPermissionCell = remindersPermissionCell {
       actionPlainObjects.append(remindersPermissionCell)
-    }
-  }
-
-  private func `import`(event: EventEntity?, to type: Importer.ImportType, from viewController: UIViewController) {
-    if let event = self.event {
-      Importer.import(event: event, to: type, completion: { (result) in
-        switch result {
-        case .success:
-          viewController.showMessageAlert(title: "Успешно добавлено".localized)
-        case .permissionError:
-          viewController.showMessageAlert(title: "Нет прав доступа".localized)
-        case .saveError(_):
-          viewController.showMessageAlert(title: "Ошибка сохранения".localized)
-        }
-      })
-    } else {
-      assertionFailure("No event entity")
     }
   }
 
@@ -205,7 +187,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
         delegate?.push(viewController: viewController)
       }
     case .additionalCells:
-      self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     case .description, .location:
       break
