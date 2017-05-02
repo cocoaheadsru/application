@@ -24,20 +24,15 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   private var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
 
-  private var indexPath: IndexPath?
-
   let groupImageLoader = GroupImageLoader.standard
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+  func uodateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView) {
+    actionPlainObjects = []
     let actionCell = ActionCellConfigurationController()
 
-    let action = {
-      guard let index = self.indexPath else {
-        return
-      }
-      self.actionPlainObjects.remove(at: index.row)
-      tableView.deleteRows(at: [index], with: .left)
+    let action = { [weak self] in
+      self?.delegate?.updateUI()
     }
 
     let notificationPermissionCell = actionCell.checkAccess(on: viewController,
@@ -106,7 +101,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       eventPreview.selectedEventId = modelCollection[indexPath.row].id
       delegate?.push(viewController: eventPreview)
     case .actionButtons:
-      self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
     case .collectionIsEmpty:
       break
