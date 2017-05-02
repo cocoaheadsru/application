@@ -26,7 +26,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   let groupImageLoader = GroupImageLoader.standard
 
-  func uodateActionCellsSection(on viewController: UIViewController,
+  func updateActionCellsSection(on viewController: UIViewController,
                                 with tableView: UITableView) {
     actionPlainObjects = []
     let actionCell = ActionCellConfigurationController()
