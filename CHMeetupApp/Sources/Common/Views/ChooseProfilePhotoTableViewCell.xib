@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,26 +16,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="163.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-te-fAv">
                         <rect key="frame" x="115" y="37" width="90" height="90"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-4e-D9v">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icon_add" translatesAutoresizingMaskIntoConstraints="NO" id="JEw-u2-uRS">
-                                <rect key="frame" x="58" y="58" width="32" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JEw-u2-uRS" secondAttribute="height" multiplier="1:1" id="9ZZ-QX-dEe"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-ls-bY2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-ls-bY2" customClass="ChooseProfilePhotoButton" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                 <connections>
-                                    <action selector="chooseButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nXf-bZ-Xno"/>
+                                    <action selector="chooseButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ANW-tR-ceX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,15 +33,8 @@
                             <constraint firstItem="daZ-ls-bY2" firstAttribute="leading" secondItem="wbW-te-fAv" secondAttribute="leading" id="1As-ai-CN5"/>
                             <constraint firstAttribute="bottom" secondItem="daZ-ls-bY2" secondAttribute="bottom" id="4Ui-vH-Bqe"/>
                             <constraint firstAttribute="trailing" secondItem="daZ-ls-bY2" secondAttribute="trailing" id="BUW-D4-x42"/>
-                            <constraint firstAttribute="trailing" secondItem="1LJ-4e-D9v" secondAttribute="trailing" id="D5x-3W-Df9"/>
-                            <constraint firstAttribute="trailing" secondItem="JEw-u2-uRS" secondAttribute="trailing" id="EyN-nT-Sqh"/>
-                            <constraint firstAttribute="bottom" secondItem="1LJ-4e-D9v" secondAttribute="bottom" id="Kce-3c-qzX"/>
-                            <constraint firstItem="JEw-u2-uRS" firstAttribute="height" secondItem="1LJ-4e-D9v" secondAttribute="height" multiplier="0.35" id="esd-rr-I3Y"/>
                             <constraint firstAttribute="width" secondItem="wbW-te-fAv" secondAttribute="height" multiplier="1:1" id="hOj-b5-dOp"/>
                             <constraint firstAttribute="width" constant="90" id="muH-5u-Ggu"/>
-                            <constraint firstAttribute="bottom" secondItem="JEw-u2-uRS" secondAttribute="bottom" id="oGj-6k-hF4"/>
-                            <constraint firstItem="1LJ-4e-D9v" firstAttribute="top" secondItem="wbW-te-fAv" secondAttribute="top" id="qiX-Z5-bzh"/>
-                            <constraint firstItem="1LJ-4e-D9v" firstAttribute="leading" secondItem="wbW-te-fAv" secondAttribute="leading" id="vBh-AK-dG1"/>
                             <constraint firstItem="daZ-ls-bY2" firstAttribute="top" secondItem="wbW-te-fAv" secondAttribute="top" id="yfs-Xc-vwr"/>
                         </constraints>
                     </view>
@@ -64,13 +46,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addImageView" destination="JEw-u2-uRS" id="lHT-Ha-gXt"/>
-                <outlet property="photoImageView" destination="1LJ-4e-D9v" id="8pS-Iq-yJz"/>
+                <outlet property="mainButton" destination="daZ-ls-bY2" id="WgO-rf-iBf"/>
             </connections>
             <point key="canvasLocation" x="34" y="143"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="img_icon_add" width="60" height="60"/>
-    </resources>
 </document>

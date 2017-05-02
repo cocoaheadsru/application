@@ -29,15 +29,20 @@ class RegistrationConfirmViewController: UIViewController {
   }
 
   fileprivate var displayCollection: RegistrationConfirmDisplayCollection!
+  var selectedEventId: Int = 0
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    assert(selectedEventId > 0, "Event id must be setup")
 
     navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
     displayCollection = RegistrationConfirmDisplayCollection()
     displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
+
+    displayCollection.event = mainRealm.objects(EventEntity.self).first(where: { $0.id == selectedEventId })
   }
 
   func closeButtonAction() {

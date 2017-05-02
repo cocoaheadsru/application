@@ -8,18 +8,17 @@
 
 import Foundation
 
-struct CreatorTableViewCellModel {
-  let creator: UserPlainObject
+struct CreatorTableViewCellModel: TemplatableCellViewModelType {
+  let entity: CreatorEntity
 }
 
 extension CreatorTableViewCellModel: CellViewModelType {
 
   func setup(on cell: CreatorTableViewCell) {
-    cell.creatorNameLabel.text = creator.name
+    cell.creatorNameLabel.text = entity.name
 
-    if let photoURL = creator.photoUrl, let url = URL(string: photoURL) {
+    if let photoURL = entity.photoURL, let url = URL(string: photoURL) {
       cell.creatorImage.loadImage(from: url)
     }
   }
-
 }

@@ -14,8 +14,7 @@ protocol ChooseProfilePhotoTableViewCellDelegate: class {
 
 class ChooseProfilePhotoTableViewCell: UITableViewCell {
 
-  @IBOutlet var photoImageView: UIImageView!
-  @IBOutlet var addImageView: UIImageView!
+  @IBOutlet var mainButton: ChooseProfilePhotoButton!
 
   weak var delegate: ChooseProfilePhotoTableViewCellDelegate?
 
@@ -25,15 +24,10 @@ class ChooseProfilePhotoTableViewCell: UITableViewCell {
 
   override func layoutSubviews() {
     super.layoutSubviews()
-
-    let borderWidth = photoImageView.bounds.height * Constants.SystemSizes.imageViewBorderWidthPercentage
-    addImageView.roundWithWhiteBorder(borderWidth)
-    photoImageView.roundWithWhiteBorder(borderWidth)
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
-
     contentView.backgroundColor = UIColor(.lightGray)
     selectionStyle = .none
   }

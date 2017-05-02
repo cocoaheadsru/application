@@ -7,46 +7,38 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class CreatorsViewDisplayCollection: DisplayCollection {
-
-  var creatorsModels: [CreatorTableViewCellModel] = []
-
-  init(with users: [UserPlainObject]) {
-    creatorsModels = users.flatMap(CreatorTableViewCellModel.init(creator:))
-  }
-
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [CreatorTableViewCellModel.self]
   }
 
-  private var creators: [CreatorTableViewCellModel] = []
+  var creators: TemplateModelCollection<CreatorEntity> = {
+    let dataCollection = DataModelCollection(type: CreatorEntity.self)
+    return TemplateModelCollection(dataCollection: dataCollection,
+                                   templatesCount: Constants.TemplatesCounts.creators)
+  }()
 
-  enum `Type` {
-    case creators
-  }
-
-  var sections: [Type] = [.creators]
+  weak var delegate: DisplayCollectionWithTableViewDelegate?
 
   var numberOfSections: Int {
-    return sections.count
+    return 1
   }
 
   func numberOfRows(in section: Int) -> Int {
-    return creatorsModels.count
+    return creators.count
   }
 
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
-    switch sections[indexPath.section] {
-    case .creators:
-      return creatorsModels[indexPath.row]
-    }
+    return CreatorTableViewCellModel(entity: creators[indexPath.row])
   }
+}
 
-  func didSelect(indexPath: IndexPath) {
-    switch sections[indexPath.section] {
-    case .creators:
-      break
-    }
+// MARK: - TemplateModelCollectionDelegate
+
+extension CreatorsViewDisplayCollection: TemplateModelCollectionDelegate {
+  func templateModelCollectionDidUpdateData() {
+    delegate?.updateUI()
   }
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct ChooseProfilePhotoTableViewModel {
+struct ChooseProfilePhotoTableViewCellModel {
   let userEntity: UserEntity
   weak var delegate: ChooseProfilePhotoTableViewCellDelegate?
 }
 
-extension ChooseProfilePhotoTableViewModel: CellViewModelType {
+extension ChooseProfilePhotoTableViewCellModel: CellViewModelType {
   func setup(on cell: ChooseProfilePhotoTableViewCell) {
     if let photoURL = userEntity.photoURL, let url = URL(string: photoURL) {
-      cell.photoImageView.loadImage(from: url)
+      cell.mainButton.photoImageView.loadImage(from: url)
     }
     cell.delegate = delegate
   }
