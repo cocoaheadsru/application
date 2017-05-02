@@ -26,7 +26,7 @@ class EditableLabelTableViewCell: PlateTableViewCell {
   }
 
   var valueChanged: ((String) -> Void)?
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     roundType = .all
