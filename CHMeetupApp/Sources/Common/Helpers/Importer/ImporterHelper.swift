@@ -16,6 +16,11 @@ class ImporterHelper {
         switch result {
         case .success:
           viewController.showMessageAlert(title: "Успешно добавлено".localized)
+          realmWrite {
+            print(event.importingState?.toCalendar, event.importingState?.toReminder)
+            type == .calendar ?
+              (event.importingState?.toCalendar = true) : (event.importingState?.toReminder = true)
+          }
         case .permissionError:
           viewController.showMessageAlert(title: "Нет прав доступа".localized)
         case .saveError(_):

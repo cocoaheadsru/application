@@ -23,6 +23,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var place: PlaceEntity?
   dynamic var isRegistrationOpen: Bool = false
 
+  dynamic var importingState: ImportingState?
+
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
 

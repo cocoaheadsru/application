@@ -150,6 +150,7 @@
 		8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */; };
 		8A6A569E1EB7FD89008BEDF9 /* TextSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A569D1EB7FD89008BEDF9 /* TextSizeHelper.swift */; };
 		8A6A56A11EB8EA68008BEDF9 /* ImporterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A56A01EB8EA68008BEDF9 /* ImporterHelper.swift */; };
+		8A6A56A31EB90604008BEDF9 /* ImportingStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A56A21EB90604008BEDF9 /* ImportingStateEntity.swift */; };
 		8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */; };
 		8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */; };
 		8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */; };
@@ -419,6 +420,7 @@
 		8A6A569A1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CAShapeLayer.swift"; sourceTree = "<group>"; };
 		8A6A569D1EB7FD89008BEDF9 /* TextSizeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSizeHelper.swift; sourceTree = "<group>"; };
 		8A6A56A01EB8EA68008BEDF9 /* ImporterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImporterHelper.swift; sourceTree = "<group>"; };
+		8A6A56A21EB90604008BEDF9 /* ImportingStateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportingStateEntity.swift; sourceTree = "<group>"; };
 		8A6A84431E99AA4400C3A9E7 /* FetchingElementsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchingElementsProtocol.swift; sourceTree = "<group>"; };
 		8A6A84471E99AA8A00C3A9E7 /* EventFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFetching.swift; sourceTree = "<group>"; };
 		8A6A84491E99AAA200C3A9E7 /* SpeechFetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechFetching.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 				9F26385B1E6B82F50081D23B /* Single */,
 				9FAFF8041E6AD76300B687CB /* UserEntity.swift */,
 				9FAFF8061E6AD84000B687CB /* EventEntity.swift */,
+				8A6A56A21EB90604008BEDF9 /* ImportingStateEntity.swift */,
 				9FAFF8081E6AD8E700B687CB /* SpeechEntity.swift */,
 				9FAFF80A1E6ADA0200B687CB /* SpeechContentEntity.swift */,
 				9FAFF80C1E6ADB8200B687CB /* PlaceEntity.swift */,
@@ -2359,6 +2362,7 @@
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
+				8A6A56A31EB90604008BEDF9 /* ImportingStateEntity.swift in Sources */,
 				32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,

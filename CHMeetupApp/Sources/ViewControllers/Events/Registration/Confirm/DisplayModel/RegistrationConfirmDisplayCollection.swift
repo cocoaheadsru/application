@@ -35,7 +35,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
         ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
     })
 
-    let remindersPermissionCell = actionCell.addActionCell(
+    let reminderPermissionCell = actionCell.addActionCell(
       on: viewController,
       for: .reminders,
       with: {
@@ -46,8 +46,8 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
       actionPlainObjects.append(calendarPermissionCell)
     }
 
-    if let remindersPermissionCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersPermissionCell)
+    if let reminderPermissionCell = reminderPermissionCell {
+      actionPlainObjects.append(reminderPermissionCell)
     }
   }
 

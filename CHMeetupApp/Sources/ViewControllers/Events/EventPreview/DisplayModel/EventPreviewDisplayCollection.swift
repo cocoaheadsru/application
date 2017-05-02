@@ -31,6 +31,14 @@ class EventPreviewDisplayCollection: DisplayCollection {
         speeches.content = TemplateModelCollection.Content.list(event.speeches)
       }
 
+      if let state = event?.importingState {
+        if let calendarPermissionCell = calendarPermissionCell, !state.toCalendar {
+          actionPlainObjects.append(calendarPermissionCell)
+        }
+        if let reminderPermissionCell = reminderPermissionCell, !state.toReminder {
+          actionPlainObjects.append(reminderPermissionCell)
+        }
+      }
       setNeedsReloadData()
     }
   }
@@ -38,6 +46,9 @@ class EventPreviewDisplayCollection: DisplayCollection {
   var speeches: TemplateModelCollection<SpeechEntity> = {
     return TemplateModelCollection(templatesCount: 3)
   }()
+
+  var calendarPermissionCell: ActionPlainObject?
+  var reminderPermissionCell: ActionPlainObject?
 
   init() {
     speeches.delegate = self
@@ -115,20 +126,15 @@ class EventPreviewDisplayCollection: DisplayCollection {
         ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
     })
 
-    let remindersPermissionCell = actionCell.addActionCell(
+    let reminderPermissionCell = actionCell.addActionCell(
       on: viewController,
       for: .reminders,
       with: {
         ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
     })
 
-    if let calendarPermissionCell = calendarPermissionCell {
-      actionPlainObjects.append(calendarPermissionCell)
-    }
-
-    if let remindersPermissionCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersPermissionCell)
-    }
+    self.calendarPermissionCell = calendarPermissionCell
+    self.reminderPermissionCell = reminderPermissionCell
   }
 
   var numberOfSections: Int {
