@@ -55,9 +55,7 @@ extension RequestPlainObject {
     static func registerPush(pushToken: String,
                              userToken: String?) -> Request<RequestPlainObject> {
       var params = ["push_token": pushToken]
-      if let userToken = userToken {
-        params["token"] = userToken
-      }
+      params["token"] = userToken ?? ""
 
       return Request(query: "/user/register_push",
                      method: .post,
