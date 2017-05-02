@@ -20,6 +20,7 @@ class DefaultTableHeaderView: UITableViewHeaderFooterView {
     didSet {
       headerLabel.font = DefaultTableHeaderView.font
       headerLabel.textColor = UIColor(.gray)
+      headerLabel.layoutMargins = DefaultTableHeaderView.titleInsets
     }
   }
 

@@ -56,7 +56,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     }
   }
 
-  func headerHeight(for section: Int, with text: String) -> CGFloat {
+  func headerHeight(for section: Int) -> CGFloat {
     guard let delegate = displayCollectionWithTableViewDelegate else {
       assertionFailure("Subscribe to this delegate")
       return 0
