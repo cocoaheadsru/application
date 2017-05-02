@@ -11,9 +11,14 @@ import UIKit
 class ImporterHelper {
   static func importToSave(event: EventEntity?,
                            to type: ImportType,
-                           from viewController: UIViewController) {
+                           from viewController: UIViewController,
+                           with additionalAction: Action? = nil) {
     if let event = event {
       Importer.import(event: event, to: type, completion: { result in
+        defer {
+          additionalAction?()
+        }
+
         switch result {
         case .success:
           viewController.showMessageAlert(title: "Успешно добавлено".localized)

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ActionCellConfigurationController {
+typealias Action = () -> Void
 
-  typealias Action = () -> Void
+class ActionCellConfigurationController {
 
   func createImportAction(for event: EventEntity,
                           on viewController: UIViewController,
@@ -24,8 +24,9 @@ class ActionCellConfigurationController {
     if let permission = importToPermission[importType] {
       if let state = isImported[importType], state == false {
         return addActionCell(on: viewController, for: permission, with: {
-          ImporterHelper.importToSave(event: event, to: importType, from: viewController)
-          additionalAction?()
+          ImporterHelper.importToSave(event: event, to: importType, from: viewController) {
+            additionalAction?()
+          }
         })
       }
     } else {

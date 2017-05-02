@@ -22,20 +22,30 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   private var sections: [Type] = [.header, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
 
+  weak var delegate: DisplayCollectionDelegate?
+
   var event: EventEntity?
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView,
-                                   event: EventEntity) {
+  func updateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView,
+                                event: EventEntity) {
+    actionPlainObjects = []
+
     let actionCell = ActionCellConfigurationController()
 
     let calendarPermissionCell = actionCell.createImportAction(for: event,
                                                                on: viewController,
-                                                               for: .calendar)
+                                                               for: .calendar) {
+                                                                [weak self] in
+                                                                self?.delegate?.updateUI()
+    }
 
     let reminderPermissionCell = actionCell.createImportAction(for: event,
                                                                 on: viewController,
-                                                                for: .reminder)
+                                                                for: .reminder) {
+                                                                  [weak self] in
+                                                                  self?.delegate?.updateUI()
+    }
 
     if let calendarPermissionCell = calendarPermissionCell {
       actionPlainObjects.append(calendarPermissionCell)
