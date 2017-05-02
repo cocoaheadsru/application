@@ -11,9 +11,13 @@ import RealmSwift
 
 class UserPreferencesEntity: Object, ObjectSingletone {
   dynamic var isLoggedIn: Bool = false
-  dynamic var currentUser: UserEntity? {
-    didSet {
-      EventEntity.resetEntitiesStatus()
-    }
+  dynamic var pushToken: String = ""
+
+  func updateUser(currentUser: UserEntity?) {
+    self.currentUser = currentUser
+    EventEntity.resetEntitiesStatus()
+    PushNotificationsController.updateTokenRegistration()
   }
+
+  private(set) dynamic var currentUser: UserEntity?
 }
