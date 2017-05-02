@@ -16,11 +16,12 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   private enum `Type` {
     case events
     case actionButtons
+    case collectionIsEmpty
   }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
-  private var sections: [Type] = [.events, .actionButtons]
+  private var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
 
   private var indexPath: IndexPath?
@@ -71,6 +72,11 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       return modelCollection.count
     case .actionButtons:
       return actionPlainObjects.count
+    case .collectionIsEmpty:
+      if modelCollection.count == 0 && actionPlainObjects.count == 0 {
+        return 1
+      }
+      return 0
     }
   }
 
@@ -83,6 +89,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
                                             groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
+    case .collectionIsEmpty:
+      return ActionTableViewCellModel(action: ActionPlainObject(text:
+        "Будущие события скоро появятся, и вы будете первыми, кто про это узнает!".localized
+      ))
     }
   }
 
@@ -98,6 +108,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     case .actionButtons:
       self.indexPath = indexPath
       actionPlainObjects[indexPath.row].action?()
+    case .collectionIsEmpty:
+      break
     }
   }
 }
