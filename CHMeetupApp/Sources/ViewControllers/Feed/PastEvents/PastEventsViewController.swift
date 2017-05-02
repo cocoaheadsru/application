@@ -31,7 +31,7 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.tableView.reloadData()
+    self.tableView.reloadDataImmediately()
 
     if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
       fetchEvents()
