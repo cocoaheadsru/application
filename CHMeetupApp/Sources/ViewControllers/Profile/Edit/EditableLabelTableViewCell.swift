@@ -10,8 +10,6 @@ import UIKit
 
 class EditableLabelTableViewCell: PlateTableViewCell {
 
-  var valueChanged: ((String) -> Void)?
-
   @IBOutlet var titleLabel: UILabel! {
     didSet {
       titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
@@ -27,13 +25,14 @@ class EditableLabelTableViewCell: PlateTableViewCell {
     }
   }
 
-  @IBAction func descriptionTextViewChanged(_ sender: UITextField) {
-    valueChanged?(sender.text ?? "")
-  }
-
+  var valueChanged: ((String) -> Void)?
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     roundType = .all
   }
 
+  @IBAction func descriptionTextViewChanged(_ sender: UITextField) {
+    valueChanged?(sender.text ?? "")
+  }
 }

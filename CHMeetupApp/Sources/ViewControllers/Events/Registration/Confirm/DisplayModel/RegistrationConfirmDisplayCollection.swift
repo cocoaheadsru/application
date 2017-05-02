@@ -25,22 +25,17 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   var event: EventEntity?
 
   func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+                                   with tableView: UITableView,
+                                   event: EventEntity) {
     let actionCell = ActionCellConfigurationController()
 
-    let calendarPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .calendar,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
-    })
+    let calendarPermissionCell = actionCell.createImportAction(for: event,
+                                                               on: viewController,
+                                                               for: .calendar)
 
-    let reminderPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .reminders,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
-    })
+    let reminderPermissionCell = actionCell.createImportAction(for: event,
+                                                                on: viewController,
+                                                                for: .reminder)
 
     if let calendarPermissionCell = calendarPermissionCell {
       actionPlainObjects.append(calendarPermissionCell)

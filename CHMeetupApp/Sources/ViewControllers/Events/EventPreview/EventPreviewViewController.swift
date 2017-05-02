@@ -49,7 +49,6 @@ class EventPreviewViewController: UIViewController {
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
-    displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
     let dataModel = DataModelCollection(type: EventEntity.self)
@@ -58,6 +57,7 @@ class EventPreviewViewController: UIViewController {
     if let event = displayCollection.event {
       fetchSpeeches(on: event)
       isRegistrationEnabled = event.isRegistrationOpen
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
     }
   }
 
@@ -66,6 +66,13 @@ class EventPreviewViewController: UIViewController {
       eventId: selectedEventId
     )
     navigationController?.pushViewController(viewController, animated: true)
+  }
+
+  override func updateUI() {
+    if let event = displayCollection.event {
+      displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
+    }
+    super.updateUI()
   }
 }
 

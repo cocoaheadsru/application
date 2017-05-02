@@ -23,7 +23,14 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var place: PlaceEntity?
   dynamic var isRegistrationOpen: Bool = false
 
-  dynamic var importingState: ImportingState?
+  var importingState: ImportingStateEntity {
+    if let importingState = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {
+      return importingState
+    } else {
+      assertionFailure("No import state entity")
+      return ImportingStateEntity()
+    }
+  }
 
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()

@@ -31,14 +31,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
         speeches.content = TemplateModelCollection.Content.list(event.speeches)
       }
 
-      if let state = event?.importingState {
-        if let calendarPermissionCell = calendarPermissionCell, !state.toCalendar {
-          actionPlainObjects.append(calendarPermissionCell)
-        }
-        if let reminderPermissionCell = reminderPermissionCell, !state.toReminder {
-          actionPlainObjects.append(reminderPermissionCell)
-        }
-      }
       setNeedsReloadData()
     }
   }
@@ -46,9 +38,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
   var speeches: TemplateModelCollection<SpeechEntity> = {
     return TemplateModelCollection(templatesCount: 3)
   }()
-
-  var calendarPermissionCell: ActionPlainObject?
-  var reminderPermissionCell: ActionPlainObject?
 
   init() {
     speeches.delegate = self
@@ -115,26 +104,32 @@ class EventPreviewDisplayCollection: DisplayCollection {
     }
   }
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+  func updateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView,
+                                event: EventEntity) {
+    actionPlainObjects = []
+
     let actionCell = ActionCellConfigurationController()
 
-    let calendarPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .calendar,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
-    })
+    let calendarPermissionCell = actionCell.createImportAction(for: event,
+                                                               on: viewController,
+                                                               for: .calendar) { [weak self] in
+      self?.delegate?.updateUI()
+    }
 
-    let reminderPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .reminders,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
-    })
+    let remindersPermissionCell = actionCell.createImportAction(for: event,
+                                                                on: viewController,
+                                                                for: .reminder) { [weak self] in
+      self?.delegate?.updateUI()
+    }
 
-    self.calendarPermissionCell = calendarPermissionCell
-    self.reminderPermissionCell = reminderPermissionCell
+    if let calendarPermissionCell = calendarPermissionCell {
+      actionPlainObjects.append(calendarPermissionCell)
+    }
+
+    if let remindersPermissionCell = remindersPermissionCell {
+      actionPlainObjects.append(remindersPermissionCell)
+    }
   }
 
   var numberOfSections: Int {

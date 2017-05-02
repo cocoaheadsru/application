@@ -39,10 +39,13 @@ class RegistrationConfirmViewController: UIViewController {
     navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
     displayCollection = RegistrationConfirmDisplayCollection()
-    displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
     displayCollection.event = mainRealm.objects(EventEntity.self).first(where: { $0.id == selectedEventId })
+
+    if let event = displayCollection.event {
+      displayCollection.configureActionCellsSection(on: self, with: tableView, event: event)
+    }
   }
 
   func closeButtonAction() {

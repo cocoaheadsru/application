@@ -34,13 +34,11 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     place.city = plainObject.place.cityName
     event.place = place
 
-    let importingState = ImportingState()
-    event.importingState = importingState
+    _ = ImportingStateEntity.createOrGet(for: plainObject.id)
 
     realmWrite {
       mainRealm.add(event, update: true)
       mainRealm.add(place, update: true)
-      mainRealm.add(importingState, update: true)
     }
   }
 }
