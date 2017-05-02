@@ -24,7 +24,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewDidLoad()
 
     displayCollection = MainViewDisplayCollection()
-    displayCollection.configureActionCellsSection(on: self, with: tableView)
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
 
@@ -44,6 +44,11 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
 
   override func customTabBarItemContentView() -> CustomTabBarItemView {
     return TabBarItemView.create(with: .main)
+  }
+
+  override func updateUI() {
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
+    super.updateUI()
   }
 }
 
