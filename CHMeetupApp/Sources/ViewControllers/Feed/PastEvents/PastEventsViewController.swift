@@ -9,7 +9,8 @@
 import UIKit
 
 class PastEventsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
-  var userState: Bool!
+
+  var currentUserId: Int?
 
   @IBOutlet var tableView: UITableView! {
     didSet {
@@ -21,22 +22,20 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    userState = UserPreferencesEntity.value.isLoggedIn
 
     displayCollection = PastEventsDisplayCollection()
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
     title = "Прошедшие встречи".localized
-    fetchEvents()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if userState != UserPreferencesEntity.value.isLoggedIn {
+    if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
       fetchEvents()
-      userState = UserPreferencesEntity.value.isLoggedIn
+      currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
     }
   }
 

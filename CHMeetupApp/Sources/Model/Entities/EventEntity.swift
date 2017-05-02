@@ -15,13 +15,14 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case waiting
     case rejected
     case approved
+    case canRegister
     case unknown
 
     var allowRegister: Bool {
       switch self {
-      case .unknown:
+      case .canRegister:
         return true
-      case .waiting, .rejected, .approved:
+      case .waiting, .rejected, .approved, .unknown:
         return false
       }
     }
@@ -34,8 +35,10 @@ final class EventEntity: TemplatableObject, TemplateEntity {
         return "Жаль, заявка отклонена".localized
       case .approved:
         return "Заявка одобрена. Ждём вас!".localized
-      case .unknown:
+      case .canRegister:
         return "Я пойду".localized
+      case .unknown:
+        return "Статус обновляется".localized
       }
     }
   }
