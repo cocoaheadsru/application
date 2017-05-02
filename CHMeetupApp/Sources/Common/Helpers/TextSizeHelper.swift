@@ -10,9 +10,9 @@ import UIKit
 
 class TextFrameAttributes {
   // Basic info
-  private(set) var width: CGFloat = 0
-  private(set) var string: String?
-  private(set) var attributedString: NSAttributedString?
+  fileprivate var width: CGFloat = 0
+  fileprivate var string: String?
+  fileprivate var attributedString: NSAttributedString?
 
   // Text Info
   var attributes: [String: AnyObject] = [:]
@@ -88,8 +88,12 @@ fileprivate final class TextFrame: NSObject {
                                                 attributes: attributes.attributes,
                                                 context: nil).width + 2
     } else if let attributedString = attributes.attributedString {
-      height = attributedString.boundingRect(with: sizeForHeight, options: .usesLineFragmentOrigin, context: nil).height
-      width = attributedString.boundingRect(with: sizeForWidth, options: .usesLineFragmentOrigin, context: nil).width
+      height = attributedString.boundingRect(with: sizeForHeight,
+                                             options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                             context: nil).height + 1
+      width = attributedString.boundingRect(with: sizeForWidth,
+                                            options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                            context: nil).width + 1
     }
   }
 }
