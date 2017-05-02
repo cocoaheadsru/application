@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RegistrationPreviewViewController: UIViewController {
+class RegistrationPreviewViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
-  @IBOutlet fileprivate var tableView: UITableView! {
+  @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
@@ -60,6 +60,7 @@ class RegistrationPreviewViewController: UIViewController {
 
         self?.displayCollection = displayCollection
         self?.displayCollection.delegate = self
+        self?.displayCollection.displayCollectionWithTableViewDelegate = self
 
         DispatchQueue.main.async {
           self?.bottomButton.isEnabled = true

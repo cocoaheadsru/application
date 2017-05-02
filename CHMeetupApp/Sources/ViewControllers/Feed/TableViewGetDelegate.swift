@@ -10,10 +10,15 @@ import UIKit
 
 protocol DisplayCollectionWithTableViewDelegate: DisplayCollectionDelegate, UIViewControllerWithTableView {
   func getIndexPath(from cell: UITableViewCell) -> IndexPath?
+  func getTableViewSize() -> CGSize
 }
 
 extension DisplayCollectionWithTableViewDelegate {
   func getIndexPath(from cell: UITableViewCell) -> IndexPath? {
     return tableView.indexPath(for: cell)
+  }
+
+  func getTableViewSize() -> CGSize {
+    return tableView.frame.size
   }
 }

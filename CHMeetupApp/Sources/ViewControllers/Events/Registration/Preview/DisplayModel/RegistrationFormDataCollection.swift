@@ -26,6 +26,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
   var formData: FormData!
   weak var delegate: FormDisplayCollectionDelegate?
+  weak var displayCollectionWithTableViewDelegate: DisplayCollectionWithTableViewDelegate?
 
   var numberOfSections: Int {
     return formData?.sections.count ?? 0
@@ -56,12 +57,21 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   }
 
   func headerHeight(for section: Int) -> CGFloat {
-    return 40
+    guard let delegate = displayCollectionWithTableViewDelegate else {
+      assertionFailure("Subscribe to this delegate")
+      return 0
+    }
+    let insets = DefaultTableHeaderView.titleInsets
+    let attributedTitle = headerTitle(for: section)
+    let width = delegate.getTableViewSize().width - insets.left - insets.right
+    let height = TextFrameAttributes(attributedString: attributedTitle, width: width).textHeight
+    return height + insets.top + insets.bottom
   }
 
   func headerTitle(for section: Int) -> NSAttributedString {
     let cell = formData.sections[section]
-    let attributtedString = NSMutableAttributedString(string: cell.name)
+    let attributtedString = NSMutableAttributedString(string: cell.name,
+                                                      attributes: [NSFontAttributeName: DefaultTableHeaderView.font])
     let char = "*"
     if cell.isRequired {
       let mutableAttributedString = NSMutableAttributedString(string: char)

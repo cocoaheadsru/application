@@ -10,10 +10,17 @@ import UIKit
 
 class DefaultTableHeaderView: UITableViewHeaderFooterView {
 
+  static let font = UIFont.appFont(.avenirNextDemiBold(size: 16))
+
+  static var titleInsets: UIEdgeInsets {
+    return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+  }
+
   @IBOutlet var headerLabel: UILabel! {
     didSet {
-      headerLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
+      headerLabel.font = DefaultTableHeaderView.font
       headerLabel.textColor = UIColor(.gray)
+      headerLabel.layoutMargins = DefaultTableHeaderView.titleInsets
     }
   }
 
