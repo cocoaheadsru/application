@@ -26,6 +26,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
   var formData: FormData!
   weak var delegate: FormDisplayCollectionDelegate?
+  weak var displayCollectionWithTableViewDelegate: DisplayCollectionWithTableViewDelegate?
 
   var numberOfSections: Int {
     return formData?.sections.count ?? 0
@@ -56,9 +57,11 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
   }
 
   func headerHeight(for section: Int, with text: String) -> CGFloat {
-    let textSize = NSString(string: text).size(attributes:
-      [NSFontAttributeName: DefaultTableHeaderView.font]).width
-    let amountOfTextSizesOnScreen = Int(textSize / UIScreen.main.bounds.width)
+    guard let delegate = displayCollectionWithTableViewDelegate else {
+      fatalError("Subscribe to this delegate")
+    }
+    let textSize = TextFrameAttributes.init(string: text, font: DefaultTableHeaderView.font).textWidth
+    let amountOfTextSizesOnScreen = Int(textSize / delegate.getTableViewSize().width)
     return CGFloat((amountOfTextSizesOnScreen + 1) * 40) // `+1` for default value
   }
 
