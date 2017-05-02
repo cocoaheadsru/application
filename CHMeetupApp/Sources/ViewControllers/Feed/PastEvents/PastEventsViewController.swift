@@ -10,7 +10,7 @@ import UIKit
 
 class PastEventsViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
-  var currentUserId: Int?
+  var currentUserId: Int? = -1
 
   @IBOutlet var tableView: UITableView! {
     didSet {

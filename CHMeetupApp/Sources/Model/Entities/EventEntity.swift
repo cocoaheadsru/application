@@ -38,7 +38,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
       case .canRegister:
         return "Я пойду".localized
       case .unknown:
-        return "Статус обновляется".localized
+        return "Нет статуса".localized
       }
     }
   }
@@ -67,6 +67,10 @@ final class EventEntity: TemplatableObject, TemplateEntity {
 
   dynamic var place: PlaceEntity?
   dynamic var isRegistrationOpen: Bool = false
+
+  var shouldShowRegistrationStatus: Bool {
+    return isRegistrationOpen && status != .unknown
+  }
 
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
