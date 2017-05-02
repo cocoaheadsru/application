@@ -23,28 +23,49 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   private var actionPlainObjects: [ActionPlainObject] = []
   private var indexPath: IndexPath?
 
+  var event: EventEntity?
+
   func configureActionCellsSection(on viewController: UIViewController,
                                    with tableView: UITableView) {
     let actionCell = ActionCellConfigurationController()
 
-    let action = {
-      guard let index = self.indexPath else {
-        return
-      }
-      self.actionPlainObjects.remove(at: index.row)
-      tableView.deleteRows(at: [index], with: .left)
-    }
-
-    let notificationPermissionCell = actionCell.checkAccess(
+    let calendarPermissionCell = actionCell.addActionCell(
       on: viewController,
-      for: .notifications,
+      for: .calendar,
       with: {
-        PushNotificationController.configureNotification()
-        action()
+        self.import(event: self.event, to: .calendar, from: viewController)
     })
 
-    if let notificationCell = notificationPermissionCell {
-      actionPlainObjects.append(notificationCell)
+    let remindersPermissionCell = actionCell.addActionCell(
+      on: viewController,
+      for: .reminders,
+      with: {
+        self.import(event: self.event, to: .reminder, from: viewController)
+    })
+
+    if let calendarPermissionCell = calendarPermissionCell {
+      actionPlainObjects.append(calendarPermissionCell)
+    }
+
+    if let remindersPermissionCell = remindersPermissionCell {
+      actionPlainObjects.append(remindersPermissionCell)
+    }
+  }
+
+  private func `import`(event: EventEntity?, to type: Importer.ImportType, from viewController: UIViewController) {
+    if let event = self.event {
+      Importer.import(event: event, to: type, completion: { (result) in
+        switch result {
+        case .success:
+          break
+        case .permissionError:
+          viewController.showMessageAlert(title: "Нет прав доступа".localized)
+        case .saveError(_):
+          viewController.showMessageAlert(title: "Ошибка сохранения".localized)
+        }
+      })
+    } else {
+      assertionFailure("No event entity")
     }
   }
 
@@ -66,7 +87,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
     case .header:
       return 1 // Only one header cell
     case .actionButtons:
-      return actionPlainObjects.count
+      return event != nil ? actionPlainObjects.count : 0
     }
   }
 
