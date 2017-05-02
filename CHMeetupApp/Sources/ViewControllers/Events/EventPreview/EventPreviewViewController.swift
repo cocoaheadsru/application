@@ -49,6 +49,7 @@ class EventPreviewViewController: UIViewController {
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
+    displayCollection.configureActionCellsSection(on: self, with: tableView)
     tableView.registerNibs(from: displayCollection)
 
     let dataModel = DataModelCollection(type: EventEntity.self)

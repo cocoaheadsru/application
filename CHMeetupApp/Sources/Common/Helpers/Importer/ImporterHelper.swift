@@ -1,0 +1,29 @@
+//
+//  ImporterHelper.swift
+//  CHMeetupApp
+//
+//  Created by Kirill Averyanov on 02/05/2017.
+//  Copyright © 2017 CocoaHeads Community. All rights reserved.
+//
+
+import UIKit
+
+class ImporterHelper {
+  static func importToSave(event: EventEntity?, to type: Importer.ImportType,
+                           from viewController: UIViewController) {
+    if let event = event {
+      Importer.import(event: event, to: type, completion: { result in
+        switch result {
+        case .success:
+          viewController.showMessageAlert(title: "Успешно добавлено".localized)
+        case .permissionError:
+          viewController.showMessageAlert(title: "Нет прав доступа".localized)
+        case .saveError(_):
+          viewController.showMessageAlert(title: "Ошибка сохранения".localized)
+        }
+      })
+    } else {
+      assertionFailure("No event entity")
+    }
+  }
+}

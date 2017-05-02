@@ -80,7 +80,8 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case additionalCells
   }
 
-  var sections: [Type] = []
+  private var sections: [Type] = []
+  private var actionPlainObjects: [ActionPlainObject] = []
 
   func updateSections() {
     sections = []
@@ -103,6 +104,33 @@ class EventPreviewDisplayCollection: DisplayCollection {
     }
   }
 
+  func configureActionCellsSection(on viewController: UIViewController,
+                                   with tableView: UITableView) {
+    let actionCell = ActionCellConfigurationController()
+
+    let calendarPermissionCell = actionCell.addActionCell(
+      on: viewController,
+      for: .calendar,
+      with: {
+        ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
+    })
+
+    let remindersPermissionCell = actionCell.addActionCell(
+      on: viewController,
+      for: .reminders,
+      with: {
+        ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
+    })
+
+    if let calendarPermissionCell = calendarPermissionCell {
+      actionPlainObjects.append(calendarPermissionCell)
+    }
+
+    if let remindersPermissionCell = remindersPermissionCell {
+      actionPlainObjects.append(remindersPermissionCell)
+    }
+  }
+
   var numberOfSections: Int {
     return sections.count
   }
@@ -114,7 +142,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .speaches:
       return speeches.count
     case .additionalCells:
-      return 0
+      return event != nil ? actionPlainObjects.count : 0
     }
   }
 
@@ -140,8 +168,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .description:
       return ActionTableViewCellModel(action: ActionPlainObject(text: event?.descriptionText ?? ""))
     case .additionalCells:
-      return ActionTableViewCellModel(action: ActionPlainObject(text: "Should be additional cell",
-                                                                imageName: nil, action: { }))
+      return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     }
   }
 
@@ -159,7 +186,9 @@ class EventPreviewDisplayCollection: DisplayCollection {
         viewController.selectedSpeechId = event.speeches[indexPath.row].id
         delegate?.push(viewController: viewController)
       }
-    case .additionalCells, .description, .location:
+    case .additionalCells:
+      actionPlainObjects[indexPath.row].action?()
+    case .description, .location:
       break
     }
   }
