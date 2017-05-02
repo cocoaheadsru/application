@@ -100,7 +100,7 @@ class RegistrationPreviewViewController: UIViewController {
         let dataModel = DataModelCollection(type: EventEntity.self)
         let event = dataModel.first(where: { $0.id == self?.selectedEventId })
         realmWrite {
-          event?.status = EventEntity.EventRegistrationStatus.waiting.rawValue
+          event?.statusValue = EventEntity.EventRegistrationStatus.waiting.rawValue
         }
         self?.presentRegistrationConfirmViewController()
       } else {
