@@ -28,7 +28,7 @@ class LoginProcessController {
       currentUser.company = user.company ?? ""
       currentUser.token = user.token ?? ""
 
-      UserPreferencesEntity.value.currentUser = currentUser
+      UserPreferencesEntity.value.updateUser(currentUser: currentUser)
     }
   }
 
@@ -41,7 +41,7 @@ class LoginProcessController {
       if let currentUser = UserPreferencesEntity.value.currentUser {
         mainRealm.delete(currentUser)
       }
-      UserPreferencesEntity.value.currentUser = nil
+      UserPreferencesEntity.value.updateUser(currentUser: nil)
       UserPreferencesEntity.value.isLoggedIn = false
     }
   }
