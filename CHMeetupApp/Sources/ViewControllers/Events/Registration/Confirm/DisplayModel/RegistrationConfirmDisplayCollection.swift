@@ -57,7 +57,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
       Importer.import(event: event, to: type, completion: { (result) in
         switch result {
         case .success:
-          break
+          viewController.showMessageAlert(title: "Успешно добавлено".localized)
         case .permissionError:
           viewController.showMessageAlert(title: "Нет прав доступа".localized)
         case .saveError(_):
