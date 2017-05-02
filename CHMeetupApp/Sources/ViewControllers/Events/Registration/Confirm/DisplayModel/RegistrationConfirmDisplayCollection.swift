@@ -22,32 +22,37 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
   private var sections: [Type] = [.header, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
 
+  weak var delegate: DisplayCollectionDelegate?
+
   var event: EventEntity?
 
-  func configureActionCellsSection(on viewController: UIViewController,
-                                   with tableView: UITableView) {
+  func updateActionCellsSection(on viewController: UIViewController,
+                                with tableView: UITableView,
+                                event: EventEntity) {
+    actionPlainObjects = []
+
     let actionCell = ActionCellConfigurationController()
 
-    let calendarPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .calendar,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .calendar, from: viewController)
-    })
+    let calendarPermissionCell = actionCell.createImportAction(for: event,
+                                                               on: viewController,
+                                                               for: .calendar) {
+                                                                [weak self] in
+                                                                self?.delegate?.updateUI()
+    }
 
-    let remindersPermissionCell = actionCell.addActionCell(
-      on: viewController,
-      for: .reminders,
-      with: {
-        ImporterHelper.importToSave(event: self.event, to: .reminder, from: viewController)
-    })
+    let reminderPermissionCell = actionCell.createImportAction(for: event,
+                                                                on: viewController,
+                                                                for: .reminder) {
+                                                                  [weak self] in
+                                                                  self?.delegate?.updateUI()
+    }
 
     if let calendarPermissionCell = calendarPermissionCell {
       actionPlainObjects.append(calendarPermissionCell)
     }
 
-    if let remindersPermissionCell = remindersPermissionCell {
-      actionPlainObjects.append(remindersPermissionCell)
+    if let reminderPermissionCell = reminderPermissionCell {
+      actionPlainObjects.append(reminderPermissionCell)
     }
   }
 

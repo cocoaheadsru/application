@@ -68,6 +68,15 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var place: PlaceEntity?
   dynamic var isRegistrationOpen: Bool = false
 
+  var importingState: ImportingStateEntity {
+    if let importingState = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {
+      return importingState
+    } else {
+      assertionFailure("No import state entity")
+      return ImportingStateEntity()
+    }
+  }
+  
   var shouldShowRegistrationStatus: Bool {
     return isRegistrationOpen && status != .unknown
   }

@@ -9,13 +9,27 @@
 import UIKit
 
 class ImporterHelper {
-  static func importToSave(event: EventEntity?, to type: Importer.ImportType,
-                           from viewController: UIViewController) {
+  static func importToSave(event: EventEntity?,
+                           to type: ImportType,
+                           from viewController: UIViewController,
+                           with additionalAction: Action? = nil) {
     if let event = event {
       Importer.import(event: event, to: type, completion: { result in
+        defer {
+          additionalAction?()
+        }
+
         switch result {
         case .success:
           viewController.showMessageAlert(title: "Успешно добавлено".localized)
+          realmWrite {
+            switch type {
+            case .calendar:
+              event.importingState.toCalendar = true
+            case .reminder:
+              event.importingState.toReminder = true
+            }
+          }
         case .permissionError:
           viewController.showMessageAlert(title: "Нет прав доступа".localized)
         case .saveError(_):
