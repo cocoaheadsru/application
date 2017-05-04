@@ -15,11 +15,12 @@ class EditableLabelTableViewCell: PlateTableViewCell {
       descriptionTextField.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
       descriptionTextField.textColor = UIColor(.black)
       descriptionTextField.returnKeyType = .done
+      descriptionTextField.autocorrectionType = .no
     }
   }
 
   var valueChanged: ((String) -> Void)?
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     roundType = .all
