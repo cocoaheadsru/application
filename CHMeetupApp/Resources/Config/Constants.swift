@@ -37,4 +37,8 @@ final class Constants {
   struct TemplatesCounts {
     static let creators: Int = 10
   }
+
+  struct Keys {
+    static let token = "token"
+  }
 }
