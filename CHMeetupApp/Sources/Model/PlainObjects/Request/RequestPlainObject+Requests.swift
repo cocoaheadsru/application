@@ -42,7 +42,7 @@ extension RequestPlainObject {
                            description: String,
                            userId: Int,
                            token: String) -> Request<RequestPlainObject> {
-      var params = Constants.baseParams
+      var params = Constants.Server.baseParams
       params["title"] = title
       params["description"] = description
 
@@ -53,7 +53,7 @@ extension RequestPlainObject {
 
     static func registerPush(pushToken: String,
                              userToken: String?) -> Request<RequestPlainObject> {
-      var params = Constants.baseParams
+      var params = Constants.Server.baseParams
       params["push_token"] = pushToken
 
       return Request(query: "/user/register_push",
