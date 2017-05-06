@@ -76,7 +76,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
       return ImportingStateEntity()
     }
   }
-  
+
   var shouldShowRegistrationStatus: Bool {
     return isRegistrationOpen && status != .unknown
   }
