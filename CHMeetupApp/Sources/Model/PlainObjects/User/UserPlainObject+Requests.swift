@@ -17,10 +17,16 @@ extension UserPlainObject: PlainObjectType {
       return Request(query: "users")
     }
 
-    // Authorization by social network
+    // Authorization via social network
     static func auth(token: String, secret: String, socialId: String) -> Request<UserPlainObject> {
-      let params = ["token": token, "secret": secret, "social": socialId]
-      return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
+        let params = ["token": token, "secret": secret, "social": socialId]
+        return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
+    }
+
+    // Get profile info
+    static func profile(token: String) -> Request<UserPlainObject> {
+        let params = ["token": token]
+        return Request<UserPlainObject>(query: "user/profile", method: .get, params: params)
     }
 
     // Example of custom parser
