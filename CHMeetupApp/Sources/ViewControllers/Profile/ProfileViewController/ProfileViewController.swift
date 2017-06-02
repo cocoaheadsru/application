@@ -22,12 +22,14 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let token = (UserPreferencesEntity.value.currentUser?.token)!
-    ProfileController.updateUser(withToken: token, completion: { _ in })
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+
+    let token = (UserPreferencesEntity.value.currentUser?.token)!
+    ProfileController.updateUser(withToken: token, completion: { _ in })
+
     fetch()
   }
 
