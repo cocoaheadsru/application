@@ -22,6 +22,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }

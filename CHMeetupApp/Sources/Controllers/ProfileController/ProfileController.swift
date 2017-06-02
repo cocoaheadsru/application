@@ -26,9 +26,9 @@ class ProfileController {
     }
   }
 
-  static func updateUser(with token: String, completion: @escaping SuccessCompletionBlock) {
+  static func updateUser(withToken token: String, completion: @escaping SuccessCompletionBlock) {
     let profileRequest = UserPlainObject.Requests.profile(token: token)
-    Server.standard.request(profileRequest) { userProfile, error in
+    Server.standard.request(profileRequest) { userProfile, _ in
       guard let user = userProfile else {
         completion(false)
         return

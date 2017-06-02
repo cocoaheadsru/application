@@ -26,7 +26,7 @@ extension UserPlainObject: PlainObjectType {
     // Get profile info
     static func profile(token: String) -> Request<UserPlainObject> {
         let params = ["token": token]
-        return Request<UserPlainObject>(query: "user/profile", method: .get, params: params)
+        return Request<UserPlainObject>(query: "user/profile", method: .post, params: params)
     }
 
     // Example of custom parser
