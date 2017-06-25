@@ -17,12 +17,16 @@ extension UserPlainObject: PlainObjectType {
       return Request(query: "users")
     }
 
-    // Authorization by social network
+    // Authorization via social network
     static func auth(token: String, secret: String, socialId: String) -> Request<UserPlainObject> {
-      var params = Constants.Server.baseParams
-      params["secret"] = secret
-      params["social"] = socialId
-      return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
+        let params = ["token": token, "secret": secret, "social": socialId]
+        return Request<UserPlainObject>(query: "user/auth", method: .post, params: params)
+    }
+
+    // Get profile info
+    static func profile(token: String) -> Request<UserPlainObject> {
+        let params = ["token": token]
+        return Request<UserPlainObject>(query: "user/profile", method: .post, params: params)
     }
 
     // Example of custom parser
@@ -54,7 +58,10 @@ extension UserPlainObject {
     self.lastname = lastname
     photoUrl = json["photo_url"] as? String
     company = json["company"] as? String
+    position = json["position"] as? String
     token = json["token"] as? String
+    phone = json["phone"] as? String
+    email = json["email"] as? String
   }
 
   init?(justId json: JSONDictionary) {
@@ -65,8 +72,11 @@ extension UserPlainObject {
     self.id = id
     name = ""
     lastname = ""
+    position = nil
     company = nil
     photoUrl = nil
     token = nil
+    phone = nil
+    email = nil
   }
 }

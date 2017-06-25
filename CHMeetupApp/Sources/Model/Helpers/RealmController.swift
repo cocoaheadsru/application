@@ -14,8 +14,7 @@ class RealmController {
   static var shared: RealmController = RealmController()
 
   func setup() {
-    Realm.Configuration.defaultConfiguration =
-      Realm.Configuration(schemaVersion: 17, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 18, migrationBlock: nil)
 
     do {
       mainRealm = try Realm()
