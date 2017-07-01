@@ -32,7 +32,7 @@ class ImporterHelper {
           }
         case .permissionError:
           viewController.showMessageAlert(title: "Нет прав доступа".localized)
-        case .saveError(_):
+        case .saveError(error: _):
           viewController.showMessageAlert(title: "Ошибка сохранения".localized)
         }
       })
