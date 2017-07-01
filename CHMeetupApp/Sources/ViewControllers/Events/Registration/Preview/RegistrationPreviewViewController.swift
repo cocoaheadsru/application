@@ -45,13 +45,10 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
-    if let navigationController = navigationController {
-      var stackViewControllers = navigationController.viewControllers
-      let previousViewControllerIndex = stackViewControllers.count - 2
-      if stackViewControllers[previousViewControllerIndex] as? AuthViewController != nil {
-        stackViewControllers.remove(at: previousViewControllerIndex)
-      }
-      navigationController.setViewControllers(stackViewControllers, animated: true)
+    if let viewControllers = navigationController?.viewControllers.filter({
+      !($0 is AuthViewController)
+    }) {
+      navigationController?.setViewControllers(viewControllers, animated: true)
     }
 
     RegistrationController.loadRegFromServer(
