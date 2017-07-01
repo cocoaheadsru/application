@@ -11,6 +11,7 @@ import SafariServices
 
 class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   let auth = AuthServiceFacade()
+  var withRegistrationEventId: Int?
 
   @IBOutlet var authButtons: [UIButton]! {
     didSet {
@@ -53,7 +54,14 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       if let profileNavigationController = self?.profileNavigationController {
         profileNavigationController.updateRootViewController()
       } else {
-        self?.navigationController?.popViewController(animated: true)
+        guard let eventId = self?.withRegistrationEventId else {
+          self?.navigationController?.popViewController(animated: true)
+          return
+        }
+
+        let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+        viewController.selectedEventId = eventId
+        self?.push(viewController: viewController)
       }
     }
   }
