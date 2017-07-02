@@ -56,7 +56,6 @@ extension RequestPlainObject {
                      params: params)
     }
 
-
     static func giveSpeech(title: String,
                            description: String,
                            userId: Int,

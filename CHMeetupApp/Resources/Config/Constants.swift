@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ActionCompletionBlock = () -> (Void)
+typealias ActionCompletionBlock = () -> Void
 typealias SuccessCompletionBlock = (_ success: Bool) -> Void
 
 // MARK: - Constants for project

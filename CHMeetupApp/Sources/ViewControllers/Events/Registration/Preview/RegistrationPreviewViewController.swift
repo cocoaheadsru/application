@@ -45,6 +45,12 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     displayCollection = FormDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
+    if let viewControllers = navigationController?.viewControllers.filter({
+      !($0 is AuthViewController)
+    }) {
+      navigationController?.setViewControllers(viewControllers, animated: true)
+    }
+
     RegistrationController.loadRegFromServer(
       with: 1,
       completion: { [weak self] displayCollection, error in

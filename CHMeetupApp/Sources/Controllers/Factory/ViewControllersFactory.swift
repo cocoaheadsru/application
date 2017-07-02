@@ -27,8 +27,9 @@ struct ViewControllersFactory {
       eventPreviewViewController.selectedEventId = eventId
       return eventPreviewViewController
     } else {
-      return Storyboards.Profile.instantiateAuthViewController()
+      let authViewController = Storyboards.Profile.instantiateAuthViewController()
+      authViewController.withRegistrationEventId = eventId
+      return authViewController
     }
-
   }
 }
