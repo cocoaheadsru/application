@@ -34,7 +34,17 @@ class ProfileController {
         return
       }
 
-      LoginProcessController.setCurrentUser(user)
+      guard let currentUser = UserPreferencesEntity.value.currentUser else {
+        fatalError("Not found any active user")
+      }
+
+      realmWrite {
+        currentUser.photoURL = user.photoUrl
+        currentUser.position = user.position
+        currentUser.company = user.company
+        currentUser.phone = user.phone
+        currentUser.email = user.email ?? ""
+      }
     }
   }
 }
