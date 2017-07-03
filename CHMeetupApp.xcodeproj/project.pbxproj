@@ -134,6 +134,12 @@
 		7DAC863F1EA8220B00437283 /* CreatorsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */; };
 		7DAC86401EA8220B00437283 /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC863E1EA8220B00437283 /* CreatorTableViewCell.swift */; };
 		7DAC86421EA8223100437283 /* CreatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */; };
+		7DB4F5BF1F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5B81F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift */; };
+		7DB4F5C01F0B0C8B00068CBF /* CreatorHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB4F5B91F0B0C8B00068CBF /* CreatorHeaderTableViewCell.xib */; };
+		7DB4F5C11F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BA1F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift */; };
+		7DB4F5C21F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */; };
+		7DB4F5C31F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */; };
+		7DB4F5C41F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */; };
 		7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
@@ -239,12 +245,6 @@
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
 		A1AD7E621F06F3B300977FAE /* CreatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */; };
 		A1AD7E631F06F3B300977FAE /* CreatorDetailDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */; };
-		A1AD7E871F078D7600977FAE /* CreatorHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */; };
-		A1AD7E881F078D7600977FAE /* CreatorHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */; };
-		A1AD7E891F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */; };
-		A1AD7E8A1F078D7600977FAE /* CreatorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */; };
-		A1AD7E8B1F078D7600977FAE /* CreatorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */; };
-		A1AD7E8C1F078D7600977FAE /* CreatorInfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
@@ -415,6 +415,12 @@
 		7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsTableViewCellModel.swift; sourceTree = "<group>"; };
 		7DAC863E1EA8220B00437283 /* CreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorTableViewCell.swift; sourceTree = "<group>"; };
 		7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorTableViewCell.xib; sourceTree = "<group>"; };
+		7DB4F5B81F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		7DB4F5B91F0B0C8B00068CBF /* CreatorHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		7DB4F5BA1F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
+		7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCell.swift; sourceTree = "<group>"; };
+		7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorInfoTableViewCell.xib; sourceTree = "<group>"; };
+		7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCellModel.swift; sourceTree = "<group>"; };
 		7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
@@ -519,12 +525,6 @@
 		A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionTableViewCellModel.swift; path = OptionCell/OptionTableViewCellModel.swift; sourceTree = "<group>"; };
 		A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailViewController.swift; sourceTree = "<group>"; };
 		A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailDisplayCollection.swift; sourceTree = "<group>"; };
-		A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
-		A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCell.swift; sourceTree = "<group>"; };
-		A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorInfoTableViewCell.xib; sourceTree = "<group>"; };
-		A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCellModel.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
@@ -1482,6 +1482,26 @@
 			path = CreatorCell;
 			sourceTree = "<group>";
 		};
+		7DB4F5B71F0B0C8B00068CBF /* CreatorHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7DB4F5B81F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift */,
+				7DB4F5B91F0B0C8B00068CBF /* CreatorHeaderTableViewCell.xib */,
+				7DB4F5BA1F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift */,
+			);
+			path = CreatorHeader;
+			sourceTree = "<group>";
+		};
+		7DB4F5BB1F0B0C8B00068CBF /* CreatorInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */,
+				7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */,
+				7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */,
+			);
+			path = CreatorInfo;
+			sourceTree = "<group>";
+		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -2001,12 +2021,8 @@
 		A1AD7E681F0786B600977FAE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A1AD7E831F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift */,
-				A1AD7E811F078D7600977FAE /* CreatorHeaderTableViewCell.swift */,
-				A1AD7E821F078D7600977FAE /* CreatorHeaderTableViewCell.xib */,
-				A1AD7E861F078D7600977FAE /* CreatorInfoTableViewCellModel.swift */,
-				A1AD7E841F078D7600977FAE /* CreatorInfoTableViewCell.swift */,
-				A1AD7E851F078D7600977FAE /* CreatorInfoTableViewCell.xib */,
+				7DB4F5B71F0B0C8B00068CBF /* CreatorHeader */,
+				7DB4F5BB1F0B0C8B00068CBF /* CreatorInfo */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2174,11 +2190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB4F5C31F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib in Resources */,
 				8A36998D1E8D2EDD00B37528 /* AboutSpeechTableViewCell.xib in Resources */,
-				A1AD7E881F078D7600977FAE /* CreatorHeaderTableViewCell.xib in Resources */,
+				7DB4F5C01F0B0C8B00068CBF /* CreatorHeaderTableViewCell.xib in Resources */,
 				22323F351E70C0E500522E5C /* TabBarItemView.xib in Resources */,
 				A168379B1E7E979800A12B3B /* OptionTableViewCell.xib in Resources */,
-				A1AD7E8B1F078D7600977FAE /* CreatorInfoTableViewCell.xib in Resources */,
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
@@ -2344,18 +2360,17 @@
 				784EFF931E637EA500F2E31A /* RealmController.swift in Sources */,
 				8A6268521E64568C00D51BEB /* Constants.swift in Sources */,
 				9FB84AF01E7B6B5E00FEEC8E /* Date+Compare.swift in Sources */,
-				A1AD7E871F078D7600977FAE /* CreatorHeaderTableViewCell.swift in Sources */,
 				03153BC41EAD41FB0011FF5F /* RegistrationConfirmDisplayCollection.swift in Sources */,
 				9F30FFD81E71FEDB00EF85F5 /* DisplayCollection.swift in Sources */,
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */,
-				A1AD7E8A1F078D7600977FAE /* CreatorInfoTableViewCell.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
 				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */,
+				7DB4F5C11F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
 				7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */,
 				320FA57A1E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift in Sources */,
@@ -2424,6 +2439,7 @@
 				7DAC86401EA8220B00437283 /* CreatorTableViewCell.swift in Sources */,
 				ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */,
 				9F487A6B1E73EE6E0016CE0B /* MethodSwizzler.swift in Sources */,
+				7DB4F5C21F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift in Sources */,
 				03153BD01EAE96940011FF5F /* RegConfirmHeaderTableViewCellModel.swift in Sources */,
 				22323FA21E70C43800522E5C /* AppDelegate.swift in Sources */,
 				22323F0F1E70C0CE00522E5C /* UIViewController+KeyboardDelegate.swift in Sources */,
@@ -2437,7 +2453,7 @@
 				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
 				8A6A56A31EB90604008BEDF9 /* ImportingStateEntity.swift in Sources */,
 				32424A1A1EB7DDDE002EED9B /* EditableLabelTableViewModel.swift in Sources */,
-				A1AD7E891F078D7600977FAE /* CreatorHeaderTableViewCellModel.swift in Sources */,
+				7DB4F5C41F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift in Sources */,
 				9FB84AF11E7B6D2F00FEEC8E /* Date+ComponentsHelper.swift in Sources */,
 				22323F0B1E70C0CE00522E5C /* UIColor+PaletteColors.swift in Sources */,
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
@@ -2447,6 +2463,7 @@
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				8ADF1EDF1EB28C2900B5E561 /* ImagePickerController.swift in Sources */,
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
+				7DB4F5BF1F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift in Sources */,
 				9FAFDACF1EB1FA75001ED7DB /* TemplateObject.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
 				F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */,
@@ -2463,7 +2480,6 @@
 				32DD63051EA8CED0005B565E /* ChooseProfilePhotoTableViewModel.swift in Sources */,
 				F718C0351E966B6A008B3C0B /* ImageLoader.swift in Sources */,
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
-				A1AD7E8C1F078D7600977FAE /* CreatorInfoTableViewCellModel.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
