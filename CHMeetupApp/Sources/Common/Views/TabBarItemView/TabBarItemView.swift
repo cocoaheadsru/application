@@ -38,7 +38,7 @@ class TabBarItemView: CustomTabBarItemView {
     var title: String {
       switch self {
       case .main:
-        return "Главный".localized
+        return "Анонсы".localized
       case .past:
         return "Прошедшие".localized
       case .profile:

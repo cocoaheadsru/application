@@ -155,14 +155,14 @@ class EventPreviewDisplayCollection: DisplayCollection {
         return TimePlaceTableViewCellModel(event: event)
       } else {
         // Template
-        return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading Adress...".localized))
+        return ActionTableViewCellModel(action: ActionPlainObject(text: "Загрузка адреса...".localized))
       }
     case .address:
       if let actionObject = addressActionObject {
         return ActionTableViewCellModel(action: actionObject)
       } else {
         assertionFailure("Should not be reached")
-        return ActionTableViewCellModel(action: ActionPlainObject(text: "Loading location...".localized))
+        return ActionTableViewCellModel(action: ActionPlainObject(text: "Загрузка адреса...".localized))
       }
     case .speaches:
       return SpeechPreviewTableViewCellModel(entity: speeches[indexPath.row])

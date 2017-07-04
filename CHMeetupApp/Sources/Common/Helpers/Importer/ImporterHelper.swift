@@ -21,7 +21,7 @@ class ImporterHelper {
 
         switch result {
         case .success:
-          viewController.showMessageAlert(title: "Успешно добавлено".localized)
+          viewController.showMessageAlert(title: "Событие успешно добавлено".localized)
           realmWrite {
             switch type {
             case .calendar:
