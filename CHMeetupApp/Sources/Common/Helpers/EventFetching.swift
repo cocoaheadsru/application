@@ -16,8 +16,13 @@ struct EventFetching: FetchingElements {
         DispatchQueue.main.async { completion?() }
       }
 
-      guard let list = list,
-        error == nil else { return }
+      guard let list = list, error == nil else { return }
+
+      realmWrite {
+        let creators = mainRealm.objects(CreatorEntity.self)
+        mainRealm.delete(creators)
+      }
+
       EventPlainObjectTranslation.translate(of: list, to: parent)
     })
   }
