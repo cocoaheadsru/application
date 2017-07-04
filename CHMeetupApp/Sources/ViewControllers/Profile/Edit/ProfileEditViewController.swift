@@ -109,7 +109,7 @@ extension ProfileEditViewController {
     ProfileController.save { success in
       if success {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные улетели на сервер.".localized,
+                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
                                           emjoi: "📋",
                                           completion: {
                                             self.navigationController?.popToRootViewController(animated: true)

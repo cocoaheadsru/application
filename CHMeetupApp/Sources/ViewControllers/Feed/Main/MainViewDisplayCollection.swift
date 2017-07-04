@@ -86,7 +86,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
     case .collectionIsEmpty:
       return ActionTableViewCellModel(action: ActionPlainObject(text:
-        "Будущие события скоро появятся, и вы будете первыми, кто про это узнает!".localized
+        "Будущие события скоро появятся, и вы будете первым, кто про это узнает!".localized
       ))
     }
   }

@@ -69,7 +69,7 @@ class ActionCellConfigurationController {
     switch  type {
     case .reminders:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Включите напоминания, чтобы не пропустить событие".localized,
+        actionPlainObject = ActionPlainObject(text: "Подключите напоминания, чтобы не пропустить события".localized,
                                               imageName: "img_icon_reminders", action: {
                                               self.requireAccess(from: viewController, to: type,
                                                                  with: {
@@ -80,7 +80,7 @@ class ActionCellConfigurationController {
       }
     case .calendar:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Включите календарь, чтобы не пропустить событие".localized,
+        actionPlainObject = ActionPlainObject(text: "Подключите календарь, чтобы синхронизировать события".localized,
                                               imageName: "img_icon_calendar", action: {
                                                 self.requireAccess(from: viewController, to: type,
                                                                    with: {

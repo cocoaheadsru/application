@@ -32,7 +32,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
       case .waiting:
         return "Ожидайте подтверждения".localized
       case .rejected:
-        return "Жаль, заявка отклонена".localized
+        return "К сожалению, заявка отклонена".localized
       case .approved:
         return "Заявка одобрена. Ждём вас!".localized
       case .canRegister:
