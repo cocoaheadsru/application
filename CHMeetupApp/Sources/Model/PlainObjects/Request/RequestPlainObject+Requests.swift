@@ -74,9 +74,18 @@ extension RequestPlainObject {
       var params = Constants.Server.baseParams
       params["push_token"] = pushToken
 
-      return Request(query: "/user/register_push",
+      return Request(query: "user/register_push",
                      method: .post,
                      params: params)
+    }
+
+    static func updatePhoto(photo: Data) -> Request<RequestPlainObject> {
+        var params = Constants.Server.baseParams
+        params["photo"] = photo.base64EncodedString()
+
+        return Request(query: "user/update_photo",
+                       method: .post,
+                       params: params)
     }
   }
 }
