@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
@@ -34,6 +35,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     case userEditableField
   }
 
+  fileprivate var photoCell: ChooseProfilePhotoTableViewCell!
   fileprivate var sections: [Type] = [.userHeader, .userEditableField]
 
   var user: UserEntity! {
@@ -126,6 +128,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
 extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate {
   func chooseProfilePhotoCellDidPressOnPhoto(_ cell: ChooseProfilePhotoTableViewCell) {
+    photoCell = cell
     let viewController = delegate?.getViewController()
     if let viewController = viewController as? ProfileEditViewController {
       PermissionsManager.requireAccess(from: viewController, to: .photosLibrary,
@@ -143,7 +146,22 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
   }
 
   func changeCheckedImage(image: UIImage) {
-    // TODO: - Load image
+    // TODO: - Give ability to cancel request
+    let data = UIImagePNGRepresentation(image)
+    if let data = data {
+      let updateRequest = RequestPlainObject.Requests.updatePhoto(photo: data)
+      SVProgressHUD.show()
+      Server.standard.request(updateRequest) { response, _ in
+        if let success = response?.success, success == true {
+          let token = (UserPreferencesEntity.value.currentUser?.token)!
+          ProfileController.updateUser(withToken: token, completion: { _ in })
+          self.photoCell.mainButton.photoImageView?.image = image
+        }
+        SVProgressHUD.dismiss()
+      }
+    } else {
+      assertionFailure("Image can't be parsed to data")
+    }
   }
 
   func headerHeight(for section: Int) -> CGFloat {
