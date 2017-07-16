@@ -17,12 +17,13 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case approved
     case canRegister
     case unknown
+    case loading
 
     var allowRegister: Bool {
       switch self {
       case .canRegister:
         return true
-      case .waiting, .rejected, .approved, .unknown:
+      case .waiting, .rejected, .approved, .unknown, .loading:
         return false
       }
     }
@@ -39,6 +40,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
         return "Я пойду".localized
       case .unknown:
         return "Нет статуса".localized
+      case .loading:
+        return "Загрузка статуса".localized
       }
     }
   }
@@ -81,6 +84,10 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     return isRegistrationOpen && status != .unknown
   }
 
+  var isUpcomingEvent: Bool {
+    return startDate.timeIntervalSince1970 > Date().timeIntervalSince1970
+  }
+
   let speeches = List<SpeechEntity>()
   let speakerPhotosURLs = List<StringContainerEntity>()
 
@@ -93,8 +100,23 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   static func resetEntitiesStatus() {
-    for entity in mainRealm.objects(EventEntity.self) {
-      entity.status = EventRegistrationStatus.unknown
+    realmWrite {
+      for entity in mainRealm.objects(EventEntity.self) {
+        if entity.isUpcomingEvent {
+          entity.status = .loading
+        } else {
+          entity.status = .unknown
+        }
+      }
+    }
+  }
+
+  static func resetLoadingEntitiesStatus() {
+    realmWrite {
+      for entity in mainRealm.objects(EventEntity.self)
+        where entity.status == .loading {
+        entity.status = .unknown
+      }
     }
   }
 }
