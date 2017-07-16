@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     // Seems that it's the most optimal way to swizzle, without adding Obj-c code into project
     SwizzlingController.swizzleMethods()
 
-    UIApplication.shared.registerForRemoteNotifications()
+    application.registerForRemoteNotifications()
+
     return true
   }
 
