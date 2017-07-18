@@ -79,6 +79,7 @@ fileprivate extension MainViewController {
   func fetchEvents() {
     displayCollection.modelCollection.isLoading = true
     EventFetching.fetchElements(request: EventPlainObject.Requests.list, completion: { [weak self] in
+      EventEntity.resetLoadingEntitiesStatus()
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
