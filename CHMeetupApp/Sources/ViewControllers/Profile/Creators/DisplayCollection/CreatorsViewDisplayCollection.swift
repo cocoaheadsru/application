@@ -20,44 +20,34 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
                                    templatesCount: Constants.TemplatesCounts.creators)
   }()
 
-  private var creatorsCollection: DataModelCollection<CreatorEntity> = {
-    return DataModelCollection(type: CreatorEntity.self)
+  private var activeCreatorsCollection: DataModelCollection<CreatorEntity> = {
+    let creators = DataModelCollection(type: CreatorEntity.self)
+    return creators.filtered("isActive == 1")
   }()
 
-  private enum CreatorsType {
-    case active(DataModelCollection<CreatorEntity>)
-    case nonActive(DataModelCollection<CreatorEntity>)
-
-    var collection: DataModelCollection<CreatorEntity> {
-      switch self {
-      case .active(let creators):
-        let predicate = NSPredicate(format: "isActive = 1")
-        return creators.filtered(predicate)
-      case .nonActive(let creators):
-        let predicate = NSPredicate(format: "isActive = 0")
-        return creators.filtered(predicate)
-      }
-    }
-  }
+  private var inactiveCreatorsCollection: DataModelCollection<CreatorEntity> = {
+    let creators = DataModelCollection(type: CreatorEntity.self)
+    return creators.filtered("isActive == 0")
+  }()
 
   private enum `Type` {
     case active
-    case nonActive
+    case inactive
   }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
-  private var sections: [Type] = [.active, .nonActive]
+  private var sections: [Type] = [.active, .inactive]
 
   var numberOfSections: Int {
-    return CreatorsType.nonActive(creatorsCollection).collection.count > 0 ? 2 : 1
+    return 2
   }
 
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
     case .active:
-      return CreatorsType.active(creatorsCollection).collection.count
-    case .nonActive:
-      return CreatorsType.nonActive(creatorsCollection).collection.count
+      return activeCreatorsCollection.count
+    case .inactive:
+      return inactiveCreatorsCollection.count
     }
   }
 
@@ -66,6 +56,11 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
       assertionFailure("Subscribe to this delegate")
       return 0
     }
+
+    if numberOfRows(in: section) == 0 {
+      return 0
+    }
+
     let insets = DefaultTableHeaderView.titleInsets
     let title = headerTitle(for: section)
     let width = delegate.getTableViewSize().width - insets.left - insets.right
@@ -77,7 +72,7 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     switch sections[section] {
     case .active:
       return "Активные".localized
-    case .nonActive:
+    case .inactive:
       return "Не активные".localized
     }
   }
@@ -85,9 +80,9 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   func model(for indexPath: IndexPath) -> CellViewAnyModelType {
     switch sections[indexPath.section] {
     case .active:
-      return CreatorTableViewCellModel(entity: CreatorsType.active(creatorsCollection).collection[indexPath.row])
-    case .nonActive:
-      return CreatorTableViewCellModel(entity: CreatorsType.nonActive(creatorsCollection).collection[indexPath.row])
+      return CreatorTableViewCellModel(entity: activeCreatorsCollection[indexPath.row])
+    case .inactive:
+      return CreatorTableViewCellModel(entity: inactiveCreatorsCollection[indexPath.row])
     }
   }
 
@@ -95,9 +90,9 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     var model = CreatorEntity()
     switch sections[indexPath.section] {
     case .active:
-      model = CreatorsType.active(creatorsCollection).collection[indexPath.row]
-    case .nonActive:
-      model = CreatorsType.nonActive(creatorsCollection).collection[indexPath.row]
+      model = activeCreatorsCollection[indexPath.row]
+    case .inactive:
+      model = inactiveCreatorsCollection[indexPath.row]
     }
     let viewController = Storyboards.Profile.instantiateCreatorDetailViewController()
     viewController.creatorId = model.id
