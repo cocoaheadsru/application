@@ -87,7 +87,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   var isUpcomingEvent: Bool {
-    return startDate.timeIntervalSince1970 > Date().timeIntervalSince1970
+    return endDate.timeIntervalSince1970 > Date().timeIntervalSince1970
   }
 
   let speeches = List<SpeechEntity>()
@@ -103,7 +103,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
 
   static func resetEntitiesStatus() {
     realmWrite {
-      // Because our isUpcomingEvent always show status button we want to show loading state before we would load any events from server
+      // Because our isUpcomingEvent always show status button we want
+      // to show loading state before we would load any events from server
       for entity in mainRealm.objects(EventEntity.self) {
         if entity.isUpcomingEvent {
           entity.status = .loading
@@ -114,7 +115,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
-  // After upcomming events loading we want to reset status of NON updated objects to unknow (for example not internet connection)
+  // After upcomming events loading we want to reset status of NON updated 
+  // objects to unknow (for example not internet connection)
   // This one should be improved in future, when we would have > 1 VC for upcomming events or would implement deep links
   static func resetLoadingEntitiesStatus() {
     realmWrite {
