@@ -18,12 +18,13 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case canRegister
     case unknown
     case loading
+    case registrationClosed
 
     var allowRegister: Bool {
       switch self {
       case .canRegister:
         return true
-      case .waiting, .rejected, .approved, .unknown, .loading:
+      case .waiting, .rejected, .approved, .unknown, .loading, .registrationClosed:
         return false
       }
     }
@@ -42,6 +43,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
         return "Нет статуса".localized
       case .loading:
         return "Загрузка статуса".localized
+      case .registrationClosed:
+        return "Регистрация закрыта".localized
       }
     }
   }
@@ -69,7 +72,6 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   dynamic var place: PlaceEntity?
-  dynamic var isRegistrationOpen: Bool = false
 
   var importingState: ImportingStateEntity {
     if let importingState = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {
@@ -81,7 +83,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   var shouldShowRegistrationStatus: Bool {
-    return isRegistrationOpen && status != .unknown
+    return isUpcomingEvent
   }
 
   var isUpcomingEvent: Bool {
@@ -101,6 +103,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
 
   static func resetEntitiesStatus() {
     realmWrite {
+      // Because our isUpcomingEvent always show status button we want to show loading state before we would load any events from server
       for entity in mainRealm.objects(EventEntity.self) {
         if entity.isUpcomingEvent {
           entity.status = .loading
@@ -111,6 +114,8 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
+  // After upcomming events loading we want to reset status of NON updated objects to unknow (for example not internet connection)
+  // This one should be improved in future, when we would have > 1 VC for upcomming events or would implement deep links
   static func resetLoadingEntitiesStatus() {
     realmWrite {
       for entity in mainRealm.objects(EventEntity.self)
@@ -134,7 +139,6 @@ extension EventEntity {
     entity.photoURL = "https://avatars.mds.yandex.net/get-yaevents/194464/552b2574b7b911e6afd30025909419be/320x240"
     entity.place = PlaceEntity.templateEntity
     entity.statusValue = EventEntity.EventRegistrationStatus.unknown.rawValue
-    entity.isRegistrationOpen = false
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.isTemplate = true
     return entity
