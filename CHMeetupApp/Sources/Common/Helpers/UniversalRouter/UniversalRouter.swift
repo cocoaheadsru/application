@@ -9,9 +9,17 @@
 import UIKit
 
 final class UniversalRouter {
-  var mainWindow: UIWindow!
-  var tabBarController: UITabBarController!
+  var mainWindow: UIWindow?
 
+  init(with window: UIWindow?) {
+    mainWindow = window
+  }
+
+  var tabBarController: CHMeetupApp.TabBarViewController? {
+    return mainWindow?.rootViewController as? CHMeetupApp.TabBarViewController
+  }
+
+  //
   enum TabbarSection {
     case anonses
     case pastEvents
@@ -19,7 +27,17 @@ final class UniversalRouter {
   }
 
   func activate(section: TabbarSection) {
-    self.tabBarController.selectedIndex = section.hashValue
+    self.tabBarController?.selectedIndex = section.hashValue
   }
 
+  func updateAnonseStatus(`for` eventId: Int, status: String) {
+    let status = EventEntity.EventRegistrationStatus(rawValue: status)
+    let anonses = viewController(for: .anonses) as? MainViewController
+    anonses?.updateStateFor(event: eventId, status: status ?? .unknown)
+  }
+
+  private func viewController(`for` section: TabbarSection) -> UIViewController? {
+    let navigationVC = self.tabBarController?.viewControllers?[TabbarSection.anonses.hashValue] as? UINavigationController
+    return navigationVC?.viewControllers.first
+  }
 }
