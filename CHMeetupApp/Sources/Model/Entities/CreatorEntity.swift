@@ -17,7 +17,7 @@ final class CreatorEntity: TemplatableObject, TemplateEntity {
 
   dynamic var url: String?
   dynamic var photoURL: String?
-  dynamic var isActive: Int = 0
+  dynamic var isActive: Bool = false
 
   override static func primaryKey() -> String? {
     return "id"
@@ -36,7 +36,7 @@ final class CreatorEntity: TemplatableObject, TemplateEntity {
       entity.url <= urls.rand
       entity.photoURL <= urls.rand
       entity.isTemplate = true
-      entity.isActive = 0
+      entity.isActive = false
 
       return entity
     }

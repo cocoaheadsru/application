@@ -26,7 +26,7 @@ extension CreatorPlainObject {
     guard
       let id = json["id"] as? Int,
       let name = json["name"] as? String,
-      let isActive = json["active"] as? Int
+      let isActive = json["active"] as? Bool
       else { return nil }
 
     self.id = id
