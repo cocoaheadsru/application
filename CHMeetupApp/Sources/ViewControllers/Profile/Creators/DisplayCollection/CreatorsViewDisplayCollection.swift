@@ -39,7 +39,7 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   private var sections: [Type] = [.active, .inactive]
 
   var numberOfSections: Int {
-    return 2
+    return sections.count
   }
 
   func numberOfRows(in section: Int) -> Int {
@@ -73,7 +73,7 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     case .active:
       return "Активные".localized
     case .inactive:
-      return "Не активные".localized
+      return "Неактивные".localized
     }
   }
 
@@ -87,7 +87,7 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    var model = CreatorEntity()
+    var model: CreatorEntity
     switch sections[indexPath.section] {
     case .active:
       model = activeCreatorsCollection[indexPath.row]
