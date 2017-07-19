@@ -21,7 +21,7 @@ final class PushHandler {
   }
 
   func handle(data: PushSequence, via router: UniversalRouter) {
-    router = router
+    self.router = router
     let actionType = determinateAction(from: data)
 
     switch actionType {
@@ -55,8 +55,8 @@ final class PushHandler {
     guard
       let eventId = data["eventId"] as? Int,
       let status = data["status"] as? String else { return }
-    router.activate(section: .anonses)
-    router.updateAnonseStatus(for: eventId, status: status)
+    router?.activate(section: .anonses)
+    router?.updateAnonseStatus(for: eventId, status: status)
   }
 
 }
