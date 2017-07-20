@@ -76,6 +76,10 @@
 	<string>Это нужно чтобы поменять аватарку</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

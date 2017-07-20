@@ -114,7 +114,7 @@ class Server {
         return
       }
 
-      #if DEBUG
+      #if DEBUG_NETWORK_INTERACTION
       let responseString = String(data: data, encoding: .utf8) ?? ""
       print("Query: \(query.absoluteString)\nResponse: \n\(responseString)\n---------")
       #endif

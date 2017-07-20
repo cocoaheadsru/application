@@ -140,6 +140,8 @@
 		7DB4F5C21F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */; };
 		7DB4F5C31F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */; };
 		7DB4F5C41F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */; };
+		7DBF22531F1D37920048862C /* UniversalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF22521F1D37920048862C /* UniversalRouter.swift */; };
+		7DBF22681F1E32C60048862C /* PushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF22671F1E32C60048862C /* PushHandler.swift */; };
 		7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */; };
 		7DDDB7691E7D15AD002C5ECE /* Bundle+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */; };
 		7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */; };
@@ -421,6 +423,8 @@
 		7DB4F5BC1F0B0C8B00068CBF /* CreatorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7DB4F5BD1F0B0C8B00068CBF /* CreatorInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatorInfoTableViewCell.xib; sourceTree = "<group>"; };
 		7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorInfoTableViewCellModel.swift; sourceTree = "<group>"; };
+		7DBF22521F1D37920048862C /* UniversalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalRouter.swift; sourceTree = "<group>"; };
+		7DBF22671F1E32C60048862C /* PushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHandler.swift; sourceTree = "<group>"; };
 		7DC09A701E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollectionDelegate.swift; sourceTree = "<group>"; };
 		7DDDB7681E7D15AD002C5ECE /* Bundle+Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Locale.swift"; sourceTree = "<group>"; };
 		7DE942061E86760C00E7E9E6 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
@@ -907,6 +911,8 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7DBF22661F1E32C60048862C /* PushHandler */,
+				7DBF22511F1D37840048862C /* UniversalRouter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
 				F718C0311E966B01008B3C0B /* ImageLoader */,
 				030764A81E95658800743690 /* AttributedStringHelper */,
@@ -1500,6 +1506,22 @@
 				7DB4F5BE1F0B0C8B00068CBF /* CreatorInfoTableViewCellModel.swift */,
 			);
 			path = CreatorInfo;
+			sourceTree = "<group>";
+		};
+		7DBF22511F1D37840048862C /* UniversalRouter */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF22521F1D37920048862C /* UniversalRouter.swift */,
+			);
+			path = UniversalRouter;
+			sourceTree = "<group>";
+		};
+		7DBF22661F1E32C60048862C /* PushHandler */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF22671F1E32C60048862C /* PushHandler.swift */,
+			);
+			path = PushHandler;
 			sourceTree = "<group>";
 		};
 		7DDDB7671E7D15AD002C5ECE /* Bundle */ = {
@@ -2153,6 +2175,9 @@
 						DevelopmentTeam = 4PGW4G9V2Y;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -2343,6 +2368,7 @@
 				8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */,
 				F718BFB71E942C27008B3C0B /* OptionalOperator.swift in Sources */,
 				8ACCB3CF1E7EC5AE00D62E5D /* TranslationPlainObjectProtocol.swift in Sources */,
+				7DBF22531F1D37920048862C /* UniversalRouter.swift in Sources */,
 				7DE9420A1E867AB200E7E9E6 /* AuthServiceFacade.swift in Sources */,
 				324141AD1EB508C5002E98C0 /* CreatorPlainObjectTranslation.swift in Sources */,
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
@@ -2448,6 +2474,7 @@
 				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
+				7DBF22681F1E32C60048862C /* PushHandler.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
 				4D8851021E9F8FC400A49ADD /* PushNotificationsController.swift in Sources */,
@@ -2638,6 +2665,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"DEBUG_NETWORK_INTERACTION=1",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
