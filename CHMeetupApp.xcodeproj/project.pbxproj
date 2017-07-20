@@ -1480,8 +1480,8 @@
 		7DAC863C1EA8220B00437283 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */,
 				7DAC863D1EA8220B00437283 /* CreatorsTableViewCellModel.swift */,
+				7DAC86411EA8223100437283 /* CreatorTableViewCell.xib */,
 				7DAC863E1EA8220B00437283 /* CreatorTableViewCell.swift */,
 			);
 			name = Cell;
