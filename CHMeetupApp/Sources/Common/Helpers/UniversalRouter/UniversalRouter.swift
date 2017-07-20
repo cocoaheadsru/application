@@ -10,14 +10,17 @@ import UIKit
 
 final class UniversalRouter {
   private var mainWindow: UIWindow?
+  private var tabBarController: TabBarViewController!
 
   init(with window: UIWindow?) {
     mainWindow = window
+
+    guard let rootController = mainWindow?.rootViewController as? TabBarViewController else {
+      fatalError("RootViewController should be TabBarViewController")
+    }
+    tabBarController = rootController
   }
 
-  var tabBarController: CHMeetupApp.TabBarViewController? {
-    return mainWindow?.rootViewController as? CHMeetupApp.TabBarViewController
-  }
 
   // Tab bar section 
   // By default, enum sets the first case 0
@@ -29,7 +32,7 @@ final class UniversalRouter {
   }
 
   func activate(section: TabBarSection) {
-    self.tabBarController?.selectedIndex = section.hashValue
+    self.tabBarController.selectedIndex = section.hashValue
   }
 
   func updateAnonseStatus(`for` eventId: Int, status: String) {
@@ -40,7 +43,7 @@ final class UniversalRouter {
 
   private func viewController(for section: TabBarSection) -> UIViewController? {
     // swiftlint:disable:next line_length
-    let navigationVC = self.tabBarController?.viewControllers?[TabBarSection.anonses.hashValue] as? UINavigationController
+    let navigationVC = self.tabBarController.viewControllers?[section.hashValue] as? UINavigationController
     return navigationVC?.viewControllers.first
   }
 }

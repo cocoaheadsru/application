@@ -114,10 +114,11 @@ class Server {
         return
       }
 
-      #if DEBUG
+      #if DEBUG_NETWORK_INTERACTION
       let responseString = String(data: data, encoding: .utf8) ?? ""
       print("\n---------\nQuery: \(query.absoluteString)\n Response: \n\(responseString)\n---------")
       #endif
+
       let jsonObject = try? JSONSerialization.jsonObject(with: data, options: [])
 
       OperationQueue.main.addOperation {

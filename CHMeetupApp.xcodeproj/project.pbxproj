@@ -2666,6 +2666,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"DEBUG_NETWORK_INTERACTION=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
