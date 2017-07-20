@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
@@ -16,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+    Fabric.with([Crashlytics.self])
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
     // Seems that it's the most optimal way to swizzle, without adding Obj-c code into project
