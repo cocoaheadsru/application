@@ -143,7 +143,10 @@ class EventPreviewDisplayCollection: DisplayCollection {
     case .speaches:
       return speeches.count
     case .additionalCells:
-      return event != nil ? actionPlainObjects.count : 0
+      if let event = event, event.isUpcomingEvent {
+        return actionPlainObjects.count
+      }
+      return 0
     }
   }
 
