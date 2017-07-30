@@ -14,25 +14,26 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
     return [CreatorTableViewCellModel.self]
   }
 
-  var creators: TemplateModelCollection<CreatorEntity> = {
-    let dataCollection = DataModelCollection(type: CreatorEntity.self)
-    return TemplateModelCollection(dataCollection: dataCollection,
-                                   templatesCount: Constants.TemplatesCounts.creators)
+  var activeCreatorsCollection: TemplateModelCollection<CreatorEntity> = {
+    let dataCollection = DataModelCollection(type: CreatorEntity.self).filtered("isActive == 1")
+    return TemplateModelCollection(dataCollection: dataCollection)
   }()
 
-  private var activeCreatorsCollection: DataModelCollection<CreatorEntity> = {
-    let creators = DataModelCollection(type: CreatorEntity.self)
-    return creators.filtered("isActive == 1")
-  }()
-
-  private var inactiveCreatorsCollection: DataModelCollection<CreatorEntity> = {
-    let creators = DataModelCollection(type: CreatorEntity.self)
-    return creators.filtered("isActive == 0")
+  var inactiveCreatorsCollection: TemplateModelCollection<CreatorEntity> = {
+    let dataCollection = DataModelCollection(type: CreatorEntity.self).filtered("isActive == 0")
+    return TemplateModelCollection(dataCollection: dataCollection)
   }()
 
   private enum `Type` {
     case active
     case inactive
+  }
+
+  var isLoading: Bool = true {
+    didSet {
+      activeCreatorsCollection.isLoading = isLoading
+      inactiveCreatorsCollection.isLoading = isLoading
+    }
   }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
@@ -87,6 +88,9 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
+    if activeCreatorsCollection[indexPath.row].isTemplate || inactiveCreatorsCollection[indexPath.row].isTemplate {
+      return
+    }
     var model: CreatorEntity
     switch sections[indexPath.section] {
     case .active:
