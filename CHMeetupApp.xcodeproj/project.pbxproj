@@ -1915,7 +1915,9 @@
 				9F6048961E5B3CCB00C414C3 /* Products */,
 				8A6268271E60742B00D51BEB /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		9F6048961E5B3CCB00C414C3 /* Products */ = {
 			isa = PBXGroup;
