@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController, DisplayCollectionWithTableViewDelegate {
 
-  var currentUserId: Int? = -1
+  private var userActiveState: Bool = false
 
   @IBOutlet var tableView: UITableView! {
     didSet {
@@ -27,7 +27,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     displayCollection.updateActionCellsSection(on: self, with: tableView)
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
-
+    setCurrentState()
+    fetchEvents()
     title = "CocoaHeads Russia".localized
     // Do any additional setup after loading the view.
   }
@@ -36,9 +37,9 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if currentUserId != UserPreferencesEntity.value.currentUser?.remoteId {
+    if LoginProcessController.isLogin != userActiveState {
       fetchEvents()
-      currentUserId = UserPreferencesEntity.value.currentUser?.remoteId
+      setCurrentState()
     }
   }
 
@@ -57,6 +58,10 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
       event?.status = status
     }
     updateUI()
+  }
+
+  private func setCurrentState() {
+    userActiveState = LoginProcessController.isLogin
   }
 }
 
