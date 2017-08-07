@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarItemView: CustomTabBarItemView {
+class TabBarItemView: AZTabBarItemView {
 
   @IBOutlet var imageView: UIImageView!
   @IBOutlet var titleLabel: UILabel! {

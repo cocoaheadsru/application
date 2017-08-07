@@ -39,7 +39,7 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     }
   }
 
-  override func customTabBarItemContentView() -> CustomTabBarItemView {
+  override func az_tabBarItemContentView() -> AZTabBarItemView {
     return TabBarItemView.create(with: .past)
   }
 

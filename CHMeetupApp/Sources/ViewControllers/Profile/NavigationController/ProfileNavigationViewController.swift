@@ -39,7 +39,7 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     }
   }
 
-  override func customTabBarItemContentView() -> CustomTabBarItemView {
+  override func az_tabBarItemContentView() -> AZTabBarItemView {
     return TabBarItemView.create(with: .profile)
   }
 }
