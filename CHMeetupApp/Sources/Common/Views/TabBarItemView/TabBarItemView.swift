@@ -17,6 +17,10 @@ class TabBarItemView: AZTabBarItemView {
     }
   }
 
+  override var accessibilityTitle: String {
+    return titleLabel.text ?? super.accessibilityTitle
+  }
+
   enum `Type` {
     case main
     case past
