@@ -1,7 +1,7 @@
 excluded: # paths to ignore during linting.
   - Carthage
   - CHMeetupApp/Resources/Storyboards
-  - CHMeetupApp/Sources/ViewControllers/Base/CustomTabBarController.swift
+  - CHMeetupApp/Sources/ViewControllers/Base/AZTabBarController.swift
 
 identifier_name:
   min_length: 2
