@@ -99,6 +99,11 @@ class Server {
       return
     }
     var sessionRequest = URLRequest(url: query)
+    var params = Constants.Server.baseParams
+
+    if let requestParams = request.params {
+      params += requestParams
+    }
 
     sessionRequest.httpMethod = request.method.string
     sessionRequest.httpBody = request.params?.httpQuery

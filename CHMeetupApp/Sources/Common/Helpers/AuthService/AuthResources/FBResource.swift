@@ -16,7 +16,7 @@ final class FBResource: SocialResource {
 
   var authURL: URL? {
     var authString = "https://www.facebook.com/v2.8/dialog/oauth?client_id=\(Constants.Facebook.clientId)"
-    authString += "&redirect_uri=\(Constants.Facebook.redirect)"
+    authString += "&redirect_uri=\(Constants.Facebook.redirect)&scope=\(Constants.Facebook.scope)"
     return URL(string: authString)
   }
 
