@@ -22,14 +22,13 @@ class ActionCellConfigurationController {
                                           .reminder: event.importingState.reminderIdentifier != nil]
 
     if let permission = importToPermission[importType] {
-      if let state = isImported[importType], state == true {
-        if Importer.isEventInStorage(event: event, type: importType) {
+      let isEventInStorage = Importer.isEventInStorage(event: event, type: importType)
+      if let state = isImported[importType], state == false || !isEventInStorage {
         return addActionCell(on: viewController, for: permission, with: {
           ImporterHelper.importToSave(event: event, to: importType, from: viewController) {
             additionalAction?()
           }
         })
-        }
       }
     } else {
       assertionFailure("No such permission")
@@ -73,10 +72,10 @@ class ActionCellConfigurationController {
       if !PermissionsManager.isAllowed(type: type) {
         actionPlainObject = ActionPlainObject(text: "Подключите напоминания, чтобы не пропустить события".localized,
                                               imageName: "img_icon_reminders", action: {
-                                              self.requireAccess(from: viewController, to: type,
-                                                                 with: {
-                                                                  additionalAction?()
-                                              })
+                                                self.requireAccess(from: viewController, to: type,
+                                                                   with: {
+                                                                    additionalAction?()
+                                                })
         })
         return actionPlainObject
       }
@@ -109,14 +108,14 @@ class ActionCellConfigurationController {
 
   private func requireAccess(from viewController: UIViewController,
                              to type: PermissionsType, with action: Action?) {
-      PermissionsManager.requireAccess(from: viewController,
-                                       to: type, completion: { success in
-                                        if success {
-                                          DispatchQueue.main.async {
-                                            action?()
-                                          }
+    PermissionsManager.requireAccess(from: viewController,
+                                     to: type, completion: { success in
+                                      if success {
+                                        DispatchQueue.main.async {
+                                          action?()
                                         }
-      })
+                                      }
+    })
   }
 
   private func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
