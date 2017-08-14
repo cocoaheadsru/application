@@ -60,18 +60,15 @@ extension RequestPlainObject {
                            description: String,
                            userId: Int,
                            token: String) -> Request<RequestPlainObject> {
-      var params = Constants.Server.baseParams
-      params["title"] = title
-      params["description"] = description
+      let params = ["title": title, "description": description]
 
       return Request(query: "user/givespeech",
-                                         method: .post,
-                                         params: params)
+                     method: .post,
+                     params: params)
     }
 
     static func registerPush(pushToken: String) -> Request<RequestPlainObject> {
-      var params = Constants.Server.baseParams
-      params["push_token"] = pushToken
+      let params = ["push_token": pushToken]
 
       return Request(query: "user/register_push",
                      method: .post,
@@ -79,12 +76,11 @@ extension RequestPlainObject {
     }
 
     static func updatePhoto(photo: Data) -> Request<RequestPlainObject> {
-        var params = Constants.Server.baseParams
-        params["photo"] = photo.base64EncodedString()
+      let params = ["photo": photo.base64EncodedString()]
 
-        return Request(query: "user/update_photo",
-                       method: .post,
-                       params: params)
+      return Request(query: "user/update_photo",
+                     method: .post,
+                     params: params)
     }
   }
 }

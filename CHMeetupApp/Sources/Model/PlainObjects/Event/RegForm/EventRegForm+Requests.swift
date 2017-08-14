@@ -12,13 +12,11 @@ extension EventRegFormPlainObject: PlainObjectType {
 
   struct Requests {
     static func form(with id: Int) -> Request<EventRegFormPlainObject> {
-      let params = Constants.Server.baseParams
-      return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)", method: .post, params: params)
+      return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)", method: .post)
     }
 
     static func registration(with formData: FormData) -> Request<RequestPlainObject> {
-      var registration = Constants.Server.baseParams
-      registration["form"] = "\(formData.id)"
+      var registration = ["form": "\(formData.id)"]
 
       for section in formData.sections {
         if let selectedAnswer = section.selectedAnswer, !selectedAnswer.isEmpty {
