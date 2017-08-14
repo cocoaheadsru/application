@@ -129,6 +129,7 @@
 		7D3F9DB61EBAEC0700BC6ABD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */; };
 		7D3F9DB81EBAFED900BC6ABD /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */; };
 		7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */; };
+		7D48FCEC1F41671C00D39D66 /* Dictionary+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D48FCEB1F41671C00D39D66 /* Dictionary+Operations.swift */; };
 		7D95EF061F2130540032DA3D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D95EF041F2130540032DA3D /* Fabric.framework */; };
 		7D95EF071F2130540032DA3D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D95EF051F2130540032DA3D /* Crashlytics.framework */; };
 		7DAC86331EA8168A00437283 /* GiveSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC86321EA8168A00437283 /* GiveSpeechController.swift */; };
@@ -414,6 +415,7 @@
 		7D3F9DB51EBAEC0700BC6ABD /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		7D3F9DB71EBAFED900BC6ABD /* String+URLEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+URLEncoding.swift"; sourceTree = "<group>"; };
 		7D3F9DD11EBF2CE000BC6ABD /* UITableView+ShakeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ShakeRow.swift"; sourceTree = "<group>"; };
+		7D48FCEB1F41671C00D39D66 /* Dictionary+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operations.swift"; sourceTree = "<group>"; };
 		7D95EF041F2130540032DA3D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		7D95EF051F2130540032DA3D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7DAC86321EA8168A00437283 /* GiveSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSpeechController.swift; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 			isa = PBXGroup;
 			children = (
 				2231A53A1E60E5180069A179 /* Dictionary+HTTPBody.swift */,
+				7D48FCEB1F41671C00D39D66 /* Dictionary+Operations.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -2440,6 +2443,7 @@
 				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
 				F718C0331E966B58008B3C0B /* KingfisherImageLoader.swift in Sources */,
 				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
+				7D48FCEC1F41671C00D39D66 /* Dictionary+Operations.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
 				8A6A569E1EB7FD89008BEDF9 /* TextSizeHelper.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,

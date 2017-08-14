@@ -18,19 +18,26 @@ final class Constants {
   static let supportEmail = "support@cocoaheads.ru"
 
   struct Server {
-    static var baseParams: [String: String] {
-      return ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+    static var baseParams: RequestParams {
+      var baseParams = ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+
+      #if DEBUG
+        baseParams["debug"] = "1"
+      #endif
+
+      return baseParams
     }
   }
 
   struct Vkontakte {
     static let clientId = "5895589"
-    static let scope = "wall,email,offline,nohttps"
+    static let scope = "email,offline,nohttps"
     static let redirect = "vk\(clientId)://authorize"
   }
 
   struct Facebook {
     static let clientId = "1863830253895861"
+    static let scope = "email"
     static let redirect = "fb\(clientId)://authorize"
   }
 

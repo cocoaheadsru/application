@@ -12,11 +12,11 @@ extension EventRegFormPlainObject: PlainObjectType {
 
   struct Requests {
     static func form(with id: Int) -> Request<EventRegFormPlainObject> {
-      return Request<EventRegFormPlainObject>(query: "event/form/\(id)", method: .get)
+      return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)", method: .post)
     }
 
     static func registration(with formData: FormData) -> Request<RequestPlainObject> {
-      var registration: [String: String] = ["form": "\(formData.id)"]
+      var registration = ["form": "\(formData.id)"]
 
       for section in formData.sections {
         if let selectedAnswer = section.selectedAnswer, !selectedAnswer.isEmpty {
@@ -24,11 +24,6 @@ extension EventRegFormPlainObject: PlainObjectType {
         }
       }
 
-      guard let token = UserPreferencesEntity.value.currentUser?.token else {
-        fatalError("Token not found. You have to login")
-      }
-
-      registration["token"] = token
       return Request<RequestPlainObject>(query: "event/registration", method: .post, params: registration)
     }
   }
