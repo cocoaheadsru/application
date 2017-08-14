@@ -99,9 +99,14 @@ class Server {
       return
     }
     var sessionRequest = URLRequest(url: query)
+    var params = Constants.Server.baseParams
+
+    if let requestParams = request.params {
+      params += requestParams
+    }
 
     sessionRequest.httpMethod = request.method.string
-    sessionRequest.httpBody = request.params?.httpQuery
+    sessionRequest.httpBody = params.httpQuery
     let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
       guard error == nil else {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")

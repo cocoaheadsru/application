@@ -13,13 +13,13 @@ extension EventPlainObject: PlainObjectType {
   struct Requests {
     // Events list
     static var list: Request<[EventPlainObject]> {
-      return Request(query: "events/index", method: .post, params: Constants.Server.baseParams)
+      return Request(query: "events/index", method: .post)
     }
 
     // Past events list
     static var pastList: Request<[EventPlainObject]> {
 
-      return Request(query: "events/past", method: .post, params: Constants.Server.baseParams)
+      return Request(query: "events/past", method: .post)
     }
 
     // Event speakers list
