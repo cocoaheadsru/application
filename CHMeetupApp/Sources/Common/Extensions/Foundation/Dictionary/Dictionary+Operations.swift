@@ -10,7 +10,7 @@ import Foundation
 
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
 
-  static func += ( lhs: inout [Key: Value], rhs: [Key: Value]) {
+  static func += (lhs: inout [Key: Value], rhs: [Key: Value]) {
     rhs.forEach {
       lhs[$0] = $1
     }
