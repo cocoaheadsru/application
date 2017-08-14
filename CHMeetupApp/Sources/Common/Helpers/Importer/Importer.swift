@@ -42,8 +42,7 @@ class Importer {
       guard let calendarIdentifier = event.importingState.calendarIdentifier else { return false }
       return self.calendarEventStore.event(withIdentifier: calendarIdentifier) != nil
     case .reminder:
-      guard let reminderIdentifier = event.importingState.reminderIdentifier else { return false }
-      return self.remindersEventStore.event(withIdentifier: reminderIdentifier) != nil
+      return event.importingState.reminderIdentifier != nil
     }
   }
 
@@ -83,7 +82,7 @@ class Importer {
 
     do {
       try self.calendarEventStore.save(calendarEvent, span: .thisEvent)
-      completion(.success(identifier: calendarEvent.eventIdentifier as String))
+      completion(.success(identifier: calendarEvent.eventIdentifier))
     } catch {
       print("Event Store save error: \(error), event: \(calendarEvent)")
       completion(.saveError(error: error))
