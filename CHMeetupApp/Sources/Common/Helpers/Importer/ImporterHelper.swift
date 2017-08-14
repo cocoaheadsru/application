@@ -20,14 +20,14 @@ class ImporterHelper {
         }
 
         switch result {
-        case .success:
+        case let .success(identifier):
           viewController.showMessageAlert(title: "Событие успешно добавлено".localized)
           realmWrite {
             switch type {
             case .calendar:
-              event.importingState.toCalendar = true
+              event.importingState.calendarIdentifier = identifier
             case .reminder:
-              event.importingState.toReminder = true
+              event.importingState.reminderIdentifier = identifier
             }
           }
         case .permissionError:

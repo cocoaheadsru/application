@@ -18,16 +18,18 @@ class ActionCellConfigurationController {
                           with additionalAction: Action? = nil) -> ActionPlainObject? {
     let importToPermission: [ImportType: PermissionsType] = [.calendar: .calendar,
                                                              .reminder: .reminders]
-    let isImported: [ImportType: Bool] = [.calendar: event.importingState.toCalendar,
-                                          .reminder: event.importingState.toReminder]
+    let isImported: [ImportType: Bool] = [.calendar: event.importingState.calendarIdentifier != nil,
+                                          .reminder: event.importingState.reminderIdentifier != nil]
 
     if let permission = importToPermission[importType] {
-      if let state = isImported[importType], state == false {
+      if let state = isImported[importType], state == true {
+        if Importer.isEventInStorage(event: event, type: importType) {
         return addActionCell(on: viewController, for: permission, with: {
           ImporterHelper.importToSave(event: event, to: importType, from: viewController) {
             additionalAction?()
           }
         })
+        }
       }
     } else {
       assertionFailure("No such permission")
@@ -100,8 +102,7 @@ class ActionCellConfigurationController {
         })
         return actionPlainObject
       }
-    case .photosLibrary, .camera:
-      break
+    case .photosLibrary, .camera: break
     }
     return nil
   }
@@ -118,7 +119,7 @@ class ActionCellConfigurationController {
       })
   }
 
-  func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
+  private func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
     return ActionTableViewCellModel(action: actionPlainObject)
   }
 }

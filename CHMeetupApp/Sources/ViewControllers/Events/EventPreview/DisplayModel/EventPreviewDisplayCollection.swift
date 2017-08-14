@@ -120,7 +120,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     let remindersPermissionCell = actionCell.createImportAction(for: event,
                                                                 on: viewController,
                                                                 for: .reminder) { [weak self] in
-      self?.delegate?.updateUI()
+                                                                  self?.delegate?.updateUI()
     }
 
     if let calendarPermissionCell = calendarPermissionCell {
