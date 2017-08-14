@@ -19,7 +19,13 @@ final class Constants {
 
   struct Server {
     static var baseParams: [String: String] {
-      return ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+      var baseParams = ["token": UserPreferencesEntity.value.currentUser?.token ?? ""]
+
+      #if DEBUG
+        baseParams["debug"] = "1"
+      #endif
+
+      return baseParams
     }
   }
 
