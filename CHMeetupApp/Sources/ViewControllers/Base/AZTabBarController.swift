@@ -30,10 +30,6 @@ open class AZTabBarItemView: UIView, AZTabBarItemViewAccessibility {
     return _isSelected
   }
 
-  open override func layoutSubviews() {
-    super.layoutSubviews()
-  }
-
   /// DON"T CALL IT MANUALLY, JUST FOR OVERRIDING
   open func setSelected(_ selected: Bool, animated: Bool) {
     _isSelected = selected
@@ -193,10 +189,6 @@ public class AZTabBarController: UITabBarController {
       item.containerView._preferedHeight = self.preferedHeight
       item.containerView.heightConstraint.constant = item.containerView.preferedHeight
     }
-  }
-
-  public override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
   }
 
   // MARK: - Setup
