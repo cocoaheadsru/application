@@ -32,7 +32,7 @@ struct Request<T> {
   let contentType = T.Type.self
 
   init(query: String,
-       method: RequestMethod = .get,
+       method: RequestMethod = .post,
        params: RequestParams? = nil,
        parser: RequestContentParser<T>? = nil) {
     self.query = query

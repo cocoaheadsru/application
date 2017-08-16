@@ -89,9 +89,6 @@ class Server {
       return
     }
 
-    if request.method == .get, request.params != nil {
-      fatalError("Get query should not have params. Use request url for sending any parameters.")
-    }
 
     guard let query = URL(string: apiBase + request.query) else {
       print("Session query url failed: base \(apiBase) and query \(request.query)")
@@ -103,6 +100,10 @@ class Server {
 
     if let requestParams = request.params {
       params += requestParams
+    }
+
+    if request.method == .get {
+      assertionFailure("Get query should not have params. Use request url for sending any parameters.")
     }
 
     sessionRequest.httpMethod = request.method.string
