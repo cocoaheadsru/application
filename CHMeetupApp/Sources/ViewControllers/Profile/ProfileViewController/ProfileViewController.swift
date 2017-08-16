@@ -10,6 +10,17 @@ import UIKit
 
 class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  @IBOutlet var logoutButtonItem: UIBarButtonItem! {
+    didSet {
+      logoutButtonItem.accessibilityValue = "Выйти".localized
+    }
+  }
+  @IBOutlet var editProfileButtonItem: UIBarButtonItem! {
+    didSet {
+      editProfileButtonItem.accessibilityValue = "Редактировать профиль".localized
+    }
+  }
+
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)

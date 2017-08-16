@@ -14,7 +14,11 @@ protocol ChooseProfilePhotoTableViewCellDelegate: class {
 
 class ChooseProfilePhotoTableViewCell: UITableViewCell {
 
-  @IBOutlet var mainButton: ChooseProfilePhotoButton!
+  @IBOutlet var mainButton: ChooseProfilePhotoButton! {
+    didSet {
+      mainButton.accessibilityValue = "Редактировать".localized
+    }
+  }
 
   weak var delegate: ChooseProfilePhotoTableViewCellDelegate?
 

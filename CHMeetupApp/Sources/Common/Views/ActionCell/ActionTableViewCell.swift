@@ -13,6 +13,8 @@ class ActionTableViewCell: PlateTableViewCell {
   var isEnableForAction = false {
     didSet {
       enableImageView.isHidden = !isEnableForAction
+      let traits = super.accessibilityTraits
+      accessibilityTraits = traits | (UIAccessibilityTraitButton * (isEnableForAction ? 1 : 0))
     }
   }
 

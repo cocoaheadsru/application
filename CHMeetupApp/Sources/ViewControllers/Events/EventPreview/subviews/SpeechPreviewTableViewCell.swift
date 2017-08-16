@@ -55,6 +55,10 @@ class SpeechPreviewTableViewCell: PlateTableViewCell, TempalateView {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+
+    let traits = super.accessibilityTraits
+    accessibilityTraits = traits | UIAccessibilityTraitButton
+
     roundType = .all
   }
 
