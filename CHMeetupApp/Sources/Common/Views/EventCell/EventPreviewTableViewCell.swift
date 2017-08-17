@@ -68,6 +68,9 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
   override func awakeFromNib() {
     super.awakeFromNib()
 
+    let traits = super.accessibilityTraits
+    accessibilityTraits = traits | UIAccessibilityTraitButton
+
     photosPresentationView.delegate = self
 
     roundType = .all
