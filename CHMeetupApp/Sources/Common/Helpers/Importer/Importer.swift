@@ -42,9 +42,9 @@ class Importer {
       guard let calendarIdentifier = event.importingState.calendarIdentifier else { return false }
       return self.calendarEventStore.event(withIdentifier: calendarIdentifier) != nil
     case .reminder:
-      guard let calendarIdentifier = event.importingState.reminderIdentifier else { return false }
-      if let reminder = remindersEventStore.calendarItem(withIdentifier: calendarIdentifier) as? EKReminder {
-        return reminder.calendarItemIdentifier == calendarIdentifier
+      guard let reminderIdentifier = event.importingState.reminderIdentifier else { return false }
+      if let reminder = remindersEventStore.calendarItem(withIdentifier: reminderIdentifier) as? EKReminder {
+        return reminder.calendarItemIdentifier == reminderIdentifier
       } else { return false }
     }
   }
