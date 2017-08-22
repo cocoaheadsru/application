@@ -42,7 +42,10 @@ class Importer {
       guard let calendarIdentifier = event.importingState.calendarIdentifier else { return false }
       return self.calendarEventStore.event(withIdentifier: calendarIdentifier) != nil
     case .reminder:
-      return event.importingState.reminderIdentifier != nil
+      guard let calendarIdentifier = event.importingState.reminderIdentifier else { return false }
+      if let reminder = remindersEventStore.calendarItem(withIdentifier: calendarIdentifier) as? EKReminder {
+        return reminder.calendarItemIdentifier == calendarIdentifier
+      } else { return false }
     }
   }
 
@@ -93,7 +96,7 @@ class Importer {
     remindersEventStore.requestAccess(to: .reminder, completion: { granted, _ in
       guard granted else {
         OperationQueue.main.addOperation {
-        completion(.permissionError)
+          completion(.permissionError)
         }
         return
       }
