@@ -218,10 +218,8 @@ public class AZTabBarController: UITabBarController {
       az_itemViewConstraints.append(tabBar.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
 
       if index > 0 {
-        let left = az_items[index - 1].containerView.rightAnchor.constraint(equalTo: viewContainer.leftAnchor)
-        let right = az_items[index - 1].containerView.widthAnchor.constraint(equalTo: viewContainer.widthAnchor)
-        az_itemViewConstraints.append(left)
-        az_itemViewConstraints.append(right)
+        az_itemViewConstraints.append(az_items[index - 1].containerView.rightAnchor.constraint(equalTo: viewContainer.leftAnchor))
+        az_itemViewConstraints.append(az_items[index - 1].containerView.widthAnchor.constraint(equalTo: viewContainer.widthAnchor))
       }
     }
 
@@ -269,7 +267,8 @@ public class AZTabBarController: UITabBarController {
   }
 
   var selectedIndexOrZero: Int {
-    return selectedIndex < (viewControllers?.count ?? 0) ? selectedIndex : 0
+    let numberOfElements = viewControllers?.count ?? 0
+    return selectedIndex < numberOfElements ? selectedIndex : 0
   }
 
   public override var selectedIndex: Int {
