@@ -8,13 +8,17 @@
 
 import UIKit
 
-class TabBarItemView: CustomTabBarItemView {
+class TabBarItemView: AZTabBarItemView {
 
   @IBOutlet var imageView: UIImageView!
   @IBOutlet var titleLabel: UILabel! {
     didSet {
       titleLabel.font = UIFont.appFont(.systemFont(size: 10))
     }
+  }
+
+  override var accessibilityTitle: String {
+    return titleLabel.text ?? super.accessibilityTitle
   }
 
   enum `Type` {

@@ -63,7 +63,7 @@
 		22323F551E70C18700522E5C /* PlainObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F4C1E70C18700522E5C /* PlainObjectType.swift */; };
 		22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F4E1E70C18700522E5C /* UserPlainObject+Requests.swift */; };
 		22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F4F1E70C18700522E5C /* UserPlainObject.swift */; };
-		22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F5A1E70C2BE00522E5C /* CustomTabBarController.swift */; };
+		22323F891E70C2BE00522E5C /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F5A1E70C2BE00522E5C /* AZTabBarController.swift */; };
 		22323F8A1E70C2BE00522E5C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F5B1E70C2BE00522E5C /* NavigationViewController.swift */; };
 		22323F8B1E70C2BE00522E5C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F5C1E70C2BE00522E5C /* TabBarViewController.swift */; };
 		22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */; };
@@ -351,7 +351,7 @@
 		22323F4C1E70C18700522E5C /* PlainObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainObjectType.swift; sourceTree = "<group>"; };
 		22323F4E1E70C18700522E5C /* UserPlainObject+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserPlainObject+Requests.swift"; sourceTree = "<group>"; };
 		22323F4F1E70C18700522E5C /* UserPlainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPlainObject.swift; sourceTree = "<group>"; };
-		22323F5A1E70C2BE00522E5C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		22323F5A1E70C2BE00522E5C /* AZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarController.swift; sourceTree = "<group>"; };
 		22323F5B1E70C2BE00522E5C /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		22323F5C1E70C2BE00522E5C /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		22323F5F1E70C2BE00522E5C /* EventPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPreviewViewController.swift; sourceTree = "<group>"; };
@@ -1124,7 +1124,7 @@
 		22323F591E70C2BE00522E5C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				22323F5A1E70C2BE00522E5C /* CustomTabBarController.swift */,
+				22323F5A1E70C2BE00522E5C /* AZTabBarController.swift */,
 				22323F5B1E70C2BE00522E5C /* NavigationViewController.swift */,
 				22323F5C1E70C2BE00522E5C /* TabBarViewController.swift */,
 			);
@@ -2443,7 +2443,7 @@
 				22323F571E70C18700522E5C /* UserPlainObject.swift in Sources */,
 				22323F2F1E70C0E500522E5C /* Request.swift in Sources */,
 				7DAC863F1EA8220B00437283 /* CreatorsTableViewCellModel.swift in Sources */,
-				22323F891E70C2BE00522E5C /* CustomTabBarController.swift in Sources */,
+				22323F891E70C2BE00522E5C /* AZTabBarController.swift in Sources */,
 				F718C0331E966B58008B3C0B /* KingfisherImageLoader.swift in Sources */,
 				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
 				7D48FCEC1F41671C00D39D66 /* Dictionary+Operations.swift in Sources */,
