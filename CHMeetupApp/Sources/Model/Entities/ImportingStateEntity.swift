@@ -11,8 +11,15 @@ import RealmSwift
 
 class ImportingStateEntity: Object {
   dynamic var eventId: Int = 0
-  dynamic var toCalendar: Bool = false
-  dynamic var toReminder: Bool = false
+  dynamic var calendarIdentifier: String?
+  dynamic var reminderIdentifier: String?
+
+  override static func primaryKey() -> String? {
+    return "eventId"
+  }
+}
+
+extension ImportingStateEntity {
 
   static func createOrGet(for id: Int) -> ImportingStateEntity {
     if let value = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {
@@ -25,9 +32,5 @@ class ImportingStateEntity: Object {
       }
       return value
     }
-  }
-
-  override static func primaryKey() -> String? {
-    return "eventId"
   }
 }

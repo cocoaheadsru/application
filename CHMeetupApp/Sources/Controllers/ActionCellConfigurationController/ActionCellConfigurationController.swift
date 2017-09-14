@@ -18,11 +18,9 @@ class ActionCellConfigurationController {
                           with additionalAction: Action? = nil) -> ActionPlainObject? {
     let importToPermission: [ImportType: PermissionsType] = [.calendar: .calendar,
                                                              .reminder: .reminders]
-    let isImported: [ImportType: Bool] = [.calendar: event.importingState.toCalendar,
-                                          .reminder: event.importingState.toReminder]
-
     if let permission = importToPermission[importType] {
-      if let state = isImported[importType], state == false {
+      let isEventInStorage = Importer.isEventInStorage(event: event, type: importType)
+      if !isEventInStorage {
         return addActionCell(on: viewController, for: permission, with: {
           ImporterHelper.importToSave(event: event, to: importType, from: viewController) {
             additionalAction?()
@@ -48,12 +46,13 @@ class ActionCellConfigurationController {
 
     if let text = texts[type] {
       let imageName = imagesNames[type]
-      actionPlainObject = ActionPlainObject(text: text,
-                                            imageName: imageName, action: {
-                                              self.requireAccess(from: viewController, to: type,
-                                                                 with: {
-                                                                  additionalAction?()
-                                              })
+      actionPlainObject = ActionPlainObject(
+        text: text,
+        imageName: imageName, action: {
+          self.requireAccess(from: viewController, to: type,
+                             with: {
+                              additionalAction?()
+          })
       })
     } else {
       assertionFailure("No such permission")
@@ -69,34 +68,37 @@ class ActionCellConfigurationController {
     switch  type {
     case .reminders:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Подключите напоминания, чтобы не пропустить события".localized,
-                                              imageName: "img_icon_reminders", action: {
-                                              self.requireAccess(from: viewController, to: type,
-                                                                 with: {
-                                                                  additionalAction?()
-                                              })
+        actionPlainObject = ActionPlainObject(
+          text: "Подключите напоминания, чтобы не пропустить события".localized,
+          imageName: "img_icon_reminders", action: {
+            self.requireAccess(from: viewController, to: type,
+                               with: {
+                                additionalAction?()
+            })
         })
         return actionPlainObject
       }
     case .calendar:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Подключите календарь, чтобы синхронизировать события".localized,
-                                              imageName: "img_icon_calendar", action: {
-                                                self.requireAccess(from: viewController, to: type,
-                                                                   with: {
-                                                                    additionalAction?()
-                                                })
+        actionPlainObject = ActionPlainObject(
+          text: "Подключите календарь, чтобы синхронизировать события".localized,
+          imageName: "img_icon_calendar", action: {
+            self.requireAccess(from: viewController, to: type,
+                               with: {
+                                additionalAction?()
+            })
         })
         return actionPlainObject
       }
     case .notifications:
       if !PermissionsManager.isAllowed(type: type) {
-        actionPlainObject = ActionPlainObject(text: "Включите оповещения, чтобы не пропустить анонсы".localized,
-                                              imageName: "img_icon_notifications", action: {
-                                                self.requireAccess(from: viewController, to: type,
-                                                                   with: {
-                                                                    additionalAction?()
-                                                })
+        actionPlainObject = ActionPlainObject(
+          text: "Включите оповещения, чтобы не пропустить анонсы".localized,
+          imageName: "img_icon_notifications", action: {
+            self.requireAccess(from: viewController, to: type,
+                               with: {
+                                additionalAction?()
+            })
         })
         return actionPlainObject
       }
@@ -108,17 +110,18 @@ class ActionCellConfigurationController {
 
   private func requireAccess(from viewController: UIViewController,
                              to type: PermissionsType, with action: Action?) {
-      PermissionsManager.requireAccess(from: viewController,
-                                       to: type, completion: { success in
-                                        if success {
-                                          DispatchQueue.main.async {
-                                            action?()
-                                          }
-                                        }
-      })
+    PermissionsManager.requireAccess(
+      from: viewController,
+      to: type, completion: { success in
+        if success {
+          DispatchQueue.main.async {
+            action?()
+          }
+        }
+    })
   }
 
-  func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
+  private func modelForActionCell(with actionPlainObject: ActionPlainObject) -> ActionTableViewCellModel {
     return ActionTableViewCellModel(action: actionPlainObject)
   }
 }

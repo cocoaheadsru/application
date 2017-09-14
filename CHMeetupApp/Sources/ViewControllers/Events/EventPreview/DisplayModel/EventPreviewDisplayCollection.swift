@@ -111,16 +111,18 @@ class EventPreviewDisplayCollection: DisplayCollection {
 
     let actionCell = ActionCellConfigurationController()
 
-    let calendarPermissionCell = actionCell.createImportAction(for: event,
-                                                               on: viewController,
-                                                               for: .calendar) { [weak self] in
-      self?.delegate?.updateUI()
+    let calendarPermissionCell = actionCell.createImportAction(
+      for: event,
+      on: viewController,
+      for: .calendar) { [weak self] in
+        self?.delegate?.updateUI()
     }
 
-    let remindersPermissionCell = actionCell.createImportAction(for: event,
-                                                                on: viewController,
-                                                                for: .reminder) { [weak self] in
-      self?.delegate?.updateUI()
+    let remindersPermissionCell = actionCell.createImportAction(
+      for: event,
+      on: viewController,
+      for: .reminder) { [weak self] in
+        self?.delegate?.updateUI()
     }
 
     if let calendarPermissionCell = calendarPermissionCell {
