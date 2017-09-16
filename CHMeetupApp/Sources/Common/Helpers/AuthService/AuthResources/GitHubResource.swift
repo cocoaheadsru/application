@@ -20,7 +20,6 @@ final class GitHubResource: SocialResource {
 		var authString = "https://github.com/login/oauth/authorize?client_id=\(Constants.GitHub.clientId)"
 		authString += "&redirect_uri=\(Constants.GitHub.redirect)&scope=\(Constants.GitHub.scope)"
 		authString += "&state=\(GitHubResource.state)"
-		print(authString)
 		return URL(string: authString)
 	}
 
