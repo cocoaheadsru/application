@@ -19,10 +19,10 @@ final class AuthServiceFacade {
   enum AuthResourceType: String {
     case vk
     case fb
-		case github
+    case github
     case tw
 
-    var identifier: String {
+		var identifier: String {
       return self.rawValue
     }
 
@@ -32,8 +32,8 @@ final class AuthServiceFacade {
         return VKResource()
       case .fb, .tw:
         return FBResource()
-			case .github:
-				return GitHubResource()
+      case .github:
+        return GitHubResource()
       }
     }
 

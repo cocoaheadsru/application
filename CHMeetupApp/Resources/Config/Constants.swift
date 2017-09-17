@@ -34,7 +34,7 @@ final class Constants {
     static let scope = "email,offline,nohttps"
     static let redirect = "vk\(clientId)://authorize"
   }
-
+  
   struct Facebook {
     static let clientId = "1863830253895861"
     static let scope = "email"
