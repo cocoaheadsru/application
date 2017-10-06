@@ -9,11 +9,40 @@
 import UIKit
 
 class BottomButton: ActionButton {
+
+  enum BottonButtonStyle {
+    case colorful
+    case canceling
+
+    var backgroundColor: UIColor {
+      switch self {
+      case .colorful:
+        return UIColor(.pink)
+      case .canceling:
+        return UIColor(.white)
+      }
+    }
+
+    var titleColor: UIColor {
+      switch self {
+      case .colorful:
+        return UIColor(.white)
+      case .canceling:
+        return UIColor(.darkGray)
+      }
+    }
+
+  }
+
+  var style: BottonButtonStyle = .colorful {
+    didSet {
+      setup()
+    }
+  }
+
   private struct Constants {
     static var height: CGFloat = 50
-    static var backgroundColor: UIColor = UIColor(.pink)
     static var titleFont: UIFont = UIFont.appFont(.avenirNextDemiBold(size: 16))
-    static var titleColor: UIColor = UIColor(.white)
   }
 
   static var constantHeight: CGFloat {
@@ -50,8 +79,8 @@ class BottomButton: ActionButton {
   }
 
   private func setup() {
-    backgroundColor = Constants.backgroundColor
+    backgroundColor = style.backgroundColor
     titleLabel?.font = Constants.titleFont
-    setTitleColor(Constants.titleColor, for: .normal)
+    setTitleColor(style.titleColor, for: .normal)
   }
 }

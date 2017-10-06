@@ -15,6 +15,10 @@ extension EventRegFormPlainObject: PlainObjectType {
       return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)", method: .post)
     }
 
+    static func cancel(for event: Int) -> Request<RequestPlainObject> {
+      return Request<RequestPlainObject>(query: "event/cancel/\(event)")
+    }
+
     static func registration(with formData: FormData) -> Request<RequestPlainObject> {
       var registration = ["form": "\(formData.id)"]
 
