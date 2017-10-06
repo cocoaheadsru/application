@@ -89,7 +89,21 @@ class EventPreviewViewController: UIViewController {
 
   func cancelAction() {
     showProgressHUD()
-    
+    RegistrationController.unregister(for: selectedEventId) { [weak self] (success) in
+      if success {
+        self?.displayCollection.event?.status = .canRegister
+        self?.showSuccessNotification()
+      }
+      self?.dismissProgressHUD()
+    }
+  }
+
+  func showSuccessNotification() {
+    // swiftlint:disable:next line_length
+    let notification = NotificationHelper.viewController(title: "Заявка отменена!".localized, description: "Спасибо, что освободили место для других участников. Будем ждать вас на будущих встречах.".localized, emjoi: "🗑", completion: {
+      self.navigationController?.popToRootViewController(animated: true)
+    })
+    self.present(viewController: notification)
   }
 
   override func updateUI() {
