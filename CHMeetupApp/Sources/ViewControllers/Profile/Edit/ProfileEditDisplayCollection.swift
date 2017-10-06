@@ -49,7 +49,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
           self?.user.name = value
         }
       })
-      
+
       let lastname = EditableField(value: user.lastName, title: "Фамилия".localized, isValid: { _ -> Bool in
         return true
       }, save: { [weak self] value in
@@ -57,7 +57,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
           self?.user.lastName = value
         }
       })
-      
+
       let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
         return true
         // Right now we don't want to check phone because there are couple of format 
@@ -187,7 +187,16 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     case .userEditableField:
       return 40
     case .userHeader:
-      return 0
+      return UITableViewAutomaticDimension
+    }
+  }
+
+  func height(for indexPath: IndexPath) -> CGFloat {
+    switch sections[indexPath.section] {
+    case .userHeader:
+      return 166.0
+    case .userEditableField:
+      return 60.0
     }
   }
 

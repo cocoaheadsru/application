@@ -36,17 +36,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
 
-    if #available(iOS 11.0, *) {
-      tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
-      tableView.estimatedRowHeight = 0
-      tableView.estimatedSectionHeaderHeight = 0
-      tableView.estimatedSectionFooterHeight = 0
-    }
   }
 
 }
@@ -69,6 +59,10 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return displayCollection.height(for: indexPath)
   }
 }
 
