@@ -34,11 +34,17 @@ final class Constants {
     static let scope = "email,offline,nohttps"
     static let redirect = "vk\(clientId)://authorize"
   }
-
+  
   struct Facebook {
     static let clientId = "1863830253895861"
     static let scope = "email"
     static let redirect = "fb\(clientId)://authorize"
+  }
+
+  struct GitHub {
+    static let clientId = "92ad5bdbcacdd2db8d97"
+    static let scope = "user:email"
+    static let redirect = "github\(clientId)://authorize"
   }
 
   struct SystemSizes {
