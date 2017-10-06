@@ -42,6 +42,22 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     didSet {
       var editableFields: [EditableField] = []
 
+      let name = EditableField(value: user.name, title: "Имя".localized, isValid: { _ -> Bool in
+        return true
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.name = value
+        }
+      })
+      
+      let lastname = EditableField(value: user.lastName, title: "Фамилия".localized, isValid: { _ -> Bool in
+        return true
+      }, save: { [weak self] value in
+        realmWrite {
+          self?.user.lastName = value
+        }
+      })
+      
       let phone = EditableField(value: user.phone, title: "Телефон".localized, isValid: { phone -> Bool in
         return true
         // Right now we don't want to check phone because there are couple of format 
@@ -77,6 +93,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
         }
       })
 
+      editableFields.append(name)
+      editableFields.append(lastname)
       editableFields.append(phone)
       editableFields.append(email)
       editableFields.append(company)
