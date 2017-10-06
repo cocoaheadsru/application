@@ -10,8 +10,7 @@ import Foundation
 
 class ProfileController {
   static func save(completion: @escaping SuccessCompletionBlock) {
-    guard let user = UserPreferencesEntity.value.currentUser
-      else {
+    guard let user = UserPreferencesEntity.value.currentUser else {
         completion(false)
         return
     }
