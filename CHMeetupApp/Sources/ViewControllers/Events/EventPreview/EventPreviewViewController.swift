@@ -112,7 +112,7 @@ class EventPreviewViewController: UIViewController {
     let notification = NotificationHelper.viewController(title: "Заявка отменена!".localized,
                                                          // swiftlint:disable:next line_length
                                                          description: "Спасибо, что освободили место для других участников. Будем ждать вас на будущих встречах.".localized,
-                                                         emjoi: "🗑",
+                                                         emoji: "🗑",
                                                          completion: {
       self.navigationController?.popToRootViewController(animated: true)
     })

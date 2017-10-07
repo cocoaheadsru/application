@@ -12,12 +12,12 @@ class NotificationViewController: UIViewController {
   var completionBlock: ActionCompletionBlock = {}
   var titleText: String?
   var descriptionText: String?
-  var emjoi: String?
+  var emoji: String?
 
   @IBOutlet private var emotionLabel: UILabel! {
     didSet {
       emotionLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 65))
-      emotionLabel.text = emjoi
+      emotionLabel.text = emoji
     }
   }
 
