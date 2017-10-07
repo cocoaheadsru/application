@@ -89,8 +89,10 @@ class EventPreviewViewController: UIViewController {
 
   func cancelAction() {
     showConfirmationAlert(title: "Подтвердите действие".localized,
-                          message: "Вы уверены, что хотите отменить свою заявку?", buttonFirstTitle: "Нет", buttonSecondTitle: "Да", firstAction: nil) 
-    { [weak self] in
+                          message: "Вы уверены, что хотите отменить свою заявку?",
+                          buttonFirstTitle: "Нет",
+                          buttonSecondTitle: "Да",
+                          firstAction: nil) { [weak self] in
       self?.canceletion()
     }
   }
