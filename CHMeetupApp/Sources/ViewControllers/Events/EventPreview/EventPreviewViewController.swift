@@ -89,9 +89,9 @@ class EventPreviewViewController: UIViewController {
 
   func cancelAction() {
     showConfirmationAlert(title: "Подтвердите действие".localized,
-                          message: "Вы уверены, что хотите отменить свою заявку?",
-                          buttonFirstTitle: "Нет",
-                          buttonSecondTitle: "Да",
+                          message: "Вы уверены, что хотите отменить свою заявку?".localized,
+                          buttonFirstTitle: "Нет".localized,
+                          buttonSecondTitle: "Да".localized,
                           firstAction: nil) { [weak self] in
       self?.canceletion()
     }
@@ -109,8 +109,11 @@ class EventPreviewViewController: UIViewController {
   }
 
   func showSuccessNotification() {
-    // swiftlint:disable:next line_length
-    let notification = NotificationHelper.viewController(title: "Заявка отменена!".localized, description: "Спасибо, что освободили место для других участников. Будем ждать вас на будущих встречах.".localized, emjoi: "🗑", completion: {
+    let notification = NotificationHelper.viewController(title: "Заявка отменена!".localized,
+                                                         // swiftlint:disable:next line_length
+                                                         description: "Спасибо, что освободили место для других участников. Будем ждать вас на будущих встречах.".localized,
+                                                         emjoi: "🗑",
+                                                         completion: {
       self.navigationController?.popToRootViewController(animated: true)
     })
     self.present(viewController: notification)
