@@ -12,7 +12,11 @@ extension EventRegFormPlainObject: PlainObjectType {
 
   struct Requests {
     static func form(with id: Int) -> Request<EventRegFormPlainObject> {
-      return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)", method: .post)
+      return Request<EventRegFormPlainObject>(query: "event/active_form/\(id)")
+    }
+
+    static func cancel(for event: Int) -> Request<RequestPlainObject> {
+      return Request<RequestPlainObject>(query: "event/cancel/\(event)")
     }
 
     static func registration(with formData: FormData) -> Request<RequestPlainObject> {

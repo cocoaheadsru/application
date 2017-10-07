@@ -44,4 +44,16 @@ class RegistrationController {
       }
     }
   }
+
+  static func unregister(for event: Int, completion: @escaping SuccessCompletionBlock) {
+    let cancelRequest = EventRegFormPlainObject.Requests.cancel(for: event)
+    Server.standard.request(cancelRequest) { response, _ in
+      if let response = response {
+        completion(response.success)
+      } else {
+        completion(false)
+      }
+    }
+  }
+
 }

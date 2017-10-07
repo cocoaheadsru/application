@@ -10,6 +10,12 @@ import UIKit
 
 class EventPreviewViewController: UIViewController {
 
+  private enum EventActionState {
+    case isRegistrationEnabled
+    case canCanceling
+    case unknown
+  }
+
   var selectedEventId: Int = 0
 
   @IBOutlet fileprivate var tableView: UITableView! {
@@ -18,7 +24,7 @@ class EventPreviewViewController: UIViewController {
     }
   }
 
-  var isRegistrationEnabled: Bool = false {
+  private var state: EventActionState = .unknown {
     didSet {
       updateBottomButton()
     }
@@ -31,13 +37,20 @@ class EventPreviewViewController: UIViewController {
     bottomButton?.removeFromSuperview()
 
     var configuration = TableViewConfiguration.default
-    configuration.bottomInset = 8 + (isRegistrationEnabled ? BottomButton.constantHeight : 0)
-    configuration.bottomIndicatorInset = (isRegistrationEnabled ? BottomButton.constantHeight : 0)
+    configuration.bottomInset = 8 + (state != .unknown ? BottomButton.constantHeight : 0)
+    configuration.bottomIndicatorInset = (state != .unknown ? BottomButton.constantHeight : 0)
     tableView.configure(with: .custom(configuration))
 
-    if isRegistrationEnabled {
+    switch state {
+    case .isRegistrationEnabled:
       bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
       bottomButton?.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
+    case .canCanceling:
+      bottomButton = BottomButton(addingOnView: view, title: "Отменить заявку".localized)
+      bottomButton?.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
+      bottomButton?.style = .canceling
+    case .unknown:
+      break
     }
   }
 
@@ -57,7 +70,13 @@ class EventPreviewViewController: UIViewController {
       fetchSpeeches(on: event)
       displayCollection.updateActionCellsSection(on: self, with: tableView, event: event)
       bottomButton?.setTitle(event.status.statusText, for: .normal)
-      isRegistrationEnabled = event.status.allowRegister
+
+      if event.status.allowRegister {
+        state = .isRegistrationEnabled
+      } else if event.status.allowCanceling {
+        state = .canCanceling
+      }
+
     }
   }
 
@@ -66,6 +85,38 @@ class EventPreviewViewController: UIViewController {
       eventId: selectedEventId
     )
     navigationController?.pushViewController(viewController, animated: true)
+  }
+
+  func cancelAction() {
+    showConfirmationAlert(title: "Подтвердите действие".localized,
+                          message: "Вы уверены, что хотите отменить свою заявку?".localized,
+                          buttonFirstTitle: "Нет".localized,
+                          buttonSecondTitle: "Да".localized,
+                          firstAction: nil) { [weak self] in
+      self?.canceletion()
+    }
+  }
+
+  func canceletion() {
+    showProgressHUD()
+    RegistrationController.unregister(for: selectedEventId) { [weak self] (success) in
+      if success {
+        self?.displayCollection.event?.status = .canRegister
+        self?.showSuccessNotification()
+      }
+      self?.dismissProgressHUD()
+    }
+  }
+
+  func showSuccessNotification() {
+    let notification = NotificationHelper.viewController(title: "Заявка отменена!".localized,
+                                                         // swiftlint:disable:next line_length
+                                                         description: "Спасибо, что освободили место для других участников. Будем ждать вас на будущих встречах.".localized,
+                                                         emoji: "🗑",
+                                                         completion: {
+      self.navigationController?.popToRootViewController(animated: true)
+    })
+    self.present(viewController: notification)
   }
 
   override func updateUI() {

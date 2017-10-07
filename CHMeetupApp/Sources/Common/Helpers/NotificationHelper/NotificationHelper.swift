@@ -11,13 +11,13 @@ import UIKit
 class NotificationHelper {
   static func viewController(title: String? = nil,
                              description: String? = nil,
-                             emjoi: String? = nil,
+                             emoji: String? = nil,
                              completion: @escaping ActionCompletionBlock) -> NotificationViewController {
     let notification = Storyboards.Main.instantiateNotificationViewController()
     notification.titleText = title
     notification.descriptionText = description
     notification.completionBlock = completion
-    notification.emjoi = emjoi
+    notification.emoji = emoji
     notification.modalPresentationStyle = .overFullScreen
 
     return notification

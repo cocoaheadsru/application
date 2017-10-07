@@ -20,6 +20,15 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case loading
     case registrationClosed
 
+    var allowCanceling: Bool {
+      switch self {
+      case .waiting, .approved:
+        return true
+      case .canRegister, .rejected, .unknown, .loading, .registrationClosed:
+        return false
+      }
+    }
+
     var allowRegister: Bool {
       switch self {
       case .canRegister:

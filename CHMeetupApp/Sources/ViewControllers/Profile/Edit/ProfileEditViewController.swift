@@ -12,8 +12,8 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44)
-      tableView.configure(with: .custom(configuration))
+      let configuration = TableViewConfiguration(bottomInset: 8)
+      tableView.configure(with: .defaultConfiguration)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -115,7 +115,7 @@ extension ProfileEditViewController {
       if success {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
                                           description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emjoi: "📋",
+                                          emoji: "📋",
                                           completion: {
                                             self?.navigationController?.popToRootViewController(animated: true)
         })

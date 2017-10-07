@@ -52,7 +52,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     }
 
     RegistrationController.loadRegFromServer(
-      with: 1,
+      with: selectedEventId,
       completion: { [weak self] displayCollection, error in
 
         guard error == nil else {

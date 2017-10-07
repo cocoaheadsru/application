@@ -15,8 +15,8 @@ struct TableViewConfiguration {
   var topInset: CGFloat?
   var bottomInset: CGFloat?
   var bottomIndicatorInset: CGFloat?
-  var estimatedRowHeight: CGFloat?
-  var rowHeight: CGFloat?
+  var estimatedRowHeight: CGFloat
+  var rowHeight: CGFloat
   var backgroundColor: UIColor
 
   /// Tricky necessity of struct initializer.
@@ -25,8 +25,8 @@ struct TableViewConfiguration {
     topInset: CGFloat? = nil,
     bottomInset: CGFloat? = nil,
     bottomIndicatorInset: CGFloat? = nil,
-    estimatedRowHeight: CGFloat? = nil,
-    rowHeight: CGFloat? = nil,
+    estimatedRowHeight: CGFloat = 0,
+    rowHeight: CGFloat = UITableViewAutomaticDimension,
     backgroundColor: UIColor = UIColor(.lightGray)
   ) {
     self.topInset = topInset
@@ -85,12 +85,10 @@ extension UITableView {
     if let bottomIndicatorInset = configuration.bottomIndicatorInset {
       self.scrollIndicatorInsets.bottom = bottomIndicatorInset
     }
-    if let estimated = configuration.estimatedRowHeight {
-      self.estimatedRowHeight = estimated
-    }
-    if let rowHeight = configuration.rowHeight {
-      self.rowHeight = rowHeight
-    }
+
+    self.estimatedRowHeight = configuration.estimatedRowHeight
+    self.rowHeight = configuration.rowHeight
+
     self.backgroundColor = configuration.backgroundColor
   }
 
