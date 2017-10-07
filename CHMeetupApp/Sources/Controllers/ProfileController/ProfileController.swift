@@ -10,13 +10,13 @@ import Foundation
 
 class ProfileController {
   static func save(completion: @escaping SuccessCompletionBlock) {
-    guard let user = UserPreferencesEntity.value.currentUser,
-      let token = user.token else {
+    guard let user = UserPreferencesEntity.value.currentUser else {
         completion(false)
         return
     }
 
-    let request = RequestPlainObject.Requests.editProfile(token: token,
+    let request = RequestPlainObject.Requests.editProfile(name: user.name,
+                                                          lastName: user.lastName,
                                                           email: user.email,
                                                           phone: user.phone,
                                                           company: user.company,
