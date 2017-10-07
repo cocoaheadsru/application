@@ -39,14 +39,16 @@ extension RequestPlainObject {
 
   struct Requests {
 
-    static func editProfile(token: String,
+    static func editProfile(name: String,
+                            lastName: String,
                             email: String,
                             phone: String?,
                             company: String?,
                             position: String?) -> Request<RequestPlainObject> {
       var params: [String: String] = [:]
 
-      params[Constants.Keys.token] = token
+      params["name"] = name
+      params["last_name"] = lastName
       params["email"] = email
       params["phone"] = phone ?? ""
       params["company"] = company ?? ""
