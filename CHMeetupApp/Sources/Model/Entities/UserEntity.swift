@@ -39,7 +39,7 @@ final class UserEntity: TemplatableObject, TemplateEntity {
     return name + " " + lastName
   }
 }
-#if DEBUG
+
 extension UserEntity {
   static var templateEntity: UserEntity {
 
@@ -74,4 +74,4 @@ extension UserEntity {
     return userContacts
   }
 }
-#endif
+
