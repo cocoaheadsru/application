@@ -30,6 +30,6 @@ final class GitHubResource: SocialResource {
       state == GitHubResource.state,
       let code = components?.queryItems?.first(where: { $0.name == "code" })?.value
     else { return [:] }
-    return ["token": code, "secret": ""]
+    return ["token": code, "secret": state]
   }
 }

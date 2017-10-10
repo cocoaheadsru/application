@@ -68,7 +68,8 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 
 // MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+  func imagePickerController(_ picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [String : Any]) {
     displayCollection.didReciveMedia(picker, info: info)
   }
 }
