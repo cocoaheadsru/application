@@ -138,6 +138,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
 }
 
 extension EventEntity {
+
   static var templateEntity: EventEntity {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyyMMdd"
@@ -155,3 +156,4 @@ extension EventEntity {
     return entity
   }
 }
+

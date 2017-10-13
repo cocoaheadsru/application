@@ -23,22 +23,22 @@ final class CreatorEntity: TemplatableObject, TemplateEntity {
     return "id"
   }
 }
-#if DEBUG
-  extension CreatorEntity {
-    static var templateEntity: CreatorEntity {
-      let names = ["Ivan", "Petr", "Anton"]
-      let info = ["hello", "hi", nil]
-      let urls = ["http://yandex.ru/logo.png", nil]
 
-      let entity = CreatorEntity()
-      entity.name <= names.rand
-      entity.info <= info.rand
-      entity.url <= urls.rand
-      entity.photoURL <= urls.rand
-      entity.isTemplate = true
-      entity.isActive = false
+extension CreatorEntity {
+  static var templateEntity: CreatorEntity {
+    let names = ["Ivan", "Petr", "Anton"]
+    let info = ["hello", "hi", nil]
+    let urls = ["http://yandex.ru/logo.png", nil]
 
-      return entity
-    }
+    let entity = CreatorEntity()
+    entity.name <= names.rand
+    entity.info <= info.rand
+    entity.url <= urls.rand
+    entity.photoURL <= urls.rand
+    entity.isTemplate = true
+    entity.isActive = false
+
+    return entity
   }
-#endif
+}
+

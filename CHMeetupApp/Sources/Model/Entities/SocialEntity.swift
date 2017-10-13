@@ -26,7 +26,7 @@ class SocialEntity: Object {
     return "id"
   }
 }
-#if DEBUG
+
 extension SocialEntity {
   static var templateEntity: SocialEntity {
     let entity = SocialEntity()
@@ -36,4 +36,4 @@ extension SocialEntity {
     return entity
   }
 }
-#endif
+

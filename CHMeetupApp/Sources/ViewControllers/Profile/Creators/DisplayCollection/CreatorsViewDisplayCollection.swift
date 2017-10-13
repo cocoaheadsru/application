@@ -88,9 +88,15 @@ final class CreatorsViewDisplayCollection: DisplayCollection {
   }
 
   func didSelect(indexPath: IndexPath) {
-    if activeCreatorsCollection[indexPath.row].isTemplate || inactiveCreatorsCollection[indexPath.row].isTemplate {
+
+    if sections[indexPath.section] == .active, activeCreatorsCollection[indexPath.row].isTemplate {
       return
     }
+
+    if sections[indexPath.section] == .inactive, inactiveCreatorsCollection[indexPath.row].isTemplate {
+      return
+    }
+
     var model: CreatorEntity
     switch sections[indexPath.section] {
     case .active:

@@ -29,7 +29,7 @@ class SpeechContentEntity: Object {
     return "id"
   }
 }
-#if DEBUG
+
 extension SpeechContentEntity {
   static var templateEntity: SpeechContentEntity {
 
@@ -40,4 +40,3 @@ extension SpeechContentEntity {
     return entity
   }
 }
-#endif
