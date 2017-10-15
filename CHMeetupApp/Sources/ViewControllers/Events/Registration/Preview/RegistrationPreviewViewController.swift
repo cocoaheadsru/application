@@ -56,7 +56,6 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
       completion: { [weak self] displayCollection, error in
 
         guard error == nil else {
-          print(error!)
           return
         }
 

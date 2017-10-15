@@ -90,7 +90,9 @@ class Server {
     }
 
     guard let query = URL(string: apiBase + request.query) else {
+      #if DEBUG_NETWORK_INTERACTION
       print("Session query url failed: base \(apiBase) and query \(request.query)")
+      #endif
       completion(nil, .requestFailed)
       return
     }
@@ -109,7 +111,9 @@ class Server {
     sessionRequest.httpBody = params.httpQuery
     let loadSession = URLSession.shared.dataTask(with: sessionRequest) { data, _, error in
       guard error == nil else {
+        #if DEBUG_NETWORK_INTERACTION
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
+        #endif
         return
       }
       guard let data = data else {

@@ -19,7 +19,7 @@ class BottomButton: ActionButton {
       case .colorful:
         return UIColor(.pink)
       case .canceling:
-        return UIColor(.white)
+        return UIColor(.gray)
       }
     }
 
@@ -28,7 +28,7 @@ class BottomButton: ActionButton {
       case .colorful:
         return UIColor(.white)
       case .canceling:
-        return UIColor(.darkGray)
+        return UIColor(.white)
       }
     }
 
