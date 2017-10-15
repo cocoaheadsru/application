@@ -36,4 +36,3 @@ extension SocialEntity {
     return entity
   }
 }
-

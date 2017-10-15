@@ -58,4 +58,3 @@ extension PlaceEntity {
     return entity
   }
 }
-

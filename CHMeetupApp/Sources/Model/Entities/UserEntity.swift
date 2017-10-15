@@ -74,4 +74,3 @@ extension UserEntity {
     return userContacts
   }
 }
-
