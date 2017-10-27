@@ -14,6 +14,7 @@ class GiveSpeechController {
     guard let userId = currentUser?.remoteId,
           let token = currentUser?.token
       else {
+        completion(false)
         return
     }
 
