@@ -120,18 +120,19 @@ public class AZTabBar: UITabBar {
 
   override public func sizeThatFits(_ size: CGSize) -> CGSize {
     var size = super.sizeThatFits(size)
-    size.height = preferedHeight
+    
+    if #available(iOS 11.0, *), let bottomInset = superview?.safeAreaInsets.bottom {
+      size.height = bottomInset + preferedHeight
+    } else {
+      size.height = preferedHeight
+    }
     return size
   }
 
   override public var alpha: CGFloat {
     didSet {
-      for view in subviews {
-        if view is AZTabBarItemView {
-          view.alpha = alpha
-        } else {
-          view.alpha = 0.0
-        }
+      subviews.forEach {
+        $0.alpha = $0 is AZTabBarItemView ? alpha : 0.0
       }
     }
   }
@@ -215,8 +216,12 @@ public class AZTabBarController: UITabBarController {
       }
 
       tabBar.addSubview(viewContainer)
-      az_itemViewConstraints.append(tabBar.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
-
+      if #available(iOS 11.0, *) {
+        az_itemViewConstraints.append(view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
+      } else {
+        az_itemViewConstraints.append(tabBar.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
+      }
+      
       if index > 0 {
         az_itemViewConstraints.append(az_items[index - 1].containerView.rightAnchor.constraint(equalTo: viewContainer.leftAnchor))
         az_itemViewConstraints.append(az_items[index - 1].containerView.widthAnchor.constraint(equalTo: viewContainer.widthAnchor))
