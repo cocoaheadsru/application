@@ -156,7 +156,7 @@ extension UIViewController {
   }
 }
 
-public class AZTabBarController: UITabBarController {
+public class AZTabBarItemView: UITabBarController {
 
   @IBInspectable public var preferedHeight: CGFloat = defaultHeight {
     didSet {
