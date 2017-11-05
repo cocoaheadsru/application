@@ -12,7 +12,9 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8, estimatedRowHeight: 44)
+      let configuration = TableViewConfiguration(bottomInset: 12 + BottomButton.constantHeight,
+                                                 bottomIndicatorInset: 8.0 + BottomButton.constantHeight,
+                                                 estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -33,6 +35,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     navigationItem.title = "Стать спикером".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Подать заявку".localized)
+    bottomButton.bottomInsetsConstant = 8.0
     bottomButton.addTarget(self, action: #selector(sendSpeech), for: .touchUpInside)
   }
 

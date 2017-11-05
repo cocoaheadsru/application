@@ -12,8 +12,9 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8)
-      tableView.configure(with: .defaultConfiguration)
+      let configuration = TableViewConfiguration(bottomInset: 12 + BottomButton.constantHeight,
+                                                 bottomIndicatorInset: 8.0 + BottomButton.constantHeight)
+      tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -35,6 +36,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     title = "Изменение профиля".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
+    bottomButton.bottomInsetsConstant = 8.0
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
 
   }

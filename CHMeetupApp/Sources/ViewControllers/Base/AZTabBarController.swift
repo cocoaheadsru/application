@@ -106,7 +106,21 @@ public class AZTabBarItem: UITabBarItem {
 public class AZTabBar: UITabBar {
   fileprivate var preferedHeight: CGFloat = defaultHeight
   fileprivate weak var az_tabBarController: AZTabBarController?
-
+ 
+  //UITabBar bug fix:
+  //https://stackoverflow.com/questions/46232929/why-page-push-animation-tabbar-moving-up-in-the-iphone-x.
+  override public var frame: CGRect {
+    get {
+      return super.frame
+    }
+    set {
+      var newFrame = newValue
+      if let superview = self.superview, newFrame.maxY != superview.frame.height {
+        newFrame.origin.y = superview.frame.height - newFrame.height
+      }
+      super.frame = newFrame
+    }
+  }
   // MARK: - Override default methods
 
   override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -131,8 +145,8 @@ public class AZTabBar: UITabBar {
 
   override public var alpha: CGFloat {
     didSet {
-      subviews.forEach {
-        $0.alpha = $0 is AZTabBarItemView ? alpha : 0.0
+      subviews.forEach { view in
+        view.alpha = view is AZTabBarItemView ? alpha : 0.0
       }
     }
   }
@@ -218,6 +232,8 @@ public class AZTabBarController: UITabBarController {
       tabBar.addSubview(viewContainer)
       if #available(iOS 11.0, *) {
         az_itemViewConstraints.append(view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
+        az_itemViewConstraints.append(tabBar.topAnchor.constraint(equalTo: viewContainer.topAnchor))
+
       } else {
         az_itemViewConstraints.append(tabBar.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
       }
