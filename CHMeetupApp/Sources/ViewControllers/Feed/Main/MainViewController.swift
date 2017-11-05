@@ -30,9 +30,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-    if traitCollection.forceTouchCapability == .available {
-      registerForPreviewing(with: self, sourceView: view)
-    }
+    registerForPreviewingIfAvailable()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -111,11 +109,11 @@ extension MainViewController: UIViewControllerPreviewingDelegate {
 
     let sourceRect = tableView.rectForRow(at: indexPath)
     previewingContext.sourceRect = sourceRect
-
     return viewController
   }
 
-  func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         commit viewControllerToCommit: UIViewController) {
     displayCollection.commitPreview(with: viewControllerToCommit)
   }
 }

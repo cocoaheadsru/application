@@ -28,9 +28,7 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     tableView.registerNibs(from: displayCollection)
     title = "Прошедшие встречи".localized
 
-    if traitCollection.forceTouchCapability == .available {
-      registerForPreviewing(with: self, sourceView: view)
-    }
+    registerForPreviewingIfAvailable()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +89,6 @@ extension PastEventsViewController: UIViewControllerPreviewingDelegate {
 
     let sourceRect = tableView.rectForRow(at: indexPath)
     previewingContext.sourceRect = sourceRect
-
     return viewController
   }
 
