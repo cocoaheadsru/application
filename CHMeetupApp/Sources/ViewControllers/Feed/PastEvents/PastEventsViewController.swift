@@ -27,6 +27,10 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
     title = "Прошедшие встречи".localized
+
+    if traitCollection.forceTouchCapability == .available {
+      registerForPreviewing(with: self, sourceView: view)
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -74,5 +78,25 @@ fileprivate extension PastEventsViewController {
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
+  }
+}
+
+extension PastEventsViewController: UIViewControllerPreviewingDelegate {
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    guard let indexPath = tableView.indexPathForRow(at: location),
+      let viewController = displayCollection.preview(at: indexPath) else {
+        return nil
+    }
+
+    let sourceRect = tableView.rectForRow(at: indexPath)
+    previewingContext.sourceRect = sourceRect
+
+    return viewController
+  }
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         commit viewControllerToCommit: UIViewController) {
+    displayCollection.commitPreview(with: viewControllerToCommit)
   }
 }

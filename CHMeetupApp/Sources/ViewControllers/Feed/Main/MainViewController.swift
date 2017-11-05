@@ -30,7 +30,9 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-    // Do any additional setup after loading the view.
+    if traitCollection.forceTouchCapability == .available {
+      registerForPreviewing(with: self, sourceView: view)
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -96,5 +98,24 @@ fileprivate extension MainViewController {
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
+  }
+}
+
+extension MainViewController: UIViewControllerPreviewingDelegate {
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    guard let indexPath = tableView.indexPathForRow(at: location),
+          let viewController = displayCollection.preview(at: indexPath) else {
+        return nil
+    }
+
+    let sourceRect = tableView.rectForRow(at: indexPath)
+    previewingContext.sourceRect = sourceRect
+
+    return viewController
+  }
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+    displayCollection.commitPreview(with: viewControllerToCommit)
   }
 }

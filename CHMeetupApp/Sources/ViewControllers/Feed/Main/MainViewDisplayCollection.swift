@@ -106,6 +106,24 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       break
     }
   }
+
+  func preview(at indexPath: IndexPath) -> UIViewController? {
+    switch sections[indexPath.section] {
+    case .events:
+      if modelCollection[indexPath.row].isTemplate {
+        return nil
+      }
+      let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
+      return eventPreviewViewController
+    case .actionButtons, .collectionIsEmpty:
+      return nil
+    }
+  }
+
+  func commitPreview(with viewControllerToCommit: UIViewController) {
+    delegate?.push(viewController: viewControllerToCommit)
+  }
 }
 
 extension MainViewDisplayCollection: TemplateModelCollectionDelegate {

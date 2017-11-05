@@ -51,6 +51,19 @@ final class PastEventsDisplayCollection: DisplayCollection, DisplayCollectionAct
     eventPreview.selectedEventId = modelCollection[indexPath.row].id
     delegate?.push(viewController: eventPreview)
   }
+
+  func preview(at indexPath: IndexPath) -> UIViewController? {
+    if modelCollection[indexPath.row].isTemplate {
+        return nil
+    }
+    let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
+    return eventPreviewViewController
+  }
+
+  func commitPreview(with viewControllerToCommit: UIViewController) {
+    delegate?.push(viewController: viewControllerToCommit)
+  }
 }
 
 extension PastEventsDisplayCollection: TemplateModelCollectionDelegate {
