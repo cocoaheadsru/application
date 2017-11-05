@@ -14,12 +14,13 @@ final class UserEntity: TemplatableObject, TemplateEntity {
   enum UserStatus: String {
     case complete
     case requiresCompletion
+    case unknown
 
     var canContinue: Bool {
       switch self {
       case .complete:
         return true
-      case .requiresCompletion:
+      case .requiresCompletion, .unknown:
         return false
       }
     }
@@ -42,6 +43,18 @@ final class UserEntity: TemplatableObject, TemplateEntity {
   dynamic var isSpeaker: Bool = false
   dynamic var photoURL: String?
   dynamic var token: String?
+  dynamic var statusValue: String?
+  
+  var status: UserStatus {
+    get {
+      return UserStatus(rawValue: statusValue) ?? .unknown
+    }
+    set {
+      realmWrite {
+        statusValue = newValue.rawValue
+      }
+    }
+  }
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()
