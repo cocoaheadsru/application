@@ -43,7 +43,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       var editableFields: [EditableField] = []
 
       let name = EditableField(value: user.name, title: "Имя".localized, isValid: { name -> Bool in
-        return name.characters.count > 1
+        return name.count > 1
       }, save: { [weak self] value in
         realmWrite {
           self?.user.name = value
@@ -51,7 +51,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       })
 
       let lastname = EditableField(value: user.lastName, title: "Фамилия".localized, isValid: { lastname -> Bool in
-        return lastname.characters.count > 1
+        return lastname.count > 1
       }, save: { [weak self] value in
         realmWrite {
           self?.user.lastName = value

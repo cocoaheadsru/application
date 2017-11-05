@@ -12,7 +12,6 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8)
       tableView.configure(with: .defaultConfiguration)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }

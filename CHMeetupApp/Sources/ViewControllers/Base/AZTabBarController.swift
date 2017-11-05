@@ -55,7 +55,7 @@ open class AZTabBarItemView: UIView, AZTabBarItemViewAccessibility {
   open override var accessibilityLabel: String? {
     get {
       if let value = super.accessibilityLabel,
-        value.characters.count > 0 {
+        value.count > 0 {
         return value
       }
       return accessibilityTitle

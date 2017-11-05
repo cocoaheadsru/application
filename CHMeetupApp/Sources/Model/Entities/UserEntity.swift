@@ -43,8 +43,8 @@ final class UserEntity: TemplatableObject, TemplateEntity {
   dynamic var isSpeaker: Bool = false
   dynamic var photoURL: String?
   dynamic var token: String?
-  dynamic var statusValue: String?
-  
+  dynamic var statusValue: String = ""
+
   var status: UserStatus {
     get {
       return UserStatus(rawValue: statusValue) ?? .unknown
