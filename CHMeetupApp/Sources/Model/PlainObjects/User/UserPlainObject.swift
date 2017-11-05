@@ -11,6 +11,7 @@ import Foundation
 struct UserPlainObject {
   let id: Int
   let name: String
+  let status: String
   let lastname: String
   let photoUrl: String?
   let company: String?

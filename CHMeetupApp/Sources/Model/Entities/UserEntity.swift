@@ -10,6 +10,21 @@ import Foundation
 import RealmSwift
 
 final class UserEntity: TemplatableObject, TemplateEntity {
+
+  enum UserStatus: String {
+    case complete
+    case requiresCompletion
+
+    var canContinue: Bool {
+      switch self {
+      case .complete:
+        return true
+      case .requiresCompletion:
+        return false
+      }
+    }
+  }
+
   dynamic var id: Int = 0
   dynamic var remoteId: Int = 0
 
