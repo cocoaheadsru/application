@@ -56,12 +56,14 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
   }
 
   private func completed() {
-    
     profileNavigationController?.updateRootViewController()
+    navigationController?.popViewController(animated: true)
+
+    guard UserPreferencesEntity.value.currentUser?.canContinue == true else {
+      return
+    }
 
     if let eventId = withRegistrationEventId {
-      navigationController?.popViewController(animated: true)
-
       let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
       viewController.selectedEventId = eventId
       push(viewController: viewController)
