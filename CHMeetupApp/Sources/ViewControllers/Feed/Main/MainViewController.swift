@@ -30,7 +30,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-    // Do any additional setup after loading the view.
+
+    PermissionsManager.requireAccess(from: self, to: .notifications) { _ in }
   }
 
   override func viewWillAppear(_ animated: Bool) {
