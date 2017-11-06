@@ -112,11 +112,11 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
       let scrollViewBottomInset = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
       scrollViewContentInsets.bottom = scrollViewBottomInset
       indicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
+      buttonInsets = info.endFrame.height + 8
     case .hidden:
       scrollViewContentInsets.bottom = 0
       indicatorInsets.bottom = 0
-      buttonInsets = 0
+      buttonInsets = 8
     }
 
     tableView.contentInset = scrollViewContentInsets
@@ -140,12 +140,21 @@ extension ProfileEditViewController {
     tableView.endEditing(true)
     ProfileController.save { [weak self] success in
       if success, let strongSelf = self {
+        let message = "Ваши прекрасные данные успешно обновлены.".localized
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                                             description: "Ваши прекрасные данные успешно обновлены.".localized,
+                                                             description: message,
                                                              emoji: "📋",
                                                              completion: {
             strongSelf.navigationController?.popToRootViewController(animated: true)
         })
+
+        self?.present(viewController: notification)
+      } else {
+        let message = "Мы всегда поможем решить вашу проблему, пишите в телеграм канал: @cocoaheads.".localized
+        let notification = NotificationHelper.viewController(title: "Что-то пошло не так".localized,
+                                                             description: message,
+                                                             emoji: "🔥",
+                                                             completion: { })
 
         self?.present(viewController: notification)
       }

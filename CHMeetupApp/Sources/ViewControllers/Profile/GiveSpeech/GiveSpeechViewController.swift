@@ -117,11 +117,11 @@ extension GiveSpeechViewController: KeyboardHandlerDelegate {
       let scrollViewBottomInset = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
       scrollViewContentInsets.bottom = scrollViewBottomInset
       indicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
+      buttonInsets = info.endFrame.height + 8
     case .hidden:
       scrollViewContentInsets.bottom = 0
       indicatorInsets.bottom = 0
-      buttonInsets = 0
+      buttonInsets = 8.0
     }
 
     tableView.contentInset = scrollViewContentInsets
