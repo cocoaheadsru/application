@@ -14,7 +14,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 20)
+      let configuration = TableViewConfiguration(bottomInset: 30)
       tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -27,6 +27,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
+
     keyboardDelegate = self
 
     displayCollection = ProfileEditDisplayCollection(canSkip: canSkip)
@@ -114,13 +115,13 @@ extension ProfileEditViewController {
     }
     showProgressHUD()
     displayCollection.update()
+    tableView.endEditing(true)
     ProfileController.save { [weak self] success in
       if success, let strongSelf = self {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
                                                              description: "Ваши прекрасные данные успешно обновлены.".localized,
                                                              emoji: "📋",
-                                                             completion:
-          {
+                                                             completion: {
             if strongSelf.canSkip {
               strongSelf.navigationController?.popToRootViewController(animated: true)
             } else {

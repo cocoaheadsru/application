@@ -28,7 +28,11 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
   }
 
   func editProfile() {
-    guard let user = UserPreferencesEntity.value.currentUser, user.canContinue else {
+    guard let user = UserPreferencesEntity.value.currentUser else {
+      return
+    }
+    
+    if !user.canContinue {
       let editViewController = Storyboards.Profile.instantiateProfileEditViewController()
       editViewController.canSkip = false
       present(viewController: editViewController)

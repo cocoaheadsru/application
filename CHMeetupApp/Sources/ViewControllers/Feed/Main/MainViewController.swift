@@ -37,10 +37,9 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if LoginProcessController.isLogin != userActiveState {
-      fetchEvents()
-      setCurrentState()
-    }
+    fetchEvents()
+
+    profileNavigationController?.editProfile()
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
@@ -96,5 +95,11 @@ fileprivate extension MainViewController {
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
+  }
+}
+
+extension MainViewController: ProfileHierarhyViewControllerType {
+  func getViewController() -> UIViewController? {
+    return self
   }
 }
