@@ -14,7 +14,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     didSet {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
-                                      bottomInset: 12 + BottomButton.constantHeight,
+                                      bottomInset: 16 + BottomButton.constantHeight,
                                       bottomIndicatorInset: 8.0 + BottomButton.constantHeight,
                                       estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
@@ -207,11 +207,11 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       let tableViewBottomContentInsets = info.endFrame.height + 15 + tableView.defaultBottomInset
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
+      buttonInsets = info.endFrame.height + 8
     case .hidden:
       tableView.contentInset.bottom = tableView.defaultBottomInset
       tableView.scrollIndicatorInsets.bottom = BottomButton.constantHeight
-      buttonInsets = 0
+      buttonInsets = 8
     }
 
     bottomButton.bottomInsetsConstant = buttonInsets
