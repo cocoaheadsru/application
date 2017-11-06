@@ -10,14 +10,20 @@ import UIKit
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  var canSkip: Bool = true
+
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 12 + BottomButton.constantHeight,
-                                                 bottomIndicatorInset: 8.0 + BottomButton.constantHeight)
+      let configuration = TableViewConfiguration(
+        bottomInset: 12 + BottomButton.constantHeight,
+        bottomIndicatorInset: BottomButton.constantHeight,
+        estimatedRowHeight: 44
+      )
       tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
+
   var bottomButton: BottomButton!
   fileprivate var displayCollection: ProfileEditDisplayCollection!
 
@@ -26,9 +32,9 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
-    keyboardDelegate = self
 
-    displayCollection = ProfileEditDisplayCollection()
+    keyboardDelegate = self
+    displayCollection = ProfileEditDisplayCollection(canSkip: canSkip)
     displayCollection.user = user
 
     displayCollection.delegate = self
@@ -39,6 +45,23 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     bottomButton.bottomInsetsConstant = 8.0
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
 
+    tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
+
+    if !canSkip {
+      title = "Завершение регистрации".localized
+      let logoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "img_log_out"),
+                                         landscapeImagePhone: nil,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(logout))
+
+      navigationItem.leftBarButtonItem = logoutButton
+    }
+  }
+
+  func logout() {
+    profileNavigationController?.logout()
+    navigationController?.popViewController(animated: true)
   }
 
 }
@@ -71,7 +94,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController,
-                             didFinishPickingMediaWithInfo info: [String : Any]) {
+                             didFinishPickingMediaWithInfo info: [String: Any]) {
     displayCollection.didReciveMedia(picker, info: info)
   }
 }
@@ -114,13 +137,14 @@ extension ProfileEditViewController {
     }
     showProgressHUD()
     displayCollection.update()
+    tableView.endEditing(true)
     ProfileController.save { [weak self] success in
-      if success {
+      if success, let strongSelf = self {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emoji: "📋",
-                                          completion: {
-                                            self?.navigationController?.popToRootViewController(animated: true)
+                                                             description: "Ваши прекрасные данные успешно обновлены.".localized,
+                                                             emoji: "📋",
+                                                             completion: {
+            strongSelf.navigationController?.popToRootViewController(animated: true)
         })
 
         self?.present(viewController: notification)

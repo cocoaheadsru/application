@@ -50,12 +50,14 @@ extension UserPlainObject {
     guard
       let id = json["id"] as? Int,
       let name = json["name"] as? String,
-      let lastname = json["lastname"] as? String
+      let lastname = json["lastname"] as? String,
+      let status = json["regStatus"] as? String
     else { return nil }
 
     self.id = id
     self.name = name
     self.lastname = lastname
+    self.status = status
     photoUrl = json["photo_url"] as? String
     company = json["company"] as? String
     position = json["position"] as? String
@@ -72,6 +74,7 @@ extension UserPlainObject {
     self.id = id
     name = ""
     lastname = ""
+    status = ""
     position = nil
     company = nil
     photoUrl = nil

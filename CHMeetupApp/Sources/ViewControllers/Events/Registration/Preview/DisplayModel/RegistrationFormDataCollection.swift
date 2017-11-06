@@ -144,7 +144,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {
-        checked = row.answer.parseAnswers().boolValue || row.answer.parseAnswers().stringValue.characters.count > 0
+        checked = row.answer.parseAnswers().boolValue || row.answer.parseAnswers().stringValue.count > 0
         if checked { break }
       }
       if !checked {
