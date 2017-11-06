@@ -58,17 +58,17 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
-  dynamic var id: Int = 0
+  @objc dynamic var id: Int = 0
 
-  dynamic var title: String = ""
-  dynamic var descriptionText: String = ""
+  @objc dynamic var title: String = ""
+  @objc dynamic var descriptionText: String = ""
 
-  dynamic var startDate: Date = Date()
-  dynamic var endDate: Date = Date()
+  @objc dynamic var startDate: Date = Date()
+  @objc dynamic var endDate: Date = Date()
 
-  dynamic var photoURL: String = ""
+  @objc dynamic var photoURL: String = ""
 
-  dynamic var statusValue: String = "unknown"
+  @objc dynamic var statusValue: String = "unknown"
   var status: EventRegistrationStatus {
     get {
       return EventRegistrationStatus(rawValue: statusValue) ?? .unknown
@@ -80,7 +80,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
-  dynamic var place: PlaceEntity?
+  @objc dynamic var place: PlaceEntity?
 
   var importingState: ImportingStateEntity {
     if let importingState = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {

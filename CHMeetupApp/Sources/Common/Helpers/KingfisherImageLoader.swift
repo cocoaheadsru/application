@@ -34,7 +34,7 @@ final class KingfisherImageLoader: ImageLoader {
     imageView.kf.setImage(with: url, placeholder: placeholder, options: [],
                           progressBlock: { (receivedSize, totalSize) in
       if let progressBlock = progressBlock {
-        progressBlock(Int(truncatingBitPattern: receivedSize), Int(truncatingBitPattern: totalSize))
+        progressBlock(Int(truncatingIfNeeded: receivedSize), Int(truncatingIfNeeded: totalSize))
       }
     }, completionHandler: { (image, error, _, _) in
       if let completionHandler = completionHandler {
@@ -57,7 +57,7 @@ final class KingfisherImageLoader: ImageLoader {
 
     return KingfisherManager.shared.retrieveImage(with: url, options: [], progressBlock: { (receivedSize, totalSize) in
       if let progressBlock = progressBlock {
-        progressBlock(Int(truncatingBitPattern: receivedSize), Int(truncatingBitPattern: totalSize))
+        progressBlock(Int(truncatingIfNeeded: receivedSize), Int(truncatingIfNeeded: totalSize))
       }
     }, completionHandler: { (image, error, _, _) in
       if let completionHandler = completionHandler {

@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 class ImportingStateEntity: Object {
-  dynamic var eventId: Int = 0
-  dynamic var calendarIdentifier: String?
-  dynamic var reminderIdentifier: String?
+  @objc dynamic var eventId: Int = 0
+  @objc dynamic var calendarIdentifier: String?
+  @objc dynamic var reminderIdentifier: String?
 
   override static func primaryKey() -> String? {
     return "eventId"

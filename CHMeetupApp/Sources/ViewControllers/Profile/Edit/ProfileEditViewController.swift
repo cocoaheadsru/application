@@ -12,7 +12,6 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8)
       tableView.configure(with: .defaultConfiguration)
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
@@ -69,7 +68,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController,
-                             didFinishPickingMediaWithInfo info: [String : Any]) {
+                             didFinishPickingMediaWithInfo info: [String: Any]) {
     displayCollection.didReciveMedia(picker, info: info)
   }
 }
@@ -105,7 +104,7 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 }
 
 extension ProfileEditViewController {
-  func saveProfile() {
+  @objc func saveProfile() {
     if let failedFieldIndexPath = displayCollection.failedField {
       tableView.failedShakeRow(failedFieldIndexPath)
       return

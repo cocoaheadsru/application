@@ -25,7 +25,7 @@ extension UIViewController: DisplayCollectionDelegate {
     navigationController?.pushViewController(viewController, animated: true)
   }
 
-  func updateUI() {
+  @objc func updateUI() {
     if let tableView = self.value(forKey: "tableView") as? UITableView {
       tableView.reloadData()
     }

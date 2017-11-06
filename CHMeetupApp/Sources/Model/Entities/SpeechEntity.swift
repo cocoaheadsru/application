@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 final class SpeechEntity: TemplatableObject, TemplateEntity {
-  dynamic var id: Int = 0
+  @objc dynamic var id: Int = 0
 
-  dynamic var title: String = ""
-  dynamic var descriptionText: String = ""
+  @objc dynamic var title: String = ""
+  @objc dynamic var descriptionText: String = ""
 
   let contents = List<SpeechContentEntity>()
 

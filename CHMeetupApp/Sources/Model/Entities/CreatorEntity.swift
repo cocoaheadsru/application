@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 final class CreatorEntity: TemplatableObject, TemplateEntity {
-  dynamic var id: Int = 0
+  @objc dynamic var id: Int = 0
 
-  dynamic var name: String = ""
-  dynamic var info: String?
+  @objc dynamic var name: String = ""
+  @objc dynamic var info: String?
 
-  dynamic var url: String?
-  dynamic var photoURL: String?
-  dynamic var isActive: Bool = false
+  @objc dynamic var url: String?
+  @objc dynamic var photoURL: String?
+  @objc dynamic var isActive: Bool = false
 
   override static func primaryKey() -> String? {
     return "id"

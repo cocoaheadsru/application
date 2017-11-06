@@ -70,12 +70,13 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
   func headerTitle(for section: Int) -> NSAttributedString {
     let cell = formData.sections[section]
-    let attributtedString = NSMutableAttributedString(string: cell.name,
-                                                      attributes: [NSFontAttributeName: DefaultTableHeaderView.font])
+    let attributtedString
+      = NSMutableAttributedString(string: cell.name,
+                                  attributes: [NSAttributedStringKey.font: DefaultTableHeaderView.font])
     let char = "*"
     if cell.isRequired {
       let mutableAttributedString = NSMutableAttributedString(string: char)
-      mutableAttributedString.addAttribute(NSForegroundColorAttributeName,
+      mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor,
                                            value: UIColor(.red), range: NSRange(location: 0, length: 1))
       attributtedString.append(mutableAttributedString)
     }
@@ -144,7 +145,7 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
     for (index, section) in formData.sections.enumerated() where section.isRequired {
       var checked = false
       for row in section.fieldAnswers {
-        checked = row.answer.parseAnswers().boolValue || row.answer.parseAnswers().stringValue.characters.count > 0
+        checked = row.answer.parseAnswers().boolValue || row.answer.parseAnswers().stringValue.count > 0
         if checked { break }
       }
       if !checked {

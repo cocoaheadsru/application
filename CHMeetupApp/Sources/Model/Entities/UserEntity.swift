@@ -10,23 +10,23 @@ import Foundation
 import RealmSwift
 
 final class UserEntity: TemplatableObject, TemplateEntity {
-  dynamic var id: Int = 0
-  dynamic var remoteId: Int = 0
+  @objc dynamic var id: Int = 0
+  @objc dynamic var remoteId: Int = 0
 
-  dynamic var name: String = ""
-  dynamic var lastName: String = ""
+  @objc dynamic var name: String = ""
+  @objc dynamic var lastName: String = ""
 
-  dynamic var company: String?
-  dynamic var position: String?
+  @objc dynamic var company: String?
+  @objc dynamic var position: String?
 
-  dynamic var info: String = ""
+  @objc dynamic var info: String = ""
 
-  dynamic var phone: String?
-  dynamic var email: String = ""
+  @objc dynamic var phone: String?
+  @objc dynamic var email: String = ""
 
-  dynamic var isSpeaker: Bool = false
-  dynamic var photoURL: String?
-  dynamic var token: String?
+  @objc dynamic var isSpeaker: Bool = false
+  @objc dynamic var photoURL: String?
+  @objc dynamic var token: String?
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()
@@ -35,7 +35,7 @@ final class UserEntity: TemplatableObject, TemplateEntity {
     return "id"
   }
 
-  dynamic var fullName: String {
+  @objc dynamic var fullName: String {
     return name + " " + lastName
   }
 }

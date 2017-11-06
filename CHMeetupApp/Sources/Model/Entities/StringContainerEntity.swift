@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class StringContainerEntity: Object {
-  dynamic var value: String = ""
+  @objc dynamic var value: String = ""
 }

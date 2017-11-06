@@ -92,7 +92,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     view.endEditing(true)
   }
 
-  func registrationButtonAction() {
+  @objc func registrationButtonAction() {
     guard displayCollection.isFormLoaded else {
       fatalError("\(#function): form is not loaded")
     }

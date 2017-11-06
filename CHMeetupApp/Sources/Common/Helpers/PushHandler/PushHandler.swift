@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias PushSequence = [AnyHashable : Any]
+typealias PushSequence = [AnyHashable: Any]
 
 final class PushHandler {
 

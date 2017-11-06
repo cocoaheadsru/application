@@ -18,7 +18,7 @@ class ShadowView: UIView {
   }
 
   // For UIAppearance proxy
-  dynamic var shadowViewAppearance: ShadowViewAppearance? {
+  @objc dynamic var shadowViewAppearance: ShadowViewAppearance? {
     set {
       shadowViewAppearanceValue = newValue
     }
