@@ -18,7 +18,7 @@ struct AlertHeaderTableViewCellModel: CellViewModelType {
     var emoji: String {
       switch self {
       case .warning:
-        return "⚠️"
+        return "🤔"
       case .danger:
         return "🔥"
       case .info:

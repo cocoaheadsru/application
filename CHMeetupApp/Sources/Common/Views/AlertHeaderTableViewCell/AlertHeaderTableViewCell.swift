@@ -19,7 +19,7 @@ class AlertHeaderTableViewCell: UITableViewCell {
   @IBOutlet var label: UILabel! {
     didSet {
       label.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      label.textColor = UIColor(.red)
+      label.textColor = UIColor(.darkGray)
       label.text = "Ваша заявка\nуспешно отправлена!".localized
     }
   }
