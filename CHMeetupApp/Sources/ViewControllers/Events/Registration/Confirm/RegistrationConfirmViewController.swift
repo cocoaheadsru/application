@@ -14,8 +14,8 @@ class RegistrationConfirmViewController: UIViewController, UIViewControllerWithT
     didSet {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
-        bottomInset: 8 + BottomButton.constantHeight,
-        bottomIndicatorInset: BottomButton.constantHeight,
+        bottomInset: 12.0 + BottomButton.constantHeight,
+        bottomIndicatorInset: 8.0 + BottomButton.constantHeight,
         estimatedRowHeight: 44
       )
       tableView.configure(with: .custom(configuration))
@@ -38,6 +38,7 @@ class RegistrationConfirmViewController: UIViewController, UIViewControllerWithT
 
     navigationController?.setNavigationBarHidden(true, animated: true)
     bottomButton = BottomButton(addingOnView: view, title: "Закрыть".localized)
+    bottomButton.bottomInsetsConstant = 8.0
     displayCollection = RegistrationConfirmDisplayCollection()
     tableView.registerNibs(from: displayCollection)
 
