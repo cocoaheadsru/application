@@ -19,13 +19,6 @@ extension Date {
     return todayYear == dateYear
   }
 
-  var isFutureDate: Bool {
-    let thisTime = Date().timeIntervalSince1970
-    let dateTime = timeIntervalSince1970
-
-    return thisTime <= dateTime
-  }
-
   var isPassed: Bool {
     return (self.isLater(then: Date()) == false)
   }

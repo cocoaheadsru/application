@@ -12,7 +12,7 @@ extension Date {
   /// If current year, then would show date and month (example: 7 April) depending on locale
   /// If another year, it would add year (example: 7 April 2016) depeding on locale
   var defaultFormatString: String {
-    let template = self.isThisYear ? "MMMMd\(self.isFutureDate ? ", HH:mm" : "")" : "yMMMMd"
+    let template = self.isThisYear ? "MMMMd\(!isPassed ? ", HH:mm" : "")" : "yMMMMd"
     let dateFormatString = DateFormatter.dateFormat(fromTemplate: template,
                                                     options: 0,
                                                     locale: Bundle.main.locale)
