@@ -97,8 +97,4 @@ fileprivate extension MainViewController {
   }
 }
 
-extension MainViewController: ProfileHierarhyViewControllerType {
-  func getViewController() -> UIViewController? {
-    return self
-  }
-}
+extension MainViewController: ProfileHierarhyViewControllerType { }
