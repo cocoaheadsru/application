@@ -39,9 +39,10 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
     super.viewWillAppear(animated)
 
     let token = (UserPreferencesEntity.value.currentUser?.token)!
-    ProfileController.updateUser(withToken: token, completion: { _ in })
+    ProfileController.updateUser(withToken: token, completion: { [weak self] _ in
+      self?.profileNavigationController?.editProfile()
+    })
 
-    profileNavigationController?.editProfile()
     fetch()
   }
 

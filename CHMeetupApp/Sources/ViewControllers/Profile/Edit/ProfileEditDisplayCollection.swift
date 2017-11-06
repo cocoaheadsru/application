@@ -31,7 +31,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ChooseProfilePhotoTableViewCellModel.self,
-            LabelTableViewCellModel.self,
+            AlertHeaderTableViewCellModel.self,
             EditableLabelTableViewModel.self]
   }
 
@@ -111,7 +111,9 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       sections = [.userHeader]
 
       if !canSkip {
-        sections.append(.info)
+        sections = [.info]
+      } else {
+        sections = [.userHeader]
       }
 
       sections += Array(repeating: .userEditableField, count: editableFields.count)
@@ -142,9 +144,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     case .userHeader:
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
     case .info:
-      return LabelTableViewCellModel(title: "Завершение регистрации".localized,
-                                     // swiftlint:disable:next line_length         
-                                     description: "Для вашего профиля не хватает одного или нескольких обязательных полей. Пожалуйста, введите корректную информацию, чтобы мы могли добавить вас в список гостей.".localized)
+      // swiftlint:disable:next line_length
+      return AlertHeaderTableViewCellModel(alertType: .warning, message: "Для вашего профиля не хватает одного или нескольких обязательных полей. Пожалуйста, введите корректную информацию, чтобы мы могли добавить вас в список гостей.".localized)
     case .userEditableField:
       guard let firstIndex = sections.index(of: .userEditableField) else {
         fatalError("No index for current section")
@@ -210,8 +211,10 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
   func height(for indexPath: IndexPath) -> CGFloat {
     switch sections[indexPath.section] {
-    case .userHeader, .info:
+    case .userHeader:
       return 166.0
+    case .info:
+      return 270.0
     case .userEditableField:
       return 60.0
     }

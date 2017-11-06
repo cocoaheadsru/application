@@ -31,7 +31,7 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     guard let user = UserPreferencesEntity.value.currentUser else {
       return
     }
-    
+
     if !user.canContinue {
       let editViewController = Storyboards.Profile.instantiateProfileEditViewController()
       editViewController.canSkip = false
