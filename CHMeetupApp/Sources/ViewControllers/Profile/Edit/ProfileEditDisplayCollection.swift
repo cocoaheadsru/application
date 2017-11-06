@@ -210,10 +210,8 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     switch sections[indexPath.section] {
     case .userHeader:
       return 166.0
-    case .info:
-      return 270.0
-    case .userEditableField:
-      return 60.0
+    case .info, .userEditableField:
+      return UITableViewAutomaticDimension
     }
   }
 
