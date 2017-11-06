@@ -38,10 +38,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if LoginProcessController.isLogin != userActiveState {
-      fetchEvents()
-      setCurrentState()
-    }
+    fetchEvents()
+    profileNavigationController?.pushEditProfileTo(self.navigationController)
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
@@ -99,3 +97,5 @@ fileprivate extension MainViewController {
     })
   }
 }
+
+extension MainViewController: ProfileHierarhyViewControllerType { }

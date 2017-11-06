@@ -24,7 +24,7 @@ final class PushNotificationsController {
       UserPreferencesEntity.value.pushToken = tokenString
     }
 
-    guard tokenString.characters.count > 0 else {
+    guard tokenString.count > 0 else {
       return
     }
 
