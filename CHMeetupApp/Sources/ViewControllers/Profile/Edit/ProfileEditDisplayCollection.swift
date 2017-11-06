@@ -10,7 +10,11 @@ import UIKit
 import SVProgressHUD
 
 class ProfileEditDisplayCollection: NSObject, DisplayCollection {
+  var canSkip: Bool
 
+  init(canSkip: Bool = true) {
+    self.canSkip = canSkip
+  }
   class EditableField {
     var value: String
     var title: String
@@ -27,12 +31,14 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ChooseProfilePhotoTableViewCellModel.self,
+            LabelTableViewCellModel.self,
             EditableLabelTableViewModel.self]
   }
 
   enum `Type` {
     case userHeader
     case userEditableField
+    case info
   }
 
   fileprivate var photoCell: ChooseProfilePhotoTableViewCell!
@@ -102,6 +108,11 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       self.editableFields = editableFields
 
       sections = [.userHeader]
+
+      if !canSkip {
+        sections.append(.info)
+      }
+
       sections += Array(repeating: .userEditableField, count: editableFields.count)
     }
   }
@@ -118,6 +129,8 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     switch sections[section] {
     case .userHeader:
       return 1
+    case .info:
+      return 1
     case .userEditableField:
       return 1
     }
@@ -127,7 +140,10 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
     switch sections[indexPath.section] {
     case .userHeader:
       return ChooseProfilePhotoTableViewCellModel(userEntity: user, delegate: self)
-
+    case .info:
+      return LabelTableViewCellModel(title: "Завершение регистрации".localized,
+                                     // swiftlint:disable:next line_length         
+                                     description: "Для вашего профиля не хватает одного или нескольких обязательных полей. Пожалуйста, введите корректную информацию, чтобы мы могли добавить вас в список гостей.".localized)
     case .userEditableField:
       guard let firstIndex = sections.index(of: .userEditableField) else {
         fatalError("No index for current section")
@@ -186,7 +202,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     switch sections[section] {
     case .userEditableField:
       return 40
-    case .userHeader:
+    case .userHeader, .info:
       return UITableViewAutomaticDimension
     }
   }
@@ -195,6 +211,8 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     switch sections[indexPath.section] {
     case .userHeader:
       return 166.0
+    case .info:
+      return UITableViewAutomaticDimension
     case .userEditableField:
       return 60.0
     }
@@ -202,7 +220,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
   func headerTitle(for section: Int) -> String {
     switch sections[section] {
-    case .userHeader:
+    case .userHeader, .info:
       return ""
     case .userEditableField:
       guard let firstIndex = sections.index(of: .userEditableField) else {

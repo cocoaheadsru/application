@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  var canSkip: Bool = true
+
   @IBOutlet var tableView: UITableView! {
     didSet {
       tableView.configure(with: .defaultConfiguration)
@@ -26,7 +28,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     }
     keyboardDelegate = self
 
-    displayCollection = ProfileEditDisplayCollection()
+    displayCollection = ProfileEditDisplayCollection(canSkip: canSkip)
     displayCollection.user = user
 
     displayCollection.delegate = self
@@ -35,7 +37,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
-
+    navigationItem.hidesBackButton = !canSkip
   }
 
 }

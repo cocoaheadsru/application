@@ -51,7 +51,7 @@ extension UserPlainObject {
       let id = json["id"] as? Int,
       let name = json["name"] as? String,
       let lastname = json["lastname"] as? String,
-      let status = json["status"] as? String
+      let status = json["regStatus"] as? String
     else { return nil }
 
     self.id = id

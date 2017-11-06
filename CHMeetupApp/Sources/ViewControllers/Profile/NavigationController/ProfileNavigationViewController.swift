@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProfileNavigationControllerType {
   func updateRootViewController()
+  func editProfile()
 }
 
 class ProfileNavigationViewController: NavigationViewController, ProfileNavigationControllerType {
@@ -25,6 +26,16 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     super.viewWillAppear(animated)
     updateRootViewController()
   }
+
+  func editProfile() {
+    guard let user = UserPreferencesEntity.value.currentUser, user.status.canContinue else {
+      let editViewController = Storyboards.Profile.instantiateProfileEditViewController()
+      editViewController.canSkip = false
+      present(viewController: editViewController)
+      return
+    }
+  }
+
 
   func updateRootViewController() {
     if LoginProcessController.isLogin == previousState {
