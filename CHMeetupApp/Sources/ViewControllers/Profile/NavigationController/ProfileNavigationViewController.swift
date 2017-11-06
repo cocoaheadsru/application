@@ -10,7 +10,8 @@ import UIKit
 
 protocol ProfileNavigationControllerType {
   func updateRootViewController()
-  func editProfile()
+  func pushEditProfileTo(_ navigationController: UINavigationController?)
+  func logout()
 }
 
 class ProfileNavigationViewController: NavigationViewController, ProfileNavigationControllerType {
@@ -27,17 +28,19 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     updateRootViewController()
   }
 
-  func editProfile() {
+  func pushEditProfileTo(_ navigationController: UINavigationController? = nil) {
     guard let user = UserPreferencesEntity.value.currentUser else {
       return
     }
 
+    let rootController = navigationController ?? self
+
     if !user.canContinue {
       let editViewController = Storyboards.Profile.instantiateProfileEditViewController()
-      editViewController.canSkip = false
-      present(viewController: editViewController)
-      return
+      editViewController.canSkip = user.canContinue
+      rootController.pushViewController(editViewController, animated: true)
     }
+
   }
 
   func updateRootViewController() {
@@ -51,6 +54,11 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     } else {
       viewControllers = [ViewControllersFactory.authViewController]
     }
+  }
+
+  func logout() {
+    LoginProcessController.logout()
+    updateRootViewController()
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {

@@ -15,6 +15,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
   init(canSkip: Bool = true) {
     self.canSkip = canSkip
   }
+
   class EditableField {
     var value: String
     var title: String
@@ -130,11 +131,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
 
   func numberOfRows(in section: Int) -> Int {
     switch sections[section] {
-    case .userHeader:
-      return 1
-    case .info:
-      return 1
-    case .userEditableField:
+    case .userHeader, .info, .userEditableField:
       return 1
     }
   }

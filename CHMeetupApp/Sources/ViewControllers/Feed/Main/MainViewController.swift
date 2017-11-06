@@ -38,8 +38,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     self.tableView.reloadData()
 
     fetchEvents()
-
-    profileNavigationController?.editProfile()
+    profileNavigationController?.pushEditProfileTo(self.navigationController)
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {

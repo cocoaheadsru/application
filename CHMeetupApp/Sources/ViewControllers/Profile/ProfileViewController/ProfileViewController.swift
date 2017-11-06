@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
       logoutButtonItem.accessibilityValue = "Выйти".localized
     }
   }
+
   @IBOutlet var editProfileButtonItem: UIBarButtonItem! {
     didSet {
       editProfileButtonItem.accessibilityValue = "Редактировать профиль".localized
@@ -40,7 +41,7 @@ class ProfileViewController: UIViewController, ProfileHierarhyViewControllerType
 
     let token = (UserPreferencesEntity.value.currentUser?.token)!
     ProfileController.updateUser(withToken: token, completion: { [weak self] _ in
-      self?.profileNavigationController?.editProfile()
+      self?.profileNavigationController?.pushEditProfileTo(nil)
     })
 
     fetch()

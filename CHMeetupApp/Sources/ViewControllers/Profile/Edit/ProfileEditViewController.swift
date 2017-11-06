@@ -14,11 +14,16 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 30)
+      tableView.allowsMultipleSelection = true
+      let configuration = TableViewConfiguration(
+        bottomInset: 8 + BottomButton.constantHeight,
+        bottomIndicatorInset: BottomButton.constantHeight,
+        estimatedRowHeight: 44
+      )
       tableView.configure(with: .custom(configuration))
-      tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
+
   var bottomButton: BottomButton!
   fileprivate var displayCollection: ProfileEditDisplayCollection!
 
@@ -29,7 +34,6 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     }
 
     keyboardDelegate = self
-
     displayCollection = ProfileEditDisplayCollection(canSkip: canSkip)
     displayCollection.user = user
 
@@ -39,7 +43,24 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
-    navigationItem.hidesBackButton = !canSkip
+
+    tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
+
+    if !canSkip {
+      navigationItem.title = "Завершение регистрации".localized
+      let logoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "img_log_out"),
+                                         landscapeImagePhone: nil,
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(logout))
+      navigationItem.hidesBackButton = true
+      navigationItem.leftBarButtonItem = logoutButton
+    }
+  }
+
+  func logout() {
+    profileNavigationController?.logout()
+    navigationController?.popViewController(animated: true)
   }
 
 }
@@ -122,12 +143,7 @@ extension ProfileEditViewController {
                                                              description: "Ваши прекрасные данные успешно обновлены.".localized,
                                                              emoji: "📋",
                                                              completion: {
-            if strongSelf.canSkip {
-              strongSelf.navigationController?.popToRootViewController(animated: true)
-            } else {
-              strongSelf.dismiss(animated: true, completion: nil)
-            }
-
+            strongSelf.navigationController?.popToRootViewController(animated: true)
         })
 
         self?.present(viewController: notification)
