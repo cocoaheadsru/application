@@ -14,7 +14,8 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
 
   @IBOutlet var tableView: UITableView! {
     didSet {
-      tableView.configure(with: .defaultConfiguration)
+      let configuration = TableViewConfiguration(bottomInset: 20)
+      tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
@@ -70,7 +71,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController,
-                             didFinishPickingMediaWithInfo info: [String : Any]) {
+                             didFinishPickingMediaWithInfo info: [String: Any]) {
     displayCollection.didReciveMedia(picker, info: info)
   }
 }
@@ -114,12 +115,18 @@ extension ProfileEditViewController {
     showProgressHUD()
     displayCollection.update()
     ProfileController.save { [weak self] success in
-      if success {
+      if success, let strongSelf = self {
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emoji: "📋",
-                                          completion: {
-                                            self?.navigationController?.popToRootViewController(animated: true)
+                                                             description: "Ваши прекрасные данные успешно обновлены.".localized,
+                                                             emoji: "📋",
+                                                             completion:
+          {
+            if strongSelf.canSkip {
+              strongSelf.navigationController?.popToRootViewController(animated: true)
+            } else {
+              strongSelf.dismiss(animated: true, completion: nil)
+            }
+
         })
 
         self?.present(viewController: notification)

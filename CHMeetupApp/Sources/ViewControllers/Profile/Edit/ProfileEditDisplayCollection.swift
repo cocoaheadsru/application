@@ -53,6 +53,7 @@ class ProfileEditDisplayCollection: NSObject, DisplayCollection {
       }, save: { [weak self] value in
         realmWrite {
           self?.user.name = value
+          self?.user.statusValue = UserEntity.UserStatus.complete.rawValue
         }
       })
 
@@ -209,10 +210,8 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
   func height(for indexPath: IndexPath) -> CGFloat {
     switch sections[indexPath.section] {
-    case .userHeader:
+    case .userHeader, .info:
       return 166.0
-    case .info:
-      return UITableViewAutomaticDimension
     case .userEditableField:
       return 60.0
     }

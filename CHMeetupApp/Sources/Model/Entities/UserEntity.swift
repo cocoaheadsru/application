@@ -15,15 +15,6 @@ final class UserEntity: TemplatableObject, TemplateEntity {
     case complete
     case requiresCompletion
     case unknown
-
-    var canContinue: Bool {
-      switch self {
-      case .complete:
-        return true
-      case .requiresCompletion, .unknown:
-        return false
-      }
-    }
   }
 
   dynamic var id: Int = 0
@@ -53,6 +44,17 @@ final class UserEntity: TemplatableObject, TemplateEntity {
       realmWrite {
         statusValue = newValue.rawValue
       }
+    }
+  }
+
+  var canContinue: Bool {
+    switch status {
+    case .complete:
+      return true
+    case .requiresCompletion:
+      return false
+    case .unknown:
+      return !(name.isEmpty || lastName.isEmpty || email.isEmpty)
     }
   }
 
