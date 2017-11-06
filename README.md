@@ -1,80 +1,32 @@
-CocoaHeadsMeetupApp
+Cocoaheads Russia Meetup Application
 ============================
 
-> Cocoaheads Russia Meetup Application
+## 🚀 Что нужно знать перед работой над проектом?
 
-### The project directories layout
-    .
-    ├── ...
-    ├── Sources                        # General files 
-    │   ├── Common                     # Holds Common Folders and files of different screens
-    │   │   ├── Classes                # Common Classes and Services
-    │   │   ├── Extentions
-    │   │   │   ├── Foundation
-    │   │   │   │   ├── String
-    │   │   │   │   │   ├── String+TimeIntervalFrom.swift
-    │   │   │   │   │   ├── String+*.swift
-    │   │   │   │   │   └── ...
-    │   │   │   │   ├── Date
-    │   │   │   │   └── ...      
-    │   │   │   │       
-    │   │   │   ├── UIKit
-    │   │   │   └── ...      
-    │   │   │    
-    │   │   └── Views
-    │   │
-    │   ├── Controllers
-    │   │   
-    │   ├── Model                      # Logical structure of data
-    │   │   ├── Entities               # Realm objects
-    │   │   ├── Helpers
-    │   │   └── PlainObjects           # Plain objects ( `Struct`)
-    │   │   
-    │   │
-    │   ├── ViewControllers
-    │   │   ├── Profile                # Example: User profile stories
-    │   │   │   ├── ProfileCreate
-    │   │   │   │   ├── ProfileCreateController.swift
-    │   │   │   │   └── Subviews
-    │   │   │   │       ├── ProfileCreateCustomView.swift
-    │   │   │   │       ├── ProfileCreateCell.swift
-    │   │   │   │       └── ...
-    │   │   │   │       
-    │   │   │   ├── ProfileEdit
-    │   │   │   └── ...
-    │   │   │          
-    │   │   ├── Story
-    │   │   ├── Story
-    │   │   └── Story
-    │   │
-    │   └── ...
-    │
-    ├── Resources                      # Additional files for project
-    │   ├── Assets                   
-    │   │    ├── Assets.xcassets         
-    │   │    └── Images               
-    │   │
-    │   ├── Config                  
-    │   ├── Fonts                  
-    │   └── Storyboards               
-    │
-    │
-    └── ...
+**Основные положения**
+
+* Мы разрабатываем на **Swift**
+* Мы не используем сложные архитектурные паттерны, но следуем принципам [SOLID](https://www.youtube.com/watch?v=y7nxFXnEyrU)
+* Разрабатываем мы по модели [gitflow](http://danielkummer.github.io/git-flow-cheatsheet/)
+* Файловая [структура проекта](https://mm.tt/856513265?t=SqKrewhshG)
 
 
+## 🔧 Что нужно, чтобы начать писать код
 
-### Documentation files
-...
+* Установить необходимые инструменты, для этого используйте команду
 
-### Tools and utilities
-...
+`bash firstSetup.sh` в папке `FirstSetup` внутри проекта.
 
-### Compiled files
-...
+Затем проверьте, чтобы все пункты в разделе [инструменты](Dev-Tools) были выполнены
+* Изучить стиль [написания кода](Coding-Style)
+* Почитать наши [заметки](Development-Notes)
 
-### 3rd party libraries
-...
+Если что-то не нашли или возникли вопросы пишите [Den-Ree](https://github.com/Den-Ree)
 
-### License information
-...
-
+## 💪 Как начать писать код
+1. Изучите проект и менеджер задач.
+2. Выберите или создайте задачу, над которой хотите работать, предварительно согласовав детали с коллегами по команде.
+3. Создайте ветку в соответствии с правилами, указанными [здесь](https://github.com/azimin/CocoaHeadsMeetupApp/wiki/Coding-style#Оформление-при-работе-с-git).
+4. Начните работать над задачей, соблюдая рекомендации хука по количеству изменений в пределах одного коммита.
+5. После реализации задачи, протестируйте своё решение. Обратите внимание, что ваш PR должен быть полноценным решением задачи, не следует отправлять на проверку незавершённую таску, ожидая решение от других участников. Если вам нужна помощь, можно использовать Issue или обратиться к любому в команде.
+6. Создайте PR, заполнив шаблон согласну [этому](https://github.com/azimin/CocoaHeadsMeetupApp/wiki/Templates#Описание-pr) образцу.
