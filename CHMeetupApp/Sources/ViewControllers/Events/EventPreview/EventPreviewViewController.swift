@@ -73,7 +73,7 @@ class EventPreviewViewController: UIViewController {
 
       if event.status.allowRegister {
         state = .isRegistrationEnabled
-      } else if event.status.allowCanceling {
+      } else if event.status.allowCanceling, event.isUpcomingEvent {
         state = .canCanceling
       }
 

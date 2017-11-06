@@ -47,13 +47,13 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
 
     if !canSkip {
-      navigationItem.title = "Завершение регистрации".localized
+      title = "Завершение регистрации".localized
       let logoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "img_log_out"),
                                          landscapeImagePhone: nil,
-                                         style: .done,
+                                         style: .plain,
                                          target: self,
                                          action: #selector(logout))
-      navigationItem.hidesBackButton = true
+
       navigationItem.leftBarButtonItem = logoutButton
     }
   }
