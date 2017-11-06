@@ -14,9 +14,16 @@ extension Date {
     let calendar = Calendar.current
 
     let todayYear = calendar.component(.year, from: date)
-    let dateYaar = calendar.component(.year, from: self)
+    let dateYear = calendar.component(.year, from: self)
 
-    return todayYear == dateYaar
+    return todayYear == dateYear
+  }
+
+  var isFutureDate: Bool {
+    let thisTime = Date().timeIntervalSince1970
+    let dateTime = timeIntervalSince1970
+
+    return thisTime <= dateTime
   }
 
   var isPassed: Bool {
