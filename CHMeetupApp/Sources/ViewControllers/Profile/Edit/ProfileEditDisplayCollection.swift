@@ -171,7 +171,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     }
   }
 
-  func didReciveMedia(_ picker: UIImagePickerController, info: [String : Any]) {
+  func didReciveMedia(_ picker: UIImagePickerController, info: [String: Any]) {
     if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
       changeCheckedImage(image: image)
     }
