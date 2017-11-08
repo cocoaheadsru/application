@@ -23,8 +23,8 @@ class Reachability {
     if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
       return false
     }
-    let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
-    let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+    let isReachable = flags.contains(.reachable)
+    let needsConnection = flags.contains(.connectionRequired)
     return (isReachable && !needsConnection)
   }
 }
