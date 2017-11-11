@@ -100,22 +100,16 @@ fileprivate extension MainViewController {
 
 extension MainViewController: ProfileHierarhyViewControllerType { }
 
-
 extension MainViewController: UIViewControllerPreviewingDelegate {
   func previewingContext(_ previewingContext: UIViewControllerPreviewing,
-                         viewControllerForLocation location: CGPoint) -> UIViewController? {
-    guard let indexPath = tableView.indexPathForRow(at: location),
-      let viewController = displayCollection.preview(at: indexPath) else {
-        return nil
-    }
-
-    let sourceRect = tableView.rectForRow(at: indexPath)
-    previewingContext.sourceRect = sourceRect
-    return viewController
+                         commit viewControllerToCommit: UIViewController) {
+    self.commitPreview(by: displayCollection, viewController: viewControllerToCommit)
   }
 
   func previewingContext(_ previewingContext: UIViewControllerPreviewing,
-                         commit viewControllerToCommit: UIViewController) {
-    displayCollection.commitPreview(with: viewControllerToCommit)
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    return self.previewingContextProvided(by: displayCollection,
+                                          at: location,
+                                          previewingContext: previewingContext)
   }
 }

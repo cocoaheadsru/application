@@ -20,3 +20,25 @@ protocol PreviewingContentProvider {
   func commitPreview(_ : UIViewController)
   func preview(at: IndexPath) -> UIViewController?
 }
+
+extension UIViewControllerPreviewingDelegate where Self: UIViewControllerWithTableView {
+  func previewingContextProvided(by contentProvider: PreviewingContentProvider,
+                                 at location: CGPoint,
+                                 previewingContext: UIViewControllerPreviewing) -> UIViewController? {
+    guard let indexPath = tableView.indexPathForRow(at: location),
+      let viewController = contentProvider.preview(at: indexPath) else {
+        return nil
+    }
+
+    let sourceRect = tableView.rectForRow(at: indexPath)
+    previewingContext.sourceRect = sourceRect
+    return viewController
+  }
+}
+
+extension UIViewControllerPreviewingDelegate {
+  func commitPreview(by contentProvider: PreviewingContentProvider,
+                     viewController: UIViewController) {
+    contentProvider.commitPreview(viewController)
+  }
+}
