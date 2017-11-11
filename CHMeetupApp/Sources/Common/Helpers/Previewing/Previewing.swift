@@ -15,3 +15,8 @@ extension UIViewControllerPreviewingDelegate where Self: UIViewController {
     }
   }
 }
+
+protocol PreviewingContentProvider {
+  func commitPreview(_ : UIViewController)
+  func preview(at: IndexPath) -> UIViewController?
+}

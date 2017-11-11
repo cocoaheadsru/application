@@ -13,7 +13,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
   }
 
-  private enum `Type` {
+  fileprivate enum `Type` {
     case events
     case actionButtons
     case collectionIsEmpty
@@ -21,7 +21,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
-  private var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
+  fileprivate var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
 
   let groupImageLoader = GroupImageLoader.standard
@@ -91,24 +91,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       break
     }
   }
-
-  func preview(at indexPath: IndexPath) -> UIViewController? {
-    switch sections[indexPath.section] {
-    case .events:
-      if modelCollection[indexPath.row].isTemplate {
-        return nil
-      }
-      let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
-      eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
-      return eventPreviewViewController
-    case .actionButtons, .collectionIsEmpty:
-      return nil
-    }
-  }
-
-  func commitPreview(with viewControllerToCommit: UIViewController) {
-    delegate?.push(viewController: viewControllerToCommit)
-  }
 }
 
 extension MainViewDisplayCollection: TemplateModelCollectionDelegate {
@@ -127,5 +109,25 @@ extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
       eventId: modelCollection[indexPath.row].id
     )
     delegate?.push(viewController: viewController)
+  }
+}
+
+extension MainViewDisplayCollection: PreviewingContentProvider {
+  func preview(at indexPath: IndexPath) -> UIViewController? {
+    switch sections[indexPath.section] {
+    case .events:
+      if modelCollection[indexPath.row].isTemplate {
+        return nil
+      }
+      let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
+      return eventPreviewViewController
+    case .actionButtons, .collectionIsEmpty:
+      return nil
+    }
+  }
+
+  func commitPreview(_ viewControllerToCommit: UIViewController) {
+    delegate?.push(viewController: viewControllerToCommit)
   }
 }
