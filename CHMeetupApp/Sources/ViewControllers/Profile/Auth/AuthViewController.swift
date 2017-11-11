@@ -51,18 +51,22 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       }
       LoginProcessController.setCurrentUser(user)
 
-      if let profileNavigationController = self?.profileNavigationController {
-        profileNavigationController.updateRootViewController()
-      } else {
-        guard let eventId = self?.withRegistrationEventId else {
-          self?.navigationController?.popViewController(animated: true)
-          return
-        }
+      self?.completed()
+    }
+  }
 
-        let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
-        viewController.selectedEventId = eventId
-        self?.push(viewController: viewController)
-      }
+  private func completed() {
+    profileNavigationController?.updateRootViewController()
+    navigationController?.popViewController(animated: true)
+
+    guard UserPreferencesEntity.value.currentUser?.canContinue == true else {
+      return
+    }
+
+    if let eventId = withRegistrationEventId {
+      let viewController = Storyboards.EventPreview.instantiateRegistrationPreviewViewController()
+      viewController.selectedEventId = eventId
+      push(viewController: viewController)
     }
   }
 }

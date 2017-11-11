@@ -30,6 +30,7 @@ class LoginProcessController {
       currentUser.token = user.token ?? ""
       currentUser.email = user.email ?? ""
       currentUser.phone = user.phone
+      currentUser.statusValue = user.status
 
       UserPreferencesEntity.value.updateUser(currentUser: currentUser)
     }

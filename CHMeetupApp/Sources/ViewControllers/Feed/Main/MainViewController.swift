@@ -30,6 +30,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
+    PermissionsManager.requireAccess(from: self, to: .notifications) { _ in }
     registerForPreviewingIfAvailable()
   }
 
@@ -37,10 +38,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if LoginProcessController.isLogin != userActiveState {
-      fetchEvents()
-      setCurrentState()
-    }
+    fetchEvents()
+    profileNavigationController?.pushEditProfileTo(self.navigationController)
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
@@ -99,11 +98,14 @@ fileprivate extension MainViewController {
   }
 }
 
+extension MainViewController: ProfileHierarhyViewControllerType { }
+
+
 extension MainViewController: UIViewControllerPreviewingDelegate {
   func previewingContext(_ previewingContext: UIViewControllerPreviewing,
                          viewControllerForLocation location: CGPoint) -> UIViewController? {
     guard let indexPath = tableView.indexPathForRow(at: location),
-          let viewController = displayCollection.preview(at: indexPath) else {
+      let viewController = displayCollection.preview(at: indexPath) else {
         return nil
     }
 

@@ -29,21 +29,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func updateActionCellsSection(on viewController: UIViewController,
                                 with tableView: UITableView) {
     actionPlainObjects = []
-    let actionCell = ActionCellConfigurationController()
-
-    let action = { [weak self] in
-      self?.delegate?.updateUI()
-    }
-
-    let notificationPermissionCell = actionCell.checkAccess(on: viewController,
-                                                            for: .notifications,
-                                                            with: {
-                                                              action()
-    })
-
-    if let notificationCell = notificationPermissionCell {
-      actionPlainObjects.append(notificationCell)
-    }
   }
 
   var modelCollection: TemplateModelCollection<EventEntity> = {

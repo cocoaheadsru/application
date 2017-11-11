@@ -14,7 +14,8 @@ protocol ProfileHierarhyViewControllerType: class {
 
 extension ProfileHierarhyViewControllerType where Self: UIViewController {
   var profileNavigationController: ProfileNavigationControllerType? {
-    return navigationController as? ProfileNavigationControllerType
+    let controller = tabBarController?.viewControllers?.first(where: { $0 is ProfileNavigationControllerType })
+    return controller as? ProfileNavigationControllerType
   }
 
   func getViewController() -> UIViewController? {
