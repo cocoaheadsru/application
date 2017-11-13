@@ -30,8 +30,8 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-
     PermissionsManager.requireAccess(from: self, to: .notifications) { _ in }
+    registerForPreviewing()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -99,3 +99,17 @@ fileprivate extension MainViewController {
 }
 
 extension MainViewController: ProfileHierarhyViewControllerType { }
+
+extension MainViewController: UIViewControllerPreviewingDelegate {
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         commit viewControllerToCommit: UIViewController) {
+    self.commitPreview(by: displayCollection, viewController: viewControllerToCommit)
+  }
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    return self.previewingContextProvided(by: displayCollection,
+                                          at: location,
+                                          previewingContext: previewingContext)
+  }
+}
