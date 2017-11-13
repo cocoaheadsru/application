@@ -28,7 +28,7 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     tableView.registerNibs(from: displayCollection)
     title = "Прошедшие встречи".localized
 
-    registerForPreviewingIfAvailable()
+    registerForPreviewing()
   }
 
   override func viewWillAppear(_ animated: Bool) {

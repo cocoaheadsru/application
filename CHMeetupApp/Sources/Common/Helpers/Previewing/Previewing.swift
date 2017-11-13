@@ -9,9 +9,13 @@
 import UIKit
 
 extension UIViewControllerPreviewingDelegate where Self: UIViewController {
-  func registerForPreviewingIfAvailable() {
+  @discardableResult
+  func registerForPreviewing() -> Bool {
     if traitCollection.forceTouchCapability == .available {
       registerForPreviewing(with: self, sourceView: view)
+      return true
+    } else {
+      return false
     }
   }
 }

@@ -31,7 +31,7 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     fetchEvents()
     title = "CocoaHeads Russia".localized
     PermissionsManager.requireAccess(from: self, to: .notifications) { _ in }
-    registerForPreviewingIfAvailable()
+    registerForPreviewing()
   }
 
   override func viewWillAppear(_ animated: Bool) {
