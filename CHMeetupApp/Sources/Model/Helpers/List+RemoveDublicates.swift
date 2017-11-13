@@ -26,7 +26,7 @@ extension List {
 
     while dublicatesIndexes.count > 0 {
       let last = dublicatesIndexes.removeLast()
-      remove(objectAtIndex: last)
+      remove(at: last)
     }
   }
 }

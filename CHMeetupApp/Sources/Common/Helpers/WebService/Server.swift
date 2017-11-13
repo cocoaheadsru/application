@@ -84,11 +84,6 @@ class Server {
   }
 
   private func loadRequest<T>(_ request: Request<T>, completion: @escaping ((Any?, ServerError?) -> Void)) {
-    guard Reachability.isInternetAvailable else {
-      completion(nil, .noConnection)
-      return
-    }
-
     guard let query = URL(string: apiBase + request.query) else {
       #if DEBUG_NETWORK_INTERACTION
       print("Session query url failed: base \(apiBase) and query \(request.query)")
@@ -114,6 +109,9 @@ class Server {
         #if DEBUG_NETWORK_INTERACTION
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         #endif
+        if !Reachability.isInternetAvailable {
+          completion(nil, .noConnection)
+        }
         return
       }
       guard let data = data else {

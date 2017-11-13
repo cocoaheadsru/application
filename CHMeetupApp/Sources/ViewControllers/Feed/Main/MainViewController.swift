@@ -30,17 +30,16 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     setCurrentState()
     fetchEvents()
     title = "CocoaHeads Russia".localized
-    // Do any additional setup after loading the view.
+
+    PermissionsManager.requireAccess(from: self, to: .notifications) { _ in }
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    if LoginProcessController.isLogin != userActiveState {
-      fetchEvents()
-      setCurrentState()
-    }
+    fetchEvents()
+    profileNavigationController?.pushEditProfileTo(self.navigationController)
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
@@ -98,3 +97,5 @@ fileprivate extension MainViewController {
     })
   }
 }
+
+extension MainViewController: ProfileHierarhyViewControllerType { }

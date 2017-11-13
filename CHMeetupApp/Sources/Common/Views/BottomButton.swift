@@ -43,6 +43,9 @@ class BottomButton: ActionButton {
   private struct Constants {
     static var height: CGFloat = 50
     static var titleFont: UIFont = UIFont.appFont(.avenirNextDemiBold(size: 16))
+    static var cornerRadius = Constants.height / 2.0
+    static var leadingConstant: CGFloat = 8.0
+    static var trailingConstant: CGFloat = -8.0
   }
 
   static var constantHeight: CGFloat {
@@ -64,9 +67,17 @@ class BottomButton: ActionButton {
     view.addSubview(self)
     anchor(leading: view.leadingAnchor,
            trailing: view.trailingAnchor,
+           leadingConstant: Constants.leadingConstant,
+           trailingConstant: Constants.trailingConstant,
            heightConstant: Constants.height)
+    
+    self.layer.cornerRadius = Constants.cornerRadius
 
-    bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    if #available(iOS 11.0, *) {
+      bottomConstraint = bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+    } else {
+      bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    }
     bottomConstraint.isActive = true
 
     setTitle(title, for: .normal)

@@ -14,9 +14,9 @@ extension Date {
     let calendar = Calendar.current
 
     let todayYear = calendar.component(.year, from: date)
-    let dateYaar = calendar.component(.year, from: self)
+    let dateYear = calendar.component(.year, from: self)
 
-    return todayYear == dateYaar
+    return todayYear == dateYear
   }
 
   var isPassed: Bool {

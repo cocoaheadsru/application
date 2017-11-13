@@ -256,6 +256,9 @@
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
 		ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */; };
+		B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */; };
+		B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */; };
+		B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */; };
 		C30485B11E740FC20052D632 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B01E740FC20052D632 /* PermissionsManager.swift */; };
 		C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30485B21E740FDE0052D632 /* UIView+Anchor.swift */; };
 		C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */; };
@@ -545,6 +548,9 @@
 		ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
+		B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
+		B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		C30485B01E740FC20052D632 /* PermissionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		C30485B21E740FDE0052D632 /* UIView+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 		C3AC796F1E8BEA2E00BA23C5 /* UITableView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Configure.swift"; sourceTree = "<group>"; };
@@ -997,6 +1003,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */,
 				32AFE59D1EAF5BDF004904FB /* TemplatableLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
 				8A3699821E8C471800B37528 /* AboutSpeechCell */,
@@ -2095,6 +2102,16 @@
 			path = LabelCell;
 			sourceTree = "<group>";
 		};
+		B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */,
+				B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */,
+				B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */,
+			);
+			path = AlertHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
 		C30485AF1E740FC20052D632 /* PermissionsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2243,6 +2260,7 @@
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
+				B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */,
 				328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */,
 				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
 				7DAC86421EA8223100437283 /* CreatorTableViewCell.xib in Resources */,
@@ -2495,6 +2513,7 @@
 				32AA9BBE1E7A91C000140413 /* PhotosPresentationView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
 				22323F941E70C2BE00522E5C /* PastEventsViewController.swift in Sources */,
+				B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */,
 				22323F561E70C18700522E5C /* UserPlainObject+Requests.swift in Sources */,
 				7DE942071E86760C00E7E9E6 /* URL+Parameters.swift in Sources */,
 				7D3F9DB61EBAEC0700BC6ABD /* ProfileController.swift in Sources */,
@@ -2558,6 +2577,7 @@
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */,
 				9FD5948C1E8716E800BAD1B5 /* SpeechPlainObjectTranslation.swift in Sources */,
+				B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */,
 				9F37671A1E7DDE2700CC565B /* TextViewPlateTableViewCellModel.swift in Sources */,
 				22323F951E70C2BE00522E5C /* AuthViewController.swift in Sources */,
 				9F6E1A241E95B62D0027416B /* MapsActionSheetHelper.swift in Sources */,
@@ -2648,6 +2668,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Debug;
 		};
@@ -2690,6 +2711,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

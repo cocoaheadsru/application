@@ -10,13 +10,20 @@ import UIKit
 
 class ProfileEditViewController: UIViewController, ProfileHierarhyViewControllerType {
 
+  var canSkip: Bool = true
+
   @IBOutlet var tableView: UITableView! {
     didSet {
-      let configuration = TableViewConfiguration(bottomInset: 8)
-      tableView.configure(with: .defaultConfiguration)
+      let configuration = TableViewConfiguration(
+        bottomInset: 12 + BottomButton.constantHeight,
+        bottomIndicatorInset: BottomButton.constantHeight,
+        estimatedRowHeight: 44
+      )
+      tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
     }
   }
+
   var bottomButton: BottomButton!
   fileprivate var displayCollection: ProfileEditDisplayCollection!
 
@@ -25,9 +32,9 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     guard let user = UserPreferencesEntity.value.currentUser else {
       fatalError("Authorization error")
     }
-    keyboardDelegate = self
 
-    displayCollection = ProfileEditDisplayCollection()
+    keyboardDelegate = self
+    displayCollection = ProfileEditDisplayCollection(canSkip: canSkip)
     displayCollection.user = user
 
     displayCollection.delegate = self
@@ -35,8 +42,26 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     title = "Изменение профиля".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Сохранить".localized)
+    bottomButton.bottomInsetsConstant = 8.0
     bottomButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
 
+    tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
+
+    if !canSkip {
+      title = "Завершение регистрации".localized
+      let logoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "img_log_out"),
+                                         landscapeImagePhone: nil,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(logout))
+
+      navigationItem.leftBarButtonItem = logoutButton
+    }
+  }
+
+  func logout() {
+    profileNavigationController?.logout()
+    navigationController?.popViewController(animated: true)
   }
 
 }
@@ -69,7 +94,7 @@ extension ProfileEditViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - ImagePicker
 extension ProfileEditViewController: ImagePickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController,
-                             didFinishPickingMediaWithInfo info: [String : Any]) {
+                             didFinishPickingMediaWithInfo info: [String: Any]) {
     displayCollection.didReciveMedia(picker, info: info)
   }
 }
@@ -87,11 +112,11 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
       let scrollViewBottomInset = info.endFrame.height + tableView.defaultBottomInset + bottomButton.frame.height
       scrollViewContentInsets.bottom = scrollViewBottomInset
       indicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
+      buttonInsets = info.endFrame.height + 8
     case .hidden:
       scrollViewContentInsets.bottom = 0
       indicatorInsets.bottom = 0
-      buttonInsets = 0
+      buttonInsets = 8
     }
 
     tableView.contentInset = scrollViewContentInsets
@@ -112,14 +137,24 @@ extension ProfileEditViewController {
     }
     showProgressHUD()
     displayCollection.update()
+    tableView.endEditing(true)
     ProfileController.save { [weak self] success in
-      if success {
+      if success, let strongSelf = self {
+        let message = "Ваши прекрасные данные успешно обновлены.".localized
         let notification = NotificationHelper.viewController(title: "Профиль изменён".localized,
-                                          description: "Ваши прекрасные данные успешно обновлены.".localized,
-                                          emoji: "📋",
-                                          completion: {
-                                            self?.navigationController?.popToRootViewController(animated: true)
+                                                             description: message,
+                                                             emoji: "📋",
+                                                             completion: {
+            strongSelf.navigationController?.popToRootViewController(animated: true)
         })
+
+        self?.present(viewController: notification)
+      } else {
+        let message = "Мы всегда поможем решить вашу проблему, пишите в телеграм канал: @cocoaheads.".localized
+        let notification = NotificationHelper.viewController(title: "Что-то пошло не так".localized,
+                                                             description: message,
+                                                             emoji: "🔥",
+                                                             completion: { })
 
         self?.present(viewController: notification)
       }

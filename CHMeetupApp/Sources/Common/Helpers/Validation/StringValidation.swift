@@ -56,7 +56,7 @@ final class StringValidation {
     // If url domain is one of known social networks - check url pathes
     if domainsToCheckPath.contains(domainFrom(host: host)) {
       return !url.pathComponents
-        .filter({ $0.characters.count > 1 })
+        .filter({ $0.count > 1 })
         .isEmpty
     }
     return true

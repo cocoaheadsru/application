@@ -35,6 +35,7 @@ class ProfileController {
       }
 
       guard let currentUser = UserPreferencesEntity.value.currentUser else {
+        completion(false)
         fatalError("Not found any active user")
       }
 
@@ -42,9 +43,11 @@ class ProfileController {
         currentUser.photoURL = user.photoUrl
         currentUser.position = user.position
         currentUser.company = user.company
+        currentUser.statusValue = user.status
         currentUser.phone = user.phone
         currentUser.email = user.email ?? ""
       }
+      completion(true)
     }
   }
 }
