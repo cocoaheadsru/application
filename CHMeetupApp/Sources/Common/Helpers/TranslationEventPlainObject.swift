@@ -13,6 +13,7 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
   static func addToRealm(plainObject: EventPlainObject, to parent: EventEntity? = nil) {
     let event = EventEntity()
     event.id = plainObject.id
+    event.priority = plainObject.priority
     event.title = plainObject.title
     event.startDate = plainObject.startDate
     event.endDate = plainObject.endDate

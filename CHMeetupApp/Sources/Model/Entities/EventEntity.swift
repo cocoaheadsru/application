@@ -67,6 +67,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   dynamic var endDate: Date = Date()
 
   dynamic var photoURL: String = ""
+  dynamic var priority: Int = 0
 
   dynamic var statusValue: String = "unknown"
   var status: EventRegistrationStatus {
