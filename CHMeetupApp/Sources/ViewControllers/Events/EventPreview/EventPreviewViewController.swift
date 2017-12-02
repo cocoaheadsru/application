@@ -127,6 +127,13 @@ class EventPreviewViewController: UIViewController {
     }
     super.updateUI()
   }
+
+  @IBAction func actionShare(_ sender: AnyObject) {
+    guard let currentEvent = displayCollection.event else {
+      return
+    }
+    present(viewController: ActivityViewController.share(.event(currentEvent)))
+  }
 }
 
 extension EventPreviewViewController: UITableViewDelegate, UITableViewDataSource {

@@ -14,6 +14,7 @@ typealias SuccessCompletionBlock = (_ success: Bool) -> Void
 // MARK: - Constants for project
 final class Constants {
 
+  static let site = "http://www.cocoaheads.ru"
   static let apiBase = "http://upapi.ru/method/"
   static let supportEmail = "support@cocoaheads.ru"
 
