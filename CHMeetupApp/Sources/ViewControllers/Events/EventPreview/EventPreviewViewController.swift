@@ -75,7 +75,7 @@ class EventPreviewViewController: UIViewController {
 
       if event.status.allowRegister {
         state = .isRegistrationEnabled
-      } else if event.status.allowCanceling, event.isUpcomingEvent {
+      } else if event.allowCanceling {
         state = .canCanceling
       }
 
@@ -105,9 +105,18 @@ class EventPreviewViewController: UIViewController {
       if success {
         self?.displayCollection.event?.status = .canRegister
         self?.showSuccessNotification()
+      } else {
+        self?.showFaildNotification()
       }
       self?.dismissProgressHUD()
     }
+  }
+
+  func showFaildNotification() {
+    let notification = NotificationHelper.viewController(title: "Ошибка!".localized,
+      description: "Не удалось отменить заявку. Регистрация закрыта.".localized,
+      emoji: "😔")
+    self.present(viewController: notification)
   }
 
   func showSuccessNotification() {
