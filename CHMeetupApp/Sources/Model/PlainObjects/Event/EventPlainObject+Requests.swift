@@ -39,6 +39,7 @@ extension EventPlainObject: PlainObjectType {
       let placeJson = json["place"] as? JSONDictionary,
       let speakersJson = json["speakers_photos"] as? [String],
       let registrationStatus = json["status"] as? String,
+      let priority = json["priority"] as? Int,
       let isRegistrationOpen = json["is_registration_open"] as? Bool,
       let place = PlacePlainObject(json: placeJson)
     else { return nil }
@@ -53,6 +54,7 @@ extension EventPlainObject: PlainObjectType {
     self.registrationStatus = registrationStatus
     self.isRegistrationOpen = isRegistrationOpen
 
+    self.priority = priority
     var photos: [URL] = []
     speakersJson.forEach { photoUrl in
       guard let url = URL(string: photoUrl) else { return }

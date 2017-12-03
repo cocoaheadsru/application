@@ -34,7 +34,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   var modelCollection: TemplateModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate > %@", NSDate())
     var dataCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.priority), ascending: false)
     return TemplateModelCollection(dataCollection: dataCollection)
   }()
 
