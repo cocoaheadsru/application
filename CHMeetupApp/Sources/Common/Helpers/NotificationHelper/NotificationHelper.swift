@@ -12,7 +12,7 @@ class NotificationHelper {
   static func viewController(title: String? = nil,
                              description: String? = nil,
                              emoji: String? = nil,
-                             completion: @escaping ActionCompletionBlock) -> NotificationViewController {
+                             completion: @escaping ActionCompletionBlock = {}) -> NotificationViewController {
     let notification = Storyboards.Main.instantiateNotificationViewController()
     notification.titleText = title
     notification.descriptionText = description
@@ -22,4 +22,5 @@ class NotificationHelper {
 
     return notification
   }
+  
 }

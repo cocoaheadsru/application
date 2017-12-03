@@ -20,15 +20,6 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case loading
     case registrationClosed
 
-    var allowCanceling: Bool {
-      switch self {
-      case .waiting, .approved:
-        return true
-      case .canRegister, .rejected, .unknown, .loading, .registrationClosed:
-        return false
-      }
-    }
-
     var allowRegister: Bool {
       switch self {
       case .canRegister:
@@ -58,6 +49,15 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
+  var allowCanceling: Bool {
+    switch status {
+    case .waiting, .approved:
+      return isRegistrationOpen
+    case .canRegister, .rejected, .unknown, .loading, .registrationClosed:
+      return false
+    }
+  }
+
   dynamic var id: Int = 0
 
   dynamic var title: String = ""
@@ -80,6 +80,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
+  dynamic var isRegistrationOpen: Bool = false
   dynamic var place: PlaceEntity?
 
   var importingState: ImportingStateEntity {
@@ -153,6 +154,7 @@ extension EventEntity {
     entity.statusValue = EventEntity.EventRegistrationStatus.unknown.rawValue
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.isTemplate = true
+    entity.isRegistrationOpen = true
     return entity
   }
 }
