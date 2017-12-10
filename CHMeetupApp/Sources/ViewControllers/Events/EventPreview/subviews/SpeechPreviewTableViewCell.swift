@@ -39,13 +39,13 @@ class SpeechPreviewTableViewCell: PlateTableViewCell, TempalateView {
     }
   }
 
-  @IBOutlet var seporatorLineView: TemplatableLabel! {
+  @IBOutlet var seporatorLineView: UIView! {
     didSet {
       seporatorLineView.backgroundColor = UIColor(.lightGray)
     }
   }
 
-  @IBOutlet var speachDescriptionLabel: UILabel! {
+  @IBOutlet var speachDescriptionLabel: TemplatableLabel! {
     didSet {
       speachDescriptionLabel.font = UIFont.appFont(.systemFont(size: 15))
       speachDescriptionLabel.textColor = UIColor(.darkGray)
