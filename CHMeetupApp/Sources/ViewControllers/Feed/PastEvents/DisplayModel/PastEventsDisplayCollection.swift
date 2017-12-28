@@ -71,3 +71,18 @@ extension PastEventsDisplayCollection: EventPreviewTableViewCellDelegate {
     delegate?.push(viewController: viewController)
   }
 }
+
+extension PastEventsDisplayCollection: PreviewingContentProvider {
+  func preview(at indexPath: IndexPath) -> UIViewController? {
+    if modelCollection[indexPath.row].isTemplate {
+      return nil
+    }
+    let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
+    eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
+    return eventPreviewViewController
+  }
+
+  func commitPreview(_ viewControllerToCommit: UIViewController) {
+    delegate?.push(viewController: viewControllerToCommit)
+  }
+}

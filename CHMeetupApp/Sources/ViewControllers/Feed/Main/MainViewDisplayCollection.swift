@@ -13,7 +13,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
     return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
   }
 
-  private enum `Type` {
+  fileprivate enum `Type` {
     case events
     case actionButtons
     case collectionIsEmpty
@@ -21,7 +21,7 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
-  private var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
+  fileprivate var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
 
   let groupImageLoader = GroupImageLoader.standard
@@ -29,27 +29,12 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   func updateActionCellsSection(on viewController: UIViewController,
                                 with tableView: UITableView) {
     actionPlainObjects = []
-    let actionCell = ActionCellConfigurationController()
-
-    let action = { [weak self] in
-      self?.delegate?.updateUI()
-    }
-
-    let notificationPermissionCell = actionCell.checkAccess(on: viewController,
-                                                            for: .notifications,
-                                                            with: {
-                                                              action()
-    })
-
-    if let notificationCell = notificationPermissionCell {
-      actionPlainObjects.append(notificationCell)
-    }
   }
 
   var modelCollection: TemplateModelCollection<EventEntity> = {
     let predicate = NSPredicate(format: "endDate > %@", NSDate())
     var dataCollection = DataModelCollection(type: EventEntity.self).filtered(predicate)
-    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.endDate), ascending: false)
+    dataCollection = dataCollection.sorted(byKeyPath: #keyPath(EventEntity.priority), ascending: false)
     return TemplateModelCollection(dataCollection: dataCollection)
   }()
 
@@ -124,5 +109,25 @@ extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
       eventId: modelCollection[indexPath.row].id
     )
     delegate?.push(viewController: viewController)
+  }
+}
+
+extension MainViewDisplayCollection: PreviewingContentProvider {
+  func preview(at indexPath: IndexPath) -> UIViewController? {
+    switch sections[indexPath.section] {
+    case .events:
+      if modelCollection[indexPath.row].isTemplate {
+        return nil
+      }
+      let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
+      eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
+      return eventPreviewViewController
+    case .actionButtons, .collectionIsEmpty:
+      return nil
+    }
+  }
+
+  func commitPreview(_ viewControllerToCommit: UIViewController) {
+    delegate?.push(viewController: viewControllerToCommit)
   }
 }

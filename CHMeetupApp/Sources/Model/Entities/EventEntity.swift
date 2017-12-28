@@ -20,15 +20,6 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     case loading
     case registrationClosed
 
-    var allowCanceling: Bool {
-      switch self {
-      case .waiting, .approved:
-        return true
-      case .canRegister, .rejected, .unknown, .loading, .registrationClosed:
-        return false
-      }
-    }
-
     var allowRegister: Bool {
       switch self {
       case .canRegister:
@@ -59,6 +50,14 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   @objc dynamic var id: Int = 0
+  var allowCanceling: Bool {
+    switch status {
+    case .waiting, .approved:
+      return isRegistrationOpen
+    case .canRegister, .rejected, .unknown, .loading, .registrationClosed:
+      return false
+    }
+  }
 
   @objc dynamic var title: String = ""
   @objc dynamic var descriptionText: String = ""
@@ -67,6 +66,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   @objc dynamic var endDate: Date = Date()
 
   @objc dynamic var photoURL: String = ""
+  @objc dynamic var priority: Int = 0
 
   @objc dynamic var statusValue: String = "unknown"
   var status: EventRegistrationStatus {
@@ -81,6 +81,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
   }
 
   @objc dynamic var place: PlaceEntity?
+  @objc dynamic var isRegistrationOpen: Bool = false
 
   var importingState: ImportingStateEntity {
     if let importingState = mainRealm.objects(ImportingStateEntity.self).first(where: { $0.eventId == id }) {
@@ -153,6 +154,7 @@ extension EventEntity {
     entity.statusValue = EventEntity.EventRegistrationStatus.unknown.rawValue
     entity.speeches.append(SpeechEntity.templateEntity)
     entity.isTemplate = true
+    entity.isRegistrationOpen = true
     return entity
   }
 }

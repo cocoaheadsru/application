@@ -37,17 +37,19 @@ class EventPreviewViewController: UIViewController {
     bottomButton?.removeFromSuperview()
 
     var configuration = TableViewConfiguration.default
-    configuration.bottomInset = 8 + (state != .unknown ? BottomButton.constantHeight : 0)
-    configuration.bottomIndicatorInset = (state != .unknown ? BottomButton.constantHeight : 0)
+    configuration.bottomInset = 12.0 + (state != .unknown ? BottomButton.constantHeight : 0)
+    configuration.bottomIndicatorInset = 8.0 + (state != .unknown ? BottomButton.constantHeight : 0)
     tableView.configure(with: .custom(configuration))
 
     switch state {
     case .isRegistrationEnabled:
       bottomButton = BottomButton(addingOnView: view, title: "Я пойду".localized)
       bottomButton?.addTarget(self, action: #selector(acceptAction), for: .touchUpInside)
+      bottomButton?.bottomInsetsConstant = 8.0
     case .canCanceling:
       bottomButton = BottomButton(addingOnView: view, title: "Отменить заявку".localized)
       bottomButton?.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
+      bottomButton?.bottomInsetsConstant = 8.0
       bottomButton?.style = .canceling
     case .unknown:
       break
@@ -73,7 +75,7 @@ class EventPreviewViewController: UIViewController {
 
       if event.status.allowRegister {
         state = .isRegistrationEnabled
-      } else if event.status.allowCanceling {
+      } else if event.allowCanceling {
         state = .canCanceling
       }
 
@@ -103,9 +105,18 @@ class EventPreviewViewController: UIViewController {
       if success {
         self?.displayCollection.event?.status = .canRegister
         self?.showSuccessNotification()
+      } else {
+        self?.showFaildNotification()
       }
       self?.dismissProgressHUD()
     }
+  }
+
+  func showFaildNotification() {
+    let notification = NotificationHelper.viewController(title: "Ошибка!".localized,
+      description: "Не удалось отменить заявку. Регистрация закрыта.".localized,
+      emoji: "😔")
+    self.present(viewController: notification)
   }
 
   func showSuccessNotification() {

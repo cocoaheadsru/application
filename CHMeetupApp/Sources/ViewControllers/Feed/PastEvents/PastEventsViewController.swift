@@ -27,6 +27,8 @@ class PastEventsViewController: UIViewController, DisplayCollectionWithTableView
     displayCollection.delegate = self
     tableView.registerNibs(from: displayCollection)
     title = "Прошедшие встречи".localized
+
+    registerForPreviewing()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -74,5 +76,19 @@ fileprivate extension PastEventsViewController {
       self?.displayCollection.modelCollection.isLoading = false
       self?.tableView.reloadData()
     })
+  }
+}
+
+extension PastEventsViewController: UIViewControllerPreviewingDelegate {
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         commit viewControllerToCommit: UIViewController) {
+    self.commitPreview(by: displayCollection, viewController: viewControllerToCommit)
+  }
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    return self.previewingContextProvided(by: displayCollection,
+                                          at: location,
+                                          previewingContext: previewingContext)
   }
 }

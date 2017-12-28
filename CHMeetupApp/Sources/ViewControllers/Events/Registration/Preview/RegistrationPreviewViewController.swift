@@ -14,8 +14,8 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     didSet {
       tableView.allowsMultipleSelection = true
       let configuration = TableViewConfiguration(
-                                      bottomInset: 8 + BottomButton.constantHeight,
-                                      bottomIndicatorInset: BottomButton.constantHeight,
+                                      bottomInset: 16 + BottomButton.constantHeight,
+                                      bottomIndicatorInset: 8.0 + BottomButton.constantHeight,
                                       estimatedRowHeight: 44)
       tableView.configure(with: .custom(configuration))
       tableView.registerHeaderNib(for: DefaultTableHeaderView.self)
@@ -40,6 +40,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     title = "Регистрация".localized
 
     bottomButton = BottomButton(addingOnView: view, title: "Зарегистрироваться".localized)
+    bottomButton.bottomInsetsConstant = 8.0
     bottomButton.isEnabled = false
 
     displayCollection = FormDisplayCollection()
@@ -206,11 +207,11 @@ extension RegistrationPreviewViewController: KeyboardHandlerDelegate {
       let tableViewBottomContentInsets = info.endFrame.height + 15 + tableView.defaultBottomInset
       tableView.contentInset.bottom = tableViewBottomContentInsets
       tableView.scrollIndicatorInsets.bottom = info.endFrame.height + bottomButton.frame.height
-      buttonInsets = info.endFrame.height
+      buttonInsets = info.endFrame.height + 8
     case .hidden:
       tableView.contentInset.bottom = tableView.defaultBottomInset
       tableView.scrollIndicatorInsets.bottom = BottomButton.constantHeight
-      buttonInsets = 0
+      buttonInsets = 8
     }
 
     bottomButton.bottomInsetsConstant = buttonInsets

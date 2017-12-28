@@ -12,6 +12,12 @@ import RealmSwift
 final class UserEntity: TemplatableObject, TemplateEntity {
   @objc dynamic var id: Int = 0
   @objc dynamic var remoteId: Int = 0
+  
+  enum UserStatus: String {
+    case complete
+    case requiresCompletion
+    case unknown
+  }
 
   @objc dynamic var name: String = ""
   @objc dynamic var lastName: String = ""
@@ -27,6 +33,29 @@ final class UserEntity: TemplatableObject, TemplateEntity {
   @objc dynamic var isSpeaker: Bool = false
   @objc dynamic var photoURL: String?
   @objc dynamic var token: String?
+  @objc dynamic var statusValue: String = ""
+
+  var status: UserStatus {
+    get {
+      return UserStatus(rawValue: statusValue) ?? .unknown
+    }
+    set {
+      realmWrite {
+        statusValue = newValue.rawValue
+      }
+    }
+  }
+
+  var canContinue: Bool {
+    switch status {
+    case .complete:
+      return true
+    case .requiresCompletion:
+      return false
+    case .unknown:
+      return !(name.isEmpty || lastName.isEmpty || email.isEmpty)
+    }
+  }
 
   let speeches = List<SpeechEntity>()
   let socials = List<SocialEntity>()

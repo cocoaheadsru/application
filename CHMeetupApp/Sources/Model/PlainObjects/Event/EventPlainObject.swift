@@ -18,4 +18,6 @@ struct EventPlainObject {
   let endDate: Date
   let speakersPhotos: [URL]
   let registrationStatus: String
+  let priority: Int
+  let isRegistrationOpen: Bool
 }
