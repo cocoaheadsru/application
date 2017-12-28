@@ -96,10 +96,6 @@ struct TemplateModelCollection<T: TemplateEntity> where T: Object {
   // MARK: - Functionality
 
   subscript(index: Int) -> T {
-    if isLoading && content.count == 0 {
-      return values[index]
-    } else {
-      return content[index]
-    }
+    return content.count == 0 ? values[index] : content[index]
   }
 }
