@@ -106,7 +106,9 @@ final class PermissionsManager {
       }
     case .notifications:
       UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { result, _ in
-        UIApplication.shared.registerForRemoteNotifications()
+        DispatchQueue.main.async {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
         completion(result)
       }
     case .photosLibrary:
