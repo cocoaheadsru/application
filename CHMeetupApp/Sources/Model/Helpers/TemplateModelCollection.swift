@@ -96,6 +96,9 @@ struct TemplateModelCollection<T: TemplateEntity> where T: Object {
   // MARK: - Functionality
 
   subscript(index: Int) -> T {
+    if content.count == 0 && values.count == 0 {
+      assertionFailure("Content & values are empty")
+    }
     return content.count == 0 ? values[index] : content[index]
   }
 }
