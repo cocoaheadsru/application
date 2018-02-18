@@ -49,7 +49,6 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
-  @objc dynamic var id: Int = 0
   var allowCanceling: Bool {
     switch status {
     case .waiting, .approved:
@@ -59,6 +58,7 @@ final class EventEntity: TemplatableObject, TemplateEntity {
     }
   }
 
+  @objc dynamic var id: Int = 0
   @objc dynamic var title: String = ""
   @objc dynamic var descriptionText: String = ""
 

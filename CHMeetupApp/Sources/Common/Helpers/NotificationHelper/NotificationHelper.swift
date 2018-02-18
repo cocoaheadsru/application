@@ -22,5 +22,4 @@ class NotificationHelper {
 
     return notification
   }
-  
 }

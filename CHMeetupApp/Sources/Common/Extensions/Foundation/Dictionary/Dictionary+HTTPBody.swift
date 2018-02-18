@@ -9,7 +9,6 @@
 import Foundation
 
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
-
   var httpQuery: Data {
     var httpQuery: [String] = []
     self.forEach { key, value in

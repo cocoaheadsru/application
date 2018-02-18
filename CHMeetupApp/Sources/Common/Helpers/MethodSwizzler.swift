@@ -10,21 +10,19 @@ import Foundation
 
 struct MethodSwizzler {
   static func swizzleMethods(objectClass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
-    let originalMethod = class_getInstanceMethod(objectClass, originalSelector)
-    let swizzledMethod = class_getInstanceMethod(objectClass, swizzledSelector)
-
+    guard let originalMethod = class_getInstanceMethod(objectClass, originalSelector),
+      let swizzledMethod = class_getInstanceMethod(objectClass, swizzledSelector) else { return }
     let methodAdded = class_addMethod(objectClass,
                                       originalSelector,
-                                      method_getImplementation(swizzledMethod!),
-                                      method_getTypeEncoding(swizzledMethod!))
-
+                                      method_getImplementation(swizzledMethod),
+                                      method_getTypeEncoding(swizzledMethod))
     if methodAdded {
       class_replaceMethod(objectClass,
                           swizzledSelector,
-                          method_getImplementation(originalMethod!),
-                          method_getTypeEncoding(originalMethod!))
+                          method_getImplementation(originalMethod),
+                          method_getTypeEncoding(originalMethod))
     } else {
-      method_exchangeImplementations(originalMethod!, swizzledMethod!)
+      method_exchangeImplementations(originalMethod, swizzledMethod)
     }
   }
 }

@@ -59,7 +59,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     }
   }
 
-  func logout() {
+  @objc func logout() {
     profileNavigationController?.logout()
     navigationController?.popViewController(animated: true)
   }

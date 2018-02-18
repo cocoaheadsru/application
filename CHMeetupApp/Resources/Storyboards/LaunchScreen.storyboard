@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cocoaheads_logo" translatesAutoresizingMaskIntoConstraints="NO" id="A42-Oy-vf3">
-                                <rect key="frame" x="134" y="245" width="107" height="118"/>
+                                <rect key="frame" x="126" y="245" width="107" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="GfA-80-Buh"/>
                                     <constraint firstAttribute="width" constant="107" id="txX-wd-A4Z"/>
@@ -44,9 +44,8 @@
                         <constraints>
                             <constraint firstItem="rwW-Iw-KcA" firstAttribute="top" secondItem="A42-Oy-vf3" secondAttribute="bottom" constant="24" id="4zF-IF-OCk"/>
                             <constraint firstItem="rwW-Iw-KcA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9hM-Sm-fb2"/>
-                            <constraint firstItem="A42-Oy-vf3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="134" id="bGG-JD-Koq"/>
                             <constraint firstItem="A42-Oy-vf3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="225" id="f6A-AI-Nai"/>
-                            <constraint firstAttribute="trailing" secondItem="A42-Oy-vf3" secondAttribute="trailing" constant="134" id="h7B-HH-dgj"/>
+                            <constraint firstItem="A42-Oy-vf3" firstAttribute="centerX" secondItem="rwW-Iw-KcA" secondAttribute="centerX" constant="-8" id="gFj-xT-Hgc"/>
                             <constraint firstAttribute="trailing" secondItem="rwW-Iw-KcA" secondAttribute="trailing" id="vRn-HJ-RQl"/>
                         </constraints>
                     </view>

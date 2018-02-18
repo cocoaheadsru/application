@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     universalRouter = UniversalRouter(with: window)
 
     application.registerForRemoteNotifications()
-
     return true
   }
 
