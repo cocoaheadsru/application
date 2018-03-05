@@ -8,11 +8,23 @@
 
 import UIKit
 
-class ImporterHelper {
-  static func importToSave(event: EventEntity?,
-                           to type: ImportType,
-                           from viewController: UIViewController,
-                           with additionalAction: Action? = nil) {
+protocol ImporterHelper {
+  func isEventInStorage(event: EventEntity, type: ImportType) -> Bool
+  func importToSave(event: EventEntity?,
+                    to type: ImportType,
+                    from viewController: UIViewController,
+                    with additionalAction: Action?)
+}
+
+class ImporterHelpProvider: ImporterHelper {
+  func isEventInStorage(event: EventEntity, type: ImportType) -> Bool {
+    return Importer.isEventInStorage(event: event, type: type)
+  }
+
+  func importToSave(event: EventEntity?,
+                    to type: ImportType,
+                    from viewController: UIViewController,
+                    with additionalAction: Action?) {
     if let event = event {
       Importer.import(event: event, to: type, completion: { result in
         defer {
