@@ -257,6 +257,8 @@
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
 		ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */; };
+		B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */; };
+		B0A1FC12204DBDB7007D501D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
 		B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */; };
 		B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */; };
 		B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */; };
@@ -550,6 +552,7 @@
 		ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
+		B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellConfigurationControllerLeakTests.swift; sourceTree = "<group>"; };
 		B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
 		B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -582,6 +585,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A1FC12204DBDB7007D501D /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2089,6 +2093,7 @@
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B0A1FC0E204DB9E9007D501D /* Controllers */,
 				A1495AE61E76CD12003D8BE3 /* Validation */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
@@ -2111,6 +2116,14 @@
 				ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */,
 			);
 			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		B0A1FC0E204DB9E9007D501D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */ = {
@@ -2619,6 +2632,7 @@
 			files = (
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
+				B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2778,6 +2792,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
@@ -2793,6 +2811,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CHMeetupAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;

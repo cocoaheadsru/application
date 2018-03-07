@@ -10,6 +10,9 @@ import UIKit
 import CoreLocation
 
 class EventPreviewDisplayCollection: DisplayCollection {
+
+  private let actionCell = ActionCellConfigurationController()
+
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
     return [ActionTableViewCellModel.self, TimePlaceTableViewCellModel.self, SpeechPreviewTableViewCellModel.self]
   }
@@ -108,8 +111,6 @@ class EventPreviewDisplayCollection: DisplayCollection {
                                 with tableView: UITableView,
                                 event: EventEntity) {
     actionPlainObjects = []
-
-    let actionCell = ActionCellConfigurationController()
 
     let calendarPermissionCell = actionCell.createImportAction(
       for: event,

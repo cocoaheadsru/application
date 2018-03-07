@@ -21,6 +21,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
 
   private var sections: [Type] = [.header, .actionButtons]
   private var actionPlainObjects: [ActionPlainObject] = []
+  private let actionCell = ActionCellConfigurationController()
 
   weak var delegate: DisplayCollectionDelegate?
 
@@ -30,8 +31,6 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
                                 with tableView: UITableView,
                                 event: EventEntity) {
     actionPlainObjects = []
-
-    let actionCell = ActionCellConfigurationController()
 
     let calendarPermissionCell = actionCell.createImportAction(for: event,
                                                                on: viewController,
