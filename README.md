@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://developer.apple.com/swift/">
-<img src="https://img.shields.io/badge/Swift-3.2.0-orange.svg?style=flat" alt="Swift">
+<img src="https://img.shields.io/badge/Swift-4.0.0-orange.svg?style=flat" alt="Swift">
 </a>
 <a href="https://travis-ci.org/cocoaheadsru/application">
 <img src="https://travis-ci.org/cocoaheadsru/application.svg?branch=develop" alt="Build status">
