@@ -46,7 +46,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
     view.addGestureRecognizer(dissmisKeyboardTouch)
   }
 
-  func sendSpeech() {
+  @objc func sendSpeech() {
 
     if let failed = displayCollection.failedSection {
       tableView.failedShakeSection(failed)
@@ -71,7 +71,7 @@ class GiveSpeechViewController: UIViewController, UITableViewDataSource, UITable
 
   }
 
-  func dismissKeyboard() {
+  @objc func dismissKeyboard() {
     view.endEditing(true)
   }
 

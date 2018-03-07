@@ -35,7 +35,7 @@ class PlateTableViewCell: UITableViewCell {
   }
 
   // For UIAppearance proxy
-  dynamic var plateAppearance: PlateTableViewCellAppearance? {
+  @objc dynamic var plateAppearance: PlateTableViewCellAppearance? {
     set {
       plateAppearanceValue = newValue
     }

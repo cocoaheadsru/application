@@ -50,7 +50,7 @@ class RegistrationConfirmViewController: UIViewController, UIViewControllerWithT
     }
   }
 
-  func closeButtonAction() {
+  @objc func closeButtonAction() {
     // Setup default (previus) visibility for navigation bar
     navigationController?.setNavigationBarHidden(false, animated: false)
     // Go to main screen

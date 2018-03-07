@@ -59,7 +59,7 @@ class ProfileEditViewController: UIViewController, ProfileHierarhyViewController
     }
   }
 
-  func logout() {
+  @objc func logout() {
     profileNavigationController?.logout()
     navigationController?.popViewController(animated: true)
   }
@@ -130,7 +130,7 @@ extension ProfileEditViewController: KeyboardHandlerDelegate {
 }
 
 extension ProfileEditViewController {
-  func saveProfile() {
+  @objc func saveProfile() {
     if let failedFieldIndexPath = displayCollection.failedField {
       tableView.failedShakeRow(failedFieldIndexPath)
       return

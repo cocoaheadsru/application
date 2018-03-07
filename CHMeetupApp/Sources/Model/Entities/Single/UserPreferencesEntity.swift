@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class UserPreferencesEntity: Object, ObjectSingletone {
-  dynamic var isLoggedIn: Bool = false
-  dynamic var pushToken: String = ""
+  @objc dynamic var isLoggedIn: Bool = false
+  @objc dynamic var pushToken: String = ""
 
   func updateUser(currentUser: UserEntity?) {
     self.currentUser = currentUser
@@ -19,5 +19,5 @@ class UserPreferencesEntity: Object, ObjectSingletone {
     PushNotificationsController.updateTokenRegistration()
   }
 
-  private(set) dynamic var currentUser: UserEntity?
+  @objc private(set) dynamic var currentUser: UserEntity?
 }

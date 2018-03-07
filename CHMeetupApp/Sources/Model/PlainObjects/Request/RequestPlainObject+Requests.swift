@@ -39,6 +39,7 @@ extension RequestPlainObject {
 
   struct Requests {
 
+    // swiftlint:disable:next function_parameter_count
     static func editProfile(name: String,
                             lastName: String,
                             email: String,

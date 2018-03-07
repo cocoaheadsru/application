@@ -161,7 +161,7 @@ public class AZTabBar: UITabBar {
 }
 
 extension UIViewController {
-  open func az_tabBarItemContentView() -> AZTabBarItemView {
+  @objc open func az_tabBarItemContentView() -> AZTabBarItemView {
     fatalError("Must be implemented in subclass")
   }
 

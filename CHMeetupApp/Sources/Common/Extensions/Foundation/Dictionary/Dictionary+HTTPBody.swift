@@ -9,12 +9,11 @@
 import Foundation
 
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
-
   var httpQuery: Data {
     var httpQuery: [String] = []
     self.forEach { key, value in
-      let keyString = String("\(key)")?.urlEncoding ?? ""
-      let valueString = String("\(value)")?.urlEncoding ?? ""
+      let keyString = "\(key)".urlEncoding
+      let valueString = "\(value)".urlEncoding
 
       httpQuery.append(String("\(keyString)=\(valueString)"))
     }

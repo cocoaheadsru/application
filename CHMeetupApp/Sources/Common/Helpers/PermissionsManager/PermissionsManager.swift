@@ -79,7 +79,7 @@ final class PermissionsManager {
     case .photosLibrary:
       return PHPhotoLibrary.authorizationStatus() == .authorized
     case .camera:
-      return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized
+      return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized
     case .reminders:
       return EKEventStore.authorizationStatus(for: .reminder) == .authorized
     case .calendar:
@@ -101,7 +101,7 @@ final class PermissionsManager {
         completion(result)
       }
     case .camera:
-      AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+      AVCaptureDevice.requestAccess(for: AVMediaType.video) { result in
         completion(result)
       }
     case .notifications:

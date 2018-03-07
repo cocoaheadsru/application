@@ -29,11 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     universalRouter = UniversalRouter(with: window)
 
     application.registerForRemoteNotifications()
-
     return true
   }
 
-  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
     NotificationCenter.default.post(name: .CloseSafariViewControllerNotification, object: url)
     return true
   }
@@ -50,7 +49,7 @@ extension AppDelegate {
     print("APNs registration failed: \(error)")
   }
 
-  func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
+  func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable: Any]) {
     pushHandler.handle(data: data, via: universalRouter)
   }
 }

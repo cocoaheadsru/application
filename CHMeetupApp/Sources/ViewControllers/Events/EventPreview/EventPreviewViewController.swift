@@ -82,14 +82,14 @@ class EventPreviewViewController: UIViewController {
     }
   }
 
-  func acceptAction() {
+  @objc func acceptAction() {
     let viewController = ViewControllersFactory.eventRegistrationOrAuthViewController(
       eventId: selectedEventId
     )
     navigationController?.pushViewController(viewController, animated: true)
   }
 
-  func cancelAction() {
+  @objc func cancelAction() {
     showConfirmationAlert(title: "Подтвердите действие".localized,
                           message: "Вы уверены, что хотите отменить свою заявку?".localized,
                           buttonFirstTitle: "Нет".localized,

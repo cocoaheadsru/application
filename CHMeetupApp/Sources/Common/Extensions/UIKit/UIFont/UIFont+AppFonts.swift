@@ -25,7 +25,7 @@ extension UIFont {
     case let .systemFont(size):
       return UIFont.systemFont(ofSize: size)
     case let .systemMediumFont(size):
-      return UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
+      return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium)
     }
   }
 }

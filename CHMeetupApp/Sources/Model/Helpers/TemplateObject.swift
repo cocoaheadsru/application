@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class TemplatableObject: Object {
-  dynamic var isTemplate: Bool = false
+  @objc dynamic var isTemplate: Bool = false
   override class func ignoredProperties() -> [String] {
     return ["isTemplate"]
   }
