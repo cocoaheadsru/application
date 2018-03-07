@@ -36,7 +36,7 @@ final class ActionCellConfigurationControllerLeakTests: XCTestCase {
                         with additionalAction: Action?) {
         self.vc = viewController
       }
-      func isEventInStorage(event: EventEntity, type: ImportType) -> Bool {
+      func isEventInStorage(_ event: EventEntity, type: ImportType) -> Bool {
         return false
       }
     }
