@@ -14,7 +14,7 @@ class ActionCellConfigurationController {
 
   private let importerHelper: ImporterHelper
 
-  init(importerHelper: ImporterHelper = ImporterHelpProvider()) {
+  init(importerHelper: ImporterHelper = ImporterHelperProvider()) {
     self.importerHelper = importerHelper
   }
 
@@ -24,24 +24,23 @@ class ActionCellConfigurationController {
                           with additionalAction: Action? = nil) -> ActionPlainObject? {
     let importToPermission: [ImportType: PermissionsType] = [.calendar: .calendar,
                                                              .reminder: .reminders]
-    if let permission = importToPermission[importType] {
-      let isEventInStorage = importerHelper.isEventInStorage(event: event, type: importType)
-      if !isEventInStorage {
-        return addActionCell(on: viewController, for: permission, with: { [weak self, weak viewController] in
-          guard let vc = viewController else {
-            assertionFailure("view controller did release already")
-            return
-          }
-          self?.importerHelper.importToSave(event: event, to: importType, from: vc) {
-            additionalAction?()
-          }
-        })
-      }
-    } else {
+    guard let permission = importToPermission[importType] else {
       assertionFailure("No such permission")
+      return nil
+    }
+    guard !importerHelper.isEventInStorage(event, type: importType) else {
+      return nil
     }
 
-    return nil
+    return addActionCell(on: viewController, for: permission, with: { [weak self, weak viewController] in
+      guard let vc = viewController else {
+        assertionFailure("view controller did release already")
+        return
+      }
+      self?.importerHelper.importToSave(event: event, to: importType, from: vc) {
+        additionalAction?()
+      }
+    })
   }
 
   private func addActionCell(on viewController: UIViewController,

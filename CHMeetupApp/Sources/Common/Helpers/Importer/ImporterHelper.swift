@@ -9,15 +9,15 @@
 import UIKit
 
 protocol ImporterHelper {
-  func isEventInStorage(event: EventEntity, type: ImportType) -> Bool
+  func isEventInStorage(_ event: EventEntity, type: ImportType) -> Bool
   func importToSave(event: EventEntity?,
                     to type: ImportType,
                     from viewController: UIViewController,
                     with additionalAction: Action?)
 }
 
-class ImporterHelpProvider: ImporterHelper {
-  func isEventInStorage(event: EventEntity, type: ImportType) -> Bool {
+class ImporterHelperProvider: ImporterHelper {
+  func isEventInStorage(_ event: EventEntity, type: ImportType) -> Bool {
     return Importer.isEventInStorage(event: event, type: type)
   }
 
