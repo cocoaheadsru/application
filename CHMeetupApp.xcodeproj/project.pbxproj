@@ -259,8 +259,11 @@
 		ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */; };
 		B00100782056CD9500F77A6A /* FindNearestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100772056CD9500F77A6A /* FindNearestViewController.swift */; };
 		B001007B2056D01A00F77A6A /* FindNearestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B001007A2056D01A00F77A6A /* FindNearestController.swift */; };
+		B003C9F3205F36E9004BC58D /* IBeaconStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */; };
+		B003C9F5205F39CF004BC58D /* BeaconScanningOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */; };
 		B003C9F7205F3C1A004BC58D /* BeaconTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */; };
 		B003C9F9205F4077004BC58D /* IBeaconTimerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */; };
+		B003C9FB205F5A76004BC58D /* BeaconProcessingOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */; };
 		B00647BD205C987D00ED47FE /* BeaconTransmitterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */; };
 		B00647C0205D031A00ED47FE /* BeaconScanningOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647BF205D031A00ED47FE /* BeaconScanningOperation.swift */; };
 		B00647C2205D035900ED47FE /* BeaconOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647C1205D035900ED47FE /* BeaconOperation.swift */; };
@@ -269,15 +272,23 @@
 		B00775B1205EC0C8007280FA /* BeaconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B0205EC0C8007280FA /* BeaconStorage.swift */; };
 		B00775B4205EE8D9007280FA /* BeaconCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B3205EE8D9007280FA /* BeaconCentralManager.swift */; };
 		B00775B6205EEB13007280FA /* BeaconPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B5205EEB13007280FA /* BeaconPeripheral.swift */; };
+		B00775BF205F1D9F007280FA /* BeaconOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */; };
+		B00775C1205F1DD6007280FA /* BeaconOperationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */; };
+		B00775C3205F1E17007280FA /* BeaconScannerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */; };
+		B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */; };
+		B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */; };
+		B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C8205F1E58007280FA /* ICentralManagerMock.swift */; };
 		B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */; };
 		B0331347205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */; };
 		B0331349205C349800F6DBB5 /* NearestUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331348205C349800F6DBB5 /* NearestUserEntity.swift */; };
 		B033134B205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */; };
 		B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */; };
 		B0A1FC12204DBDB7007D501D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
+		B0C0CC29205F6E9C0059995E /* BeaconReportingOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */; };
 		B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */; };
 		B0E0B972205A023600C17AAD /* BeaconConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B971205A023600C17AAD /* BeaconConstants.swift */; };
 		B0E0B974205AF5D800C17AAD /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B973205AF5D800C17AAD /* Beacon.swift */; };
+		B0E2ABC3205F730A00F0247A /* BeaconStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */; };
 		B0F0BC1D205708AC00C5CAA4 /* BeaconScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0BC1C205708AC00C5CAA4 /* BeaconScanner.swift */; };
 		B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */; };
 		B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */; };
@@ -574,7 +585,11 @@
 		ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
 		B00100772056CD9500F77A6A /* FindNearestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestViewController.swift; sourceTree = "<group>"; };
 		B001007A2056D01A00F77A6A /* FindNearestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestController.swift; sourceTree = "<group>"; };
+		B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconStorageMock.swift; sourceTree = "<group>"; };
+		B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanningOperationTests.swift; sourceTree = "<group>"; };
 		B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTimer.swift; sourceTree = "<group>"; };
+		B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconTimerMock.swift; sourceTree = "<group>"; };
+		B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconProcessingOperationTests.swift; sourceTree = "<group>"; };
 		B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitterExt.swift; sourceTree = "<group>"; };
 		B00647BF205D031A00ED47FE /* BeaconScanningOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanningOperation.swift; sourceTree = "<group>"; };
 		B00647C1205D035900ED47FE /* BeaconOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperation.swift; sourceTree = "<group>"; };
@@ -583,14 +598,22 @@
 		B00775B0205EC0C8007280FA /* BeaconStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStorage.swift; sourceTree = "<group>"; };
 		B00775B3205EE8D9007280FA /* BeaconCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCentralManager.swift; sourceTree = "<group>"; };
 		B00775B5205EEB13007280FA /* BeaconPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconPeripheral.swift; sourceTree = "<group>"; };
+		B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperationMock.swift; sourceTree = "<group>"; };
+		B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperationDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScannerDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralMock.swift; sourceTree = "<group>"; };
+		B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C8205F1E58007280FA /* ICentralManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICentralManagerMock.swift; sourceTree = "<group>"; };
 		B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestViewDisplayCollection.swift; sourceTree = "<group>"; };
 		B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserTableViewCellModel.swift; sourceTree = "<group>"; };
 		B0331348205C349800F6DBB5 /* NearestUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserEntity.swift; sourceTree = "<group>"; };
 		B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserPlainObjectTranslation.swift; sourceTree = "<group>"; };
 		B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellConfigurationControllerLeakTests.swift; sourceTree = "<group>"; };
+		B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconReportingOperationTests.swift; sourceTree = "<group>"; };
 		B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitter.swift; sourceTree = "<group>"; };
 		B0E0B971205A023600C17AAD /* BeaconConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconConstants.swift; sourceTree = "<group>"; };
 		B0E0B973205AF5D800C17AAD /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStorageTests.swift; sourceTree = "<group>"; };
 		B0F0BC1C205708AC00C5CAA4 /* BeaconScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanner.swift; sourceTree = "<group>"; };
 		B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
 		B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -2136,6 +2159,7 @@
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B00775B7205F16AD007280FA /* Common */,
 				B0A1FC0E204DB9E9007D501D /* Controllers */,
 				A1495AE61E76CD12003D8BE3 /* Validation */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
@@ -2199,6 +2223,41 @@
 				B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */,
 			);
 			path = BluetoothSUT;
+			sourceTree = "<group>";
+		};
+		B00775B7205F16AD007280FA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B9205F16C3007280FA /* Beacon */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B00775B8205F16B2007280FA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */,
+				B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */,
+				B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */,
+				B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */,
+				B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */,
+				B00775C8205F1E58007280FA /* ICentralManagerMock.swift */,
+				B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */,
+				B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B00775B9205F16C3007280FA /* Beacon */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B8205F16B2007280FA /* Mocks */,
+				B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */,
+				B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */,
+				B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */,
+				B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */,
+			);
+			path = Beacon;
 			sourceTree = "<group>";
 		};
 		B0331342205C2E6500F6DBB5 /* FindNearestViewDisplayController */ = {
@@ -2298,12 +2357,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6048A71E5B3CCB00C414C3 /* Build configuration list for PBXNativeTarget "CHMeetupApp" */;
 			buildPhases = (
+				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				9F6048911E5B3CCB00C414C3 /* Sources */,
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				784EFF961E637EAE00F2E31A /* Embed Frameworks */,
 				7DA466F21F13A814005EAFAB /* Remove Unused Architectures */,
-				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 				7D95EF031F2130180032DA3D /* Fabric */,
@@ -2764,9 +2823,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B003C9F9205F4077004BC58D /* IBeaconTimerMock.swift in Sources */,
+				B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */,
+				B0E2ABC3205F730A00F0247A /* BeaconStorageTests.swift in Sources */,
+				B00775C3205F1E17007280FA /* BeaconScannerDelegateMock.swift in Sources */,
+				B003C9F5205F39CF004BC58D /* BeaconScanningOperationTests.swift in Sources */,
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
 				B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */,
+				B003C9FB205F5A76004BC58D /* BeaconProcessingOperationTests.swift in Sources */,
+				B003C9F3205F36E9004BC58D /* IBeaconStorageMock.swift in Sources */,
+				B0C0CC29205F6E9C0059995E /* BeaconReportingOperationTests.swift in Sources */,
+				B00775C1205F1DD6007280FA /* BeaconOperationDelegateMock.swift in Sources */,
+				B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */,
+				B00775BF205F1D9F007280FA /* BeaconOperationMock.swift in Sources */,
+				B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
