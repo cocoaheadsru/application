@@ -63,6 +63,7 @@ class BeaconScanner {
   public func configure(with beacons: [Beacon]) {
     storage.append(beacons)
   }
+
   public func startDetecting() {
     isDetecting = true
     startIfPossible()

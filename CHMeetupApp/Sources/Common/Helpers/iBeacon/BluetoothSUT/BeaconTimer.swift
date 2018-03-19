@@ -26,7 +26,9 @@ class BeaconTimer: IBeaconTimer {
     invalidate()
     timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: repeats, block: { [weak self] _ in
       block()
-      self?.invalidate()
+      if !repeats {
+        self?.invalidate()
+      }
     })
   }
 
