@@ -107,8 +107,8 @@ final class BeaconProcessingOperationTests: XCTestCase {
   func testOperationWillHandleReceivedData() {
     //GIVEN
     let peripheral = IBeaconPeripheralMock()
-    let userInfo = (id: 2, name: "China")
-    let data = "\(userInfo.id),\(userInfo.name)".data(using: .utf8)!
+    let userInfo = BeaconUserInfo(id: 2, name: "China", photoURL: nil)
+    let data = userInfo.userData!
     let beacon = Beacon(peripheral: peripheral)
     storage.beaconWithReturnValue = beacon
 
@@ -118,10 +118,10 @@ final class BeaconProcessingOperationTests: XCTestCase {
     //THEN
     XCTAssert(storage.beaconWithCalled, "Operation did not fetch beacon for given peripheral")
     XCTAssert(
-      beacon.userID == userInfo.id,
-      "Operation did handle userID incorrectly (got \(beacon.userID), should \(userInfo.id)")
-    XCTAssert(beacon.userName == userInfo.name,
-              "Operation did handle username incorrectly (got \(beacon.userName), should \(userInfo.name)")
+      beacon.userInfo?.id == userInfo.id,
+      "Operation did handle userID incorrectly (got \(beacon.userInfo!.id), should \(userInfo.id)")
+    XCTAssert(beacon.userInfo?.name == userInfo.name,
+              "Operation did handle username incorrectly (got \(beacon.userInfo?.name), should \(userInfo.name)")
   }
 
   func testOperationWillDisconnectFromPeripheral() {

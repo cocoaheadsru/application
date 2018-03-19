@@ -16,5 +16,8 @@ extension NearestUserTableViewCellModel: CellViewModelType {
 
   func setup(on cell: CreatorTableViewCell) {
     cell.creatorNameLabel.text = entity.name
+    if let photoURL = entity.photoURL, let url = URL(string: photoURL) {
+      cell.creatorImage.loadImage(from: url)
+    }
   }
 }

@@ -19,8 +19,9 @@ struct NearestUserPlainObjectTranslation: PlainObjectTranslation {
 
   static func addToRealm(plainObject: Beacon, to parent: NearestUserEntity? = nil) {
     let nearestUser = NearestUserEntity()
-    nearestUser.id = plainObject.userID
-    nearestUser.name = plainObject.userName
+    nearestUser.id = plainObject.userInfo?.id ?? 0
+    nearestUser.name = plainObject.userInfo?.name ?? ""
+    nearestUser.photoURL = plainObject.userInfo?.photoURL
     nearestUser.deviceUUID = plainObject.proximityUUID.uuidString
     nearestUser.discovered = plainObject.discovered
 

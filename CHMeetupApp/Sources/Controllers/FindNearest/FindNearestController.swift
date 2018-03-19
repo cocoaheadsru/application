@@ -46,7 +46,10 @@ class FindNearestController {
 
   private func allBeacons() -> [Beacon] {
     let users = Array(mainRealm.objects(NearestUserEntity.self))
-    let beacons = users.flatMap { Beacon(userID: $0.id, proximityUUIDString: $0.deviceUUID, name: $0.name) }
+    let beacons = users.flatMap { (user) -> Beacon? in
+      let userInfo = BeaconUserInfo(id: user.id, name: user.name, photoURL: user.photoURL)
+      return Beacon(userInfo: userInfo, proximityUUIDString: user.deviceUUID)
+    }
     return beacons
   }
 }

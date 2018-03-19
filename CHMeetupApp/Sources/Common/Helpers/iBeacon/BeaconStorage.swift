@@ -36,7 +36,7 @@ final class BeaconStorage: IBeaconStorage {
 
   func beaconsForConnect() -> [Beacon] {
     return beaconsDetected
-      .filter { $0.state != .userIDReceived && $0.peripheral != nil }
+      .filter { $0.state != .userInfoReceived && $0.peripheral != nil }
   }
 
   func appendNew(with peripheral: IBeaconPeripheral, RSSI: Float) {
@@ -61,14 +61,14 @@ final class BeaconStorage: IBeaconStorage {
 
   func isAnyDiscoveredAndUnprocessed() -> Bool {
     let peripherals = beaconsDetected
-      .filter { $0.state != .userIDReceived }
+      .filter { $0.state != .userInfoReceived }
       .flatMap { $0.peripheral }
     return !peripherals.isEmpty
   }
 
   func processedAndDiscoveredBeacons() -> [Beacon] {
     return beaconsDetected.filter { beacon in
-      return beacon.state == .userIDReceived && beacon.discovered
+      return beacon.state == .userInfoReceived && beacon.discovered
     }
   }
 

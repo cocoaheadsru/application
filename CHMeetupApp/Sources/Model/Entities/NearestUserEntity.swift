@@ -12,6 +12,7 @@ import RealmSwift
 final class NearestUserEntity: TemplatableObject, TemplateEntity {
   @objc dynamic var id: Int = 0
   @objc dynamic var name: String = ""
+  @objc dynamic var photoURL: String?
   @objc dynamic var deviceUUID: String = ""
   @objc dynamic var discovered: Bool = false
 

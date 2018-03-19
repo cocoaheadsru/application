@@ -11,14 +11,14 @@ import Foundation
 class Beacon: NSObject {
 
   internal let proximityUUID: UUID
-  private(set) var userID: Int = 0 {
+
+  private(set) var userInfo: BeaconUserInfo? {
     didSet {
-      if userID != 0 {
-        self.state = .userIDReceived
+      if userInfo != nil {
+        self.state = .userInfoReceived
       }
     }
   }
-  private(set) var userName: String = ""
   private(set) var rssiStack: [Float] = []
   private(set) var lastRSSIAppended = Date()
 
@@ -32,12 +32,11 @@ class Beacon: NSObject {
     self.proximityUUID = peripheral.identifier
   }
 
-  init?(userID: Int, proximityUUIDString: String, name: String?) {
+  init?(userInfo: BeaconUserInfo, proximityUUIDString: String) {
     guard let uuid = UUID(uuidString: proximityUUIDString) else { return nil }
-    self.userID = userID
+    self.userInfo = userInfo
     self.proximityUUID = uuid
-    self.userName = name ?? ""
-    self.state = .userIDReceived
+    self.state = .userInfoReceived
   }
 
   func append(rssi: Float) {
@@ -51,7 +50,7 @@ class Beacon: NSObject {
 
   func checkForPenalty(now: Date = Date()) {
     // Check beacon did discovered in last 3 seconds, if no, than give them pinalty
-    guard state == .userIDReceived else { return }
+    guard state == .userInfoReceived else { return }
     if abs( now.timeIntervalSince(lastRSSIAppended)) > BeaconConstans.Scanner.PinaltyTimeout {
       //pinalty
       rssiStack.append(BeaconConstans.Scanner.PinaltyScore)
@@ -60,15 +59,10 @@ class Beacon: NSObject {
   }
 
   func updateValues(with data: Data) {
-    guard let newStrings = String(data: data, encoding: .utf8)?.components(separatedBy: ","),
-    newStrings.count == 2,
-    let userID = Int(newStrings.first ?? ""),
-    let userName = newStrings.last else {
+    guard let userInfo = BeaconUserInfo.from(data: data) else {
       return
     }
-
-    self.userID = userID
-    self.userName = userName
+    self.userInfo = userInfo
     self.peripheral = nil
 
   }
@@ -121,7 +115,7 @@ class Beacon: NSObject {
 enum BeaconState {
   case notEnoughRSSIData
   case connecting
-  case userIDReceived
+  case userInfoReceived
 }
 
 enum ProximityState: Int {

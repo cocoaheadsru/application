@@ -14,14 +14,14 @@ final class BeaconTransmitter: NSObject {
   // MARK: - Properties
 
   private var peripheralManager: CBPeripheralManager?
-  private let identifier: String
+  private let userData: Data
   private var isTransmitting = false
   private var bluetoothIsEnabledAndAuthorized = false
 
   // MARK: - Public
 
-  public init(identifier: String) {
-    self.identifier = identifier
+  public init(userData: Data) {
+    self.userData = userData
     super.init()
 
     bluetoothIsEnabledAndAuthorized = hasBluetooth()
@@ -73,7 +73,7 @@ final class BeaconTransmitter: NSObject {
     ]
     let service = CBMutableService(type: BeaconConstans.ServiceUUID, primary: true)
 
-    let data = identifier.data(using: .utf8)
+    let data = userData
     let characteristic = CBMutableCharacteristic(
       type: BeaconConstans.CharacteristicUUID,
       properties: .read,

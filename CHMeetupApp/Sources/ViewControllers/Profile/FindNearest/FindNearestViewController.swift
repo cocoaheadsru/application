@@ -34,7 +34,7 @@ class FindNearestViewController: UIViewController, DisplayCollectionWithTableVie
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    navigationItem.title = "Люди Рядом".localized
+    navigationItem.title = "Люди Вокруг".localized
     displayCollection = FindNearestViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
     displayCollection.delegate = self
