@@ -257,8 +257,11 @@
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
 		ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */; };
+		B00647BD205C987D00ED47FE /* BeaconTransmitterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */; };
 		B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */; };
 		B0A1FC12204DBDB7007D501D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
+		B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */; };
+		B0E0B972205A023600C17AAD /* BeaconConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B971205A023600C17AAD /* BeaconConstants.swift */; };
 		B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */; };
 		B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */; };
 		B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */; };
@@ -552,7 +555,10 @@
 		ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
+		B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitterExt.swift; sourceTree = "<group>"; };
 		B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellConfigurationControllerLeakTests.swift; sourceTree = "<group>"; };
+		B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitter.swift; sourceTree = "<group>"; };
+		B0E0B971205A023600C17AAD /* BeaconConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconConstants.swift; sourceTree = "<group>"; };
 		B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
 		B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -937,6 +943,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B0958B3A2055BC44002EDCAF /* iBeacon */,
 				7DBF22661F1E32C60048862C /* PushHandler */,
 				7DBF22511F1D37840048862C /* UniversalRouter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
@@ -2118,6 +2125,16 @@
 			path = LabelCell;
 			sourceTree = "<group>";
 		};
+		B0958B3A2055BC44002EDCAF /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */,
+				B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */,
+				B0E0B971205A023600C17AAD /* BeaconConstants.swift */,
+			);
+			path = iBeacon;
+			sourceTree = "<group>";
+		};
 		B0A1FC0E204DB9E9007D501D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2409,6 +2426,7 @@
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */,
 				8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */,
+				B0E0B972205A023600C17AAD /* BeaconConstants.swift in Sources */,
 				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
@@ -2432,6 +2450,7 @@
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
 				8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
+				B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
@@ -2523,6 +2542,7 @@
 				9FB0FE0F1EA6869700383E1D /* ActiveWindowManager.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				9FD42F6B1E95385000EA6EE7 /* StringContainerEntity.swift in Sources */,
+				B00647BD205C987D00ED47FE /* BeaconTransmitterExt.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
 				32424A0E1EB79001002EED9B /* CreatorPlainObject.swift in Sources */,
 				9F487A821E7417F50016CE0B /* LightButton.swift in Sources */,
@@ -2815,7 +2835,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
 			};
 			name = Debug;
@@ -2833,7 +2853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
 			};
 			name = Release;
