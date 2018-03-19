@@ -59,12 +59,19 @@ final class ProfileViewDisplayCollection: DisplayCollection {
     }
     let askQuestionAction = ActionTableViewCellModel(action: askQuestionObject)
 
+    let findNearestObject = ActionPlainObject(text: "Люди вокруг".localized, imageName: nil) {[weak delegate] in
+      let findNearest = Storyboards.Profile.instantiateFindNearestViewController()
+      delegate?.push(viewController: findNearest)
+    }
+    let findNearestAction = ActionTableViewCellModel(action: findNearestObject)
+
     userActions.append(giveSpeechAction)
     userActions.append(creatorsAction)
 
     if canSendMail {
       userActions.append(askQuestionAction)
     }
+    userActions.append(findNearestAction)
   }
 
   private var canSendMail: Bool {

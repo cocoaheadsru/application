@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -418,6 +418,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyx-tI-Rq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3159" y="34"/>
+        </scene>
+        <!--Find Nearest View Controller-->
+        <scene sceneID="T7S-Gn-1ET">
+            <objects>
+                <viewController storyboardIdentifier="FindNearestViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xpc-SJ-UeJ" customClass="FindNearestViewController" customModule="CHMeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzT-0x-h0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="uXO-8y-BUf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Asj-jA-g9A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="chx-UB-ouW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xpc-SJ-UeJ" id="Hn8-Cr-Dbb"/>
+                                    <outlet property="delegate" destination="xpc-SJ-UeJ" id="M3Q-mt-gYG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="chx-UB-ouW" secondAttribute="trailing" id="6VV-xM-M02"/>
+                            <constraint firstItem="chx-UB-ouW" firstAttribute="top" secondItem="Asj-jA-g9A" secondAttribute="top" id="lsN-Ga-vqC"/>
+                            <constraint firstItem="chx-UB-ouW" firstAttribute="leading" secondItem="Asj-jA-g9A" secondAttribute="leading" id="qLv-d4-g4J"/>
+                            <constraint firstAttribute="bottom" secondItem="chx-UB-ouW" secondAttribute="bottom" id="rBj-wc-DeF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="chx-UB-ouW" id="X63-XH-ejz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs8-27-kPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4637" y="811"/>
         </scene>
     </scenes>
     <resources>
