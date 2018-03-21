@@ -28,17 +28,14 @@
                         <rect key="frame" x="32" y="27" width="256" height="36"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGN-N8-jNN">
-                                <rect key="frame" x="0.0" y="0.0" width="187" height="36"/>
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="36"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="air-drop" translatesAutoresizingMaskIntoConstraints="NO" id="wDV-2C-3zp">
-                                <rect key="frame" x="203" y="0.0" width="30" height="36"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="img_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Iz7-hX-efg">
-                                <rect key="frame" x="249" y="0.0" width="7" height="36"/>
+                                <rect key="frame" x="226" y="0.0" width="30" height="36"/>
                             </imageView>
                         </subviews>
                     </stackView>
@@ -53,13 +50,11 @@
             <connections>
                 <outlet property="descriptionActionLabel" destination="kGN-N8-jNN" id="oBM-pw-CQF"/>
                 <outlet property="detailIconView" destination="wDV-2C-3zp" id="O3b-Qx-2BE"/>
-                <outlet property="enableImageView" destination="Iz7-hX-efg" id="YRI-qv-SD8"/>
             </connections>
             <point key="canvasLocation" x="34" y="89"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="air-drop" width="30" height="30"/>
-        <image name="img_arrow" width="7" height="11"/>
     </resources>
 </document>

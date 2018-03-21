@@ -10,21 +10,11 @@ import UIKit
 
 class ActionDetailIconCell: PlateTableViewCell {
 
-  var isEnableForAction = false {
-    didSet {
-      enableImageView.isHidden = !isEnableForAction
-      let traits = super.accessibilityTraits
-      accessibilityTraits = traits | (UIAccessibilityTraitButton * (isEnableForAction ? 1 : 0))
-    }
-  }
-
   @IBOutlet var detailIconView: UIImageView! {
     didSet {
       detailIconView.isHidden = true
     }
   }
-
-  @IBOutlet var enableImageView: UIImageView!
 
   @IBOutlet var descriptionActionLabel: UILabel! {
     didSet {

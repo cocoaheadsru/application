@@ -16,7 +16,6 @@ extension ActionDetailIconCellModel: CellViewModelType {
 
   func setup(on cell: ActionDetailIconCell) {
     cell.descriptionActionLabel.text = action.text
-    cell.isEnableForAction = action.action != nil
 
     if let imageName = action.imageName, let image = UIImage(named: imageName) {
       cell.detailIconView.image = image.imageWithTemplateRendingMode
