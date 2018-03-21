@@ -279,6 +279,11 @@
 		B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */; };
 		B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */; };
 		B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C8205F1E58007280FA /* ICentralManagerMock.swift */; };
+		B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */; };
+		B022139A20605CDB00989FEB /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139720605CDB00989FEB /* SwitchTableViewCell.swift */; };
+		B022139B20605CDB00989FEB /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B022139820605CDB00989FEB /* SwitchTableViewCell.xib */; };
+		B022139D20607D1500989FEB /* SwitchActionPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */; };
+		B022139F206082C200989FEB /* SwitchActionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139E206082C200989FEB /* SwitchActionCellController.swift */; };
 		B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */; };
 		B0331347205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */; };
 		B0331349205C349800F6DBB5 /* NearestUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331348205C349800F6DBB5 /* NearestUserEntity.swift */; };
@@ -606,6 +611,11 @@
 		B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralMock.swift; sourceTree = "<group>"; };
 		B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralDelegateMock.swift; sourceTree = "<group>"; };
 		B00775C8205F1E58007280FA /* ICentralManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICentralManagerMock.swift; sourceTree = "<group>"; };
+		B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCellModel.swift; sourceTree = "<group>"; };
+		B022139720605CDB00989FEB /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		B022139820605CDB00989FEB /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionPlainObject.swift; sourceTree = "<group>"; };
+		B022139E206082C200989FEB /* SwitchActionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionCellController.swift; sourceTree = "<group>"; };
 		B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestViewDisplayCollection.swift; sourceTree = "<group>"; };
 		B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserTableViewCellModel.swift; sourceTree = "<group>"; };
 		B0331348205C349800F6DBB5 /* NearestUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserEntity.swift; sourceTree = "<group>"; };
@@ -1077,6 +1087,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B03201C32060594600163479 /* SwitchCell */,
 				B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */,
 				32AFE59D1EAF5BDF004904FB /* TemplatableLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
@@ -2040,6 +2051,7 @@
 			isa = PBXGroup;
 			children = (
 				9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */,
+				B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -2202,6 +2214,7 @@
 			children = (
 				B001007A2056D01A00F77A6A /* FindNearestController.swift */,
 				B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */,
+				B022139E206082C200989FEB /* SwitchActionCellController.swift */,
 			);
 			path = FindNearest;
 			sourceTree = "<group>";
@@ -2260,6 +2273,16 @@
 				B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */,
 			);
 			path = Beacon;
+			sourceTree = "<group>";
+		};
+		B03201C32060594600163479 /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				B022139720605CDB00989FEB /* SwitchTableViewCell.swift */,
+				B022139820605CDB00989FEB /* SwitchTableViewCell.xib */,
+				B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */,
+			);
+			path = SwitchCell;
 			sourceTree = "<group>";
 		};
 		B0331342205C2E6500F6DBB5 /* FindNearestViewDisplayController */ = {
@@ -2470,6 +2493,7 @@
 				0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */,
 				32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
+				B022139B20605CDB00989FEB /* SwitchTableViewCell.xib in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
@@ -2632,6 +2656,7 @@
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
+				B022139D20607D1500989FEB /* SwitchActionPlainObject.swift in Sources */,
 				221CC3FB1E7B24A1004F0695 /* EventRegFormFieldAnswerPlainObject.swift in Sources */,
 				221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
@@ -2649,6 +2674,7 @@
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */,
+				B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
 				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
@@ -2656,6 +2682,7 @@
 				328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */,
 				B00647C0205D031A00ED47FE /* BeaconScanningOperation.swift in Sources */,
 				7DB4F5C11F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift in Sources */,
+				B022139F206082C200989FEB /* SwitchActionCellController.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
 				7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */,
 				320FA57A1E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift in Sources */,
@@ -2694,6 +2721,7 @@
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */,
+				B022139A20605CDB00989FEB /* SwitchTableViewCell.swift in Sources */,
 				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
 				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,

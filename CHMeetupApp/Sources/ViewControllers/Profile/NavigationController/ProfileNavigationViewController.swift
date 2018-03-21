@@ -20,7 +20,6 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    updateBeaconTransmitterStatus()
   }
 
   override func viewDidLoad() {
@@ -59,7 +58,6 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
     } else {
       viewControllers = [ViewControllersFactory.authViewController]
     }
-    updateBeaconTransmitterStatus()
   }
 
   func logout() {
@@ -69,12 +67,5 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
     return TabBarItemView.create(with: .profile)
-  }
-
-  func updateBeaconTransmitterStatus() {
-    //async for realm initialization
-    DispatchQueue.main.async {
-      BeaconTransmitter.setUser(isAuthorized: LoginProcessController.isLogin)
-    }
   }
 }

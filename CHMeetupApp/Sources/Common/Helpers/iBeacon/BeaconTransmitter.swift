@@ -15,7 +15,6 @@ final class BeaconTransmitter: NSObject {
 
   private var peripheralManager: CBPeripheralManager?
   private let userData: Data
-  private var isTransmitting = false
   private var bluetoothIsEnabledAndAuthorized = false
 
   // MARK: - Public
@@ -36,10 +35,13 @@ final class BeaconTransmitter: NSObject {
   }
 
   public func stopTransmitting() {
-    isTransmitting = false
 
     peripheralManager?.stopAdvertising()
     peripheralManager = nil
+  }
+
+  public var isTransmitting: Bool {
+    return peripheralManager?.isAdvertising == true
   }
 
   // MARK: - Private

@@ -10,25 +10,40 @@ import UIKit
 
 class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
   static var modelsForRegistration: [CellViewAnyModelType.Type] {
-    return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self]
+    return [EventPreviewTableViewCellModel.self, ActionTableViewCellModel.self, SwitchTableViewCellModel.self]
   }
 
   fileprivate enum `Type` {
     case events
     case actionButtons
+    case switchActionButtons
     case collectionIsEmpty
   }
 
   weak var delegate: DisplayCollectionWithTableViewDelegate?
 
-  fileprivate var sections: [Type] = [.events, .actionButtons, .collectionIsEmpty]
+  private let switchActionController = SwitchActionCellController()
+
+  fileprivate var sections: [Type] = [.events, .actionButtons, .switchActionButtons, .collectionIsEmpty]
   private var actionPlainObjects: [ActionPlainObject] = []
+  private var switchActionPlainObjects: [SwitchActionPlainObject] = []
 
   let groupImageLoader = GroupImageLoader.standard
 
   func updateActionCellsSection(on viewController: UIViewController,
                                 with tableView: UITableView) {
     actionPlainObjects = []
+    switchActionPlainObjects = []
+
+    let beaconSwitcherObject = switchActionController.create(
+      on: viewController,
+      selectAction: { [weak delegate] in
+        let findNearest = Storyboards.Profile.instantiateFindNearestViewController()
+        delegate?.push(viewController: findNearest)
+      }, cancelAction: { [weak delegate] in
+        delegate?.updateUI()
+    })
+    switchActionPlainObjects.append(beaconSwitcherObject)
   }
 
   var modelCollection: TemplateModelCollection<EventEntity> = {
@@ -52,6 +67,10 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       return modelCollection.count
     case .actionButtons:
       return actionPlainObjects.count
+    case .switchActionButtons:
+      guard switchActionPlainObjects.count > 0,
+        needShowSwitchCell() else { return 0 }
+      return switchActionPlainObjects.count
     case .collectionIsEmpty:
       if modelCollection.count == 0 && actionPlainObjects.count == 0 {
         return 1
@@ -69,6 +88,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
                                             groupImageLoader: groupImageLoader)
     case .actionButtons:
       return ActionTableViewCellModel(action: actionPlainObjects[indexPath.row])
+    case .switchActionButtons:
+      return SwitchTableViewCellModel(action: switchActionPlainObjects[indexPath.row], delegate: self)
     case .collectionIsEmpty:
       return ActionTableViewCellModel(action: ActionPlainObject(text:
         "Будущие события скоро появятся, и вы будете первым, кто про это узнает!".localized
@@ -87,6 +108,8 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
       delegate?.push(viewController: eventPreview)
     case .actionButtons:
       actionPlainObjects[indexPath.row].action?()
+    case .switchActionButtons:
+      switchActionPlainObjects[indexPath.row].selectAction?()
     case .collectionIsEmpty:
       break
     }
@@ -112,6 +135,31 @@ extension MainViewDisplayCollection: EventPreviewTableViewCellDelegate {
   }
 }
 
+extension MainViewDisplayCollection: SwitchTableViewCellDelegate {
+  func switchTableViewCellDidChangeValue(_ switchCell: SwitchTableViewCell) {
+    guard let indexPath = delegate?.getIndexPath(from: switchCell) else {
+      assertionFailure("IndexPath is unknown")
+      return
+    }
+    switchActionPlainObjects[indexPath.row]
+      .switchAction?(switchCell.switchView.isOn)
+  }
+
+  func needShowSwitchCell() -> Bool {
+    guard modelCollection.count > 0 else { return false }
+    let event = modelCollection[0]
+
+    var isEventToday = event.startDate.isToday
+    #if DEBUG //tested without
+      isEventToday = true
+    #endif
+    //If your Request is Approved And event date is today
+    guard event.status == .approved, isEventToday else { return false }
+
+    return true
+  }
+}
+
 extension MainViewDisplayCollection: PreviewingContentProvider {
   func preview(at indexPath: IndexPath) -> UIViewController? {
     switch sections[indexPath.section] {
@@ -122,7 +170,7 @@ extension MainViewDisplayCollection: PreviewingContentProvider {
       let eventPreviewViewController = Storyboards.EventPreview.instantiateEventPreviewViewController()
       eventPreviewViewController.selectedEventId = modelCollection[indexPath.row].id
       return eventPreviewViewController
-    case .actionButtons, .collectionIsEmpty:
+    case .actionButtons, .collectionIsEmpty, .switchActionButtons:
       return nil
     }
   }

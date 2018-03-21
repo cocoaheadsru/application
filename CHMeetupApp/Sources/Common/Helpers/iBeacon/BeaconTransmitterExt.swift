@@ -12,17 +12,21 @@ private var transmitter: BeaconTransmitter?
 
 extension BeaconTransmitter {
 
-  public static func setUser(isAuthorized: Bool) {
-    if isAuthorized {
-      if let user = UserPreferencesEntity.value.currentUser,
-        let data = prepareData(for: user) {
-        transmitter = BeaconTransmitter(userData: data)
-      }
-      transmitter?.startTransmitting()
-    } else {
-      transmitter?.stopTransmitting()
-      transmitter = nil
+  public static func turnOn() {
+    if let user = UserPreferencesEntity.value.currentUser,
+      let data = prepareData(for: user) {
+      transmitter = BeaconTransmitter(userData: data)
     }
+    transmitter?.startTransmitting()
+  }
+
+  public static func turnOff() {
+    transmitter?.stopTransmitting()
+    transmitter = nil
+  }
+
+  public static func isTurnedOn() -> Bool {
+    return transmitter?.isTransmitting == true
   }
 
   private static func prepareData(for user: UserEntity) -> Data? {
