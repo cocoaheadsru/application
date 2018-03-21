@@ -257,8 +257,48 @@
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
 		ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */; };
+		B00100782056CD9500F77A6A /* FindNearestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100772056CD9500F77A6A /* FindNearestViewController.swift */; };
+		B001007B2056D01A00F77A6A /* FindNearestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B001007A2056D01A00F77A6A /* FindNearestController.swift */; };
+		B003C9F3205F36E9004BC58D /* IBeaconStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */; };
+		B003C9F5205F39CF004BC58D /* BeaconScanningOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */; };
+		B003C9F7205F3C1A004BC58D /* BeaconTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */; };
+		B003C9F9205F4077004BC58D /* IBeaconTimerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */; };
+		B003C9FB205F5A76004BC58D /* BeaconProcessingOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */; };
+		B00647BD205C987D00ED47FE /* BeaconTransmitterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */; };
+		B00647C0205D031A00ED47FE /* BeaconScanningOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647BF205D031A00ED47FE /* BeaconScanningOperation.swift */; };
+		B00647C2205D035900ED47FE /* BeaconOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00647C1205D035900ED47FE /* BeaconOperation.swift */; };
+		B007658720600FB3006F80A2 /* BeaconUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007658620600FB3006F80A2 /* BeaconUserInfo.swift */; };
+		B00775AD205EBDAE007280FA /* BeaconProcessingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775AC205EBDAE007280FA /* BeaconProcessingOperation.swift */; };
+		B00775AF205EBDC8007280FA /* BeaconReportingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775AE205EBDC8007280FA /* BeaconReportingOperation.swift */; };
+		B00775B1205EC0C8007280FA /* BeaconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B0205EC0C8007280FA /* BeaconStorage.swift */; };
+		B00775B4205EE8D9007280FA /* BeaconCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B3205EE8D9007280FA /* BeaconCentralManager.swift */; };
+		B00775B6205EEB13007280FA /* BeaconPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775B5205EEB13007280FA /* BeaconPeripheral.swift */; };
+		B00775BF205F1D9F007280FA /* BeaconOperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */; };
+		B00775C1205F1DD6007280FA /* BeaconOperationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */; };
+		B00775C3205F1E17007280FA /* BeaconScannerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */; };
+		B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */; };
+		B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */; };
+		B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C8205F1E58007280FA /* ICentralManagerMock.swift */; };
+		B016515120623B7F007D93B2 /* ActionDetailIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */; };
+		B016515220623B7F007D93B2 /* ActionDetailIconCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */; };
+		B016515320623B7F007D93B2 /* ActionDetailIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */; };
+		B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */; };
+		B022139A20605CDB00989FEB /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139720605CDB00989FEB /* SwitchTableViewCell.swift */; };
+		B022139B20605CDB00989FEB /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B022139820605CDB00989FEB /* SwitchTableViewCell.xib */; };
+		B022139D20607D1500989FEB /* SwitchActionPlainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */; };
+		B022139F206082C200989FEB /* SwitchActionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139E206082C200989FEB /* SwitchActionCellController.swift */; };
+		B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */; };
+		B0331347205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */; };
+		B0331349205C349800F6DBB5 /* NearestUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0331348205C349800F6DBB5 /* NearestUserEntity.swift */; };
+		B033134B205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */; };
 		B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */; };
 		B0A1FC12204DBDB7007D501D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6268281E60742B00D51BEB /* RealmSwift.framework */; };
+		B0C0CC29205F6E9C0059995E /* BeaconReportingOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */; };
+		B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */; };
+		B0E0B972205A023600C17AAD /* BeaconConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B971205A023600C17AAD /* BeaconConstants.swift */; };
+		B0E0B974205AF5D800C17AAD /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0B973205AF5D800C17AAD /* Beacon.swift */; };
+		B0E2ABC3205F730A00F0247A /* BeaconStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */; };
+		B0F0BC1D205708AC00C5CAA4 /* BeaconScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F0BC1C205708AC00C5CAA4 /* BeaconScanner.swift */; };
 		B744FA561FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */; };
 		B744FA581FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */; };
 		B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */; };
@@ -552,7 +592,47 @@
 		ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		ADCCA0FD1E936156009DAACE /* LabelTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellModel.swift; sourceTree = "<group>"; };
+		B00100772056CD9500F77A6A /* FindNearestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestViewController.swift; sourceTree = "<group>"; };
+		B001007A2056D01A00F77A6A /* FindNearestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestController.swift; sourceTree = "<group>"; };
+		B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconStorageMock.swift; sourceTree = "<group>"; };
+		B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanningOperationTests.swift; sourceTree = "<group>"; };
+		B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTimer.swift; sourceTree = "<group>"; };
+		B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconTimerMock.swift; sourceTree = "<group>"; };
+		B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconProcessingOperationTests.swift; sourceTree = "<group>"; };
+		B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitterExt.swift; sourceTree = "<group>"; };
+		B00647BF205D031A00ED47FE /* BeaconScanningOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanningOperation.swift; sourceTree = "<group>"; };
+		B00647C1205D035900ED47FE /* BeaconOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperation.swift; sourceTree = "<group>"; };
+		B007658620600FB3006F80A2 /* BeaconUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconUserInfo.swift; sourceTree = "<group>"; };
+		B00775AC205EBDAE007280FA /* BeaconProcessingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconProcessingOperation.swift; sourceTree = "<group>"; };
+		B00775AE205EBDC8007280FA /* BeaconReportingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconReportingOperation.swift; sourceTree = "<group>"; };
+		B00775B0205EC0C8007280FA /* BeaconStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStorage.swift; sourceTree = "<group>"; };
+		B00775B3205EE8D9007280FA /* BeaconCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCentralManager.swift; sourceTree = "<group>"; };
+		B00775B5205EEB13007280FA /* BeaconPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconPeripheral.swift; sourceTree = "<group>"; };
+		B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperationMock.swift; sourceTree = "<group>"; };
+		B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOperationDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScannerDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralMock.swift; sourceTree = "<group>"; };
+		B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralDelegateMock.swift; sourceTree = "<group>"; };
+		B00775C8205F1E58007280FA /* ICentralManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICentralManagerMock.swift; sourceTree = "<group>"; };
+		B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionDetailIconCell.xib; path = ActionDetailIconCell/ActionDetailIconCell.xib; sourceTree = "<group>"; };
+		B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCellModel.swift; path = ActionDetailIconCell/ActionDetailIconCellModel.swift; sourceTree = "<group>"; };
+		B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCell.swift; path = ActionDetailIconCell/ActionDetailIconCell.swift; sourceTree = "<group>"; };
+		B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCellModel.swift; sourceTree = "<group>"; };
+		B022139720605CDB00989FEB /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		B022139820605CDB00989FEB /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionPlainObject.swift; sourceTree = "<group>"; };
+		B022139E206082C200989FEB /* SwitchActionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionCellController.swift; sourceTree = "<group>"; };
+		B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearestViewDisplayCollection.swift; sourceTree = "<group>"; };
+		B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserTableViewCellModel.swift; sourceTree = "<group>"; };
+		B0331348205C349800F6DBB5 /* NearestUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserEntity.swift; sourceTree = "<group>"; };
+		B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestUserPlainObjectTranslation.swift; sourceTree = "<group>"; };
 		B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellConfigurationControllerLeakTests.swift; sourceTree = "<group>"; };
+		B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconReportingOperationTests.swift; sourceTree = "<group>"; };
+		B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTransmitter.swift; sourceTree = "<group>"; };
+		B0E0B971205A023600C17AAD /* BeaconConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconConstants.swift; sourceTree = "<group>"; };
+		B0E0B973205AF5D800C17AAD /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStorageTests.swift; sourceTree = "<group>"; };
+		B0F0BC1C205708AC00C5CAA4 /* BeaconScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconScanner.swift; sourceTree = "<group>"; };
 		B744FA551FB07AD400F92D4B /* AlertHeaderTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCellModel.swift; sourceTree = "<group>"; };
 		B744FA571FB07B2A00F92D4B /* AlertHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B744FA591FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -772,6 +852,7 @@
 		221F4F941E5C0B6C0009FD07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B00100792056D00A00F77A6A /* FindNearest */,
 				7D3F9DB41EBAEBB100BC6ABD /* ProfileController */,
 				32424A0B1EB77501002EED9B /* Creators */,
 				7DAC86311EA8168000437283 /* GiveSpeechController */,
@@ -810,6 +891,7 @@
 				9FF708DA1E6ADC9900BBA992 /* SocialEntity.swift */,
 				9FD42F6A1E95385000EA6EE7 /* StringContainerEntity.swift */,
 				32424A091EB76C95002EED9B /* CreatorEntity.swift */,
+				B0331348205C349800F6DBB5 /* NearestUserEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -937,6 +1019,7 @@
 		22323F131E70C0E500522E5C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B0958B3A2055BC44002EDCAF /* iBeacon */,
 				7DBF22661F1E32C60048862C /* PushHandler */,
 				7DBF22511F1D37840048862C /* UniversalRouter */,
 				7DF04D171EAF670300E2D98C /* NotificationHelper */,
@@ -1010,6 +1093,8 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B016514D20623B2F007D93B2 /* ActionDetailIconCell */,
+				B03201C32060594600163479 /* SwitchCell */,
 				B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */,
 				32AFE59D1EAF5BDF004904FB /* TemplatableLabel */,
 				ADCCA0FA1E936156009DAACE /* LabelCell */,
@@ -1245,6 +1330,7 @@
 		22323F711E70C2BE00522E5C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B00100762056CD5500F77A6A /* FindNearest */,
 				7D1CB6D61EA2D5B4003136FA /* AskQuestion */,
 				7D1CB6D31EA2D208003136FA /* Creators */,
 				A1AD7E5A1F06F3B300977FAE /* CreatorDetail */,
@@ -1972,6 +2058,7 @@
 			isa = PBXGroup;
 			children = (
 				9F68E50C1E850D7500C6C931 /* ActionPlainObject.swift */,
+				B022139C20607D1500989FEB /* SwitchActionPlainObject.swift */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -2093,6 +2180,7 @@
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B00775B7205F16AD007280FA /* Common */,
 				B0A1FC0E204DB9E9007D501D /* Controllers */,
 				A1495AE61E76CD12003D8BE3 /* Validation */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
@@ -2116,6 +2204,134 @@
 				ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */,
 			);
 			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		B00100762056CD5500F77A6A /* FindNearest */ = {
+			isa = PBXGroup;
+			children = (
+				B0331345205C2FFB00F6DBB5 /* Cell */,
+				B0331342205C2E6500F6DBB5 /* FindNearestViewDisplayController */,
+				B00100772056CD9500F77A6A /* FindNearestViewController.swift */,
+			);
+			path = FindNearest;
+			sourceTree = "<group>";
+		};
+		B00100792056D00A00F77A6A /* FindNearest */ = {
+			isa = PBXGroup;
+			children = (
+				B001007A2056D01A00F77A6A /* FindNearestController.swift */,
+				B033134A205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift */,
+				B022139E206082C200989FEB /* SwitchActionCellController.swift */,
+			);
+			path = FindNearest;
+			sourceTree = "<group>";
+		};
+		B00647BE205D030900ED47FE /* BeaconOperations */ = {
+			isa = PBXGroup;
+			children = (
+				B00647C1205D035900ED47FE /* BeaconOperation.swift */,
+				B00647BF205D031A00ED47FE /* BeaconScanningOperation.swift */,
+				B00775AC205EBDAE007280FA /* BeaconProcessingOperation.swift */,
+				B00775AE205EBDC8007280FA /* BeaconReportingOperation.swift */,
+			);
+			path = BeaconOperations;
+			sourceTree = "<group>";
+		};
+		B00775B2205EE8A9007280FA /* BluetoothSUT */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B3205EE8D9007280FA /* BeaconCentralManager.swift */,
+				B00775B5205EEB13007280FA /* BeaconPeripheral.swift */,
+				B003C9F6205F3C1A004BC58D /* BeaconTimer.swift */,
+			);
+			path = BluetoothSUT;
+			sourceTree = "<group>";
+		};
+		B00775B7205F16AD007280FA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B9205F16C3007280FA /* Beacon */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B00775B8205F16B2007280FA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B00775BE205F1D9F007280FA /* BeaconOperationMock.swift */,
+				B00775C0205F1DD6007280FA /* BeaconOperationDelegateMock.swift */,
+				B00775C2205F1E17007280FA /* BeaconScannerDelegateMock.swift */,
+				B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */,
+				B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */,
+				B00775C8205F1E58007280FA /* ICentralManagerMock.swift */,
+				B003C9F2205F36E9004BC58D /* IBeaconStorageMock.swift */,
+				B003C9F8205F4077004BC58D /* IBeaconTimerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B00775B9205F16C3007280FA /* Beacon */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B8205F16B2007280FA /* Mocks */,
+				B003C9F4205F39CF004BC58D /* BeaconScanningOperationTests.swift */,
+				B003C9FA205F5A76004BC58D /* BeaconProcessingOperationTests.swift */,
+				B0C0CC28205F6E9C0059995E /* BeaconReportingOperationTests.swift */,
+				B0E2ABC2205F730A00F0247A /* BeaconStorageTests.swift */,
+			);
+			path = Beacon;
+			sourceTree = "<group>";
+		};
+		B016514D20623B2F007D93B2 /* ActionDetailIconCell */ = {
+			isa = PBXGroup;
+			children = (
+				B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */,
+				B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */,
+				B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */,
+			);
+			name = ActionDetailIconCell;
+			sourceTree = "<group>";
+		};
+		B03201C32060594600163479 /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				B022139720605CDB00989FEB /* SwitchTableViewCell.swift */,
+				B022139820605CDB00989FEB /* SwitchTableViewCell.xib */,
+				B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */,
+			);
+			path = SwitchCell;
+			sourceTree = "<group>";
+		};
+		B0331342205C2E6500F6DBB5 /* FindNearestViewDisplayController */ = {
+			isa = PBXGroup;
+			children = (
+				B0331343205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift */,
+			);
+			path = FindNearestViewDisplayController;
+			sourceTree = "<group>";
+		};
+		B0331345205C2FFB00F6DBB5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0331346205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B0958B3A2055BC44002EDCAF /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				B00775B2205EE8A9007280FA /* BluetoothSUT */,
+				B00647BE205D030900ED47FE /* BeaconOperations */,
+				B0E0B973205AF5D800C17AAD /* Beacon.swift */,
+				B007658620600FB3006F80A2 /* BeaconUserInfo.swift */,
+				B00775B0205EC0C8007280FA /* BeaconStorage.swift */,
+				B0F0BC1C205708AC00C5CAA4 /* BeaconScanner.swift */,
+				B0E0B96F2059EB1800C17AAD /* BeaconTransmitter.swift */,
+				B00647BC205C987D00ED47FE /* BeaconTransmitterExt.swift */,
+				B0E0B971205A023600C17AAD /* BeaconConstants.swift */,
+			);
+			path = iBeacon;
 			sourceTree = "<group>";
 		};
 		B0A1FC0E204DB9E9007D501D /* Controllers */ = {
@@ -2184,12 +2400,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6048A71E5B3CCB00C414C3 /* Build configuration list for PBXNativeTarget "CHMeetupApp" */;
 			buildPhases = (
+				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				9F6048911E5B3CCB00C414C3 /* Sources */,
 				9F6048921E5B3CCB00C414C3 /* Frameworks */,
 				9F6048931E5B3CCB00C414C3 /* Resources */,
 				784EFF961E637EAE00F2E31A /* Embed Frameworks */,
 				7DA466F21F13A814005EAFAB /* Remove Unused Architectures */,
-				035A76421E5EF46000B87501 /* Run Script Natalie */,
 				8A3B15DB1E5E37BE008DD430 /* Run Script Swiftlint */,
 				8A62682A1E60744D00D51BEB /* Run Script Carthage */,
 				7D95EF031F2130180032DA3D /* Fabric */,
@@ -2285,6 +2501,7 @@
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
+				B016515120623B7F007D93B2 /* ActionDetailIconCell.xib in Resources */,
 				B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */,
 				328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */,
 				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
@@ -2294,6 +2511,7 @@
 				0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */,
 				32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
+				B022139B20605CDB00989FEB /* SwitchTableViewCell.xib in Resources */,
 				9F3767181E7DDE1E00CC565B /* TextViewPlateTableViewCell.xib in Resources */,
 				8AE5BCBB1EB4E98E007047CE /* ChooseProfilePhotoButton.xib in Resources */,
 				9FD58FB71E5E304E00207199 /* EventPreview.storyboard in Resources */,
@@ -2409,12 +2627,14 @@
 				9F26385F1E6B838B0081D23B /* UserPreferencesEntity.swift in Sources */,
 				7D3F9DD21EBF2CE000BC6ABD /* UITableView+ShakeRow.swift in Sources */,
 				8AE5BCB81EB4E885007047CE /* ChooseProfilePhotoButton.swift in Sources */,
+				B0E0B972205A023600C17AAD /* BeaconConstants.swift in Sources */,
 				32AFE59A1EAF5B3D004904FB /* TemplateView.swift in Sources */,
 				F718C0371E966BA6008B3C0B /* UIImageView+ImageLoader.swift in Sources */,
 				7DC09A711E9C9E3800FF58C3 /* DisplayCollectionDelegate.swift in Sources */,
 				9FF708DB1E6ADC9900BBA992 /* SocialEntity.swift in Sources */,
 				3284F2551E992E270033437F /* String+Empty.swift in Sources */,
 				9F30FFD31E71EB2100EF85F5 /* UITableView+Reuse.swift in Sources */,
+				B00100782056CD9500F77A6A /* FindNearestViewController.swift in Sources */,
 				22323F991E70C2BE00522E5C /* ProfileViewController.swift in Sources */,
 				9F30FFC71E71E6FE00EF85F5 /* ReusableCell.swift in Sources */,
 				32424A0A1EB76C95002EED9B /* CreatorEntity.swift in Sources */,
@@ -2429,10 +2649,13 @@
 				32AFE59F1EAF5BEF004904FB /* TemplatableLabel.swift in Sources */,
 				22323F901E70C2BE00522E5C /* MainViewController.swift in Sources */,
 				7D1CB6D01EA27ADC003136FA /* UIView+Shake.swift in Sources */,
+				B003C9F7205F3C1A004BC58D /* BeaconTimer.swift in Sources */,
 				328FF7561E7C05B300D9D43F /* CGFloat+Rounding.swift in Sources */,
 				8A0244B11E93011D008AFFE6 /* UIViewController+Alert.swift in Sources */,
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
+				B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
+				B016515320623B7F007D93B2 /* ActionDetailIconCell.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
 				03153BCD1EAE90890011FF5F /* RegistrationConfirmTableViewCell.swift in Sources */,
@@ -2452,6 +2675,7 @@
 				22323F401E70C14300522E5C /* LoginProcessController.swift in Sources */,
 				9F33670B1E84758400B15792 /* MainViewDisplayCollection.swift in Sources */,
 				22323F2B1E70C0E500522E5C /* Importer.swift in Sources */,
+				B022139D20607D1500989FEB /* SwitchActionPlainObject.swift in Sources */,
 				221CC3FB1E7B24A1004F0695 /* EventRegFormFieldAnswerPlainObject.swift in Sources */,
 				221CC3FA1E7B24A1004F0695 /* EventRegForm.swift in Sources */,
 				9F30FFC11E71E36F00EF85F5 /* UITableView+CellViewModel.swift in Sources */,
@@ -2469,16 +2693,20 @@
 				22323F421E70C14300522E5C /* MapAppType.swift in Sources */,
 				22323F2C1E70C0E500522E5C /* KeyboardHandler.swift in Sources */,
 				ADCCA1001E936156009DAACE /* LabelTableViewCellModel.swift in Sources */,
+				B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
 				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */,
+				B00647C0205D031A00ED47FE /* BeaconScanningOperation.swift in Sources */,
 				7DB4F5C11F0B0C8B00068CBF /* CreatorHeaderTableViewCellModel.swift in Sources */,
+				B022139F206082C200989FEB /* SwitchActionCellController.swift in Sources */,
 				22323F0E1E70C0CE00522E5C /* UIView+NibLoad.swift in Sources */,
 				7D1CB6D51EA2D236003136FA /* CreatorsViewController.swift in Sources */,
 				320FA57A1E87AD3700DAC7E1 /* ProfilePhotoTableViewCell.swift in Sources */,
 				324141B01EB52D50002E98C0 /* CreatorsController.swift in Sources */,
+				B00775B6205EEB13007280FA /* BeaconPeripheral.swift in Sources */,
 				7DF04D1A1EAF670300E2D98C /* NotificationHelper.swift in Sources */,
 				9F68E50D1E850D7500C6C931 /* ActionPlainObject.swift in Sources */,
 				9FB84AEC1E7B696000FEEC8E /* Date+DefaultFormat.swift in Sources */,
@@ -2496,18 +2724,23 @@
 				7DE9420D1E867B8C00E7E9E6 /* SocialResource.swift in Sources */,
 				7D48FCEC1F41671C00D39D66 /* Dictionary+Operations.swift in Sources */,
 				9F487A651E73E4A60016CE0B /* UIViewController+NavigationBarItems.swift in Sources */,
+				B033134B205C37D000F6DBB5 /* NearestUserPlainObjectTranslation.swift in Sources */,
 				8A6A569E1EB7FD89008BEDF9 /* TextSizeHelper.swift in Sources */,
+				B00647C2205D035900ED47FE /* BeaconOperation.swift in Sources */,
 				9F487A681E73E9530016CE0B /* ShadowView.swift in Sources */,
 				9FAFF8091E6AD8E700B687CB /* SpeechEntity.swift in Sources */,
 				22323F541E70C18700522E5C /* PlacePlainObject.swift in Sources */,
 				32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */,
+				B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */,
 				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
+				B007658720600FB3006F80A2 /* BeaconUserInfo.swift in Sources */,
 				9F30FFC31E71E5F500EF85F5 /* UICollectionView+CellViewModel.swift in Sources */,
 				03374B3A1E7F2C3100CA298E /* RegistrationController.swift in Sources */,
 				320FA57E1E87AF1800DAC7E1 /* ProfilePhotoTableViewCellModel.swift in Sources */,
+				B022139A20605CDB00989FEB /* SwitchTableViewCell.swift in Sources */,
 				8A6A84441E99AA4400C3A9E7 /* FetchingElementsProtocol.swift in Sources */,
 				8A6A844A1E99AAA200C3A9E7 /* SpeechFetching.swift in Sources */,
 				9F2638611E6B83D50081D23B /* DataModelCollection.swift in Sources */,
@@ -2523,6 +2756,7 @@
 				9FB0FE0F1EA6869700383E1D /* ActiveWindowManager.swift in Sources */,
 				9FAFF8051E6AD76300B687CB /* UserEntity.swift in Sources */,
 				9FD42F6B1E95385000EA6EE7 /* StringContainerEntity.swift in Sources */,
+				B00647BD205C987D00ED47FE /* BeaconTransmitterExt.swift in Sources */,
 				9F30FFCD1E71E77700EF85F5 /* UITableView+Registration.swift in Sources */,
 				32424A0E1EB79001002EED9B /* CreatorPlainObject.swift in Sources */,
 				9F487A821E7417F50016CE0B /* LightButton.swift in Sources */,
@@ -2534,6 +2768,7 @@
 				A1AD7E631F06F3B300977FAE /* CreatorDetailDisplayCollection.swift in Sources */,
 				9F57D6301E749FB9006323FA /* PlateTableViewCellAppearance.swift in Sources */,
 				8A6A56A11EB8EA68008BEDF9 /* ImporterHelper.swift in Sources */,
+				B0F0BC1D205708AC00C5CAA4 /* BeaconScanner.swift in Sources */,
 				8A6A84481E99AA8A00C3A9E7 /* EventFetching.swift in Sources */,
 				32AA9BBE1E7A91C000140413 /* PhotosPresentationView.swift in Sources */,
 				22323F301E70C0E500522E5C /* RequestContentParser.swift in Sources */,
@@ -2556,6 +2791,7 @@
 				32AFE5A11EAF5C8E004904FB /* TemplateModelCollection.swift in Sources */,
 				22323F8C1E70C2BE00522E5C /* EventPreviewViewController.swift in Sources */,
 				7D1E27601E958C2D0005B861 /* RequestPlainObject+Requests.swift in Sources */,
+				B00775B1205EC0C8007280FA /* BeaconStorage.swift in Sources */,
 				7DBF22681F1E32C60048862C /* PushHandler.swift in Sources */,
 				9F37670B1E7DCC2200CC565B /* DefaultTableHeaderView.swift in Sources */,
 				2231A53B1E60E5180069A179 /* Dictionary+HTTPBody.swift in Sources */,
@@ -2568,14 +2804,17 @@
 				9F57D6351E74B117006323FA /* PlateTableViewCell+AutomaticDetection.swift in Sources */,
 				22323F531E70C18700522E5C /* PlacePlainObject+Requests.swift in Sources */,
 				22323F331E70C0E500522E5C /* ActionButton.swift in Sources */,
+				B0331349205C349800F6DBB5 /* NearestUserEntity.swift in Sources */,
 				9F42ACCB1E89C7BA0099AB6A /* SwizzlingController.swift in Sources */,
 				A1495AE81E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
+				B001007B2056D01A00F77A6A /* FindNearestController.swift in Sources */,
 				8ADF1EDF1EB28C2900B5E561 /* ImagePickerController.swift in Sources */,
 				328467551E7FF18400028431 /* TimePlaceTableViewCell.swift in Sources */,
 				7DB4F5BF1F0B0C8B00068CBF /* CreatorHeaderTableViewCell.swift in Sources */,
 				9FAFDACF1EB1FA75001ED7DB /* TemplateObject.swift in Sources */,
 				704D86261F6A334F001AC18E /* GitHubResource.swift in Sources */,
 				C30485B31E740FDE0052D632 /* UIView+Anchor.swift in Sources */,
+				B00775AF205EBDC8007280FA /* BeaconReportingOperation.swift in Sources */,
 				F73C4AAB1EA11CA000E7943C /* GroupImageLoader.swift in Sources */,
 				4D0E6B561E86E11100C44DC0 /* ActionCellConfigurationController.swift in Sources */,
 				A168379A1E7E979800A12B3B /* OptionTableViewCell.swift in Sources */,
@@ -2592,13 +2831,17 @@
 				030764AA1E95663C00743690 /* AttributedSentenceHelper.swift in Sources */,
 				9FAFF80D1E6ADB8200B687CB /* PlaceEntity.swift in Sources */,
 				036794951E8AF69000997D29 /* Date+LocalizedFormat.swift in Sources */,
+				B0E0B974205AF5D800C17AAD /* Beacon.swift in Sources */,
 				9F3767171E7DDE1E00CC565B /* TextViewPlateTableViewCell.swift in Sources */,
 				221CC3F91E7B24A1004F0695 /* EventRegForm+Requests.swift in Sources */,
+				B00775AD205EBDAE007280FA /* BeaconProcessingOperation.swift in Sources */,
+				B00775B4205EE8D9007280FA /* BeaconCentralManager.swift in Sources */,
 				F718BFB21E93C940008B3C0B /* RandomAccessCollection+Random.swift in Sources */,
 				C3AC79701E8BEA2E00BA23C5 /* UITableView+Configure.swift in Sources */,
 				7DE942141E885BEB00E7E9E6 /* SpeechPlainObject+Requests.swift in Sources */,
 				03374B1F1E7F20EA00CA298E /* SpeechPreviewTableViewCell.swift in Sources */,
 				22323F0D1E70C0CE00522E5C /* UIImage+RenderMode.swift in Sources */,
+				B0331347205C301E00F6DBB5 /* NearestUserTableViewCellModel.swift in Sources */,
 				7D1E27611E958C2D0005B861 /* RequestPlainObject.swift in Sources */,
 				9F88817A1E7E9EE300CEFEA4 /* BottomButton.swift in Sources */,
 				F718BFAA1E93BF8D008B3C0B /* Bool+Random.swift in Sources */,
@@ -2619,6 +2862,7 @@
 				7D1CB6D21EA2B8E9003136FA /* UITableView+ShakeSection.swift in Sources */,
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
+				B016515220623B7F007D93B2 /* ActionDetailIconCellModel.swift in Sources */,
 				7D1CB6D81EA2D5BD003136FA /* AskQuestionViewController.swift in Sources */,
 				9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */,
 				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,
@@ -2631,9 +2875,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B003C9F9205F4077004BC58D /* IBeaconTimerMock.swift in Sources */,
+				B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */,
+				B0E2ABC3205F730A00F0247A /* BeaconStorageTests.swift in Sources */,
+				B00775C3205F1E17007280FA /* BeaconScannerDelegateMock.swift in Sources */,
+				B003C9F5205F39CF004BC58D /* BeaconScanningOperationTests.swift in Sources */,
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,
 				B0A1FC11204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift in Sources */,
+				B003C9FB205F5A76004BC58D /* BeaconProcessingOperationTests.swift in Sources */,
+				B003C9F3205F36E9004BC58D /* IBeaconStorageMock.swift in Sources */,
+				B0C0CC29205F6E9C0059995E /* BeaconReportingOperationTests.swift in Sources */,
+				B00775C1205F1DD6007280FA /* BeaconOperationDelegateMock.swift in Sources */,
+				B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */,
+				B00775BF205F1D9F007280FA /* BeaconOperationMock.swift in Sources */,
+				B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2815,7 +3071,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
 			};
 			name = Debug;
@@ -2833,7 +3089,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.CHMeetupAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHMeetupApp.app/CHMeetupApp";
 			};
 			name = Release;

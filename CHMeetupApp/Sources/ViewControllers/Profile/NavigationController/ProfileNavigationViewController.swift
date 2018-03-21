@@ -18,6 +18,10 @@ class ProfileNavigationViewController: NavigationViewController, ProfileNavigati
 
   var previousState: Bool?
 
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.

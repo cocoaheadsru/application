@@ -13,12 +13,16 @@ class RealmController {
 
   static var shared: RealmController = RealmController()
 
+  let schemaVersion: UInt64 = 25
+
   func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 24, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: schemaVersion, migrationBlock: nil)
 
     do {
       mainRealm = try Realm()
       EventEntity.resetEntitiesStatus()
+      NearestUserEntity.resetDiscoveredStatus()
+
     } catch let error as NSError {
       NotificationCenter.default.post(name: .RealmLoadingErrorNotifications,
                                       object: nil)

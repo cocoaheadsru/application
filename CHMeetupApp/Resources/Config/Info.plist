@@ -102,6 +102,7 @@
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>bluetooth-peripheral</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -116,5 +117,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 </dict>
 </plist>
