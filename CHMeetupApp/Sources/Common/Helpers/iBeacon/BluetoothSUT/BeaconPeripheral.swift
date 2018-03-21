@@ -30,8 +30,8 @@ final class BeaconPeripheral: NSObject, IBeaconPeripheral {
   weak var delegate: IBeaconPeripheralDelegate?
 
   init(_ peripheral: CBPeripheral,
-       services: [CBUUID] = [BeaconConstans.ServiceUUID],
-       characteritics: [CBUUID] = [BeaconConstans.CharacteristicUUID]) {
+       services: [CBUUID] = [BeaconConstans.serviceUUID],
+       characteritics: [CBUUID] = [BeaconConstans.characteristicUUID]) {
     self.peripheral = peripheral
     self.services = services
     self.characteritics = characteritics

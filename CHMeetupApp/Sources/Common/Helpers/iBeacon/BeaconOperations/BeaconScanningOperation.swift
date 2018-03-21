@@ -41,7 +41,7 @@ final class BeaconScanningOperation: BeaconOperation {
   }
 
   private func startProcessPeripheralsTimer() {
-    timer.schedule(with: BeaconConstans.Scanner.ProcessPeripheralInterval,
+    timer.schedule(with: BeaconConstans.Scanner.processPeripheralInterval,
                    repeats: false,
                    block: { [weak self] in
       self?.processPeripherals()

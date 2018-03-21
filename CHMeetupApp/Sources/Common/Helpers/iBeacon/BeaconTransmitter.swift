@@ -70,14 +70,14 @@ final class BeaconTransmitter: NSObject {
   private func startAdvertising() {
 
     let advertisingData: [String: Any] = [
-      CBAdvertisementDataLocalNameKey: BeaconConstans.LocalNameKey,
-      CBAdvertisementDataServiceUUIDsKey: [BeaconConstans.ServiceUUID]
+      CBAdvertisementDataLocalNameKey: BeaconConstans.localNameKey,
+      CBAdvertisementDataServiceUUIDsKey: [BeaconConstans.serviceUUID]
     ]
-    let service = CBMutableService(type: BeaconConstans.ServiceUUID, primary: true)
+    let service = CBMutableService(type: BeaconConstans.serviceUUID, primary: true)
 
     let data = userData
     let characteristic = CBMutableCharacteristic(
-      type: BeaconConstans.CharacteristicUUID,
+      type: BeaconConstans.characteristicUUID,
       properties: .read,
       value: data,
       permissions: .readable

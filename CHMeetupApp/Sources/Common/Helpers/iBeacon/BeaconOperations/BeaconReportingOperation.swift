@@ -37,7 +37,7 @@ class BeaconReportingOperation: BeaconOperation {
   }
 
   private func startReportTimer() {
-    timer.schedule(with: BeaconConstans.Scanner.UpdateInterval,
+    timer.schedule(with: BeaconConstans.Scanner.updateInterval,
                    repeats: true) { [weak self] in
                     self?.reportRangesToDelegate()
     }

@@ -40,7 +40,7 @@ class Beacon: NSObject {
   }
 
   func append(rssi: Float) {
-    rssiStack = rssiStack.filter { $0 > BeaconConstans.Scanner.PinaltyScore } //I'm alive -> remove aging values
+    rssiStack = rssiStack.filter { $0 > BeaconConstans.Scanner.pinaltyScore } //I'm alive -> remove aging values
     rssiStack.append(rssi)
     while rssiStack.count > 10 {
       rssiStack.remove(at: 0)
@@ -51,9 +51,9 @@ class Beacon: NSObject {
   func checkForPenalty(now: Date = Date()) {
     // Check beacon did discovered in last 3 seconds, if no, than give them pinalty
     guard state == .userInfoReceived else { return }
-    if abs( now.timeIntervalSince(lastRSSIAppended)) > BeaconConstans.Scanner.PinaltyTimeout {
+    if abs(now.timeIntervalSince(lastRSSIAppended)) > BeaconConstans.Scanner.pinaltyTimeout {
       //pinalty
-      rssiStack.append(BeaconConstans.Scanner.PinaltyScore)
+      rssiStack.append(BeaconConstans.Scanner.pinaltyScore)
     }
 
   }

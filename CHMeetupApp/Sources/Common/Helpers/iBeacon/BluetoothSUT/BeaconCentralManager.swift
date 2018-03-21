@@ -42,7 +42,7 @@ final class CentralManagerSUT: NSObject {
     return CentralManagerState(rawValue: centralManager.state.rawValue) ?? .unknown
   }
 
-  init(queue: DispatchQueue? = nil, serviceUUID: CBUUID = BeaconConstans.ServiceUUID) {
+  init(queue: DispatchQueue? = nil, serviceUUID: CBUUID = BeaconConstans.serviceUUID) {
     self.serviceUUID = serviceUUID
     super.init()
     self.centralManager = CBCentralManager(delegate: self, queue: queue)

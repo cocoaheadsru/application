@@ -50,7 +50,7 @@ final class BeaconProcessingOperation: BeaconOperation {
   }
 
   private func startProcessingTimer() {
-    timer.schedule(with: BeaconConstans.Scanner.RestartScanInterval,
+    timer.schedule(with: BeaconConstans.Scanner.restartScanInterval,
                    repeats: false) { [weak self] in
                     self?.stopProcessing()
     }
