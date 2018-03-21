@@ -15,7 +15,10 @@ struct SwitchActionPlainObject {
   var switchAction: ((Bool) -> Void)?
   var isOn: Bool
 
-  init(text: String, imageName: String? = nil, isOn: Bool, selectAction: (() -> Void)? = nil, switchAction: ((Bool) -> Void)? = nil) {
+  init(text: String, imageName: String? = nil,
+       isOn: Bool,
+       selectAction: (() -> Void)? = nil,
+       switchAction: ((Bool) -> Void)? = nil) {
     self.text = text
     self.imageName = imageName
     self.selectAction = selectAction

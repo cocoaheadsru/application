@@ -29,7 +29,7 @@ class SwitchActionCellController {
       "Включая этот режим люди вокруг смогут видеть вас".localized :
       "Выключая этот режим люди вокруг не смогут видеть вас".localized
     vc.showConfirmationAlert(
-      title: "Люди рядом".localized,
+      title: "Люди вокруг".localized,
       message: message,
       firstAction: {
         if isOn {

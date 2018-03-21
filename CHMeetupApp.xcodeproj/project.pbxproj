@@ -279,6 +279,9 @@
 		B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */; };
 		B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */; };
 		B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C8205F1E58007280FA /* ICentralManagerMock.swift */; };
+		B016515120623B7F007D93B2 /* ActionDetailIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */; };
+		B016515220623B7F007D93B2 /* ActionDetailIconCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */; };
+		B016515320623B7F007D93B2 /* ActionDetailIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */; };
 		B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */; };
 		B022139A20605CDB00989FEB /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022139720605CDB00989FEB /* SwitchTableViewCell.swift */; };
 		B022139B20605CDB00989FEB /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B022139820605CDB00989FEB /* SwitchTableViewCell.xib */; };
@@ -611,6 +614,9 @@
 		B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralMock.swift; sourceTree = "<group>"; };
 		B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralDelegateMock.swift; sourceTree = "<group>"; };
 		B00775C8205F1E58007280FA /* ICentralManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICentralManagerMock.swift; sourceTree = "<group>"; };
+		B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionDetailIconCell.xib; path = ActionDetailIconCell/ActionDetailIconCell.xib; sourceTree = "<group>"; };
+		B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCellModel.swift; path = ActionDetailIconCell/ActionDetailIconCellModel.swift; sourceTree = "<group>"; };
+		B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCell.swift; path = ActionDetailIconCell/ActionDetailIconCell.swift; sourceTree = "<group>"; };
 		B022139620605CDB00989FEB /* SwitchTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCellModel.swift; sourceTree = "<group>"; };
 		B022139720605CDB00989FEB /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B022139820605CDB00989FEB /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -1087,6 +1093,7 @@
 		22323F211E70C0E500522E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B016514D20623B2F007D93B2 /* ActionDetailIconCell */,
 				B03201C32060594600163479 /* SwitchCell */,
 				B744FA541FB07ACB00F92D4B /* AlertHeaderTableViewCell */,
 				32AFE59D1EAF5BDF004904FB /* TemplatableLabel */,
@@ -2275,6 +2282,16 @@
 			path = Beacon;
 			sourceTree = "<group>";
 		};
+		B016514D20623B2F007D93B2 /* ActionDetailIconCell */ = {
+			isa = PBXGroup;
+			children = (
+				B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */,
+				B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */,
+				B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */,
+			);
+			name = ActionDetailIconCell;
+			sourceTree = "<group>";
+		};
 		B03201C32060594600163479 /* SwitchCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2484,6 +2501,7 @@
 				9F3767031E7D527000CC565B /* TextFieldPlateTableViewCell.xib in Resources */,
 				9F37670D1E7DD8EB00CC565B /* DefaultTableHeaderView.xib in Resources */,
 				ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */,
+				B016515120623B7F007D93B2 /* ActionDetailIconCell.xib in Resources */,
 				B744FA5A1FB07CCB00F92D4B /* AlertHeaderTableViewCell.xib in Resources */,
 				328467561E7FF18400028431 /* TimePlaceTableViewCell.xib in Resources */,
 				4D9F0D711E79CD2E006443ED /* ActionTableViewCell.xib in Resources */,
@@ -2637,6 +2655,7 @@
 				22323F961E70C2BE00522E5C /* ProfileEditViewController.swift in Sources */,
 				B0E0B9702059EB1800C17AAD /* BeaconTransmitter.swift in Sources */,
 				22323F2D1E70C0E500522E5C /* Reachability.swift in Sources */,
+				B016515320623B7F007D93B2 /* ActionDetailIconCell.swift in Sources */,
 				22323F0C1E70C0CE00522E5C /* UIFont+AppFonts.swift in Sources */,
 				8AAAA04C1EA39B4800934D8F /* TableViewGetDelegate.swift in Sources */,
 				03153BCD1EAE90890011FF5F /* RegistrationConfirmTableViewCell.swift in Sources */,
@@ -2843,6 +2862,7 @@
 				7D1CB6D21EA2B8E9003136FA /* UITableView+ShakeSection.swift in Sources */,
 				22323F981E70C2BE00522E5C /* ProfileNavigationViewController.swift in Sources */,
 				9FB8488C1E6F63EB002E81ED /* String+Range.swift in Sources */,
+				B016515220623B7F007D93B2 /* ActionDetailIconCellModel.swift in Sources */,
 				7D1CB6D81EA2D5BD003136FA /* AskQuestionViewController.swift in Sources */,
 				9F487A6F1E73EFEB0016CE0B /* UINavigationItem+TitleConfiguration.swift in Sources */,
 				9F30FFBE1E71E1EA00EF85F5 /* CellViewModel.swift in Sources */,

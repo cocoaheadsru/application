@@ -38,17 +38,26 @@ class FindNearestViewController: UIViewController, DisplayCollectionWithTableVie
     displayCollection = FindNearestViewDisplayCollection()
     tableView.registerNibs(from: displayCollection)
     displayCollection.delegate = self
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
 
     controller.setOnNearestUsersUpdated { [weak self] in
-      self?.tableView.reloadData()
+      guard let `self` = self else {return}
+      self.tableView.reloadSections(self.displayCollection.nearestUsersSection, with: .none)
     }
     controller.startScanning()
   }
 
+  override func updateUI() {
+    displayCollection.updateActionCellsSection(on: self, with: tableView)
+    super.updateUI()
+  }
 }
 
 // MARK: - UITableViewDataSource
 extension FindNearestViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return displayCollection.numberOfSections
+  }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return displayCollection.numberOfRows(in: section)
