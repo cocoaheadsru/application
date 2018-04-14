@@ -110,7 +110,9 @@ class Server {
         print("Session request error: \(String(describing: error)) for api resourse: \(request)")
         #endif
         if !Reachability.isInternetAvailable {
-          completion(nil, .noConnection)
+          OperationQueue.main.addOperation {
+            completion(nil, .noConnection)
+          }
         }
         return
       }
