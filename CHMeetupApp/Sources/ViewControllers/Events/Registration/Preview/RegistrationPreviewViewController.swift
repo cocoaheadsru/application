@@ -89,6 +89,7 @@ class RegistrationPreviewViewController: UIViewController, DisplayCollectionWith
     dissmisKeyboardTouch.isEnabled = false
   }
 
+  @objc
   func dismissKeyboard() {
     view.endEditing(true)
   }
