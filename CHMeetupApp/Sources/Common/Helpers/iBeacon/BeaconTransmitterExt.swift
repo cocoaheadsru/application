@@ -30,6 +30,6 @@ extension BeaconTransmitter {
   }
 
   private static func prepareData(for user: UserEntity) -> Data? {
-    return BeaconUserInfo(id: user.id, name: user.fullName, photoURL: user.photoURL).userData
+    return BeaconUserInfo(id: user.remoteId, name: user.fullName, photoURL: user.photoURL).userData
   }
 }
