@@ -139,16 +139,19 @@ extension MainViewDisplayCollection {
 
   func needShowSwitchCell() -> Bool {
     guard modelCollection.count > 0 else { return false }
-    let event = modelCollection[0]
 
-    var isEventToday = event.startDate.isToday
-    #if DEBUG //tested without
-      isEventToday = true
-    #endif
-    //If your Request is Approved And event date is today
-    guard event.status == .approved, isEventToday else { return false }
+    for idx in 0 ..< modelCollection.count {
+      let event = modelCollection[idx]
 
-    return true
+      let isEventToday = event.startDate.isToday
+
+      //If your Request is Approved And event date is today
+      if event.status == .approved, isEventToday {
+        return true
+      }
+    }
+
+    return false
   }
 }
 
