@@ -279,6 +279,8 @@
 		B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */; };
 		B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */; };
 		B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00775C8205F1E58007280FA /* ICentralManagerMock.swift */; };
+		B01035CF2118C9E500174732 /* MainViewDisplayCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01035CE2118C9E500174732 /* MainViewDisplayCollectionTests.swift */; };
+		B01035D12118D08900174732 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01035D02118D08900174732 /* main.swift */; };
 		B016515120623B7F007D93B2 /* ActionDetailIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */; };
 		B016515220623B7F007D93B2 /* ActionDetailIconCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */; };
 		B016515320623B7F007D93B2 /* ActionDetailIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */; };
@@ -614,6 +616,8 @@
 		B00775C4205F1E40007280FA /* IBeaconPeripheralMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralMock.swift; sourceTree = "<group>"; };
 		B00775C6205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconPeripheralDelegateMock.swift; sourceTree = "<group>"; };
 		B00775C8205F1E58007280FA /* ICentralManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICentralManagerMock.swift; sourceTree = "<group>"; };
+		B01035CE2118C9E500174732 /* MainViewDisplayCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewDisplayCollectionTests.swift; sourceTree = "<group>"; };
+		B01035D02118D08900174732 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B016514E20623B7F007D93B2 /* ActionDetailIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActionDetailIconCell.xib; path = ActionDetailIconCell/ActionDetailIconCell.xib; sourceTree = "<group>"; };
 		B016514F20623B7F007D93B2 /* ActionDetailIconCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCellModel.swift; path = ActionDetailIconCell/ActionDetailIconCellModel.swift; sourceTree = "<group>"; };
 		B016515020623B7F007D93B2 /* ActionDetailIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionDetailIconCell.swift; path = ActionDetailIconCell/ActionDetailIconCell.swift; sourceTree = "<group>"; };
@@ -820,6 +824,7 @@
 		221F4F8F1E5C0B6C0009FD07 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B01035D02118D08900174732 /* main.swift */,
 				22323FA11E70C43800522E5C /* AppDelegate.swift */,
 				221F4F901E5C0B6C0009FD07 /* Common */,
 				221F4F941E5C0B6C0009FD07 /* Controllers */,
@@ -2337,6 +2342,7 @@
 		B0A1FC0E204DB9E9007D501D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B01035CE2118C9E500174732 /* MainViewDisplayCollectionTests.swift */,
 				B0A1FC10204DBA10007D501D /* ActionCellConfigurationControllerLeakTests.swift */,
 			);
 			path = Controllers;
@@ -2733,6 +2739,7 @@
 				32DD63021EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.swift in Sources */,
 				B0331344205C2E7F00F6DBB5 /* FindNearestViewDisplayCollection.swift in Sources */,
 				4D9D24241E7B2FE300FA5E93 /* ActionTableViewCellModel.swift in Sources */,
+				B01035D12118D08900174732 /* main.swift in Sources */,
 				22323F2E1E70C0E500522E5C /* Utility.swift in Sources */,
 				A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */,
 				22323F521E70C18700522E5C /* EventPlainObject.swift in Sources */,
@@ -2879,6 +2886,7 @@
 				B00775C5205F1E40007280FA /* IBeaconPeripheralMock.swift in Sources */,
 				B0E2ABC3205F730A00F0247A /* BeaconStorageTests.swift in Sources */,
 				B00775C3205F1E17007280FA /* BeaconScannerDelegateMock.swift in Sources */,
+				B01035CF2118C9E500174732 /* MainViewDisplayCollectionTests.swift in Sources */,
 				B003C9F5205F39CF004BC58D /* BeaconScanningOperationTests.swift in Sources */,
 				A1495AE91E76CD2E003D8BE3 /* StringValidation.swift in Sources */,
 				A1495AEB1E76CD3D003D8BE3 /* StringValidationTests.swift in Sources */,

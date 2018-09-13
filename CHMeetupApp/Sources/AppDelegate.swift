@@ -11,7 +11,6 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
 
   var pushHandler = PushHandler()
