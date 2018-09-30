@@ -38,8 +38,12 @@ class MainViewController: UIViewController, DisplayCollectionWithTableViewDelega
     super.viewWillAppear(animated)
     self.tableView.reloadData()
 
-    fetchEvents()
     profileNavigationController?.pushEditProfileTo(self.navigationController)
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    fetchEvents()
   }
 
   override func az_tabBarItemContentView() -> AZTabBarItemView {
