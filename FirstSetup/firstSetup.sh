@@ -45,7 +45,7 @@ moveHook
 echo Carthage:
 cd ../
 
-if [ ! -f "Cartfile" ]; then
+if [[ ! -f Cartfile ]]; then
   touch Cartfile
   echo Cartfile created
 fi
