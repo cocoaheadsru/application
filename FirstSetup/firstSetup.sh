@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo Script was run...
 # -- 1 -- Installing HomeBrew
