@@ -25,7 +25,7 @@ brew install carthage
 echo Hook:
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd
-cd $DIR
+cd "$DIR"
 
 moveHook() {
   cp prepare-commit-msg ../.git/hooks/
