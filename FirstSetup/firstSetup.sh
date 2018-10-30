@@ -51,7 +51,7 @@ if [ ! -f "Cartfile" ]; then
 fi
 
 carthage bootstrap --platform iOS
-echo carthage updated
+echo Carthage updated
 echo "Now you should write necessary libs in Cartfile and run command 'carthage update --platform iOS'"
 
 echo Script was ended
