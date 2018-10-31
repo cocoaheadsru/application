@@ -14,6 +14,7 @@ class TextFieldPlateTableViewCell: PlateTableViewCell {
       textField.textColor = UIColor(.darkGray)
       textField.font = UIFont.appFont(.avenirNextMedium(size: 17))
       textField.returnKeyType = .continue
+      textField.autocapitalizationType = .sentences
     }
   }
 
