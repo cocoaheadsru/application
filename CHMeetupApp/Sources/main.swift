@@ -16,7 +16,7 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
 }
 let isRunningTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 
-UIApplicationMain(
+_ = UIApplicationMain(
   CommandLine.argc,
   UnsafeMutableRawPointer(CommandLine.unsafeArgv)
     .bindMemory(

@@ -35,7 +35,7 @@ extension UserPlainObject: PlainObjectType {
         guard let json = jsonObject as? [JSONDictionary] else {
           return (nil, .wrongResponse)
         }
-        let objects: [UserPlainObject] = json.flatMap(UserPlainObject.init(justId:))
+        let objects: [UserPlainObject] = json.compactMap(UserPlainObject.init(justId:))
         return (objects, nil)
       }
 

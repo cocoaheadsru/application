@@ -41,6 +41,6 @@ extension EventRegFormPlainObject: PlainObjectType {
 
     self.id = id
     self.name = name
-    fields = regFields.flatMap(EventRegFormFieldPlainObject.init)
+    fields = regFields.compactMap(EventRegFormFieldPlainObject.init)
   }
 }

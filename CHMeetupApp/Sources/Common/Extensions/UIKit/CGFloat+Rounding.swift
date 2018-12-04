@@ -10,8 +10,8 @@ import UIKit
 
 extension CGFloat {
   func round(_ nearest: CGFloat) -> CGFloat {
-    let n = 1 / nearest
-    let numberToRound = self * n
-    return numberToRound.rounded() / n
+    let сoefficient = 1 / nearest
+    let numberToRound = self * сoefficient
+    return numberToRound.rounded() / сoefficient
   }
 }

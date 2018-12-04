@@ -55,14 +55,14 @@ final class BeaconStorage: IBeaconStorage {
   }
 
   func isPeripheralsEmpty() -> Bool {
-    let processingPeripherals = beaconsDetected.flatMap { $0.peripheral }
+    let processingPeripherals = beaconsDetected.compactMap { $0.peripheral }
     return processingPeripherals.isEmpty
   }
 
   func isAnyDiscoveredAndUnprocessed() -> Bool {
     let peripherals = beaconsDetected
       .filter { $0.state != .userInfoReceived }
-      .flatMap { $0.peripheral }
+      .compactMap { $0.peripheral }
     return !peripherals.isEmpty
   }
 

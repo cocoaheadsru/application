@@ -33,7 +33,7 @@ final class BeaconProcessingOperation: BeaconOperation {
   }
 
   func start() {
-    let peripherals = storage.beaconsForConnect().flatMap { $0.peripheral }
+    let peripherals = storage.beaconsForConnect().compactMap { $0.peripheral }
     peripherals.forEach { peripheral in
       self.centralManager.connect(peripheral)
     }
@@ -57,7 +57,7 @@ final class BeaconProcessingOperation: BeaconOperation {
   }
 
   private func stopProcessing() {
-    let peripherals = storage.beaconsForDisconnect().flatMap { $0.peripheral }
+    let peripherals = storage.beaconsForDisconnect().compactMap { $0.peripheral }
     peripherals.forEach { peripheral in
       centralManager.disconnect(peripheral)
     }

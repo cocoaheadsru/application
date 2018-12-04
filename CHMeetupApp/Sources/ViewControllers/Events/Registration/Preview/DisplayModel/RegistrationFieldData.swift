@@ -16,7 +16,7 @@ final class FormData {
   init(with form: EventRegFormPlainObject) {
     id = form.id
     name = form.name
-    sections = form.fields.flatMap(FormFieldItem.init)
+    sections = form.fields.compactMap(FormFieldItem.init)
   }
 }
 
@@ -32,7 +32,7 @@ final class FormFieldItem {
     isRequired = field.required
     name = field.name
     type = field.type
-    fieldAnswers = field.answers.flatMap { FormFieldAnswer(with: $0, fieldType: field.type) }
+    fieldAnswers = field.answers.compactMap { FormFieldAnswer(with: $0, fieldType: field.type) }
 
     // For string we creating template `FormFieldAnswer`
     if type == .string {

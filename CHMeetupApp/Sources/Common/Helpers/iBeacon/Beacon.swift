@@ -75,12 +75,12 @@ class Beacon: NSObject {
     var proximity: Float = 0
     let rssiStack = self.rssiStack
 
-    var i: Float = 0
+    var index: Float = 0
     rssiStack.forEach { (rssi) in
       if rssi > -25 {
         var tempVal: Float = 0
-        if i > 0 {
-          tempVal = proximity / i
+        if index > 0 {
+          tempVal = proximity / index
         }
         if tempVal > -25 {
           tempVal = -55
@@ -89,7 +89,7 @@ class Beacon: NSObject {
       } else {
         proximity += rssi
       }
-      i+=1
+      index+=1
     }
     proximity /= 10.0
     var state: ProximityState

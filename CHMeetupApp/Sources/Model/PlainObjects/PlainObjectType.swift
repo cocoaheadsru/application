@@ -16,7 +16,7 @@ protocol PlainObjectType {
 
 extension Array where Element: PlainObjectType {
   init(json: [JSONDictionary]) {
-    let value = json.flatMap(Iterator.Element.init)
+    let value = json.compactMap(Iterator.Element.init)
     self = value
   }
 }

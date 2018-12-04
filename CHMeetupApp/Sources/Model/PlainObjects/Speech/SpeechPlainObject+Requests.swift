@@ -32,7 +32,7 @@ extension SpeechPlainObject: PlainObjectType {
     self.title = title
     self.description = description
     self.speaker = speaker
-    self.content = contentsJson.flatMap(SpeechContentPlainObject.init)
+    self.content = contentsJson.compactMap(SpeechContentPlainObject.init)
 
   }
 }
