@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 struct MapsActionSheetHelper {
-  static func prepareActonSheet(with coordinates: CLLocationCoordinate2D) -> UIViewController? {
+  static func prepareActonSheet(with place: PlaceEntity) -> UIViewController? {
     let availableMaps = MapsController.availableMaps
     guard !availableMaps.isEmpty else {
       return nil
@@ -20,7 +20,7 @@ struct MapsActionSheetHelper {
 
     for map in MapsController.availableMaps {
       let mapAction = UIAlertAction(title: map.title, style: .default, handler: { (_) in
-        MapsController.open(map: map, coordinate: coordinates)
+        MapsController.open(map: map, place: place)
       })
       actionSheet.addAction(mapAction)
     }

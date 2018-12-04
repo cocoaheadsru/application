@@ -16,8 +16,8 @@ struct MapsController {
     })
   }
 
-  static func open(map: MapAppType, coordinate: CLLocationCoordinate2D) {
-    let schemeURL = map.scheme(with: coordinate)
+  static func open(map: MapAppType, place: PlaceEntity) {
+    let schemeURL = map.scheme(with: place)
     UIApplication.shared.open(schemeURL, options: [:], completionHandler: nil)
   }
 }
