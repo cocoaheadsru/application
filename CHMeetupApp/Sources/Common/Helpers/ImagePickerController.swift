@@ -30,7 +30,7 @@ final class ImagePickerController {
     showSource(on: viewController, component: .photoLibrary)
   }
 
-  private func showSource(on viewController: UIViewController, component: UIImagePickerControllerSourceType) {
+  private func showSource(on viewController: UIViewController, component: UIImagePickerController.SourceType) {
     let type = kUTTypeImage as String // kUTTypeImage is `CFString`
 
     imagePicker.sourceType = component

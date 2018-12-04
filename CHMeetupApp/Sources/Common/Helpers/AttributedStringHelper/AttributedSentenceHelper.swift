@@ -24,14 +24,14 @@ class AttributedSentenceHelper {
       -> NSAttributedString {
         let firstString = firstPartString ?? ""
         let secondString = secondPartString ?? ""
-        let mainAttributes = [NSAttributedStringKey.foregroundColor: UIColor(.darkGray)]
+        let mainAttributes = [NSAttributedString.Key.foregroundColor: UIColor(.darkGray)]
 
         if !firstString.isEmpty && !secondString.isEmpty {
           let result = NSMutableAttributedString()
           let firstAttributedString = NSAttributedString(string: firstString, attributes: mainAttributes)
           result.append(firstAttributedString)
 
-          let prepositionAttributes = [NSAttributedStringKey.foregroundColor: UIColor(.gray)]
+          let prepositionAttributes = [NSAttributedString.Key.foregroundColor: UIColor(.gray)]
           let prepositionAttributedString = NSAttributedString(string: " " + self.localizedValue + " ",
                                                                attributes: prepositionAttributes)
           result.append(prepositionAttributedString)

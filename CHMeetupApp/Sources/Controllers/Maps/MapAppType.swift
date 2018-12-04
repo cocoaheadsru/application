@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-enum MapAppType {
+enum MapAppType: CaseIterable {
   case appleMaps
   case googleMaps
   case yandexMaps
@@ -74,5 +74,4 @@ enum MapAppType {
     return URL(string: scheme.absoluteString + schemeSuffix)!
   }
 
-  static var allMaps: [MapAppType] = [.appleMaps, .googleMaps, .yandexMaps, .yandexNavigation, .doubleGIS]
 }

@@ -11,7 +11,7 @@ import CoreLocation
 
 struct MapsController {
   static var availableMaps: [MapAppType] {
-    return MapAppType.allMaps.filter({ map in
+    return MapAppType.allCases.filter({ map in
       UIApplication.shared.canOpenURL(map.scheme)
     })
   }

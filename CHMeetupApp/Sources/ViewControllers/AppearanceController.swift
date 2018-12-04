@@ -18,10 +18,10 @@ struct AppearanceController {
   }
 
   private static func setupNavigationBar() {
-    let titleTextAttributes: [NSAttributedStringKey: Any] = [
-      NSAttributedStringKey.font: UIFont.appFont(.avenirNextDemiBold(size: 14)),
-      NSAttributedStringKey.foregroundColor: UIColor(.darkGray),
-      NSAttributedStringKey.kern: 1.5
+    let titleTextAttributes: [NSAttributedString.Key: Any] = [
+      .font: UIFont.appFont(.avenirNextDemiBold(size: 14)),
+      .foregroundColor: UIColor(.darkGray),
+      .kern: 1.5
     ]
     UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
   }

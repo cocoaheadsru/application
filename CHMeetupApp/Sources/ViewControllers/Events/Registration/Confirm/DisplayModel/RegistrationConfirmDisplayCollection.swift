@@ -64,7 +64,7 @@ final class RegistrationConfirmDisplayCollection: NSObject, DisplayCollection, D
     case .header:
       return regConfirmHeaderTableViewCellHeight
     case .actionButtons:
-      return UITableViewAutomaticDimension
+      return UITableView.automaticDimension
     }
   }
 

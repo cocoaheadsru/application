@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
   var window: UIWindow?
 
   func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     Fabric.with([Crashlytics.self])
     RealmController.shared.setup()
     AppearanceController.setupAppearance()
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ActiveWindowManager {
     return true
   }
 
-  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
     NotificationCenter.default.post(name: .CloseSafariViewControllerNotification, object: url)
     return true
   }

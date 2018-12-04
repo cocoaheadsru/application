@@ -23,7 +23,7 @@ class ShineLayer: CALayer {
     theAnimation.duration = 2
     theAnimation.repeatCount = Float.infinity
     theAnimation.autoreverses = true
-    theAnimation.fillMode = kCAFillModeForwards
+    theAnimation.fillMode = .forwards
     theAnimation.fromValue = -frame.size.width
     theAnimation.toValue = 0
     gradient.add(theAnimation, forKey: "animateLayer")

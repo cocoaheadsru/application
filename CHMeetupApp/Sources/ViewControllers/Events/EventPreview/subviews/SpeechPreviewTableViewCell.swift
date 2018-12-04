@@ -57,7 +57,7 @@ class SpeechPreviewTableViewCell: PlateTableViewCell, TempalateView {
     super.awakeFromNib()
 
     let traits = super.accessibilityTraits
-    accessibilityTraits = traits | UIAccessibilityTraitButton
+    accessibilityTraits = UIAccessibilityTraits(rawValue: traits.rawValue | UIAccessibilityTraits.button.rawValue)
 
     roundType = .all
   }

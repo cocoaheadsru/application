@@ -80,7 +80,11 @@ open class AZTabBarItemView: UIView, AZTabBarItemViewAccessibility {
     }
     get {
       let value = super.accessibilityTraits
-      return value | UIAccessibilityTraitButton | (UIAccessibilityTraitSelected * (isSelected ? 1 : 0))
+      let rawValue = value.rawValue
+        | UIAccessibilityTraits.button.rawValue
+        | (UIAccessibilityTraits.selected.rawValue * (isSelected ? 1 : 0))
+
+      return UIAccessibilityTraits(rawValue: rawValue)
     }
   }
 }
@@ -93,9 +97,7 @@ public class AZTabBarItem: UITabBarItem {
   }
 
   public var isSelected: Bool {
-    get {
-      return containerView.isSelected
-    }
+    return containerView.isSelected
   }
 
   fileprivate func setSelected(_ selected: Bool, animated: Bool) {
@@ -106,7 +108,7 @@ public class AZTabBarItem: UITabBarItem {
 public class AZTabBar: UITabBar {
   fileprivate var preferedHeight: CGFloat = defaultHeight
   fileprivate weak var az_tabBarController: AZTabBarController?
- 
+
   //UITabBar bug fix:
   //https://stackoverflow.com/questions/46232929/why-page-push-animation-tabbar-moving-up-in-the-iphone-x.
   override public var frame: CGRect {
@@ -310,7 +312,7 @@ public class AZTabBarController: UITabBarController {
         let deselectedItem = az_items[oldIndex]
         deselectedItem.setSelected(false, animated: true)
       }
-      
+
       selectedIndex = currentIndex
     }
   }

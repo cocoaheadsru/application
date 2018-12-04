@@ -139,7 +139,7 @@ final class PermissionsManager {
    Make sure to **inform user** before opening Settings, also don't open it without user's confirmation
    */
   static func openSettings() {
-    guard let url = URL(string: UIApplicationOpenSettingsURLString),
+    guard let url = URL(string: UIApplication.openSettingsURLString),
       UIApplication.shared.canOpenURL(url) else {
       return
     }
