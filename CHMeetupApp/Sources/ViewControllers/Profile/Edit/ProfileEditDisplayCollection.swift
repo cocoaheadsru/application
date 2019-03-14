@@ -171,8 +171,8 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     }
   }
 
-  func didReciveMedia(_ picker: UIImagePickerController, info: [String: Any]) {
-    if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+  func didReciveMedia(_ picker: UIImagePickerController, info: [UIImagePickerController.InfoKey: Any]) {
+    if let image = info[.editedImage] as? UIImage {
       changeCheckedImage(image: image)
     }
     picker.dismiss(animated: true, completion: nil)
@@ -180,7 +180,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
 
   func changeCheckedImage(image: UIImage) {
     // TODO: - Give ability to cancel request
-    let data = UIImagePNGRepresentation(image)
+    let data = image.pngData()
     if let data = data {
       let updateRequest = RequestPlainObject.Requests.updatePhoto(photo: data)
       SVProgressHUD.show()
@@ -202,7 +202,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     case .userEditableField:
       return 40
     case .userHeader, .info:
-      return UITableViewAutomaticDimension
+      return UITableView.automaticDimension
     }
   }
 
@@ -211,7 +211,7 @@ extension ProfileEditDisplayCollection: ChooseProfilePhotoTableViewCellDelegate 
     case .userHeader:
       return 166.0
     case .info, .userEditableField:
-      return UITableViewAutomaticDimension
+      return UITableView.automaticDimension
     }
   }
 

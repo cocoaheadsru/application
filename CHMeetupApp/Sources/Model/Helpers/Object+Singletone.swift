@@ -10,7 +10,6 @@ import Foundation
 import RealmSwift
 
 protocol ObjectSingletone: class {
-  init()
 }
 
 extension ObjectSingletone where Self: Object {

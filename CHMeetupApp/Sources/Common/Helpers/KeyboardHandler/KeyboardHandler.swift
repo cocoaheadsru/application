@@ -37,10 +37,10 @@ struct KeyboardInfo {
   let beginFrame: CGRect
   let endFrame: CGRect
   let duration: TimeInterval
-  let curve: UIViewAnimationCurve
+  let curve: UIView.AnimationCurve
 
   func animate(_ animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
-    let curveOption: UIViewAnimationOptions
+    let curveOption: UIView.AnimationOptions
     switch curve {
     case .linear:
       curveOption = .curveLinear
@@ -91,11 +91,11 @@ class KeyboardHandler {
     self.delegate = delegate
 
     [
-      NSNotification.Name.UIKeyboardWillShow: #selector(willShown(notification:)),
-      NSNotification.Name.UIKeyboardWillHide: #selector(willHidden(notification:)),
-      NSNotification.Name.UIKeyboardWillChangeFrame: #selector(willChangeFrame(notification:)),
-      NSNotification.Name.UIApplicationWillChangeStatusBarOrientation: #selector(statusWillRotate(notification:)),
-      NSNotification.Name.UIApplicationDidChangeStatusBarOrientation: #selector(statusDidRotate(notification:))
+      UIResponder.keyboardWillShowNotification: #selector(willShown(notification:)),
+      UIResponder.keyboardWillHideNotification: #selector(willHidden(notification:)),
+      UIResponder.keyboardWillChangeFrameNotification: #selector(willChangeFrame(notification:)),
+      UIApplication.willChangeStatusBarOrientationNotification: #selector(statusWillRotate(notification:)),
+      UIApplication.didChangeStatusBarOrientationNotification: #selector(statusDidRotate(notification:))
     ].forEach {
       NotificationCenter.default.addObserver(self, selector: $0.value, name: $0.key, object: nil)
     }
@@ -159,11 +159,11 @@ class KeyboardHandler {
 
   // ----- Private -----
   private func extractValues(from: [AnyHashable: Any]?) -> KeyboardInfo? {
-    if let beginFrame = from?[UIKeyboardFrameBeginUserInfoKey] as? CGRect,
-      let endFrame = from?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
-      let duration = from?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
-      let curveRaw = from?[UIKeyboardAnimationCurveUserInfoKey] as? Int,
-      let curve = UIViewAnimationCurve(rawValue: curveRaw) {
+    if let beginFrame = from?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect,
+      let endFrame = from?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+      let duration = from?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
+      let curveRaw = from?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int,
+      let curve = UIView.AnimationCurve(rawValue: curveRaw) {
       return KeyboardInfo(beginFrame: beginFrame, endFrame: endFrame, duration: duration, curve: curve)
     }
     return nil

@@ -21,8 +21,7 @@ class EventPreviewDisplayCollection: DisplayCollection {
     didSet {
       if let place = event?.place {
         addressActionObject = ActionPlainObject(text: place.address, imageName: nil, action: { [weak self] in
-          let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
-          let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: location)
+          let actionSheet = MapsActionSheetHelper.prepareActonSheet(with: place)
           if let actionSheet = actionSheet {
             DispatchQueue.main.async {
               self?.delegate?.present(viewController: actionSheet)

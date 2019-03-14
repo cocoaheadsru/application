@@ -15,12 +15,12 @@ class TextFrameAttributes {
   fileprivate var attributedString: NSAttributedString?
 
   // Text Info
-  var attributes: [NSAttributedStringKey: AnyObject] = [:]
+  var attributes: [NSAttributedString.Key: AnyObject] = [:]
   var lineBreakingMode: NSLineBreakMode = NSLineBreakMode.byWordWrapping {
     didSet {
       let paragraph = NSMutableParagraphStyle()
       paragraph.lineBreakMode = lineBreakingMode
-      attributes[NSAttributedStringKey.paragraphStyle] = paragraph
+      attributes[.paragraphStyle] = paragraph
     }
   }
 
@@ -30,19 +30,19 @@ class TextFrameAttributes {
 
   init(string: String, font: UIFont) {
     self.string = string
-    self.attributes = [NSAttributedStringKey.font: font]
+    self.attributes = [.font: font]
   }
 
   init(string: String, width: CGFloat) {
     self.string = string
     self.width = width
-    self.attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)]
+    self.attributes = [.font: UIFont.systemFont(ofSize: 18)]
   }
 
   init(string: String, width: CGFloat, font: UIFont) {
     self.string = string
     self.width = width
-    self.attributes = [NSAttributedStringKey.font: font]
+    self.attributes = [.font: font]
   }
 
   init(attributedString: NSAttributedString) {

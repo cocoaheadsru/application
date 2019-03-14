@@ -58,7 +58,7 @@ class PhotosPresentationView: UIView {
         }
 
         addSubview(imageView)
-        sendSubview(toBack: imageView)
+        sendSubviewToBack(imageView)
       } else { break }
     }
   }

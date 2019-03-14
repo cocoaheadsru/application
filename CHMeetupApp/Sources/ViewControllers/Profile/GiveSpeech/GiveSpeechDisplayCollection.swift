@@ -56,7 +56,7 @@ class GiveSpeechDisplayCollection: NSObject, DisplayCollection {
   func height(for indexPath: IndexPath) -> CGFloat {
     switch sections[indexPath.section] {
     case .name:
-      return UITableViewAutomaticDimension
+      return UITableView.automaticDimension
     case .description:
       return 175
     }

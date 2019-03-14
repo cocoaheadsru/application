@@ -69,7 +69,7 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
     super.awakeFromNib()
 
     let traits = super.accessibilityTraits
-    accessibilityTraits = traits | UIAccessibilityTraitButton
+    accessibilityTraits = UIAccessibilityTraits(rawValue: traits.rawValue | UIAccessibilityTraits.button.rawValue)
 
     photosPresentationView.delegate = self
 

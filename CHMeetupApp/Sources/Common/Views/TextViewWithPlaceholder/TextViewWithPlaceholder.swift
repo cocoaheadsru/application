@@ -51,7 +51,7 @@ class TextViewWithPlaceholder: UITextView {
   private func setupNotifications() {
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(TextViewWithPlaceholder.textViewDidChange),
-                                           name: NSNotification.Name.UITextViewTextDidChange,
+                                           name: UITextView.textDidChangeNotification,
                                            object: nil)
   }
 

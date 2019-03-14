@@ -121,7 +121,7 @@ final class BeaconProcessingOperationTests: XCTestCase {
       beacon.userInfo?.id == userInfo.id,
       "Operation did handle userID incorrectly (got \(beacon.userInfo!.id), should \(userInfo.id)")
     XCTAssert(beacon.userInfo?.name == userInfo.name,
-              "Operation did handle username incorrectly (got \(beacon.userInfo?.name), should \(userInfo.name)")
+              "Operation did handle username incorrectly (got \(beacon.userInfo?.name ?? ""), should \(userInfo.name)")
   }
 
   func testOperationWillDisconnectFromPeripheral() {

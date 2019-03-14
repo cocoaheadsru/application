@@ -10,6 +10,6 @@ import UIKit.UIImage
 
 extension UIImage {
   var imageWithTemplateRendingMode: UIImage {
-    return self.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+    return self.withRenderingMode(.alwaysTemplate)
   }
 }

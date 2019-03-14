@@ -9,11 +9,12 @@
 import Foundation
 import CoreLocation
 
-enum MapAppType {
+enum MapAppType: CaseIterable {
   case appleMaps
   case googleMaps
   case yandexMaps
   case yandexNavigation
+  case doubleGIS
 
   var title: String {
     switch self {
@@ -25,6 +26,8 @@ enum MapAppType {
       return "Yandex Maps"
     case .yandexNavigation:
       return "Yandex Navigation"
+    case .doubleGIS:
+      return "2GIS"
     }
   }
 
@@ -39,12 +42,17 @@ enum MapAppType {
       schemeString = "yandexmaps://maps.yandex.ru/"
     case .yandexNavigation:
       schemeString = "yandexnavi://"
+    case .doubleGIS:
+      schemeString = "dgis://2gis.ru/"
     }
     return URL(string: schemeString)!
   }
 
-  func scheme(with coordinate: CLLocationCoordinate2D) -> URL {
+  func scheme(with place: PlaceEntity) -> URL {
     let schemeSuffix: String
+
+    let coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+
     switch self {
     case .appleMaps:
       // swiftlint:disable:next line_length
@@ -59,9 +67,11 @@ enum MapAppType {
     case .yandexNavigation:
       // https://github.com/yandexmobile/yandexmapkit-ios/wiki/Интеграция-с-Яндекс.Навигатором
       schemeSuffix = "build_route_on_map?lat_to=\(coordinate.latitude)&lon_to=\(coordinate.longitude)"
+    case .doubleGIS:
+      let cyrillicSymbols = "search/\(place.address)"
+      schemeSuffix = cyrillicSymbols.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
     return URL(string: scheme.absoluteString + schemeSuffix)!
   }
 
-  static var allMaps: [MapAppType] = [.appleMaps, .googleMaps, .yandexMaps, .yandexNavigation]
 }

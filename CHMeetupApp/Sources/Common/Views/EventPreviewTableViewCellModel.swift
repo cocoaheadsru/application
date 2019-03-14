@@ -29,7 +29,7 @@ extension EventPreviewTableViewCellModel: CellViewModelType {
     cell.isEnabledForRegistration = entity.shouldShowRegistrationStatus
     cell.delegate = delegate
     cell.photosPresentationView.photos.removeAll()
-    let urls = entity.speakerPhotosURLs.map { URL(string: $0.value) }.flatMap { $0 } as [URL]
+    let urls = entity.speakerPhotosURLs.map { URL(string: $0.value) }.compactMap { $0 } as [URL]
 
     cell.photosPresentationView.photos = urls.map({ _ in
       return UIImage(named: "img_template_unknown")!

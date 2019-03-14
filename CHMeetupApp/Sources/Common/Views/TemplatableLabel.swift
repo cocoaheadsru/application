@@ -23,7 +23,7 @@ class ShineLayer: CALayer {
     theAnimation.duration = 2
     theAnimation.repeatCount = Float.infinity
     theAnimation.autoreverses = true
-    theAnimation.fillMode = kCAFillModeForwards
+    theAnimation.fillMode = .forwards
     theAnimation.fromValue = -frame.size.width
     theAnimation.toValue = 0
     gradient.add(theAnimation, forKey: "animateLayer")
@@ -61,10 +61,10 @@ class TemplatableLabel: UILabel, TempalateView {
     let numberOfSpaces = numberOfLines * 2
     let space = frame.height / CGFloat(numberOfSpaces)
 
-    for i in 0..<numberOfLines {
-      var frame = CGRect(x: 0, y: CGFloat(i) * 2 * space + space / 2, width: bounds.width, height: space)
+    for index in 0..<numberOfLines {
+      var frame = CGRect(x: 0, y: CGFloat(index) * 2 * space + space / 2, width: bounds.width, height: space)
 
-      if i > 0 && i == (numberOfLines - 1) {
+      if index > 0 && index == (numberOfLines - 1) {
         frame.size.width = frame.width / 2
       }
 

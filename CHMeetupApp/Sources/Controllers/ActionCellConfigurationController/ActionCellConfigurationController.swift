@@ -46,7 +46,7 @@ class ActionCellConfigurationController {
   private func addActionCell(on viewController: UIViewController,
                              for type: PermissionsType,
                              with additionalAction: Action?) -> ActionPlainObject? {
-    var actionPlainObject: ActionPlainObject? = nil
+    var actionPlainObject: ActionPlainObject?
 
     let texts: [PermissionsType: String] = [.calendar: "Добавить в календарь".localized,
                                             .reminders: "Добавить в напоминания".localized]

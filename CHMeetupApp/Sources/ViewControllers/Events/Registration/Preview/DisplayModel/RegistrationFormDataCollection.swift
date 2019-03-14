@@ -70,12 +70,12 @@ final class FormDisplayCollection: NSObject, DisplayCollection, DisplayCollectio
 
   func headerTitle(for section: Int) -> NSAttributedString {
     let cell = formData.sections[section]
-    let attributes = [NSAttributedStringKey.font: DefaultTableHeaderView.font]
+    let attributes = [NSAttributedString.Key.font: DefaultTableHeaderView.font]
     let attributtedString = NSMutableAttributedString(string: cell.name, attributes: attributes)
     let char = "*"
     if cell.isRequired {
       let mutableAttributedString = NSMutableAttributedString(string: char)
-      mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+      mutableAttributedString.addAttribute(.foregroundColor,
                                            value: UIColor(.red), range: NSRange(location: 0, length: 1))
       attributtedString.append(mutableAttributedString)
     }

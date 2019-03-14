@@ -66,6 +66,6 @@ extension EventRegFormFieldPlainObject: PlainObjectType {
     self.required = required
     self.name = name
     type = fieldType
-    answers = fieldAnswers.flatMap(EventRegFormFieldAnswerPlainObject.init)
+    answers = fieldAnswers.compactMap(EventRegFormFieldAnswerPlainObject.init)
   }
 }
