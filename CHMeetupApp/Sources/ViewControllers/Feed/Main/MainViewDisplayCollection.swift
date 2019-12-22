@@ -34,16 +34,6 @@ class MainViewDisplayCollection: DisplayCollection, DisplayCollectionAction {
                                 with tableView: UITableView) {
     actionPlainObjects = []
     findNearestPlainObjects = []
-
-    let findNearestObject = ActionPlainObject(
-      text: "Люди вокруг".localized,
-      imageName: "air-drop",
-      isColorized: !BeaconTransmitter.isTurnedOn()) { [weak delegate] in
-      let findNearest = Storyboards.Profile.instantiateFindNearestViewController()
-      delegate?.push(viewController: findNearest)
-    }
-
-    findNearestPlainObjects.append(findNearestObject)
   }
 
   var modelCollection: TemplateModelCollection<EventEntity> = {
