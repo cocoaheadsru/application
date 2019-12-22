@@ -11,7 +11,7 @@ before_script:
   - bundle exec danger
   - brew update && brew bundle
   - carthage bootstrap --no-use-binaries --platform iOS --cache-builds
-  - PROJECT_DIR=$(pwd) && PROJECT_NAME=CHMeetupApp && ./Scripts/natalie_generate
+  - export PROJECT_DIR=$PWD && export PROJECT_NAME=CHMeetupApp && ./Scripts/natalie_generate
 jobs:
   include:
 # ==============================================================================
