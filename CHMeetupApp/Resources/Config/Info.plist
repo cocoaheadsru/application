@@ -93,6 +93,8 @@
 			<string>http://upapi.ru</string>
 		</dict>
 	</dict>
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSCalendarsUsageDescription</key>
