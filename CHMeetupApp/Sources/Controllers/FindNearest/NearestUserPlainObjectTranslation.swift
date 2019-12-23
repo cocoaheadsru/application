@@ -9,14 +9,6 @@
 import Foundation
 
 struct NearestUserPlainObjectTranslation: PlainObjectTranslation {
-  /*
-  static func translate(of plainObjects: [Value], to parent: Parent?) {
-    NearestUserEntity.resetDiscoveredStatus()
-    plainObjects.forEach({
-      addToRealm(plainObject: $0, to: parent)
-    })
-  }
-  */
   static func addToRealm(plainObject: Beacon, to parent: NearestUserEntity? = nil) {
     let nearestUser = NearestUserEntity()
     nearestUser.id = plainObject.userInfo?.id ?? 0
@@ -26,8 +18,7 @@ struct NearestUserPlainObjectTranslation: PlainObjectTranslation {
     nearestUser.discovered = plainObject.discovered
 
     realmWrite {
-      mainRealm.add(nearestUser, update: true)
+      mainRealm.add(nearestUser, update: .modified)
     }
   }
-
 }

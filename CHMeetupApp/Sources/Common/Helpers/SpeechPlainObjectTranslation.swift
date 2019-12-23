@@ -39,7 +39,7 @@ struct SpeechPlainObjectTranslation: PlainObjectTranslation {
     }
 
     realmWrite {
-      mainRealm.add(user, update: true)
+      mainRealm.add(user, update: .modified)
       parent?.speeches.append(speech)
 
       // Because it doesn't check dublicates by itself and we can have same objects in one lust

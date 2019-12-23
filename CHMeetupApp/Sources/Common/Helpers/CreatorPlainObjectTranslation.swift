@@ -19,7 +19,7 @@ struct CreatorPlainObjectTranslation: PlainObjectTranslation {
     creator.isActive = plainObject.isActive
 
     realmWrite {
-      mainRealm.add(creator, update: true)
+      mainRealm.add(creator, update: .modified)
     }
   }
 }
