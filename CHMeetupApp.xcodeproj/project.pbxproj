@@ -3030,7 +3030,7 @@
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3061,7 +3061,7 @@
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
