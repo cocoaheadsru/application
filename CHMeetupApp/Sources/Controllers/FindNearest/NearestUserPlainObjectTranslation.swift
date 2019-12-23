@@ -18,7 +18,7 @@ struct NearestUserPlainObjectTranslation: PlainObjectTranslation {
     nearestUser.discovered = plainObject.discovered
 
     realmWrite {
-			mainRealm.add(nearestUser, update: .modified)
+      mainRealm.add(nearestUser, update: .modified)
     }
   }
 }

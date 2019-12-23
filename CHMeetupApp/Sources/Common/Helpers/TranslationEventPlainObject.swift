@@ -36,8 +36,8 @@ struct EventPlainObjectTranslation: PlainObjectTranslation {
     event.place = place
     _ = ImportingStateEntity.createOrGet(for: plainObject.id)
     realmWrite {
-			mainRealm.add(event, update: .modified)
-			mainRealm.add(place, update: .modified)
+      mainRealm.add(event, update: .modified)
+      mainRealm.add(place, update: .modified)
     }
   }
 }
