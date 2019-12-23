@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3.1</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -52,7 +52,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -93,6 +93,8 @@
 			<string>http://upapi.ru</string>
 		</dict>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
 	<key>NSCameraUsageDescription</key>
@@ -118,7 +120,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 </dict>
 </plist>
