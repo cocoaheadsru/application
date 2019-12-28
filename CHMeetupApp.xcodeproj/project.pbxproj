@@ -3030,7 +3030,6 @@
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3044,7 +3043,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.russia.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "CocoaHeads Opensource";
@@ -3061,7 +3059,6 @@
 				CODE_SIGN_ENTITLEMENTS = CHMeetupApp/CHMeetupApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4PGW4G9V2Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3071,7 +3068,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CHMeetupApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = cocoaheads.russia.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "CocoaHeads Opensource";

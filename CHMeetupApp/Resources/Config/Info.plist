@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.4</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -52,7 +52,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>0</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -93,8 +93,8 @@
 			<string>http://upapi.ru</string>
 		</dict>
 	</dict>
-  <key>NSBluetoothAlwaysUsageDescription</key>
-  <string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSCalendarsUsageDescription</key>
