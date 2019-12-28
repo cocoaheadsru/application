@@ -94,15 +94,15 @@
 		</dict>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
+	<string>Это нужно, чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Это нужно чтобы видеть участников митапов вокруг тебя</string>
+	<string>Это нужно, чтобы видеть участников митапов вокруг тебя</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в ваш календарь и напоминать вам о них ;)</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Это нужно чтобы поменять аватарку</string>
+	<string>Это нужно, чтобы поменять аватарку</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Это нужно чтобы поменять аватарку</string>
+	<string>Это нужно, чтобы поменять аватарку</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Это поможет нам добавлять встречи в список ваших дел и напоминать вам о них ;)</string>
 	<key>UIBackgroundModes</key>
