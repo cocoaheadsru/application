@@ -40,17 +40,7 @@ struct KeyboardInfo {
   let curve: UIView.AnimationCurve
 
   func animate(_ animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
-    let curveOption: UIView.AnimationOptions
-    switch curve {
-    case .linear:
-      curveOption = .curveLinear
-    case .easeIn:
-      curveOption = .curveEaseIn
-    case .easeOut:
-      curveOption = .curveEaseOut
-    case .easeInOut:
-      curveOption = .curveEaseInOut
-    }
+    let curveOption = UIView.AnimationOptions(rawValue: UInt(curve.rawValue) << 16)
 
     UIView.animate(withDuration: duration,
                    delay: 0,
