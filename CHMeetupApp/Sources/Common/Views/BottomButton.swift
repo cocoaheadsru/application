@@ -73,11 +73,7 @@ class BottomButton: ActionButton {
 
     self.layer.cornerRadius = Constants.cornerRadius
 
-    if #available(iOS 11.0, *) {
-      bottomConstraint = bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-    } else {
-      bottomConstraint = bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    }
+    bottomConstraint = bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     bottomConstraint.isActive = true
 
     setTitle(title, for: .normal)
