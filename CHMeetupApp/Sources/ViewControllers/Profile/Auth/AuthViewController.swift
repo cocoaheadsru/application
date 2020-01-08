@@ -34,6 +34,9 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
     title = "Авторизация".localized
     // FIXME: delete it when implement twitter auth
     authButtons[2].isHidden = true
+
+    // In dark mode github button looks better when it has a border
+    setBorderForGithubButton()
   }
 
   @IBAction func loginAction(_ sender: UIButton) {
@@ -68,5 +71,11 @@ class AuthViewController: UIViewController, ProfileHierarhyViewControllerType {
       viewController.selectedEventId = eventId
       push(viewController: viewController)
     }
+  }
+
+  private func setBorderForGithubButton() {
+    let githubButton = authButtons[3]
+    githubButton.layer.borderColor = UIColor.from(colorSet: .separator).cgColor
+    githubButton.layer.borderWidth = 1
   }
 }
