@@ -142,4 +142,9 @@ class PlateTableViewCell: UITableViewCell {
     contentView.layer.mask = mask
     shape.path = path.cgPath
   }
+
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    self.updateAppearance()
+  }
 }
