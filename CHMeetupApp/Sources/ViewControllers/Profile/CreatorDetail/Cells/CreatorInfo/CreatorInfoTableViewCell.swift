@@ -13,7 +13,7 @@ final class CreatorInfoTableViewCell: PlateTableViewCell {
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
       descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      descriptionLabel.textColor = .black
+      descriptionLabel.textColor = UIColor.from(colorSet: .primaryText)
     }
   }
 

@@ -17,21 +17,11 @@ class BottomButton: ActionButton {
     var backgroundColor: UIColor {
       switch self {
       case .colorful:
-        return UIColor(.pink)
+        return UIColor.from(colorSet: .pink)
       case .canceling:
-        return UIColor(.gray)
+        return UIColor.from(colorSet: .gray)
       }
     }
-
-    var titleColor: UIColor {
-      switch self {
-      case .colorful:
-        return UIColor(.white)
-      case .canceling:
-        return UIColor(.white)
-      }
-    }
-
   }
 
   var style: BottonButtonStyle = .colorful {
@@ -92,6 +82,6 @@ class BottomButton: ActionButton {
   private func setup() {
     backgroundColor = style.backgroundColor
     titleLabel?.font = Constants.titleFont
-    setTitleColor(style.titleColor, for: .normal)
+    setTitleColor(UIColor.from(colorSet: .white), for: .normal)
   }
 }

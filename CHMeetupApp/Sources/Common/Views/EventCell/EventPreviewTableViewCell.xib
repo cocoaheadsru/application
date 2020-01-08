@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="281.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ug-Ek-gDp">
-                        <rect key="frame" x="0.0" y="11" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="102" id="1vI-yx-E2A"/>
                         </constraints>
@@ -31,13 +29,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-qS-4iF" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="PrimaryText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d41-dn-D4t" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="29" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="PrimaryText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -53,30 +51,30 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Z-gF-poq" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="42" y="121" width="254" height="17"/>
+                        <rect key="frame" x="51" y="121" width="246" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="SecondaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="img_icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="S5q-5C-38R">
-                        <rect key="frame" x="24" y="123.5" width="10" height="13"/>
+                        <rect key="frame" x="23" y="116.5" width="20" height="26"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLl-lp-2fc">
-                        <rect key="frame" x="24" y="144.5" width="272" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="23" y="150.5" width="274" height="1"/>
+                        <color key="backgroundColor" name="Separator"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="TST-80-ZqF"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-dX-eKl" customClass="PhotosPresentationView" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="24" y="157.5" width="272" height="36"/>
+                        <rect key="frame" x="23" y="163.5" width="274" height="36"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="JII-H7-bWj"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pO-3W-VoY" customClass="LightButton" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="24" y="205.5" width="272" height="58"/>
+                        <rect key="frame" x="23" y="211.5" width="274" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="14e-JV-zkH"/>
                         </constraints>
@@ -92,8 +90,8 @@
                     <constraint firstItem="STc-dX-eKl" firstAttribute="leading" secondItem="yLl-lp-2fc" secondAttribute="leading" id="Br4-Gs-c85"/>
                     <constraint firstItem="yLl-lp-2fc" firstAttribute="trailing" secondItem="p0Z-gF-poq" secondAttribute="trailing" id="GLY-xt-Cky"/>
                     <constraint firstItem="9pO-3W-VoY" firstAttribute="trailing" secondItem="STc-dX-eKl" secondAttribute="trailing" id="GTz-iT-Xoi"/>
-                    <constraint firstItem="1ug-Ek-gDp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JFA-YI-VID"/>
-                    <constraint firstItem="hfj-Pb-Uaf" firstAttribute="centerY" secondItem="1ug-Ek-gDp" secondAttribute="centerY" id="PEG-bC-gMh"/>
+                    <constraint firstItem="1ug-Ek-gDp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-11" id="JFA-YI-VID"/>
+                    <constraint firstItem="hfj-Pb-Uaf" firstAttribute="centerY" secondItem="1ug-Ek-gDp" secondAttribute="centerY" constant="11" id="PEG-bC-gMh"/>
                     <constraint firstAttribute="trailing" secondItem="1ug-Ek-gDp" secondAttribute="trailing" id="U0g-9u-myL"/>
                     <constraint firstItem="STc-dX-eKl" firstAttribute="top" secondItem="yLl-lp-2fc" secondAttribute="bottom" constant="12" id="a9N-bo-A2a"/>
                     <constraint firstItem="9pO-3W-VoY" firstAttribute="top" secondItem="STc-dX-eKl" secondAttribute="bottom" constant="12" id="gsE-dD-BzG"/>
@@ -102,7 +100,7 @@
                     <constraint firstItem="9pO-3W-VoY" firstAttribute="leading" secondItem="STc-dX-eKl" secondAttribute="leading" id="nLr-EK-LH4"/>
                     <constraint firstItem="S5q-5C-38R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="nhA-Mg-gKS"/>
                     <constraint firstItem="hfj-Pb-Uaf" firstAttribute="centerX" secondItem="1ug-Ek-gDp" secondAttribute="centerX" id="oMf-5I-My1"/>
-                    <constraint firstItem="p0Z-gF-poq" firstAttribute="top" secondItem="1ug-Ek-gDp" secondAttribute="bottom" constant="8" id="pv6-X3-Fkw"/>
+                    <constraint firstItem="p0Z-gF-poq" firstAttribute="top" secondItem="1ug-Ek-gDp" secondAttribute="bottom" constant="19" id="pv6-X3-Fkw"/>
                     <constraint firstItem="p0Z-gF-poq" firstAttribute="leading" secondItem="S5q-5C-38R" secondAttribute="trailing" constant="8" id="rQJ-Zs-rLa"/>
                     <constraint firstItem="yLl-lp-2fc" firstAttribute="top" secondItem="S5q-5C-38R" secondAttribute="bottom" constant="8" id="sUq-bI-3xa"/>
                     <constraint firstItem="1ug-Ek-gDp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xJ8-bD-1sF"/>
@@ -124,5 +122,14 @@
     </objects>
     <resources>
         <image name="img_icon_pin" width="10" height="13"/>
+        <namedColor name="PrimaryText">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="SecondaryText">
+            <color red="0.42399999499320984" green="0.42399999499320984" blue="0.42399999499320984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Separator">
+            <color red="0.88999998569488525" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

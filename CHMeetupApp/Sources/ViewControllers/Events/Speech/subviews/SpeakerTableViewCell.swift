@@ -13,14 +13,14 @@ class SpeakerTableViewCell: PlateTableViewCell {
   @IBOutlet var titleLabel: UILabel! {
     didSet {
       titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      titleLabel.textColor = UIColor(.gray)
+      titleLabel.textColor = UIColor.from(colorSet: .secondaryText)
       titleLabel.text = "Докладчик".localized
     }
   }
 
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
-      avatarImageView.backgroundColor = UIColor(.darkGray)
+      avatarImageView.backgroundColor = UIColor.from(colorSet: .tertiaryBackground)
       avatarImageView.clipsToBounds = true
     }
   }
@@ -28,14 +28,14 @@ class SpeakerTableViewCell: PlateTableViewCell {
   @IBOutlet var fullNameLabel: UILabel! {
     didSet {
       fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
-      fullNameLabel.textColor = UIColor(.darkGray)
+      fullNameLabel.textColor = UIColor.from(colorSet: .primaryText)
     }
   }
 
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
       descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      descriptionLabel.textColor = UIColor(.darkGray)
+      descriptionLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 

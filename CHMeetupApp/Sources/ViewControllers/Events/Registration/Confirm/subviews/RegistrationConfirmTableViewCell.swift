@@ -22,7 +22,7 @@ class RegConfirmHeaderTableViewCell: UITableViewCell {
   @IBOutlet var label: UILabel! {
     didSet {
       label.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      label.textColor = UIColor(.red)
+      label.textColor = UIColor.from(colorSet: .red)
       label.text = "Ваша заявка\nуспешно отправлена!".localized
     }
   }
@@ -30,7 +30,7 @@ class RegConfirmHeaderTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    contentView.backgroundColor = UIColor(.lightGray)
+    contentView.backgroundColor = UIColor.from(colorSet: .background)
     selectionStyle = .none
   }
 }

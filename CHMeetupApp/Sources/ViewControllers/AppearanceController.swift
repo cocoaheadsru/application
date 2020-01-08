@@ -31,8 +31,8 @@ struct AppearanceController {
       PlateTableViewCellAppearance(cornerRadius: 8,
                                    horizontalMarginValue: 12,
                                    verticalMarginValues: 4,
-                                   backgroundColor: UIColor(.white),
-                                   selectedBackgroundColor: UIColor(.lightGray))
+                                   backgroundColor: UIColor.from(colorSet: .secondaryBackground),
+                                   selectedBackgroundColor: UIColor.from(colorSet: .tertiaryBackground))
   }
 
   private static func setupShadowView() {

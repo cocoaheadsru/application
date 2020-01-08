@@ -32,7 +32,6 @@ class ChooseProfilePhotoTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    contentView.backgroundColor = UIColor(.lightGray)
     selectionStyle = .none
   }
 }

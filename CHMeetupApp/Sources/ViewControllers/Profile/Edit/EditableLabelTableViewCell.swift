@@ -13,7 +13,7 @@ class EditableLabelTableViewCell: PlateTableViewCell {
   @IBOutlet var descriptionTextField: UITextField! {
     didSet {
       descriptionTextField.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      descriptionTextField.textColor = UIColor(.black)
+      descriptionTextField.textColor = UIColor.from(colorSet: .primaryText)
       descriptionTextField.returnKeyType = .done
       descriptionTextField.autocorrectionType = .no
     }

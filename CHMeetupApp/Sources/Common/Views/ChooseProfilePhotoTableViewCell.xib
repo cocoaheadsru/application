@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="163.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-te-fAv">
@@ -39,6 +37,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="Background"/>
                 <constraints>
                     <constraint firstItem="wbW-te-fAv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="JsD-br-tgh"/>
                     <constraint firstItem="wbW-te-fAv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="fav-Zi-VOB"/>
@@ -51,4 +50,9 @@
             <point key="canvasLocation" x="34" y="143"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.88999998569488525" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

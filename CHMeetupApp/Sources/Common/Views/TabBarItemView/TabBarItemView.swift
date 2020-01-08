@@ -58,7 +58,7 @@ class TabBarItemView: AZTabBarItemView {
     var color: UIColor {
       switch self {
       case .selected:
-        return UIColor(.red)
+        return UIColor.from(colorSet: .red)
       case .unselected:
         return UIColor(.gray)
       }

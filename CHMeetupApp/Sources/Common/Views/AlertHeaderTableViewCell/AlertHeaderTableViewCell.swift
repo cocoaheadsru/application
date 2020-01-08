@@ -19,7 +19,7 @@ class AlertHeaderTableViewCell: UITableViewCell {
   @IBOutlet var label: UILabel! {
     didSet {
       label.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      label.textColor = UIColor(.darkGray)
+      label.textColor = UIColor.from(colorSet: .secondaryText)
       label.text = "Ваша заявка\nуспешно отправлена!".localized
     }
   }
@@ -27,7 +27,6 @@ class AlertHeaderTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    contentView.backgroundColor = UIColor(.lightGray)
     selectionStyle = .none
   }
 }

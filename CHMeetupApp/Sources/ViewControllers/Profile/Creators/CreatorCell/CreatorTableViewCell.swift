@@ -20,7 +20,7 @@ class CreatorTableViewCell: PlateTableViewCell {
   @IBOutlet var creatorNameLabel: TemplatableLabel! {
     didSet {
       creatorNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
-      creatorNameLabel.textColor = UIColor(.darkGray)
+      creatorNameLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 }

@@ -21,34 +21,30 @@ class SpeechPreviewTableViewCell: PlateTableViewCell, TempalateView {
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
       avatarImageView.roundCorners()
-      avatarImageView.backgroundColor = UIColor(.lightGray)
     }
   }
 
   @IBOutlet var fullNameLabel: TemplatableLabel! {
     didSet {
       fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 17))
-      fullNameLabel.textColor = UIColor(.black)
     }
   }
 
   @IBOutlet var topicLabel: TemplatableLabel! {
     didSet {
       topicLabel.font = UIFont.appFont(.systemFont(size: 17))
-      topicLabel.textColor = UIColor(.black)
     }
   }
 
   @IBOutlet var seporatorLineView: UIView! {
     didSet {
-      seporatorLineView.backgroundColor = UIColor(.lightGray)
+      seporatorLineView.backgroundColor = UIColor.from(colorSet: .separator)
     }
   }
 
   @IBOutlet var speachDescriptionLabel: TemplatableLabel! {
     didSet {
       speachDescriptionLabel.font = UIFont.appFont(.systemFont(size: 15))
-      speachDescriptionLabel.textColor = UIColor(.darkGray)
       speachDescriptionLabel.numberOfLines = 3
     }
   }

@@ -10,13 +10,13 @@ import UIKit
 
 class LightButton: UIButton {
 
-  var borderColor = UIColor(.lightGray) {
+  var borderColor = UIColor.from(colorSet: .separator) {
     didSet {
       updateAppearance()
     }
   }
 
-  var titleColor = UIColor(.gray) {
+  var titleColor = UIColor.from(colorSet: .secondaryText) {
     didSet {
       updateAppearance()
     }

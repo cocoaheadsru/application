@@ -43,6 +43,7 @@ class TextViewWithPlaceholder: UITextView {
 
   private func commonInit() {
     placeholderTextView = UITextView(frame: bounds)
+    placeholderTextView.backgroundColor = UIColor.from(colorSet: .tertiaryText)
     addSubview(placeholderTextView)
     setupConstraints()
     setupNotifications()

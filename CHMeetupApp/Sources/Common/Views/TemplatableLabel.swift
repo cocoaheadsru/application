@@ -69,7 +69,7 @@ class TemplatableLabel: UILabel, TempalateView {
       }
 
       let layer = ShineLayer()
-      layer.backgroundColor = UIColor(.gray).cgColor
+      layer.backgroundColor = UIColor.from(colorSet: .secondaryBackground).cgColor
       layer.frame = frame
       layer.opacity = 0.5
       layer.masksToBounds = true

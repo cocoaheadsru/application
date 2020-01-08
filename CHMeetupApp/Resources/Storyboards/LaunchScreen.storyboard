@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -27,20 +21,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cocoaheads_logo" translatesAutoresizingMaskIntoConstraints="NO" id="A42-Oy-vf3">
-                                <rect key="frame" x="126" y="245" width="107" height="118"/>
+                                <rect key="frame" x="126" y="225" width="107" height="118"/>
+                                <color key="tintColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="GfA-80-Buh"/>
                                     <constraint firstAttribute="width" constant="107" id="txX-wd-A4Z"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CocoaHeads Russia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwW-Iw-KcA">
-                                <rect key="frame" x="0.0" y="387" width="375" height="26"/>
+                                <rect key="frame" x="0.0" y="367" width="375" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="PrimaryText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rwW-Iw-KcA" firstAttribute="top" secondItem="A42-Oy-vf3" secondAttribute="bottom" constant="24" id="4zF-IF-OCk"/>
                             <constraint firstItem="rwW-Iw-KcA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9hM-Sm-fb2"/>
@@ -57,5 +52,8 @@
     </scenes>
     <resources>
         <image name="img_cocoaheads_logo" width="165" height="308"/>
+        <namedColor name="PrimaryText">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
     </resources>
 </document>

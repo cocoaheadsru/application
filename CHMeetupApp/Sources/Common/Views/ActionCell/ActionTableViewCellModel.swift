@@ -26,7 +26,7 @@ extension ActionTableViewCellModel: CellViewModelType {
     }
 
     if action.isColorized == false {
-      cell.actionImageView.tintColor = UIColor(.darkGray)
+      cell.actionImageView.tintColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 

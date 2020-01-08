@@ -60,7 +60,7 @@ class EventPreviewViewController: UIViewController {
     super.viewDidLoad()
     title = "Встреча".localized
 
-    view.backgroundColor = UIColor(.lightGray)
+    view.backgroundColor = UIColor.from(colorSet: .background)
 
     displayCollection = EventPreviewDisplayCollection()
     displayCollection.delegate = self
