@@ -61,7 +61,7 @@ open class AZTabBarItemView: UIView, AZTabBarItemViewAccessibility {
       return accessibilityTitle
     }
     set {
-      super.accessibilityLabel = accessibilityLabel
+      super.accessibilityLabel = newValue
     }
   }
 
@@ -76,7 +76,7 @@ open class AZTabBarItemView: UIView, AZTabBarItemViewAccessibility {
 
   open override var accessibilityTraits: UIAccessibilityTraits {
     set {
-      super.accessibilityTraits = accessibilityTraits
+      super.accessibilityTraits = newValue
     }
     get {
       let value = super.accessibilityTraits
@@ -137,11 +137,10 @@ public class AZTabBar: UITabBar {
   override public func sizeThatFits(_ size: CGSize) -> CGSize {
     var size = super.sizeThatFits(size)
     
-    if #available(iOS 11.0, *), let bottomInset = superview?.safeAreaInsets.bottom {
+    if let bottomInset = superview?.safeAreaInsets.bottom {
       size.height = bottomInset + preferedHeight
-    } else {
-      size.height = preferedHeight
     }
+    
     return size
   }
 
@@ -238,13 +237,8 @@ public class AZTabBarController: UITabBarController {
       }
 
       tabBar.addSubview(viewContainer)
-      if #available(iOS 11.0, *) {
-        az_itemViewConstraints.append(view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
-        az_itemViewConstraints.append(tabBar.topAnchor.constraint(equalTo: viewContainer.topAnchor))
-
-      } else {
-        az_itemViewConstraints.append(tabBar.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
-      }
+      az_itemViewConstraints.append(view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor))
+      az_itemViewConstraints.append(tabBar.topAnchor.constraint(equalTo: viewContainer.topAnchor))
       
       if index > 0 {
         az_itemViewConstraints.append(az_items[index - 1].containerView.rightAnchor.constraint(equalTo: viewContainer.leftAnchor))

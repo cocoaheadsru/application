@@ -111,7 +111,9 @@ final class AuthServiceFacade {
    */
 
   fileprivate func showSafari(url: URL) {
-    safari = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+    let config = SFSafariViewController.Configuration()
+    config.entersReaderIfAvailable = true
+    safari = SFSafariViewController(url: url, configuration: config)
     currentViewController?.present(safari!, animated: true, completion: nil)
   }
 
