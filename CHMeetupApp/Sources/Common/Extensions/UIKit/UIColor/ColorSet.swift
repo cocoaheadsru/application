@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ColorSet: String {
+enum ColorSet: String, CaseIterable {
   /// Text
   case primaryText
   case secondaryText
