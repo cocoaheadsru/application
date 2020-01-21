@@ -32,7 +32,9 @@ extension UIViewController: DisplayCollectionDelegate {
   }
 
   func open(url: URL) {
-    let safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+    let config = SFSafariViewController.Configuration()
+    config.entersReaderIfAvailable = true
+    let safariViewController = SFSafariViewController(url: url, configuration: config)
     present(viewController: safariViewController)
   }
 }
