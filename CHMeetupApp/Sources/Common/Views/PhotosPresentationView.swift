@@ -45,7 +45,7 @@ class PhotosPresentationView: UIView {
       let borderWidth = viewHeight * Constants.SystemSizes.imageViewBorderWidthPercentage
 
       let imageView = UIImageView()
-      imageView.backgroundColor = UIColor.white
+      imageView.backgroundColor = UIColor.from(colorSet: .secondaryBackground)
       imageView.frame = CGRect(x: xImageView, y: 0.0, width: viewHeight, height: viewHeight)
 
       if (xImageView + viewHeight) <= viewWidth {
@@ -54,7 +54,7 @@ class PhotosPresentationView: UIView {
         if leadingEdgeSecondImageView > viewWidth && photos.count > index {
           imageView.image = #imageLiteral(resourceName: "img_template_unknown")
         } else {
-          imageView.roundWithBorder(borderWidth)
+          imageView.roundWithBorder(borderWidth, color: UIColor.from(colorSet: .secondaryBackground))
         }
 
         addSubview(imageView)
