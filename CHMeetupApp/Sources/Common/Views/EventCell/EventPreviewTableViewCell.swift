@@ -96,7 +96,7 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
   override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                         withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                         verticalFittingPriority: UILayoutPriority) -> CGSize {
-    var height: CGFloat = 270
+    var height: CGFloat = 282
 
     if isEnabledForRegistration == false {
       height -= goingButtonHeight
