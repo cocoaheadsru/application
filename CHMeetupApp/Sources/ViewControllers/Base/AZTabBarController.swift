@@ -159,6 +159,12 @@ public class AZTabBar: UITabBar {
       super.insertSubview(view, at: 0)
     }
   }
+  
+  override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    
+    updateColors()
+  }
 }
 
 extension UIViewController {
@@ -248,8 +254,7 @@ public class AZTabBarController: UITabBarController {
     NSLayoutConstraint.activate(az_itemViewConstraints)
 
     tabBar.alpha = 1
-    tabBar.shadowImage = UIImage()
-    tabBar.backgroundImage = UIImage()
+    az_tabBar.updateColors()
     selectedIndex = selectedIndexOrZero
   }
 
@@ -309,5 +314,12 @@ public class AZTabBarController: UITabBarController {
 
       selectedIndex = currentIndex
     }
+  }
+}
+
+private extension AZTabBar {
+  func updateColors() {
+    shadowImage = UIColor.from(colorSet: .secondaryBackground).asImage
+    backgroundImage = UIColor.from(colorSet: .secondaryBackground).asImage
   }
 }

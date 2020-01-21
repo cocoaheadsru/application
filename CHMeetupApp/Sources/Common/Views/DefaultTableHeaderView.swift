@@ -19,13 +19,13 @@ class DefaultTableHeaderView: UITableViewHeaderFooterView {
   @IBOutlet var headerLabel: UILabel! {
     didSet {
       headerLabel.font = DefaultTableHeaderView.font
-      headerLabel.textColor = UIColor(.gray)
+      headerLabel.textColor = UIColor.from(colorSet: .secondaryText)
       headerLabel.layoutMargins = DefaultTableHeaderView.titleInsets
     }
   }
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    contentView.backgroundColor = UIColor(.lightGray).withAlphaComponent(1.0)
+    contentView.backgroundColor = UIColor.from(colorSet: .background)
   }
 }

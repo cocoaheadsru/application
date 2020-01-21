@@ -12,14 +12,14 @@ final class LabelTableViewCell: PlateTableViewCell {
   @IBOutlet var titleLabel: UILabel! {
     didSet {
       titleLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 16))
-      titleLabel.textColor = UIColor(.gray)
+      titleLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
       descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      descriptionLabel.textColor = UIColor(.black)
+      descriptionLabel.textColor = UIColor.from(colorSet: .primaryText)
     }
   }
 

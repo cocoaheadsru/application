@@ -23,7 +23,7 @@ final class CreatorDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Создатель".localized
-    view.backgroundColor = UIColor(.lightGray)
+    view.backgroundColor = UIColor.from(colorSet: .background)
 
     displayCollection = CreatorDetailDisplayCollection()
     displayCollection.delegate = self

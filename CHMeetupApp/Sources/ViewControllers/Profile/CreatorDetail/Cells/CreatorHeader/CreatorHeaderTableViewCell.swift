@@ -12,7 +12,7 @@ final class CreatorHeaderTableViewCell: PlateTableViewCell {
 
   @IBOutlet var avatarImageView: UIImageView! {
     didSet {
-      avatarImageView.backgroundColor = UIColor(.darkGray)
+      avatarImageView.backgroundColor = UIColor.from(colorSet: .secondaryBackground)
       avatarImageView.clipsToBounds = true
     }
   }
@@ -20,14 +20,14 @@ final class CreatorHeaderTableViewCell: PlateTableViewCell {
   @IBOutlet var fullNameLabel: UILabel! {
     didSet {
       fullNameLabel.font = UIFont.appFont(.avenirNextDemiBold(size: 18))
-      fullNameLabel.textColor = UIColor(.darkGray)
+      fullNameLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 
   @IBOutlet var descriptionLabel: UILabel! {
     didSet {
       descriptionLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      descriptionLabel.textColor = UIColor(.darkGray)
+      descriptionLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,23 +13,23 @@
             <rect key="frame" x="0.0" y="0.0" width="302" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="302" height="119"/>
+                <rect key="frame" x="0.0" y="0.0" width="302" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mKk-gJ-Ppf">
-                        <rect key="frame" x="8" y="8" width="286" height="103"/>
+                        <rect key="frame" x="8" y="8" width="286" height="104"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkd-7A-3E9">
                                 <rect key="frame" x="0.0" y="0.0" width="286" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHj-jp-W2a">
-                                        <rect key="frame" x="37" y="8" width="36" height="36"/>
+                                        <rect key="frame" x="37" y="8" width="35.5" height="36"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="img_icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-KB-Rlo">
-                                        <rect key="frame" x="16" y="19" width="13" height="13"/>
+                                        <rect key="frame" x="16" y="19.5" width="13" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="13" id="H4j-4P-oc5"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="ZGO-SN-sO8"/>
@@ -40,7 +38,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HHj-jp-W2a" firstAttribute="leading" secondItem="BXh-KB-Rlo" secondAttribute="trailing" constant="8" id="DeF-nq-8Ap"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HHj-jp-W2a" secondAttribute="trailing" constant="8" id="JMj-MB-MRp"/>
@@ -51,23 +49,23 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcp-yT-Po4">
-                                <rect key="frame" x="0.0" y="52" width="286" height="51"/>
+                                <rect key="frame" x="0.0" y="52" width="286" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8V-0V-BwP">
-                                        <rect key="frame" x="37" y="8" width="36" height="35"/>
+                                        <rect key="frame" x="37" y="8" width="35.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="img_icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="mSq-Mu-RBD">
-                                        <rect key="frame" x="16" y="19" width="13" height="13"/>
+                                        <rect key="frame" x="16" y="19.5" width="13" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="13" id="N0U-WM-Tbi"/>
                                             <constraint firstAttribute="height" constant="13" id="lZQ-h5-1eX"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="t8V-0V-BwP" firstAttribute="leading" secondItem="mSq-Mu-RBD" secondAttribute="trailing" constant="8" id="3i6-il-8qL"/>
                                     <constraint firstItem="mSq-Mu-RBD" firstAttribute="leading" secondItem="gcp-yT-Po4" secondAttribute="leading" constant="16" id="Lc3-e5-nQ3"/>

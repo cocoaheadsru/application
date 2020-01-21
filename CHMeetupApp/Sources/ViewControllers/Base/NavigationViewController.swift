@@ -18,9 +18,9 @@ class NavigationViewController: UINavigationController {
     navigationBar.shadowImage = UIImage()
     navigationBar.setBackgroundImage(UIImage(), for: .default)
 
-    navigationBar.barTintColor = UIColor(.white)
+    navigationBar.barTintColor = UIColor.from(colorSet: .secondaryBackground)
     navigationBar.isTranslucent = false
-    navigationBar.tintColor = UIColor(.black)
+    navigationBar.tintColor = UIColor.from(colorSet: .secondaryText)
 
     shadowView = ShadowView()
     view.insertSubview(shadowView, belowSubview: navigationBar)

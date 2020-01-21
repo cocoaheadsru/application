@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,43 +14,44 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="243.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-0k-9cU">
-                        <rect key="frame" x="24" y="24" width="60" height="60"/>
+                        <rect key="frame" x="31" y="27" width="60" height="60"/>
+                        <color key="backgroundColor" name="SecondaryBackground"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="8dR-0k-9cU" secondAttribute="height" id="uiW-HJ-qug"/>
                             <constraint firstAttribute="width" constant="60" id="yg9-je-JAp"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Зимин" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-SV-JRn" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="96" y="45" width="208" height="19.5"/>
+                        <rect key="frame" x="103" y="47.5" width="194" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="24" y="100" width="272" height="41"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Gf-1ah" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="31" y="100" width="258" height="41"/>
                         <string key="text">«Как вложить в приложение
 минимум функций»</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-bd-o7k">
-                        <rect key="frame" x="24" y="157" width="272" height="1"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-bd-o7k">
+                        <rect key="frame" x="31" y="157" width="258" height="1"/>
+                        <color key="backgroundColor" name="Separator"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="xV8-fy-tO0"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
-                        <rect key="frame" x="24" y="174" width="272" height="54"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-DU-4X3" customClass="TemplatableLabel" customModule="CHMeetupApp" customModuleProvider="target">
+                        <rect key="frame" x="31" y="174" width="258" height="54"/>
                         <string key="text">Опыт работы с кофаундерами Активитис
 и прочие анальные боли</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="SecondaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -86,4 +84,18 @@
             <point key="canvasLocation" x="47" y="165"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="PrimaryText">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="SecondaryBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryText">
+            <color red="0.42399999499320984" green="0.42399999499320984" blue="0.42399999499320984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Separator">
+            <color red="0.88999998569488525" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

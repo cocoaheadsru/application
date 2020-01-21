@@ -253,6 +253,11 @@
 		A168379C1E7E979800A12B3B /* OptionTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16837991E7E979800A12B3B /* OptionTableViewCellModel.swift */; };
 		A1AD7E621F06F3B300977FAE /* CreatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5B1F06F3B300977FAE /* CreatorDetailViewController.swift */; };
 		A1AD7E631F06F3B300977FAE /* CreatorDetailDisplayCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */; };
+		A85FF56323BA988000FCAE23 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A76B31E5F230100B87501 /* Storyboards.swift */; };
+		A870EE1223C4F02500EE3463 /* UIColor+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A870EE1123C4F02500EE3463 /* UIColor+asImage.swift */; };
+		A870EE1623C514D200EE3463 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A870EE1523C514D200EE3463 /* ColorSet.swift */; };
+		A870EE1823C5161800EE3463 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A870EE1723C5161800EE3463 /* Colors.xcassets */; };
+		A89BFEC423C74685003BA72C /* ColorSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89BFEC323C74685003BA72C /* ColorSetTests.swift */; };
 		AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */; };
 		ADCCA0FE1E936156009DAACE /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */; };
 		ADCCA0FF1E936156009DAACE /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */; };
@@ -590,6 +595,10 @@
 		A1AD7E5D1F06F3B300977FAE /* CreatorDetailDisplayCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorDetailDisplayCollection.swift; sourceTree = "<group>"; };
 		A1DBA4F01E71ED1200E3F1E5 /* CHMeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHMeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DBA4F41E71ED1200E3F1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A870EE1123C4F02500EE3463 /* UIColor+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+asImage.swift"; sourceTree = "<group>"; };
+		A870EE1523C514D200EE3463 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		A870EE1723C5161800EE3463 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		A89BFEC323C74685003BA72C /* ColorSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetTests.swift; sourceTree = "<group>"; };
 		AD4B5A7A1E7E6CCE0016187B /* Int+Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Encryption.swift"; sourceTree = "<group>"; };
 		ADCCA0FB1E936156009DAACE /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCA0FC1E936156009DAACE /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
@@ -795,6 +804,7 @@
 			isa = PBXGroup;
 			children = (
 				221F4F871E5C0B6C0009FD07 /* Assets.xcassets */,
+				A870EE1723C5161800EE3463 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -967,6 +977,8 @@
 				22323EFE1E70C0CE00522E5C /* UIColor+Brightness.swift */,
 				22323EFF1E70C0CE00522E5C /* UIColor+Hex.swift */,
 				22323F001E70C0CE00522E5C /* UIColor+PaletteColors.swift */,
+				A870EE1123C4F02500EE3463 /* UIColor+asImage.swift */,
+				A870EE1523C514D200EE3463 /* ColorSet.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -2185,12 +2197,21 @@
 		A1DBA4F11E71ED1200E3F1E5 /* CHMeetupAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A89BFEC223C7463A003BA72C /* Extensions */,
 				B00775B7205F16AD007280FA /* Common */,
 				B0A1FC0E204DB9E9007D501D /* Controllers */,
 				A1495AE61E76CD12003D8BE3 /* Validation */,
 				A1DBA4F41E71ED1200E3F1E5 /* Info.plist */,
 			);
 			path = CHMeetupAppTests;
+			sourceTree = "<group>";
+		};
+		A89BFEC223C7463A003BA72C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A89BFEC323C74685003BA72C /* ColorSetTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AD4B5A791E7E6CCE0016187B /* Int */ = {
@@ -2515,6 +2536,7 @@
 				7DAC86421EA8223100437283 /* CreatorTableViewCell.xib in Resources */,
 				9FD58FB91E5E306800207199 /* Profile.storyboard in Resources */,
 				320FA5781E87A8A800DAC7E1 /* ProfilePhotoTableViewCell.xib in Resources */,
+				A870EE1823C5161800EE3463 /* Colors.xcassets in Resources */,
 				0367949A1E8D9E0500997D29 /* SpeakerTableViewCell.xib in Resources */,
 				32DD63031EA8C92E005B565E /* ChooseProfilePhotoTableViewCell.xib in Resources */,
 				4DA530251E5FCDB900CD74EB /* Main.storyboard in Resources */,
@@ -2671,6 +2693,8 @@
 				8AAC26641EA56E8A00F8CF58 /* ProfileEditDisplayCollection.swift in Sources */,
 				8AB256991E78683B00B319AA /* Sharing.swift in Sources */,
 				9FD594951E8732F600BAD1B5 /* List+RemoveDublicates.swift in Sources */,
+				A85FF56323BA988000FCAE23 /* Storyboards.swift in Sources */,
+				A870EE1623C514D200EE3463 /* ColorSet.swift in Sources */,
 				03CA501E1E8327EB00CF9613 /* RegistrationFieldData.swift in Sources */,
 				7DE9420F1E867BB900E7E9E6 /* VKResource.swift in Sources */,
 				8A6A569B1EB76279008BEDF9 /* UIImageView+CAShapeLayer.swift in Sources */,
@@ -2703,6 +2727,7 @@
 				B022139920605CDB00989FEB /* SwitchTableViewCellModel.swift in Sources */,
 				328467581E7FF1B200028431 /* TimePlaceTableViewCellModel.swift in Sources */,
 				8A36998C1E8D2EDD00B37528 /* AboutSpeechTableViewCell.swift in Sources */,
+				A870EE1223C4F02500EE3463 /* UIColor+asImage.swift in Sources */,
 				7D1EC7031E898E5300713E6D /* SpeechContentPlainObject+Requests.swift in Sources */,
 				AD4B5A7B1E7E6CCE0016187B /* Int+Encryption.swift in Sources */,
 				328E9E6A1E8BDFEF008B409F /* ProfileViewDisplayCollection.swift in Sources */,
@@ -2899,6 +2924,7 @@
 				B00775C7205F1E50007280FA /* IBeaconPeripheralDelegateMock.swift in Sources */,
 				B00775BF205F1D9F007280FA /* BeaconOperationMock.swift in Sources */,
 				B00775C9205F1E58007280FA /* ICentralManagerMock.swift in Sources */,
+				A89BFEC423C74685003BA72C /* ColorSetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

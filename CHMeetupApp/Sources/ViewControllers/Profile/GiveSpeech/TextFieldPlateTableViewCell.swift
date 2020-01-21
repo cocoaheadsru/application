@@ -11,7 +11,7 @@ import UIKit
 class TextFieldPlateTableViewCell: PlateTableViewCell {
   @IBOutlet var textField: UITextField! {
     didSet {
-      textField.textColor = UIColor(.darkGray)
+      textField.textColor = UIColor.from(colorSet: .secondaryText)
       textField.font = UIFont.appFont(.avenirNextMedium(size: 17))
       textField.returnKeyType = .continue
       textField.autocapitalizationType = .sentences

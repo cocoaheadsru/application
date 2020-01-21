@@ -16,7 +16,7 @@ final class OptionTableViewCell: PlateTableViewCell {
     didSet {
       label.numberOfLines = 0
       label.font = UIFont.appFont(.systemMediumFont(size: 15))
-      label.textColor = UIColor(.gray)
+      label.textColor = UIColor.from(colorSet: .secondaryText)
       label.text = " "
     }
   }
@@ -27,7 +27,9 @@ final class OptionTableViewCell: PlateTableViewCell {
   }
 
   override func updateSelection(shouldSelect: Bool) {
-    label.textColor = shouldSelect ? UIColor(.black) : UIColor(.gray)
+    label.textColor = shouldSelect
+      ? UIColor.from(colorSet: .primaryText)
+      : UIColor.from(colorSet: .secondaryText)
     markImageView.isHighlighted = shouldSelect
   }
 

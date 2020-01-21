@@ -27,7 +27,7 @@ struct TableViewConfiguration {
     bottomIndicatorInset: CGFloat? = nil,
     estimatedRowHeight: CGFloat = 0,
     rowHeight: CGFloat = UITableView.automaticDimension,
-    backgroundColor: UIColor = UIColor(.lightGray)
+    backgroundColor: UIColor = UIColor.from(colorSet: .background)
   ) {
     self.topInset = topInset
     self.bottomInset = bottomInset

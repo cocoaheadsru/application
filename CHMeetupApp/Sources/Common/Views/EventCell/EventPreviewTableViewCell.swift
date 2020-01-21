@@ -33,27 +33,27 @@ class EventPreviewTableViewCell: PlateTableViewCell, TempalateView {
   @IBOutlet var nameLabel: TemplatableLabel! {
     didSet {
       nameLabel.font = UIFont.appFont(.avenirNextMedium(size: 18))
-      nameLabel.textColor = UIColor(.strongGray)
+      nameLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 
   @IBOutlet var dateLabel: TemplatableLabel! {
     didSet {
       dateLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      dateLabel.textColor = UIColor(.strongGray)
+      dateLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 
   @IBOutlet var placeLabel: TemplatableLabel! {
     didSet {
       placeLabel.font = UIFont.appFont(.avenirNextMedium(size: 16))
-      placeLabel.textColor = UIColor(.strongGray)
+      placeLabel.textColor = UIColor.from(colorSet: .secondaryText)
     }
   }
 
   @IBOutlet var separationView: UIView! {
     didSet {
-      separationView.backgroundColor = UIColor(.lightGray)
+      separationView.backgroundColor = UIColor.from(colorSet: .separator)
     }
   }
 
