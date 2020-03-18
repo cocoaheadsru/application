@@ -1,0 +1,47 @@
+name: CD
+on:
+  push:
+    branches:
+      - feature/ci-cd
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v1
+      - name: Build and Submit to Testflight
+        run: |
+          fastlane ios cd
+        env:
+          APP_IDENTIFIER: ${{ secrets.APP_ID }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_ID: ${{ secrets.APPLE_APP_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          URL_TO_FASTLANE_CERTIFICATES_REPO: ${{ secrets.URL_TO_FASTLANE_CERTIFICATES_REPO }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+          CI: true
+          CI_KEYCHAIN_NAME: "CI_KEYCHAIN"
+          CI_KEYCHAIN_PASSWORD: ${{ secrets.CI_KEYCHAIN_PASSWORD }}
+          GIT_BRANCH_NAME: ${{ github.ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: feature/ci-cd
+      - name: Send success message
+        if: success()
+        run: |
+          curl -X POST \
+               -H 'Content-Type: application/json' \
+               -d '{"chat_id": "${{ secrets.TELEGRAM_TO_TEST }}", "parse_mode": "HTML", "text": "🚀 <b>New Build Uploaded!</b>\n\nNew build uploaded to Testflight and will be available soon.\n\nby <b>${{ github.actor }}</b> ", "disable_notification": false}' \
+               https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage
